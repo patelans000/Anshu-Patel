@@ -15,8 +15,6 @@ nav{padding:22px 48px;display:flex;align-items:center;justify-content:space-betw
 .nav-links a{font-size:13px;font-weight:400;color:#888;text-decoration:none;padding:5px 12px;border-radius:100px;cursor:pointer;transition:color 0.15s,background 0.15s}
 .nav-links a:hover{color:#fff}
 .nav-links a.active{color:#fff;font-weight:500}
-
-/* Works dropdown */
 .works-dropdown{position:relative}
 .works-trigger{font-size:13px;font-weight:400;color:#888;padding:5px 12px;border-radius:100px;cursor:pointer;transition:color 0.15s;display:flex;align-items:center;gap:5px;user-select:none}
 .works-trigger:hover,.works-trigger.open{color:#fff}
@@ -25,7 +23,7 @@ nav{padding:22px 48px;display:flex;align-items:center;justify-content:space-betw
 .works-trigger.open .works-caret{transform:rotate(180deg)}
 .works-menu{position:absolute;top:calc(100% + 8px);left:0;background:#1e1e1e;border:1px solid #333;border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,0.3);padding:6px;min-width:210px;opacity:0;pointer-events:none;transform:translateY(-4px);transition:opacity 0.15s,transform 0.15s;z-index:200}
 .works-menu.open{opacity:1;pointer-events:all;transform:none}
-.works-menu a{display:flex;align-items:center;gap:10px;padding:8px 12px;border-radius:8px;font-size:13px;color:#888;text-decoration:none;transition:background 0.1s,color 0.1s;white-space:nowrap}
+.works-menu a{display:flex;align-items:center;gap:10px;padding:8px 12px;border-radius:8px;font-size:13px;color:#888;text-decoration:none;transition:background 0.1s,color 0.1s;white-space:nowrap;cursor:pointer}
 .works-menu a:hover{background:#2a2a2a;color:#fff}
 .works-menu a.active{color:#fff;font-weight:500}
 .works-menu-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
@@ -42,15 +40,14 @@ nav{padding:22px 48px;display:flex;align-items:center;justify-content:space-betw
 .home-hi{font-family:'Fredoka',sans-serif;font-size:58px;font-weight:600;line-height:1.05;max-width:580px;margin-bottom:28px}
 .home-bio{font-size:15px;color:#444;line-height:1.8;max-width:480px;margin-bottom:20px}
 .home-degree-block{display:flex;flex-direction:column;gap:8px}
-.home-degree-row{display:flex;align-items:center;gap:10px}
+.home-degree-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
 .home-degree-pill{font-size:12px;font-weight:600;padding:4px 10px;border-radius:6px;background:var(--pink);color:#1A1A1A;white-space:nowrap;flex-shrink:0}
 .home-degree-pill.ux{background:var(--blue)}
 .home-degree-location{font-size:12px;color:var(--muted);display:flex;align-items:center;gap:5px}
-.home-degree-location svg{flex-shrink:0;opacity:0.5}
-.home-illustration{width:100%;aspect-ratio:1/1;border-radius:12px;background:var(--gray);border:1px dashed #ccc;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;flex-shrink:0}
-.home-illustration-label{font-size:11px;color:#bbb;letter-spacing:0.5px}
+.home-illustration{width:100%;aspect-ratio:16/6;border-radius:12px;background:transparent;border:none;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;flex-shrink:0;overflow:hidden}
+.home-illustration svg{width:100%;height:100%;object-fit:contain}
 
-/* ── HOME PROJECT GRID (replaces home-grid + disc-items) ── */
+/* ── HOME PROJECT GRID ── */
 .home-proj-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--border)}
 .home-proj-block{border-right:1px solid var(--border);border-bottom:1px solid var(--border);cursor:pointer;transition:background 0.2s;overflow:hidden}
 .home-proj-block:nth-child(3n){border-right:none}
@@ -60,7 +57,6 @@ nav{padding:22px 48px;display:flex;align-items:center;justify-content:space-betw
 .home-proj-thumb-inner{width:100%;height:100%;display:flex;align-items:center;justify-content:center;transition:transform 0.45s ease}
 .home-proj-info{padding:18px 22px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border)}
 .home-proj-left{}
-.home-proj-num{font-size:10px;color:var(--muted);margin-bottom:3px;font-weight:500;letter-spacing:0.5px}
 .home-proj-title{font-size:14px;font-weight:600}
 .home-proj-sub{font-size:11px;color:var(--muted);margin-top:2px}
 .home-proj-arrow{font-size:16px;color:var(--muted);flex-shrink:0}
@@ -91,14 +87,65 @@ nav{padding:22px 48px;display:flex;align-items:center;justify-content:space-betw
 .proj-name{font-size:13px;font-weight:500}
 .proj-meta{font-size:11px;color:var(--muted)}
 
-/* ── FOOTER ── */
-.site-footer{background:#1A1A1A;color:#888;padding:40px 48px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid #333;margin-top:80px}
-.footer-left{font-family:'Fredoka',sans-serif;font-size:16px;color:#fff;font-weight:600;letter-spacing:0.2px}
-.footer-left span{font-size:20px;opacity:0.9;font-weight:300;color:#fff}
-.footer-links{display:flex;gap:24px}
-.footer-links a{font-size:13px;color:#666;text-decoration:none;transition:color 0.15s}
-.footer-links a:hover{color:var(--pink)}
-.footer-copy{font-size:12px;color:#444}
+/* ── PROJECT DETAIL PAGE ── */
+.proj-detail-page{display:none;animation:fadein 0.3s ease}
+.proj-detail-page.active{display:block}
+.proj-detail-nav{padding:20px 48px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.proj-detail-breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted)}
+.proj-detail-breadcrumb span{cursor:pointer;transition:color 0.15s}
+.proj-detail-breadcrumb span:hover{color:#1A1A1A}
+.proj-detail-breadcrumb .sep{opacity:0.4}
+.proj-detail-nav-arrows{display:flex;gap:8px}
+.proj-nav-btn{font-size:13px;color:var(--muted);cursor:pointer;padding:6px 14px;border:1px solid var(--border);border-radius:100px;transition:all 0.15s;background:none}
+.proj-nav-btn:hover{color:#1A1A1A;border-color:#bbb}
+
+.proj-detail-hero{padding:64px 48px 48px;border-bottom:1px solid var(--border)}
+.proj-detail-kicker{font-size:11px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+.proj-detail-title{font-family:'Fredoka',sans-serif;font-size:52px;font-weight:600;line-height:1.05;margin-bottom:16px}
+.proj-detail-tagline{font-size:17px;color:#444;line-height:1.7;max-width:600px;margin-bottom:32px}
+.proj-detail-meta-row{display:flex;gap:40px;flex-wrap:wrap}
+.proj-detail-meta-item{}
+.proj-detail-meta-label{font-size:10px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin-bottom:5px}
+.proj-detail-meta-val{font-size:14px;font-weight:500;color:#1A1A1A}
+
+.proj-detail-cover{width:100%;aspect-ratio:16/7;overflow:hidden;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:center;position:relative}
+.proj-detail-cover-inner{width:100%;height:100%;display:flex;align-items:center;justify-content:center}
+
+.proj-detail-body{display:grid;grid-template-columns:220px 1fr;border-bottom:1px solid var(--border)}
+.proj-detail-sidebar{padding:48px 32px;border-right:1px solid var(--border);position:sticky;top:73px;height:fit-content}
+.proj-detail-sidebar-section{margin-bottom:32px}
+.proj-detail-sidebar-label{font-size:10px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+.proj-detail-tag{display:inline-block;font-size:11px;padding:4px 10px;border-radius:6px;background:var(--gray);color:#1A1A1A;border:1px solid var(--border);margin:0 4px 6px 0}
+
+.proj-detail-content{padding:56px 64px}
+.proj-detail-section{margin-bottom:56px}
+.proj-detail-section-label{font-size:11px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted);margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--border)}
+.proj-detail-h2{font-family:'Fredoka',sans-serif;font-size:26px;font-weight:600;margin-bottom:14px}
+.proj-detail-p{font-size:14px;color:#444;line-height:1.85;margin-bottom:14px}
+.proj-detail-p:last-child{margin-bottom:0}
+
+.proj-img-placeholder{width:100%;border-radius:8px;overflow:hidden;background:var(--gray);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;color:var(--muted);font-size:12px;margin-bottom:14px}
+.proj-img-placeholder.tall{aspect-ratio:4/3}
+.proj-img-placeholder.wide{aspect-ratio:16/9}
+.proj-img-placeholder.square{aspect-ratio:1}
+.proj-img-placeholder svg{opacity:0.4}
+.proj-img-placeholder span{font-size:11px;color:var(--muted)}
+
+.proj-img-grid{display:grid;gap:12px;margin-bottom:14px}
+.proj-img-grid-2{grid-template-columns:1fr 1fr}
+.proj-img-grid-3{grid-template-columns:1fr 1fr 1fr}
+
+.proj-detail-process-steps{display:flex;flex-direction:column;gap:0;margin-bottom:14px;border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.proj-process-step{padding:18px 22px;border-bottom:1px solid var(--border);display:grid;grid-template-columns:28px 1fr;gap:16px;align-items:start}
+.proj-process-step:last-child{border-bottom:none}
+.proj-process-num{font-size:11px;font-weight:600;color:var(--muted);margin-top:2px}
+.proj-process-step-content{}
+.proj-process-step-title{font-size:14px;font-weight:600;margin-bottom:4px}
+.proj-process-step-desc{font-size:13px;color:#666;line-height:1.7}
+
+.proj-quote{border-left:2px solid #1A1A1A;padding:14px 20px;margin:24px 0;background:var(--gray);border-radius:0 6px 6px 0}
+.proj-quote p{font-size:15px;font-style:italic;color:#444;line-height:1.7}
+.proj-quote cite{font-size:12px;color:var(--muted);display:block;margin-top:8px;font-style:normal}
 
 /* ── EXPERIENCE SECTION ── */
 .exp-section{padding:80px 48px;border-top:1px solid var(--border)}
@@ -112,19 +159,21 @@ nav{padding:22px 48px;display:flex;align-items:center;justify-content:space-betw
 .exp-row:hover{opacity:0.75}
 .exp-row-left{display:grid;grid-template-columns:180px 1fr;gap:24px;align-items:center}
 .exp-period{font-size:12px;color:var(--muted);font-weight:400;flex-shrink:0}
-.exp-role-wrap{}
+.exp-item.open .exp-period{color:#555}
 .exp-role{font-size:15px;font-weight:600;margin-bottom:2px}
 .exp-company{font-size:13px;color:var(--muted)}
-.exp-toggle{width:28px;height:28px;border-radius:50%;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:border-color 0.15s,background 0.15s}
-.exp-item.open .exp-toggle{background:var(--black);border-color:var(--black)}
-.exp-toggle-icon{font-size:13px;color:var(--muted);line-height:1;transition:transform 0.25s,color 0.15s}
-.exp-item.open .exp-toggle-icon{transform:rotate(45deg);color:#fff}
+.exp-company a{color:var(--muted);text-decoration:underline;transition:color 0.15s}
+.exp-company a:hover{color:#1A1A1A}
+.exp-toggle{display:flex;align-items:center;justify-content:center;flex-shrink:0;cursor:pointer}
+.exp-toggle-icon{font-size:18px;font-weight:700;color:var(--muted);line-height:1;transition:transform 0.3s ease}
+.exp-item.open .exp-toggle-icon{transform:rotate(90deg);color:#1A1A1A}
 .exp-details{max-height:0;overflow:hidden;transition:max-height 0.35s ease}
-.exp-item.open .exp-details{max-height:400px}
-.exp-item.open .exp-toggle{background:var(--pink);border-color:var(--pink)}
-.exp-details-inner{padding:0 0 28px 204px}
+.exp-item.open .exp-details{max-height:400px;background:var(--blue);border-radius:0 0 8px 8px}
+.exp-details-inner{padding:20px;border-radius:8px}
+.exp-item.open .exp-detail-text{color:#1A1A1A;font-weight:500}
 .exp-detail-text{font-size:14px;color:var(--muted);line-height:1.8;margin-bottom:14px;max-width:560px}
 .exp-tags{display:flex;flex-wrap:wrap;gap:6px}
+.exp-item.open .exp-tag{background:#fff;color:#1A1A1A;border-color:#fff}
 .exp-tag{font-size:11px;padding:4px 10px;border-radius:6px;background:var(--gray);color:#1A1A1A;border:1px solid var(--border)}
 
 /* ── ABOUT ── */
@@ -141,14 +190,20 @@ nav{padding:22px 48px;display:flex;align-items:center;justify-content:space-betw
 .about-section{margin-bottom:48px;padding-bottom:48px;border-bottom:1px solid var(--border)}
 .about-section:last-child{border-bottom:none}
 .about-section-label{font-size:11px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
-.about-section-h{font-family:'Fredoka',sans-serif;font-size:28px;font-weight:600;line-height:1.2;margin-bottom:14px}
-.about-p{font-size:14px;color:var(--muted);line-height:1.8;margin-bottom:12px}
+.about-intro-line{font-size:22px;font-weight:500;line-height:1.4;margin-bottom:24px;color:#1A1A1A}
+.about-intro-filler{display:inline}
+.about-intro-rotate-wrap{display:inline-block;position:relative;vertical-align:baseline}
+.rotating-descriptor{display:inline-block;position:relative;height:1.3em;vertical-align:middle;min-width:200px}
+.descriptor-item{position:absolute;left:0;top:0;white-space:nowrap;opacity:0;transform:translateY(6px);transition:opacity 0.4s ease,transform 0.4s ease;font-weight:600;color:#1A1A1A;background:var(--yellow);padding:0 6px;border-radius:4px}
+.descriptor-item.active{opacity:1;transform:translateY(0)}
+.about-p{font-size:14px;color:#444;line-height:1.85;margin-bottom:14px}
+.about-p:last-child{margin-bottom:0}
 .skill-group{margin-bottom:20px}
 .skill-group-label{font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
 .skill-list{display:flex;flex-wrap:wrap;gap:6px}
 .stag{font-size:12px;padding:5px 12px;border-radius:6px;background:var(--gray);color:#1A1A1A;border:1px solid var(--border)}
 .fun-list{display:flex;flex-direction:column;gap:10px}
-.fun-row{display:grid;grid-template-columns:100px 1fr;gap:12px;font-size:13px}
+.fun-row{display:grid;grid-template-columns:120px 1fr;gap:12px;font-size:13px}
 .fun-key{color:var(--muted)}
 .fun-val{color:#1A1A1A}
 
@@ -160,6 +215,14 @@ nav{padding:22px 48px;display:flex;align-items:center;justify-content:space-betw
 .accent-archive{background:#F0F0F0}
 .accent-misc1{background:#E8F0FF}
 .accent-misc2{background:#EEFFF5}
+
+/* ── FOOTER ── */
+.site-footer{background:#1A1A1A;color:#888;padding:40px 48px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid #333;margin-top:80px}
+.footer-left{font-family:'Fredoka',sans-serif;font-size:16px;color:#fff;font-weight:600;letter-spacing:0.2px}
+.footer-links{display:flex;gap:24px}
+.footer-links a{font-size:13px;color:#666;text-decoration:none;transition:color 0.15s}
+.footer-links a:hover{color:var(--pink)}
+.footer-copy{font-size:12px;color:#444}
 </style>
 </head>
 <body>
@@ -168,8 +231,6 @@ nav{padding:22px 48px;display:flex;align-items:center;justify-content:space-betw
   <span class="logo" onclick="showPage('home')">anshu patel <span style="font-size:22px;opacity:0.9;font-weight:300;color:#fff">*</span></span>
   <div class="nav-links">
     <a onclick="showPage('home')" id="nav-home" class="active">Home</a>
-
-    <!-- Works dropdown -->
     <div class="works-dropdown" id="works-dropdown">
       <div class="works-trigger" id="works-trigger" onclick="toggleWorksMenu()">
         Works <span class="works-caret">▼</span>
@@ -198,7 +259,6 @@ nav{padding:22px 48px;display:flex;align-items:center;justify-content:space-betw
         </a>
       </div>
     </div>
-
     <a onclick="showPage('about')" id="nav-about">About</a>
   </div>
 </nav>
@@ -213,226 +273,107 @@ nav{padding:22px 48px;display:flex;align-items:center;justify-content:space-betw
         <div class="home-degree-block">
           <div class="home-degree-row">
             <span class="home-degree-pill">B.F.A Design</span>
-            <span class="home-degree-pill ux">B.S. Arts &amp; Entertainment Technology</span>
+            <span class="home-degree-pill ux">B.S. Arts &amp; Entertainment Technologies</span>
           </div>
           <div class="home-degree-location">
             <svg width="11" height="13" viewBox="0 0 11 13" fill="none"><path d="M5.5 0C3.015 0 1 2.015 1 4.5c0 3.375 4.5 8.5 4.5 8.5S10 7.875 10 4.5C10 2.015 7.985 0 5.5 0zm0 6a1.5 1.5 0 110-3 1.5 1.5 0 010 3z" fill="#999"/></svg>
-            University of Texas in Austin
+            The University of Texas @ Austin
           </div>
         </div>
       </div>
       <div class="home-illustration">
         <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="14" r="8" stroke="#ccc" stroke-width="1.5"/><path d="M6 36c0-7.732 6.268-14 14-14s14 6.268 14 14" stroke="#ccc" stroke-width="1.5" stroke-linecap="round"/></svg>
-        <span class="home-illustration-label">illustration here</span>
       </div>
     </div>
   </div>
 
-  <!-- Project blocks -->
   <div class="home-proj-grid">
     <div class="home-proj-block" onclick="showPage('graphic')">
       <div class="home-proj-thumb"><div class="home-proj-thumb-inner accent-graphic">
-        <svg width="140" height="80" viewBox="0 0 140 80" fill="none">
-          <circle cx="50" cy="40" r="28" fill="#F090B0" opacity="0.4"/>
-          <circle cx="90" cy="40" r="20" fill="#E06090" opacity="0.3"/>
-          <path d="M36 40 Q50 22 64 40 Q50 58 36 40Z" fill="#C04070" opacity="0.45"/>
-        </svg>
+        <svg width="140" height="80" viewBox="0 0 140 80" fill="none"><circle cx="50" cy="40" r="28" fill="#F090B0" opacity="0.4"/><circle cx="90" cy="40" r="20" fill="#E06090" opacity="0.3"/><path d="M36 40 Q50 22 64 40 Q50 58 36 40Z" fill="#C04070" opacity="0.45"/></svg>
       </div></div>
-      <div class="home-proj-info">
-        <div class="home-proj-left">
-          <div class="home-proj-num">01</div>
-          <div class="home-proj-title">2D & Graphic Design</div>
-          <div class="home-proj-sub">Branding, editorial, print, illustration</div>
-        </div>
-        <span class="home-proj-arrow">→</span>
-      </div>
+      <div class="home-proj-info"><div class="home-proj-left"><div class="home-proj-title">2D & Graphic Design</div><div class="home-proj-sub">Branding, editorial, print, illustration</div></div><span class="home-proj-arrow">→</span></div>
     </div>
     <div class="home-proj-block" onclick="showPage('ux')">
       <div class="home-proj-thumb"><div class="home-proj-thumb-inner accent-ux">
-        <svg width="140" height="80" viewBox="0 0 140 80" fill="none">
-          <rect x="30" y="16" width="80" height="50" rx="10" fill="#90C8F0" opacity="0.4"/>
-          <rect x="40" y="26" width="60" height="7" rx="3" fill="#4498D8" opacity="0.5"/>
-          <rect x="40" y="38" width="42" height="5" rx="2" fill="#4498D8" opacity="0.35"/>
-          <rect x="40" y="48" width="56" height="5" rx="2" fill="#4498D8" opacity="0.2"/>
-        </svg>
+        <svg width="140" height="80" viewBox="0 0 140 80" fill="none"><rect x="30" y="16" width="80" height="50" rx="10" fill="#90C8F0" opacity="0.4"/><rect x="40" y="26" width="60" height="7" rx="3" fill="#4498D8" opacity="0.5"/><rect x="40" y="38" width="42" height="5" rx="2" fill="#4498D8" opacity="0.35"/><rect x="40" y="48" width="56" height="5" rx="2" fill="#4498D8" opacity="0.2"/></svg>
       </div></div>
-      <div class="home-proj-info">
-        <div class="home-proj-left">
-          <div class="home-proj-num">02</div>
-          <div class="home-proj-title">UX / UI & Game Design</div>
-          <div class="home-proj-sub">Case studies, interfaces, systems, levels</div>
-        </div>
-        <span class="home-proj-arrow">→</span>
-      </div>
+      <div class="home-proj-info"><div class="home-proj-left"><div class="home-proj-title">UX / UI & Game Design</div><div class="home-proj-sub">Case studies, interfaces, systems, levels</div></div><span class="home-proj-arrow">→</span></div>
     </div>
     <div class="home-proj-block" onclick="showPage('3d')">
       <div class="home-proj-thumb"><div class="home-proj-thumb-inner accent-3d">
-        <svg width="140" height="80" viewBox="0 0 140 80" fill="none">
-          <ellipse cx="70" cy="62" rx="34" ry="9" fill="#C8B030" opacity="0.3"/>
-          <rect x="46" y="22" width="48" height="42" rx="10" fill="#D8C040" opacity="0.45"/>
-          <rect x="56" y="14" width="28" height="12" rx="5" fill="#C0A820" opacity="0.4"/>
-          <circle cx="70" cy="43" r="8" fill="#fff" opacity="0.5"/>
-        </svg>
+        <svg width="140" height="80" viewBox="0 0 140 80" fill="none"><ellipse cx="70" cy="62" rx="34" ry="9" fill="#C8B030" opacity="0.3"/><rect x="46" y="22" width="48" height="42" rx="10" fill="#D8C040" opacity="0.45"/><rect x="56" y="14" width="28" height="12" rx="5" fill="#C0A820" opacity="0.4"/><circle cx="70" cy="43" r="8" fill="#fff" opacity="0.5"/></svg>
       </div></div>
-      <div class="home-proj-info">
-        <div class="home-proj-left">
-          <div class="home-proj-num">03</div>
-          <div class="home-proj-title">3D & Product Design</div>
-          <div class="home-proj-sub">Renders, CAD, physical prototypes</div>
-        </div>
-        <span class="home-proj-arrow">→</span>
-      </div>
+      <div class="home-proj-info"><div class="home-proj-left"><div class="home-proj-title">3D & Product Design</div><div class="home-proj-sub">Renders, CAD, physical prototypes</div></div><span class="home-proj-arrow">→</span></div>
     </div>
     <div class="home-proj-block" onclick="showPage('motion')">
       <div class="home-proj-thumb"><div class="home-proj-thumb-inner accent-motion">
-        <svg width="140" height="80" viewBox="0 0 140 80" fill="none">
-          <circle cx="70" cy="40" r="24" fill="rgba(255,255,255,0.45)"/>
-          <polygon points="64,30 64,50 82,40" fill="#1A1A1A" opacity="0.45"/>
-        </svg>
+        <svg width="140" height="80" viewBox="0 0 140 80" fill="none"><circle cx="70" cy="40" r="24" fill="rgba(255,255,255,0.45)"/><polygon points="64,30 64,50 82,40" fill="#1A1A1A" opacity="0.45"/></svg>
       </div></div>
-      <div class="home-proj-info">
-        <div class="home-proj-left">
-          <div class="home-proj-num">04</div>
-          <div class="home-proj-title">Motion & Videography</div>
-          <div class="home-proj-sub">Animation, motion graphics, film</div>
-        </div>
-        <span class="home-proj-arrow">→</span>
-      </div>
+      <div class="home-proj-info"><div class="home-proj-left"><div class="home-proj-title">Motion & Videography</div><div class="home-proj-sub">Animation, motion graphics, film</div></div><span class="home-proj-arrow">→</span></div>
     </div>
     <div class="home-proj-block" onclick="showPage('archive')">
       <div class="home-proj-thumb"><div class="home-proj-thumb-inner accent-archive">
-        <svg width="140" height="80" viewBox="0 0 140 80" fill="none">
-          <rect x="28" y="24" width="32" height="32" rx="5" fill="#ccc" opacity="0.5"/>
-          <rect x="66" y="30" width="22" height="22" rx="4" fill="#bbb" opacity="0.4"/>
-          <rect x="94" y="20" width="18" height="40" rx="4" fill="#ddd" opacity="0.5"/>
-        </svg>
+        <svg width="140" height="80" viewBox="0 0 140 80" fill="none"><rect x="28" y="24" width="32" height="32" rx="5" fill="#ccc" opacity="0.5"/><rect x="66" y="30" width="22" height="22" rx="4" fill="#bbb" opacity="0.4"/><rect x="94" y="20" width="18" height="40" rx="4" fill="#ddd" opacity="0.5"/></svg>
       </div></div>
-      <div class="home-proj-info">
-        <div class="home-proj-left">
-          <div class="home-proj-num">05</div>
-          <div class="home-proj-title">Miscellaneous Archive</div>
-          <div class="home-proj-sub">Experiments, class work, sketches</div>
-        </div>
-        <span class="home-proj-arrow">→</span>
-      </div>
+      <div class="home-proj-info"><div class="home-proj-left"><div class="home-proj-title">Miscellaneous Archive</div><div class="home-proj-sub">Experiments, class work, sketches</div></div><span class="home-proj-arrow">→</span></div>
     </div>
   </div>
 
-  <!-- ── EXPERIENCE ── -->
+  <!-- EXPERIENCE -->
   <div class="exp-section">
     <div class="exp-header">
       <div>
         <div class="exp-section-label">Experience</div>
-        <div class="exp-title">Where I've gained my experience points.</div>
+        <div class="exp-title">Where I've gained my EXP!</div>
       </div>
     </div>
     <div class="exp-list">
-
       <div class="exp-item" id="exp-1">
         <div class="exp-row" onclick="toggleExp('exp-1')">
           <div class="exp-row-left">
             <div class="exp-period">Summer 2026</div>
-            <div class="exp-role-wrap">
-              <div class="exp-role">Design & Marketing Intern</div>
-              <div class="exp-company">Janmar Agency & Culture Clash Magazine</div>
-            </div>
+            <div class="exp-role-wrap"><div class="exp-role">Design & Marketing Intern</div><div class="exp-company"><a href="https://www.janmaragency.com/" target="_blank">Janmar Agency & Culture Clash Magazine</a></div></div>
           </div>
           <div class="exp-toggle"><span class="exp-toggle-icon">+</span></div>
         </div>
-        <div class="exp-details">
-          <div class="exp-details-inner">
-            <p class="exp-detail-text">I'm currently a Design & Marketing Intern at JanMar Agency and Culture Clash Magazine, where I create visual content for social media, digital campaigns, branded materials, and merchandise, including product photography and promotional graphics. I also help support client projects by working closely with the lead designer and creative team on branding, storytelling, and creative direction to create engaging experiences across different platforms.</p>
-            <div class="exp-tags">
-              <span class="exp-tag">Adobe Creative Suite</span>
-              <span class="exp-tag">Social Media Design</span>
-              <span class="exp-tag">Product Photography</span>
-              <span class="exp-tag">Branding</span>
-              <span class="exp-tag">Merchandise Design</span>
-            </div>
-          </div>
-        </div>
+        <div class="exp-details"><div class="exp-details-inner"><p class="exp-detail-text">Currently a Design & Marketing Intern at JanMar Agency and Culture Clash Magazine, where I create visual content for social media, digital campaigns, branded materials, and merchandise, including product photography and promotional graphics.</p><div class="exp-tags"><span class="exp-tag">Adobe Creative Suite</span><span class="exp-tag">Social Media Design</span><span class="exp-tag">Product Photography</span><span class="exp-tag">Branding</span><span class="exp-tag">Merchandise Design</span></div></div></div>
       </div>
-
       <div class="exp-item" id="exp-2">
         <div class="exp-row" onclick="toggleExp('exp-2')">
           <div class="exp-row-left">
-            <div class="exp-period">August 2025 - Present</div>
-            <div class="exp-role-wrap">
-              <div class="exp-role">Public Relations Officer & Solar Vehicle PR Lead</div>
-              <div class="exp-company">Longhorn Racing</div>
-            </div>
+            <div class="exp-period">August 2025 – Present</div>
+            <div class="exp-role-wrap"><div class="exp-role">Public Relations Officer & Solar Vehicle PR Lead</div><div class="exp-company"><a href="https://www.instagram.com/longhornracing/" target="_blank">Longhorn Racing</a></div></div>
           </div>
           <div class="exp-toggle"><span class="exp-toggle-icon">+</span></div>
         </div>
-        <div class="exp-details">
-          <div class="exp-details-inner">
-            <p class="exp-detail-text">Currently serving as Public Relations Officer for Longhorn Racing's Solar, Electric, and Combustion teams, leading overall branding, outreach, and communications across the organization. I also serve as Public Relations Lead specifically for Solar, where I direct visual storytelling through graphics, photography, videography, merchandise, and digital content to strengthen team engagement and visibility.</p>
-            <div class="exp-tags">
-              <span class="exp-tag">Photography & Videography</span>
-              <span class="exp-tag">Graphic Design</span>
-              <span class="exp-tag">Branding & Outreach</span>
-              <span class="exp-tag">Social Media Content</span>
-              <span class="exp-tag">Merchandise Design</span>
-            </div>
-          </div>
-        </div>
+        <div class="exp-details"><div class="exp-details-inner"><p class="exp-detail-text">Serving as Public Relations Officer for Longhorn Racing's Solar, Electric, and Combustion teams, leading overall branding, outreach, and communications across the organization. Also serve as PR Lead specifically for Solar, directing visual storytelling through graphics, photography, videography, merchandise, and digital content.</p><div class="exp-tags"><span class="exp-tag">Photography & Videography</span><span class="exp-tag">Graphic Design</span><span class="exp-tag">Branding & Outreach</span><span class="exp-tag">Social Media Content</span><span class="exp-tag">Merchandise Design</span></div></div></div>
       </div>
-
       <div class="exp-item" id="exp-3">
         <div class="exp-row" onclick="toggleExp('exp-3')">
           <div class="exp-row-left">
-            <div class="exp-period">August 2025 - 2026</div>
-            <div class="exp-role-wrap">
-              <div class="exp-role">Production Chair</div>
-              <div class="exp-company">Hook 'em Bhangra</div>
-            </div>
+            <div class="exp-period">August 2025 – 2026</div>
+            <div class="exp-role-wrap"><div class="exp-role">Production Chair</div><div class="exp-company">Hook 'em Bhangra</div></div>
           </div>
           <div class="exp-toggle"><span class="exp-toggle-icon">+</span></div>
         </div>
-        <div class="exp-details">
-          <div class="exp-details-inner">
-            <p class="exp-detail-text">Served as Production Chair, shaping Hook 'em Bhangra's creative vision by developing concepts, producing dance mixes, and defining the team's brand and aesthetic through cohesive branding and promotional design. I also led the design and production of team merchandise to maintain a consistent visual identity across all materials.</p>
-            <div class="exp-tags">
-              <span class="exp-tag">Branding & Visual Identity</span>
-              <span class="exp-tag">Graphic Design</span>
-              <span class="exp-tag">Merchandise Design</span>
-              <span class="exp-tag">Music Production</span>
-              <span class="exp-tag">Event Production</span>
-            </div>
-          </div>
-        </div>
+        <div class="exp-details"><div class="exp-details-inner"><p class="exp-detail-text">Shaped Hook 'em Bhangra's creative vision by developing concepts, producing dance mixes, and defining the team's brand and aesthetic through cohesive branding and promotional design. Led the design and production of team merchandise to maintain a consistent visual identity across all materials.</p><div class="exp-tags"><span class="exp-tag">Branding & Visual Identity</span><span class="exp-tag">Graphic Design</span><span class="exp-tag">Merchandise Design</span><span class="exp-tag">Music Production</span><span class="exp-tag">Event Production</span></div></div></div>
       </div>
-
       <div class="exp-item" id="exp-4">
         <div class="exp-row" onclick="toggleExp('exp-4')">
           <div class="exp-row-left">
-            <div class="exp-period">October 2025 - Present</div>
-            <div class="exp-role-wrap">
-              <div class="exp-role">Graphic Designer</div>
-              <div class="exp-company">The Pyrography Project, College of Fine Arts</div>
-            </div>
+            <div class="exp-period">October 2025 – Present</div>
+            <div class="exp-role-wrap"><div class="exp-role">Graphic Designer</div><div class="exp-company">The Pyrography Project, College of Fine Arts</div></div>
           </div>
           <div class="exp-toggle"><span class="exp-toggle-icon">+</span></div>
         </div>
-        <div class="exp-details">
-          <div class="exp-details-inner">
-            <p class="exp-detail-text">Currently a graphic designer for The Pyrography Project, where I developed the branding and logo. Awarded the Artistic Citizenship Collaborative Creative Grant from UT Austin's College of Fine Arts as part of an interdisciplinary team, contributing to the development of a community-engaged, experience-based project exploring the concept of Artistic Citizenship.</p>
-            <div class="exp-tags">
-              <span class="exp-tag">Branding & Logo Design</span>
-              <span class="exp-tag">Graphic Design</span>
-              <span class="exp-tag">Community Engagement</span>
-              <span class="exp-tag">Creative Grant Awardee</span>
-              <span class="exp-tag">Interdisciplinary Design</span>
-            </div>
-          </div>
-        </div>
+        <div class="exp-details"><div class="exp-details-inner"><p class="exp-detail-text">Graphic designer for The Pyrography Project, where I developed the branding and logo. Awarded the Artistic Citizenship Collaborative Creative Grant from UT Austin's College of Fine Arts as part of an interdisciplinary team, contributing to a community-engaged, experience-based project exploring Artistic Citizenship.</p><div class="exp-tags"><span class="exp-tag">Branding & Logo Design</span><span class="exp-tag">Graphic Design</span><span class="exp-tag">Community Engagement</span><span class="exp-tag">Creative Grant Awardee</span><span class="exp-tag">Interdisciplinary Design</span></div></div></div>
       </div>
-
     </div>
   </div>
 </div>
 
-<!-- ══════════════════ GRAPHIC DESIGN ══════════════════ -->
+<!-- ══════════════════ GRAPHIC DESIGN LIST ══════════════════ -->
 <div class="page" id="page-graphic">
   <div class="disc-header">
     <div class="disc-header-left">
@@ -440,51 +381,37 @@ nav{padding:22px 48px;display:flex;align-items:center;justify-content:space-betw
       <div class="disc-title" style="color:#1A1A1A">Branding,<br>Editorial & Print.</div>
       <p class="disc-desc">Identity systems, poster design, editorial layouts, illustration, and print — work that lives on paper and screen.</p>
     </div>
-    <div class="disc-header-right">
-      <span class="disc-back" onclick="showPage('home')">← All work</span>
-    </div>
+    <div><span class="disc-back" onclick="showPage('home')">← All work</span></div>
   </div>
   <div class="proj-grid proj-grid-3">
-    <div class="proj">
-      <div class="proj-thumb"><div class="proj-thumb-inner accent-graphic" style="width:100%;height:100%">
-        <svg width="160" height="120" viewBox="0 0 160 120" fill="none"><circle cx="80" cy="60" r="42" fill="#F0A0C0" opacity="0.5"/><circle cx="80" cy="60" r="24" fill="#E06090" opacity="0.4"/><path d="M58 60 Q80 36 102 60 Q80 84 58 60Z" fill="#C04070" opacity="0.55"/></svg>
-      </div><div class="proj-hover"><div class="proj-hover-text">Brand identity, logomark, packaging system</div></div></div>
+    <div class="proj" onclick="showProject('bloom-coffee')">
+      <div class="proj-thumb"><div class="proj-thumb-inner accent-graphic" style="width:100%;height:100%"><svg width="160" height="120" viewBox="0 0 160 120" fill="none"><circle cx="80" cy="60" r="42" fill="#F0A0C0" opacity="0.5"/><circle cx="80" cy="60" r="24" fill="#E06090" opacity="0.4"/><path d="M58 60 Q80 36 102 60 Q80 84 58 60Z" fill="#C04070" opacity="0.55"/></svg></div><div class="proj-hover"><div class="proj-hover-text">Brand identity, logomark, packaging system</div></div></div>
       <div class="proj-foot"><span class="proj-name">Bloom Coffee — Brand Identity</span><span class="proj-meta">2024</span></div>
     </div>
-    <div class="proj">
-      <div class="proj-thumb"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#FFF0F5">
-        <svg width="160" height="120" viewBox="0 0 160 120" fill="none"><rect x="30" y="20" width="100" height="80" rx="4" fill="#F4C0D0" opacity="0.5"/><rect x="40" y="34" width="80" height="8" rx="2" fill="#D07090" opacity="0.6"/><rect x="40" y="48" width="60" height="5" rx="2" fill="#D07090" opacity="0.35"/><rect x="40" y="58" width="76" height="5" rx="2" fill="#D07090" opacity="0.25"/><rect x="40" y="68" width="50" height="5" rx="2" fill="#D07090" opacity="0.2"/></svg>
-      </div><div class="proj-hover"><div class="proj-hover-text">Editorial layout, typography, print design</div></div></div>
+    <div class="proj" onclick="showProject('nightshade')">
+      <div class="proj-thumb"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#FFF0F5"><svg width="160" height="120" viewBox="0 0 160 120" fill="none"><rect x="30" y="20" width="100" height="80" rx="4" fill="#F4C0D0" opacity="0.5"/><rect x="40" y="34" width="80" height="8" rx="2" fill="#D07090" opacity="0.6"/><rect x="40" y="48" width="60" height="5" rx="2" fill="#D07090" opacity="0.35"/><rect x="40" y="58" width="76" height="5" rx="2" fill="#D07090" opacity="0.25"/><rect x="40" y="68" width="50" height="5" rx="2" fill="#D07090" opacity="0.2"/></svg></div><div class="proj-hover"><div class="proj-hover-text">Editorial layout, typography, print design</div></div></div>
       <div class="proj-foot"><span class="proj-name">Nightshade — Magazine Layout</span><span class="proj-meta">2024</span></div>
     </div>
-    <div class="proj">
-      <div class="proj-thumb"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#FFFAE0">
-        <svg width="160" height="120" viewBox="0 0 160 120" fill="none"><ellipse cx="80" cy="60" rx="50" ry="38" fill="#EED840" opacity="0.3"/><path d="M40 80 Q60 30 80 50 Q100 70 120 20" stroke="#C8A800" stroke-width="2.5" fill="none" opacity="0.5"/><circle cx="40" cy="80" r="5" fill="#C8A800" opacity="0.5"/><circle cx="80" cy="50" r="5" fill="#C8A800" opacity="0.5"/><circle cx="120" cy="20" r="5" fill="#C8A800" opacity="0.5"/></svg>
-      </div><div class="proj-hover"><div class="proj-hover-text">Poster series, fluid typography, wave-form</div></div></div>
+    <div class="proj" onclick="showProject('tide')">
+      <div class="proj-thumb"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#FFFAE0"><svg width="160" height="120" viewBox="0 0 160 120" fill="none"><ellipse cx="80" cy="60" rx="50" ry="38" fill="#EED840" opacity="0.3"/><path d="M40 80 Q60 30 80 50 Q100 70 120 20" stroke="#C8A800" stroke-width="2.5" fill="none" opacity="0.5"/><circle cx="40" cy="80" r="5" fill="#C8A800" opacity="0.5"/><circle cx="80" cy="50" r="5" fill="#C8A800" opacity="0.5"/><circle cx="120" cy="20" r="5" fill="#C8A800" opacity="0.5"/></svg></div><div class="proj-hover"><div class="proj-hover-text">Poster series, fluid typography, wave-form</div></div></div>
       <div class="proj-foot"><span class="proj-name">Tide — Poster Series</span><span class="proj-meta">2023</span></div>
     </div>
-    <div class="proj">
-      <div class="proj-thumb"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#F4EFFF">
-        <svg width="160" height="120" viewBox="0 0 160 120" fill="none"><circle cx="60" cy="55" r="28" fill="#C090E8" opacity="0.35"/><circle cx="100" cy="65" r="20" fill="#9050C0" opacity="0.3"/><path d="M46 55 Q60 35 74 55" stroke="#7030A0" stroke-width="2" fill="none" opacity="0.5"/></svg>
-      </div><div class="proj-hover"><div class="proj-hover-text">Illustration series, character design</div></div></div>
+    <div class="proj" onclick="showProject('creature')">
+      <div class="proj-thumb"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#F4EFFF"><svg width="160" height="120" viewBox="0 0 160 120" fill="none"><circle cx="60" cy="55" r="28" fill="#C090E8" opacity="0.35"/><circle cx="100" cy="65" r="20" fill="#9050C0" opacity="0.3"/><path d="M46 55 Q60 35 74 55" stroke="#7030A0" stroke-width="2" fill="none" opacity="0.5"/></svg></div><div class="proj-hover"><div class="proj-hover-text">Illustration series, character design</div></div></div>
       <div class="proj-foot"><span class="proj-name">Creature Compendium — Illustration</span><span class="proj-meta">2023</span></div>
     </div>
-    <div class="proj">
-      <div class="proj-thumb"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#E8F8FF">
-        <svg width="160" height="120" viewBox="0 0 160 120" fill="none"><rect x="25" y="25" width="110" height="70" rx="6" fill="#90C8F0" opacity="0.3"/><rect x="35" y="35" width="40" height="50" rx="4" fill="#60A8D8" opacity="0.35"/><rect x="85" y="35" width="40" height="24" rx="4" fill="#60A8D8" opacity="0.25"/><rect x="85" y="65" width="40" height="20" rx="4" fill="#60A8D8" opacity="0.2"/></svg>
-      </div><div class="proj-hover"><div class="proj-hover-text">Visual system, brand guide, collateral</div></div></div>
+    <div class="proj" onclick="showProject('apex')">
+      <div class="proj-thumb"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#E8F8FF"><svg width="160" height="120" viewBox="0 0 160 120" fill="none"><rect x="25" y="25" width="110" height="70" rx="6" fill="#90C8F0" opacity="0.3"/><rect x="35" y="35" width="40" height="50" rx="4" fill="#60A8D8" opacity="0.35"/><rect x="85" y="35" width="40" height="24" rx="4" fill="#60A8D8" opacity="0.25"/><rect x="85" y="65" width="40" height="20" rx="4" fill="#60A8D8" opacity="0.2"/></svg></div><div class="proj-hover"><div class="proj-hover-text">Visual system, brand guide, collateral</div></div></div>
       <div class="proj-foot"><span class="proj-name">Apex Studio — Visual Identity</span><span class="proj-meta">2023</span></div>
     </div>
-    <div class="proj">
-      <div class="proj-thumb"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#FFF5EC">
-        <svg width="160" height="120" viewBox="0 0 160 120" fill="none"><rect x="30" y="30" width="44" height="60" rx="4" fill="#F0A060" opacity="0.35"/><rect x="82" y="30" width="44" height="60" rx="4" fill="#E08040" opacity="0.3"/><rect x="46" y="40" width="24" height="4" rx="2" fill="#C06020" opacity="0.4"/><rect x="98" y="40" width="24" height="4" rx="2" fill="#C06020" opacity="0.4"/></svg>
-      </div><div class="proj-hover"><div class="proj-hover-text">Packaging design, print production</div></div></div>
+    <div class="proj" onclick="showProject('grove')">
+      <div class="proj-thumb"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#FFF5EC"><svg width="160" height="120" viewBox="0 0 160 120" fill="none"><rect x="30" y="30" width="44" height="60" rx="4" fill="#F0A060" opacity="0.35"/><rect x="82" y="30" width="44" height="60" rx="4" fill="#E08040" opacity="0.3"/><rect x="46" y="40" width="24" height="4" rx="2" fill="#C06020" opacity="0.4"/><rect x="98" y="40" width="24" height="4" rx="2" fill="#C06020" opacity="0.4"/></svg></div><div class="proj-hover"><div class="proj-hover-text">Packaging design, print production</div></div></div>
       <div class="proj-foot"><span class="proj-name">Grove — Packaging Design</span><span class="proj-meta">2022</span></div>
     </div>
   </div>
 </div>
 
-<!-- ══════════════════ UX / GAME ══════════════════ -->
+<!-- ══════════════════ UX / GAME LIST ══════════════════ -->
 <div class="page" id="page-ux">
   <div class="disc-header">
     <div class="disc-header-left">
@@ -492,43 +419,33 @@ nav{padding:22px 48px;display:flex;align-items:center;justify-content:space-betw
       <div class="disc-title">Interfaces,<br>Systems & Levels.</div>
       <p class="disc-desc">User research, interaction design, UI systems, game design documents, and level design — work that thinks through people and play.</p>
     </div>
-    <div class="disc-header-right"><span class="disc-back" onclick="showPage('home')">← All work</span></div>
+    <div><span class="disc-back" onclick="showPage('home')">← All work</span></div>
   </div>
   <div class="proj-grid proj-grid-3">
-    <div class="proj">
-      <div class="proj-thumb"><div class="proj-thumb-inner accent-ux" style="width:100%;height:100%">
-        <svg width="160" height="120" viewBox="0 0 160 120" fill="none"><rect x="28" y="20" width="104" height="80" rx="12" fill="#90C8F0" opacity="0.35"/><rect x="38" y="32" width="84" height="10" rx="4" fill="#4498D8" opacity="0.55"/><rect x="38" y="48" width="60" height="7" rx="3" fill="#4498D8" opacity="0.35"/><rect x="38" y="60" width="84" height="7" rx="3" fill="#4498D8" opacity="0.2"/><rect x="38" y="72" width="40" height="7" rx="3" fill="#4498D8" opacity="0.15"/></svg>
-      </div><div class="proj-hover"><div class="proj-hover-text">UX research, flows, high-fidelity prototype</div></div></div>
+    <div class="proj" onclick="showProject('quest-app')">
+      <div class="proj-thumb"><div class="proj-thumb-inner accent-ux" style="width:100%;height:100%"><svg width="160" height="120" viewBox="0 0 160 120" fill="none"><rect x="28" y="20" width="104" height="80" rx="12" fill="#90C8F0" opacity="0.35"/><rect x="38" y="32" width="84" height="10" rx="4" fill="#4498D8" opacity="0.55"/><rect x="38" y="48" width="60" height="7" rx="3" fill="#4498D8" opacity="0.35"/><rect x="38" y="60" width="84" height="7" rx="3" fill="#4498D8" opacity="0.2"/><rect x="38" y="72" width="40" height="7" rx="3" fill="#4498D8" opacity="0.15"/></svg></div><div class="proj-hover"><div class="proj-hover-text">UX research, flows, high-fidelity prototype</div></div></div>
       <div class="proj-foot"><span class="proj-name">Quest Companion App</span><span class="proj-meta">2024</span></div>
     </div>
-    <div class="proj">
-      <div class="proj-thumb"><div class="proj-thumb-inner accent-misc1" style="width:100%;height:100%">
-        <svg width="160" height="120" viewBox="0 0 160 120" fill="none"><rect x="40" y="30" width="80" height="60" rx="8" fill="#8090E0" opacity="0.3"/><rect x="52" y="42" width="30" height="20" rx="4" fill="#6070C8" opacity="0.4"/><circle cx="104" cy="60" r="12" fill="#6070C8" opacity="0.3"/><rect x="96" y="56" width="16" height="8" rx="2" fill="#6070C8" opacity="0.35"/></svg>
-      </div><div class="proj-hover"><div class="proj-hover-text">Interface design, menus, HUD system</div></div></div>
+    <div class="proj" onclick="showProject('verdant-ui')">
+      <div class="proj-thumb"><div class="proj-thumb-inner accent-misc1" style="width:100%;height:100%"><svg width="160" height="120" viewBox="0 0 160 120" fill="none"><rect x="40" y="30" width="80" height="60" rx="8" fill="#8090E0" opacity="0.3"/><rect x="52" y="42" width="30" height="20" rx="4" fill="#6070C8" opacity="0.4"/><circle cx="104" cy="60" r="12" fill="#6070C8" opacity="0.3"/><rect x="96" y="56" width="16" height="8" rx="2" fill="#6070C8" opacity="0.35"/></svg></div><div class="proj-hover"><div class="proj-hover-text">Interface design, menus, HUD system</div></div></div>
       <div class="proj-foot"><span class="proj-name">Verdant — UI System</span><span class="proj-meta">2024</span></div>
     </div>
-    <div class="proj">
-      <div class="proj-thumb"><div class="proj-thumb-inner accent-misc2" style="width:100%;height:100%">
-        <svg width="160" height="120" viewBox="0 0 160 120" fill="none"><rect x="24" y="30" width="112" height="60" rx="8" fill="#60C890" opacity="0.3"/><rect x="34" y="42" width="26" height="18" rx="4" fill="#30A060" opacity="0.4"/><rect x="68" y="38" width="58" height="9" rx="3" fill="#30A060" opacity="0.35"/><rect x="68" y="52" width="42" height="7" rx="3" fill="#30A060" opacity="0.25"/></svg>
-      </div><div class="proj-hover"><div class="proj-hover-text">Level design, GDD, puzzle logic</div></div></div>
+    <div class="proj" onclick="showProject('verdant-level')">
+      <div class="proj-thumb"><div class="proj-thumb-inner accent-misc2" style="width:100%;height:100%"><svg width="160" height="120" viewBox="0 0 160 120" fill="none"><rect x="24" y="30" width="112" height="60" rx="8" fill="#60C890" opacity="0.3"/><rect x="34" y="42" width="26" height="18" rx="4" fill="#30A060" opacity="0.4"/><rect x="68" y="38" width="58" height="9" rx="3" fill="#30A060" opacity="0.35"/><rect x="68" y="52" width="42" height="7" rx="3" fill="#30A060" opacity="0.25"/></svg></div><div class="proj-hover"><div class="proj-hover-text">Level design, GDD, puzzle logic</div></div></div>
       <div class="proj-foot"><span class="proj-name">Verdant — Level Design</span><span class="proj-meta">2023</span></div>
     </div>
-    <div class="proj">
-      <div class="proj-thumb"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#E8F4FF">
-        <svg width="160" height="120" viewBox="0 0 160 120" fill="none"><circle cx="55" cy="60" r="26" stroke="#3a90d0" stroke-width="1.5" fill="none" opacity="0.4"/><circle cx="105" cy="60" r="20" stroke="#3a90d0" stroke-width="1.5" fill="none" opacity="0.4"/><line x1="55" y1="60" x2="105" y2="60" stroke="#3a90d0" stroke-width="1.5" opacity="0.3"/><circle cx="55" cy="60" r="5" fill="#3a90d0" opacity="0.5"/><circle cx="105" cy="60" r="5" fill="#3a90d0" opacity="0.5"/><circle cx="80" cy="35" r="5" fill="#3a90d0" opacity="0.4"/><line x1="55" y1="60" x2="80" y2="35" stroke="#3a90d0" stroke-width="1" stroke-dasharray="4 3" opacity="0.3"/><line x1="105" y1="60" x2="80" y2="35" stroke="#3a90d0" stroke-width="1" stroke-dasharray="4 3" opacity="0.3"/></svg>
-      </div><div class="proj-hover"><div class="proj-hover-text">User research, journey mapping, testing</div></div></div>
+    <div class="proj" onclick="showProject('wayfinder')">
+      <div class="proj-thumb"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#E8F4FF"><svg width="160" height="120" viewBox="0 0 160 120" fill="none"><circle cx="55" cy="60" r="26" stroke="#3a90d0" stroke-width="1.5" fill="none" opacity="0.4"/><circle cx="105" cy="60" r="20" stroke="#3a90d0" stroke-width="1.5" fill="none" opacity="0.4"/><line x1="55" y1="60" x2="105" y2="60" stroke="#3a90d0" stroke-width="1.5" opacity="0.3"/><circle cx="55" cy="60" r="5" fill="#3a90d0" opacity="0.5"/><circle cx="105" cy="60" r="5" fill="#3a90d0" opacity="0.5"/></svg></div><div class="proj-hover"><div class="proj-hover-text">User research, journey mapping, testing</div></div></div>
       <div class="proj-foot"><span class="proj-name">Wayfinder — UX Research</span><span class="proj-meta">2023</span></div>
     </div>
-    <div class="proj">
-      <div class="proj-thumb"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#FDF0FF">
-        <svg width="160" height="120" viewBox="0 0 160 120" fill="none"><rect x="30" y="25" width="44" height="70" rx="8" fill="#C880E8" opacity="0.3"/><rect x="38" y="35" width="28" height="5" rx="2" fill="#9040C0" opacity="0.5"/><rect x="38" y="45" width="22" height="4" rx="2" fill="#9040C0" opacity="0.3"/><rect x="38" y="55" width="28" height="24" rx="4" fill="#9040C0" opacity="0.25"/><rect x="86" y="35" width="44" height="60" rx="8" fill="#C880E8" opacity="0.2"/></svg>
-      </div><div class="proj-hover"><div class="proj-hover-text">Mobile app design, interaction patterns</div></div></div>
+    <div class="proj" onclick="showProject('petal')">
+      <div class="proj-thumb"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#FDF0FF"><svg width="160" height="120" viewBox="0 0 160 120" fill="none"><rect x="30" y="25" width="44" height="70" rx="8" fill="#C880E8" opacity="0.3"/><rect x="38" y="35" width="28" height="5" rx="2" fill="#9040C0" opacity="0.5"/><rect x="38" y="45" width="22" height="4" rx="2" fill="#9040C0" opacity="0.3"/><rect x="86" y="35" width="44" height="60" rx="8" fill="#C880E8" opacity="0.2"/></svg></div><div class="proj-hover"><div class="proj-hover-text">Mobile app design, interaction patterns</div></div></div>
       <div class="proj-foot"><span class="proj-name">Petal — Wellness App</span><span class="proj-meta">2022</span></div>
     </div>
   </div>
 </div>
 
-<!-- ══════════════════ 3D / PRODUCT ══════════════════ -->
+<!-- ══════════════════ 3D / PRODUCT LIST ══════════════════ -->
 <div class="page" id="page-3d">
   <div class="disc-header">
     <div class="disc-header-left">
@@ -536,43 +453,33 @@ nav{padding:22px 48px;display:flex;align-items:center;justify-content:space-betw
       <div class="disc-title">Objects,<br>Renders & Form.</div>
       <p class="disc-desc">Industrial design, 3D modeling, physical prototypes, and product concepts — exploring form, material, and manufacturing.</p>
     </div>
-    <div class="disc-header-right"><span class="disc-back" onclick="showPage('home')">← All work</span></div>
+    <div><span class="disc-back" onclick="showPage('home')">← All work</span></div>
   </div>
   <div class="proj-grid proj-grid-3">
-    <div class="proj">
-      <div class="proj-thumb"><div class="proj-thumb-inner accent-3d" style="width:100%;height:100%">
-        <svg width="160" height="120" viewBox="0 0 160 120" fill="none"><ellipse cx="80" cy="92" rx="40" ry="12" fill="#C8B030" opacity="0.3"/><rect x="46" y="28" width="68" height="62" rx="12" fill="#D8C040" opacity="0.45"/><rect x="58" y="18" width="44" height="16" rx="7" fill="#C0A820" opacity="0.4"/><circle cx="80" cy="59" r="12" fill="#fff" opacity="0.5"/></svg>
-      </div><div class="proj-hover"><div class="proj-hover-text">Industrial design, Blender, concept renders</div></div></div>
+    <div class="proj" onclick="showProject('ceramic-speaker')">
+      <div class="proj-thumb"><div class="proj-thumb-inner accent-3d" style="width:100%;height:100%"><svg width="160" height="120" viewBox="0 0 160 120" fill="none"><ellipse cx="80" cy="92" rx="40" ry="12" fill="#C8B030" opacity="0.3"/><rect x="46" y="28" width="68" height="62" rx="12" fill="#D8C040" opacity="0.45"/><rect x="58" y="18" width="44" height="16" rx="7" fill="#C0A820" opacity="0.4"/><circle cx="80" cy="59" r="12" fill="#fff" opacity="0.5"/></svg></div><div class="proj-hover"><div class="proj-hover-text">Industrial design, Blender, concept renders</div></div></div>
       <div class="proj-foot"><span class="proj-name">Ceramic Speaker</span><span class="proj-meta">2024</span></div>
     </div>
-    <div class="proj">
-      <div class="proj-thumb"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#EEFFF5">
-        <svg width="160" height="120" viewBox="0 0 160 120" fill="none"><ellipse cx="80" cy="90" rx="38" ry="10" fill="#50C880" opacity="0.25"/><path d="M52 80 L52 38 Q52 28 62 28 L98 28 Q108 28 108 38 L108 80 Z" fill="#60D890" opacity="0.3"/><rect x="64" y="48" width="32" height="22" rx="4" fill="#30A860" opacity="0.35"/><circle cx="80" cy="59" r="8" fill="#fff" opacity="0.5"/></svg>
-      </div><div class="proj-hover"><div class="proj-hover-text">Form study, material exploration, CAD</div></div></div>
+    <div class="proj" onclick="showProject('sprout')">
+      <div class="proj-thumb"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#EEFFF5"><svg width="160" height="120" viewBox="0 0 160 120" fill="none"><ellipse cx="80" cy="90" rx="38" ry="10" fill="#50C880" opacity="0.25"/><path d="M52 80 L52 38 Q52 28 62 28 L98 28 Q108 28 108 38 L108 80 Z" fill="#60D890" opacity="0.3"/><rect x="64" y="48" width="32" height="22" rx="4" fill="#30A860" opacity="0.35"/><circle cx="80" cy="59" r="8" fill="#fff" opacity="0.5"/></svg></div><div class="proj-hover"><div class="proj-hover-text">Form study, material exploration, CAD</div></div></div>
       <div class="proj-foot"><span class="proj-name">Sprout — Planter System</span><span class="proj-meta">2024</span></div>
     </div>
-    <div class="proj">
-      <div class="proj-thumb"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#FFFAF0">
-        <svg width="160" height="120" viewBox="0 0 160 120" fill="none"><path d="M80 20 L110 50 L110 90 L80 100 L50 90 L50 50 Z" fill="#E8C840" opacity="0.35"/><path d="M80 20 L110 50 L80 60 L50 50 Z" fill="#D0A820" opacity="0.3"/><path d="M80 60 L110 50 L110 90 L80 100 Z" fill="#B89010" opacity="0.25"/></svg>
-      </div><div class="proj-hover"><div class="proj-hover-text">Parametric design, physical prototype</div></div></div>
+    <div class="proj" onclick="showProject('facet')">
+      <div class="proj-thumb"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#FFFAF0"><svg width="160" height="120" viewBox="0 0 160 120" fill="none"><path d="M80 20 L110 50 L110 90 L80 100 L50 90 L50 50 Z" fill="#E8C840" opacity="0.35"/><path d="M80 20 L110 50 L80 60 L50 50 Z" fill="#D0A820" opacity="0.3"/><path d="M80 60 L110 50 L110 90 L80 100 Z" fill="#B89010" opacity="0.25"/></svg></div><div class="proj-hover"><div class="proj-hover-text">Parametric design, physical prototype</div></div></div>
       <div class="proj-foot"><span class="proj-name">Facet — Lamp Prototype</span><span class="proj-meta">2023</span></div>
     </div>
-    <div class="proj">
-      <div class="proj-thumb"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#F0F8FF">
-        <svg width="160" height="120" viewBox="0 0 160 120" fill="none"><rect x="36" y="36" width="88" height="50" rx="10" fill="#80B8E8" opacity="0.35"/><rect x="56" y="20" width="48" height="20" rx="5" fill="#60A0D8" opacity="0.3"/><ellipse cx="80" cy="88" rx="30" ry="8" fill="#4080B8" opacity="0.2"/></svg>
-      </div><div class="proj-hover"><div class="proj-hover-text">Sketch to render, product development</div></div></div>
+    <div class="proj" onclick="showProject('vessel')">
+      <div class="proj-thumb"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#F0F8FF"><svg width="160" height="120" viewBox="0 0 160 120" fill="none"><rect x="36" y="36" width="88" height="50" rx="10" fill="#80B8E8" opacity="0.35"/><rect x="56" y="20" width="48" height="20" rx="5" fill="#60A0D8" opacity="0.3"/><ellipse cx="80" cy="88" rx="30" ry="8" fill="#4080B8" opacity="0.2"/></svg></div><div class="proj-hover"><div class="proj-hover-text">Sketch to render, product development</div></div></div>
       <div class="proj-foot"><span class="proj-name">Vessel — Water Bottle</span><span class="proj-meta">2023</span></div>
     </div>
-    <div class="proj">
-      <div class="proj-thumb"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#FFF5F8">
-        <svg width="160" height="120" viewBox="0 0 160 120" fill="none"><circle cx="80" cy="56" r="36" fill="#F0A0B8" opacity="0.3"/><circle cx="80" cy="56" r="22" fill="#E07090" opacity="0.3"/><circle cx="80" cy="56" r="10" fill="#C04060" opacity="0.35"/></svg>
-      </div><div class="proj-hover"><div class="proj-hover-text">Concept sketches, Blender render</div></div></div>
+    <div class="proj" onclick="showProject('orbit')">
+      <div class="proj-thumb"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#FFF5F8"><svg width="160" height="120" viewBox="0 0 160 120" fill="none"><circle cx="80" cy="56" r="36" fill="#F0A0B8" opacity="0.3"/><circle cx="80" cy="56" r="22" fill="#E07090" opacity="0.3"/><circle cx="80" cy="56" r="10" fill="#C04060" opacity="0.35"/></svg></div><div class="proj-hover"><div class="proj-hover-text">Concept sketches, Blender render</div></div></div>
       <div class="proj-foot"><span class="proj-name">Orbit — Desk Clock</span><span class="proj-meta">2022</span></div>
     </div>
   </div>
 </div>
 
-<!-- ══════════════════ MOTION ══════════════════ -->
+<!-- ══════════════════ MOTION LIST ══════════════════ -->
 <div class="page" id="page-motion">
   <div class="disc-header">
     <div class="disc-header-left">
@@ -580,49 +487,37 @@ nav{padding:22px 48px;display:flex;align-items:center;justify-content:space-betw
       <div class="disc-title">Animation,<br>Film & Motion.</div>
       <p class="disc-desc">Motion graphics, animated identities, title sequences, and short-form video — work that moves.</p>
     </div>
-    <div class="disc-header-right"><span class="disc-back" onclick="showPage('home')">← All work</span></div>
+    <div><span class="disc-back" onclick="showPage('home')">← All work</span></div>
   </div>
   <div class="proj-grid proj-grid-2">
-    <div class="proj">
-      <div class="proj-thumb" style="aspect-ratio:16/9"><div class="proj-thumb-inner accent-motion" style="width:100%;height:100%">
-        <svg width="200" height="112" viewBox="0 0 200 112" fill="none"><circle cx="100" cy="56" r="32" fill="rgba(255,255,255,0.45)"/><polygon points="92,42 92,70 118,56" fill="#1A1A1A" opacity="0.45"/></svg>
-      </div><div class="proj-hover"><div class="proj-hover-text">After Effects, brand animation, 30 sec</div></div></div>
+    <div class="proj" onclick="showProject('studio-ident')">
+      <div class="proj-thumb" style="aspect-ratio:16/9"><div class="proj-thumb-inner accent-motion" style="width:100%;height:100%"><svg width="200" height="112" viewBox="0 0 200 112" fill="none"><circle cx="100" cy="56" r="32" fill="rgba(255,255,255,0.45)"/><polygon points="92,42 92,70 118,56" fill="#1A1A1A" opacity="0.45"/></svg></div><div class="proj-hover"><div class="proj-hover-text">After Effects, brand animation, 30 sec</div></div></div>
       <div class="proj-foot"><span class="proj-name">Studio Ident Package</span><span class="proj-meta">2024</span></div>
     </div>
-    <div class="proj">
-      <div class="proj-thumb" style="aspect-ratio:16/9"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#E8F8FF">
-        <svg width="200" height="112" viewBox="0 0 200 112" fill="none"><path d="M30 80 Q70 20 100 50 Q130 80 170 20" stroke="#4498D8" stroke-width="2.5" fill="none" opacity="0.5"/><circle cx="30" cy="80" r="5" fill="#4498D8" opacity="0.5"/><circle cx="100" cy="50" r="5" fill="#4498D8" opacity="0.5"/><circle cx="170" cy="20" r="5" fill="#4498D8" opacity="0.5"/></svg>
-      </div><div class="proj-hover"><div class="proj-hover-text">Kinetic type, music visualizer, 1 min</div></div></div>
+    <div class="proj" onclick="showProject('pulse')">
+      <div class="proj-thumb" style="aspect-ratio:16/9"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#E8F8FF"><svg width="200" height="112" viewBox="0 0 200 112" fill="none"><path d="M30 80 Q70 20 100 50 Q130 80 170 20" stroke="#4498D8" stroke-width="2.5" fill="none" opacity="0.5"/><circle cx="30" cy="80" r="5" fill="#4498D8" opacity="0.5"/><circle cx="100" cy="50" r="5" fill="#4498D8" opacity="0.5"/><circle cx="170" cy="20" r="5" fill="#4498D8" opacity="0.5"/></svg></div><div class="proj-hover"><div class="proj-hover-text">Kinetic type, music visualizer, 1 min</div></div></div>
       <div class="proj-foot"><span class="proj-name">Pulse — Kinetic Typography</span><span class="proj-meta">2024</span></div>
     </div>
-    <div class="proj">
-      <div class="proj-thumb" style="aspect-ratio:16/9"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#FFF8E0">
-        <svg width="200" height="112" viewBox="0 0 200 112" fill="none"><rect x="40" y="28" width="120" height="56" rx="8" fill="#E8C840" opacity="0.35"/><rect x="56" y="40" width="88" height="8" rx="3" fill="#C0A020" opacity="0.5"/><rect x="56" y="54" width="64" height="6" rx="3" fill="#C0A020" opacity="0.3"/></svg>
-      </div><div class="proj-hover"><div class="proj-hover-text">Title card sequence, broadcast design</div></div></div>
+    <div class="proj" onclick="showProject('golden-hour')">
+      <div class="proj-thumb" style="aspect-ratio:16/9"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#FFF8E0"><svg width="200" height="112" viewBox="0 0 200 112" fill="none"><rect x="40" y="28" width="120" height="56" rx="8" fill="#E8C840" opacity="0.35"/><rect x="56" y="40" width="88" height="8" rx="3" fill="#C0A020" opacity="0.5"/><rect x="56" y="54" width="64" height="6" rx="3" fill="#C0A020" opacity="0.3"/></svg></div><div class="proj-hover"><div class="proj-hover-text">Title card sequence, broadcast design</div></div></div>
       <div class="proj-foot"><span class="proj-name">Golden Hour — Title Sequence</span><span class="proj-meta">2024</span></div>
     </div>
-    <div class="proj">
-      <div class="proj-thumb" style="aspect-ratio:16/9"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#F8F0FF">
-        <svg width="200" height="112" viewBox="0 0 200 112" fill="none"><circle cx="100" cy="56" r="35" fill="#B880E8" opacity="0.3"/><circle cx="100" cy="56" r="20" fill="#9050C0" opacity="0.25"/><path d="M65 56 Q100 20 135 56 Q100 92 65 56Z" fill="#7030A0" opacity="0.3"/></svg>
-      </div><div class="proj-hover"><div class="proj-hover-text">Looping animation, social content</div></div></div>
+    <div class="proj" onclick="showProject('bloom-loop')">
+      <div class="proj-thumb" style="aspect-ratio:16/9"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#F8F0FF"><svg width="200" height="112" viewBox="0 0 200 112" fill="none"><circle cx="100" cy="56" r="35" fill="#B880E8" opacity="0.3"/><circle cx="100" cy="56" r="20" fill="#9050C0" opacity="0.25"/><path d="M65 56 Q100 20 135 56 Q100 92 65 56Z" fill="#7030A0" opacity="0.3"/></svg></div><div class="proj-hover"><div class="proj-hover-text">Looping animation, social content</div></div></div>
       <div class="proj-foot"><span class="proj-name">Bloom Loop — Social Animation</span><span class="proj-meta">2023</span></div>
     </div>
-    <div class="proj">
-      <div class="proj-thumb" style="aspect-ratio:16/9"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#F0FFF8">
-        <svg width="200" height="112" viewBox="0 0 200 112" fill="none"><rect x="30" y="30" width="60" height="52" rx="6" fill="#60C890" opacity="0.3"/><rect x="100" y="20" width="70" height="70" rx="6" fill="#40A870" opacity="0.25"/><circle cx="100" cy="100" r="8" fill="#30A060" opacity="0.2"/></svg>
-      </div><div class="proj-hover"><div class="proj-hover-text">Short documentary, cinematography</div></div></div>
+    <div class="proj" onclick="showProject('roots')">
+      <div class="proj-thumb" style="aspect-ratio:16/9"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#F0FFF8"><svg width="200" height="112" viewBox="0 0 200 112" fill="none"><rect x="30" y="30" width="60" height="52" rx="6" fill="#60C890" opacity="0.3"/><rect x="100" y="20" width="70" height="70" rx="6" fill="#40A870" opacity="0.25"/></svg></div><div class="proj-hover"><div class="proj-hover-text">Short documentary, cinematography</div></div></div>
       <div class="proj-foot"><span class="proj-name">Roots — Short Documentary</span><span class="proj-meta">2023</span></div>
     </div>
-    <div class="proj">
-      <div class="proj-thumb" style="aspect-ratio:16/9"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#FFF5F0">
-        <svg width="200" height="112" viewBox="0 0 200 112" fill="none"><path d="M40 86 L80 26 L120 60 L150 40 L180 86 Z" fill="#F09060" opacity="0.3" stroke="#D07040" stroke-width="1.5"/></svg>
-      </div><div class="proj-hover"><div class="proj-hover-text">Logo animation, After Effects, ident</div></div></div>
+    <div class="proj" onclick="showProject('peak')">
+      <div class="proj-thumb" style="aspect-ratio:16/9"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#FFF5F0"><svg width="200" height="112" viewBox="0 0 200 112" fill="none"><path d="M40 86 L80 26 L120 60 L150 40 L180 86 Z" fill="#F09060" opacity="0.3" stroke="#D07040" stroke-width="1.5"/></svg></div><div class="proj-hover"><div class="proj-hover-text">Logo animation, After Effects, ident</div></div></div>
       <div class="proj-foot"><span class="proj-name">Peak — Animated Logo</span><span class="proj-meta">2023</span></div>
     </div>
   </div>
 </div>
 
-<!-- ══════════════════ ARCHIVE ══════════════════ -->
+<!-- ══════════════════ ARCHIVE LIST ══════════════════ -->
 <div class="page" id="page-archive">
   <div class="disc-header">
     <div class="disc-header-left">
@@ -630,31 +525,23 @@ nav{padding:22px 48px;display:flex;align-items:center;justify-content:space-betw
       <div class="disc-title">Experiments,<br>Sketches & More.</div>
       <p class="disc-desc">Class projects, personal explorations, quick studies, and things that don't fit anywhere else — but were worth keeping.</p>
     </div>
-    <div class="disc-header-right"><span class="disc-back" onclick="showPage('home')">← All work</span></div>
+    <div><span class="disc-back" onclick="showPage('home')">← All work</span></div>
   </div>
   <div class="proj-grid proj-grid-3">
-    <div class="proj">
-      <div class="proj-thumb"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#F4F4F4">
-        <svg width="160" height="120" viewBox="0 0 160 120" fill="none"><rect x="30" y="30" width="44" height="60" rx="5" fill="#bbb" opacity="0.45"/><rect x="82" y="40" width="44" height="44" rx="5" fill="#ccc" opacity="0.4"/><rect x="96" y="22" width="22" height="22" rx="4" fill="#aaa" opacity="0.4"/></svg>
-      </div><div class="proj-hover"><div class="proj-hover-text">Personal exploration, digital collage</div></div></div>
+    <div class="proj" onclick="showProject('fragments')">
+      <div class="proj-thumb"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#F4F4F4"><svg width="160" height="120" viewBox="0 0 160 120" fill="none"><rect x="30" y="30" width="44" height="60" rx="5" fill="#bbb" opacity="0.45"/><rect x="82" y="40" width="44" height="44" rx="5" fill="#ccc" opacity="0.4"/><rect x="96" y="22" width="22" height="22" rx="4" fill="#aaa" opacity="0.4"/></svg></div><div class="proj-hover"><div class="proj-hover-text">Personal exploration, digital collage</div></div></div>
       <div class="proj-foot"><span class="proj-name">Fragments — Digital Collage Study</span><span class="proj-meta">2024</span></div>
     </div>
-    <div class="proj">
-      <div class="proj-thumb"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#FFFFF0">
-        <svg width="160" height="120" viewBox="0 0 160 120" fill="none"><path d="M40 90 Q60 50 80 70 Q100 90 120 30" stroke="#8a8a00" stroke-width="2" fill="none" opacity="0.4" stroke-linecap="round"/><path d="M50 95 Q70 60 90 75 Q110 90 130 40" stroke="#8a8a00" stroke-width="1" fill="none" opacity="0.25" stroke-linecap="round"/></svg>
-      </div><div class="proj-hover"><div class="proj-hover-text">Sketchbook, observational drawing</div></div></div>
+    <div class="proj" onclick="showProject('sketchbook')">
+      <div class="proj-thumb"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#FFFFF0"><svg width="160" height="120" viewBox="0 0 160 120" fill="none"><path d="M40 90 Q60 50 80 70 Q100 90 120 30" stroke="#8a8a00" stroke-width="2" fill="none" opacity="0.4" stroke-linecap="round"/><path d="M50 95 Q70 60 90 75 Q110 90 130 40" stroke="#8a8a00" stroke-width="1" fill="none" opacity="0.25" stroke-linecap="round"/></svg></div><div class="proj-hover"><div class="proj-hover-text">Sketchbook, observational drawing</div></div></div>
       <div class="proj-foot"><span class="proj-name">Sketchbook Vol. 3</span><span class="proj-meta">2024</span></div>
     </div>
-    <div class="proj">
-      <div class="proj-thumb"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#F0F4FF">
-        <svg width="160" height="120" viewBox="0 0 160 120" fill="none"><text x="30" y="56" font-family="serif" font-size="40" fill="#8090C0" opacity="0.5" font-weight="bold">Aa</text><rect x="30" y="68" width="100" height="3" rx="1.5" fill="#8090C0" opacity="0.2"/><rect x="30" y="76" width="70" height="3" rx="1.5" fill="#8090C0" opacity="0.15"/></svg>
-      </div><div class="proj-hover"><div class="proj-hover-text">Type design exploration, class project</div></div></div>
+    <div class="proj" onclick="showProject('type-study')">
+      <div class="proj-thumb"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#F0F4FF"><svg width="160" height="120" viewBox="0 0 160 120" fill="none"><text x="30" y="56" font-family="serif" font-size="40" fill="#8090C0" opacity="0.5" font-weight="bold">Aa</text><rect x="30" y="68" width="100" height="3" rx="1.5" fill="#8090C0" opacity="0.2"/><rect x="30" y="76" width="70" height="3" rx="1.5" fill="#8090C0" opacity="0.15"/></svg></div><div class="proj-hover"><div class="proj-hover-text">Type design exploration, class project</div></div></div>
       <div class="proj-foot"><span class="proj-name">Type Study — Letterform Exploration</span><span class="proj-meta">2023</span></div>
     </div>
-    <div class="proj">
-      <div class="proj-thumb"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#FFF8F0">
-        <svg width="160" height="120" viewBox="0 0 160 120" fill="none"><circle cx="60" cy="55" r="22" stroke="#E08040" stroke-width="1.5" fill="none" opacity="0.4"/><circle cx="100" cy="65" r="16" stroke="#E08040" stroke-width="1.5" fill="none" opacity="0.3"/><line x1="60" y1="55" x2="100" y2="65" stroke="#E08040" stroke-width="1" opacity="0.25"/></svg>
-      </div><div class="proj-hover"><div class="proj-hover-text">Systems thinking, diagram design</div></div></div>
+    <div class="proj" onclick="showProject('systems')">
+      <div class="proj-thumb"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#FFF8F0"><svg width="160" height="120" viewBox="0 0 160 120" fill="none"><circle cx="60" cy="55" r="22" stroke="#E08040" stroke-width="1.5" fill="none" opacity="0.4"/><circle cx="100" cy="65" r="16" stroke="#E08040" stroke-width="1.5" fill="none" opacity="0.3"/><line x1="60" y1="55" x2="100" y2="65" stroke="#E08040" stroke-width="1" opacity="0.25"/></svg></div><div class="proj-hover"><div class="proj-hover-text">Systems thinking, diagram design</div></div></div>
       <div class="proj-foot"><span class="proj-name">Systems — Diagram Workshop</span><span class="proj-meta">2023</span></div>
     </div>
   </div>
@@ -664,24 +551,29 @@ nav{padding:22px 48px;display:flex;align-items:center;justify-content:space-betw
 <div class="page" id="page-about">
   <div class="about-wrap">
     <div class="about-left">
-      <div class="about-portrait">
-        <div class="about-portrait-inner"></div>
-      </div>
+      <div class="about-portrait"><div class="about-portrait-inner"></div></div>
       <div class="about-name">Anshu Patel</div>
-      <div class="about-role">Multimedia Designer — Austin, TX</div>
+      <div class="about-role">Multimedia Designer, Austin, TX</div>
       <div class="about-contact">
-        <a href="#">hello@anshupatel.design</a>
-        <a href="#">LinkedIn ↗</a>
+        <a href="mailto:patelans006@gmail.com">patelans006@gmail.com</a>
+        <a href="https://www.linkedin.com/in/anshu-patel-8128bb3a2" target="_blank">LinkedIn ↗</a>
         <a href="#">Resume ↗</a>
       </div>
     </div>
     <div class="about-right">
       <div class="about-section">
         <div class="about-section-label">Who I am</div>
-        <h2 class="about-section-h">Playful by nature.<br>Precise by practice.</h2>
-        <p class="about-p">Hey! I'm Anshu — a multimedia designer at UT Austin double-dipping in a B.F.A in Design and a B.S. in Arts & Entertainment Technology, because apparently one degree wasn't chaotic enough.</p>
-        <p class="about-p">I'm passionate about interactive design and finding ways to make digital experiences feel genuinely fun and human. Whether it's a brand, an app, a game, or something in between — I care about the little moments that make someone go "wait, that's really cool."</p>
-        <p class="about-p">Currently looking for internships & opportunities where I can make cool stuff with cool people. Open to all the things!</p>
+
+        <!-- Rotating intro line -->
+        <p class="about-intro-line">A designer and a <span class="rotating-descriptor" id="rotating-descriptor"><span class="descriptor-item active">eccentric gamer</span><span class="descriptor-item">cat lover</span><span class="descriptor-item">cookie cake decorator</span><span class="descriptor-item">fangirl</span><span class="descriptor-item">comics enthusiast</span><span class="descriptor-item">cosplayer</span><span class="descriptor-item">dancer</span><span class="descriptor-item">fontphile</span><span class="descriptor-item">awesome little sister &gt;:)</span><span class="descriptor-item">DIY barber</span><span class="descriptor-item">figurine collector</span></span>.</p>
+
+        <p class="about-p">Hi, I'm Anshu. I'm a multimedia designer at UT Austin pursuing a B.F.A. in Design and a B.S. in Arts & Entertainment Technologies, focusing on Game Design.</p>
+
+        <p class="about-p">I've built fluency across a lot of disciplines — branding, editorial, 3D, motion, UI — but what ties all of it together is a deep interest in how design shapes experience. My real obsession is interactive design: the moments where a player, user, or viewer makes a choice and feels the world respond. That's where I want to live.</p>
+
+        <p class="about-p">Whether I'm designing a brand identity, building a game interface, or mapping out a level, I'm thinking about the same thing: how does this feel to the person on the other side? What detail will make them stop and smile? What decision will make them lean in?</p>
+
+        <p class="about-p">I'm drawn to work that sits at the intersection of design, storytelling, and systems — the kind of thing that rewards curiosity and leaves room for interpretation.</p>
       </div>
       <div class="about-section">
         <div class="about-section-label">Tools & skills</div>
@@ -716,55 +608,530 @@ nav{padding:22px 48px;display:flex;align-items:center;justify-content:space-betw
   </div>
 </div>
 
+<!-- ══════════════════════════════════════════════════
+     PROJECT DETAIL PAGES
+══════════════════════════════════════════════════ -->
+
+<!-- BLOOM COFFEE -->
+<div class="proj-detail-page" id="proj-bloom-coffee">
+  <div class="proj-detail-nav">
+    <div class="proj-detail-breadcrumb">
+      <span onclick="showPage('graphic')">2D & Graphic Design</span>
+      <span class="sep">›</span>
+      <span style="color:#1A1A1A;font-weight:500">Bloom Coffee</span>
+    </div>
+    <div class="proj-detail-nav-arrows">
+      <button class="proj-nav-btn" onclick="showPage('graphic')">← Back to category</button>
+    </div>
+  </div>
+  <div class="proj-detail-hero">
+    <div class="proj-detail-kicker">2D & Graphic Design · Brand Identity</div>
+    <div class="proj-detail-title">Bloom Coffee</div>
+    <p class="proj-detail-tagline">A brand identity for a specialty coffee shop rooted in warmth, ritual, and the idea that a great cup of coffee can make anything feel possible.</p>
+    <div class="proj-detail-meta-row">
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">6 weeks · Fall 2024</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Course</div><div class="proj-detail-meta-val">Visual Identity & Branding</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">Illustrator, Photoshop, InDesign</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Type</div><div class="proj-detail-meta-val">Academic / Personal</div></div>
+    </div>
+  </div>
+  <div class="proj-detail-cover accent-graphic" style="height:420px">
+    <div class="proj-detail-cover-inner" style="flex-direction:column;gap:12px">
+      <svg width="320" height="180" viewBox="0 0 320 180" fill="none"><circle cx="160" cy="90" r="75" fill="#F090B0" opacity="0.35"/><circle cx="160" cy="90" r="48" fill="#E06090" opacity="0.3"/><path d="M120 90 Q160 46 200 90 Q160 134 120 90Z" fill="#C04070" opacity="0.45"/></svg>
+      <span style="font-size:12px;color:#C04070;opacity:0.7;font-weight:500">[ Cover image placeholder — replace with final mockup ]</span>
+    </div>
+  </div>
+  <div class="proj-detail-body">
+    <div class="proj-detail-sidebar">
+      <div class="proj-detail-sidebar-section">
+        <div class="proj-detail-sidebar-label">Skills</div>
+        <span class="proj-detail-tag">Logo Design</span><span class="proj-detail-tag">Typography</span><span class="proj-detail-tag">Color Theory</span><span class="proj-detail-tag">Brand Systems</span><span class="proj-detail-tag">Packaging</span><span class="proj-detail-tag">Print Production</span>
+      </div>
+      <div class="proj-detail-sidebar-section">
+        <div class="proj-detail-sidebar-label">Deliverables</div>
+        <span class="proj-detail-tag">Logomark + wordmark</span><span class="proj-detail-tag">Brand guidelines</span><span class="proj-detail-tag">Packaging mockups</span><span class="proj-detail-tag">Collateral</span>
+      </div>
+    </div>
+    <div class="proj-detail-content">
+      <div class="proj-detail-section">
+        <div class="proj-detail-section-label">Brief</div>
+        <div class="proj-detail-h2">The challenge</div>
+        <p class="proj-detail-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. The brief asked for a complete brand identity for a specialty coffee concept — from naming rationale to finished packaging — with a focus on how the visual system scales across touchpoints.</p>
+        <p class="proj-detail-p">The key constraint: the identity had to feel premium without feeling cold, and accessible without feeling generic. Coffee brands tend to collapse into either minimal Scandinavian or rustic handmade — this project pushed for a third path.</p>
+      </div>
+      <div class="proj-detail-section">
+        <div class="proj-detail-section-label">Process</div>
+        <div class="proj-detail-h2">How I got there</div>
+        <div class="proj-detail-process-steps">
+          <div class="proj-process-step"><div class="proj-process-num">01</div><div class="proj-process-step-content"><div class="proj-process-step-title">Research & moodboarding</div><div class="proj-process-step-desc">Audited 20+ coffee brands across price points. Identified the visual clichés to avoid and the emotional territory worth claiming: warmth, ritual, quiet joy.</div></div></div>
+          <div class="proj-process-step"><div class="proj-process-num">02</div><div class="proj-process-step-content"><div class="proj-process-step-title">Naming & concept development</div><div class="proj-process-step-desc">Explored naming directions before landing on "Bloom" — it implies growth, mornings, and something opening. The name drove the visual metaphor: petals as a logomark abstraction.</div></div></div>
+          <div class="proj-process-step"><div class="proj-process-num">03</div><div class="proj-process-step-content"><div class="proj-process-step-title">Logo exploration</div><div class="proj-process-step-desc">40+ sketches across three directions — geometric petal, botanical illustration, typographic. Narrowed to two and refined through rounds of critique.</div></div></div>
+          <div class="proj-process-step"><div class="proj-process-num">04</div><div class="proj-process-step-content"><div class="proj-process-step-title">System build & application</div><div class="proj-process-step-desc">Developed full type hierarchy, color palette, and pattern library. Applied to packaging, tote, signage, and menu mock-ups to stress-test the system.</div></div></div>
+        </div>
+      </div>
+      <div class="proj-detail-section">
+        <div class="proj-detail-section-label">Visual Development</div>
+        <div class="proj-detail-h2">Explorations & process</div>
+        <div class="proj-img-grid proj-img-grid-2">
+          <div class="proj-img-placeholder tall"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><path d="M6 28l8-8 6 6 4-4 10 10" stroke="#ccc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Logo sketches / early explorations</span></div>
+          <div class="proj-img-placeholder tall"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><path d="M6 28l8-8 6 6 4-4 10 10" stroke="#ccc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Color palette & type specimens</span></div>
+        </div>
+        <div class="proj-img-placeholder wide"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><path d="M6 28l8-8 6 6 4-4 10 10" stroke="#ccc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Brand guidelines spread</span></div>
+      </div>
+      <div class="proj-detail-section">
+        <div class="proj-detail-section-label">Final Work</div>
+        <div class="proj-detail-h2">The outcome</div>
+        <p class="proj-detail-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. The final system includes a primary logomark, a simplified wordmark for small applications, two typefaces (a serif for display, a grotesque for body), a six-color palette, and a botanical pattern derived from the logomark geometry.</p>
+        <div class="proj-img-placeholder wide"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><path d="M6 28l8-8 6 6 4-4 10 10" stroke="#ccc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Final logo suite</span></div>
+        <div class="proj-img-grid proj-img-grid-3">
+          <div class="proj-img-placeholder square"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Coffee bag mockup</span></div>
+          <div class="proj-img-placeholder square"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Cup sleeve</span></div>
+          <div class="proj-img-placeholder square"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Tote bag</span></div>
+        </div>
+      </div>
+      <div class="proj-detail-section">
+        <div class="proj-detail-section-label">Reflection</div>
+        <div class="proj-detail-h2">What I learned</div>
+        <p class="proj-detail-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. This project reinforced how much identity design is about constraint — not just aesthetic taste. The most interesting decisions happened at the edges of the system: how does the logomark behave at 16px? Does the color palette still work in greyscale? Does the pattern feel ownable at the scale of a paper bag?</p>
+        <div class="proj-quote"><p>"The mark should work on a grain of rice and on the side of a building."</p><cite>— Critique feedback, Fall 2024</cite></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- QUEST COMPANION APP -->
+<div class="proj-detail-page" id="proj-quest-app">
+  <div class="proj-detail-nav">
+    <div class="proj-detail-breadcrumb">
+      <span onclick="showPage('ux')">UX / UI & Game Design</span>
+      <span class="sep">›</span>
+      <span style="color:#1A1A1A;font-weight:500">Quest Companion App</span>
+    </div>
+    <div class="proj-detail-nav-arrows"><button class="proj-nav-btn" onclick="showPage('ux')">← Back to category</button></div>
+  </div>
+  <div class="proj-detail-hero">
+    <div class="proj-detail-kicker">UX / UI & Game Design · App Design</div>
+    <div class="proj-detail-title">Quest Companion App</div>
+    <p class="proj-detail-tagline">A mobile companion app designed for tabletop RPG players — tracking quests, inventory, and character arcs across campaigns without breaking immersion.</p>
+    <div class="proj-detail-meta-row">
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">8 weeks · Spring 2024</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Course</div><div class="proj-detail-meta-val">Interaction Design Studio</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">Figma, Maze (user testing)</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Type</div><div class="proj-detail-meta-val">Academic UX Case Study</div></div>
+    </div>
+  </div>
+  <div class="proj-detail-cover accent-ux" style="height:420px">
+    <div class="proj-detail-cover-inner" style="flex-direction:column;gap:12px">
+      <svg width="320" height="180" viewBox="0 0 320 180" fill="none"><rect x="80" y="20" width="160" height="140" rx="18" fill="#90C8F0" opacity="0.35"/><rect x="96" y="38" width="128" height="14" rx="5" fill="#4498D8" opacity="0.55"/><rect x="96" y="60" width="90" height="10" rx="4" fill="#4498D8" opacity="0.35"/><rect x="96" y="76" width="128" height="10" rx="4" fill="#4498D8" opacity="0.2"/><rect x="96" y="96" width="60" height="28" rx="8" fill="#4498D8" opacity="0.25"/><rect x="164" y="96" width="60" height="28" rx="8" fill="#4498D8" opacity="0.2"/></svg>
+      <span style="font-size:12px;color:#4498D8;opacity:0.7;font-weight:500">[ Cover image placeholder — replace with hi-fi prototype screenshot ]</span>
+    </div>
+  </div>
+  <div class="proj-detail-body">
+    <div class="proj-detail-sidebar">
+      <div class="proj-detail-sidebar-section">
+        <div class="proj-detail-sidebar-label">Skills</div>
+        <span class="proj-detail-tag">UX Research</span><span class="proj-detail-tag">Information Architecture</span><span class="proj-detail-tag">Wireframing</span><span class="proj-detail-tag">Prototyping</span><span class="proj-detail-tag">Usability Testing</span><span class="proj-detail-tag">UI Design</span>
+      </div>
+      <div class="proj-detail-sidebar-section">
+        <div class="proj-detail-sidebar-label">Deliverables</div>
+        <span class="proj-detail-tag">User research report</span><span class="proj-detail-tag">User flows</span><span class="proj-detail-tag">Wireframes</span><span class="proj-detail-tag">Hi-fi prototype</span>
+      </div>
+    </div>
+    <div class="proj-detail-content">
+      <div class="proj-detail-section">
+        <div class="proj-detail-section-label">Problem</div>
+        <div class="proj-detail-h2">The gap in the experience</div>
+        <p class="proj-detail-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tabletop RPG players currently rely on a patchwork of tools — notes apps, Discord messages, physical notebooks, PDFs — to track the sprawling details of a campaign. The friction of switching between systems during play breaks immersion and creates real information loss.</p>
+        <p class="proj-detail-p">This project asked: what would a companion tool look like if it was designed from the ground up for how players actually play — messy, spontaneous, and story-first?</p>
+      </div>
+      <div class="proj-detail-section">
+        <div class="proj-detail-section-label">Research</div>
+        <div class="proj-detail-h2">Understanding the player</div>
+        <p class="proj-detail-p">Conducted 6 semi-structured interviews with TTRPG players ranging from casual to experienced. Ran a competitive audit of 8 existing tools. Key insight: players didn't want another system to maintain — they wanted something that stayed out of the way and surfaced the right information at the right moment.</p>
+        <div class="proj-img-placeholder wide"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><path d="M6 28l8-8 6 6 4-4 10 10" stroke="#ccc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Affinity map / research synthesis</span></div>
+      </div>
+      <div class="proj-detail-section">
+        <div class="proj-detail-section-label">Process</div>
+        <div class="proj-detail-h2">From flows to frames</div>
+        <div class="proj-detail-process-steps">
+          <div class="proj-process-step"><div class="proj-process-num">01</div><div class="proj-process-step-content"><div class="proj-process-step-title">User flows & IA</div><div class="proj-process-step-desc">Mapped 4 primary user flows: starting a session, logging a quest update, searching past notes, and ending a session with a summary. Hierarchy was built around the session as the primary unit.</div></div></div>
+          <div class="proj-process-step"><div class="proj-process-num">02</div><div class="proj-process-step-content"><div class="proj-process-step-title">Low-fi wireframes</div><div class="proj-process-step-desc">Three rounds of lo-fi wireframing, each tested with 2 participants. Major finding: the "quest log" metaphor wasn't landing — players thought in terms of NPCs and events, not missions.</div></div></div>
+          <div class="proj-process-step"><div class="proj-process-num">03</div><div class="proj-process-step-content"><div class="proj-process-step-title">Usability testing (Maze)</div><div class="proj-process-step-desc">Remote usability test with 8 participants on mid-fi prototype. 73% task completion rate on first run. Iterated navigation and entry points based on drop-off data.</div></div></div>
+          <div class="proj-process-step"><div class="proj-process-num">04</div><div class="proj-process-step-content"><div class="proj-process-step-title">Hi-fi & handoff</div><div class="proj-process-step-desc">Produced hi-fi prototype in Figma with a custom design system: dark mode-first, accessible contrast ratios, and a typographic system inspired by fantasy game UIs without being clichéd.</div></div></div>
+        </div>
+      </div>
+      <div class="proj-detail-section">
+        <div class="proj-detail-section-label">Final Design</div>
+        <div class="proj-detail-h2">Key screens</div>
+        <div class="proj-img-grid proj-img-grid-3">
+          <div class="proj-img-placeholder tall"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Home / session view</span></div>
+          <div class="proj-img-placeholder tall"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Quest detail</span></div>
+          <div class="proj-img-placeholder tall"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>NPC log</span></div>
+        </div>
+      </div>
+      <div class="proj-detail-section">
+        <div class="proj-detail-section-label">Reflection</div>
+        <div class="proj-detail-h2">What I took away</div>
+        <p class="proj-detail-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. This project pushed me to design for a specific subculture — not a generic "user" — which meant the research had to be real and the design had to earn trust. The biggest lesson: the best game UI disappears. It gives you exactly what you need exactly when you need it, then gets out of the way.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- VERDANT LEVEL DESIGN -->
+<div class="proj-detail-page" id="proj-verdant-level">
+  <div class="proj-detail-nav">
+    <div class="proj-detail-breadcrumb">
+      <span onclick="showPage('ux')">UX / UI & Game Design</span>
+      <span class="sep">›</span>
+      <span style="color:#1A1A1A;font-weight:500">Verdant — Level Design</span>
+    </div>
+    <div><button class="proj-nav-btn" onclick="showPage('ux')">← Back to category</button></div>
+  </div>
+  <div class="proj-detail-hero">
+    <div class="proj-detail-kicker">UX / UI & Game Design · Level Design</div>
+    <div class="proj-detail-title">Verdant</div>
+    <p class="proj-detail-tagline">Level design and game design documentation for a 2D puzzle-platformer set in an overgrown, post-human world where light and shadow drive exploration.</p>
+    <div class="proj-detail-meta-row">
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">10 weeks · Fall 2023</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Course</div><div class="proj-detail-meta-val">Game Design Foundations</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">Figma, Tiled, Procreate</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Type</div><div class="proj-detail-meta-val">Academic Game Design</div></div>
+    </div>
+  </div>
+  <div class="proj-detail-cover accent-misc2" style="height:420px">
+    <div class="proj-detail-cover-inner" style="flex-direction:column;gap:12px">
+      <svg width="400" height="200" viewBox="0 0 400 200" fill="none"><rect x="20" y="120" width="360" height="60" rx="4" fill="#60C890" opacity="0.2"/><rect x="20" y="100" width="60" height="80" rx="4" fill="#40A870" opacity="0.3"/><rect x="100" y="80" width="40" height="100" rx="4" fill="#40A870" opacity="0.25"/><rect x="160" y="60" width="80" height="120" rx="4" fill="#40A870" opacity="0.2"/><rect x="260" y="90" width="50" height="90" rx="4" fill="#40A870" opacity="0.28"/><circle cx="200" cy="55" r="14" fill="#FFF5A0" opacity="0.6"/></svg>
+      <span style="font-size:12px;color:#30A060;opacity:0.7;font-weight:500">[ Cover image placeholder — replace with level map or key screenshot ]</span>
+    </div>
+  </div>
+  <div class="proj-detail-body">
+    <div class="proj-detail-sidebar">
+      <div class="proj-detail-sidebar-section">
+        <div class="proj-detail-sidebar-label">Skills</div>
+        <span class="proj-detail-tag">Level Design</span><span class="proj-detail-tag">Game Design Doc</span><span class="proj-detail-tag">Puzzle Systems</span><span class="proj-detail-tag">Spatial Narrative</span><span class="proj-detail-tag">Player Psychology</span><span class="proj-detail-tag">Tile Mapping</span>
+      </div>
+      <div class="proj-detail-sidebar-section">
+        <div class="proj-detail-sidebar-label">Deliverables</div>
+        <span class="proj-detail-tag">GDD (12 pages)</span><span class="proj-detail-tag">3 level maps</span><span class="proj-detail-tag">Puzzle logic diagrams</span><span class="proj-detail-tag">Playtest report</span>
+      </div>
+    </div>
+    <div class="proj-detail-content">
+      <div class="proj-detail-section">
+        <div class="proj-detail-section-label">Concept</div>
+        <div class="proj-detail-h2">The design premise</div>
+        <p class="proj-detail-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Verdant is a 2D puzzle-platformer set in a world reclaimed by nature, where a small robot must navigate ruins using a light mechanic — casting light reveals paths, activates ancient machinery, and frightens away plant-creatures that block the way.</p>
+        <p class="proj-detail-p">The core design constraint: every puzzle must be solvable through observation alone. No tutorials, no hint systems — the environment teaches the rules through layered environmental storytelling.</p>
+      </div>
+      <div class="proj-detail-section">
+        <div class="proj-detail-section-label">Process</div>
+        <div class="proj-detail-h2">Designing the levels</div>
+        <div class="proj-detail-process-steps">
+          <div class="proj-process-step"><div class="proj-process-num">01</div><div class="proj-process-step-content"><div class="proj-process-step-title">Mechanic definition</div><div class="proj-process-step-desc">Defined 4 light mechanic interactions before designing a single room. Each interaction was documented with expected player behavior and intended emotional beat.</div></div></div>
+          <div class="proj-process-step"><div class="proj-process-num">02</div><div class="proj-process-step-content"><div class="proj-process-step-title">Bubble diagrams → tile maps</div><div class="proj-process-step-desc">Sketched each level as a bubble diagram (spaces and connections) before translating to grid. This kept the spatial logic clean before visual noise was added.</div></div></div>
+          <div class="proj-process-step"><div class="proj-process-num">03</div><div class="proj-process-step-content"><div class="proj-process-step-title">Playtesting (3 rounds)</div><div class="proj-process-step-desc">Watched 8 participants attempt Level 1. Collected think-aloud data. Key failure: players didn't realize the plant-creatures were afraid of light — added visual flinch animation to telegraph the rule.</div></div></div>
+          <div class="proj-process-step"><div class="proj-process-num">04</div><div class="proj-process-step-content"><div class="proj-process-step-title">Difficulty tuning & GDD finalization</div><div class="proj-process-step-desc">Adjusted puzzle complexity curves based on playtest data. Wrote full GDD including narrative overview, mechanic reference, level briefs, and design rationale for each room.</div></div></div>
+        </div>
+      </div>
+      <div class="proj-detail-section">
+        <div class="proj-detail-section-label">Level Maps</div>
+        <div class="proj-detail-h2">The three levels</div>
+        <div class="proj-img-placeholder wide"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><path d="M6 28l8-8 6 6 4-4 10 10" stroke="#ccc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Level 1 — The Greenhouse (annotated map)</span></div>
+        <div class="proj-img-placeholder wide"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><path d="M6 28l8-8 6 6 4-4 10 10" stroke="#ccc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Level 2 — The Undercroft (annotated map)</span></div>
+        <div class="proj-img-placeholder wide"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><path d="M6 28l8-8 6 6 4-4 10 10" stroke="#ccc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Level 3 — The Spire (annotated map)</span></div>
+      </div>
+      <div class="proj-detail-section">
+        <div class="proj-detail-section-label">Reflection</div>
+        <div class="proj-detail-h2">What I learned</div>
+        <p class="proj-detail-p">Lorem ipsum dolor sit amet. Designing levels taught me that a good puzzle isn't clever — it's clear. The "aha" moment only works if the player can see the pieces; the designer's job is arranging them so the solution feels inevitable in hindsight. The hardest part was resisting the urge to add complexity when simplicity was working.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CERAMIC SPEAKER -->
+<div class="proj-detail-page" id="proj-ceramic-speaker">
+  <div class="proj-detail-nav">
+    <div class="proj-detail-breadcrumb">
+      <span onclick="showPage('3d')">3D & Product Design</span>
+      <span class="sep">›</span>
+      <span style="color:#1A1A1A;font-weight:500">Ceramic Speaker</span>
+    </div>
+    <div><button class="proj-nav-btn" onclick="showPage('3d')">← Back to category</button></div>
+  </div>
+  <div class="proj-detail-hero">
+    <div class="proj-detail-kicker">3D & Product Design · Industrial Design</div>
+    <div class="proj-detail-title">Ceramic Speaker</div>
+    <p class="proj-detail-tagline">A Bluetooth speaker concept exploring the material tension between hand-thrown ceramic forms and precision audio engineering — where craft meets tech.</p>
+    <div class="proj-detail-meta-row">
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">5 weeks · Spring 2024</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Course</div><div class="proj-detail-meta-val">3D Product Design Studio</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">Blender, Procreate, Keyshot</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Type</div><div class="proj-detail-meta-val">Academic / Concept</div></div>
+    </div>
+  </div>
+  <div class="proj-detail-cover accent-3d" style="height:420px">
+    <div class="proj-detail-cover-inner" style="flex-direction:column;gap:12px">
+      <svg width="280" height="200" viewBox="0 0 280 200" fill="none"><ellipse cx="140" cy="175" rx="80" ry="18" fill="#C8B030" opacity="0.25"/><rect x="76" y="40" width="128" height="130" rx="24" fill="#D8C040" opacity="0.4"/><rect x="96" y="22" width="88" height="26" rx="12" fill="#C0A820" opacity="0.35"/><circle cx="140" cy="105" r="28" fill="#fff" opacity="0.45"/><circle cx="140" cy="105" r="14" fill="#C8B030" opacity="0.3"/></svg>
+      <span style="font-size:12px;color:#C0A820;opacity:0.7;font-weight:500">[ Cover placeholder — replace with Blender render ]</span>
+    </div>
+  </div>
+  <div class="proj-detail-body">
+    <div class="proj-detail-sidebar">
+      <div class="proj-detail-sidebar-section">
+        <div class="proj-detail-sidebar-label">Skills</div>
+        <span class="proj-detail-tag">3D Modeling</span><span class="proj-detail-tag">Product Rendering</span><span class="proj-detail-tag">Sketch Development</span><span class="proj-detail-tag">Form Study</span><span class="proj-detail-tag">Material Exploration</span><span class="proj-detail-tag">Blender</span>
+      </div>
+      <div class="proj-detail-sidebar-section">
+        <div class="proj-detail-sidebar-label">Deliverables</div>
+        <span class="proj-detail-tag">Concept sketches</span><span class="proj-detail-tag">3D model</span><span class="proj-detail-tag">Rendered views</span><span class="proj-detail-tag">Material board</span>
+      </div>
+    </div>
+    <div class="proj-detail-content">
+      <div class="proj-detail-section">
+        <div class="proj-detail-section-label">Concept</div>
+        <div class="proj-detail-h2">Form as material conversation</div>
+        <p class="proj-detail-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. The brief asked for a consumer electronics product that used an unexpected material. Ceramic was the choice — not just as surface treatment, but as a genuine structural material that would influence the product's proportions, weight, and texture in ways plastic or aluminum couldn't.</p>
+        <p class="proj-detail-p">The design challenge: ceramic forms are organic and irregular; speaker acoustics require precise geometries. The tension between those two requirements became the concept itself.</p>
+      </div>
+      <div class="proj-detail-section">
+        <div class="proj-detail-section-label">Development</div>
+        <div class="proj-detail-h2">Sketch to render</div>
+        <div class="proj-detail-process-steps">
+          <div class="proj-process-step"><div class="proj-process-num">01</div><div class="proj-process-step-content"><div class="proj-process-step-title">Reference & material research</div><div class="proj-process-step-desc">Studied ceramic production techniques, acoustic enclosure geometry, and existing soft-goods consumer electronics (Sonos, Bang & Olufsen, Transparent). Identified the design language of "quiet confidence."</div></div></div>
+          <div class="proj-process-step"><div class="proj-process-num">02</div><div class="proj-process-step-content"><div class="proj-process-step-title">Thumbnail sketches (30+)</div><div class="proj-process-step-desc">Explored a wide range of forms — cylindrical, vessel-like, stacked, asymmetric. Narrowed to three directions through peer review. Selected the "stacked vessel" form for its material honesty.</div></div></div>
+          <div class="proj-process-step"><div class="proj-process-num">03</div><div class="proj-process-step-content"><div class="proj-process-step-title">3D modeling in Blender</div><div class="proj-process-step-desc">Built the form using subdivision surface modeling to preserve organic curves. Detailed the speaker grille, control interface, and cable routing while maintaining the handmade silhouette.</div></div></div>
+          <div class="proj-process-step"><div class="proj-process-num">04</div><div class="proj-process-step-content"><div class="proj-process-step-title">Rendering & material study</div><div class="proj-process-step-desc">Developed two colorway options (natural stoneware, matte black) with brass accent hardware. Rendered across studio, lifestyle, and detail views.</div></div></div>
+        </div>
+      </div>
+      <div class="proj-detail-section">
+        <div class="proj-detail-section-label">Final Renders</div>
+        <div class="proj-detail-h2">The object</div>
+        <div class="proj-img-grid proj-img-grid-2">
+          <div class="proj-img-placeholder tall"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Front 3/4 render — stoneware</span></div>
+          <div class="proj-img-placeholder tall"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Rear / detail render</span></div>
+        </div>
+        <div class="proj-img-placeholder wide"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><path d="M6 28l8-8 6 6 4-4 10 10" stroke="#ccc" stroke-width="1.5" stroke-linecap="round"/></svg><span>Lifestyle context render</span></div>
+      </div>
+      <div class="proj-detail-section">
+        <div class="proj-detail-section-label">Reflection</div>
+        <div class="proj-detail-h2">What I took away</div>
+        <p class="proj-detail-p">Lorem ipsum dolor sit amet. This was my first project where the material genuinely dictated the form rather than the other way around. Working in Blender pushed me to think about volume and weight in a way flat design doesn't — every decision about curve radius had an implication for manufacturing, structural integrity, and how it would feel in someone's hands.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STUDIO IDENT (Motion) -->
+<div class="proj-detail-page" id="proj-studio-ident">
+  <div class="proj-detail-nav">
+    <div class="proj-detail-breadcrumb">
+      <span onclick="showPage('motion')">Motion & Videography</span>
+      <span class="sep">›</span>
+      <span style="color:#1A1A1A;font-weight:500">Studio Ident Package</span>
+    </div>
+    <div><button class="proj-nav-btn" onclick="showPage('motion')">← Back to category</button></div>
+  </div>
+  <div class="proj-detail-hero">
+    <div class="proj-detail-kicker">Motion & Videography · Brand Animation</div>
+    <div class="proj-detail-title">Studio Ident Package</div>
+    <p class="proj-detail-tagline">A full motion identity package for a fictional creative studio — logo animation, bumpers, lower thirds, and a title card system designed for broadcast and social.</p>
+    <div class="proj-detail-meta-row">
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">4 weeks · Spring 2024</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Course</div><div class="proj-detail-meta-val">Motion Graphics Studio</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">After Effects, Illustrator</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Type</div><div class="proj-detail-meta-val">Academic</div></div>
+    </div>
+  </div>
+  <div class="proj-detail-cover accent-motion" style="height:420px">
+    <div class="proj-detail-cover-inner" style="flex-direction:column;gap:12px">
+      <svg width="320" height="180" viewBox="0 0 320 180" fill="none"><circle cx="160" cy="90" r="60" fill="rgba(255,255,255,0.4)"/><polygon points="145,68 145,112 185,90" fill="#1A1A1A" opacity="0.4"/><circle cx="160" cy="90" r="72" stroke="#1A1A1A" stroke-width="1" opacity="0.1"/></svg>
+      <span style="font-size:12px;color:#1A1A1A;opacity:0.5;font-weight:500">[ Cover placeholder — replace with still frame from animation ]</span>
+    </div>
+  </div>
+  <div class="proj-detail-body">
+    <div class="proj-detail-sidebar">
+      <div class="proj-detail-sidebar-section">
+        <div class="proj-detail-sidebar-label">Skills</div>
+        <span class="proj-detail-tag">After Effects</span><span class="proj-detail-tag">Logo Animation</span><span class="proj-detail-tag">Motion Principles</span><span class="proj-detail-tag">Easing & Timing</span><span class="proj-detail-tag">Brand Extension</span><span class="proj-detail-tag">Broadcast Design</span>
+      </div>
+      <div class="proj-detail-sidebar-section">
+        <div class="proj-detail-sidebar-label">Deliverables</div>
+        <span class="proj-detail-tag">Logo ident (15s)</span><span class="proj-detail-tag">Bumper (3s)</span><span class="proj-detail-tag">Lower thirds</span><span class="proj-detail-tag">Title card system</span>
+      </div>
+    </div>
+    <div class="proj-detail-content">
+      <div class="proj-detail-section">
+        <div class="proj-detail-section-label">Brief</div>
+        <div class="proj-detail-h2">Bringing a brand to life in time</div>
+        <p class="proj-detail-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. The project brief: design a complete motion identity for a fictional creative studio. The identity had to work across a 15-second logo ident, a 3-second social bumper, and a set of reusable broadcast components — all expressing the same personality while functioning independently.</p>
+        <p class="proj-detail-p">The fictional studio concept: a boutique design firm known for typography-led work with a dry, intellectual edge. The motion language had to reflect that.</p>
+      </div>
+      <div class="proj-detail-section">
+        <div class="proj-detail-section-label">Process</div>
+        <div class="proj-detail-h2">Building the motion language</div>
+        <div class="proj-detail-process-steps">
+          <div class="proj-process-step"><div class="proj-process-num">01</div><div class="proj-process-step-content"><div class="proj-process-step-title">Motion moodboard</div><div class="proj-process-step-desc">Referenced editorial animation, title sequences (Saul Bass, Kyle Cooper), and kinetic typography work. Identified the studio's motion vocabulary: deliberate, unhurried, typographically confident.</div></div></div>
+          <div class="proj-process-step"><div class="proj-process-num">02</div><div class="proj-process-step-content"><div class="proj-process-step-title">Storyboarding</div><div class="proj-process-step-desc">Storyboarded the 15-second ident in 12 frames before opening After Effects. Defined the easing approach (custom bezier, never ease-in-out defaults) and the grid system the animation would follow.</div></div></div>
+          <div class="proj-process-step"><div class="proj-process-num">03</div><div class="proj-process-step-content"><div class="proj-process-step-title">After Effects build</div><div class="proj-process-step-desc">Built the ident using shape layers and text animators, no stock effects. Created a master composition with swappable elements so components could be updated globally.</div></div></div>
+          <div class="proj-process-step"><div class="proj-process-num">04</div><div class="proj-process-step-content"><div class="proj-process-step-title">Component system</div><div class="proj-process-step-desc">Adapted the core animation into the bumper, lower thirds, and title card system. Each component shares the same easing and timing DNA while working independently.</div></div></div>
+        </div>
+      </div>
+      <div class="proj-detail-section">
+        <div class="proj-detail-section-label">Final Work</div>
+        <div class="proj-detail-h2">Stills from the animation</div>
+        <div class="proj-img-placeholder wide"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="14" stroke="#ccc" stroke-width="1.5"/><polygon points="16,14 16,26 28,20" fill="#ccc"/></svg><span>Logo ident — 15 sec [ video placeholder ]</span></div>
+        <div class="proj-img-grid proj-img-grid-2">
+          <div class="proj-img-placeholder wide"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Lower third — style A</span></div>
+          <div class="proj-img-placeholder wide"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Title card — intro variant</span></div>
+        </div>
+      </div>
+      <div class="proj-detail-section">
+        <div class="proj-detail-section-label">Reflection</div>
+        <div class="proj-detail-h2">What I learned</div>
+        <p class="proj-detail-p">Lorem ipsum dolor sit amet. Motion design is timing more than anything else — and timing is surprisingly hard to articulate. The gap between "almost right" and "exactly right" is a matter of 3 frames and a bezier handle. This project taught me to slow down and listen to animation the way you listen to music: feel the beat before you adjust the graph editor.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- GENERIC DETAIL PAGES for remaining projects -->
+<!-- NIGHTSHADE -->
+<div class="proj-detail-page" id="proj-nightshade">
+  <div class="proj-detail-nav"><div class="proj-detail-breadcrumb"><span onclick="showPage('graphic')">2D & Graphic Design</span><span class="sep">›</span><span style="color:#1A1A1A;font-weight:500">Nightshade</span></div><div><button class="proj-nav-btn" onclick="showPage('graphic')">← Back</button></div></div>
+  <div class="proj-detail-hero"><div class="proj-detail-kicker">2D & Graphic Design · Editorial</div><div class="proj-detail-title">Nightshade</div><p class="proj-detail-tagline">Editorial layout and typographic system for a dark-arts culture magazine — exploring how layout can become atmosphere.</p><div class="proj-detail-meta-row"><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">4 weeks · Spring 2024</div></div><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Course</div><div class="proj-detail-meta-val">Editorial Design</div></div><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">InDesign, Illustrator</div></div></div></div>
+  <div class="proj-detail-cover" style="height:380px;background:#FFF0F5"><div class="proj-detail-cover-inner" style="flex-direction:column;gap:12px"><svg width="320" height="180" viewBox="0 0 320 180" fill="none"><rect x="60" y="20" width="200" height="140" rx="4" fill="#F4C0D0" opacity="0.45"/><rect x="76" y="36" width="168" height="14" rx="3" fill="#D07090" opacity="0.6"/><rect x="76" y="58" width="120" height="8" rx="2" fill="#D07090" opacity="0.35"/><rect x="76" y="72" width="152" height="8" rx="2" fill="#D07090" opacity="0.25"/><rect x="76" y="86" width="100" height="8" rx="2" fill="#D07090" opacity="0.2"/></svg><span style="font-size:12px;color:#D07090;opacity:0.7;font-weight:500">[ Cover placeholder ]</span></div></div>
+  <div class="proj-detail-body"><div class="proj-detail-sidebar"><div class="proj-detail-sidebar-section"><div class="proj-detail-sidebar-label">Skills</div><span class="proj-detail-tag">Editorial Layout</span><span class="proj-detail-tag">Typography</span><span class="proj-detail-tag">Grid Systems</span><span class="proj-detail-tag">Print Production</span><span class="proj-detail-tag">InDesign</span></div><div class="proj-detail-sidebar-section"><div class="proj-detail-sidebar-label">Deliverables</div><span class="proj-detail-tag">12-page spread</span><span class="proj-detail-tag">Cover design</span><span class="proj-detail-tag">Type system</span></div></div>
+  <div class="proj-detail-content"><div class="proj-detail-section"><div class="proj-detail-section-label">Overview</div><div class="proj-detail-h2">Layout as atmosphere</div><p class="proj-detail-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nightshade is a fictional culture magazine targeting readers of speculative fiction, occult history, and dark arts. The layout challenge was treating the grid itself as a design element — asymmetric, intentionally weighted, typographically expressive.</p></div><div class="proj-detail-section"><div class="proj-detail-section-label">Process</div><div class="proj-detail-h2">From reference to spread</div><div class="proj-detail-process-steps"><div class="proj-process-step"><div class="proj-process-num">01</div><div class="proj-process-step-content"><div class="proj-process-step-title">Editorial audit</div><div class="proj-process-step-desc">Studied Fantastic Man, The Face, and Dazed & Confused for editorial risk-taking. Identified typographic strategies that created atmosphere without sacrificing readability.</div></div></div><div class="proj-process-step"><div class="proj-process-num">02</div><div class="proj-process-step-content"><div class="proj-process-step-title">Grid & type system</div><div class="proj-process-step-desc">Designed a 12-column grid with intentional margin violations at key moments. Paired a high-contrast serif (display) with a condensed grotesque (body) to create typographic tension.</div></div></div><div class="proj-process-step"><div class="proj-process-num">03</div><div class="proj-process-step-content"><div class="proj-process-step-title">Spread design (12 pages)</div><div class="proj-process-step-desc">Designed cover, feature opener, body spreads, and a classified-ads back section — each with distinct typographic temperature while maintaining system coherence.</div></div></div></div></div><div class="proj-detail-section"><div class="proj-detail-section-label">Final Work</div><div class="proj-detail-h2">Spreads</div><div class="proj-img-placeholder wide"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Cover + feature opener spread</span></div><div class="proj-img-placeholder wide"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Body spread — typography detail</span></div></div></div></div>
+</div>
+
+<!-- Tide, Creature, Apex, Grove — compressed but full layout -->
+<div class="proj-detail-page" id="proj-tide"><div class="proj-detail-nav"><div class="proj-detail-breadcrumb"><span onclick="showPage('graphic')">2D & Graphic Design</span><span class="sep">›</span><span style="color:#1A1A1A;font-weight:500">Tide</span></div><div><button class="proj-nav-btn" onclick="showPage('graphic')">← Back</button></div></div><div class="proj-detail-hero"><div class="proj-detail-kicker">2D & Graphic Design · Poster Series</div><div class="proj-detail-title">Tide</div><p class="proj-detail-tagline">A three-poster series exploring the relationship between typography and natural wave-form — where letterforms become topography.</p><div class="proj-detail-meta-row"><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">3 weeks · Fall 2023</div></div><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Course</div><div class="proj-detail-meta-val">Experimental Typography</div></div><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">Illustrator, Photoshop</div></div></div></div><div class="proj-detail-cover" style="height:360px;background:#FFFAE0"><div class="proj-detail-cover-inner" style="flex-direction:column;gap:12px"><svg width="360" height="180" viewBox="0 0 360 180" fill="none"><ellipse cx="180" cy="90" rx="120" ry="72" fill="#EED840" opacity="0.25"/><path d="M60 130 Q110 50 180 90 Q250 130 300 40" stroke="#C8A800" stroke-width="3" fill="none" opacity="0.45"/></svg><span style="font-size:12px;color:#C8A800;opacity:0.7;font-weight:500">[ Cover placeholder ]</span></div></div><div class="proj-detail-body"><div class="proj-detail-sidebar"><div class="proj-detail-sidebar-section"><div class="proj-detail-sidebar-label">Skills</div><span class="proj-detail-tag">Poster Design</span><span class="proj-detail-tag">Experimental Type</span><span class="proj-detail-tag">Illustration</span><span class="proj-detail-tag">Print</span></div></div><div class="proj-detail-content"><div class="proj-detail-section"><div class="proj-detail-section-label">Overview</div><div class="proj-detail-h2">Type as landscape</div><p class="proj-detail-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. The Tide series was an exploration in fluid typography — treating letterforms not as fixed objects but as things that bend, flow, and erode like coastline. Each of the three posters represents a different stage of tidal movement: incoming, peak, withdrawing.</p></div><div class="proj-detail-section"><div class="proj-detail-section-label">Final Posters</div><div class="proj-detail-h2">The series</div><div class="proj-img-grid proj-img-grid-3"><div class="proj-img-placeholder tall"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Poster 01 — Incoming</span></div><div class="proj-img-placeholder tall"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Poster 02 — Peak</span></div><div class="proj-img-placeholder tall"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Poster 03 — Withdrawing</span></div></div></div></div></div></div>
+
+<div class="proj-detail-page" id="proj-creature"><div class="proj-detail-nav"><div class="proj-detail-breadcrumb"><span onclick="showPage('graphic')">2D & Graphic Design</span><span class="sep">›</span><span style="color:#1A1A1A;font-weight:500">Creature Compendium</span></div><div><button class="proj-nav-btn" onclick="showPage('graphic')">← Back</button></div></div><div class="proj-detail-hero"><div class="proj-detail-kicker">2D & Graphic Design · Illustration</div><div class="proj-detail-title">Creature Compendium</div><p class="proj-detail-tagline">A series of original creature illustrations compiled into a hand-formatted compendium — part field guide, part world-building artifact.</p><div class="proj-detail-meta-row"><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">5 weeks · Fall 2023</div></div><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Course</div><div class="proj-detail-meta-val">Illustration Methods</div></div><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">Procreate, Illustrator, InDesign</div></div></div></div><div class="proj-detail-cover" style="height:360px;background:#F4EFFF"><div class="proj-detail-cover-inner" style="flex-direction:column;gap:12px"><svg width="320" height="180" viewBox="0 0 320 180" fill="none"><circle cx="120" cy="90" r="56" fill="#C090E8" opacity="0.3"/><circle cx="220" cy="90" r="40" fill="#9050C0" opacity="0.25"/><ellipse cx="170" cy="130" rx="30" ry="10" fill="#7030A0" opacity="0.2"/></svg><span style="font-size:12px;color:#9050C0;opacity:0.7;font-weight:500">[ Cover placeholder ]</span></div></div><div class="proj-detail-body"><div class="proj-detail-sidebar"><div class="proj-detail-sidebar-section"><div class="proj-detail-sidebar-label">Skills</div><span class="proj-detail-tag">Character Design</span><span class="proj-detail-tag">Illustration</span><span class="proj-detail-tag">World-building</span><span class="proj-detail-tag">Editorial Layout</span><span class="proj-detail-tag">Procreate</span></div></div><div class="proj-detail-content"><div class="proj-detail-section"><div class="proj-detail-section-label">Overview</div><div class="proj-detail-h2">Building a bestiary</div><p class="proj-detail-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. The Creature Compendium started as a personal sketchbook project — drawing imaginary animals during lectures — and grew into a designed object. The compendium format gave the illustrations editorial context: each creature has a habitat note, a behavioral entry, and a threat level, presented in a field-guide typographic style.</p></div><div class="proj-detail-section"><div class="proj-detail-section-label">Illustrations</div><div class="proj-detail-h2">Selected creatures</div><div class="proj-img-grid proj-img-grid-3"><div class="proj-img-placeholder square"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Creature 01</span></div><div class="proj-img-placeholder square"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Creature 02</span></div><div class="proj-img-placeholder square"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Creature 03</span></div></div><div class="proj-img-placeholder wide"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Compendium spread — layout</span></div></div></div></div></div>
+
+<!-- Apex, Grove, Verdant UI, Wayfinder, Petal — compressed -->
+<div class="proj-detail-page" id="proj-apex"><div class="proj-detail-nav"><div class="proj-detail-breadcrumb"><span onclick="showPage('graphic')">2D & Graphic Design</span><span class="sep">›</span><span style="color:#1A1A1A;font-weight:500">Apex Studio</span></div><div><button class="proj-nav-btn" onclick="showPage('graphic')">← Back</button></div></div><div class="proj-detail-hero"><div class="proj-detail-kicker">2D & Graphic Design · Visual Identity</div><div class="proj-detail-title">Apex Studio</div><p class="proj-detail-tagline">Visual identity and brand system for a fictional architecture and interior design studio — minimal, geometric, authoritative.</p><div class="proj-detail-meta-row"><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">5 weeks · Fall 2023</div></div><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">Illustrator, InDesign</div></div></div></div><div class="proj-detail-cover" style="height:360px;background:#E8F8FF"><div class="proj-detail-cover-inner" style="flex-direction:column;gap:12px"><svg width="320" height="180" viewBox="0 0 320 180" fill="none"><rect x="60" y="30" width="90" height="120" rx="6" fill="#60A8D8" opacity="0.3"/><rect x="162" y="50" width="90" height="60" rx="6" fill="#60A8D8" opacity="0.2"/><rect x="162" y="118" width="90" height="32" rx="6" fill="#60A8D8" opacity="0.15"/></svg><span style="font-size:12px;color:#3a90d0;opacity:0.7;font-weight:500">[ Cover placeholder ]</span></div></div><div class="proj-detail-body"><div class="proj-detail-sidebar"><div class="proj-detail-sidebar-section"><div class="proj-detail-sidebar-label">Skills</div><span class="proj-detail-tag">Brand Identity</span><span class="proj-detail-tag">Logo Design</span><span class="proj-detail-tag">Brand Guidelines</span><span class="proj-detail-tag">Collateral Design</span></div></div><div class="proj-detail-content"><div class="proj-detail-section"><div class="proj-detail-section-label">Overview</div><div class="proj-detail-h2">Architecture studio identity</div><p class="proj-detail-p">Lorem ipsum dolor sit amet. Apex Studio is a brand identity project for a high-end architecture and interiors firm. The brief emphasized restraint — a system that communicates authority and precision without ostentation. The identity uses a single geometric mark, two weights of a modernist sans-serif, and a monochromatic palette extended by material textures.</p></div><div class="proj-detail-section"><div class="proj-detail-section-label">Final Work</div><div class="proj-detail-h2">System & collateral</div><div class="proj-img-placeholder wide"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Logo suite & brand guidelines</span></div><div class="proj-img-grid proj-img-grid-2"><div class="proj-img-placeholder wide"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Stationery set</span></div><div class="proj-img-placeholder wide"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Signage mockup</span></div></div></div></div></div></div>
+
+<div class="proj-detail-page" id="proj-grove"><div class="proj-detail-nav"><div class="proj-detail-breadcrumb"><span onclick="showPage('graphic')">2D & Graphic Design</span><span class="sep">›</span><span style="color:#1A1A1A;font-weight:500">Grove</span></div><div><button class="proj-nav-btn" onclick="showPage('graphic')">← Back</button></div></div><div class="proj-detail-hero"><div class="proj-detail-kicker">2D & Graphic Design · Packaging</div><div class="proj-detail-title">Grove</div><p class="proj-detail-tagline">Packaging design for a small-batch botanical skincare line — structure, label system, and materials chosen for shelf presence and sustainable values.</p><div class="proj-detail-meta-row"><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">4 weeks · Fall 2022</div></div><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">Illustrator, Photoshop</div></div></div></div><div class="proj-detail-cover" style="height:360px;background:#FFF5EC"><div class="proj-detail-cover-inner" style="flex-direction:column;gap:12px"><svg width="320" height="180" viewBox="0 0 320 180" fill="none"><rect x="70" y="30" width="80" height="120" rx="6" fill="#F0A060" opacity="0.35"/><rect x="168" y="30" width="80" height="120" rx="6" fill="#E08040" opacity="0.3"/></svg><span style="font-size:12px;color:#C06020;opacity:0.7;font-weight:500">[ Cover placeholder ]</span></div></div><div class="proj-detail-body"><div class="proj-detail-sidebar"><div class="proj-detail-sidebar-section"><div class="proj-detail-sidebar-label">Skills</div><span class="proj-detail-tag">Packaging Design</span><span class="proj-detail-tag">Label Design</span><span class="proj-detail-tag">Print Production</span><span class="proj-detail-tag">Illustration</span></div></div><div class="proj-detail-content"><div class="proj-detail-section"><div class="proj-detail-section-label">Overview</div><div class="proj-detail-h2">Packaging with purpose</div><p class="proj-detail-p">Lorem ipsum dolor sit amet. Grove is a skincare packaging project designed for a small-batch, botanical-focused brand. The challenge was creating a label system that read as artisan and considered — not mass-produced — while working across multiple SKUs in a family. The label design uses botanical illustration fragments, earthy Pantone selections, and an uncoated paper stock to communicate natural provenance.</p></div><div class="proj-detail-section"><div class="proj-detail-section-label">Final Work</div><div class="proj-detail-h2">Product line</div><div class="proj-img-grid proj-img-grid-3"><div class="proj-img-placeholder tall"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Serum — label</span></div><div class="proj-img-placeholder tall"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Toner — label</span></div><div class="proj-img-placeholder tall"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Moisturizer — label</span></div></div></div></div></div></div>
+
+<div class="proj-detail-page" id="proj-verdant-ui"><div class="proj-detail-nav"><div class="proj-detail-breadcrumb"><span onclick="showPage('ux')">UX / UI & Game Design</span><span class="sep">›</span><span style="color:#1A1A1A;font-weight:500">Verdant — UI System</span></div><div><button class="proj-nav-btn" onclick="showPage('ux')">← Back</button></div></div><div class="proj-detail-hero"><div class="proj-detail-kicker">UX / UI & Game Design · Game UI</div><div class="proj-detail-title">Verdant — UI System</div><p class="proj-detail-tagline">A complete in-game UI system for Verdant — menus, HUD, inventory, and dialogue interfaces designed to feel organic without breaking the world's visual rules.</p><div class="proj-detail-meta-row"><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">6 weeks · Fall 2024</div></div><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">Figma, Illustrator</div></div></div></div><div class="proj-detail-cover" style="height:380px;background:#E8F0FF"><div class="proj-detail-cover-inner" style="flex-direction:column;gap:12px"><svg width="380" height="200" viewBox="0 0 380 200" fill="none"><rect x="20" y="20" width="340" height="160" rx="10" fill="#8090E0" opacity="0.2"/><rect x="36" y="36" width="100" height="70" rx="6" fill="#6070C8" opacity="0.35"/><rect x="152" y="36" width="76" height="30" rx="5" fill="#6070C8" opacity="0.3"/><rect x="152" y="74" width="76" height="30" rx="5" fill="#6070C8" opacity="0.25"/><rect x="246" y="36" width="98" height="70" rx="6" fill="#6070C8" opacity="0.2"/></svg><span style="font-size:12px;color:#6070C8;opacity:0.7;font-weight:500">[ Cover placeholder ]</span></div></div><div class="proj-detail-body"><div class="proj-detail-sidebar"><div class="proj-detail-sidebar-section"><div class="proj-detail-sidebar-label">Skills</div><span class="proj-detail-tag">Game UI Design</span><span class="proj-detail-tag">HUD Design</span><span class="proj-detail-tag">Design Systems</span><span class="proj-detail-tag">Component Library</span><span class="proj-detail-tag">Figma</span></div></div><div class="proj-detail-content"><div class="proj-detail-section"><div class="proj-detail-section-label">Overview</div><div class="proj-detail-h2">UI as world extension</div><p class="proj-detail-p">Lorem ipsum dolor sit amet. The Verdant UI system was designed as a companion to the level design project — a complete interface suite for the game's menus, HUD, inventory, and dialogue. The design constraint: the UI had to feel like it was grown, not built. Organic edge treatments, muted earthy tones, and hand-drawn texture elements give the interface a diegetic quality without sacrificing readability.</p></div><div class="proj-detail-section"><div class="proj-detail-section-label">Key Screens</div><div class="proj-detail-h2">The system</div><div class="proj-img-grid proj-img-grid-2"><div class="proj-img-placeholder wide"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Main menu</span></div><div class="proj-img-placeholder wide"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>In-game HUD</span></div><div class="proj-img-placeholder wide"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Inventory panel</span></div><div class="proj-img-placeholder wide"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Dialogue UI</span></div></div></div></div></div></div>
+
+<!-- Wayfinder, Petal, Sprout, Facet, Vessel, Orbit — stub detail pages -->
+<div class="proj-detail-page" id="proj-wayfinder"><div class="proj-detail-nav"><div class="proj-detail-breadcrumb"><span onclick="showPage('ux')">UX / UI & Game Design</span><span class="sep">›</span><span style="color:#1A1A1A;font-weight:500">Wayfinder</span></div><div><button class="proj-nav-btn" onclick="showPage('ux')">← Back</button></div></div><div class="proj-detail-hero"><div class="proj-detail-kicker">UX / UI & Game Design · UX Research</div><div class="proj-detail-title">Wayfinder</div><p class="proj-detail-tagline">End-to-end UX research case study for a campus wayfinding redesign — interviews, journey maps, accessibility audit, and redesign recommendations.</p><div class="proj-detail-meta-row"><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">8 weeks · Fall 2023</div></div><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">Figma, Miro, Maze</div></div></div></div><div class="proj-detail-cover" style="height:360px;background:#E8F4FF"><div class="proj-detail-cover-inner" style="flex-direction:column;gap:12px"><svg width="360" height="180" viewBox="0 0 360 180" fill="none"><circle cx="100" cy="90" r="50" stroke="#3a90d0" stroke-width="1.5" fill="none" opacity="0.35"/><circle cx="260" cy="90" r="40" stroke="#3a90d0" stroke-width="1.5" fill="none" opacity="0.35"/><line x1="100" y1="90" x2="260" y2="90" stroke="#3a90d0" stroke-width="1.5" opacity="0.25"/><circle cx="100" cy="90" r="8" fill="#3a90d0" opacity="0.5"/><circle cx="260" cy="90" r="8" fill="#3a90d0" opacity="0.5"/><circle cx="180" cy="50" r="8" fill="#3a90d0" opacity="0.4"/></svg><span style="font-size:12px;color:#3a90d0;opacity:0.7;font-weight:500">[ Cover placeholder ]</span></div></div><div class="proj-detail-body"><div class="proj-detail-sidebar"><div class="proj-detail-sidebar-section"><div class="proj-detail-sidebar-label">Skills</div><span class="proj-detail-tag">User Research</span><span class="proj-detail-tag">Journey Mapping</span><span class="proj-detail-tag">Accessibility Audit</span><span class="proj-detail-tag">Affinity Mapping</span><span class="proj-detail-tag">Synthesis</span></div></div><div class="proj-detail-content"><div class="proj-detail-section"><div class="proj-detail-section-label">Overview</div><div class="proj-detail-h2">Research-first wayfinding</div><p class="proj-detail-p">Lorem ipsum dolor sit amet. Wayfinder was a research-first UX project focused on the experience of navigating UT Austin's campus — particularly for first-year students, visitors, and users with mobility needs. The project moved from 12 user interviews through affinity mapping, journey mapping, and a full accessibility audit of existing campus signage to a final set of redesign recommendations.</p></div><div class="proj-detail-section"><div class="proj-detail-section-label">Research Artifacts</div><div class="proj-detail-h2">Key deliverables</div><div class="proj-img-placeholder wide"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Affinity map — research synthesis</span></div><div class="proj-img-placeholder wide"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>User journey map</span></div></div></div></div></div>
+
+<div class="proj-detail-page" id="proj-petal"><div class="proj-detail-nav"><div class="proj-detail-breadcrumb"><span onclick="showPage('ux')">UX / UI & Game Design</span><span class="sep">›</span><span style="color:#1A1A1A;font-weight:500">Petal</span></div><div><button class="proj-nav-btn" onclick="showPage('ux')">← Back</button></div></div><div class="proj-detail-hero"><div class="proj-detail-kicker">UX / UI & Game Design · App Design</div><div class="proj-detail-title">Petal</div><p class="proj-detail-tagline">A mobile wellness app designed for gentle habit tracking — soft, non-judgmental, and built around the idea that small things compound.</p><div class="proj-detail-meta-row"><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">6 weeks · Fall 2022</div></div><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">Figma</div></div></div></div><div class="proj-detail-cover" style="height:360px;background:#FDF0FF"><div class="proj-detail-cover-inner" style="flex-direction:column;gap:12px"><svg width="280" height="180" viewBox="0 0 280 180" fill="none"><rect x="100" y="15" width="80" height="150" rx="14" fill="#C880E8" opacity="0.25"/><rect x="112" y="30" width="56" height="10" rx="4" fill="#9040C0" opacity="0.45"/><rect x="112" y="48" width="40" height="8" rx="3" fill="#9040C0" opacity="0.3"/><rect x="112" y="66" width="56" height="40" rx="8" fill="#9040C0" opacity="0.2"/></svg><span style="font-size:12px;color:#9040C0;opacity:0.7;font-weight:500">[ Cover placeholder ]</span></div></div><div class="proj-detail-body"><div class="proj-detail-sidebar"><div class="proj-detail-sidebar-section"><div class="proj-detail-sidebar-label">Skills</div><span class="proj-detail-tag">Mobile UI</span><span class="proj-detail-tag">Interaction Design</span><span class="proj-detail-tag">Prototyping</span><span class="proj-detail-tag">Micro-interactions</span></div></div><div class="proj-detail-content"><div class="proj-detail-section"><div class="proj-detail-section-label">Overview</div><div class="proj-detail-h2">Habit tracking without shame</div><p class="proj-detail-p">Lorem ipsum dolor sit amet. Petal is a wellness app designed around a single idea: most habit apps feel like report cards. Petal removes all streaks, scores, and failure states — replacing them with a growing garden visualization that reflects accumulation, not performance. The UI design prioritizes softness, breathing room, and micro-interactions that feel rewarding without being addictive.</p></div><div class="proj-detail-section"><div class="proj-detail-section-label">Key Screens</div><div class="proj-detail-h2">Screens</div><div class="proj-img-grid proj-img-grid-3"><div class="proj-img-placeholder tall"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Garden home</span></div><div class="proj-img-placeholder tall"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Log habit</span></div><div class="proj-img-placeholder tall"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Weekly reflection</span></div></div></div></div></div></div>
+
+<!-- 3D stubs -->
+<div class="proj-detail-page" id="proj-sprout"><div class="proj-detail-nav"><div class="proj-detail-breadcrumb"><span onclick="showPage('3d')">3D & Product Design</span><span class="sep">›</span><span style="color:#1A1A1A;font-weight:500">Sprout</span></div><div><button class="proj-nav-btn" onclick="showPage('3d')">← Back</button></div></div><div class="proj-detail-hero"><div class="proj-detail-kicker">3D & Product Design · Product Design</div><div class="proj-detail-title">Sprout — Planter System</div><p class="proj-detail-tagline">A modular planter system designed for small-space urban living — stackable, self-watering, and made from recycled polymer.</p><div class="proj-detail-meta-row"><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">5 weeks · Spring 2024</div></div><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">Blender, Procreate</div></div></div></div><div class="proj-detail-cover" style="height:360px;background:#EEFFF5"><div class="proj-detail-cover-inner" style="flex-direction:column;gap:12px"><svg width="280" height="200" viewBox="0 0 280 200" fill="none"><ellipse cx="140" cy="175" rx="70" ry="15" fill="#50C880" opacity="0.2"/><path d="M90 160 L90 70 Q90 55 105 55 L175 55 Q190 55 190 70 L190 160 Z" fill="#60D890" opacity="0.3"/><rect x="108" y="88" width="64" height="44" rx="8" fill="#30A860" opacity="0.35"/></svg><span style="font-size:12px;color:#30A860;opacity:0.7;font-weight:500">[ Cover placeholder ]</span></div></div><div class="proj-detail-body"><div class="proj-detail-sidebar"><div class="proj-detail-sidebar-section"><div class="proj-detail-sidebar-label">Skills</div><span class="proj-detail-tag">Product Design</span><span class="proj-detail-tag">3D Modeling</span><span class="proj-detail-tag">Material Study</span><span class="proj-detail-tag">CAD Concepts</span></div></div><div class="proj-detail-content"><div class="proj-detail-section"><div class="proj-detail-section-label">Overview</div><div class="proj-detail-h2">Designing for small spaces</div><p class="proj-detail-p">Lorem ipsum dolor sit amet. Sprout is a modular planter system designed around one constraint: it must work in a studio apartment with no outdoor space. The stackable modules use passive water-wicking technology, meaning the reservoirs are filled from the bottom and the substrate draws water up as needed — eliminating overwatering as a failure mode. The form language is rounded and friendly; the material is recycled HDPE in a matte speckle finish.</p></div><div class="proj-detail-section"><div class="proj-detail-section-label">Process & Renders</div><div class="proj-detail-h2">Development</div><div class="proj-img-grid proj-img-grid-2"><div class="proj-img-placeholder wide"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Sketch development</span></div><div class="proj-img-placeholder wide"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Final render</span></div></div></div></div></div></div>
+
+<div class="proj-detail-page" id="proj-facet"><div class="proj-detail-nav"><div class="proj-detail-breadcrumb"><span onclick="showPage('3d')">3D & Product Design</span><span class="sep">›</span><span style="color:#1A1A1A;font-weight:500">Facet</span></div><div><button class="proj-nav-btn" onclick="showPage('3d')">← Back</button></div></div><div class="proj-detail-hero"><div class="proj-detail-kicker">3D & Product Design · Lamp / Prototype</div><div class="proj-detail-title">Facet — Lamp Prototype</div><p class="proj-detail-tagline">A parametric table lamp built from folded aluminum panels — exploring how repetitive geometric facets can distribute light and create form simultaneously.</p><div class="proj-detail-meta-row"><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">6 weeks · Spring 2023</div></div><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">Blender, Grasshopper (concept), hand-built prototype</div></div></div></div><div class="proj-detail-cover" style="height:360px;background:#FFFAF0"><div class="proj-detail-cover-inner" style="flex-direction:column;gap:12px"><svg width="280" height="200" viewBox="0 0 280 200" fill="none"><path d="M140 30 L200 90 L200 165 L140 180 L80 165 L80 90 Z" fill="#E8C840" opacity="0.3"/><path d="M140 30 L200 90 L140 110 L80 90 Z" fill="#D0A820" opacity="0.25"/><path d="M140 110 L200 90 L200 165 L140 180 Z" fill="#B89010" opacity="0.2"/></svg><span style="font-size:12px;color:#C0A820;opacity:0.7;font-weight:500">[ Cover placeholder ]</span></div></div><div class="proj-detail-body"><div class="proj-detail-sidebar"><div class="proj-detail-sidebar-section"><div class="proj-detail-sidebar-label">Skills</div><span class="proj-detail-tag">Parametric Design</span><span class="proj-detail-tag">Physical Prototyping</span><span class="proj-detail-tag">3D Modeling</span><span class="proj-detail-tag">Fabrication</span></div></div><div class="proj-detail-content"><div class="proj-detail-section"><div class="proj-detail-section-label">Overview</div><div class="proj-detail-h2">Form follows facet</div><p class="proj-detail-p">Lorem ipsum dolor sit amet. Facet started as a parametric study in Grasshopper — exploring how geometric folding patterns change the quality of light diffusion. The concept was developed into a physical prototype using hand-cut and folded aluminum sheet, proving that the digital form could be manufactured with basic tools. The final lamp creates dramatic shadow patterns at low angles and diffuses softly when the source is overhead.</p></div><div class="proj-detail-section"><div class="proj-detail-section-label">Work</div><div class="proj-img-grid proj-img-grid-2"><div class="proj-img-placeholder wide"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Blender model — multiple views</span></div><div class="proj-img-placeholder wide"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Physical prototype — lit</span></div></div></div></div></div></div>
+
+<div class="proj-detail-page" id="proj-vessel"><div class="proj-detail-nav"><div class="proj-detail-breadcrumb"><span onclick="showPage('3d')">3D & Product Design</span><span class="sep">›</span><span style="color:#1A1A1A;font-weight:500">Vessel</span></div><div><button class="proj-nav-btn" onclick="showPage('3d')">← Back</button></div></div><div class="proj-detail-hero"><div class="proj-detail-kicker">3D & Product Design · Product Design</div><div class="proj-detail-title">Vessel — Water Bottle</div><p class="proj-detail-tagline">A water bottle concept exploring the ergonomics of single-handed use — grip geometry, balance point, and cap interaction all designed for one hand.</p><div class="proj-detail-meta-row"><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">4 weeks · Fall 2023</div></div><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">Blender, Procreate</div></div></div></div><div class="proj-detail-cover" style="height:360px;background:#F0F8FF"><div class="proj-detail-cover-inner" style="flex-direction:column;gap:12px"><svg width="260" height="200" viewBox="0 0 260 200" fill="none"><rect x="90" y="50" width="80" height="120" rx="18" fill="#80B8E8" opacity="0.35"/><rect x="105" y="28" width="50" height="26" rx="10" fill="#60A0D8" opacity="0.3"/><ellipse cx="130" cy="172" rx="40" ry="10" fill="#4080B8" opacity="0.2"/></svg><span style="font-size:12px;color:#4080B8;opacity:0.7;font-weight:500">[ Cover placeholder ]</span></div></div><div class="proj-detail-body"><div class="proj-detail-sidebar"><div class="proj-detail-sidebar-section"><div class="proj-detail-sidebar-label">Skills</div><span class="proj-detail-tag">Industrial Design</span><span class="proj-detail-tag">Ergonomics</span><span class="proj-detail-tag">3D Modeling</span><span class="proj-detail-tag">Sketch Development</span></div></div><div class="proj-detail-content"><div class="proj-detail-section"><div class="proj-detail-section-label">Overview</div><div class="proj-detail-h2">Designed for the hand</div><p class="proj-detail-p">Lorem ipsum dolor sit amet. Vessel is a water bottle concept built around one ergonomic constraint: everything must be operable with one hand without shifting grip. The cap opens with a quarter-turn from thumb pressure, the body tapers toward a natural grip zone, and the balance point is calibrated for full, half, and empty fill levels. The form was developed from hand-drawn sketches to Blender model to final rendered views.</p></div><div class="proj-detail-section"><div class="proj-detail-section-label">Development</div><div class="proj-img-grid proj-img-grid-2"><div class="proj-img-placeholder wide"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Sketch development sheets</span></div><div class="proj-img-placeholder wide"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Final render — 3 colorways</span></div></div></div></div></div></div>
+
+<div class="proj-detail-page" id="proj-orbit"><div class="proj-detail-nav"><div class="proj-detail-breadcrumb"><span onclick="showPage('3d')">3D & Product Design</span><span class="sep">›</span><span style="color:#1A1A1A;font-weight:500">Orbit</span></div><div><button class="proj-nav-btn" onclick="showPage('3d')">← Back</button></div></div><div class="proj-detail-hero"><div class="proj-detail-kicker">3D & Product Design · Concept Design</div><div class="proj-detail-title">Orbit — Desk Clock</div><p class="proj-detail-tagline">A desk clock concept where time is expressed through concentric rings rather than hands — a study in minimalism and kinetic legibility.</p><div class="proj-detail-meta-row"><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">3 weeks · Fall 2022</div></div><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">Blender, Procreate</div></div></div></div><div class="proj-detail-cover" style="height:360px;background:#FFF5F8"><div class="proj-detail-cover-inner" style="flex-direction:column;gap:12px"><svg width="260" height="200" viewBox="0 0 260 200" fill="none"><circle cx="130" cy="100" r="70" fill="#F0A0B8" opacity="0.25"/><circle cx="130" cy="100" r="50" fill="#E07090" opacity="0.2"/><circle cx="130" cy="100" r="30" fill="#C04060" opacity="0.25"/><circle cx="130" cy="100" r="10" fill="#C04060" opacity="0.35"/></svg><span style="font-size:12px;color:#C04060;opacity:0.7;font-weight:500">[ Cover placeholder ]</span></div></div><div class="proj-detail-body"><div class="proj-detail-sidebar"><div class="proj-detail-sidebar-section"><div class="proj-detail-sidebar-label">Skills</div><span class="proj-detail-tag">Concept Design</span><span class="proj-detail-tag">3D Modeling</span><span class="proj-detail-tag">Product Rendering</span><span class="proj-detail-tag">Ideation Sketching</span></div></div><div class="proj-detail-content"><div class="proj-detail-section"><div class="proj-detail-section-label">Overview</div><div class="proj-detail-h2">Time as orbit</div><p class="proj-detail-p">Lorem ipsum dolor sit amet. Orbit is an early concept project exploring an alternative way of displaying time. Three concentric rings rotate at different speeds — hours, minutes, seconds — with a fixed reading marker. The aesthetic is inspired by planetary mechanics and orrery design. The project focused on developing the concept through rapid sketch ideation before producing a final Blender model and rendered views.</p></div><div class="proj-detail-section"><div class="proj-detail-section-label">Work</div><div class="proj-img-placeholder wide"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Final render</span></div></div></div></div></div></div>
+
+<!-- Motion stubs -->
+<div class="proj-detail-page" id="proj-pulse"><div class="proj-detail-nav"><div class="proj-detail-breadcrumb"><span onclick="showPage('motion')">Motion & Videography</span><span class="sep">›</span><span style="color:#1A1A1A;font-weight:500">Pulse</span></div><div><button class="proj-nav-btn" onclick="showPage('motion')">← Back</button></div></div><div class="proj-detail-hero"><div class="proj-detail-kicker">Motion & Videography · Kinetic Typography</div><div class="proj-detail-title">Pulse</div><p class="proj-detail-tagline">A one-minute kinetic typography piece set to an original music track — letterforms that breathe, spike, and collapse with the audio waveform.</p><div class="proj-detail-meta-row"><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">3 weeks · Spring 2024</div></div><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">After Effects, Illustrator</div></div></div></div><div class="proj-detail-cover" style="height:360px;background:#E8F8FF"><div class="proj-detail-cover-inner" style="flex-direction:column;gap:12px"><svg width="380" height="180" viewBox="0 0 380 180" fill="none"><path d="M20 100 Q80 20 140 90 Q200 160 260 60 Q320 20 380 100" stroke="#4498D8" stroke-width="3" fill="none" opacity="0.4"/><circle cx="20" cy="100" r="6" fill="#4498D8" opacity="0.5"/><circle cx="140" cy="90" r="6" fill="#4498D8" opacity="0.5"/><circle cx="260" cy="60" r="6" fill="#4498D8" opacity="0.5"/><circle cx="380" cy="100" r="6" fill="#4498D8" opacity="0.5"/></svg><span style="font-size:12px;color:#4498D8;opacity:0.7;font-weight:500">[ Cover placeholder — still frame ]</span></div></div><div class="proj-detail-body"><div class="proj-detail-sidebar"><div class="proj-detail-sidebar-section"><div class="proj-detail-sidebar-label">Skills</div><span class="proj-detail-tag">Kinetic Typography</span><span class="proj-detail-tag">After Effects</span><span class="proj-detail-tag">Audio Sync</span><span class="proj-detail-tag">Timing & Easing</span></div></div><div class="proj-detail-content"><div class="proj-detail-section"><div class="proj-detail-section-label">Overview</div><div class="proj-detail-h2">Type that moves with sound</div><p class="proj-detail-p">Lorem ipsum dolor sit amet. Pulse was a kinetic typography project driven by a single brief: make text feel like music. The one-minute piece uses a custom track (produced in GarageBand) as the structural backbone — every typographic movement is synced to a beat, breath, or note. The letterforms stretch, collapse, rotate, and blur in direct response to the audio, creating the sensation that the text is alive.</p></div><div class="proj-detail-section"><div class="proj-detail-section-label">Work</div><div class="proj-img-placeholder wide"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="14" stroke="#ccc" stroke-width="1.5"/><polygon points="16,14 16,26 28,20" fill="#ccc"/></svg><span>Pulse — 1 min [ video placeholder ]</span></div><div class="proj-img-grid proj-img-grid-3"><div class="proj-img-placeholder wide"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Frame 00:08</span></div><div class="proj-img-placeholder wide"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Frame 00:32</span></div><div class="proj-img-placeholder wide"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Frame 00:54</span></div></div></div></div></div></div>
+
+<div class="proj-detail-page" id="proj-golden-hour"><div class="proj-detail-nav"><div class="proj-detail-breadcrumb"><span onclick="showPage('motion')">Motion & Videography</span><span class="sep">›</span><span style="color:#1A1A1A;font-weight:500">Golden Hour</span></div><div><button class="proj-nav-btn" onclick="showPage('motion')">← Back</button></div></div><div class="proj-detail-hero"><div class="proj-detail-kicker">Motion & Videography · Title Sequence</div><div class="proj-detail-title">Golden Hour</div><p class="proj-detail-tagline">A broadcast title sequence for a fictional documentary series about contemporary craft makers — warm, unhurried, and typographically grounded.</p><div class="proj-detail-meta-row"><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">4 weeks · Spring 2024</div></div><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">After Effects, Illustrator</div></div></div></div><div class="proj-detail-cover" style="height:360px;background:#FFF8E0"><div class="proj-detail-cover-inner" style="flex-direction:column;gap:12px"><svg width="380" height="180" viewBox="0 0 380 180" fill="none"><rect x="40" y="40" width="300" height="100" rx="10" fill="#E8C840" opacity="0.3"/><rect x="64" y="60" width="252" height="16" rx="5" fill="#C0A020" opacity="0.5"/><rect x="64" y="84" width="180" height="12" rx="4" fill="#C0A020" opacity="0.3"/></svg><span style="font-size:12px;color:#C0A020;opacity:0.7;font-weight:500">[ Cover placeholder — still frame ]</span></div></div><div class="proj-detail-body"><div class="proj-detail-sidebar"><div class="proj-detail-sidebar-section"><div class="proj-detail-sidebar-label">Skills</div><span class="proj-detail-tag">Title Design</span><span class="proj-detail-tag">Broadcast Design</span><span class="proj-detail-tag">After Effects</span><span class="proj-detail-tag">Storyboarding</span></div></div><div class="proj-detail-content"><div class="proj-detail-section"><div class="proj-detail-section-label">Overview</div><div class="proj-detail-h2">Broadcast with texture</div><p class="proj-detail-p">Lorem ipsum dolor sit amet. Golden Hour is a 30-second title sequence designed for a fictional documentary series about contemporary craft makers — potters, weavers, glassblowers, and woodworkers. The visual language is warm and tactile: filmed textures (grain, linen, bark) play behind slow-moving type, with a color palette of deep amber, burnt sienna, and warm cream. The motion is deliberate and patient — matching the pace of hand-made things.</p></div><div class="proj-detail-section"><div class="proj-detail-section-label">Work</div><div class="proj-img-placeholder wide"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="14" stroke="#ccc" stroke-width="1.5"/><polygon points="16,14 16,26 28,20" fill="#ccc"/></svg><span>Golden Hour title sequence — 30 sec [ video ]</span></div></div></div></div></div></div>
+
+<div class="proj-detail-page" id="proj-bloom-loop"><div class="proj-detail-nav"><div class="proj-detail-breadcrumb"><span onclick="showPage('motion')">Motion & Videography</span><span class="sep">›</span><span style="color:#1A1A1A;font-weight:500">Bloom Loop</span></div><div><button class="proj-nav-btn" onclick="showPage('motion')">← Back</button></div></div><div class="proj-detail-hero"><div class="proj-detail-kicker">Motion & Videography · Social Animation</div><div class="proj-detail-title">Bloom Loop</div><p class="proj-detail-tagline">A seamlessly looping animation designed for social media — floral forms expanding and collapsing in a continuous, meditative cycle.</p><div class="proj-detail-meta-row"><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">2 weeks · Fall 2023</div></div><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">After Effects, Illustrator</div></div></div></div><div class="proj-detail-cover" style="height:360px;background:#F8F0FF"><div class="proj-detail-cover-inner"><svg width="260" height="200" viewBox="0 0 260 200" fill="none"><circle cx="130" cy="100" r="70" fill="#B880E8" opacity="0.25"/><circle cx="130" cy="100" r="48" fill="#9050C0" opacity="0.2"/><path d="M88 100 Q130 54 172 100 Q130 146 88 100Z" fill="#7030A0" opacity="0.3"/></svg></div></div><div class="proj-detail-body"><div class="proj-detail-sidebar"><div class="proj-detail-sidebar-section"><div class="proj-detail-sidebar-label">Skills</div><span class="proj-detail-tag">Loop Animation</span><span class="proj-detail-tag">After Effects</span><span class="proj-detail-tag">Social Content</span><span class="proj-detail-tag">Expressions</span></div></div><div class="proj-detail-content"><div class="proj-detail-section"><div class="proj-detail-section-label">Overview</div><p class="proj-detail-p">Lorem ipsum dolor sit amet. Bloom Loop is a social-first animation designed around the seamless loop — where the last frame is identical to the first so the animation plays infinitely without a visible reset. The floral forms use After Effects expressions to drive their timing, meaning the animation is generative rather than hand-keyframed at every point. The piece was designed for Instagram at 1:1 and 9:16 aspect ratios.</p></div><div class="proj-detail-section"><div class="proj-detail-section-label">Work</div><div class="proj-img-placeholder wide"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="14" stroke="#ccc" stroke-width="1.5"/><polygon points="16,14 16,26 28,20" fill="#ccc"/></svg><span>Bloom Loop [ video — 8 sec loop ]</span></div></div></div></div></div></div>
+
+<div class="proj-detail-page" id="proj-roots"><div class="proj-detail-nav"><div class="proj-detail-breadcrumb"><span onclick="showPage('motion')">Motion & Videography</span><span class="sep">›</span><span style="color:#1A1A1A;font-weight:500">Roots</span></div><div><button class="proj-nav-btn" onclick="showPage('motion')">← Back</button></div></div><div class="proj-detail-hero"><div class="proj-detail-kicker">Motion & Videography · Documentary</div><div class="proj-detail-title">Roots</div><p class="proj-detail-tagline">A 4-minute short documentary about a community garden in East Austin — told through intimate handheld footage, ambient sound, and minimal narration.</p><div class="proj-detail-meta-row"><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">6 weeks · Fall 2023</div></div><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">Premiere Pro, Audition</div></div></div></div><div class="proj-detail-cover" style="height:360px;background:#F0FFF8"><div class="proj-detail-cover-inner" style="flex-direction:column;gap:12px"><svg width="380" height="180" viewBox="0 0 380 180" fill="none"><rect x="20" y="40" width="160" height="120" rx="8" fill="#60C890" opacity="0.25"/><rect x="200" y="20" width="160" height="150" rx="8" fill="#40A870" opacity="0.2"/></svg><span style="font-size:12px;color:#30A060;opacity:0.7;font-weight:500">[ Cover placeholder — film still ]</span></div></div><div class="proj-detail-body"><div class="proj-detail-sidebar"><div class="proj-detail-sidebar-section"><div class="proj-detail-sidebar-label">Skills</div><span class="proj-detail-tag">Documentary</span><span class="proj-detail-tag">Cinematography</span><span class="proj-detail-tag">Editing</span><span class="proj-detail-tag">Sound Design</span><span class="proj-detail-tag">Premiere Pro</span></div></div><div class="proj-detail-content"><div class="proj-detail-section"><div class="proj-detail-section-label">Overview</div><p class="proj-detail-p">Lorem ipsum dolor sit amet. Roots is a short documentary about a community garden in East Austin — specifically about three gardeners who have tended the same plots for over a decade. The film is observational: handheld footage, ambient sound, and interview fragments. No voiceover, no music score, no exposition. The editorial approach lets the textures of the space — dirt, water, light through leaves — carry the emotional weight.</p></div><div class="proj-detail-section"><div class="proj-detail-section-label">Stills</div><div class="proj-img-grid proj-img-grid-3"><div class="proj-img-placeholder wide"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Film still 01</span></div><div class="proj-img-placeholder wide"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Film still 02</span></div><div class="proj-img-placeholder wide"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Film still 03</span></div></div></div></div></div></div>
+
+<div class="proj-detail-page" id="proj-peak"><div class="proj-detail-nav"><div class="proj-detail-breadcrumb"><span onclick="showPage('motion')">Motion & Videography</span><span class="sep">›</span><span style="color:#1A1A1A;font-weight:500">Peak</span></div><div><button class="proj-nav-btn" onclick="showPage('motion')">← Back</button></div></div><div class="proj-detail-hero"><div class="proj-detail-kicker">Motion & Videography · Logo Animation</div><div class="proj-detail-title">Peak — Animated Logo</div><p class="proj-detail-tagline">A logo animation for a fictional outdoor apparel brand — the mountain-form mark builds, breathes, and resolves in under 3 seconds.</p><div class="proj-detail-meta-row"><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">2 weeks · Fall 2023</div></div><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">After Effects, Illustrator</div></div></div></div><div class="proj-detail-cover" style="height:360px;background:#FFF5F0"><div class="proj-detail-cover-inner"><svg width="380" height="180" viewBox="0 0 380 180" fill="none"><path d="M60 155 L150 40 L240 110 L300 70 L360 155 Z" fill="#F09060" opacity="0.3" stroke="#D07040" stroke-width="1.5"/></svg></div></div><div class="proj-detail-body"><div class="proj-detail-sidebar"><div class="proj-detail-sidebar-section"><div class="proj-detail-sidebar-label">Skills</div><span class="proj-detail-tag">Logo Animation</span><span class="proj-detail-tag">After Effects</span><span class="proj-detail-tag">Trim Paths</span><span class="proj-detail-tag">Reveal Animation</span></div></div><div class="proj-detail-content"><div class="proj-detail-section"><div class="proj-detail-section-label">Overview</div><p class="proj-detail-p">Lorem ipsum dolor sit amet. Peak is a logo animation project for a fictional outdoor apparel brand. The brief asked for a 2–3 second logo reveal that would work as a pre-roll ident, social avatar animation, and loading screen. The mark — a stylized mountain — draws itself using trim path animations, then settles with a subtle breathing loop. The timing was calibrated to feel confident, not flashy.</p></div><div class="proj-detail-section"><div class="proj-detail-section-label">Work</div><div class="proj-img-placeholder wide"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="14" stroke="#ccc" stroke-width="1.5"/><polygon points="16,14 16,26 28,20" fill="#ccc"/></svg><span>Peak animation — 3 sec [ video ]</span></div></div></div></div></div></div>
+
+<!-- Archive stubs -->
+<div class="proj-detail-page" id="proj-fragments"><div class="proj-detail-nav"><div class="proj-detail-breadcrumb"><span onclick="showPage('archive')">Archive</span><span class="sep">›</span><span style="color:#1A1A1A;font-weight:500">Fragments</span></div><div><button class="proj-nav-btn" onclick="showPage('archive')">← Back</button></div></div><div class="proj-detail-hero"><div class="proj-detail-kicker">Archive · Digital Collage</div><div class="proj-detail-title">Fragments</div><p class="proj-detail-tagline">A personal collage series exploring memory, materiality, and the aesthetics of the found — made over two weeks as a self-assigned visual experiment.</p><div class="proj-detail-meta-row"><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Year</div><div class="proj-detail-meta-val">2024</div></div><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">Photoshop, Procreate</div></div></div></div><div class="proj-detail-cover" style="height:360px;background:#F4F4F4"><div class="proj-detail-cover-inner" style="flex-direction:column;gap:12px"><svg width="360" height="180" viewBox="0 0 360 180" fill="none"><rect x="20" y="30" width="100" height="120" rx="6" fill="#bbb" opacity="0.4"/><rect x="140" y="60" width="80" height="80" rx="5" fill="#ccc" opacity="0.35"/><rect x="240" y="20" width="100" height="150" rx="5" fill="#aaa" opacity="0.4"/></svg><span style="font-size:12px;color:#888;opacity:0.7;font-weight:500">[ Cover placeholder ]</span></div></div><div class="proj-detail-body"><div class="proj-detail-sidebar"><div class="proj-detail-sidebar-section"><div class="proj-detail-sidebar-label">Skills</div><span class="proj-detail-tag">Digital Collage</span><span class="proj-detail-tag">Photo Editing</span><span class="proj-detail-tag">Personal Work</span></div></div><div class="proj-detail-content"><div class="proj-detail-section"><div class="proj-detail-section-label">Overview</div><p class="proj-detail-p">Lorem ipsum dolor sit amet. Fragments is a personal collage series made during a two-week creative sprint — sourcing imagery from scanned paper, fabric textures, and found photography to build layered compositions that feel like disassembled memories. No brief, no deliverable: just an exercise in making something by feel.</p></div><div class="proj-detail-section"><div class="proj-detail-section-label">Series</div><div class="proj-img-grid proj-img-grid-3"><div class="proj-img-placeholder square"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Fragment 01</span></div><div class="proj-img-placeholder square"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Fragment 02</span></div><div class="proj-img-placeholder square"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Fragment 03</span></div></div></div></div></div></div>
+
+<div class="proj-detail-page" id="proj-sketchbook"><div class="proj-detail-nav"><div class="proj-detail-breadcrumb"><span onclick="showPage('archive')">Archive</span><span class="sep">›</span><span style="color:#1A1A1A;font-weight:500">Sketchbook Vol. 3</span></div><div><button class="proj-nav-btn" onclick="showPage('archive')">← Back</button></div></div><div class="proj-detail-hero"><div class="proj-detail-kicker">Archive · Sketchbook</div><div class="proj-detail-title">Sketchbook Vol. 3</div><p class="proj-detail-tagline">Selected pages from the third sketchbook — observational drawings, thumbnail explorations, character doodles, and the strange things that appear during lecture.</p><div class="proj-detail-meta-row"><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Year</div><div class="proj-detail-meta-val">2024</div></div><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">Procreate, pencil</div></div></div></div><div class="proj-detail-cover" style="height:360px;background:#FFFFF0"><div class="proj-detail-cover-inner"><svg width="380" height="180" viewBox="0 0 380 180" fill="none"><path d="M40 150 Q100 80 180 120 Q260 160 340 50" stroke="#8a8a00" stroke-width="3" fill="none" opacity="0.3" stroke-linecap="round"/><path d="M60 155 Q120 90 200 125 Q280 160 360 60" stroke="#8a8a00" stroke-width="1.5" fill="none" opacity="0.2" stroke-linecap="round"/></svg></div></div><div class="proj-detail-body"><div class="proj-detail-sidebar"><div class="proj-detail-sidebar-section"><div class="proj-detail-sidebar-label">Skills</div><span class="proj-detail-tag">Drawing</span><span class="proj-detail-tag">Illustration</span><span class="proj-detail-tag">Ideation</span></div></div><div class="proj-detail-content"><div class="proj-detail-section"><div class="proj-detail-section-label">Selected pages</div><div class="proj-img-grid proj-img-grid-2"><div class="proj-img-placeholder tall"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Page spread 1</span></div><div class="proj-img-placeholder tall"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Page spread 2</span></div></div></div></div></div></div>
+
+<div class="proj-detail-page" id="proj-type-study"><div class="proj-detail-nav"><div class="proj-detail-breadcrumb"><span onclick="showPage('archive')">Archive</span><span class="sep">›</span><span style="color:#1A1A1A;font-weight:500">Type Study</span></div><div><button class="proj-nav-btn" onclick="showPage('archive')">← Back</button></div></div><div class="proj-detail-hero"><div class="proj-detail-kicker">Archive · Typography</div><div class="proj-detail-title">Type Study</div><p class="proj-detail-tagline">Letterform exploration from a typography class — studying the anatomy, proportion, and optical corrections that make type feel right.</p><div class="proj-detail-meta-row"><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Year</div><div class="proj-detail-meta-val">2023</div></div><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Course</div><div class="proj-detail-meta-val">Typography I</div></div></div></div><div class="proj-detail-cover" style="height:360px;background:#F0F4FF"><div class="proj-detail-cover-inner"><svg width="360" height="180" viewBox="0 0 360 180" fill="none"><text x="60" y="130" font-family="serif" font-size="100" fill="#8090C0" opacity="0.3" font-weight="bold">Aa</text></svg></div></div><div class="proj-detail-body"><div class="proj-detail-sidebar"><div class="proj-detail-sidebar-section"><div class="proj-detail-sidebar-label">Skills</div><span class="proj-detail-tag">Letterform Study</span><span class="proj-detail-tag">Typography</span><span class="proj-detail-tag">Illustration</span></div></div><div class="proj-detail-content"><div class="proj-detail-section"><div class="proj-detail-section-label">Overview</div><p class="proj-detail-p">Lorem ipsum dolor sit amet. A semester-long letterform exploration project from Typography I, studying how typefaces achieve optical balance — why a circle must overshoot a square's baseline to appear the same size, why strokes thin and thick to create rhythm, and how the negative space within a letter defines its personality as much as the positive form.</p></div><div class="proj-detail-section"><div class="proj-detail-section-label">Work</div><div class="proj-img-grid proj-img-grid-2"><div class="proj-img-placeholder tall"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Letterform studies</span></div><div class="proj-img-placeholder tall"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Final specimens</span></div></div></div></div></div></div>
+
+<div class="proj-detail-page" id="proj-systems"><div class="proj-detail-nav"><div class="proj-detail-breadcrumb"><span onclick="showPage('archive')">Archive</span><span class="sep">›</span><span style="color:#1A1A1A;font-weight:500">Systems</span></div><div><button class="proj-nav-btn" onclick="showPage('archive')">← Back</button></div></div><div class="proj-detail-hero"><div class="proj-detail-kicker">Archive · Systems Thinking</div><div class="proj-detail-title">Systems — Diagram Workshop</div><p class="proj-detail-tagline">A diagram design workshop exploring how to visualize complex systems — feedback loops, stakeholder maps, and information flows — as clear, readable graphics.</p><div class="proj-detail-meta-row"><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Year</div><div class="proj-detail-meta-val">2023</div></div><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Course</div><div class="proj-detail-meta-val">Information Design</div></div></div></div><div class="proj-detail-cover" style="height:360px;background:#FFF8F0"><div class="proj-detail-cover-inner"><svg width="380" height="180" viewBox="0 0 380 180" fill="none"><circle cx="100" cy="90" r="50" stroke="#E08040" stroke-width="1.5" fill="none" opacity="0.35"/><circle cx="240" cy="90" r="40" stroke="#E08040" stroke-width="1.5" fill="none" opacity="0.35"/><circle cx="320" cy="60" r="28" stroke="#E08040" stroke-width="1.5" fill="none" opacity="0.3"/><line x1="100" y1="90" x2="240" y2="90" stroke="#E08040" stroke-width="1" opacity="0.25"/><line x1="240" y1="90" x2="320" y2="60" stroke="#E08040" stroke-width="1" opacity="0.2"/></svg></div></div><div class="proj-detail-body"><div class="proj-detail-sidebar"><div class="proj-detail-sidebar-section"><div class="proj-detail-sidebar-label">Skills</div><span class="proj-detail-tag">Diagram Design</span><span class="proj-detail-tag">Information Design</span><span class="proj-detail-tag">Systems Thinking</span></div></div><div class="proj-detail-content"><div class="proj-detail-section"><div class="proj-detail-section-label">Overview</div><p class="proj-detail-p">Lorem ipsum dolor sit amet. A workshop project from Information Design exploring how to translate complex systems into clear visual diagrams. Produced three diagram types: a stakeholder map for a community health initiative, a feedback loop diagram for a social media recommendation system, and an information flow diagram for a public transit network.</p></div><div class="proj-detail-section"><div class="proj-detail-section-label">Diagrams</div><div class="proj-img-placeholder wide"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>All three diagrams</span></div></div></div></div></div></div>
+
+<!-- FOOTER -->
 <footer class="site-footer">
-  <div class="footer-left">anshu patel <span style="font-size:20px;opacity:0.9;font-weight:300;color:#fff">*</span></div>
+  <div class="footer-left">anshu patel <span>*</span></div>
   <div class="footer-links">
     <a href="mailto:patelans006@gmail.com">Email</a>
-    <a href="https://www.linkedin.com/in/anshu-patel-8128bb3a2">LinkedIn</a>
+    <a href="https://www.linkedin.com/in/anshu-patel-8128bb3a2" target="_blank">LinkedIn</a>
     <a href="#">Resume</a>
   </div>
-  <div class="footer-copy">© 2026 Anshu patel</div>
+  <div class="footer-copy">© 2026 Anshu Patel</div>
 </footer>
 
 <script>
-const pages={home:'page-home',graphic:'page-graphic',ux:'page-ux','3d':'page-3d',motion:'page-motion',archive:'page-archive',about:'page-about'};
-const navIds={home:'nav-home',graphic:'nav-graphic',ux:'nav-ux','3d':'nav-3d',motion:'nav-motion',archive:'nav-archive',about:'nav-about'};
-const workPages=['graphic','ux','3d','motion','archive'];
+// ── PAGE / PROJECT ROUTING ──
+const pages = {
+  home:'page-home', graphic:'page-graphic', ux:'page-ux',
+  '3d':'page-3d', motion:'page-motion', archive:'page-archive', about:'page-about'
+};
+const navIds = {
+  home:'nav-home', graphic:'nav-graphic', ux:'nav-ux',
+  '3d':'nav-3d', motion:'nav-motion', archive:'nav-archive', about:'nav-about'
+};
+const workPages = ['graphic','ux','3d','motion','archive'];
 
-function showPage(id){
-  Object.values(pages).forEach(p=>{const el=document.getElementById(p);if(el)el.classList.remove('active')});
-  Object.values(navIds).forEach(n=>{const el=document.getElementById(n);if(el)el.classList.remove('active')});
-  const pg=document.getElementById(pages[id]);if(pg)pg.classList.add('active');
-  const nv=document.getElementById(navIds[id]);if(nv)nv.classList.add('active');
-  // Mark Works trigger as active if a sub-page is open
-  const trigger=document.getElementById('works-trigger');
-  if(workPages.includes(id)){trigger.classList.add('has-active')}
-  else{trigger.classList.remove('has-active')}
-  window.scrollTo(0,0);
+function showPage(id) {
+  // Hide all main pages and project detail pages
+  document.querySelectorAll('.page, .proj-detail-page').forEach(el => el.classList.remove('active'));
+  // Show target page
+  const pg = document.getElementById(pages[id]);
+  if (pg) pg.classList.add('active');
+  // Update nav
+  Object.values(navIds).forEach(n => { const el = document.getElementById(n); if(el) el.classList.remove('active'); });
+  const nv = document.getElementById(navIds[id]);
+  if (nv) nv.classList.add('active');
+  const trigger = document.getElementById('works-trigger');
+  if (workPages.includes(id)) { trigger.classList.add('has-active'); }
+  else { trigger.classList.remove('has-active'); }
+  window.scrollTo(0, 0);
   closeWorksMenu();
 }
 
-function toggleWorksMenu(){
-  const menu=document.getElementById('works-menu');
-  const trigger=document.getElementById('works-trigger');
-  const open=menu.classList.contains('open');
-  if(open){closeWorksMenu()}
-  else{menu.classList.add('open');trigger.classList.add('open')}
+function showProject(slug) {
+  document.querySelectorAll('.page, .proj-detail-page').forEach(el => el.classList.remove('active'));
+  const pg = document.getElementById('proj-' + slug);
+  if (pg) pg.classList.add('active');
+  window.scrollTo(0, 0);
+  closeWorksMenu();
 }
-function closeWorksMenu(){
+
+// ── WORKS DROPDOWN ──
+function toggleWorksMenu() {
+  const menu = document.getElementById('works-menu');
+  const trigger = document.getElementById('works-trigger');
+  const open = menu.classList.contains('open');
+  if (open) { closeWorksMenu(); } else { menu.classList.add('open'); trigger.classList.add('open'); }
+}
+function closeWorksMenu() {
   document.getElementById('works-menu').classList.remove('open');
   document.getElementById('works-trigger').classList.remove('open');
 }
-// Close on outside click
-document.addEventListener('click',function(e){
-  const dd=document.getElementById('works-dropdown');
-  if(dd&&!dd.contains(e.target))closeWorksMenu();
+document.addEventListener('click', function(e) {
+  const dd = document.getElementById('works-dropdown');
+  if (dd && !dd.contains(e.target)) closeWorksMenu();
 });
 
-function toggleExp(id){
-  const item=document.getElementById(id);
-  item.classList.toggle('open');
+// ── EXPERIENCE ACCORDION ──
+function toggleExp(id) {
+  document.getElementById(id).classList.toggle('open');
 }
+
+// ── ROTATING DESCRIPTOR ──
+function rotateDescriptor() {
+  const items = document.querySelectorAll('.descriptor-item');
+  if (!items.length) return;
+  const active = document.querySelector('.descriptor-item.active');
+  if (!active) return;
+  const idx = Array.from(items).indexOf(active);
+  const next = (idx + 1) % items.length;
+  active.classList.remove('active');
+  items[next].classList.add('active');
+}
+setInterval(rotateDescriptor, 2800);
 </script>
 </body>
 </html>
