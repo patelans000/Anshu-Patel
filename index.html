@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--blue:#B8DFFF;--yellow:#FFF0A8;--pink:#FFC8D8;--black:#1A1A1A;--muted:#999;--border:#E8E8E8;--gray:#F7F7F7}
+body{font-family:'Outfit',sans-serif;background:#fff;color:#1A1A1A;overflow-x:hidden;min-height:100vh}
+
+/* ── NAV ── */
+nav{padding:22px 48px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #333;position:sticky;top:0;background:rgba(20,20,20,0.97);backdrop-filter:blur(8px);z-index:100}
+.logo{font-family:'Fredoka',sans-serif;font-size:19px;font-weight:600;color:#fff;cursor:pointer;text-decoration:none;letter-spacing:0.2px}
+.nav-links{display:flex;gap:4px;align-items:center;position:relative}
+.nav-links a{font-size:13px;font-weight:400;color:#888;text-decoration:none;padding:5px 12px;border-radius:100px;cursor:pointer;transition:color 0.15s,background 0.15s}
+.nav-links a:hover{color:#fff}
+.nav-links a.active{color:#fff;font-weight:500}
+
+/* Works dropdown */
+.works-dropdown{position:relative}
+.works-trigger{font-size:13px;font-weight:400;color:#888;padding:5px 12px;border-radius:100px;cursor:pointer;transition:color 0.15s;display:flex;align-items:center;gap:5px;user-select:none}
+.works-trigger:hover,.works-trigger.open{color:#fff}
+.works-trigger.has-active{color:#fff;font-weight:500}
+.works-caret{font-size:9px;transition:transform 0.2s;opacity:0.5;margin-top:1px}
+.works-trigger.open .works-caret{transform:rotate(180deg)}
+.works-menu{position:absolute;top:calc(100% + 8px);left:0;background:#1e1e1e;border:1px solid #333;border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,0.3);padding:6px;min-width:210px;opacity:0;pointer-events:none;transform:translateY(-4px);transition:opacity 0.15s,transform 0.15s;z-index:200}
+.works-menu.open{opacity:1;pointer-events:all;transform:none}
+.works-menu a{display:flex;align-items:center;gap:10px;padding:8px 12px;border-radius:8px;font-size:13px;color:#888;text-decoration:none;transition:background 0.1s,color 0.1s;white-space:nowrap}
+.works-menu a:hover{background:#2a2a2a;color:#fff}
+.works-menu a.active{color:#fff;font-weight:500}
+.works-menu-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.works-menu-divider{height:1px;background:#333;margin:4px 0}
+
+/* ── PAGE SYSTEM ── */
+.page{display:none;animation:fadein 0.3s ease}
+.page.active{display:block}
+@keyframes fadein{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+/* ── HOME ── */
+.home-hero{padding:80px 48px 72px;border-bottom:1px solid var(--border)}
+.home-hero-top{display:grid;grid-template-columns:1fr 280px;gap:64px;align-items:start}
+.home-hi{font-family:'Fredoka',sans-serif;font-size:58px;font-weight:600;line-height:1.05;max-width:580px;margin-bottom:28px}
+.home-bio{font-size:15px;color:#444;line-height:1.8;max-width:480px;margin-bottom:20px}
+.home-degree-block{display:flex;flex-direction:column;gap:8px}
+.home-degree-row{display:flex;align-items:center;gap:10px}
+.home-degree-pill{font-size:12px;font-weight:600;padding:4px 10px;border-radius:6px;background:var(--pink);color:#1A1A1A;white-space:nowrap;flex-shrink:0}
+.home-degree-pill.ux{background:var(--blue)}
+.home-degree-location{font-size:12px;color:var(--muted);display:flex;align-items:center;gap:5px}
+.home-degree-location svg{flex-shrink:0;opacity:0.5}
+.home-illustration{width:100%;aspect-ratio:1/1;border-radius:12px;background:var(--gray);border:1px dashed #ccc;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;flex-shrink:0}
+.home-illustration-label{font-size:11px;color:#bbb;letter-spacing:0.5px}
+
+/* ── HOME PROJECT GRID (replaces home-grid + disc-items) ── */
+.home-proj-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--border)}
+.home-proj-block{border-right:1px solid var(--border);border-bottom:1px solid var(--border);cursor:pointer;transition:background 0.2s;overflow:hidden}
+.home-proj-block:nth-child(3n){border-right:none}
+.home-proj-block:hover{background:var(--gray)}
+.home-proj-block:hover .home-proj-thumb-inner{transform:scale(1.03)}
+.home-proj-thumb{aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.home-proj-thumb-inner{width:100%;height:100%;display:flex;align-items:center;justify-content:center;transition:transform 0.45s ease}
+.home-proj-info{padding:18px 22px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border)}
+.home-proj-left{}
+.home-proj-num{font-size:10px;color:var(--muted);margin-bottom:3px;font-weight:500;letter-spacing:0.5px}
+.home-proj-title{font-size:14px;font-weight:600}
+.home-proj-sub{font-size:11px;color:var(--muted);margin-top:2px}
+.home-proj-arrow{font-size:16px;color:var(--muted);flex-shrink:0}
+
+/* ── DISCIPLINE PAGE ── */
+.disc-header{padding:56px 48px 40px;border-bottom:1px solid var(--border);display:grid;grid-template-columns:1fr auto;align-items:end;gap:40px}
+.disc-label{font-size:11px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+.disc-title{font-family:'Fredoka',sans-serif;font-size:46px;font-weight:600;line-height:1.05;margin-bottom:14px}
+.disc-desc{font-size:14px;color:var(--muted);line-height:1.7;max-width:440px}
+.disc-back{font-size:13px;color:var(--muted);cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border:1px solid var(--border);border-radius:100px;transition:all 0.15s}
+.disc-back:hover{color:#1A1A1A;border-color:#bbb}
+
+/* ── PROJECT GRID ── */
+.proj-grid{padding:0;display:grid}
+.proj-grid-3{grid-template-columns:repeat(3,1fr)}
+.proj-grid-2{grid-template-columns:repeat(2,1fr)}
+.proj{border-bottom:1px solid var(--border);border-right:1px solid var(--border);cursor:pointer;overflow:hidden;position:relative}
+.proj-grid-3 .proj:nth-child(3n){border-right:none}
+.proj-grid-2 .proj:nth-child(2n){border-right:none}
+.proj-thumb{aspect-ratio:4/3;overflow:hidden;display:flex;align-items:center;justify-content:center;position:relative}
+.proj-thumb-inner{width:100%;height:100%;display:flex;align-items:center;justify-content:center;transition:transform 0.45s ease}
+.proj:hover .proj-thumb-inner{transform:scale(1.04)}
+.proj-hover{position:absolute;inset:0;background:rgba(26,26,26,0);display:flex;align-items:flex-end;padding:20px;transition:background 0.3s}
+.proj:hover .proj-hover{background:rgba(26,26,26,0.5)}
+.proj-hover-text{color:#fff;opacity:0;transform:translateY(6px);transition:opacity 0.25s,transform 0.25s;font-size:12px;line-height:1.5}
+.proj:hover .proj-hover-text{opacity:1;transform:none}
+.proj-foot{padding:16px 20px;display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid var(--border)}
+.proj-name{font-size:13px;font-weight:500}
+.proj-meta{font-size:11px;color:var(--muted)}
+
+/* ── FOOTER ── */
+.site-footer{background:#1A1A1A;color:#888;padding:40px 48px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid #333;margin-top:80px}
+.footer-left{font-family:'Fredoka',sans-serif;font-size:16px;color:#fff;font-weight:600;letter-spacing:0.2px}
+.footer-left span{font-size:20px;opacity:0.9;font-weight:300;color:#fff}
+.footer-links{display:flex;gap:24px}
+.footer-links a{font-size:13px;color:#666;text-decoration:none;transition:color 0.15s}
+.footer-links a:hover{color:var(--pink)}
+.footer-copy{font-size:12px;color:#444}
+
+/* ── EXPERIENCE SECTION ── */
+.exp-section{padding:80px 48px;border-top:1px solid var(--border)}
+.exp-header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:40px}
+.exp-section-label{font-size:11px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted)}
+.exp-title{font-family:'Fredoka',sans-serif;font-size:32px;font-weight:600}
+.exp-list{display:flex;flex-direction:column;gap:0}
+.exp-item{border-top:1px solid var(--border);overflow:hidden}
+.exp-item:last-child{border-bottom:1px solid var(--border)}
+.exp-row{display:grid;grid-template-columns:1fr auto;align-items:center;padding:22px 0;cursor:pointer;gap:24px;transition:opacity 0.15s}
+.exp-row:hover{opacity:0.75}
+.exp-row-left{display:grid;grid-template-columns:180px 1fr;gap:24px;align-items:center}
+.exp-period{font-size:12px;color:var(--muted);font-weight:400;flex-shrink:0}
+.exp-role-wrap{}
+.exp-role{font-size:15px;font-weight:600;margin-bottom:2px}
+.exp-company{font-size:13px;color:var(--muted)}
+.exp-toggle{width:28px;height:28px;border-radius:50%;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:border-color 0.15s,background 0.15s}
+.exp-item.open .exp-toggle{background:var(--black);border-color:var(--black)}
+.exp-toggle-icon{font-size:13px;color:var(--muted);line-height:1;transition:transform 0.25s,color 0.15s}
+.exp-item.open .exp-toggle-icon{transform:rotate(45deg);color:#fff}
+.exp-details{max-height:0;overflow:hidden;transition:max-height 0.35s ease}
+.exp-item.open .exp-details{max-height:400px}
+.exp-item.open .exp-toggle{background:var(--pink);border-color:var(--pink)}
+.exp-details-inner{padding:0 0 28px 204px}
+.exp-detail-text{font-size:14px;color:var(--muted);line-height:1.8;margin-bottom:14px;max-width:560px}
+.exp-tags{display:flex;flex-wrap:wrap;gap:6px}
+.exp-tag{font-size:11px;padding:4px 10px;border-radius:6px;background:var(--gray);color:#1A1A1A;border:1px solid var(--border)}
+
+/* ── ABOUT ── */
+.about-wrap{display:grid;grid-template-columns:380px 1fr;min-height:calc(100vh - 73px)}
+.about-left{border-right:1px solid var(--border);padding:56px 48px;position:sticky;top:73px;height:calc(100vh - 73px);display:flex;flex-direction:column}
+.about-portrait{width:100%;aspect-ratio:3/4;border-radius:8px;overflow:hidden;margin-bottom:24px;background:var(--blue);position:relative;flex-shrink:0;max-height:280px}
+.about-portrait-inner{width:100%;height:100%;background:linear-gradient(160deg,#c8e8ff,#a0d0f8)}
+.about-name{font-family:'Fredoka',sans-serif;font-size:24px;font-weight:600;margin-bottom:4px}
+.about-role{font-size:13px;color:var(--muted);margin-bottom:24px}
+.about-contact{display:flex;flex-direction:column;gap:8px;margin-top:auto}
+.about-contact a{font-size:13px;color:var(--muted);text-decoration:none;transition:color 0.15s}
+.about-contact a:hover{color:#1A1A1A}
+.about-right{padding:56px 64px;overflow-y:auto}
+.about-section{margin-bottom:48px;padding-bottom:48px;border-bottom:1px solid var(--border)}
+.about-section:last-child{border-bottom:none}
+.about-section-label{font-size:11px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
+.about-section-h{font-family:'Fredoka',sans-serif;font-size:28px;font-weight:600;line-height:1.2;margin-bottom:14px}
+.about-p{font-size:14px;color:var(--muted);line-height:1.8;margin-bottom:12px}
+.skill-group{margin-bottom:20px}
+.skill-group-label{font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.skill-list{display:flex;flex-wrap:wrap;gap:6px}
+.stag{font-size:12px;padding:5px 12px;border-radius:6px;background:var(--gray);color:#1A1A1A;border:1px solid var(--border)}
+.fun-list{display:flex;flex-direction:column;gap:10px}
+.fun-row{display:grid;grid-template-columns:100px 1fr;gap:12px;font-size:13px}
+.fun-key{color:var(--muted)}
+.fun-val{color:#1A1A1A}
+
+/* ── COLOR ACCENTS ── */
+.accent-graphic{background:#FFD9E8}
+.accent-ux{background:#D6EFFF}
+.accent-3d{background:#FFF5C0}
+.accent-motion{background:#C8EDDA}
+.accent-archive{background:#F0F0F0}
+.accent-misc1{background:#E8F0FF}
+.accent-misc2{background:#EEFFF5}
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="logo" onclick="showPage('home')">anshu patel <span style="font-size:22px;opacity:0.9;font-weight:300;color:#fff">*</span></span>
+  <div class="nav-links">
+    <a onclick="showPage('home')" id="nav-home" class="active">Home</a>
+
+    <!-- Works dropdown -->
+    <div class="works-dropdown" id="works-dropdown">
+      <div class="works-trigger" id="works-trigger" onclick="toggleWorksMenu()">
+        Works <span class="works-caret">▼</span>
+      </div>
+      <div class="works-menu" id="works-menu">
+        <a onclick="showPage('graphic');closeWorksMenu()" id="nav-graphic">
+          <span class="works-menu-dot" style="background:#FFC8D8"></span>
+          2D & Graphic Design
+        </a>
+        <a onclick="showPage('ux');closeWorksMenu()" id="nav-ux">
+          <span class="works-menu-dot" style="background:#B8DFFF"></span>
+          UX / UI & Game Design
+        </a>
+        <a onclick="showPage('3d');closeWorksMenu()" id="nav-3d">
+          <span class="works-menu-dot" style="background:#FFF0A8;border:1px solid #e8e0a0"></span>
+          3D & Product Design
+        </a>
+        <a onclick="showPage('motion');closeWorksMenu()" id="nav-motion">
+          <span class="works-menu-dot" style="background:#C8EDDA"></span>
+          Motion & Videography
+        </a>
+        <div class="works-menu-divider"></div>
+        <a onclick="showPage('archive');closeWorksMenu()" id="nav-archive">
+          <span class="works-menu-dot" style="background:#E8E8E8"></span>
+          Archive
+        </a>
+      </div>
+    </div>
+
+    <a onclick="showPage('about')" id="nav-about">About</a>
+  </div>
+</nav>
+
+<!-- ══════════════════ HOME ══════════════════ -->
+<div class="page active" id="page-home">
+  <div class="home-hero">
+    <div class="home-hero-top">
+      <div>
+        <h1 class="home-hi">Hi! I'm Anshu.</h1>
+        <p class="home-bio">A multimedia designer passionate about interactive design and exploring how to craft playful, meaningful experiences across diverse mediums.</p>
+        <div class="home-degree-block">
+          <div class="home-degree-row">
+            <span class="home-degree-pill">B.F.A Design</span>
+            <span class="home-degree-pill ux">B.S. Arts &amp; Entertainment Technology</span>
+          </div>
+          <div class="home-degree-location">
+            <svg width="11" height="13" viewBox="0 0 11 13" fill="none"><path d="M5.5 0C3.015 0 1 2.015 1 4.5c0 3.375 4.5 8.5 4.5 8.5S10 7.875 10 4.5C10 2.015 7.985 0 5.5 0zm0 6a1.5 1.5 0 110-3 1.5 1.5 0 010 3z" fill="#999"/></svg>
+            University of Texas in Austin
+          </div>
+        </div>
+      </div>
+      <div class="home-illustration">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="14" r="8" stroke="#ccc" stroke-width="1.5"/><path d="M6 36c0-7.732 6.268-14 14-14s14 6.268 14 14" stroke="#ccc" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span class="home-illustration-label">illustration here</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project blocks -->
+  <div class="home-proj-grid">
+    <div class="home-proj-block" onclick="showPage('graphic')">
+      <div class="home-proj-thumb"><div class="home-proj-thumb-inner accent-graphic">
+        <svg width="140" height="80" viewBox="0 0 140 80" fill="none">
+          <circle cx="50" cy="40" r="28" fill="#F090B0" opacity="0.4"/>
+          <circle cx="90" cy="40" r="20" fill="#E06090" opacity="0.3"/>
+          <path d="M36 40 Q50 22 64 40 Q50 58 36 40Z" fill="#C04070" opacity="0.45"/>
+        </svg>
+      </div></div>
+      <div class="home-proj-info">
+        <div class="home-proj-left">
+          <div class="home-proj-num">01</div>
+          <div class="home-proj-title">2D & Graphic Design</div>
+          <div class="home-proj-sub">Branding, editorial, print, illustration</div>
+        </div>
+        <span class="home-proj-arrow">→</span>
+      </div>
+    </div>
+    <div class="home-proj-block" onclick="showPage('ux')">
+      <div class="home-proj-thumb"><div class="home-proj-thumb-inner accent-ux">
+        <svg width="140" height="80" viewBox="0 0 140 80" fill="none">
+          <rect x="30" y="16" width="80" height="50" rx="10" fill="#90C8F0" opacity="0.4"/>
+          <rect x="40" y="26" width="60" height="7" rx="3" fill="#4498D8" opacity="0.5"/>
+          <rect x="40" y="38" width="42" height="5" rx="2" fill="#4498D8" opacity="0.35"/>
+          <rect x="40" y="48" width="56" height="5" rx="2" fill="#4498D8" opacity="0.2"/>
+        </svg>
+      </div></div>
+      <div class="home-proj-info">
+        <div class="home-proj-left">
+          <div class="home-proj-num">02</div>
+          <div class="home-proj-title">UX / UI & Game Design</div>
+          <div class="home-proj-sub">Case studies, interfaces, systems, levels</div>
+        </div>
+        <span class="home-proj-arrow">→</span>
+      </div>
+    </div>
+    <div class="home-proj-block" onclick="showPage('3d')">
+      <div class="home-proj-thumb"><div class="home-proj-thumb-inner accent-3d">
+        <svg width="140" height="80" viewBox="0 0 140 80" fill="none">
+          <ellipse cx="70" cy="62" rx="34" ry="9" fill="#C8B030" opacity="0.3"/>
+          <rect x="46" y="22" width="48" height="42" rx="10" fill="#D8C040" opacity="0.45"/>
+          <rect x="56" y="14" width="28" height="12" rx="5" fill="#C0A820" opacity="0.4"/>
+          <circle cx="70" cy="43" r="8" fill="#fff" opacity="0.5"/>
+        </svg>
+      </div></div>
+      <div class="home-proj-info">
+        <div class="home-proj-left">
+          <div class="home-proj-num">03</div>
+          <div class="home-proj-title">3D & Product Design</div>
+          <div class="home-proj-sub">Renders, CAD, physical prototypes</div>
+        </div>
+        <span class="home-proj-arrow">→</span>
+      </div>
+    </div>
+    <div class="home-proj-block" onclick="showPage('motion')">
+      <div class="home-proj-thumb"><div class="home-proj-thumb-inner accent-motion">
+        <svg width="140" height="80" viewBox="0 0 140 80" fill="none">
+          <circle cx="70" cy="40" r="24" fill="rgba(255,255,255,0.45)"/>
+          <polygon points="64,30 64,50 82,40" fill="#1A1A1A" opacity="0.45"/>
+        </svg>
+      </div></div>
+      <div class="home-proj-info">
+        <div class="home-proj-left">
+          <div class="home-proj-num">04</div>
+          <div class="home-proj-title">Motion & Videography</div>
+          <div class="home-proj-sub">Animation, motion graphics, film</div>
+        </div>
+        <span class="home-proj-arrow">→</span>
+      </div>
+    </div>
+    <div class="home-proj-block" onclick="showPage('archive')">
+      <div class="home-proj-thumb"><div class="home-proj-thumb-inner accent-archive">
+        <svg width="140" height="80" viewBox="0 0 140 80" fill="none">
+          <rect x="28" y="24" width="32" height="32" rx="5" fill="#ccc" opacity="0.5"/>
+          <rect x="66" y="30" width="22" height="22" rx="4" fill="#bbb" opacity="0.4"/>
+          <rect x="94" y="20" width="18" height="40" rx="4" fill="#ddd" opacity="0.5"/>
+        </svg>
+      </div></div>
+      <div class="home-proj-info">
+        <div class="home-proj-left">
+          <div class="home-proj-num">05</div>
+          <div class="home-proj-title">Miscellaneous Archive</div>
+          <div class="home-proj-sub">Experiments, class work, sketches</div>
+        </div>
+        <span class="home-proj-arrow">→</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── EXPERIENCE ── -->
+  <div class="exp-section">
+    <div class="exp-header">
+      <div>
+        <div class="exp-section-label">Experience</div>
+        <div class="exp-title">Where I've gained my experience points.</div>
+      </div>
+    </div>
+    <div class="exp-list">
+
+      <div class="exp-item" id="exp-1">
+        <div class="exp-row" onclick="toggleExp('exp-1')">
+          <div class="exp-row-left">
+            <div class="exp-period">Summer 2026</div>
+            <div class="exp-role-wrap">
+              <div class="exp-role">Design & Marketing Intern</div>
+              <div class="exp-company">Janmar Agency & Culture Clash Magazine</div>
+            </div>
+          </div>
+          <div class="exp-toggle"><span class="exp-toggle-icon">+</span></div>
+        </div>
+        <div class="exp-details">
+          <div class="exp-details-inner">
+            <p class="exp-detail-text">I'm currently a Design & Marketing Intern at JanMar Agency and Culture Clash Magazine, where I create visual content for social media, digital campaigns, branded materials, and merchandise, including product photography and promotional graphics. I also help support client projects by working closely with the lead designer and creative team on branding, storytelling, and creative direction to create engaging experiences across different platforms.</p>
+            <div class="exp-tags">
+              <span class="exp-tag">Adobe Creative Suite</span>
+              <span class="exp-tag">Social Media Design</span>
+              <span class="exp-tag">Product Photography</span>
+              <span class="exp-tag">Branding</span>
+              <span class="exp-tag">Merchandise Design</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-item" id="exp-2">
+        <div class="exp-row" onclick="toggleExp('exp-2')">
+          <div class="exp-row-left">
+            <div class="exp-period">August 2025 - Present</div>
+            <div class="exp-role-wrap">
+              <div class="exp-role">Public Relations Officer & Solar Vehicle PR Lead</div>
+              <div class="exp-company">Longhorn Racing</div>
+            </div>
+          </div>
+          <div class="exp-toggle"><span class="exp-toggle-icon">+</span></div>
+        </div>
+        <div class="exp-details">
+          <div class="exp-details-inner">
+            <p class="exp-detail-text">Currently serving as Public Relations Officer for Longhorn Racing's Solar, Electric, and Combustion teams, leading overall branding, outreach, and communications across the organization. I also serve as Public Relations Lead specifically for Solar, where I direct visual storytelling through graphics, photography, videography, merchandise, and digital content to strengthen team engagement and visibility.</p>
+            <div class="exp-tags">
+              <span class="exp-tag">Photography & Videography</span>
+              <span class="exp-tag">Graphic Design</span>
+              <span class="exp-tag">Branding & Outreach</span>
+              <span class="exp-tag">Social Media Content</span>
+              <span class="exp-tag">Merchandise Design</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-item" id="exp-3">
+        <div class="exp-row" onclick="toggleExp('exp-3')">
+          <div class="exp-row-left">
+            <div class="exp-period">August 2025 - 2026</div>
+            <div class="exp-role-wrap">
+              <div class="exp-role">Production Chair</div>
+              <div class="exp-company">Hook 'em Bhangra</div>
+            </div>
+          </div>
+          <div class="exp-toggle"><span class="exp-toggle-icon">+</span></div>
+        </div>
+        <div class="exp-details">
+          <div class="exp-details-inner">
+            <p class="exp-detail-text">Served as Production Chair, shaping Hook 'em Bhangra's creative vision by developing concepts, producing dance mixes, and defining the team's brand and aesthetic through cohesive branding and promotional design. I also led the design and production of team merchandise to maintain a consistent visual identity across all materials.</p>
+            <div class="exp-tags">
+              <span class="exp-tag">Branding & Visual Identity</span>
+              <span class="exp-tag">Graphic Design</span>
+              <span class="exp-tag">Merchandise Design</span>
+              <span class="exp-tag">Music Production</span>
+              <span class="exp-tag">Event Production</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-item" id="exp-4">
+        <div class="exp-row" onclick="toggleExp('exp-4')">
+          <div class="exp-row-left">
+            <div class="exp-period">October 2025 - Present</div>
+            <div class="exp-role-wrap">
+              <div class="exp-role">Graphic Designer</div>
+              <div class="exp-company">The Pyrography Project, College of Fine Arts</div>
+            </div>
+          </div>
+          <div class="exp-toggle"><span class="exp-toggle-icon">+</span></div>
+        </div>
+        <div class="exp-details">
+          <div class="exp-details-inner">
+            <p class="exp-detail-text">Currently a graphic designer for The Pyrography Project, where I developed the branding and logo. Awarded the Artistic Citizenship Collaborative Creative Grant from UT Austin's College of Fine Arts as part of an interdisciplinary team, contributing to the development of a community-engaged, experience-based project exploring the concept of Artistic Citizenship.</p>
+            <div class="exp-tags">
+              <span class="exp-tag">Branding & Logo Design</span>
+              <span class="exp-tag">Graphic Design</span>
+              <span class="exp-tag">Community Engagement</span>
+              <span class="exp-tag">Creative Grant Awardee</span>
+              <span class="exp-tag">Interdisciplinary Design</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════ GRAPHIC DESIGN ══════════════════ -->
+<div class="page" id="page-graphic">
+  <div class="disc-header">
+    <div class="disc-header-left">
+      <div class="disc-label">01 — 2D & Graphic Design</div>
+      <div class="disc-title" style="color:#1A1A1A">Branding,<br>Editorial & Print.</div>
+      <p class="disc-desc">Identity systems, poster design, editorial layouts, illustration, and print — work that lives on paper and screen.</p>
+    </div>
+    <div class="disc-header-right">
+      <span class="disc-back" onclick="showPage('home')">← All work</span>
+    </div>
+  </div>
+  <div class="proj-grid proj-grid-3">
+    <div class="proj">
+      <div class="proj-thumb"><div class="proj-thumb-inner accent-graphic" style="width:100%;height:100%">
+        <svg width="160" height="120" viewBox="0 0 160 120" fill="none"><circle cx="80" cy="60" r="42" fill="#F0A0C0" opacity="0.5"/><circle cx="80" cy="60" r="24" fill="#E06090" opacity="0.4"/><path d="M58 60 Q80 36 102 60 Q80 84 58 60Z" fill="#C04070" opacity="0.55"/></svg>
+      </div><div class="proj-hover"><div class="proj-hover-text">Brand identity, logomark, packaging system</div></div></div>
+      <div class="proj-foot"><span class="proj-name">Bloom Coffee — Brand Identity</span><span class="proj-meta">2024</span></div>
+    </div>
+    <div class="proj">
+      <div class="proj-thumb"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#FFF0F5">
+        <svg width="160" height="120" viewBox="0 0 160 120" fill="none"><rect x="30" y="20" width="100" height="80" rx="4" fill="#F4C0D0" opacity="0.5"/><rect x="40" y="34" width="80" height="8" rx="2" fill="#D07090" opacity="0.6"/><rect x="40" y="48" width="60" height="5" rx="2" fill="#D07090" opacity="0.35"/><rect x="40" y="58" width="76" height="5" rx="2" fill="#D07090" opacity="0.25"/><rect x="40" y="68" width="50" height="5" rx="2" fill="#D07090" opacity="0.2"/></svg>
+      </div><div class="proj-hover"><div class="proj-hover-text">Editorial layout, typography, print design</div></div></div>
+      <div class="proj-foot"><span class="proj-name">Nightshade — Magazine Layout</span><span class="proj-meta">2024</span></div>
+    </div>
+    <div class="proj">
+      <div class="proj-thumb"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#FFFAE0">
+        <svg width="160" height="120" viewBox="0 0 160 120" fill="none"><ellipse cx="80" cy="60" rx="50" ry="38" fill="#EED840" opacity="0.3"/><path d="M40 80 Q60 30 80 50 Q100 70 120 20" stroke="#C8A800" stroke-width="2.5" fill="none" opacity="0.5"/><circle cx="40" cy="80" r="5" fill="#C8A800" opacity="0.5"/><circle cx="80" cy="50" r="5" fill="#C8A800" opacity="0.5"/><circle cx="120" cy="20" r="5" fill="#C8A800" opacity="0.5"/></svg>
+      </div><div class="proj-hover"><div class="proj-hover-text">Poster series, fluid typography, wave-form</div></div></div>
+      <div class="proj-foot"><span class="proj-name">Tide — Poster Series</span><span class="proj-meta">2023</span></div>
+    </div>
+    <div class="proj">
+      <div class="proj-thumb"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#F4EFFF">
+        <svg width="160" height="120" viewBox="0 0 160 120" fill="none"><circle cx="60" cy="55" r="28" fill="#C090E8" opacity="0.35"/><circle cx="100" cy="65" r="20" fill="#9050C0" opacity="0.3"/><path d="M46 55 Q60 35 74 55" stroke="#7030A0" stroke-width="2" fill="none" opacity="0.5"/></svg>
+      </div><div class="proj-hover"><div class="proj-hover-text">Illustration series, character design</div></div></div>
+      <div class="proj-foot"><span class="proj-name">Creature Compendium — Illustration</span><span class="proj-meta">2023</span></div>
+    </div>
+    <div class="proj">
+      <div class="proj-thumb"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#E8F8FF">
+        <svg width="160" height="120" viewBox="0 0 160 120" fill="none"><rect x="25" y="25" width="110" height="70" rx="6" fill="#90C8F0" opacity="0.3"/><rect x="35" y="35" width="40" height="50" rx="4" fill="#60A8D8" opacity="0.35"/><rect x="85" y="35" width="40" height="24" rx="4" fill="#60A8D8" opacity="0.25"/><rect x="85" y="65" width="40" height="20" rx="4" fill="#60A8D8" opacity="0.2"/></svg>
+      </div><div class="proj-hover"><div class="proj-hover-text">Visual system, brand guide, collateral</div></div></div>
+      <div class="proj-foot"><span class="proj-name">Apex Studio — Visual Identity</span><span class="proj-meta">2023</span></div>
+    </div>
+    <div class="proj">
+      <div class="proj-thumb"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#FFF5EC">
+        <svg width="160" height="120" viewBox="0 0 160 120" fill="none"><rect x="30" y="30" width="44" height="60" rx="4" fill="#F0A060" opacity="0.35"/><rect x="82" y="30" width="44" height="60" rx="4" fill="#E08040" opacity="0.3"/><rect x="46" y="40" width="24" height="4" rx="2" fill="#C06020" opacity="0.4"/><rect x="98" y="40" width="24" height="4" rx="2" fill="#C06020" opacity="0.4"/></svg>
+      </div><div class="proj-hover"><div class="proj-hover-text">Packaging design, print production</div></div></div>
+      <div class="proj-foot"><span class="proj-name">Grove — Packaging Design</span><span class="proj-meta">2022</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════ UX / GAME ══════════════════ -->
+<div class="page" id="page-ux">
+  <div class="disc-header">
+    <div class="disc-header-left">
+      <div class="disc-label">02 — UX / UI & Game Design</div>
+      <div class="disc-title">Interfaces,<br>Systems & Levels.</div>
+      <p class="disc-desc">User research, interaction design, UI systems, game design documents, and level design — work that thinks through people and play.</p>
+    </div>
+    <div class="disc-header-right"><span class="disc-back" onclick="showPage('home')">← All work</span></div>
+  </div>
+  <div class="proj-grid proj-grid-3">
+    <div class="proj">
+      <div class="proj-thumb"><div class="proj-thumb-inner accent-ux" style="width:100%;height:100%">
+        <svg width="160" height="120" viewBox="0 0 160 120" fill="none"><rect x="28" y="20" width="104" height="80" rx="12" fill="#90C8F0" opacity="0.35"/><rect x="38" y="32" width="84" height="10" rx="4" fill="#4498D8" opacity="0.55"/><rect x="38" y="48" width="60" height="7" rx="3" fill="#4498D8" opacity="0.35"/><rect x="38" y="60" width="84" height="7" rx="3" fill="#4498D8" opacity="0.2"/><rect x="38" y="72" width="40" height="7" rx="3" fill="#4498D8" opacity="0.15"/></svg>
+      </div><div class="proj-hover"><div class="proj-hover-text">UX research, flows, high-fidelity prototype</div></div></div>
+      <div class="proj-foot"><span class="proj-name">Quest Companion App</span><span class="proj-meta">2024</span></div>
+    </div>
+    <div class="proj">
+      <div class="proj-thumb"><div class="proj-thumb-inner accent-misc1" style="width:100%;height:100%">
+        <svg width="160" height="120" viewBox="0 0 160 120" fill="none"><rect x="40" y="30" width="80" height="60" rx="8" fill="#8090E0" opacity="0.3"/><rect x="52" y="42" width="30" height="20" rx="4" fill="#6070C8" opacity="0.4"/><circle cx="104" cy="60" r="12" fill="#6070C8" opacity="0.3"/><rect x="96" y="56" width="16" height="8" rx="2" fill="#6070C8" opacity="0.35"/></svg>
+      </div><div class="proj-hover"><div class="proj-hover-text">Interface design, menus, HUD system</div></div></div>
+      <div class="proj-foot"><span class="proj-name">Verdant — UI System</span><span class="proj-meta">2024</span></div>
+    </div>
+    <div class="proj">
+      <div class="proj-thumb"><div class="proj-thumb-inner accent-misc2" style="width:100%;height:100%">
+        <svg width="160" height="120" viewBox="0 0 160 120" fill="none"><rect x="24" y="30" width="112" height="60" rx="8" fill="#60C890" opacity="0.3"/><rect x="34" y="42" width="26" height="18" rx="4" fill="#30A060" opacity="0.4"/><rect x="68" y="38" width="58" height="9" rx="3" fill="#30A060" opacity="0.35"/><rect x="68" y="52" width="42" height="7" rx="3" fill="#30A060" opacity="0.25"/></svg>
+      </div><div class="proj-hover"><div class="proj-hover-text">Level design, GDD, puzzle logic</div></div></div>
+      <div class="proj-foot"><span class="proj-name">Verdant — Level Design</span><span class="proj-meta">2023</span></div>
+    </div>
+    <div class="proj">
+      <div class="proj-thumb"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#E8F4FF">
+        <svg width="160" height="120" viewBox="0 0 160 120" fill="none"><circle cx="55" cy="60" r="26" stroke="#3a90d0" stroke-width="1.5" fill="none" opacity="0.4"/><circle cx="105" cy="60" r="20" stroke="#3a90d0" stroke-width="1.5" fill="none" opacity="0.4"/><line x1="55" y1="60" x2="105" y2="60" stroke="#3a90d0" stroke-width="1.5" opacity="0.3"/><circle cx="55" cy="60" r="5" fill="#3a90d0" opacity="0.5"/><circle cx="105" cy="60" r="5" fill="#3a90d0" opacity="0.5"/><circle cx="80" cy="35" r="5" fill="#3a90d0" opacity="0.4"/><line x1="55" y1="60" x2="80" y2="35" stroke="#3a90d0" stroke-width="1" stroke-dasharray="4 3" opacity="0.3"/><line x1="105" y1="60" x2="80" y2="35" stroke="#3a90d0" stroke-width="1" stroke-dasharray="4 3" opacity="0.3"/></svg>
+      </div><div class="proj-hover"><div class="proj-hover-text">User research, journey mapping, testing</div></div></div>
+      <div class="proj-foot"><span class="proj-name">Wayfinder — UX Research</span><span class="proj-meta">2023</span></div>
+    </div>
+    <div class="proj">
+      <div class="proj-thumb"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#FDF0FF">
+        <svg width="160" height="120" viewBox="0 0 160 120" fill="none"><rect x="30" y="25" width="44" height="70" rx="8" fill="#C880E8" opacity="0.3"/><rect x="38" y="35" width="28" height="5" rx="2" fill="#9040C0" opacity="0.5"/><rect x="38" y="45" width="22" height="4" rx="2" fill="#9040C0" opacity="0.3"/><rect x="38" y="55" width="28" height="24" rx="4" fill="#9040C0" opacity="0.25"/><rect x="86" y="35" width="44" height="60" rx="8" fill="#C880E8" opacity="0.2"/></svg>
+      </div><div class="proj-hover"><div class="proj-hover-text">Mobile app design, interaction patterns</div></div></div>
+      <div class="proj-foot"><span class="proj-name">Petal — Wellness App</span><span class="proj-meta">2022</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════ 3D / PRODUCT ══════════════════ -->
+<div class="page" id="page-3d">
+  <div class="disc-header">
+    <div class="disc-header-left">
+      <div class="disc-label">03 — 3D & Product Design</div>
+      <div class="disc-title">Objects,<br>Renders & Form.</div>
+      <p class="disc-desc">Industrial design, 3D modeling, physical prototypes, and product concepts — exploring form, material, and manufacturing.</p>
+    </div>
+    <div class="disc-header-right"><span class="disc-back" onclick="showPage('home')">← All work</span></div>
+  </div>
+  <div class="proj-grid proj-grid-3">
+    <div class="proj">
+      <div class="proj-thumb"><div class="proj-thumb-inner accent-3d" style="width:100%;height:100%">
+        <svg width="160" height="120" viewBox="0 0 160 120" fill="none"><ellipse cx="80" cy="92" rx="40" ry="12" fill="#C8B030" opacity="0.3"/><rect x="46" y="28" width="68" height="62" rx="12" fill="#D8C040" opacity="0.45"/><rect x="58" y="18" width="44" height="16" rx="7" fill="#C0A820" opacity="0.4"/><circle cx="80" cy="59" r="12" fill="#fff" opacity="0.5"/></svg>
+      </div><div class="proj-hover"><div class="proj-hover-text">Industrial design, Blender, concept renders</div></div></div>
+      <div class="proj-foot"><span class="proj-name">Ceramic Speaker</span><span class="proj-meta">2024</span></div>
+    </div>
+    <div class="proj">
+      <div class="proj-thumb"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#EEFFF5">
+        <svg width="160" height="120" viewBox="0 0 160 120" fill="none"><ellipse cx="80" cy="90" rx="38" ry="10" fill="#50C880" opacity="0.25"/><path d="M52 80 L52 38 Q52 28 62 28 L98 28 Q108 28 108 38 L108 80 Z" fill="#60D890" opacity="0.3"/><rect x="64" y="48" width="32" height="22" rx="4" fill="#30A860" opacity="0.35"/><circle cx="80" cy="59" r="8" fill="#fff" opacity="0.5"/></svg>
+      </div><div class="proj-hover"><div class="proj-hover-text">Form study, material exploration, CAD</div></div></div>
+      <div class="proj-foot"><span class="proj-name">Sprout — Planter System</span><span class="proj-meta">2024</span></div>
+    </div>
+    <div class="proj">
+      <div class="proj-thumb"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#FFFAF0">
+        <svg width="160" height="120" viewBox="0 0 160 120" fill="none"><path d="M80 20 L110 50 L110 90 L80 100 L50 90 L50 50 Z" fill="#E8C840" opacity="0.35"/><path d="M80 20 L110 50 L80 60 L50 50 Z" fill="#D0A820" opacity="0.3"/><path d="M80 60 L110 50 L110 90 L80 100 Z" fill="#B89010" opacity="0.25"/></svg>
+      </div><div class="proj-hover"><div class="proj-hover-text">Parametric design, physical prototype</div></div></div>
+      <div class="proj-foot"><span class="proj-name">Facet — Lamp Prototype</span><span class="proj-meta">2023</span></div>
+    </div>
+    <div class="proj">
+      <div class="proj-thumb"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#F0F8FF">
+        <svg width="160" height="120" viewBox="0 0 160 120" fill="none"><rect x="36" y="36" width="88" height="50" rx="10" fill="#80B8E8" opacity="0.35"/><rect x="56" y="20" width="48" height="20" rx="5" fill="#60A0D8" opacity="0.3"/><ellipse cx="80" cy="88" rx="30" ry="8" fill="#4080B8" opacity="0.2"/></svg>
+      </div><div class="proj-hover"><div class="proj-hover-text">Sketch to render, product development</div></div></div>
+      <div class="proj-foot"><span class="proj-name">Vessel — Water Bottle</span><span class="proj-meta">2023</span></div>
+    </div>
+    <div class="proj">
+      <div class="proj-thumb"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#FFF5F8">
+        <svg width="160" height="120" viewBox="0 0 160 120" fill="none"><circle cx="80" cy="56" r="36" fill="#F0A0B8" opacity="0.3"/><circle cx="80" cy="56" r="22" fill="#E07090" opacity="0.3"/><circle cx="80" cy="56" r="10" fill="#C04060" opacity="0.35"/></svg>
+      </div><div class="proj-hover"><div class="proj-hover-text">Concept sketches, Blender render</div></div></div>
+      <div class="proj-foot"><span class="proj-name">Orbit — Desk Clock</span><span class="proj-meta">2022</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════ MOTION ══════════════════ -->
+<div class="page" id="page-motion">
+  <div class="disc-header">
+    <div class="disc-header-left">
+      <div class="disc-label">04 — Motion & Videography</div>
+      <div class="disc-title">Animation,<br>Film & Motion.</div>
+      <p class="disc-desc">Motion graphics, animated identities, title sequences, and short-form video — work that moves.</p>
+    </div>
+    <div class="disc-header-right"><span class="disc-back" onclick="showPage('home')">← All work</span></div>
+  </div>
+  <div class="proj-grid proj-grid-2">
+    <div class="proj">
+      <div class="proj-thumb" style="aspect-ratio:16/9"><div class="proj-thumb-inner accent-motion" style="width:100%;height:100%">
+        <svg width="200" height="112" viewBox="0 0 200 112" fill="none"><circle cx="100" cy="56" r="32" fill="rgba(255,255,255,0.45)"/><polygon points="92,42 92,70 118,56" fill="#1A1A1A" opacity="0.45"/></svg>
+      </div><div class="proj-hover"><div class="proj-hover-text">After Effects, brand animation, 30 sec</div></div></div>
+      <div class="proj-foot"><span class="proj-name">Studio Ident Package</span><span class="proj-meta">2024</span></div>
+    </div>
+    <div class="proj">
+      <div class="proj-thumb" style="aspect-ratio:16/9"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#E8F8FF">
+        <svg width="200" height="112" viewBox="0 0 200 112" fill="none"><path d="M30 80 Q70 20 100 50 Q130 80 170 20" stroke="#4498D8" stroke-width="2.5" fill="none" opacity="0.5"/><circle cx="30" cy="80" r="5" fill="#4498D8" opacity="0.5"/><circle cx="100" cy="50" r="5" fill="#4498D8" opacity="0.5"/><circle cx="170" cy="20" r="5" fill="#4498D8" opacity="0.5"/></svg>
+      </div><div class="proj-hover"><div class="proj-hover-text">Kinetic type, music visualizer, 1 min</div></div></div>
+      <div class="proj-foot"><span class="proj-name">Pulse — Kinetic Typography</span><span class="proj-meta">2024</span></div>
+    </div>
+    <div class="proj">
+      <div class="proj-thumb" style="aspect-ratio:16/9"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#FFF8E0">
+        <svg width="200" height="112" viewBox="0 0 200 112" fill="none"><rect x="40" y="28" width="120" height="56" rx="8" fill="#E8C840" opacity="0.35"/><rect x="56" y="40" width="88" height="8" rx="3" fill="#C0A020" opacity="0.5"/><rect x="56" y="54" width="64" height="6" rx="3" fill="#C0A020" opacity="0.3"/></svg>
+      </div><div class="proj-hover"><div class="proj-hover-text">Title card sequence, broadcast design</div></div></div>
+      <div class="proj-foot"><span class="proj-name">Golden Hour — Title Sequence</span><span class="proj-meta">2024</span></div>
+    </div>
+    <div class="proj">
+      <div class="proj-thumb" style="aspect-ratio:16/9"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#F8F0FF">
+        <svg width="200" height="112" viewBox="0 0 200 112" fill="none"><circle cx="100" cy="56" r="35" fill="#B880E8" opacity="0.3"/><circle cx="100" cy="56" r="20" fill="#9050C0" opacity="0.25"/><path d="M65 56 Q100 20 135 56 Q100 92 65 56Z" fill="#7030A0" opacity="0.3"/></svg>
+      </div><div class="proj-hover"><div class="proj-hover-text">Looping animation, social content</div></div></div>
+      <div class="proj-foot"><span class="proj-name">Bloom Loop — Social Animation</span><span class="proj-meta">2023</span></div>
+    </div>
+    <div class="proj">
+      <div class="proj-thumb" style="aspect-ratio:16/9"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#F0FFF8">
+        <svg width="200" height="112" viewBox="0 0 200 112" fill="none"><rect x="30" y="30" width="60" height="52" rx="6" fill="#60C890" opacity="0.3"/><rect x="100" y="20" width="70" height="70" rx="6" fill="#40A870" opacity="0.25"/><circle cx="100" cy="100" r="8" fill="#30A060" opacity="0.2"/></svg>
+      </div><div class="proj-hover"><div class="proj-hover-text">Short documentary, cinematography</div></div></div>
+      <div class="proj-foot"><span class="proj-name">Roots — Short Documentary</span><span class="proj-meta">2023</span></div>
+    </div>
+    <div class="proj">
+      <div class="proj-thumb" style="aspect-ratio:16/9"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#FFF5F0">
+        <svg width="200" height="112" viewBox="0 0 200 112" fill="none"><path d="M40 86 L80 26 L120 60 L150 40 L180 86 Z" fill="#F09060" opacity="0.3" stroke="#D07040" stroke-width="1.5"/></svg>
+      </div><div class="proj-hover"><div class="proj-hover-text">Logo animation, After Effects, ident</div></div></div>
+      <div class="proj-foot"><span class="proj-name">Peak — Animated Logo</span><span class="proj-meta">2023</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════ ARCHIVE ══════════════════ -->
+<div class="page" id="page-archive">
+  <div class="disc-header">
+    <div class="disc-header-left">
+      <div class="disc-label">05 — Miscellaneous Archive</div>
+      <div class="disc-title">Experiments,<br>Sketches & More.</div>
+      <p class="disc-desc">Class projects, personal explorations, quick studies, and things that don't fit anywhere else — but were worth keeping.</p>
+    </div>
+    <div class="disc-header-right"><span class="disc-back" onclick="showPage('home')">← All work</span></div>
+  </div>
+  <div class="proj-grid proj-grid-3">
+    <div class="proj">
+      <div class="proj-thumb"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#F4F4F4">
+        <svg width="160" height="120" viewBox="0 0 160 120" fill="none"><rect x="30" y="30" width="44" height="60" rx="5" fill="#bbb" opacity="0.45"/><rect x="82" y="40" width="44" height="44" rx="5" fill="#ccc" opacity="0.4"/><rect x="96" y="22" width="22" height="22" rx="4" fill="#aaa" opacity="0.4"/></svg>
+      </div><div class="proj-hover"><div class="proj-hover-text">Personal exploration, digital collage</div></div></div>
+      <div class="proj-foot"><span class="proj-name">Fragments — Digital Collage Study</span><span class="proj-meta">2024</span></div>
+    </div>
+    <div class="proj">
+      <div class="proj-thumb"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#FFFFF0">
+        <svg width="160" height="120" viewBox="0 0 160 120" fill="none"><path d="M40 90 Q60 50 80 70 Q100 90 120 30" stroke="#8a8a00" stroke-width="2" fill="none" opacity="0.4" stroke-linecap="round"/><path d="M50 95 Q70 60 90 75 Q110 90 130 40" stroke="#8a8a00" stroke-width="1" fill="none" opacity="0.25" stroke-linecap="round"/></svg>
+      </div><div class="proj-hover"><div class="proj-hover-text">Sketchbook, observational drawing</div></div></div>
+      <div class="proj-foot"><span class="proj-name">Sketchbook Vol. 3</span><span class="proj-meta">2024</span></div>
+    </div>
+    <div class="proj">
+      <div class="proj-thumb"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#F0F4FF">
+        <svg width="160" height="120" viewBox="0 0 160 120" fill="none"><text x="30" y="56" font-family="serif" font-size="40" fill="#8090C0" opacity="0.5" font-weight="bold">Aa</text><rect x="30" y="68" width="100" height="3" rx="1.5" fill="#8090C0" opacity="0.2"/><rect x="30" y="76" width="70" height="3" rx="1.5" fill="#8090C0" opacity="0.15"/></svg>
+      </div><div class="proj-hover"><div class="proj-hover-text">Type design exploration, class project</div></div></div>
+      <div class="proj-foot"><span class="proj-name">Type Study — Letterform Exploration</span><span class="proj-meta">2023</span></div>
+    </div>
+    <div class="proj">
+      <div class="proj-thumb"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#FFF8F0">
+        <svg width="160" height="120" viewBox="0 0 160 120" fill="none"><circle cx="60" cy="55" r="22" stroke="#E08040" stroke-width="1.5" fill="none" opacity="0.4"/><circle cx="100" cy="65" r="16" stroke="#E08040" stroke-width="1.5" fill="none" opacity="0.3"/><line x1="60" y1="55" x2="100" y2="65" stroke="#E08040" stroke-width="1" opacity="0.25"/></svg>
+      </div><div class="proj-hover"><div class="proj-hover-text">Systems thinking, diagram design</div></div></div>
+      <div class="proj-foot"><span class="proj-name">Systems — Diagram Workshop</span><span class="proj-meta">2023</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════ ABOUT ══════════════════ -->
+<div class="page" id="page-about">
+  <div class="about-wrap">
+    <div class="about-left">
+      <div class="about-portrait">
+        <div class="about-portrait-inner"></div>
+      </div>
+      <div class="about-name">Anshu Patel</div>
+      <div class="about-role">Multimedia Designer — Austin, TX</div>
+      <div class="about-contact">
+        <a href="#">hello@anshupatel.design</a>
+        <a href="#">LinkedIn ↗</a>
+        <a href="#">Resume ↗</a>
+      </div>
+    </div>
+    <div class="about-right">
+      <div class="about-section">
+        <div class="about-section-label">Who I am</div>
+        <h2 class="about-section-h">Playful by nature.<br>Precise by practice.</h2>
+        <p class="about-p">Hey! I'm Anshu — a multimedia designer at UT Austin double-dipping in a B.F.A in Design and a B.S. in Arts & Entertainment Technology, because apparently one degree wasn't chaotic enough.</p>
+        <p class="about-p">I'm passionate about interactive design and finding ways to make digital experiences feel genuinely fun and human. Whether it's a brand, an app, a game, or something in between — I care about the little moments that make someone go "wait, that's really cool."</p>
+        <p class="about-p">Currently looking for internships & opportunities where I can make cool stuff with cool people. Open to all the things!</p>
+      </div>
+      <div class="about-section">
+        <div class="about-section-label">Tools & skills</div>
+        <div class="skill-group">
+          <div class="skill-group-label">Design</div>
+          <div class="skill-list"><span class="stag">Figma</span><span class="stag">Adobe Illustrator</span><span class="stag">Photoshop</span><span class="stag">InDesign</span><span class="stag">Blender</span></div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-label">Motion & Video</div>
+          <div class="skill-list"><span class="stag">After Effects</span><span class="stag">Premiere Pro</span></div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-label">Development</div>
+          <div class="skill-list"><span class="stag">HTML</span><span class="stag">CSS</span><span class="stag">Basic JS</span></div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-label">Other</div>
+          <div class="skill-list"><span class="stag">Prototyping</span><span class="stag">Storyboarding</span><span class="stag">Print production</span><span class="stag">User research</span></div>
+        </div>
+      </div>
+      <div class="about-section">
+        <div class="about-section-label">A few other things</div>
+        <div class="fun-list">
+          <div class="fun-row"><span class="fun-key">Currently playing</span><span class="fun-val">Hollow Knight, Stardew Valley</span></div>
+          <div class="fun-row"><span class="fun-key">Drawing</span><span class="fun-val">Creatures, maps, imaginary packaging</span></div>
+          <div class="fun-row"><span class="fun-key">Inspired by</span><span class="fun-val">Sagmeister, Kern, Studio Ghibli</span></div>
+          <div class="fun-row"><span class="fun-key">Learning</span><span class="fun-val">Motion typography and 3D sculpting</span></div>
+          <div class="fun-row"><span class="fun-key">Favorite typeface</span><span class="fun-val">Currently rotating between Canela and Söhne</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-left">anshu patel <span style="font-size:20px;opacity:0.9;font-weight:300;color:#fff">*</span></div>
+  <div class="footer-links">
+    <a href="mailto:patelans006@gmail.com">Email</a>
+    <a href="https://www.linkedin.com/in/anshu-patel-8128bb3a2">LinkedIn</a>
+    <a href="#">Resume</a>
+  </div>
+  <div class="footer-copy">© 2026 Anshu patel</div>
+</footer>
+
+<script>
+const pages={home:'page-home',graphic:'page-graphic',ux:'page-ux','3d':'page-3d',motion:'page-motion',archive:'page-archive',about:'page-about'};
+const navIds={home:'nav-home',graphic:'nav-graphic',ux:'nav-ux','3d':'nav-3d',motion:'nav-motion',archive:'nav-archive',about:'nav-about'};
+const workPages=['graphic','ux','3d','motion','archive'];
+
+function showPage(id){
+  Object.values(pages).forEach(p=>{const el=document.getElementById(p);if(el)el.classList.remove('active')});
+  Object.values(navIds).forEach(n=>{const el=document.getElementById(n);if(el)el.classList.remove('active')});
+  const pg=document.getElementById(pages[id]);if(pg)pg.classList.add('active');
+  const nv=document.getElementById(navIds[id]);if(nv)nv.classList.add('active');
+  // Mark Works trigger as active if a sub-page is open
+  const trigger=document.getElementById('works-trigger');
+  if(workPages.includes(id)){trigger.classList.add('has-active')}
+  else{trigger.classList.remove('has-active')}
+  window.scrollTo(0,0);
+  closeWorksMenu();
+}
+
+function toggleWorksMenu(){
+  const menu=document.getElementById('works-menu');
+  const trigger=document.getElementById('works-trigger');
+  const open=menu.classList.contains('open');
+  if(open){closeWorksMenu()}
+  else{menu.classList.add('open');trigger.classList.add('open')}
+}
+function closeWorksMenu(){
+  document.getElementById('works-menu').classList.remove('open');
+  document.getElementById('works-trigger').classList.remove('open');
+}
+// Close on outside click
+document.addEventListener('click',function(e){
+  const dd=document.getElementById('works-dropdown');
+  if(dd&&!dd.contains(e.target))closeWorksMenu();
+});
+
+function toggleExp(id){
+  const item=document.getElementById(id);
+  item.classList.toggle('open');
+}
+</script>
+</body>
+</html>
