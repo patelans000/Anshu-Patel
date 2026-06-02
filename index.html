@@ -190,12 +190,14 @@ nav{padding:22px 48px;display:flex;align-items:center;justify-content:space-betw
 .about-section{margin-bottom:48px;padding-bottom:48px;border-bottom:1px solid var(--border)}
 .about-section:last-child{border-bottom:none}
 .about-section-label{font-size:11px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
-.about-intro-line{font-size:22px;font-weight:500;line-height:1.4;margin-bottom:24px;color:#1A1A1A}
+.about-intro-line{font-size:14px;font-weight:400;line-height:1.5;margin-bottom:12px;color:#444}
+.about-intro-heading{font-family:'Fredoka',sans-serif;font-size:28px;font-weight:600;line-height:1.2;margin-bottom:16px;color:#1A1A1A}
+.about-intro-descriptors{font-size:22px;font-weight:500;line-height:1.5;margin-bottom:32px;color:#1A1A1A;display:flex;align-items:center;flex-wrap:wrap;gap:6px}
 .about-intro-filler{display:inline}
 .about-intro-rotate-wrap{display:inline-block;position:relative;vertical-align:baseline}
-.rotating-descriptor{display:inline-block;position:relative;height:1.3em;vertical-align:middle;min-width:200px}
-.descriptor-item{position:absolute;left:0;top:0;white-space:nowrap;opacity:0;transform:translateY(6px);transition:opacity 0.4s ease,transform 0.4s ease;font-weight:600;color:#1A1A1A;background:var(--yellow);padding:0 6px;border-radius:4px}
-.descriptor-item.active{opacity:1;transform:translateY(0)}
+.rotating-descriptor{display:inline-block;position:relative;height:1.2em;vertical-align:middle;min-width:160px}
+.descriptor-item{position:absolute;left:0;top:50%;white-space:nowrap;opacity:0;transform:translateY(calc(-50% + 2px));transition:opacity 0.4s ease,transform 0.4s ease;font-weight:600;color:#1A1A1A;background:var(--yellow);padding:4px 10px;border-radius:4px;font-size:22px}
+.descriptor-item.active{opacity:1;transform:translateY(-50%)}
 .about-p{font-size:14px;color:#444;line-height:1.85;margin-bottom:14px}
 .about-p:last-child{margin-bottom:0}
 .skill-group{margin-bottom:20px}
@@ -206,6 +208,12 @@ nav{padding:22px 48px;display:flex;align-items:center;justify-content:space-betw
 .fun-row{display:grid;grid-template-columns:120px 1fr;gap:12px;font-size:13px}
 .fun-key{color:var(--muted)}
 .fun-val{color:#1A1A1A}
+.fun-audio{display:flex;align-items:center;gap:12px}
+audio{accent-color:#1A1A1A}
+.audio-play-btn{width:32px;height:32px;border-radius:50%;background:var(--yellow);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all 0.2s;font-size:14px;padding:0;line-height:1}
+.audio-play-btn:hover{transform:scale(1.08);background:#FFE680}
+.audio-play-btn.playing{background:var(--blue)}
+.audio-play-btn.playing:hover{background:#A8CFFF}
 
 /* ── COLOR ACCENTS ── */
 .accent-graphic{background:#FFD9E8}
@@ -333,7 +341,7 @@ nav{padding:22px 48px;display:flex;align-items:center;justify-content:space-betw
         <div class="exp-row" onclick="toggleExp('exp-1')">
           <div class="exp-row-left">
             <div class="exp-period">Summer 2026</div>
-            <div class="exp-role-wrap"><div class="exp-role">Design & Marketing Intern</div><div class="exp-company"><a href="https://www.janmaragency.com/" target="_blank">Janmar Agency & Culture Clash Magazine</a></div></div>
+            <div class="exp-role-wrap"><div class="exp-role">Design & Marketing Intern</div><div class="exp-company"><a href="https://www.janmaragency.com/" target="_blank">Janmar Agency</a> & <a href="https://www.cultureclashgalveston.com/" target="_blank">Culture Clash Magazine</a></div></div>
           </div>
           <div class="exp-toggle"><span class="exp-toggle-icon">+</span></div>
         </div>
@@ -562,46 +570,41 @@ nav{padding:22px 48px;display:flex;align-items:center;justify-content:space-betw
     </div>
     <div class="about-right">
       <div class="about-section">
-        <div class="about-section-label">Who I am</div>
+        <h2 class="about-intro-heading">Hi, I'm Anshu!</h2>
 
         <!-- Rotating intro line -->
-        <p class="about-intro-line">A designer and a <span class="rotating-descriptor" id="rotating-descriptor"><span class="descriptor-item active">eccentric gamer</span><span class="descriptor-item">cat lover</span><span class="descriptor-item">cookie cake decorator</span><span class="descriptor-item">fangirl</span><span class="descriptor-item">comics enthusiast</span><span class="descriptor-item">cosplayer</span><span class="descriptor-item">dancer</span><span class="descriptor-item">fontphile</span><span class="descriptor-item">awesome little sister &gt;:)</span><span class="descriptor-item">DIY barber</span><span class="descriptor-item">figurine collector</span></span>.</p>
+        <p class="about-intro-descriptors">A designer and a <span class="rotating-descriptor" id="rotating-descriptor"><span class="descriptor-item active">eccentric gamer</span><span class="descriptor-item">cat lover</span><span class="descriptor-item">cookie cake decorator</span><span class="descriptor-item">fangirl</span><span class="descriptor-item">comics enthusiast</span><span class="descriptor-item">cosplayer</span><span class="descriptor-item">dancer</span><span class="descriptor-item">fontphile</span><span class="descriptor-item">awesome little sister &gt;:)</span><span class="descriptor-item">DIY barber</span><span class="descriptor-item">figurine collector</span><span class="descriptor-item">keychain hoarder</span></span></p>
 
-        <p class="about-p">Hi, I'm Anshu. I'm a multimedia designer at UT Austin pursuing a B.F.A. in Design and a B.S. in Arts & Entertainment Technologies, focusing on Game Design.</p>
+        <p class="about-p">I'm a <strong>multimedia designer</strong> currently pursuing a <strong>B.F.A. in Design and a B.S. in Arts & Entertainment Technologies</strong> with a focus in <strong>Game Design</strong> at the University of Texas at Austin.</p>
 
-        <p class="about-p">I've built fluency across a lot of disciplines — branding, editorial, 3D, motion, UI — but what ties all of it together is a deep interest in how design shapes experience. My real obsession is interactive design: the moments where a player, user, or viewer makes a choice and feels the world respond. That's where I want to live.</p>
+        <p class="about-p">During my time at UT, I've had the opportunity to work across <strong>branding, UI/UX, motion graphics, 3D, and game development</strong> and so much more. I love exploring different areas of design, but what always draws me in is <strong>creating experiences that people can interact with, learn from, and connect to</strong>.</p>
 
-        <p class="about-p">Whether I'm designing a brand identity, building a game interface, or mapping out a level, I'm thinking about the same thing: how does this feel to the person on the other side? What detail will make them stop and smile? What decision will make them lean in?</p>
+        <p class="about-p">I'm also currently the <strong>Public Relations Officer for Longhorn Racing</strong>, the largest engineering organization at UT and one of the most accomplished student organizations on campus. I manage branding, graphics, and communications across all three vehicle teams and serve as the PR Lead for the Solar team. Getting to work alongside hundreds of incredibly talented students who spend countless hours designing, building, and racing vehicles has been one of the coolest parts of my college experience.</p>
 
-        <p class="about-p">I'm drawn to work that sits at the intersection of design, storytelling, and systems — the kind of thing that rewards curiosity and leaves room for interpretation.</p>
+        <p class="about-p">I'm especially interested in <strong>interactive design, game development, and storytelling</strong>. I love thinking about the little details that make someone pause, explore, or see something differently, and I'm always looking for ways to <strong>weave narrative into the experiences I create</strong>.</p>
+
+        <p class="about-p">Because my work has taken me across so many different disciplines, I've become comfortable jumping into unfamiliar territory, learning new tools, and adapting to whatever a project needs. Whether that's designing an interface, building a brand, prototyping a game mechanic, or something completely unexpected, I'm always excited to figure it out!</p>
+
+        <p class="about-p">When I'm not creating, you can usually find me playing video games, getting lost in books and comics, or making ridiculously specific Spotify playlists.</p>
       </div>
       <div class="about-section">
         <div class="about-section-label">Tools & skills</div>
         <div class="skill-group">
-          <div class="skill-group-label">Design</div>
-          <div class="skill-list"><span class="stag">Figma</span><span class="stag">Adobe Illustrator</span><span class="stag">Photoshop</span><span class="stag">InDesign</span><span class="stag">Blender</span></div>
+          <div class="skill-group-label">Tools</div>
+          <div class="skill-list"><span class="stag">Unity</span><span class="stag">Adobe Illustrator</span><span class="stag">Photoshop</span><span class="stag">InDesign</span><span class="stag">After Effects</span><span class="stag">Substance Painter</span><span class="stag">GitHub</span><span class="stag">VS Code</span><span class="stag">Rhino 3D</span><span class="stag">Autodesk Maya</span><span class="stag">HTML</span><span class="stag">CSS</span><span class="stag">Java</span><span class="stag">Figma</span><span class="stag">Basic C++</span></div>
         </div>
         <div class="skill-group">
-          <div class="skill-group-label">Motion & Video</div>
-          <div class="skill-list"><span class="stag">After Effects</span><span class="stag">Premiere Pro</span></div>
-        </div>
-        <div class="skill-group">
-          <div class="skill-group-label">Development</div>
-          <div class="skill-list"><span class="stag">HTML</span><span class="stag">CSS</span><span class="stag">Basic JS</span></div>
-        </div>
-        <div class="skill-group">
-          <div class="skill-group-label">Other</div>
-          <div class="skill-list"><span class="stag">Prototyping</span><span class="stag">Storyboarding</span><span class="stag">Print production</span><span class="stag">User research</span></div>
+          <div class="skill-group-label">Skills</div>
+          <div class="skill-list"><span class="stag">Graphic Design</span><span class="stag">Motion Design</span><span class="stag">Game Design</span><span class="stag">Narrative Design</span><span class="stag">UX/UI</span><span class="stag">Programming</span><span class="stag">Prototyping</span><span class="stag">Typeface Design</span></div>
         </div>
       </div>
       <div class="about-section">
-        <div class="about-section-label">A few other things</div>
+        <div class="about-section-label">Some fun bits and bobs</div>
         <div class="fun-list">
-          <div class="fun-row"><span class="fun-key">Currently playing</span><span class="fun-val">Hollow Knight, Stardew Valley</span></div>
-          <div class="fun-row"><span class="fun-key">Drawing</span><span class="fun-val">Creatures, maps, imaginary packaging</span></div>
-          <div class="fun-row"><span class="fun-key">Inspired by</span><span class="fun-val">Sagmeister, Kern, Studio Ghibli</span></div>
+          <div class="fun-row"><span class="fun-key">Listening to</span><span class="fun-val fun-audio"><button class="audio-play-btn" id="audio-btn" onclick="toggleAudio()">▶</button><audio id="audio-player" src="./06. FINAL FANTASY XVI - Find the Flame.mp3"></audio><span>Find the Flame — Masayoshi Soken</span></span></div>
+          <div class="fun-row"><span class="fun-key">Currently playing</span><span class="fun-val">League of Legends, Tears of the Kingdom, Baldur's Gate 3</span></div>
+          <div class="fun-row"><span class="fun-key">Currently reads</span><span class="fun-val">Witch Hat Atelier, Morning Star, Hench</span></div>
           <div class="fun-row"><span class="fun-key">Learning</span><span class="fun-val">Motion typography and 3D sculpting</span></div>
-          <div class="fun-row"><span class="fun-key">Favorite typeface</span><span class="fun-val">Currently rotating between Canela and Söhne</span></div>
         </div>
       </div>
     </div>
@@ -1073,6 +1076,31 @@ const navIds = {
   '3d':'nav-3d', motion:'nav-motion', archive:'nav-archive', about:'nav-about'
 };
 const workPages = ['graphic','ux','3d','motion','archive'];
+
+// ── AUDIO PLAYER ──
+function toggleAudio() {
+  const audio = document.getElementById('audio-player');
+  const btn = document.getElementById('audio-btn');
+  if (audio.paused) {
+    audio.play();
+    btn.textContent = '⏸';
+    btn.classList.add('playing');
+  } else {
+    audio.pause();
+    btn.textContent = '▶';
+    btn.classList.remove('playing');
+  }
+}
+document.addEventListener('DOMContentLoaded', function() {
+  const audio = document.getElementById('audio-player');
+  if (audio) {
+    audio.addEventListener('ended', function() {
+      const btn = document.getElementById('audio-btn');
+      btn.textContent = '▶';
+      btn.classList.remove('playing');
+    });
+  }
+});
 
 function showPage(id) {
   // Hide all main pages and project detail pages
