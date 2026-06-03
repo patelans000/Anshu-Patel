@@ -134,7 +134,7 @@ nav{padding:22px 48px;display:flex;align-items:center;justify-content:space-betw
 .proj-detail-cover-inner{width:100%;height:100%;display:flex;align-items:center;justify-content:center}
 
 .proj-detail-body{display:grid;grid-template-columns:220px 1fr;border-bottom:1px solid var(--border)}
-.proj-detail-sidebar{padding:48px 32px;border-right:1px solid var(--border);position:sticky;top:73px;height:fit-content}
+.proj-detail-sidebar{padding:48px 32px;border-right:1px solid var(--border);position:sticky;top:73px;height:fit-content;max-height:calc(100vh - 73px);overflow-y:auto}
 .proj-detail-sidebar-section{margin-bottom:32px}
 .proj-detail-sidebar-label{font-size:10px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
 .proj-detail-tag{display:inline-block;font-size:11px;padding:4px 10px;border-radius:6px;background:var(--gray);color:#1A1A1A;border:1px solid var(--border);margin:0 4px 6px 0}
@@ -246,6 +246,22 @@ audio{accent-color:#1A1A1A}
 .accent-archive{background:#F0F0F0}
 .accent-misc1{background:#E8F0FF}
 .accent-misc2{background:#EEFFF5}
+
+/* ── PROJECT DETAIL EXTRAS ── */
+.proj-img-caption{font-size:12px;color:var(--muted);margin-top:4px;margin-bottom:14px;line-height:1.5}
+.proj-detail-h3{font-family:'Fredoka',sans-serif;font-size:20px;font-weight:600;margin-bottom:12px;margin-top:32px;color:#1A1A1A}
+.proj-callout{background:var(--blue);border-radius:8px;padding:12px 18px;margin:6px 0;font-size:13px;color:#1A1A1A;line-height:1.7;font-weight:500}
+.proj-miro-wrap{width:100%;height:480px;border-radius:8px;overflow:hidden;border:1px solid var(--border);margin-bottom:6px}
+.proj-miro-wrap iframe{width:100%;height:100%;border:none;display:block}
+.proj-toc-list{display:flex;flex-direction:column;gap:0;margin-top:6px}
+.proj-toc-link{font-size:13px;color:#666;text-decoration:none;cursor:pointer;padding:6px 0 6px 12px;border-left:2px solid var(--border);transition:all 0.15s;line-height:1.4;display:block}
+.proj-toc-link:hover{color:#1A1A1A;border-left-color:#888}
+.proj-toc-link.toc-active{color:#1A1A1A;border-left-color:#1A1A1A;font-weight:500}
+#proj-ecoleander .proj-detail-content{max-width:680px;padding:48px 48px;margin:0 auto}
+#proj-ecoleander .proj-detail-content div[style*="overflow:hidden"]{border:none!important;border-radius:0!important}
+#proj-ecoleander .proj-detail-content img{width:100%;height:auto;display:block;border-radius:0!important}
+#proj-ecoleander .proj-detail-sidebar::-webkit-scrollbar{display:none}
+#proj-ecoleander .proj-detail-sidebar{-ms-overflow-style:none;scrollbar-width:none}
 
 /* ── FOOTER ── */
 .site-footer{background:#1A1A1A;color:#888;padding:40px 48px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid #333;margin-top:80px}
@@ -484,6 +500,15 @@ audio{accent-color:#1A1A1A}
     <div><span class="disc-back" onclick="showPage('home')">← All work</span></div>
   </div>
   <div class="proj-grid proj-grid-3">
+    <div class="proj" onclick="showProject('ecoleander')">
+      <div class="proj-thumb" style="overflow:hidden">
+        <div class="proj-thumb-inner" style="width:100%;height:100%">
+          <img src="The Ecoleander/Photoshoot 7.jpg" style="width:100%;height:100%;object-fit:cover;display:block" alt="The Ecoleander">
+        </div>
+        <div class="proj-hover"><div class="proj-hover-text">Textile fabrication, product design, graphic design, photography</div></div>
+      </div>
+      <div class="proj-foot"><span class="proj-name">The Ecoleander</span><span class="proj-meta">2025</span></div>
+    </div>
     <div class="proj" onclick="showProject('ceramic-speaker')">
       <div class="proj-thumb"><div class="proj-thumb-inner accent-3d" style="width:100%;height:100%"><svg width="160" height="120" viewBox="0 0 160 120" fill="none"><ellipse cx="80" cy="92" rx="40" ry="12" fill="#C8B030" opacity="0.3"/><rect x="46" y="28" width="68" height="62" rx="12" fill="#D8C040" opacity="0.45"/><rect x="58" y="18" width="44" height="16" rx="7" fill="#C0A820" opacity="0.4"/><circle cx="80" cy="59" r="12" fill="#fff" opacity="0.5"/></svg></div><div class="proj-hover"><div class="proj-hover-text">Industrial design, Blender, concept renders</div></div></div>
       <div class="proj-foot"><span class="proj-name">Ceramic Speaker</span><span class="proj-meta">2024</span></div>
@@ -1183,6 +1208,388 @@ audio{accent-color:#1A1A1A}
 <div class="proj-detail-page" id="proj-type-study"><div class="proj-detail-nav"><div class="proj-detail-breadcrumb"><span onclick="showPage('archive')">Archive</span><span class="sep">›</span><span style="color:#1A1A1A;font-weight:500">Type Study</span></div><div><button class="proj-nav-btn" onclick="showPage('archive')">← Back</button></div></div><div class="proj-detail-hero"><div class="proj-detail-kicker">Archive · Typography</div><div class="proj-detail-title">Type Study</div><p class="proj-detail-tagline">Letterform exploration from a typography class — studying the anatomy, proportion, and optical corrections that make type feel right.</p><div class="proj-detail-meta-row"><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Year</div><div class="proj-detail-meta-val">2023</div></div><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Course</div><div class="proj-detail-meta-val">Typography I</div></div></div></div><div class="proj-detail-cover" style="height:360px;background:#F0F4FF"><div class="proj-detail-cover-inner"><svg width="360" height="180" viewBox="0 0 360 180" fill="none"><text x="60" y="130" font-family="serif" font-size="100" fill="#8090C0" opacity="0.3" font-weight="bold">Aa</text></svg></div></div><div class="proj-detail-body"><div class="proj-detail-sidebar"><div class="proj-detail-sidebar-section"><div class="proj-detail-sidebar-label">Skills</div><span class="proj-detail-tag">Letterform Study</span><span class="proj-detail-tag">Typography</span><span class="proj-detail-tag">Illustration</span></div></div><div class="proj-detail-content"><div class="proj-detail-section"><div class="proj-detail-section-label">Overview</div><p class="proj-detail-p">Lorem ipsum dolor sit amet. A semester-long letterform exploration project from Typography I, studying how typefaces achieve optical balance — why a circle must overshoot a square's baseline to appear the same size, why strokes thin and thick to create rhythm, and how the negative space within a letter defines its personality as much as the positive form.</p></div><div class="proj-detail-section"><div class="proj-detail-section-label">Work</div><div class="proj-img-grid proj-img-grid-2"><div class="proj-img-placeholder tall"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Letterform studies</span></div><div class="proj-img-placeholder tall"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Final specimens</span></div></div></div></div></div></div>
 
 <div class="proj-detail-page" id="proj-systems"><div class="proj-detail-nav"><div class="proj-detail-breadcrumb"><span onclick="showPage('archive')">Archive</span><span class="sep">›</span><span style="color:#1A1A1A;font-weight:500">Systems</span></div><div><button class="proj-nav-btn" onclick="showPage('archive')">← Back</button></div></div><div class="proj-detail-hero"><div class="proj-detail-kicker">Archive · Systems Thinking</div><div class="proj-detail-title">Systems — Diagram Workshop</div><p class="proj-detail-tagline">A diagram design workshop exploring how to visualize complex systems — feedback loops, stakeholder maps, and information flows — as clear, readable graphics.</p><div class="proj-detail-meta-row"><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Year</div><div class="proj-detail-meta-val">2023</div></div><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Course</div><div class="proj-detail-meta-val">Information Design</div></div></div></div><div class="proj-detail-cover" style="height:360px;background:#FFF8F0"><div class="proj-detail-cover-inner"><svg width="380" height="180" viewBox="0 0 380 180" fill="none"><circle cx="100" cy="90" r="50" stroke="#E08040" stroke-width="1.5" fill="none" opacity="0.35"/><circle cx="240" cy="90" r="40" stroke="#E08040" stroke-width="1.5" fill="none" opacity="0.35"/><circle cx="320" cy="60" r="28" stroke="#E08040" stroke-width="1.5" fill="none" opacity="0.3"/><line x1="100" y1="90" x2="240" y2="90" stroke="#E08040" stroke-width="1" opacity="0.25"/><line x1="240" y1="90" x2="320" y2="60" stroke="#E08040" stroke-width="1" opacity="0.2"/></svg></div></div><div class="proj-detail-body"><div class="proj-detail-sidebar"><div class="proj-detail-sidebar-section"><div class="proj-detail-sidebar-label">Skills</div><span class="proj-detail-tag">Diagram Design</span><span class="proj-detail-tag">Information Design</span><span class="proj-detail-tag">Systems Thinking</span></div></div><div class="proj-detail-content"><div class="proj-detail-section"><div class="proj-detail-section-label">Overview</div><p class="proj-detail-p">Lorem ipsum dolor sit amet. A workshop project from Information Design exploring how to translate complex systems into clear visual diagrams. Produced three diagram types: a stakeholder map for a community health initiative, a feedback loop diagram for a social media recommendation system, and an information flow diagram for a public transit network.</p></div><div class="proj-detail-section"><div class="proj-detail-section-label">Diagrams</div><div class="proj-img-placeholder wide"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>All three diagrams</span></div></div></div></div></div></div>
+
+<!-- THE ECOLEANDER -->
+<div class="proj-detail-page" id="proj-ecoleander">
+  <div class="proj-detail-nav">
+    <div class="proj-detail-breadcrumb">
+      <span onclick="showPage('3d')">3D & Product Design</span>
+      <span class="sep">›</span>
+      <span style="color:#1A1A1A;font-weight:500">The Ecoleander</span>
+    </div>
+    <div><button class="proj-nav-btn" onclick="showPage('3d')">← Back to category</button></div>
+  </div>
+
+  <div class="proj-detail-hero">
+    <div class="proj-detail-kicker">3D & Product Design · Object & Textile Design</div>
+    <div class="proj-detail-title">The Ecoleander</div>
+    <p class="proj-detail-tagline">The Ecoleander is a collapsible, reusable grocery bag designed to highlight Galveston Island’s city flower, the Oleander, and its unique history. Created as a functional, one-of-a-kind souvenir, it aims to move beyond typical tourist clichés by offering something both authentically rooted in place and environmentally sustainable.</p>
+    <div class="proj-detail-meta-row">
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Course</div><div class="proj-detail-meta-val">Objects and Spaces // DES 326</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Instructor</div><div class="proj-detail-meta-val">Kate Catterall</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">4 weeks · Fall 2025</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">Illustrator, Photoshop, After Effects, Canva, Industrial Sewing Machine, Canon Powershot SX740</div></div>
+    </div>
+  </div>
+
+  <!-- HERO GALLERY -->
+  <div style="border-bottom:1px solid var(--border)">
+    <!-- Main: Photo 7 with title overlay -->
+    <div style="position:relative;overflow:hidden;aspect-ratio:16/7;border-bottom:1px solid var(--border)">
+      <img src="The Ecoleander/Photoshoot 7.jpg" style="width:100%;height:100%;object-fit:cover;display:block" alt="The Ecoleander in use">
+      <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.15) 45%,transparent 100%)"></div>
+      <div style="position:absolute;bottom:36px;left:48px">
+        <div style="font-family:'Fredoka',sans-serif;font-size:54px;font-weight:600;color:#fff;line-height:1.05;letter-spacing:0.3px">The Ecoleander</div>
+        <div style="font-size:13px;color:rgba(255,255,255,0.7);margin-top:6px;font-weight:400;letter-spacing:0.3px">DES 326 · Fall 2025</div>
+      </div>
+    </div>
+    <!-- Video + poster + 4 photos -->
+    <div style="padding:32px 48px;display:flex;flex-direction:column;gap:14px;background:#fafafa">
+      <div style="overflow:hidden;border-radius:8px">
+        <video controls preload="metadata" playsinline style="width:100%;display:block">
+          <source src="The Ecoleander/Ecoleander Advertise Reel.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div style="display:grid;grid-template-columns:2fr 3fr;gap:14px;align-items:start">
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div style="overflow:hidden">
+            <img src="The Ecoleander/Photoshoot 6.jpg" style="width:100%;display:block" alt="">
+          </div>
+          <div style="overflow:hidden">
+            <img src="The Ecoleander/Photoshoot 3.jpg" style="width:100%;display:block" alt="">
+          </div>
+          <div style="overflow:hidden">
+            <img src="The Ecoleander/Photoshoot 2.jpg" style="width:100%;display:block" alt="">
+          </div>
+        </div>
+        <div style="overflow:hidden">
+          <img src="The Ecoleander/Ecoleander Main Poster.png" style="width:100%;display:block" alt="Ecoleander Poster">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="proj-detail-body">
+    <div class="proj-detail-sidebar">
+      <div class="proj-detail-sidebar-section">
+        <div class="proj-detail-sidebar-label">Contents</div>
+        <div class="proj-toc-list">
+          <a class="proj-toc-link" onclick="document.getElementById('eco-brief').scrollIntoView({behavior:'smooth'})">Brief</a>
+          <a class="proj-toc-link" onclick="document.getElementById('eco-research').scrollIntoView({behavior:'smooth'})">Research</a>
+          <a class="proj-toc-link" onclick="document.getElementById('eco-ideation').scrollIntoView({behavior:'smooth'})">Sketching</a>
+          <a class="proj-toc-link" onclick="document.getElementById('eco-concept').scrollIntoView({behavior:'smooth'})">Concept</a>
+          <a class="proj-toc-link" onclick="document.getElementById('eco-prototyping').scrollIntoView({behavior:'smooth'})">Prototyping</a>
+          <a class="proj-toc-link" onclick="document.getElementById('eco-fabrication').scrollIntoView({behavior:'smooth'})">Fabrication</a>
+          <a class="proj-toc-link" onclick="document.getElementById('eco-critique').scrollIntoView({behavior:'smooth'})">Critique</a>
+          <a class="proj-toc-link" onclick="document.getElementById('eco-reflection').scrollIntoView({behavior:'smooth'})">Reflection</a>
+        </div>
+      </div>
+      <div class="proj-detail-sidebar-section">
+        <div class="proj-detail-sidebar-label">Skills</div>
+        <span class="proj-detail-tag">Product Design</span><span class="proj-detail-tag">Textile & Sewing</span><span class="proj-detail-tag">Pattern Making</span><span class="proj-detail-tag">Graphic Design</span><span class="proj-detail-tag">Photography</span><span class="proj-detail-tag">Videography</span><span class="proj-detail-tag">Archival Research</span><span class="proj-detail-tag">After Effects</span>
+      </div>
+      <div class="proj-detail-sidebar-section">
+        <div class="proj-detail-section-label" style="border-bottom:none;padding-bottom:0;margin-bottom:12px;">Deliverables</div>
+        <span class="proj-detail-tag">Functional Bag Prototype</span><span class="proj-detail-tag">Presentation Poster</span><span class="proj-detail-tag">Title Block Poster</span><span class="proj-detail-tag">Sewing Pattern & Manual</span><span class="proj-detail-tag">Hang Tag</span><span class="proj-detail-tag">Promotional Reel</span>
+      </div>
+    </div>
+
+    <div class="proj-detail-content">
+
+      <!-- Brief -->
+      <div class="proj-detail-section" id="eco-brief">
+        <div class="proj-detail-section-label">Brief</div>
+        <div class="proj-detail-h2">Create a Souvenir</div>
+        <p class="proj-detail-p"><strong>The goal was to design a souvenir that highlighted a unique aspect of my hometown that isn't typically represented or tied to local stereotypes.</strong></p>
+        <p class="proj-detail-p">The project asked me to design a small, handheld souvenir. I personally wanted to create one that was functional, useful, and environmentally conscious. While Galveston Island is almost always represented by its beaches and shores, its rich history is often overshadowed by the cheap plastic trinkets found in souvenir shops. I wanted the object to be meaningful and educational, highlighting an important aspect of my hometown while also serving a practical purpose.</p>
+        <div class="proj-callout">How can I design a functional, one-of-a-kind souvenir that embodies my hometown (Galveston, Texas) without falling into clichés?</div>
+      </div>
+
+      <!-- Research -->
+      <div class="proj-detail-section" id="eco-research">
+        <div class="proj-detail-section-label">Research</div>
+        <div class="proj-detail-h2">Exploring the Island's History</div>
+
+        <div class="proj-detail-h3">Defining Our "Image of the World"</div>
+        <div class="proj-img-grid proj-img-grid-2" style="margin-bottom:4px">
+          <div style="overflow:hidden;border-radius:8px;border:1px solid var(--border)">
+            <img src="The Ecoleander/Progress Photo Image of the World.png" style="width:100%;display:block" alt="Image of the World class exercise">
+          </div>
+          <div style="overflow:hidden;border-radius:8px;border:1px solid var(--border)">
+            <img src="The Ecoleander/Progress Photo The Gift Reading Notes.png" style="width:100%;display:block" alt="Notes from The Gift">
+          </div>
+        </div>
+        <p class="proj-img-caption">Some of the notes our class took on "The Gift".</p>
+        <p class="proj-detail-p">Professor Catterall encouraged us to cultivate an "image of the world" and use Shearer's Design Thinking Framework to guide our design process. We also read <em>The Gift</em> by Clive Dilnot as a class, which addresses the cultural significance of gifts and giving, to help frame our thinking. This helped me connect research insights to concept development.</p>
+        <p class="proj-detail-p">Key takeaways:</p>
+        <ul style="margin:0 0 14px 20px;font-size:14px;color:#444;line-height:1.9">
+          <li>Design can bring people, stories, and places together meaningfully.</li>
+          <li>Considering how users interact with a design helps make it functional and engaging.</li>
+          <li>Establishing guiding questions clarifies objectives across research and design phases.</li>
+        </ul>
+
+        <div class="proj-detail-h3">Library and Archive Research</div>
+        <div class="proj-miro-wrap">
+          <iframe src="https://miro.com/app/live-embed/uXjVJBMWtP8=/" allow="fullscreen; clipboard-read; clipboard-write" allowfullscreen></iframe>
+        </div>
+        <p class="proj-img-caption">The Miro board I compiled of my research.</p>
+        <p class="proj-detail-p">I explored the Rosenberg Library archives, the Galveston and Texas History Center's digital collections, and the International Oleander Society's pages. This research helped me uncover the history, stories, and visual context of Galveston's history.</p>
+        <p class="proj-detail-p">Key takeaways:</p>
+        <ul style="margin:0 0 14px 20px;font-size:14px;color:#444;line-height:1.9">
+          <li>The Oleander has a deep cultural and historical presence in Galveston that I was ignorant of.</li>
+          <li>Archival research can provide visual and textual inspiration for meaningful design.</li>
+        </ul>
+
+        <div class="proj-detail-h3">Narrowing Down Concepts</div>
+        <p class="proj-detail-p">I compiled all research and references on Miro, then narrowed the focus to three potential concepts: the Galveston Trolley, the history of The Strand District, and the Oleander City. This clarified the design direction.</p>
+        <p class="proj-detail-p">Key takeaways:</p>
+        <ul style="margin:0 0 20px 20px;font-size:14px;color:#444;line-height:1.9">
+          <li>Narrowing research to a few core concepts makes iteration and prototyping more focused.</li>
+          <li>Combining historical, cultural, and ecological elements can make a souvenir both meaningful and educational.</li>
+          <li>Functional objects can tell a story while serving practical needs.</li>
+        </ul>
+        <div class="proj-detail-section-label" style="margin-bottom:10px">Key Design Implications</div>
+        <div class="proj-callout">Focus on representing underexplored aspects of Galveston history.</div>
+        <div class="proj-callout">Create a souvenir that is functional and environmentally conscious.</div>
+        <div class="proj-callout">Ensure the design communicates meaning and engages users with local stories.</div>
+        <div class="proj-callout">Use research insights to guide concept selection, iteration, and prototyping.</div>
+      </div>
+
+      <!-- Ideation -->
+      <div class="proj-detail-section" id="eco-ideation">
+        <div class="proj-detail-section-label">Ideation</div>
+        <div class="proj-detail-h2">Generating Ideas Through Sketching</div>
+        <p class="proj-detail-p">I began by sketching a variety of small knick-knacks based on each concept, though I wasn't completely satisfied with all of them. I looked forward to the in-class discussion to get feedback and help guide my thinking further.</p>
+        <div style="overflow:hidden;border-radius:8px;border:1px solid var(--border);margin-bottom:4px">
+          <img src="The Ecoleander/sketches 1.png" style="width:100%;display:block" alt="First sketches">
+        </div>
+        <p class="proj-img-caption">All the first sketches I made prior to in class discussion.</p>
+        <p class="proj-detail-p">During class, we discussed our three possible directions for the hometown souvenir project in small groups. Talking with peers about their designs was incredibly helpful, and everyone gravitated toward Galveston's Oleander City concept, and I shared their enthusiasm. I developed the concept further through initial sketches and notes to capture my ideas.</p>
+        <div class="proj-img-grid proj-img-grid-2" style="margin-bottom:4px">
+          <div style="overflow:hidden;border-radius:8px;border:1px solid var(--border)">
+            <img src="The Ecoleander/sketches 2.png" style="width:100%;display:block" alt="Sketches 2">
+          </div>
+          <div style="overflow:hidden;border-radius:8px;border:1px solid var(--border)">
+            <img src="The Ecoleander/sketches 3.png" style="width:100%;display:block" alt="Sketches 3">
+          </div>
+        </div>
+        <p class="proj-img-caption">All 40 of the sketches I made for my Oleander City concept. Here you can see the birth of the final concept!</p>
+        <p class="proj-detail-p">I continued refining the project, creating forty sketches and thumbnails to explore the Oleander City concept. I initially considered designing a doll inspired by the Queen of the Oleander Fete to celebrate local history and Juneteenth, but after discussing originality concerns with Professor Catterall, I shifted to new directions.</p>
+        <p class="proj-detail-p">One idea that stood out was a foldable tote bag, which I refined into a foldable grocery bag. This change made the concept more practical and meaningful, aligning with my goal of creating a functional, environmentally conscious, and educational souvenir.</p>
+      </div>
+
+      <!-- Concept Development -->
+      <div class="proj-detail-section" id="eco-concept">
+        <div class="proj-detail-section-label">Concept Development</div>
+        <div class="proj-detail-h2">The Ecoleander Becomes a Concrete Idea</div>
+        <div style="overflow:hidden;border-radius:8px;border:1px solid var(--border);margin-bottom:4px">
+          <img src="The Ecoleander/Progress Solid Vision.png" style="width:100%;display:block" alt="Vision drawing">
+        </div>
+        <p class="proj-img-caption">The drawing I made to solidify my vision.</p>
+        <p class="proj-detail-p">Before moving forward with prototyping, I wanted to establish a clear vision for my final product. I created a quick reference drawing showing how I wanted it to look and function: a collapsible grocery bag with a vintage seed graphic on the back of the folded pouch and an oleander flower pattern on the reusable bag itself. With this plan in place, I proceeded to make prototypes of the product.</p>
+      </div>
+
+      <!-- Prototyping -->
+      <div class="proj-detail-section" id="eco-prototyping">
+        <div class="proj-detail-section-label">Prototyping</div>
+        <div class="proj-detail-h2">Building and Testing the Foldable Grocery Bag</div>
+        <div style="overflow:hidden;border-radius:8px;border:1px solid var(--border);margin-bottom:4px">
+          <img src="The Ecoleander/Paper Prototype.png" style="width:100%;display:block" alt="Paper prototype">
+        </div>
+        <p class="proj-img-caption">My paper prototype of the bag.</p>
+        <p class="proj-detail-p">After deciding to move forward with the reusable foldable grocery bag, I researched different bag forms and sketched a rough orthographic drawing to estimate dimensions (I later quickly realized that instead of making an orthographic drawing, I should create a pattern for textile products). I realized that accurately representing a flexible bag in precise sketches required careful consideration of its shape and scale.</p>
+        <p class="proj-detail-p">I created a paper and masking tape model to test the overall form, which revealed that the bag needed to be smaller than my original sketches. This allowed me to refine the proportions before moving to fabric.</p>
+        <p class="proj-detail-p">For the fabric prototypes, I worked with scrap material to test the foldable pouch mechanism. The first iteration failed due to the fabric being too thick, but after adjustments and improvisation, the third iteration successfully demonstrated the pouch functionality. These early tests confirmed the concept and helped establish a clear pattern for a cleaner cotton prototype intended for the final deliverable.</p>
+        <div class="proj-img-grid proj-img-grid-2" style="margin-bottom:4px">
+          <div>
+            <div style="overflow:hidden;border-radius:8px;border:1px solid var(--border);margin-bottom:4px">
+              <img src="The Ecoleander/Cloth Prototype Failed.png" style="width:100%;display:block" alt="Failed cloth prototype">
+            </div>
+            <p class="proj-img-caption">The failed second iteration.</p>
+          </div>
+          <div>
+            <div style="overflow:hidden;border-radius:8px;border:1px solid var(--border);margin-bottom:4px">
+              <img src="The Ecoleander/Cloth Prototype Successful.png" style="width:100%;display:block" alt="Successful cloth prototype">
+            </div>
+            <p class="proj-img-caption">The successful third iteration.</p>
+          </div>
+        </div>
+        <div style="overflow:hidden;border-radius:8px;border:1px solid var(--border);margin-bottom:14px">
+          <img src="The Ecoleander/Prototype in relation to human.png" style="width:100%;display:block" alt="Prototype scale">
+        </div>
+        <p class="proj-detail-p">I also documented the bag's scale relative to a person to ensure practical usability. With these prototypes, I now have a solid plan for constructing the final, functional, and eco-conscious souvenir.</p>
+      </div>
+
+      <!-- Fabrication & Production -->
+      <div class="proj-detail-section" id="eco-fabrication">
+        <div class="proj-detail-section-label">Fabrication & Production</div>
+        <div class="proj-detail-h2">Crafting Deliverables and Bringing the Ecoleander to Life</div>
+
+        <div class="proj-detail-h3">Making the Base Prototype</div>
+        <div class="proj-img-grid proj-img-grid-2" style="margin-bottom:4px">
+          <div>
+            <div style="overflow:hidden;border-radius:8px;border:1px solid var(--border);margin-bottom:4px">
+              <img src="The Ecoleander/Me Ironing Fabric.png" style="width:100%;display:block" alt="Me ironing fabric">
+            </div>
+            <p class="proj-img-caption">Me ironing out my fabric.</p>
+          </div>
+          <div>
+            <div style="overflow:hidden;border-radius:8px;border:1px solid var(--border);margin-bottom:4px">
+              <img src="The Ecoleander/Attaching Fabric Interface.png" style="width:100%;display:block" alt="Attaching fabric interfacing">
+            </div>
+            <p class="proj-img-caption">Attaching the fabric interfacing.</p>
+          </div>
+        </div>
+        <p class="proj-detail-p">I went to the Design Lab and began building my final prototype. I began by preparing my materials, ironing the fabric flat before cutting two identical 52 x 62 cm panels for the body of the bag. I paired these with medium-weight interfacing to give the fabric the structure and durability of a reusable grocery bag. After trimming the interfacing to match, I carefully pinned and ironed it onto the fabric, taking my time to align the edges and ensure an even, secure bond that created a sturdy foundation for the prototype.</p>
+        <div class="proj-img-grid proj-img-grid-2" style="margin-bottom:4px">
+          <div>
+            <div style="overflow:hidden;border-radius:8px;border:1px solid var(--border);margin-bottom:4px">
+              <img src="The Ecoleander/Cutting Fabric.png" style="width:100%;display:block" alt="Cutting fabric">
+            </div>
+            <p class="proj-img-caption">Cutting out the fabric.</p>
+          </div>
+          <div>
+            <div style="overflow:hidden;border-radius:8px;border:1px solid var(--border);margin-bottom:4px">
+              <img src="The Ecoleander/Sewing.png" style="width:100%;display:block" alt="Hand sewing">
+            </div>
+            <p class="proj-img-caption">Photo I took while handsewing.</p>
+          </div>
+        </div>
+        <p class="proj-detail-p">I continued working on my prototype by cutting the prepped fabric for the handles and the foldable pouch pieces. When I began sewing, I realized the industrial machine wasn't suitable for the detailed stitching I needed, the overly sensitive foot pedal made precision difficult, and I ended up removing the initial seams. I switched to hand-stitching, working in the studio and later at home to finish the seams. While the stitching wasn't as clean as I'd hoped, the experience reminded me that setbacks are part of the prototyping process. I ultimately decided to move forward, knowing I could refine the construction later with a more manageable sewing machine.</p>
+        <div class="proj-img-grid proj-img-grid-2" style="margin-bottom:4px">
+          <div>
+            <div style="overflow:hidden;border-radius:8px;border:1px solid var(--border);margin-bottom:4px">
+              <img src="The Ecoleander/Progress Fixing Flaps.png" style="width:100%;display:block" alt="The initial flaps">
+            </div>
+            <p class="proj-img-caption">The flaps I made initially.</p>
+          </div>
+        </div>
+        <p class="proj-detail-p">When I went home for the weekend to finish my stitching, I discovered that both of my family's vintage sewing machines were in poor condition, and it took my dad and me about an hour of troubleshooting late at night before one finally worked. Even then, it couldn't handle the multiple fabric layers needed for the flaps, so I hand-sewed them before moving on to constructing the rest of the bag, stitching the outline, flipping it, attaching the handles, tucking in the sides, and sewing the bottom to form the full structure.</p>
+        <p class="proj-detail-p">Once assembled, I tested the bag and realized the interfacing made it too thick to fit into the original flaps, so I spent additional time removing them, making larger ones, and hand-sewing them on. After a few final adjustments, the base prototype was complete, and despite the setbacks, I finally had the actual prototype in my hands and functioning!</p>
+        <div style="overflow:hidden;border-radius:8px;border:1px solid var(--border);margin-bottom:4px">
+          <img src="The Ecoleander/Bag Mechanic Successfully Working.png" style="width:100%;display:block" alt="Bag with new flaps">
+        </div>
+        <p class="proj-img-caption">The new flaps working, and the base bag complete!</p>
+
+        <div class="proj-detail-h3">Making the Seed Graphic for the Pouch</div>
+        <p class="proj-detail-p">Next, I had to prototype the seed graphic that I wanted to iron onto the pouch. I began designing the seed packet graphic that I planned to transfer onto the back of the folded pouch using fabric transfer paper. I went through 4-5 iterations and shared them with both my peers and Professor Catterall. They provided extensive guidance on color choices, ensuring accuracy, and making sure the design effectively captured what I wanted it to convey.</p>
+        <div class="proj-img-grid proj-img-grid-2" style="margin-bottom:4px">
+          <div>
+            <div style="overflow:hidden;border-radius:8px;border:1px solid var(--border);margin-bottom:4px">
+              <img src="The Ecoleander/Adobe Illustrator Screenshot.png" style="width:100%;display:block" alt="Adobe Illustrator screenshot">
+            </div>
+            <p class="proj-img-caption">Screenshot of my Illustrator making the graphic.</p>
+          </div>
+          <div>
+            <div style="overflow:hidden;border-radius:8px;border:1px solid var(--border);margin-bottom:4px">
+              <img src="The Ecoleander/Design Final for Decal.png" style="width:100%;display:block" alt="Finalized graphic">
+            </div>
+            <p class="proj-img-caption">My finalized graphic.</p>
+          </div>
+        </div>
+        <div style="overflow:hidden;border-radius:8px;border:1px solid var(--border);margin-bottom:14px">
+          <img src="The Ecoleander/Ironing on Design.png" style="width:100%;display:block" alt="Ironing transfer onto pouch">
+        </div>
+        <p class="proj-detail-p">I went to the Design Lab to finalize my designs. Gabi helped me learn how to use the inkjet printer, and I created a test print before printing the design onto fabric transfer paper. I then trimmed the transfer and carefully ironed it onto the pouch, following the recommended settings.</p>
+
+        <div class="proj-detail-h3">Photographing the Prototype</div>
+        <p class="proj-detail-p">I planned the photoshoot a week in advance and asked my friends to wear black or dark colors, and they were enthusiastic about participating. We went to the sunny green space behind the ART building, where I had brought items to fill the bag so it would hold its shape. We experimented with a variety of poses and compositions, and my friends were very receptive to direction and carried out everything smoothly. By the end of the session, we had taken more than 160 photos and several video clips, many of which I later used in my presentation and supplementary materials.</p>
+        <div style="columns:3;column-gap:10px;margin-bottom:14px">
+          <div style="break-inside:avoid;margin-bottom:10px"><img src="The Ecoleander/Photoshoot 1.jpg" style="width:100%;display:block" alt=""></div>
+          <div style="break-inside:avoid;margin-bottom:10px"><img src="The Ecoleander/Photoshoot 4.jpg" style="width:100%;display:block" alt=""></div>
+          <div style="break-inside:avoid;margin-bottom:10px"><img src="The Ecoleander/Photoshoot 7.jpg" style="width:100%;display:block" alt=""></div>
+          <div style="break-inside:avoid;margin-bottom:10px"><img src="The Ecoleander/Photoshoot 10.jpg" style="width:100%;display:block" alt=""></div>
+          <div style="break-inside:avoid;margin-bottom:10px"><img src="The Ecoleander/Photoshoot 2.jpg" style="width:100%;display:block" alt=""></div>
+          <div style="break-inside:avoid;margin-bottom:10px"><img src="The Ecoleander/Photoshoot 5.jpg" style="width:100%;display:block" alt=""></div>
+          <div style="break-inside:avoid;margin-bottom:10px"><img src="The Ecoleander/Photoshoot 8.jpg" style="width:100%;display:block" alt=""></div>
+          <div style="break-inside:avoid;margin-bottom:10px"><img src="The Ecoleander/Photoshoot 11.jpg" style="width:100%;display:block" alt=""></div>
+          <div style="break-inside:avoid;margin-bottom:10px"><img src="The Ecoleander/Photoshoot 3.jpg" style="width:100%;display:block" alt=""></div>
+          <div style="break-inside:avoid;margin-bottom:10px"><img src="The Ecoleander/Photoshoot 6.jpg" style="width:100%;display:block" alt=""></div>
+          <div style="break-inside:avoid;margin-bottom:10px"><img src="The Ecoleander/Photoshoot 9.jpg" style="width:100%;display:block" alt=""></div>
+        </div>
+
+        <div class="proj-detail-h3">Creating the Presentation Poster</div>
+        <p class="proj-detail-p">I spent a weekend creating the presentation poster. I took inspiration from vintage product posters and tried to emulate them without diminishing the features of the bag at hand. My friend Maya R. worked with me throughout the process, offering a fresh perspective that helped clarify what looked visually strong and coherent. I initially felt overwhelmed by the many possible directions, but choosing to reference vintage posters gave me a clear framework to build from. I focused on showing the bag's design, its foldable function, and its scale, and I feel the images I selected communicate these points effectively. For typography, I paired a cursive headline reminiscent of my inspiration pieces with Futura for secondary text. Even though the final layout isn't a direct replica of the vintage posters, drawing from them helped me create a cohesive, intentional design that presents the bag clearly and confidently.</p>
+        <div style="overflow:hidden;border-radius:8px;border:1px solid var(--border);margin-bottom:14px">
+          <img src="The Ecoleander/Ecoleander Main Poster.png" style="width:100%;display:block" alt="Presentation poster">
+        </div>
+        <div class="proj-img-grid proj-img-grid-2" style="margin-bottom:4px">
+          <div style="overflow:hidden;border-radius:8px;border:1px solid var(--border)">
+            <img src="The Ecoleander/Poster Reference 1.png" style="width:100%;display:block" alt="Poster reference 1">
+          </div>
+          <div style="overflow:hidden;border-radius:8px;border:1px solid var(--border)">
+            <img src="The Ecoleander/Poster Reference 2.png" style="width:100%;display:block" alt="Poster reference 2">
+          </div>
+        </div>
+        <p class="proj-img-caption">Posters I took inspiration from.</p>
+
+        <div class="proj-detail-h3">Creating the Title Block (Sewing Pattern) and Sewing Manual</div>
+        <div style="overflow:hidden;border-radius:8px;border:1px solid var(--border);margin-bottom:14px">
+          <img src="The Ecoleander/Ecoleander Title Block.png" style="width:100%;display:block" alt="Sewing pattern title block">
+        </div>
+        <p class="proj-detail-p">Creating the pattern was fairly straightforward. I adjusted the sizing where needed, using my earlier documentation and referencing online patterns as guides. I noted that the ideal material would be nylon and ensured the pattern was at a true 1:1 scale. Since I had never made a pattern before, I researched common conventions, noticing that most include cut and fold lines along with sewing instructions. I considered merging everything into one document, but instead chose to keep the pattern clean and create a separate sewing manual to clearly explain the construction process.</p>
+        <div style="overflow:hidden;border-radius:8px;border:1px solid var(--border);margin-bottom:14px">
+          <img src="The Ecoleander/Ecoleander Sewing Guide.png" style="width:100%;display:block" alt="Sewing guide">
+        </div>
+        <p class="proj-detail-p">I repurposed the sewing instructions that I had personally used to assemble the bag, making adjustments where needed and incorporating images from a YouTube tutorial. I edited and recolored the visuals to better illustrate the specific steps I wanted to highlight. I then formatted the manual as a Z-fold brochure and prepared it for printing, including two of the images used in the poster as well as the "Ecoleander" title for consistency.</p>
+
+        <div class="proj-detail-h3">Supplementary Materials: Making a Tag and Video</div>
+        <div class="proj-img-grid proj-img-grid-2" style="margin-bottom:14px">
+          <div style="overflow:hidden;border-radius:8px;border:1px solid var(--border)">
+            <img src="The Ecoleander/Ecoleander Tag Front.png" style="width:100%;display:block" alt="Tag front">
+          </div>
+          <div style="overflow:hidden;border-radius:8px;border:1px solid var(--border)">
+            <img src="The Ecoleander/Ecoleander Tag Back.png" style="width:100%;display:block" alt="Tag back">
+          </div>
+        </div>
+        <p class="proj-detail-p">I then designed the tag for the bag, reusing the flower graphic from the seed-packet design and lowering its opacity to create a soft background. The front features the "Ecoleander" title, while the back includes a brief history of the Oleander flower and its connection to Galveston. The tag helps tie the whole project together, making the bag feel more like a real souvenir while reinforcing the educational aspect behind the design.</p>
+        <div class="proj-img-grid proj-img-grid-2" style="margin-bottom:4px">
+          <div>
+            <div style="overflow:hidden;border-radius:8px;border:1px solid var(--border);margin-bottom:4px">
+              <img src="The Ecoleander/All Printed Materials Spread.png" style="width:100%;display:block" alt="All printed materials laid out">
+            </div>
+            <p class="proj-img-caption">Process photo of all my prints laid out.</p>
+          </div>
+          <div>
+            <div style="overflow:hidden;border-radius:8px;border:1px solid var(--border);margin-bottom:4px">
+              <img src="The Ecoleander/Bag with Tag.png" style="width:100%;display:block" alt="Bag with tag attached">
+            </div>
+            <p class="proj-img-caption">The tag attached on to the bag.</p>
+          </div>
+        </div>
+        <p class="proj-detail-p">I then printed the tag and attached it to the bag using a string. I made a small cross-shaped cut in the corner of the tag, threaded the string through it, and secured it to the folded pouch, giving the bag a polished, finished look.</p>
+        <p class="proj-detail-p">Once the tag was complete, I focused on one final task: creating a promotional looping reel to play on my tablet during the critique. I wanted to ensure that all the photos and videos I had taken were showcased in a cohesive way. Since I enjoy video editing and working in After Effects, I spent time between classes compiling a simple, seamless loop that highlighted the bag and its features, creating a dynamic presentation to complement the physical prototype.</p>
+        <div style="overflow:hidden;border-radius:8px;border:1px solid var(--border);margin-bottom:14px">
+          <video controls preload="metadata" playsinline style="width:100%;display:block">
+            <source src="The Ecoleander/Ecoleander Advertise Reel.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+          </video>
+        </div>
+        <p class="proj-detail-p">For the video, I used the instrumental of "Illegal" by PinkPantheress and synced my photos and clips to the rhythm. I took an intuitive approach to editing, experimenting with compositions and adjustments as I went, while ensuring the final title shot was included using footage Drew filmed in advance. I omitted some grocery store photos that disrupted the flow, then color-graded the clips for a dreamlike aesthetic and animated the ending text with a glitch transition. Although the process was rushed, I enjoyed creating the reel and hope to spend more time on a fully developed version in the future.</p>
+      </div>
+
+      <!-- Critique -->
+      <div class="proj-detail-section" id="eco-critique">
+        <div class="proj-detail-section-label">Critique</div>
+        <div class="proj-detail-h2">In-Class Critique and Feedback</div>
+        <div style="overflow:hidden;border-radius:8px;border:1px solid var(--border);margin-bottom:14px">
+          <img src="The Ecoleander/In Class Critique.png" style="width:100%;display:block" alt="In-class critique">
+        </div>
+        <p class="proj-detail-p">Our final critique went really well. The main feedback was to slightly adjust and refine the poster copy text if I were to reprint it, but overall, everyone responded positively to the bag, my execution, and the supplementary materials. Professor Catterall and my fellow students enjoyed my product and told me they would purchase it if it existed within Galveston, which was an honor to hear. I was very happy that critique went that well.</p>
+      </div>
+
+      <!-- Reflection -->
+      <div class="proj-detail-section" id="eco-reflection">
+        <div class="proj-detail-section-label">Reflection</div>
+        <div class="proj-detail-h2">Lessons, Opportunities, and Final Thoughts</div>
+        <p class="proj-detail-p">This project allowed me to build on what I have learned in this class, as well as others, and apply that knowledge to a more complex, meaningful design. The ideation process was challenging at first, but I eventually settled on a concept I was excited about and could fully develop. I gained a deeper appreciation for creating a design that is both functional and educational. The bag not only reduces plastic waste but also highlights the significance of the Oleander flower in Galveston. Using my "Image of the World" framework to guide the process helped me stay intentional and focused throughout.</p>
+        <p class="proj-detail-p">I learned a great deal about managing time, materials, and aesthetic decisions, from pattern-making and sewing to typography, color, and creating the video reel. Moving from sketches to a tangible, functional prototype was incredibly rewarding, and presenting the final product gave me a sense of fulfillment and confidence in my design decisions. Paying attention to finer presentation details, such as the sewing manual, tag, and video, strengthened the cohesiveness of the overall project compared to previous work.</p>
+        <p class="proj-detail-p">Looking ahead, I plan to carry the same thoughtfulness and effort into future projects, continuing to bridge the gap between concept and execution. This experience reinforced the importance of designing with both purpose and audience in mind, and it has inspired me to approach future work with the goal of creating designs that are both meaningful and engaging.</p>
+      </div>
+
+    </div>
+  </div>
+</div>
 
 <!-- FOOTER -->
 <footer class="site-footer">
