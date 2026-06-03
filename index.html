@@ -1235,7 +1235,20 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
+function pauseAllMedia() {
+  document.querySelectorAll('audio, video').forEach(el => {
+    if (!el.paused) el.pause();
+  });
+  const audio = document.getElementById('audio-player');
+  const btn = document.getElementById('audio-btn');
+  if (audio && btn) {
+    btn.textContent = '▶';
+    btn.classList.remove('playing');
+  }
+}
+
 function showPage(id) {
+  pauseAllMedia();
   // Hide all main pages and project detail pages
   document.querySelectorAll('.page, .proj-detail-page').forEach(el => el.classList.remove('active'));
   // Show target page
@@ -1253,6 +1266,7 @@ function showPage(id) {
 }
 
 function showProject(slug) {
+  pauseAllMedia();
   document.querySelectorAll('.page, .proj-detail-page').forEach(el => el.classList.remove('active'));
   const pg = document.getElementById('proj-' + slug);
   if (pg) pg.classList.add('active');
