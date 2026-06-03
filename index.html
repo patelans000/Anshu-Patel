@@ -68,8 +68,12 @@ nav{padding:22px 48px;display:flex;align-items:center;justify-content:space-betw
 .disc-header{padding:56px 20px 40px;border-bottom:1px solid var(--border);display:grid;grid-template-columns:1fr auto;align-items:end;gap:40px;max-width:980px;margin:0 auto}
 .disc-label{font-size:11px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
 .disc-title{font-family:'Fredoka',sans-serif;font-size:46px;font-weight:600;line-height:1.05;margin-bottom:14px}
-/* Motion page title accent background */
+/* Discipline page title accent backgrounds */
 #page-motion .disc-title{background:#C8EDDA;color:#1A1A1A;display:inline-block;padding:8px 14px;border-radius:8px}
+#page-ux .disc-title{background:#FFC8D8;color:#1A1A1A;display:inline-block;padding:8px 14px;border-radius:8px}
+#page-3d .disc-title{background:#B8DFFF;color:#1A1A1A;display:inline-block;padding:8px 14px;border-radius:8px}
+#page-graphic .disc-title{background:#FFF0A8;color:#1A1A1A;display:inline-block;padding:8px 14px;border-radius:8px}
+#page-archive .disc-title{background:#E8E8E8;color:#1A1A1A;display:inline-block;padding:8px 14px;border-radius:8px}
 .disc-desc{font-size:15px;color:#444;line-height:1.9;max-width:520px}
 .disc-back{font-size:13px;color:var(--muted);cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border:1px solid var(--border);border-radius:100px;transition:all 0.15s}
 .disc-back:hover{color:#1A1A1A;border-color:#bbb}
@@ -404,7 +408,7 @@ audio{accent-color:#1A1A1A}
 <div class="page" id="page-graphic">
   <div class="disc-header">
     <div class="disc-header-left">
-      <div class="disc-title" style="color:#1A1A1A">2D & Graphic Design</div>
+      <div class="disc-title">2D & Graphic Design</div>
       <p class="disc-desc">A variety of my graphic design work. Click on a project card to get full details!</p>
     </div>
     <div><span class="disc-back" onclick="showPage('home')">← All work</span></div>
@@ -441,8 +445,7 @@ audio{accent-color:#1A1A1A}
 <div class="page" id="page-ux">
   <div class="disc-header">
     <div class="disc-header-left">
-      <div class="disc-label">UX/UI & Game Design</div>
-      <div class="disc-title">Interfaces,<br>Systems & Levels.</div>
+      <div class="disc-title">UX/UI & Game Design</div>
       <p class="disc-desc">User research, interaction design, UI systems, game design documents, and level design — work that thinks through people and play.</p>
     </div>
     <div><span class="disc-back" onclick="showPage('home')">← All work</span></div>
@@ -475,8 +478,7 @@ audio{accent-color:#1A1A1A}
 <div class="page" id="page-3d">
   <div class="disc-header">
     <div class="disc-header-left">
-      <div class="disc-label">3D & Product Design</div>
-      <div class="disc-title">Objects,<br>Renders & Form.</div>
+      <div class="disc-title">3D & Product Design</div>
       <p class="disc-desc">Industrial design, 3D modeling, physical prototypes, and product concepts — exploring form, material, and manufacturing.</p>
     </div>
     <div><span class="disc-back" onclick="showPage('home')">← All work</span></div>
@@ -521,10 +523,6 @@ audio{accent-color:#1A1A1A}
           <source src="videos/LHR Solar Motion Graphics.mp4" type="video/mp4">
           Your browser does not support HTML5 video.
         </video>
-        <audio class="motion-audio" controls preload="metadata">
-          <source src="videos/LHR Solar Motion Graphics.mp4" type="audio/mp4">
-          Your browser does not support HTML5 audio.
-        </audio>
       </div>
     </div>
     <div class="motion-panel">
@@ -663,8 +661,7 @@ audio{accent-color:#1A1A1A}
 <div class="page" id="page-archive">
   <div class="disc-header">
     <div class="disc-header-left">
-      <div class="disc-label">Miscellaneous Archive</div>
-      <div class="disc-title">Experiments,<br>Sketches & More.</div>
+      <div class="disc-title">Miscellaneous Archive</div>
       <p class="disc-desc">Class projects, personal explorations, quick studies, and things that don't fit anywhere else — but were worth keeping.</p>
     </div>
     <div><span class="disc-back" onclick="showPage('home')">← All work</span></div>
