@@ -110,7 +110,7 @@ nav{padding:22px 48px;display:flex;align-items:center;justify-content:space-betw
 }
 
 /* ── PROJECT DETAIL PAGE ── */
-.proj-detail-page{display:none;animation:fadein 0.3s ease}
+.proj-detail-page{display:none;animation:fadein 0.3s ease;contain:layout style}
 .proj-detail-page.active{display:block}
 .proj-detail-nav{padding:20px 48px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
 .proj-detail-breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted)}
@@ -267,6 +267,11 @@ audio{accent-color:#1A1A1A}
 #proj-smrutea .proj-detail-content img{width:100%;height:auto;display:block;border-radius:0!important}
 #proj-smrutea .proj-detail-sidebar::-webkit-scrollbar{display:none}
 #proj-smrutea .proj-detail-sidebar{-ms-overflow-style:none;scrollbar-width:none}
+#proj-flipula .proj-detail-content{max-width:680px;padding:48px 48px;margin:0 auto}
+#proj-flipula .proj-detail-content div[style*="overflow:hidden"]{border:none!important;border-radius:0!important}
+#proj-flipula .proj-detail-content img{width:100%;height:auto;display:block;border-radius:0!important}
+#proj-flipula .proj-detail-sidebar::-webkit-scrollbar{display:none}
+#proj-flipula .proj-detail-sidebar{-ms-overflow-style:none;scrollbar-width:none}
 #smt-lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.93);z-index:10000;display:none;align-items:center;justify-content:center;cursor:zoom-out;padding:24px}
 #smt-lightbox.open{display:flex}
 #smt-lightbox img{max-width:90vw;max-height:90vh;object-fit:contain;border-radius:4px}
@@ -538,6 +543,15 @@ audio{accent-color:#1A1A1A}
       </div>
       <div class="proj-foot"><span class="proj-name">Smrutea</span><span class="proj-meta">2025</span></div>
     </div>
+    <div class="proj" onclick="showProject('flipula')">
+      <div class="proj-thumb" style="overflow:hidden">
+        <div class="proj-thumb-inner" style="width:100%;height:100%">
+          <img src="The Flipula/Flipula Presentation Poster.jpg" style="width:100%;height:100%;object-fit:cover;display:block" alt="The Flipula">
+        </div>
+        <div class="proj-hover"><div class="proj-hover-text">Carpentry, product design, Adobe Illustrator</div></div>
+      </div>
+      <div class="proj-foot"><span class="proj-name">The Flipula</span><span class="proj-meta">2025</span></div>
+    </div>
     <div class="proj" onclick="showProject('ceramic-speaker')">
       <div class="proj-thumb"><div class="proj-thumb-inner accent-3d" style="width:100%;height:100%"><svg width="160" height="120" viewBox="0 0 160 120" fill="none"><ellipse cx="80" cy="92" rx="40" ry="12" fill="#C8B030" opacity="0.3"/><rect x="46" y="28" width="68" height="62" rx="12" fill="#D8C040" opacity="0.45"/><rect x="58" y="18" width="44" height="16" rx="7" fill="#C0A820" opacity="0.4"/><circle cx="80" cy="59" r="12" fill="#fff" opacity="0.5"/></svg></div><div class="proj-hover"><div class="proj-hover-text">Industrial design, Blender, concept renders</div></div></div>
       <div class="proj-foot"><span class="proj-name">Ceramic Speaker</span><span class="proj-meta">2024</span></div>
@@ -760,7 +774,7 @@ audio{accent-color:#1A1A1A}
         <!-- Rotating intro line -->
         <p class="about-intro-descriptors">A designer and a <span class="rotating-descriptor" id="rotating-descriptor"><span class="descriptor-item active">eccentric gamer</span><span class="descriptor-item">cat lover</span><span class="descriptor-item">cookie cake decorator</span><span class="descriptor-item">fangirl</span><span class="descriptor-item">comics enthusiast</span><span class="descriptor-item">cosplayer</span><span class="descriptor-item">dancer</span><span class="descriptor-item">fontphile</span><span class="descriptor-item">awesome little sister &gt;:)</span><span class="descriptor-item">DIY barber</span><span class="descriptor-item">figurine collector</span><span class="descriptor-item">keychain hoarder</span></span></p>
 
-        <p class="about-p">I'm a <strong>multimedia designer</strong> currently pursuing a <strong>B.F.A. in Design and a B.S. in Arts & Entertainment Technologies</strong> with a focus in <strong>Game Design</strong> at the University of Texas at Austin.</p>
+        <p class="about-p">I'm a <strong>multimedia designer</strong> currently pursuing a <strong>B.F.A. in Design and a B.S. in Arts & Entertainment Technologies</strong> with a focus in <strong>Game Design</strong> at the University of Texas at Austin. I am the first student (of two) to ever pursue this combination of degrees simultaneously!</p>
 
         <p class="about-p">During my time at UT, I've had the opportunity to work across <strong>branding, UI/UX, motion graphics, 3D, and game development</strong> and so much more. I love exploring different areas of design, but what always draws me in is <strong>creating experiences that people can interact with, learn from, and connect to</strong>.</p>
 
@@ -816,7 +830,7 @@ audio{accent-color:#1A1A1A}
     <div class="proj-detail-title">Bloom Coffee</div>
     <p class="proj-detail-tagline">A brand identity for a specialty coffee shop rooted in warmth, ritual, and the idea that a great cup of coffee can make anything feel possible.</p>
     <div class="proj-detail-meta-row">
-      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">6 weeks · Fall 2024</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">6 weeks</div></div>
       <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Course</div><div class="proj-detail-meta-val">Visual Identity & Branding</div></div>
       <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">Illustrator, Photoshop, InDesign</div></div>
       <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Type</div><div class="proj-detail-meta-val">Academic / Personal</div></div>
@@ -891,7 +905,7 @@ audio{accent-color:#1A1A1A}
     <div class="proj-detail-title">Quest Companion App</div>
     <p class="proj-detail-tagline">A mobile companion app designed for tabletop RPG players — tracking quests, inventory, and character arcs across campaigns without breaking immersion.</p>
     <div class="proj-detail-meta-row">
-      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">8 weeks · Spring 2024</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">8 weeks</div></div>
       <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Course</div><div class="proj-detail-meta-val">Interaction Design Studio</div></div>
       <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">Figma, Maze (user testing)</div></div>
       <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Type</div><div class="proj-detail-meta-val">Academic UX Case Study</div></div>
@@ -960,7 +974,7 @@ audio{accent-color:#1A1A1A}
     <div class="proj-detail-title">Verdant</div>
     <p class="proj-detail-tagline">Level design and game design documentation for a 2D puzzle-platformer set in an overgrown, post-human world where light and shadow drive exploration.</p>
     <div class="proj-detail-meta-row">
-      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">10 weeks · Fall 2023</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">10 weeks</div></div>
       <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Course</div><div class="proj-detail-meta-val">Game Design Foundations</div></div>
       <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">Figma, Tiled, Procreate</div></div>
       <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Type</div><div class="proj-detail-meta-val">Academic Game Design</div></div>
@@ -1021,7 +1035,7 @@ audio{accent-color:#1A1A1A}
     <div class="proj-detail-title">Ceramic Speaker</div>
     <p class="proj-detail-tagline">A Bluetooth speaker concept exploring the material tension between hand-thrown ceramic forms and precision audio engineering — where craft meets tech.</p>
     <div class="proj-detail-meta-row">
-      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">5 weeks · Spring 2024</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">5 weeks</div></div>
       <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Course</div><div class="proj-detail-meta-val">3D Product Design Studio</div></div>
       <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">Blender, Procreate, Keyshot</div></div>
       <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Type</div><div class="proj-detail-meta-val">Academic / Concept</div></div>
@@ -1084,7 +1098,7 @@ audio{accent-color:#1A1A1A}
     <div class="proj-detail-title">Studio Ident Package</div>
     <p class="proj-detail-tagline">A full motion identity package for a fictional creative studio — logo animation, bumpers, lower thirds, and a title card system designed for broadcast and social.</p>
     <div class="proj-detail-meta-row">
-      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">4 weeks · Spring 2024</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">4 weeks</div></div>
       <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Course</div><div class="proj-detail-meta-val">Motion Graphics Studio</div></div>
       <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">After Effects, Illustrator</div></div>
       <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Type</div><div class="proj-detail-meta-val">Academic</div></div>
@@ -1136,7 +1150,7 @@ audio{accent-color:#1A1A1A}
 <!-- NIGHTSHADE -->
 <div class="proj-detail-page" id="proj-nightshade">
   <div class="proj-detail-nav"><div class="proj-detail-breadcrumb"><span onclick="showPage('graphic')">2D & Graphic Design</span><span class="sep">›</span><span style="color:#1A1A1A;font-weight:500">Nightshade</span></div><div><button class="proj-nav-btn" onclick="showPage('graphic')">← Back</button></div></div>
-  <div class="proj-detail-hero"><div class="proj-detail-kicker">2D & Graphic Design · Editorial</div><div class="proj-detail-title">Nightshade</div><p class="proj-detail-tagline">Editorial layout and typographic system for a dark-arts culture magazine — exploring how layout can become atmosphere.</p><div class="proj-detail-meta-row"><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">4 weeks · Spring 2024</div></div><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Course</div><div class="proj-detail-meta-val">Editorial Design</div></div><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">InDesign, Illustrator</div></div></div></div>
+  <div class="proj-detail-hero"><div class="proj-detail-kicker">2D & Graphic Design · Editorial</div><div class="proj-detail-title">Nightshade</div><p class="proj-detail-tagline">Editorial layout and typographic system for a dark-arts culture magazine — exploring how layout can become atmosphere.</p><div class="proj-detail-meta-row"><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">4 weeks</div></div><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Course</div><div class="proj-detail-meta-val">Editorial Design</div></div><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">InDesign, Illustrator</div></div></div></div>
   <div class="proj-detail-cover" style="height:380px;background:#FFF0F5"><div class="proj-detail-cover-inner" style="flex-direction:column;gap:12px"><svg width="320" height="180" viewBox="0 0 320 180" fill="none"><rect x="60" y="20" width="200" height="140" rx="4" fill="#F4C0D0" opacity="0.45"/><rect x="76" y="36" width="168" height="14" rx="3" fill="#D07090" opacity="0.6"/><rect x="76" y="58" width="120" height="8" rx="2" fill="#D07090" opacity="0.35"/><rect x="76" y="72" width="152" height="8" rx="2" fill="#D07090" opacity="0.25"/><rect x="76" y="86" width="100" height="8" rx="2" fill="#D07090" opacity="0.2"/></svg><span style="font-size:12px;color:#D07090;opacity:0.7;font-weight:500">[ Cover placeholder ]</span></div></div>
   <div class="proj-detail-body" style="display:block">
   <div class="proj-detail-content"><div class="proj-detail-section"><div class="proj-detail-section-label">Overview</div><div class="proj-detail-h2">Layout as atmosphere</div><p class="proj-detail-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nightshade is a fictional culture magazine targeting readers of speculative fiction, occult history, and dark arts. The layout challenge was treating the grid itself as a design element — asymmetric, intentionally weighted, typographically expressive.</p></div><div class="proj-detail-section"><div class="proj-detail-section-label">Process</div><div class="proj-detail-h2">From reference to spread</div><div class="proj-detail-process-steps"><div class="proj-process-step"><div class="proj-process-num">01</div><div class="proj-process-step-content"><div class="proj-process-step-title">Editorial audit</div><div class="proj-process-step-desc">Studied Fantastic Man, The Face, and Dazed & Confused for editorial risk-taking. Identified typographic strategies that created atmosphere without sacrificing readability.</div></div></div><div class="proj-process-step"><div class="proj-process-num">02</div><div class="proj-process-step-content"><div class="proj-process-step-title">Grid & type system</div><div class="proj-process-step-desc">Designed a 12-column grid with intentional margin violations at key moments. Paired a high-contrast serif (display) with a condensed grotesque (body) to create typographic tension.</div></div></div><div class="proj-process-step"><div class="proj-process-num">03</div><div class="proj-process-step-content"><div class="proj-process-step-title">Spread design (12 pages)</div><div class="proj-process-step-desc">Designed cover, feature opener, body spreads, and a classified-ads back section — each with distinct typographic temperature while maintaining system coherence.</div></div></div></div></div><div class="proj-detail-section"><div class="proj-detail-section-label">Final Work</div><div class="proj-detail-h2">Spreads</div><div class="proj-img-placeholder wide"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Cover + feature opener spread</span></div><div class="proj-img-placeholder wide"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Body spread — typography detail</span></div></div></div></div>
@@ -1152,7 +1166,7 @@ audio{accent-color:#1A1A1A}
 
 <div class="proj-detail-page" id="proj-grove"><div class="proj-detail-nav"><div class="proj-detail-breadcrumb"><span onclick="showPage('graphic')">2D & Graphic Design</span><span class="sep">›</span><span style="color:#1A1A1A;font-weight:500">Grove</span></div><div><button class="proj-nav-btn" onclick="showPage('graphic')">← Back</button></div></div><div class="proj-detail-hero"><div class="proj-detail-kicker">2D & Graphic Design · Packaging</div><div class="proj-detail-title">Grove</div><p class="proj-detail-tagline">Packaging design for a small-batch botanical skincare line — structure, label system, and materials chosen for shelf presence and sustainable values.</p><div class="proj-detail-meta-row"><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">4 weeks · Fall 2022</div></div><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">Illustrator, Photoshop</div></div></div></div><div class="proj-detail-cover" style="height:360px;background:#FFF5EC"><div class="proj-detail-cover-inner" style="flex-direction:column;gap:12px"><svg width="320" height="180" viewBox="0 0 320 180" fill="none"><rect x="70" y="30" width="80" height="120" rx="6" fill="#F0A060" opacity="0.35"/><rect x="168" y="30" width="80" height="120" rx="6" fill="#E08040" opacity="0.3"/></svg><span style="font-size:12px;color:#C06020;opacity:0.7;font-weight:500">[ Cover placeholder ]</span></div></div><div class="proj-detail-body" style="display:block"><div class="proj-detail-content"><div class="proj-detail-section"><div class="proj-detail-section-label">Overview</div><div class="proj-detail-h2">Packaging with purpose</div><p class="proj-detail-p">Lorem ipsum dolor sit amet. Grove is a skincare packaging project designed for a small-batch, botanical-focused brand. The challenge was creating a label system that read as artisan and considered — not mass-produced — while working across multiple SKUs in a family. The label design uses botanical illustration fragments, earthy Pantone selections, and an uncoated paper stock to communicate natural provenance.</p></div><div class="proj-detail-section"><div class="proj-detail-section-label">Final Work</div><div class="proj-detail-h2">Product line</div><div class="proj-img-grid proj-img-grid-3"><div class="proj-img-placeholder tall"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Serum — label</span></div><div class="proj-img-placeholder tall"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Toner — label</span></div><div class="proj-img-placeholder tall"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Moisturizer — label</span></div></div></div></div></div></div>
 
-<div class="proj-detail-page" id="proj-verdant-ui"><div class="proj-detail-nav"><div class="proj-detail-breadcrumb"><span onclick="showPage('ux')">UX/UI & Game Design</span><span class="sep">›</span><span style="color:#1A1A1A;font-weight:500">Verdant — UI System</span></div><div><button class="proj-nav-btn" onclick="showPage('ux')">← Back</button></div></div><div class="proj-detail-hero"><div class="proj-detail-kicker">UX/UI & Game Design · Game UI</div><div class="proj-detail-title">Verdant — UI System</div><p class="proj-detail-tagline">A complete in-game UI system for Verdant — menus, HUD, inventory, and dialogue interfaces designed to feel organic without breaking the world's visual rules.</p><div class="proj-detail-meta-row"><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">6 weeks · Fall 2024</div></div><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">Figma, Illustrator</div></div></div></div><div class="proj-detail-cover" style="height:380px;background:#E8F0FF"><div class="proj-detail-cover-inner" style="flex-direction:column;gap:12px"><svg width="380" height="200" viewBox="0 0 380 200" fill="none"><rect x="20" y="20" width="340" height="160" rx="10" fill="#8090E0" opacity="0.2"/><rect x="36" y="36" width="100" height="70" rx="6" fill="#6070C8" opacity="0.35"/><rect x="152" y="36" width="76" height="30" rx="5" fill="#6070C8" opacity="0.3"/><rect x="152" y="74" width="76" height="30" rx="5" fill="#6070C8" opacity="0.25"/><rect x="246" y="36" width="98" height="70" rx="6" fill="#6070C8" opacity="0.2"/></svg><span style="font-size:12px;color:#6070C8;opacity:0.7;font-weight:500">[ Cover placeholder ]</span></div></div><div class="proj-detail-body" style="display:block"><div class="proj-detail-content"><div class="proj-detail-section"><div class="proj-detail-section-label">Overview</div><div class="proj-detail-h2">UI as world extension</div><p class="proj-detail-p">Lorem ipsum dolor sit amet. The Verdant UI system was designed as a companion to the level design project — a complete interface suite for the game's menus, HUD, inventory, and dialogue. The design constraint: the UI had to feel like it was grown, not built. Organic edge treatments, muted earthy tones, and hand-drawn texture elements give the interface a diegetic quality without sacrificing readability.</p></div><div class="proj-detail-section"><div class="proj-detail-section-label">Key Screens</div><div class="proj-detail-h2">The system</div><div class="proj-img-grid proj-img-grid-2"><div class="proj-img-placeholder wide"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Main menu</span></div><div class="proj-img-placeholder wide"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>In-game HUD</span></div><div class="proj-img-placeholder wide"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Inventory panel</span></div><div class="proj-img-placeholder wide"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Dialogue UI</span></div></div></div></div></div></div>
+<div class="proj-detail-page" id="proj-verdant-ui"><div class="proj-detail-nav"><div class="proj-detail-breadcrumb"><span onclick="showPage('ux')">UX/UI & Game Design</span><span class="sep">›</span><span style="color:#1A1A1A;font-weight:500">Verdant — UI System</span></div><div><button class="proj-nav-btn" onclick="showPage('ux')">← Back</button></div></div><div class="proj-detail-hero"><div class="proj-detail-kicker">UX/UI & Game Design · Game UI</div><div class="proj-detail-title">Verdant — UI System</div><p class="proj-detail-tagline">A complete in-game UI system for Verdant — menus, HUD, inventory, and dialogue interfaces designed to feel organic without breaking the world's visual rules.</p><div class="proj-detail-meta-row"><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">6 weeks</div></div><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">Figma, Illustrator</div></div></div></div><div class="proj-detail-cover" style="height:380px;background:#E8F0FF"><div class="proj-detail-cover-inner" style="flex-direction:column;gap:12px"><svg width="380" height="200" viewBox="0 0 380 200" fill="none"><rect x="20" y="20" width="340" height="160" rx="10" fill="#8090E0" opacity="0.2"/><rect x="36" y="36" width="100" height="70" rx="6" fill="#6070C8" opacity="0.35"/><rect x="152" y="36" width="76" height="30" rx="5" fill="#6070C8" opacity="0.3"/><rect x="152" y="74" width="76" height="30" rx="5" fill="#6070C8" opacity="0.25"/><rect x="246" y="36" width="98" height="70" rx="6" fill="#6070C8" opacity="0.2"/></svg><span style="font-size:12px;color:#6070C8;opacity:0.7;font-weight:500">[ Cover placeholder ]</span></div></div><div class="proj-detail-body" style="display:block"><div class="proj-detail-content"><div class="proj-detail-section"><div class="proj-detail-section-label">Overview</div><div class="proj-detail-h2">UI as world extension</div><p class="proj-detail-p">Lorem ipsum dolor sit amet. The Verdant UI system was designed as a companion to the level design project — a complete interface suite for the game's menus, HUD, inventory, and dialogue. The design constraint: the UI had to feel like it was grown, not built. Organic edge treatments, muted earthy tones, and hand-drawn texture elements give the interface a diegetic quality without sacrificing readability.</p></div><div class="proj-detail-section"><div class="proj-detail-section-label">Key Screens</div><div class="proj-detail-h2">The system</div><div class="proj-img-grid proj-img-grid-2"><div class="proj-img-placeholder wide"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Main menu</span></div><div class="proj-img-placeholder wide"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>In-game HUD</span></div><div class="proj-img-placeholder wide"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Inventory panel</span></div><div class="proj-img-placeholder wide"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Dialogue UI</span></div></div></div></div></div></div>
 
 <!-- Wayfinder, Petal, Sprout, Facet, Vessel, Orbit — stub detail pages -->
 <div class="proj-detail-page" id="proj-wayfinder"><div class="proj-detail-nav"><div class="proj-detail-breadcrumb"><span onclick="showPage('ux')">UX/UI & Game Design</span><span class="sep">›</span><span style="color:#1A1A1A;font-weight:500">Wayfinder</span></div><div><button class="proj-nav-btn" onclick="showPage('ux')">← Back</button></div></div><div class="proj-detail-hero"><div class="proj-detail-kicker">UX/UI & Game Design · UX Research</div><div class="proj-detail-title">Wayfinder</div><p class="proj-detail-tagline">End-to-end UX research case study for a campus wayfinding redesign — interviews, journey maps, accessibility audit, and redesign recommendations.</p><div class="proj-detail-meta-row"><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">8 weeks · Fall 2023</div></div><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">Figma, Miro, Maze</div></div></div></div><div class="proj-detail-cover" style="height:360px;background:#E8F4FF"><div class="proj-detail-cover-inner" style="flex-direction:column;gap:12px"><svg width="360" height="180" viewBox="0 0 360 180" fill="none"><circle cx="100" cy="90" r="50" stroke="#3a90d0" stroke-width="1.5" fill="none" opacity="0.35"/><circle cx="260" cy="90" r="40" stroke="#3a90d0" stroke-width="1.5" fill="none" opacity="0.35"/><line x1="100" y1="90" x2="260" y2="90" stroke="#3a90d0" stroke-width="1.5" opacity="0.25"/><circle cx="100" cy="90" r="8" fill="#3a90d0" opacity="0.5"/><circle cx="260" cy="90" r="8" fill="#3a90d0" opacity="0.5"/><circle cx="180" cy="50" r="8" fill="#3a90d0" opacity="0.4"/></svg><span style="font-size:12px;color:#3a90d0;opacity:0.7;font-weight:500">[ Cover placeholder ]</span></div></div><div class="proj-detail-body" style="display:block"><div class="proj-detail-content"><div class="proj-detail-section"><div class="proj-detail-section-label">Overview</div><div class="proj-detail-h2">Research-first wayfinding</div><p class="proj-detail-p">Lorem ipsum dolor sit amet. Wayfinder was a research-first UX project focused on the experience of navigating UT Austin's campus — particularly for first-year students, visitors, and users with mobility needs. The project moved from 12 user interviews through affinity mapping, journey mapping, and a full accessibility audit of existing campus signage to a final set of redesign recommendations.</p></div><div class="proj-detail-section"><div class="proj-detail-section-label">Research Artifacts</div><div class="proj-detail-h2">Key deliverables</div><div class="proj-img-placeholder wide"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Affinity map — research synthesis</span></div><div class="proj-img-placeholder wide"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>User journey map</span></div></div></div></div></div>
@@ -1160,7 +1174,7 @@ audio{accent-color:#1A1A1A}
 <div class="proj-detail-page" id="proj-petal"><div class="proj-detail-nav"><div class="proj-detail-breadcrumb"><span onclick="showPage('ux')">UX/UI & Game Design</span><span class="sep">›</span><span style="color:#1A1A1A;font-weight:500">Petal</span></div><div><button class="proj-nav-btn" onclick="showPage('ux')">← Back</button></div></div><div class="proj-detail-hero"><div class="proj-detail-kicker">UX/UI & Game Design · App Design</div><div class="proj-detail-title">Petal</div><p class="proj-detail-tagline">A mobile wellness app designed for gentle habit tracking — soft, non-judgmental, and built around the idea that small things compound.</p><div class="proj-detail-meta-row"><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">6 weeks · Fall 2022</div></div><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">Figma</div></div></div></div><div class="proj-detail-cover" style="height:360px;background:#FDF0FF"><div class="proj-detail-cover-inner" style="flex-direction:column;gap:12px"><svg width="280" height="180" viewBox="0 0 280 180" fill="none"><rect x="100" y="15" width="80" height="150" rx="14" fill="#C880E8" opacity="0.25"/><rect x="112" y="30" width="56" height="10" rx="4" fill="#9040C0" opacity="0.45"/><rect x="112" y="48" width="40" height="8" rx="3" fill="#9040C0" opacity="0.3"/><rect x="112" y="66" width="56" height="40" rx="8" fill="#9040C0" opacity="0.2"/></svg><span style="font-size:12px;color:#9040C0;opacity:0.7;font-weight:500">[ Cover placeholder ]</span></div></div><div class="proj-detail-body" style="display:block"><div class="proj-detail-content"><div class="proj-detail-section"><div class="proj-detail-section-label">Overview</div><div class="proj-detail-h2">Habit tracking without shame</div><p class="proj-detail-p">Lorem ipsum dolor sit amet. Petal is a wellness app designed around a single idea: most habit apps feel like report cards. Petal removes all streaks, scores, and failure states — replacing them with a growing garden visualization that reflects accumulation, not performance. The UI design prioritizes softness, breathing room, and micro-interactions that feel rewarding without being addictive.</p></div><div class="proj-detail-section"><div class="proj-detail-section-label">Key Screens</div><div class="proj-detail-h2">Screens</div><div class="proj-img-grid proj-img-grid-3"><div class="proj-img-placeholder tall"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Garden home</span></div><div class="proj-img-placeholder tall"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Log habit</span></div><div class="proj-img-placeholder tall"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Weekly reflection</span></div></div></div></div></div></div>
 
 <!-- 3D stubs -->
-<div class="proj-detail-page" id="proj-sprout"><div class="proj-detail-nav"><div class="proj-detail-breadcrumb"><span onclick="showPage('3d')">3D & Product Design</span><span class="sep">›</span><span style="color:#1A1A1A;font-weight:500">Sprout</span></div><div><button class="proj-nav-btn" onclick="showPage('3d')">← Back</button></div></div><div class="proj-detail-hero"><div class="proj-detail-kicker">3D & Product Design · Product Design</div><div class="proj-detail-title">Sprout — Planter System</div><p class="proj-detail-tagline">A modular planter system designed for small-space urban living — stackable, self-watering, and made from recycled polymer.</p><div class="proj-detail-meta-row"><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">5 weeks · Spring 2024</div></div><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">Blender, Procreate</div></div></div></div><div class="proj-detail-cover" style="height:360px;background:#EEFFF5"><div class="proj-detail-cover-inner" style="flex-direction:column;gap:12px"><svg width="280" height="200" viewBox="0 0 280 200" fill="none"><ellipse cx="140" cy="175" rx="70" ry="15" fill="#50C880" opacity="0.2"/><path d="M90 160 L90 70 Q90 55 105 55 L175 55 Q190 55 190 70 L190 160 Z" fill="#60D890" opacity="0.3"/><rect x="108" y="88" width="64" height="44" rx="8" fill="#30A860" opacity="0.35"/></svg><span style="font-size:12px;color:#30A860;opacity:0.7;font-weight:500">[ Cover placeholder ]</span></div></div><div class="proj-detail-body" style="display:block"><div class="proj-detail-content"><div class="proj-detail-section"><div class="proj-detail-section-label">Overview</div><div class="proj-detail-h2">Designing for small spaces</div><p class="proj-detail-p">Lorem ipsum dolor sit amet. Sprout is a modular planter system designed around one constraint: it must work in a studio apartment with no outdoor space. The stackable modules use passive water-wicking technology, meaning the reservoirs are filled from the bottom and the substrate draws water up as needed — eliminating overwatering as a failure mode. The form language is rounded and friendly; the material is recycled HDPE in a matte speckle finish.</p></div><div class="proj-detail-section"><div class="proj-detail-section-label">Process & Renders</div><div class="proj-detail-h2">Development</div><div class="proj-img-grid proj-img-grid-2"><div class="proj-img-placeholder wide"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Sketch development</span></div><div class="proj-img-placeholder wide"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Final render</span></div></div></div></div></div></div>
+<div class="proj-detail-page" id="proj-sprout"><div class="proj-detail-nav"><div class="proj-detail-breadcrumb"><span onclick="showPage('3d')">3D & Product Design</span><span class="sep">›</span><span style="color:#1A1A1A;font-weight:500">Sprout</span></div><div><button class="proj-nav-btn" onclick="showPage('3d')">← Back</button></div></div><div class="proj-detail-hero"><div class="proj-detail-kicker">3D & Product Design · Product Design</div><div class="proj-detail-title">Sprout — Planter System</div><p class="proj-detail-tagline">A modular planter system designed for small-space urban living — stackable, self-watering, and made from recycled polymer.</p><div class="proj-detail-meta-row"><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">5 weeks</div></div><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">Blender, Procreate</div></div></div></div><div class="proj-detail-cover" style="height:360px;background:#EEFFF5"><div class="proj-detail-cover-inner" style="flex-direction:column;gap:12px"><svg width="280" height="200" viewBox="0 0 280 200" fill="none"><ellipse cx="140" cy="175" rx="70" ry="15" fill="#50C880" opacity="0.2"/><path d="M90 160 L90 70 Q90 55 105 55 L175 55 Q190 55 190 70 L190 160 Z" fill="#60D890" opacity="0.3"/><rect x="108" y="88" width="64" height="44" rx="8" fill="#30A860" opacity="0.35"/></svg><span style="font-size:12px;color:#30A860;opacity:0.7;font-weight:500">[ Cover placeholder ]</span></div></div><div class="proj-detail-body" style="display:block"><div class="proj-detail-content"><div class="proj-detail-section"><div class="proj-detail-section-label">Overview</div><div class="proj-detail-h2">Designing for small spaces</div><p class="proj-detail-p">Lorem ipsum dolor sit amet. Sprout is a modular planter system designed around one constraint: it must work in a studio apartment with no outdoor space. The stackable modules use passive water-wicking technology, meaning the reservoirs are filled from the bottom and the substrate draws water up as needed — eliminating overwatering as a failure mode. The form language is rounded and friendly; the material is recycled HDPE in a matte speckle finish.</p></div><div class="proj-detail-section"><div class="proj-detail-section-label">Process & Renders</div><div class="proj-detail-h2">Development</div><div class="proj-img-grid proj-img-grid-2"><div class="proj-img-placeholder wide"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Sketch development</span></div><div class="proj-img-placeholder wide"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Final render</span></div></div></div></div></div></div>
 
 <div class="proj-detail-page" id="proj-facet"><div class="proj-detail-nav"><div class="proj-detail-breadcrumb"><span onclick="showPage('3d')">3D & Product Design</span><span class="sep">›</span><span style="color:#1A1A1A;font-weight:500">Facet</span></div><div><button class="proj-nav-btn" onclick="showPage('3d')">← Back</button></div></div><div class="proj-detail-hero"><div class="proj-detail-kicker">3D & Product Design · Lamp / Prototype</div><div class="proj-detail-title">Facet — Lamp Prototype</div><p class="proj-detail-tagline">A parametric table lamp built from folded aluminum panels — exploring how repetitive geometric facets can distribute light and create form simultaneously.</p><div class="proj-detail-meta-row"><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">6 weeks · Spring 2023</div></div><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">Blender, Grasshopper (concept), hand-built prototype</div></div></div></div><div class="proj-detail-cover" style="height:360px;background:#FFFAF0"><div class="proj-detail-cover-inner" style="flex-direction:column;gap:12px"><svg width="280" height="200" viewBox="0 0 280 200" fill="none"><path d="M140 30 L200 90 L200 165 L140 180 L80 165 L80 90 Z" fill="#E8C840" opacity="0.3"/><path d="M140 30 L200 90 L140 110 L80 90 Z" fill="#D0A820" opacity="0.25"/><path d="M140 110 L200 90 L200 165 L140 180 Z" fill="#B89010" opacity="0.2"/></svg><span style="font-size:12px;color:#C0A820;opacity:0.7;font-weight:500">[ Cover placeholder ]</span></div></div><div class="proj-detail-body" style="display:block"><div class="proj-detail-content"><div class="proj-detail-section"><div class="proj-detail-section-label">Overview</div><div class="proj-detail-h2">Form follows facet</div><p class="proj-detail-p">Lorem ipsum dolor sit amet. Facet started as a parametric study in Grasshopper — exploring how geometric folding patterns change the quality of light diffusion. The concept was developed into a physical prototype using hand-cut and folded aluminum sheet, proving that the digital form could be manufactured with basic tools. The final lamp creates dramatic shadow patterns at low angles and diffuses softly when the source is overhead.</p></div><div class="proj-detail-section"><div class="proj-detail-section-label">Work</div><div class="proj-img-grid proj-img-grid-2"><div class="proj-img-placeholder wide"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Blender model — multiple views</span></div><div class="proj-img-placeholder wide"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Physical prototype — lit</span></div></div></div></div></div></div>
 
@@ -1171,7 +1185,7 @@ audio{accent-color:#1A1A1A}
 <!-- Motion stubs -->
 <div class="proj-detail-page" id="proj-pulse"><div class="proj-detail-nav"><div class="proj-detail-breadcrumb"><span onclick="showPage('motion')">Motion Graphics & Videography</span><span class="sep">›</span><span style="color:#1A1A1A;font-weight:500">Pulse</span></div><div><button class="proj-nav-btn" onclick="showPage('motion')">← Back</button></div></div><div class="proj-detail-hero"><div class="proj-detail-kicker">Motion Graphics & Videography · Kinetic Typography</div><div class="proj-detail-title">Pulse</div><p class="proj-detail-tagline">A one-minute kinetic typography piece set to an original music track — letterforms that breathe, spike, and collapse with the audio waveform.</p><div class="proj-detail-meta-row"><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">3 weeks · Spring 2024</div></div><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">After Effects, Illustrator</div></div></div></div><div class="proj-detail-cover" style="height:360px;background:#E8F8FF"><div class="proj-detail-cover-inner" style="flex-direction:column;gap:12px"><svg width="380" height="180" viewBox="0 0 380 180" fill="none"><path d="M20 100 Q80 20 140 90 Q200 160 260 60 Q320 20 380 100" stroke="#4498D8" stroke-width="3" fill="none" opacity="0.4"/><circle cx="20" cy="100" r="6" fill="#4498D8" opacity="0.5"/><circle cx="140" cy="90" r="6" fill="#4498D8" opacity="0.5"/><circle cx="260" cy="60" r="6" fill="#4498D8" opacity="0.5"/><circle cx="380" cy="100" r="6" fill="#4498D8" opacity="0.5"/></svg><span style="font-size:12px;color:#4498D8;opacity:0.7;font-weight:500">[ Cover placeholder — still frame ]</span></div></div><div class="proj-detail-body" style="display:block"><div class="proj-detail-content"><div class="proj-detail-section"><div class="proj-detail-section-label">Overview</div><div class="proj-detail-h2">Type that moves with sound</div><p class="proj-detail-p">Lorem ipsum dolor sit amet. Pulse was a kinetic typography project driven by a single brief: make text feel like music. The one-minute piece uses a custom track (produced in GarageBand) as the structural backbone — every typographic movement is synced to a beat, breath, or note. The letterforms stretch, collapse, rotate, and blur in direct response to the audio, creating the sensation that the text is alive.</p></div><div class="proj-detail-section"><div class="proj-detail-section-label">Work</div><div class="proj-img-placeholder wide"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="14" stroke="#ccc" stroke-width="1.5"/><polygon points="16,14 16,26 28,20" fill="#ccc"/></svg><span>Pulse — 1 min [ video placeholder ]</span></div><div class="proj-img-grid proj-img-grid-3"><div class="proj-img-placeholder wide"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Frame 00:08</span></div><div class="proj-img-placeholder wide"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Frame 00:32</span></div><div class="proj-img-placeholder wide"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Frame 00:54</span></div></div></div></div></div></div>
 
-<div class="proj-detail-page" id="proj-golden-hour"><div class="proj-detail-nav"><div class="proj-detail-breadcrumb"><span onclick="showPage('motion')">Motion Graphics & Videography</span><span class="sep">›</span><span style="color:#1A1A1A;font-weight:500">Golden Hour</span></div><div><button class="proj-nav-btn" onclick="showPage('motion')">← Back</button></div></div><div class="proj-detail-hero"><div class="proj-detail-kicker">Motion Graphics & Videography · Title Sequence</div><div class="proj-detail-title">Golden Hour</div><p class="proj-detail-tagline">A broadcast title sequence for a fictional documentary series about contemporary craft makers — warm, unhurried, and typographically grounded.</p><div class="proj-detail-meta-row"><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">4 weeks · Spring 2024</div></div><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">After Effects, Illustrator</div></div></div></div><div class="proj-detail-cover" style="height:360px;background:#FFF8E0"><div class="proj-detail-cover-inner" style="flex-direction:column;gap:12px"><svg width="380" height="180" viewBox="0 0 380 180" fill="none"><rect x="40" y="40" width="300" height="100" rx="10" fill="#E8C840" opacity="0.3"/><rect x="64" y="60" width="252" height="16" rx="5" fill="#C0A020" opacity="0.5"/><rect x="64" y="84" width="180" height="12" rx="4" fill="#C0A020" opacity="0.3"/></svg><span style="font-size:12px;color:#C0A020;opacity:0.7;font-weight:500">[ Cover placeholder — still frame ]</span></div></div><div class="proj-detail-body" style="display:block"><div class="proj-detail-content"><div class="proj-detail-section"><div class="proj-detail-section-label">Overview</div><div class="proj-detail-h2">Broadcast with texture</div><p class="proj-detail-p">Lorem ipsum dolor sit amet. Golden Hour is a 30-second title sequence designed for a fictional documentary series about contemporary craft makers — potters, weavers, glassblowers, and woodworkers. The visual language is warm and tactile: filmed textures (grain, linen, bark) play behind slow-moving type, with a color palette of deep amber, burnt sienna, and warm cream. The motion is deliberate and patient — matching the pace of hand-made things.</p></div><div class="proj-detail-section"><div class="proj-detail-section-label">Work</div><div class="proj-img-placeholder wide"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="14" stroke="#ccc" stroke-width="1.5"/><polygon points="16,14 16,26 28,20" fill="#ccc"/></svg><span>Golden Hour title sequence — 30 sec [ video ]</span></div></div></div></div></div></div>
+<div class="proj-detail-page" id="proj-golden-hour"><div class="proj-detail-nav"><div class="proj-detail-breadcrumb"><span onclick="showPage('motion')">Motion Graphics & Videography</span><span class="sep">›</span><span style="color:#1A1A1A;font-weight:500">Golden Hour</span></div><div><button class="proj-nav-btn" onclick="showPage('motion')">← Back</button></div></div><div class="proj-detail-hero"><div class="proj-detail-kicker">Motion Graphics & Videography · Title Sequence</div><div class="proj-detail-title">Golden Hour</div><p class="proj-detail-tagline">A broadcast title sequence for a fictional documentary series about contemporary craft makers — warm, unhurried, and typographically grounded.</p><div class="proj-detail-meta-row"><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">4 weeks</div></div><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">After Effects, Illustrator</div></div></div></div><div class="proj-detail-cover" style="height:360px;background:#FFF8E0"><div class="proj-detail-cover-inner" style="flex-direction:column;gap:12px"><svg width="380" height="180" viewBox="0 0 380 180" fill="none"><rect x="40" y="40" width="300" height="100" rx="10" fill="#E8C840" opacity="0.3"/><rect x="64" y="60" width="252" height="16" rx="5" fill="#C0A020" opacity="0.5"/><rect x="64" y="84" width="180" height="12" rx="4" fill="#C0A020" opacity="0.3"/></svg><span style="font-size:12px;color:#C0A020;opacity:0.7;font-weight:500">[ Cover placeholder — still frame ]</span></div></div><div class="proj-detail-body" style="display:block"><div class="proj-detail-content"><div class="proj-detail-section"><div class="proj-detail-section-label">Overview</div><div class="proj-detail-h2">Broadcast with texture</div><p class="proj-detail-p">Lorem ipsum dolor sit amet. Golden Hour is a 30-second title sequence designed for a fictional documentary series about contemporary craft makers — potters, weavers, glassblowers, and woodworkers. The visual language is warm and tactile: filmed textures (grain, linen, bark) play behind slow-moving type, with a color palette of deep amber, burnt sienna, and warm cream. The motion is deliberate and patient — matching the pace of hand-made things.</p></div><div class="proj-detail-section"><div class="proj-detail-section-label">Work</div><div class="proj-img-placeholder wide"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="14" stroke="#ccc" stroke-width="1.5"/><polygon points="16,14 16,26 28,20" fill="#ccc"/></svg><span>Golden Hour title sequence — 30 sec [ video ]</span></div></div></div></div></div></div>
 
 <div class="proj-detail-page" id="proj-bloom-loop"><div class="proj-detail-nav"><div class="proj-detail-breadcrumb"><span onclick="showPage('motion')">Motion Graphics & Videography</span><span class="sep">›</span><span style="color:#1A1A1A;font-weight:500">Bloom Loop</span></div><div><button class="proj-nav-btn" onclick="showPage('motion')">← Back</button></div></div><div class="proj-detail-hero"><div class="proj-detail-kicker">Motion Graphics & Videography · Social Animation</div><div class="proj-detail-title">Bloom Loop</div><p class="proj-detail-tagline">A seamlessly looping animation designed for social media — floral forms expanding and collapsing in a continuous, meditative cycle.</p><div class="proj-detail-meta-row"><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">2 weeks · Fall 2023</div></div><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">After Effects, Illustrator</div></div></div></div><div class="proj-detail-cover" style="height:360px;background:#F8F0FF"><div class="proj-detail-cover-inner"><svg width="260" height="200" viewBox="0 0 260 200" fill="none"><circle cx="130" cy="100" r="70" fill="#B880E8" opacity="0.25"/><circle cx="130" cy="100" r="48" fill="#9050C0" opacity="0.2"/><path d="M88 100 Q130 54 172 100 Q130 146 88 100Z" fill="#7030A0" opacity="0.3"/></svg></div></div><div class="proj-detail-body" style="display:block"><div class="proj-detail-content"><div class="proj-detail-section"><div class="proj-detail-section-label">Overview</div><p class="proj-detail-p">Lorem ipsum dolor sit amet. Bloom Loop is a social-first animation designed around the seamless loop — where the last frame is identical to the first so the animation plays infinitely without a visible reset. The floral forms use After Effects expressions to drive their timing, meaning the animation is generative rather than hand-keyframed at every point. The piece was designed for Instagram at 1:1 and 9:16 aspect ratios.</p></div><div class="proj-detail-section"><div class="proj-detail-section-label">Work</div><div class="proj-img-placeholder wide"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="14" stroke="#ccc" stroke-width="1.5"/><polygon points="16,14 16,26 28,20" fill="#ccc"/></svg><span>Bloom Loop [ video — 8 sec loop ]</span></div></div></div></div></div></div>
 
@@ -1206,7 +1220,7 @@ audio{accent-color:#1A1A1A}
     <div class="proj-detail-meta-row">
       <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Course</div><div class="proj-detail-meta-val">Objects and Spaces // DES 326</div></div>
       <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Instructor</div><div class="proj-detail-meta-val">Kate Catterall</div></div>
-      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">4 weeks · Fall 2025</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">4 weeks</div></div>
       <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">Illustrator, Photoshop, After Effects, Canva, Industrial Sewing Machine, Canon Powershot SX740</div></div>
     </div>
   </div>
@@ -1580,7 +1594,7 @@ audio{accent-color:#1A1A1A}
     <div class="proj-detail-meta-row">
       <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Course</div><div class="proj-detail-meta-val">Objects and Spaces // DES 326</div></div>
       <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Instructor</div><div class="proj-detail-meta-val">Kate Catterall</div></div>
-      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">~4 weeks · Fall 2025</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">~4 weeks</div></div>
       <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">Adobe Illustrator, Canva, Laser & Inkjet Printers, Stainless Steel Tiffin, Xacto Knife, Sticker Paper, Canon Powershot SX740</div></div>
     </div>
   </div>
@@ -2002,6 +2016,366 @@ audio{accent-color:#1A1A1A}
   </div>
 </div>
 
+<!-- THE FLIPULA -->
+<div class="proj-detail-page" id="proj-flipula">
+  <div class="proj-detail-nav">
+    <div class="proj-detail-breadcrumb">
+      <span onclick="showPage('3d')">3D & Product Design</span>
+      <span class="sep">›</span>
+      <span style="color:#1A1A1A;font-weight:500">The Flipula</span>
+    </div>
+    <div><button class="proj-nav-btn" onclick="showPage('3d')">← Back to category</button></div>
+  </div>
+
+  <div class="proj-detail-hero">
+    <div class="proj-detail-kicker">3D & Product Design · Object Design & Carpentry</div>
+    <div class="proj-detail-title">The Flipula</div>
+    <p class="proj-detail-tagline">The Flipula is a redesigned spatula made to improve comfort and ease when flipping food, specifically quesadillas. This project focused on testing different shapes and angles to make a simple tool work better. It also helped me learn how small design changes can make a big difference in everyday use.</p>
+    <div class="proj-detail-meta-row">
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Course</div><div class="proj-detail-meta-val">Objects and Spaces // DES 326</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Instructor</div><div class="proj-detail-meta-val">Kate Catterall</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">4 weeks</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">Adobe Illustrator, Carpentry Tools</div></div>
+    </div>
+  </div>
+
+  <!-- HERO GALLERY -->
+  <div style="border-bottom:1px solid var(--border)">
+    <div style="position:relative;overflow:hidden;aspect-ratio:16/7;border-bottom:1px solid var(--border)">
+      <img src="The Flipula/The Flipula Cover Title Banner.png" style="width:100%;height:100%;object-fit:cover;display:block" alt="The Flipula">
+      <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.55) 0%,rgba(0,0,0,0.1) 45%,transparent 100%)"></div>
+      <div style="position:absolute;bottom:36px;left:48px">
+        <div style="font-family:'Fredoka',sans-serif;font-size:54px;font-weight:600;color:#fff;line-height:1.05;letter-spacing:0.3px">The Flipula</div>
+        <div style="font-size:13px;color:rgba(255,255,255,0.7);margin-top:6px;font-weight:400;letter-spacing:0.3px">DES 326 · Fall 2025</div>
+      </div>
+    </div>
+    <div style="padding:32px 48px;background:#fafafa">
+      <div style="display:grid;grid-template-columns:3fr 2fr;gap:12px;align-items:start">
+        <div style="overflow:hidden">
+          <img src="The Flipula/Hero 2.png" style="width:100%;display:block" alt="The Flipula">
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:start">
+          <div style="overflow:hidden">
+            <img src="The Flipula/Finished Final Flipula front view.png" style="width:100%;display:block" alt="Final front view">
+          </div>
+          <div style="overflow:hidden">
+            <img src="The Flipula/Finished Final Flipula side view.png" style="width:100%;display:block" alt="Final side view">
+          </div>
+          <div style="overflow:hidden">
+            <img src="The Flipula/Finished Final Flipula hand in context.png" style="width:100%;display:block" alt="Final in hand">
+          </div>
+          <div style="overflow:hidden">
+            <img src="The Flipula/Finished Final Flipula view.png" style="width:100%;display:block" alt="Final view">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="proj-detail-body">
+    <div class="proj-detail-sidebar">
+      <div class="proj-detail-sidebar-section">
+        <div class="proj-detail-sidebar-label">Contents</div>
+        <div class="proj-toc-list">
+          <a class="proj-toc-link" onclick="document.getElementById('flip-brief').scrollIntoView({behavior:'smooth'})">Brief</a>
+          <a class="proj-toc-link" onclick="document.getElementById('flip-research').scrollIntoView({behavior:'smooth'})">Research</a>
+          <a class="proj-toc-link" onclick="document.getElementById('flip-ideation').scrollIntoView({behavior:'smooth'})">Ideation</a>
+          <a class="proj-toc-link" onclick="document.getElementById('flip-building').scrollIntoView({behavior:'smooth'})">Building</a>
+          <a class="proj-toc-link" onclick="document.getElementById('flip-poster').scrollIntoView({behavior:'smooth'})">Poster</a>
+          <a class="proj-toc-link" onclick="document.getElementById('flip-final').scrollIntoView({behavior:'smooth'})">Final Result</a>
+          <a class="proj-toc-link" onclick="document.getElementById('flip-critique').scrollIntoView({behavior:'smooth'})">Critique</a>
+          <a class="proj-toc-link" onclick="document.getElementById('flip-reflection').scrollIntoView({behavior:'smooth'})">Reflection</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="proj-detail-content">
+
+      <!-- Brief -->
+      <div class="proj-detail-section" id="flip-brief">
+        <div class="proj-detail-section-label">Brief</div>
+        <div class="proj-detail-h2">Redesign The Spatula</div>
+        <p class="proj-detail-p"><strong>The goal was to design and build a spatula prototype that felt good to use and worked well for real cooking and addressed problems we faced personally.</strong></p>
+        <p class="proj-detail-p">I wanted to take something common and make it more functional through testing and iteration. I started by looking at the flat wooden spatula I use at home to make quesadillas. It works okay, but I noticed that the whole thing is not that ergonomic and it being completely flat makes it less functional. This inspired me to design a spatula that feels more ergonomic and is better suited for cooking something like quesadillas.</p>
+        <div class="proj-callout">How can small design changes make an everyday tool easier to use?</div>
+      </div>
+
+      <!-- Research -->
+      <div class="proj-detail-section" id="flip-research">
+        <div class="proj-detail-section-label">Research</div>
+        <div class="proj-detail-h2">Exploring Function By Studying Existing Examples</div>
+        <p class="proj-detail-p"><em>I explored how the shape, angle, and proportions of a spatula influence its comfort, control, and overall performance during use.</em></p>
+
+        <div class="proj-detail-h3">Observing and Using Everyday Tools</div>
+        <div style="max-width:420px;overflow:hidden;border-radius:8px;border:1px solid var(--border);margin-bottom:4px">
+          <img src="The Flipula/Quesadilla reference.png" style="width:100%;display:block" alt="Quesadilla reference">
+        </div>
+        <p class="proj-detail-p">To help tackle my design inquiry, I began by observing and using my own spatula at home that my sister and I use to help us cook quesadillas. I paid close attention to how it performed during real cooking tasks, how it flipped food, the angle of the handle, and the overall comfort in my hand. This helped me identify the practical strengths and weaknesses in an already existing spatula design.</p>
+        <ul style="margin:0 0 14px 20px;font-size:14px;color:#444;line-height:1.9">
+          <li>Lowering the head angle helps the spatula slide under food more easily.</li>
+          <li>The handle shape and thickness affect how comfortable it feels to grip.</li>
+          <li>The effectiveness for flipping can be either enhanced or hindered by the width of its head and its surface area.</li>
+        </ul>
+
+        <div class="proj-detail-h3">Recreating an Existing Spatula Head</div>
+        <div class="proj-img-grid proj-img-grid-2" style="margin-bottom:4px">
+          <div style="overflow:hidden;border-radius:8px;border:1px solid var(--border)">
+            <img src="The Flipula/Reference spatula head foam.png" style="width:100%;display:block" alt="Foam model of reference spatula head">
+          </div>
+          <div style="overflow:hidden;border-radius:8px;border:1px solid var(--border)">
+            <img src="The Flipula/Orthographic sketch of reference spatula.png" style="width:100%;display:block" alt="Orthographic sketch of reference spatula">
+          </div>
+        </div>
+        <p class="proj-detail-p">We also recreated an existing Crate and Barrel spatula head while learning how to make accurate orthographic sketches to guide the process. Orthographic sketching helped me better understand the relationship between design and form. Using these sketches as templates, I carefully shaped my foam model with precision and patience. During class, Professor Catterall demonstrated how to carve a spatula head on the bandsaw, providing valuable insight into translating drawings into three-dimensional prototypes.</p>
+        <ul style="margin:0 0 14px 20px;font-size:14px;color:#444;line-height:1.9">
+          <li>Orthographic sketches helped visualize proportions and curves before carving.</li>
+          <li>Translating 2D drawings into 3D foam both helped guide the prototyping and process, and brought ideas to life to test form and function.</li>
+        </ul>
+
+        <div class="proj-detail-section-label" style="margin-bottom:10px">Key Takeaways</div>
+        <div class="proj-callout">Lowering the spatula head will most likely improve control and flipping ease.</div>
+        <div class="proj-callout">Having testing orthographic sketches expedites the prototyping process and ensures high-quality, precise results.</div>
+        <div class="proj-callout">Simpler forms often look cleaner and are easier to manufacture.</div>
+        <div class="proj-callout">Small changes in the surface area or bevels of a spatula head can significantly affect its effectiveness and overall function.</div>
+      </div>
+
+      <!-- Ideation -->
+      <div class="proj-detail-section" id="flip-ideation">
+        <div class="proj-detail-section-label">Ideation</div>
+        <div class="proj-detail-h2">Experimenting with Different Spatula Forms and Their Effectiveness</div>
+        <p class="proj-detail-p"><em>I explored different forms and proportions through sketches and prototypes to find what felt right.</em></p>
+
+        <div style="overflow:hidden;border-radius:8px;border:1px solid var(--border);margin-bottom:14px">
+          <img src="The Flipula/Sketches and Paper prototypes.png" style="width:100%;display:block" alt="Sketches and paper prototypes">
+        </div>
+
+        <p class="proj-detail-p">I created numerous sketches and discussed my ideas with my classmates (Maya, Drew, and Gabi). After receiving feedback and talking through my design problem and approach, I began experimenting through rough prototyping. I produced a variety of small paper and foam models to test how different shapes felt in my hand. The foam models were especially useful for evaluating which forms not only looked appealing but also functioned effectively when moved like a real spatula. They also allowed me to test the preliminary orthographic sketches I had developed and see how well they translated into three-dimensional form.</p>
+        <p class="proj-detail-p">Early versions were too flat and stiff. After adjusting the angle between the handle and head, the motion felt smoother and more natural. By the end, I found a design that was both simple and functional, keeping the same spirit as my original quesadilla spatula but improving how it worked.</p>
+
+        <div class="proj-img-grid proj-img-grid-2" style="margin-bottom:4px">
+          <div>
+            <div style="overflow:hidden;border-radius:8px;border:1px solid var(--border);margin-bottom:4px">
+              <img src="The Flipula/Iteration 1 front view.png" style="width:100%;display:block" alt="Iteration 1 Front View">
+            </div>
+            <p class="proj-img-caption">Iteration 1 Front View</p>
+          </div>
+          <div>
+            <div style="overflow:hidden;border-radius:8px;border:1px solid var(--border);margin-bottom:4px">
+              <img src="The Flipula/Iteration 1 Side view.png" style="width:100%;display:block" alt="Iteration 1 Side View">
+            </div>
+            <p class="proj-img-caption">Iteration 1 Side View</p>
+          </div>
+        </div>
+
+        <div class="proj-img-grid proj-img-grid-2" style="margin-bottom:4px">
+          <div>
+            <div style="overflow:hidden;border-radius:8px;border:1px solid var(--border);margin-bottom:4px">
+              <img src="The Flipula/Iteration 2 Front view.png" style="width:100%;display:block" alt="Iteration 2 Front View">
+            </div>
+            <p class="proj-img-caption">Iteration 2 Front View</p>
+          </div>
+          <div>
+            <div style="overflow:hidden;border-radius:8px;border:1px solid var(--border);margin-bottom:4px">
+              <img src="The Flipula/Iteration 2 Back view.png" style="width:100%;display:block" alt="Iteration 2 Back View">
+            </div>
+            <p class="proj-img-caption">Iteration 2, Back View (just as flat as iteration 1)</p>
+          </div>
+        </div>
+
+        <div class="proj-img-grid proj-img-grid-2" style="margin-bottom:4px">
+          <div>
+            <div style="overflow:hidden;border-radius:8px;border:1px solid var(--border);margin-bottom:4px">
+              <img src="The Flipula/In between iterations, me experimenting with handle elevation. 1.png" style="width:100%;display:block" alt="In between iterations, me experimenting with handle elevation.">
+            </div>
+            <p class="proj-img-caption">In between iterations, me experimenting with handle elevation.</p>
+          </div>
+          <div>
+            <div style="overflow:hidden;border-radius:8px;border:1px solid var(--border);margin-bottom:4px">
+              <img src="The Flipula/In between iterations, me experimenting with handle elevation. 2.png" style="width:100%;display:block" alt="In between iterations, me experimenting with handle elevation.">
+            </div>
+            <p class="proj-img-caption">In between iterations, me experimenting with handle elevation.</p>
+          </div>
+        </div>
+
+        <div class="proj-img-grid proj-img-grid-2" style="margin-bottom:4px">
+          <div>
+            <div style="overflow:hidden;border-radius:8px;border:1px solid var(--border);margin-bottom:4px">
+              <img src="The Flipula/Iteration 3.png" style="width:100%;display:block" alt="Iteration 3">
+            </div>
+            <p class="proj-img-caption">Iteration 3</p>
+          </div>
+          <div>
+            <div style="overflow:hidden;border-radius:8px;border:1px solid var(--border);margin-bottom:4px">
+              <img src="The Flipula/Iteration 3 side view.png" style="width:100%;display:block" alt="Iteration 3 Side View">
+            </div>
+            <p class="proj-img-caption">Iteration 3 Side View</p>
+          </div>
+        </div>
+
+        <p class="proj-detail-p">This first version turned out quite flat, with the head measuring about 3 inches wide at its widest point and the handle about 1 inch wide. It felt oversized, rigid, and didn't capture the structure I had imagined from my paper prototypes.</p>
+        <p class="proj-detail-p">To refine it, I trimmed the head down to 2.5 inches and the handle to 0.75 inches, creating my second iteration. While this version was slimmer, I felt it needed more flexibility and different elevations between the head and handle, like I mentioned, to allow for an actual flipping motion.</p>
+        <p class="proj-detail-p">I then created a third iteration, introducing a bend between the head and the handle. This gave the spatula a more functional angle, lowering the head below the handle. I later used this version to inform my shop sketches, though I ultimately decided I wanted a straighter handle and head rather than the uneven, bendy form of the third prototype. After observing this iteration, I revised and finished my sketches, and I left for my next classes.</p>
+
+        <div class="proj-img-grid proj-img-grid-2" style="margin-bottom:4px">
+          <div>
+            <div style="overflow:hidden;border-radius:8px;border:1px solid var(--border);margin-bottom:4px">
+              <img src="The Flipula/Shop sketch test Iteration 4.png" style="width:100%;display:block" alt="Shop sketch test - Iteration 4">
+            </div>
+            <p class="proj-img-caption">Shop sketch test - Iteration 4</p>
+          </div>
+          <div>
+            <div style="overflow:hidden;border-radius:8px;border:1px solid var(--border);margin-bottom:4px">
+              <img src="The Flipula/Iteration 4 side view.png" style="width:100%;display:block" alt="Iteration 4 Side view">
+            </div>
+            <p class="proj-img-caption">Iteration 4 Side view</p>
+          </div>
+        </div>
+
+        <div style="overflow:hidden;border-radius:8px;border:1px solid var(--border);margin-bottom:4px">
+          <img src="The Flipula/joshua with spatula.png" style="width:100%;display:block" alt="Joshua testing out my Iteration 4 foam model.">
+        </div>
+        <p class="proj-img-caption">Joshua testing out my Iteration 4 foam model.</p>
+
+        <p class="proj-detail-p">I created another prototype using purple scrap foam to test how well my shop sketches translated into a physical model. Although the material was difficult to work with, the process confirmed the accuracy of my design and provided valuable feedback from my peers.</p>
+      </div>
+
+      <!-- Building -->
+      <div class="proj-detail-section" id="flip-building">
+        <div class="proj-detail-section-label">Fabrication</div>
+        <div class="proj-detail-h2">Flipula: A Simple Tool Redesigned</div>
+        <p class="proj-detail-p"><em>The Flipula is designed to allow for ease of flipping when cooking foods like quesadillas with a familiar and comfortable feel.</em></p>
+        <p class="proj-detail-p">After completing the rough prototyping, I moved on to creating the final wooden prototype. The design features a slightly lowered head and a smooth, rounded handle, making it easier to slide under quesadillas and other foods while flipping without awkward wrist movement. The shape is minimal yet intentional, designed to blend into any kitchen while improving functionality compared to a standard spatula.</p>
+        <p class="proj-detail-p">The build process taught me patience and accuracy while working with materials.</p>
+        <p class="proj-detail-p">I used the bandsaw to cut the final spatula shape out of wood, then sanded it to create soft edges and smooth curves. Moving from foam to wood was scary, and it required precision and focus to get the right form. I refined small details, like the transition between the handle and head, to make it look clean and feel comfortable to hold.</p>
+        <p class="proj-detail-p">Each stage helped me understand how to shape materials more carefully. Even small sanding mistakes showed me how sensitive the design was to proportion and balance.</p>
+        <p class="proj-detail-p">Overall, the build process went smoothly and was very successful.</p>
+
+        <div class="proj-img-grid proj-img-grid-2" style="margin-bottom:4px">
+          <div>
+            <div style="overflow:hidden;border-radius:8px;border:1px solid var(--border);margin-bottom:4px">
+              <img src="The Flipula/A picture of top view prepper for cutting.png" style="width:100%;display:block" alt="A picture of my top view prepped for cutting.">
+            </div>
+            <p class="proj-img-caption">A picture of my top view prepped for cutting.</p>
+          </div>
+          <div>
+            <div style="overflow:hidden;border-radius:8px;border:1px solid var(--border);margin-bottom:4px">
+              <img src="The Flipula/An action shot of me cutting spatula.png" style="width:100%;height:100%;object-fit:cover;display:block" alt="An action shot of me cutting my spatula on the bandsaw.">
+            </div>
+            <p class="proj-img-caption">An action shot of me cutting my spatula on the bandsaw.</p>
+          </div>
+        </div>
+
+        <div class="proj-img-grid proj-img-grid-2" style="margin-bottom:4px">
+          <div>
+            <div style="overflow:hidden;border-radius:8px;border:1px solid var(--border);margin-bottom:4px">
+              <img src="The Flipula/A picture I got of my side view post cutting and taping back together.png" style="width:100%;height:100%;object-fit:cover;display:block" alt="A picture I got of my side view post cutting and taping back together.">
+            </div>
+            <p class="proj-img-caption">A picture I got of my side view post cutting and taping back together.</p>
+          </div>
+          <div>
+            <div style="overflow:hidden;border-radius:8px;border:1px solid var(--border);margin-bottom:4px">
+              <img src="The Flipula/Me roughly sanding out a very slight bump I had found in the handle.jpg" style="width:100%;display:block" alt="Me roughly sanding out a very slight bump I had found in the handle.">
+            </div>
+            <p class="proj-img-caption">Me roughly sanding out a very slight bump I had found in the handle.</p>
+          </div>
+        </div>
+
+        <div class="proj-img-grid proj-img-grid-2" style="margin-bottom:4px">
+          <div>
+            <div style="overflow:hidden;border-radius:8px;border:1px solid var(--border);margin-bottom:4px">
+              <img src="The Flipula/What my spatula looked like unwrapped from all the tape and after the cuts - side view.png" style="width:100%;display:block" alt="What my spatula looked like unwrapped from all the tape and after the cuts - side view.">
+            </div>
+            <p class="proj-img-caption">What my spatula looked like unwrapped from all the tape and after the cuts - side view.</p>
+          </div>
+          <div>
+            <div style="overflow:hidden;border-radius:8px;border:1px solid var(--border);margin-bottom:4px">
+              <img src="The Flipula/What my spatula looked like unwrapped from all the tape and after the cuts - top view.png" style="width:100%;display:block" alt="What my spatula looked like unwrapped from all the tape and after the cuts - top view.">
+            </div>
+            <p class="proj-img-caption">What my spatula looked like unwrapped from all the tape and after the cuts - top view.</p>
+          </div>
+        </div>
+
+        <div class="proj-img-grid proj-img-grid-2" style="margin-bottom:4px">
+          <div>
+            <div style="overflow:hidden;border-radius:8px;border:1px solid var(--border);margin-bottom:4px">
+              <img src="The Flipula/Me dramatically regaling my spatula.jpg" style="width:100%;display:block" alt="Me dramatically regaling my spatula.">
+            </div>
+            <p class="proj-img-caption">Me dramatically regaling my spatula.</p>
+          </div>
+          <div>
+            <div style="overflow:hidden;border-radius:8px;border:1px solid var(--border);margin-bottom:4px">
+              <img src="The Flipula/Shop sketch I used.png" style="width:100%;display:block" alt="The shop sketch I used.">
+            </div>
+            <p class="proj-img-caption">The shop sketch I used.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Poster -->
+      <div class="proj-detail-section" id="flip-poster">
+        <div class="proj-detail-section-label">Production</div>
+        <div class="proj-detail-h2">Making a Presentation Poster</div>
+        <p class="proj-detail-p"><em>Creating a presentation poster helped me learn how to effectively communicate the purpose and functionality of the tool I crafted.</em></p>
+        <p class="proj-detail-p">I went into my kitchen and took photos using my actual spatula, then began illustrating in Illustrator while keeping my messaging in mind. Throughout the process, I checked in with friends to see if they understood the subject of the poster and the ideas I was trying to communicate. Their feedback led to numerous adjustments and minor iterations.</p>
+
+        <div style="overflow:hidden;border-radius:8px;border:1px solid var(--border);margin-bottom:14px">
+          <img src="The Flipula/Flipula Presentation Poster.jpg" style="width:100%;display:block" alt="The Flipula presentation poster">
+        </div>
+
+        <div class="proj-img-grid proj-img-grid-2" style="margin-bottom:4px">
+          <div style="overflow:hidden;border-radius:8px;border:1px solid var(--border)">
+            <img src="The Flipula/Spatula reference in kitchen.png" style="width:100%;display:block" alt="Kitchen reference photo">
+          </div>
+          <div style="overflow:hidden;border-radius:8px;border:1px solid var(--border)">
+            <img src="The Flipula/Spatula reference in kitchen 2.png" style="width:100%;display:block" alt="Kitchen reference photo 2">
+          </div>
+        </div>
+
+        <div style="overflow:hidden;border-radius:8px;border:1px solid var(--border);margin-bottom:4px">
+          <img src="The Flipula/WIP Illustrator.png" style="width:100%;display:block" alt="A screenshot of my making my poster.">
+        </div>
+        <p class="proj-img-caption">A screenshot of my making my poster.</p>
+      </div>
+
+      <!-- Final Result -->
+      <div class="proj-detail-section" id="flip-final">
+        <div class="proj-detail-section-label">Final Result</div>
+        <div class="proj-detail-h2">The Finished Flipula</div>
+        <div style="columns:3;column-gap:12px;margin-bottom:14px">
+          <div style="break-inside:avoid;margin-bottom:12px"><img src="The Flipula/Finished Final Flipula front view.png" style="width:100%;display:block" alt="Final front view"></div>
+          <div style="break-inside:avoid;margin-bottom:12px"><img src="The Flipula/Finished Final Flipula side view.png" style="width:100%;display:block" alt="Final side view"></div>
+          <div style="break-inside:avoid;margin-bottom:12px"><img src="The Flipula/Finished Final Flipula back view.png" style="width:100%;display:block" alt="Final back view"></div>
+          <div style="break-inside:avoid;margin-bottom:12px"><img src="The Flipula/Finished Final Flipula hand in context.png" style="width:100%;display:block" alt="Final in hand"></div>
+          <div style="break-inside:avoid;margin-bottom:12px"><img src="The Flipula/Finished Final Flipula view.png" style="width:100%;display:block" alt="Final view"></div>
+        </div>
+      </div>
+
+      <!-- Critique -->
+      <div class="proj-detail-section" id="flip-critique">
+        <div class="proj-detail-section-label">Testing & Feedback</div>
+        <div class="proj-detail-h2">Testing and Feedback</div>
+        <p class="proj-detail-p"><em>Feedback helped me refine the proportions and improve overall presentation.</em></p>
+
+        <div style="overflow:hidden;border-radius:8px;border:1px solid var(--border);margin-bottom:4px">
+          <img src="The Flipula/Critique setup.png" style="width:100%;display:block" alt="Critique setup">
+        </div>
+        <p class="proj-img-caption" style="margin-bottom:14px">Critique setup.</p>
+
+        <p class="proj-detail-p">During critiques, classmates liked the clean shape and smooth surface of my final model. Some suggested improving the grip and head during my earlier prototyping phase. Professor Caterrall also gave helpful notes on my presentation poster, like adding depth and scale to my Illustrator renderings. This feedback helped me communicate the design more clearly.</p>
+      </div>
+
+      <!-- Reflection -->
+      <div class="proj-detail-section" id="flip-reflection">
+        <div class="proj-detail-section-label">Reflection</div>
+        <div class="proj-detail-h2">Lessons and Opportunities</div>
+        <p class="proj-detail-p"><em>The Flipula taught me how to create clean wooden prototypes and clearly present the ideas and purpose behind my designs, showing that simple, thoughtful designs can be highly effective for their intended use.</em></p>
+        <p class="proj-detail-p">Working from sketches to foam and then wood showed me the patience and attention to detail needed for clean prototypes, while small adjustments (like lowering the spatula head) taught me how minor changes can greatly improve function. Tying the project to a personal experience, like flipping quesadillas with my sister, made testing and refining my designs more meaningful. I also learned how presentation and aesthetics, such as naming the spatula and designing a poster, shape how others perceive a product. In the future, I'd like to explore new materials, like food safe wood or heat-resistant composites, and continue refining how I convey both the purpose and thought behind my designs</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
 <!-- LIGHTBOX OVERLAY -->
 <div id="smt-lightbox" onclick="closeLightbox()">
   <img src="" alt="Expanded design file" id="smt-lightbox-img">
@@ -2069,13 +2443,12 @@ function pauseAllMedia() {
 
 function showPage(id) {
   pauseAllMedia();
-  // Hide all main pages and project detail pages
-  document.querySelectorAll('.page, .proj-detail-page').forEach(el => el.classList.remove('active'));
-  // Show target page
+  const prev = document.querySelector('.page.active, .proj-detail-page.active');
+  if (prev) prev.classList.remove('active');
   const pg = document.getElementById(pages[id]);
   if (pg) pg.classList.add('active');
-  // Update nav
-  Object.values(navIds).forEach(n => { const el = document.getElementById(n); if(el) el.classList.remove('active'); });
+  const prevNav = document.querySelector('.nav-links a.active');
+  if (prevNav) prevNav.classList.remove('active');
   const nv = document.getElementById(navIds[id]);
   if (nv) nv.classList.add('active');
   const trigger = document.getElementById('works-trigger');
@@ -2087,7 +2460,8 @@ function showPage(id) {
 
 function showProject(slug) {
   pauseAllMedia();
-  document.querySelectorAll('.page, .proj-detail-page').forEach(el => el.classList.remove('active'));
+  const prev = document.querySelector('.page.active, .proj-detail-page.active');
+  if (prev) prev.classList.remove('active');
   const pg = document.getElementById('proj-' + slug);
   if (pg) pg.classList.add('active');
   window.scrollTo(0, 0);
@@ -2127,6 +2501,15 @@ function rotateDescriptor() {
   items[next].classList.add('active');
 }
 setInterval(rotateDescriptor, 2800);
+
+// ── PROJECT IMAGE PERFORMANCE ──
+document.querySelectorAll('.proj-detail-page img').forEach(function(img) {
+  img.decoding = 'async';
+  img.loading = 'lazy';
+});
+document.querySelectorAll('.proj-detail-page video').forEach(function(v) {
+  if (!v.hasAttribute('preload') || v.getAttribute('preload') === 'metadata') v.preload = 'none';
+});
 
 // ── STORYBOARD CAROUSEL ──
 var smtIdx = 0;
