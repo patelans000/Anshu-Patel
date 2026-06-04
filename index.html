@@ -118,7 +118,7 @@ nav{padding:22px 48px;display:flex;align-items:center;justify-content:space-betw
 .proj-detail-breadcrumb span:hover{color:#1A1A1A}
 .proj-detail-breadcrumb .sep{opacity:0.4}
 .proj-detail-nav-arrows{display:flex;gap:8px}
-.proj-nav-btn{font-size:13px;color:var(--muted);cursor:pointer;padding:6px 14px;border:1px solid var(--border);border-radius:100px;transition:all 0.15s;background:none}
+.proj-nav-btn{font-size:13px;color:var(--muted);cursor:pointer;padding:6px 14px;border:1px solid var(--border);border-radius:100px;transition:all 0.15s;background:none;font-family:inherit}
 .proj-nav-btn:hover{color:#1A1A1A;border-color:#bbb}
 
 .proj-detail-hero{padding:64px 48px 48px;border-bottom:1px solid var(--border)}
@@ -258,6 +258,12 @@ audio{accent-color:#1A1A1A}
 .proj-toc-link:hover{color:#1A1A1A;border-left-color:#888}
 .proj-toc-link.toc-active{color:#1A1A1A;border-left-color:#1A1A1A;font-weight:500}
 #proj-ecoleander .proj-detail-content{max-width:680px;padding:48px 48px;margin:0 auto}
+#proj-persona5-type .proj-detail-content{max-width:680px;padding:48px 48px;margin:0 auto}
+#proj-persona5-type .proj-callout{background:var(--yellow)}
+#proj-persona5-type .proj-detail-content div[style*="overflow:hidden"]{border-radius:0!important}
+#proj-persona5-type .proj-detail-content img{border-radius:0!important}
+#proj-persona5-type div[style*="background:#fafafa"] div[style*="overflow:hidden"]{border-radius:0!important}
+#proj-persona5-type div[style*="background:#fafafa"] img{border-radius:0!important}
 #proj-ecoleander .proj-detail-content div[style*="overflow:hidden"]{border:none!important;border-radius:0!important}
 #proj-ecoleander .proj-detail-content img{width:100%;height:auto;display:block;border-radius:0!important}
 #proj-ecoleander .proj-detail-sidebar::-webkit-scrollbar{display:none}
@@ -272,6 +278,11 @@ audio{accent-color:#1A1A1A}
 #proj-flipula .proj-detail-content img{width:100%;height:auto;display:block;border-radius:0!important}
 #proj-flipula .proj-detail-sidebar::-webkit-scrollbar{display:none}
 #proj-flipula .proj-detail-sidebar{-ms-overflow-style:none;scrollbar-width:none}
+#proj-hajra-waheed .proj-detail-content{max-width:680px;padding:48px 48px;margin:0 auto}
+#proj-hajra-waheed .proj-detail-content div[style*="overflow:hidden"]{border:none!important;border-radius:0!important}
+#proj-hajra-waheed .proj-detail-content img{width:100%;height:auto;display:block;border-radius:0!important}
+#proj-hajra-waheed .proj-detail-sidebar::-webkit-scrollbar{display:none}
+#proj-hajra-waheed .proj-detail-sidebar{-ms-overflow-style:none;scrollbar-width:none}
 #smt-lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.93);z-index:10000;display:none;align-items:center;justify-content:center;cursor:zoom-out;padding:24px}
 #smt-lightbox.open{display:flex}
 #smt-lightbox img{max-width:90vw;max-height:90vh;object-fit:contain;border-radius:4px}
@@ -295,11 +306,20 @@ audio{accent-color:#1A1A1A}
 .footer-links a{font-size:13px;color:#666;text-decoration:none;transition:color 0.15s}
 .footer-links a:hover{color:var(--pink)}
 .footer-copy{font-size:12px;color:#444}
+/* ── PERSONA 5 EXTRAS ── */
+.proj-callout-yellow{background:var(--yellow);border-radius:8px;padding:14px 18px;margin:6px 0;font-size:14px;color:#1A1A1A;line-height:1.7;font-style:italic}
+.proj-callout-gray{background:var(--gray);border:1px solid var(--border);border-radius:8px;padding:12px 18px;margin:6px 0;font-size:13px;color:#444;line-height:1.7}
+.proj-kp{background:var(--gray);border:1px solid var(--border);border-radius:8px;padding:14px 18px;margin:16px 0}
+.proj-kp-label{font-size:10px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.proj-kp ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:4px}
+.proj-kp li{font-size:13px;color:#555;line-height:1.6}
+.proj-pdf-link{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:#1A1A1A;border:1px solid var(--border);border-radius:8px;padding:10px 16px;text-decoration:none;font-weight:500;margin-bottom:14px;transition:border-color 0.15s}
+.proj-pdf-link:hover{border-color:#bbb}
 /* ── PERSONA 5 HERO PDF ── */
-.p5-hero-wrap{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
-.p5-hero-spread{display:flex;align-items:center;justify-content:center;height:100%;transition:opacity 0.38s ease}
-.p5-hero-canvas{display:block;height:100%;width:auto}
-.p5-hero-zone-prev,.p5-hero-zone-next{position:absolute;top:0;height:100%;width:50%;z-index:10;cursor:pointer}
+.p5-hero-wrap{position:relative;display:flex;align-items:flex-start;justify-content:center}
+.p5-hero-spread{display:flex;align-items:flex-start;gap:0;width:100%;transition:opacity 0.38s ease}
+.p5-hero-canvas{flex:1;min-width:0;display:block}
+.p5-hero-zone-prev,.p5-hero-zone-next{position:absolute;top:0;bottom:0;width:50%;z-index:10;cursor:pointer}
 .p5-hero-zone-prev{left:0}
 .p5-hero-zone-next{right:0}
 .p5-hero-zone-prev::after{content:'‹';position:absolute;left:18px;top:50%;transform:translateY(-50%);color:rgba(255,255,255,0);font-size:30px;line-height:1;transition:color 0.2s}
@@ -308,6 +328,27 @@ audio{accent-color:#1A1A1A}
 .p5-hero-dots{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);display:flex;gap:6px;z-index:20}
 .p5-hero-dot{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,0.22);cursor:pointer;transition:background 0.25s,transform 0.25s}
 .p5-hero-dot.active{background:rgba(255,255,255,0.85);transform:scale(1.25)}
+/* ── BACK TO TOP ── */
+.btt{position:fixed;bottom:28px;right:28px;width:42px;height:42px;background:#1A1A1A;border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:500;opacity:0;pointer-events:none;transform:translateY(8px);transition:opacity 0.2s,transform 0.2s;box-shadow:0 2px 12px rgba(0,0,0,0.2)}
+.btt.visible{opacity:1;pointer-events:all;transform:none}
+.btt:hover{background:#333;transform:translateY(-2px) !important;box-shadow:0 4px 16px rgba(0,0,0,0.28)}
+/* ── MORE PROJECTS ── */
+.more-projs{padding:48px 48px 64px;border-top:1px solid var(--border)}
+.more-projs-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:24px}
+.more-projs-label{font-family:'Fredoka',sans-serif;font-size:22px;font-weight:600;color:#1A1A1A}
+.more-projs-all{font-size:13px;color:var(--muted);cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:5px;padding:5px 14px;border:1px solid var(--border);border-radius:100px;transition:all 0.15s}
+.more-projs-all:hover{color:#1A1A1A;border-color:#bbb}
+.more-projs-grid{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--border)}
+.more-proj-item{cursor:pointer;overflow:hidden;border-right:1px solid var(--border);transition:background 0.2s}
+.more-proj-item:last-child{border-right:none}
+.more-proj-item:hover{background:var(--gray)}
+.more-proj-item:hover .more-proj-thumb-inner{transform:scale(1.04)}
+.more-proj-thumb{aspect-ratio:16/9;overflow:hidden}
+.more-proj-thumb-inner{width:100%;height:100%;transition:transform 0.4s ease;display:flex;align-items:center;justify-content:center}
+.more-proj-foot{padding:14px 18px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
+.more-proj-name{font-size:13px;font-weight:600}
+.more-proj-sub{font-size:11px;color:var(--muted);margin-top:2px}
+.more-proj-arr{font-size:14px;color:var(--muted);flex-shrink:0}
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 </head>
@@ -401,10 +442,13 @@ audio{accent-color:#1A1A1A}
       <div class="home-proj-info"><div class="home-proj-left"><div class="home-proj-title">Motion Graphics & Videography</div><div class="home-proj-sub">A variety of videos I have produced from hype videos to fan edits.</div></div><span class="home-proj-arrow">→</span></div>
     </div>
     <div class="home-proj-block" onclick="showPage('graphic')">
-      <div class="home-proj-thumb"><div class="home-proj-thumb-inner accent-3d">
-        <svg width="140" height="80" viewBox="0 0 140 80" fill="none"><circle cx="50" cy="40" r="28" fill="#FFF1B0" opacity="0.45"/><circle cx="90" cy="40" r="20" fill="#F2D462" opacity="0.35"/><path d="M36 40 Q50 22 64 40 Q50 58 36 40Z" fill="#D4B73F" opacity="0.5"/></svg>
-      </div></div>
-      <div class="home-proj-info"><div class="home-proj-left"><div class="home-proj-title">2D & Graphic Design</div><div class="home-proj-sub">A variety of my graphic design work.</div></div><span class="home-proj-arrow">→</span></div>
+      <div class="home-proj-thumb" style="overflow:hidden">
+        <div class="home-proj-thumb-inner" style="position:relative;width:100%;height:100%">
+          <img src="Typography in Persona 5/Hero, Title Card.png" style="width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(1) contrast(1.5) brightness(0.75)">
+          <div style="position:absolute;inset:0;background:#FFF0A8;mix-blend-mode:multiply;pointer-events:none"></div>
+        </div>
+      </div>
+      <div class="home-proj-info"><div class="home-proj-left"><div class="home-proj-title">2D & Graphic Design</div><div class="home-proj-sub">From layout design to livery design.</div></div><span class="home-proj-arrow">→</span></div>
     </div>
     <div class="home-proj-block" onclick="showPage('archive')">
       <div class="home-proj-thumb"><div class="home-proj-thumb-inner accent-archive">
@@ -472,22 +516,32 @@ audio{accent-color:#1A1A1A}
   <div class="disc-header">
     <div class="disc-header-left">
       <div class="disc-title">2D & Graphic Design</div>
-      <p class="disc-desc">A variety of my graphic design work. Click on a project card to get full details!</p>
+      <p class="disc-desc">A variety of my graphic design work, from layout design to livery design. Click on a project card to get full details!</p>
     </div>
     <div><span class="disc-back" onclick="showPage('home')">← All work</span></div>
   </div>
   <div class="proj-grid proj-grid-3">
     <div class="proj" onclick="showProject('persona5-type')">
-      <div class="proj-thumb"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#0D0D0D"><svg width="160" height="120" viewBox="0 0 160 120" fill="none"><rect width="160" height="120" fill="#0D0D0D"/><polygon points="80,8 155,112 5,112" fill="#CC0000" opacity="0.85"/><polygon points="80,24 138,108 22,108" fill="#0D0D0D"/><rect x="62" y="52" width="36" height="26" rx="1" fill="#fff" opacity="0.12"/><line x1="0" y1="0" x2="160" y2="120" stroke="#CC0000" stroke-width="1.5" opacity="0.25"/><line x1="160" y1="0" x2="0" y2="120" stroke="#CC0000" stroke-width="1.5" opacity="0.25"/></svg></div><div class="proj-hover"><div class="proj-hover-text">Typography analysis, game design aesthetics, editorial spreads</div></div></div>
-      <div class="proj-foot"><span class="proj-name">Typography in Persona 5</span><span class="proj-meta">2024</span></div>
+      <div class="proj-thumb" style="overflow:hidden">
+        <div class="proj-thumb-inner" style="width:100%;height:100%">
+          <img src="Typography in Persona 5/Hero, Title Card.png" style="width:100%;height:100%;object-fit:cover;display:block" alt="Typography in Persona 5">
+        </div>
+        <div class="proj-hover"><div class="proj-hover-text">Typography analysis, zine design, book production, game design aesthetics</div></div>
+      </div>
+      <div class="proj-foot"><span class="proj-name">Typography in Persona 5</span><span class="proj-meta">2025</span></div>
     </div>
     <div class="proj" onclick="showProject('high-noon-livery')">
       <div class="proj-thumb"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#1C0E00"><svg width="160" height="120" viewBox="0 0 160 120" fill="none"><rect width="160" height="120" fill="#1C0E00"/><rect x="0" y="68" width="160" height="52" fill="#3D1800" opacity="0.9"/><circle cx="80" cy="62" r="38" fill="#F4A000" opacity="0.85"/><circle cx="80" cy="62" r="28" fill="#F7C800" opacity="0.9"/><circle cx="80" cy="62" r="16" fill="#FFF0A0" opacity="0.95"/><rect x="0" y="68" width="160" height="4" fill="#8B3A00" opacity="0.6"/></svg></div><div class="proj-hover"><div class="proj-hover-text">Vehicle livery, race car wrap design, western theme</div></div></div>
       <div class="proj-foot"><span class="proj-name">High Noon Livery</span><span class="proj-meta">2024</span></div>
     </div>
     <div class="proj" onclick="showProject('hajra-waheed')">
-      <div class="proj-thumb"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#050F1E"><svg width="160" height="120" viewBox="0 0 160 120" fill="none"><rect width="160" height="120" fill="#050F1E"/><ellipse cx="80" cy="105" rx="110" ry="65" fill="#0D2E55" opacity="0.8"/><path d="M0 85 Q40 60 80 78 Q120 96 160 72 L160 120 L0 120Z" fill="#1A4A7A" opacity="0.7"/><path d="M0 95 Q40 78 80 88 Q120 100 160 84 L160 120 L0 120Z" fill="#224F80" opacity="0.6"/><line x1="0" y1="60" x2="160" y2="60" stroke="#4A90D9" stroke-width="0.5" opacity="0.3"/><line x1="0" y1="68" x2="160" y2="68" stroke="#4A90D9" stroke-width="0.5" opacity="0.25"/><line x1="0" y1="76" x2="160" y2="76" stroke="#4A90D9" stroke-width="0.5" opacity="0.2"/></svg></div><div class="proj-hover"><div class="proj-hover-text">Editorial spreads, book layout, typographic response</div></div></div>
-      <div class="proj-foot"><span class="proj-name">Hajra Waheed — An Asylum in the Sea</span><span class="proj-meta">2024</span></div>
+      <div class="proj-thumb" style="overflow:hidden">
+        <div class="proj-thumb-inner" style="width:100%;height:100%">
+          <img src="Hajra Waheed Asylum in the Sea/kevin spreads POST CRITIQYE.png" style="width:100%;height:100%;object-fit:cover;display:block" alt="Watermarks: Hajra Waheed's Asylum in the Sea">
+        </div>
+        <div class="proj-hover"><div class="proj-hover-text">Exhibition spreads, editorial layout, artwork-driven design</div></div>
+      </div>
+      <div class="proj-foot"><span class="proj-name">Watermarks: Hajra Waheed's Asylum in the Sea</span><span class="proj-meta">2025</span></div>
     </div>
     <div class="proj" onclick="showProject('logos-branding')">
       <div class="proj-thumb"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#FAFAF5"><svg width="160" height="120" viewBox="0 0 160 120" fill="none"><rect x="8" y="8" width="68" height="48" rx="4" fill="#FFF0A8" stroke="#D4B900" stroke-width="1"/><circle cx="42" cy="32" r="13" fill="#BF5700" opacity="0.8"/><circle cx="42" cy="32" r="7" fill="#FFF0A8" opacity="0.9"/><rect x="84" y="8" width="68" height="48" rx="4" fill="#FFF0A8" stroke="#D4B900" stroke-width="1"/><polygon points="118,14 132,36 104,36" fill="#CC0000" opacity="0.85"/><polygon points="118,22 127,34 109,34" fill="#FFF0A8" opacity="1"/><rect x="8" y="64" width="68" height="48" rx="4" fill="#FFF0A8" stroke="#D4B900" stroke-width="1"/><rect x="22" y="80" width="40" height="5" rx="2" fill="#BF5700" opacity="0.8"/><rect x="22" y="88" width="30" height="5" rx="2" fill="#BF5700" opacity="0.5"/><rect x="22" y="96" width="40" height="5" rx="2" fill="#BF5700" opacity="0.3"/><rect x="84" y="64" width="68" height="48" rx="4" fill="#FFF0A8" stroke="#D4B900" stroke-width="1"/><circle cx="118" cy="88" r="14" fill="#1A1A1A" opacity="0.7"/><circle cx="118" cy="88" r="8" fill="#D4380D" opacity="0.9"/><circle cx="118" cy="88" r="4" fill="#1A1A1A" opacity="0.9"/></svg></div><div class="proj-hover"><div class="proj-hover-text">Logomarks, brand identity, visual systems</div></div></div>
@@ -837,52 +891,364 @@ audio{accent-color:#1A1A1A}
     </div>
   </div>
   <div class="proj-detail-hero">
-    <div class="proj-detail-kicker">2D & Graphic Design · Typography Study</div>
+    <div class="proj-detail-kicker">2D & Graphic Design · Typography Study and Book/Layout Design</div>
     <div class="proj-detail-title">Typography in Persona 5</div>
-    <p class="proj-detail-tagline">A deep-dive into the radical typographic language of Persona 5 — dissecting how Atlus's designers weaponized Japanese graphic design sensibility to make a game feel like an act of rebellion.</p>
+    <p class="proj-detail-tagline">A self-authored zine examining the typography of Persona 5 and how its bold visual language shapes the game's mood, identity, and storytelling.</p>
     <div class="proj-detail-meta-row">
-      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Year</div><div class="proj-detail-meta-val">2024</div></div>
-      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">Illustrator, InDesign</div></div>
-      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Type</div><div class="proj-detail-meta-val">Typography Study</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Year</div><div class="proj-detail-meta-val">2025</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Course</div><div class="proj-detail-meta-val">Typography 1 · DES 325</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Instructor</div><div class="proj-detail-meta-val">Kelcey Gray</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">1 Month</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">InDesign, Illustrator, RICOH Printer, Book Binding Materials</div></div>
     </div>
   </div>
-  <div class="proj-detail-cover p5-hero-wrap" style="height:520px;background:#0D0D0D">
-    <div class="p5-hero-spread" id="p5-hero-spread" style="opacity:0">
-      <canvas id="p5-hero-left" class="p5-hero-canvas"></canvas>
-      <canvas id="p5-hero-right" class="p5-hero-canvas"></canvas>
+  <div style="border-bottom:1px solid var(--border)">
+    <div style="position:relative;overflow:hidden;aspect-ratio:16/7;border-bottom:1px solid var(--border)">
+      <img src="Typography in Persona 5/Hero, Title Card.png" style="width:100%;height:100%;object-fit:cover;display:block" alt="Typography in Persona 5 — Cover">
+      <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.72) 0%,rgba(0,0,0,0.18) 50%,transparent 100%)"></div>
+      <div style="position:absolute;bottom:36px;left:48px">
+        <div style="font-family:'Fredoka',sans-serif;font-size:54px;font-weight:600;color:#fff;line-height:1.05;letter-spacing:0.3px">Typography in Persona 5</div>
+        <div style="font-size:13px;color:rgba(255,255,255,0.7);margin-top:6px;font-weight:400;letter-spacing:0.3px">DES 325 · Fall 2025</div>
+      </div>
     </div>
-    <div class="p5-hero-zone-prev" onclick="p5HeroPrev()"></div>
-    <div class="p5-hero-zone-next" onclick="p5HeroNext()"></div>
-    <div class="p5-hero-dots" id="p5-hero-dots"></div>
+    <div style="padding:32px 48px;display:grid;grid-template-columns:1fr 2.5fr;gap:14px;align-items:start;background:#fafafa">
+      <div>
+        <div style="overflow:hidden;border-radius:8px">
+          <img src="Typography in Persona 5/Hero, Book in Book Sleeve.jpg" style="width:100%;display:block" alt="Book in sleeve">
+        </div>
+        <p class="proj-img-caption" style="margin-top:6px">Book inserted in book sleeve</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="overflow:hidden;border-radius:8px">
+          <img src="Typography in Persona 5/Book Open Hero.png" style="width:100%;display:block" alt="Book open">
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+          <div style="overflow:hidden;border-radius:8px">
+            <img src="Typography in Persona 5/Hero, Title Card.png" style="width:100%;display:block" alt="Title card">
+          </div>
+          <div style="overflow:hidden;border-radius:8px">
+            <img src="Typography in Persona 5/final physical photo 20.png" style="width:100%;display:block" alt="Back cover">
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="proj-detail-body" style="display:block">
+  <div style="background:#0D0D0D;border-bottom:1px solid var(--border);padding:32px 48px">
+    <div class="p5-hero-wrap" style="background:#0D0D0D;max-width:900px;margin:0 auto;border-radius:8px">
+      <div class="p5-hero-spread" id="p5-hero-spread" style="opacity:0">
+        <canvas id="p5-hero-left" class="p5-hero-canvas"></canvas>
+        <canvas id="p5-hero-right" class="p5-hero-canvas"></canvas>
+      </div>
+      <div class="p5-hero-zone-prev" onclick="p5HeroPrev()"></div>
+      <div class="p5-hero-zone-next" onclick="p5HeroNext()"></div>
+      <div class="p5-hero-dots" id="p5-hero-dots"></div>
+    </div>
+  </div>
+  <div class="proj-detail-body">
+    <div class="proj-detail-sidebar">
+      <div class="proj-detail-sidebar-section">
+        <div class="proj-detail-sidebar-label">Contents</div>
+        <div class="proj-toc-list">
+          <a class="proj-toc-link" onclick="document.getElementById('p5-overview').scrollIntoView({behavior:'smooth'})">Overview</a>
+          <a class="proj-toc-link" onclick="document.getElementById('p5-brief').scrollIntoView({behavior:'smooth'})">The Brief</a>
+          <a class="proj-toc-link" onclick="document.getElementById('p5-research').scrollIntoView({behavior:'smooth'})">Research</a>
+          <a class="proj-toc-link" onclick="document.getElementById('p5-presentation').scrollIntoView({behavior:'smooth'})">Presentation</a>
+          <a class="proj-toc-link" onclick="document.getElementById('p5-content').scrollIntoView({behavior:'smooth'})">Developing Content</a>
+          <a class="proj-toc-link" onclick="document.getElementById('p5-design').scrollIntoView({behavior:'smooth'})">Design</a>
+          <a class="proj-toc-link" onclick="document.getElementById('p5-production').scrollIntoView({behavior:'smooth'})">Production</a>
+          <a class="proj-toc-link" onclick="document.getElementById('p5-critique').scrollIntoView({behavior:'smooth'})">Critique</a>
+          <a class="proj-toc-link" onclick="document.getElementById('p5-reflection').scrollIntoView({behavior:'smooth'})">Reflection</a>
+        </div>
+      </div>
+    </div>
     <div class="proj-detail-content">
-      <div class="proj-detail-section">
+
+      <!-- OVERVIEW -->
+      <div class="proj-detail-section" id="p5-overview">
         <div class="proj-detail-section-label">Overview</div>
-        <div class="proj-detail-h2">Type as rebellion</div>
-        <p class="proj-detail-p">Persona 5 has one of the most recognizable typographic systems in game design — bold, slanted, aggressively contrasted, and rooted in a specifically Japanese graphic design tradition that western audiences rarely encounter. This project analyzed why that typography works: what rules it follows, which ones it breaks, and what those choices communicate about the game's themes of defiance and self-expression.</p>
-        <p class="proj-detail-p">The study covers the game's use of diagonal composition, Matisse-inspired cut-out shapes, heavy weight contrast, and how the red-black-white palette creates visual urgency across menus, loading screens, and in-game UI.</p>
+        <div class="proj-detail-h2">Studying the Type Behind the Phantom Thieves</div>
+        <p class="proj-detail-p">For this project, I created a zine that examines the typography choices and fonts used in the video game <em>Persona 5</em>, focusing on how type contributes to the game's visual identity and storytelling. I chose this project because there is limited academic and design-focused analysis on the artistic decisions behind video games, particularly typography. As a double major in Arts &amp; Entertainment Technologies and Design, it felt meaningful to create a project that bridges academic research and design practice around a game that helped shape my career interests.</p>
+        <p class="proj-detail-p"><strong>Self-authoring this book gave me a unique kind of research paper, one that let me write, design, and publish a book on one of my major interests while doing proper research into the typography, visual design, and UX/UI of video games, a field I intend to pursue.</strong></p>
       </div>
-      <div class="proj-detail-section">
-        <div class="proj-detail-section-label">Analysis</div>
-        <div class="proj-detail-h2">The system, dissected</div>
-        <div class="proj-detail-process-steps">
-          <div class="proj-process-step"><div class="proj-process-num">01</div><div class="proj-process-step-content"><div class="proj-process-step-title">Palette & contrast</div><div class="proj-process-step-desc">The near-exclusive red, black, and white palette isn't decorative — it's a graphic violence. Every screen reads as high-stakes. The palette was studied across all major UI contexts to document how it shifts in emotional weight.</div></div></div>
-          <div class="proj-process-step"><div class="proj-process-num">02</div><div class="proj-process-step-content"><div class="proj-process-step-title">Diagonal composition</div><div class="proj-process-step-desc">Almost nothing in Persona 5's UI sits at 90 degrees. The constant diagonal tilt creates restlessness — a refusal to settle. This was mapped and categorized across the menus and battle screens.</div></div></div>
-          <div class="proj-process-step"><div class="proj-process-num">03</div><div class="proj-process-step-content"><div class="proj-process-step-title">Typeface decisions</div><div class="proj-process-step-desc">The game's Japanese and Latin type choices — their weights, tracking, and how they interact with illustrated elements — were analyzed for what they borrow from vintage Japanese design and constructivist poster traditions.</div></div></div>
-          <div class="proj-process-step"><div class="proj-process-num">04</div><div class="proj-process-step-content"><div class="proj-process-step-title">Recreations & response</div><div class="proj-process-step-desc">Selected UI moments were recreated in Illustrator to understand their construction, then riffed on — applying the same rules to new content to test how transferable the system is.</div></div></div>
+
+
+      <!-- THE BRIEF -->
+      <div class="proj-detail-section" id="p5-brief">
+        <div class="proj-detail-section-label">The Brief</div>
+        <div class="proj-detail-h2">Create a Typographic Study in Book Form</div>
+        <p class="proj-detail-p" style="font-style:italic;color:var(--muted)">The task was to create a book that examines typography within a chosen area of interest.</p>
+        <p class="proj-detail-p">The origin of this project began with the design brief itself. When we were asked to create a book that studied typography through an area of interest, I was immediately excited, having looked forward to this assignment since Professor Gray first introduced it. The initial challenge, however, was deciding what subject to focus on.</p>
+        <p class="proj-detail-p">It quickly became clear that I wanted to study the typography of a video game. As a student in the Game Design concentration within my Arts &amp; Entertainment Technologies degree, and someone with a deep appreciation for video games, it felt natural to explore typography within an interactive medium I care deeply about.</p>
+        <p class="proj-detail-p">Choosing a single game proved more difficult. I considered several favorite titles, from <em>The Legend of Zelda</em>, potentially as a broader typographic history, to <em>The Last of Us</em>, comparing its in-game typography with its television adaptation. After weighing these ideas, <em>Persona 5</em> emerged as the strongest choice.</p>
+        <div class="proj-img-grid proj-img-grid-2" style="margin-top:20px">
+          <div>
+            <div style="overflow:hidden;border-radius:6px;border:1px solid var(--border);margin-bottom:4px">
+              <img src="Typography in Persona 5/My first figurine ever was of the protaganist of Persona 5! I have had this since 2017..png" style="width:100%;display:block">
+            </div>
+            <p class="proj-img-caption">My first figurine ever was of the protagonist of Persona 5! I have had this since 2017.</p>
+          </div>
+          <div>
+            <div style="overflow:hidden;border-radius:6px;border:1px solid var(--border);margin-bottom:4px">
+              <img src="Typography in Persona 5/I even decorated it with an accompanying sticker I got at a convention that I spent my limited allowance on..png" style="width:100%;display:block">
+            </div>
+            <p class="proj-img-caption">I even decorated it with an accompanying sticker I got at a convention that I spent my limited allowance on.</p>
+          </div>
+        </div>
+        <p class="proj-detail-p">I first discovered <em>Persona 5</em> in middle school, shortly after its global release. Seeing its menu screens, UI, and overall aesthetic for the first time left a lasting impression on me, as its bold typographic style demonstrated how typography could shape mood, identity, and user experience, ultimately catalyzing the direction of this project.</p>
+        <div class="proj-callout-yellow" style="margin-top:20px"><em>How can I design a visually engaging zine that explores and explains the typography of Persona 5?</em></div>
+      </div>
+
+      <!-- RESEARCH -->
+      <div class="proj-detail-section" id="p5-research">
+        <div class="proj-detail-section-label">Research</div>
+        <div class="proj-detail-h2">Exploring the Metaverse — Gathering Information</div>
+        <p class="proj-detail-p" style="font-style:italic;color:var(--muted)">I dove into websites, articles, books, online forums, and emailed professionals to gather research and insights to support the creation and content of my book.</p>
+
+        <div class="proj-detail-h3">Compiling a Miro Board</div>
+        <p class="proj-detail-p">One of the first things I knew about this book is that I would self-author it. To do that successfully, I had to gather a wealth of resources. So to the internet I went!</p>
+        <p class="proj-detail-p">I created a Miro board to compile websites that could guide my research, as well as sources for font specimens. When gathering materials, I didn't limit myself to typography alone. It was also important to collect research from related fields, such as game psychology, UX/UI design, and more, as these insights would help supplement my work. I also explored Reddit forums, where the community is very active, to see if others had similar questions or inquiries.</p>
+        <div class="proj-miro-wrap">
+          <iframe src="https://miro.com/app/live-embed/uXjVJAUyZPs=/" allow="fullscreen; clipboard-read; clipboard-write" allowfullscreen></iframe>
+        </div>
+        <p class="proj-img-caption">Explore my Miro board above — click to interact.</p>
+        <div class="proj-kp">
+          <div class="proj-kp-label">Key Takeaways</div>
+          <ul>
+            <li>Collected research beyond typography, including psychology and UX/UI.</li>
+            <li>Organized sources and font specimens on a Miro board.</li>
+            <li>Checked Reddit forums for community insights and similar questions.</li>
+          </ul>
+        </div>
+
+        <div class="proj-detail-h3">Library and Archive Research</div>
+        <p class="proj-detail-p">I also set up a meeting with Tina Tran, the Liaison Librarian for Visual Arts at the University of Texas at Austin, to get her help finding resources for my project.</p>
+        <img src="Typography in Persona 5/Me flipping through Arcade Game Typography by Toshi Omagari to view structure as well as content.png" style="width:100%;border-radius:6px;display:block;margin-bottom:4px">
+        <p class="proj-img-caption">Me flipping through Arcade Game Typography by Toshi Omagari to view structure as well as content.</p>
+        <p class="proj-detail-p">During the meeting, we both discovered, though I had somewhat expected, that there is no specific research on typography in Persona 5 and that information on typography in games in general is scarce. What we did find together was the book Arcade Game Typography by Toshi Omagari, which I later went to check out at the Fine Arts Library.</p>
+        <div class="proj-kp">
+          <div class="proj-kp-label">Key Takeaways</div>
+          <ul>
+            <li>Academic research on typography in games is limited.</li>
+            <li>Studying similar research, such as Arcade Game Typography by Toshi Omagari, can be useful not only for content but also for structure.</li>
+          </ul>
+        </div>
+
+        <div class="proj-detail-h3">Emailing Charlotte Couderc</div>
+        <p class="proj-detail-p">While compiling my sources, I came across a fantastic website called Game Font Library. This platform is dedicated to showcasing and sharing the official interface fonts used in video games.</p>
+        <p class="proj-detail-p">Created by Charlotte Couderc, a Lead UI Artist for AAA games and typography enthusiast, the site collects typefaces that define the visual identity of games, whether from user interfaces, logos, or other graphic elements. All fonts featured are official fonts provided by developers themselves, with no recreations or approximations. Charlotte personally reaches out to UI artists worldwide to ensure accuracy, preserving the true typographic heritage of the industry.</p>
+        <p class="proj-detail-p">While exploring the site, I noticed that it only had fonts for Persona 3 Reload. On the About page, I saw that the website was run by Charlotte Couderc, and I decided to email her explaining my project and asking for guidance in sourcing the fonts used in Persona 5. I wasn't expecting a response, assuming she might be busy as a UX/UI Designer on The Witcher 4.</p>
+        <p class="proj-detail-p">To my delight, a few days later she replied, not only responding, but also sharing that she already had the fonts compiled and would upload them early so I could use them right away. I am deeply grateful for her help, as her knowledge and database have been invaluable to my research.</p>
+        <div class="proj-img-grid proj-img-grid-3">
+          <div class="smt-lb-thumb" onclick="openLightbox('Typography in Persona 5/Above is the email exchange me and Charlotte had! PART 1.png')">
+            <div style="overflow:hidden;border-radius:6px"><img src="Typography in Persona 5/Above is the email exchange me and Charlotte had! PART 1.png" style="width:100%;display:block"></div>
+            <div class="smt-lb-badge">Expand</div>
+          </div>
+          <div class="smt-lb-thumb" onclick="openLightbox('Typography in Persona 5/Above is the email exchange me and Charlotte had! part 2.png')">
+            <div style="overflow:hidden;border-radius:6px"><img src="Typography in Persona 5/Above is the email exchange me and Charlotte had! part 2.png" style="width:100%;display:block"></div>
+            <div class="smt-lb-badge">Expand</div>
+          </div>
+          <div class="smt-lb-thumb" onclick="openLightbox('Typography in Persona 5/Above is the email exchange me and Charlotte had! PART 3.png')">
+            <div style="overflow:hidden;border-radius:6px"><img src="Typography in Persona 5/Above is the email exchange me and Charlotte had! PART 3.png" style="width:100%;display:block"></div>
+            <div class="smt-lb-badge">Expand</div>
+          </div>
+        </div>
+        <p class="proj-img-caption">The email exchange between me and Charlotte. Click any image to expand.</p>
+        <div class="proj-kp">
+          <div class="proj-kp-label">Key Takeaways</div>
+          <ul>
+            <li>Don't be afraid to reach out to professionals — most are happy to offer guidance and support.</li>
+            <li>I now have a complete understanding of the key fonts and typefaces used in the game, without needing to guess or do excessive research.</li>
+          </ul>
+        </div>
+
+        <div class="proj-detail-h3">Key Design Implications</div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <div class="proj-callout">Create a book that is not only visually appealing but also thoroughly researched, accurately covering the fonts and typography used in the game and their purpose.</div>
+          <div class="proj-callout">Design the book to reflect and build upon the aesthetics present in the game itself.</div>
+          <div class="proj-callout">Use Game Font Library and Charlotte's guidance to construct the section on the specific typefaces used in the game.</div>
+          <div class="proj-callout">Provide context alongside the typographic information so readers gain a comprehensive understanding of the game, its visual style, and its typography.</div>
         </div>
       </div>
-      <div class="proj-detail-section">
-        <div class="proj-detail-section-label">Spreads</div>
-        <div class="proj-detail-h2">Analysis pages</div>
-        <div class="proj-img-placeholder wide"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><path d="M6 28l8-8 6 6 4-4 10 10" stroke="#ccc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Full analysis spread — palette & composition</span></div>
+
+      <!-- PRESENTATION -->
+      <div class="proj-detail-section" id="p5-presentation">
+        <div class="proj-detail-section-label">Presentation</div>
+        <div class="proj-detail-h2">Presenting the Content of My Book</div>
+        <p class="proj-detail-p" style="font-style:italic;color:var(--muted)">As part of the project requirements, I was asked to compile information and present my ideas to the class, explaining the topic I was covering, why I chose it, and how I planned to structure the information.</p>
+        <p class="proj-detail-p">Here you can go through the presentation I curated for class. It is important to note that a lot of the information was verbally communicated by me, supported by the animations and images in the presentation.</p>
+        <div class="proj-miro-wrap">
+          <iframe src="https://www.canva.com/design/DAG2Yx6JfNE/JVo_Sok14Cwxcz_cFPY7-w/view?embed" allow="fullscreen" allowfullscreen></iframe>
+        </div>
+        <p class="proj-img-caption">Click through the slides above to explore the full presentation.</p>
+        <p class="proj-detail-p">The presentation proved to be immensely helpful for me, as it made a rough outline of what I would include and how I could talk about it. It also helped me develop ideas on how I could have visual graphics interact with the text and content within the book itself. Professor Kelcey's feedback was to talk a bit slower next time, and that she enjoyed the slide layout and animations, as well as the sources I was utilizing to help me make this book.</p>
+      </div>
+
+      <!-- DEVELOPING CONTENT -->
+      <div class="proj-detail-section" id="p5-content">
+        <div class="proj-detail-section-label">Developing Content</div>
+        <div class="proj-detail-h2">Making an Infiltration Guide</div>
+        <p class="proj-detail-p" style="font-style:italic;color:var(--muted)">With all my research compiled and under my belt, I begin to consider form and the content that will go inside my book.</p>
+
+        <div class="proj-detail-h3">Making a Staple-Bound Book Dummy</div>
+        <p class="proj-detail-p">In class, Professor Gray showed us how to make a simple staple-bound book dummy and gave a lecture on the process, after which we created one ourselves in class.</p>
         <div class="proj-img-grid proj-img-grid-2">
-          <div class="proj-img-placeholder tall"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Typeface breakdown</span></div>
-          <div class="proj-img-placeholder tall"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>UI recreations & variations</span></div>
+          <img src="Typography in Persona 5/Book Dummy 1.png" style="width:100%;border-radius:6px;display:block">
+          <img src="Typography in Persona 5/Book Dummy 2.jpeg" style="width:100%;border-radius:6px;display:block">
         </div>
-        <div class="proj-img-placeholder wide"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Final editorial spread</span></div>
+        <p class="proj-img-caption">Book dummy prototypes made in class to test dimensions and stapling.</p>
+        <p class="proj-detail-p">In this class, I learned about the staple binding method, what a signature is, and that if I want to create a staple-bound book, the total page count (including the cover) needs to be divisible by 4, since a signature consists of folded pages. With this knowledge, I went to the design lab and made my own book dummies with a few pages to test dimensions and stapling.</p>
+
+        <div class="proj-detail-h3">Making a Plan for Content</div>
+        <p class="proj-detail-p">During class, Professor Gray also showed us examples of past student work. I explored these examples to help determine dimensions and binding methods.</p>
+        <p class="proj-detail-p">One book that particularly caught my eye was by a past student, Kenny, who explored Japanese localization in Dragalia Lost. I ended up using his formatting, a landscape staple-bound book, as inspiration for my own project.</p>
+        <p class="proj-detail-p">With a rough idea of how I wanted to produce my work, I turned my focus to the content for each spread and page. To help organize my ideas and structure the content, I created a Notion page where I bulleted everything I needed to remember when designing my spreads. This served as the foundation for the content of my book.</p>
+        <img src="Typography in Persona 5/Persona 5 Book Outline Screenshot.png" style="width:100%;border-radius:6px;display:block;margin-bottom:4px">
+        <p class="proj-img-caption">Here is a screenshot of me bullet-pointing content. <a href="https://stormy-asparagus-6c0.notion.site/Persona-5-Book-Outline-2a5dbf3c76a480aa8803fa65369ef60b?source=copy_link" target="_blank" style="color:#1A1A1A;text-underline-offset:3px">View the full Notion planning page →</a></p>
+
+        <div class="proj-detail-h3">Writing Content</div>
+        <img src="Typography in Persona 5/A screenshot of my working document where I wrote everything for the book..png" style="width:100%;border-radius:6px;display:block;margin-bottom:4px">
+        <p class="proj-img-caption">A screenshot of my working document where I wrote everything for the book.</p>
+        <p class="proj-detail-p">Over the course of making my book, I also made sure to write the content I wanted to include. I needed to balance writing enough while still covering all the key points I wanted.</p>
+        <p class="proj-detail-p">Although it was challenging, I found it rewarding to know that the book I was producing was also written by me. I knew I would be more satisfied with the final result by self-authoring it.</p>
+        <p class="proj-detail-p">For guidance, I referenced my previously mentioned Notion page to help structure my writing. This ensured I stayed on track and didn't forget what to include. The end result was a satisfactory amount of content that I could use as I moved forward with the layout design.</p>
       </div>
+
+      <!-- DESIGN -->
+      <div class="proj-detail-section" id="p5-design">
+        <div class="proj-detail-section-label">Design</div>
+        <div class="proj-detail-h2">Making the Calling Card — Designing the Actual Book</div>
+        <p class="proj-detail-p" style="font-style:italic;color:var(--muted)">With all my content developed, I spend many hours designing my spreads in Adobe InDesign.</p>
+
+        <div class="proj-detail-h3">Designing the Book</div>
+        <p class="proj-detail-p">Before and during Thanksgiving Break, I spent many days working on the spreads of my book. One challenge I faced was figuring out how to approach the book in general. After some trial and error, I settled on a method. I decided to use in-game assets to help build the aesthetics and layout. I would also use a simple color palette and include screenshots, images, and captions to help the reader understand the information I was presenting without making it boring.</p>
+        <div class="proj-img-grid proj-img-grid-2">
+          <img src="Typography in Persona 5/Screenshots of my working document with the visible grid. PART 1.png" style="width:100%;border-radius:6px;display:block">
+          <img src="Typography in Persona 5/Screenshots of my working document with the visible grid. part 2.png" style="width:100%;border-radius:6px;display:block">
+        </div>
+        <p class="proj-img-caption">Screenshots of my working document with the visible grid.</p>
+        <p class="proj-detail-p">Much of my design process involved applying what Professor Kelcey had taught us in class, including pacing, font size, ragging, typesetting, and more. I was able to tackle much of the book thanks to her step-by-step teaching and my ability to implement what I had learned.</p>
+        <p class="proj-detail-p">Because I had done extensive preparation in terms of content and outlining my plan, designing the book was not as difficult as it could have been if I hadn't completed that work ahead of time.</p>
+        <div class="proj-img-grid proj-img-grid-2">
+          <img src="Typography in Persona 5/spread I designed to inform the reader about the visual language that defines much of Persona 5 PART 1.png" style="width:100%;border-radius:6px;display:block">
+          <img src="Typography in Persona 5/spread I designed to inform the reader about the visual language that defines much of Persona 5 PART 2.png" style="width:100%;border-radius:6px;display:block">
+        </div>
+        <p class="proj-img-caption">On the left, a spread designed to inform the reader about the visual language that defines much of Persona 5, using captions and imagery to support the written content.</p>
+        <p class="proj-detail-p">Additionally, as part of the project requirements, I included a diagram, which I found especially useful for explaining hierarchy and UX/UI, and showing how typography contributes to these elements in the game.</p>
+        <div class="proj-img-grid proj-img-grid-3">
+          <img src="Typography in Persona 5/Some photos I took while working on the spreads in InDesign. PART 1.png" style="width:100%;border-radius:6px;display:block">
+          <img src="Typography in Persona 5/Some photos I took while working on the spreads in InDesign. PART 2.png" style="width:100%;border-radius:6px;display:block">
+          <img src="Typography in Persona 5/Some photos I took while working on the spreads in InDesign. PART 3.png" style="width:100%;border-radius:6px;display:block">
+        </div>
+        <p class="proj-img-caption">Some photos I took while working on the spreads in InDesign.</p>
+        <img src="Typography in Persona 5/A screenshot I took of my Discord logging the hours I spent on InDesign on one of the days I was working on the project, which I found as amusing as I found painful..png" style="width:100%;border-radius:6px;display:block;margin-bottom:4px">
+        <p class="proj-img-caption">A screenshot I took of my Discord logging the hours I spent on InDesign on one of the days I was working on the project, which I found as amusing as I found painful.</p>
+        <p class="proj-detail-p">Once I was satisfied with my writing and the text flowed in, I adjusted my spreads accordingly and typeset all my text, as I learned to do so in class. It took a lot of time and effort, but eventually I had the spreads completed. The full digital PDF is viewable in the flipbook below the hero image at the top of this page.</p>
+
+        <div class="proj-detail-h3" style="margin-top:32px">Designing the Book Sleeve</div>
+        <img src="Typography in Persona 5/A reference of the bag I would be making for the book sleeve..png" style="width:100%;max-width:380px;border-radius:6px;display:block;margin-bottom:4px">
+        <p class="proj-img-caption">A reference of the bag I would be making for the book sleeve.</p>
+        <p class="proj-detail-p">I also made the pattern that I would use to make the book sleeve I wanted to make. I wanted the book sleeve to look like the protagonist's school bag, and make the experience feel like you found a calling card (the book) in his school bag. Below is a PDF of that pattern that I printed and used once I returned to campus.</p>
+        <a class="proj-pdf-link" href="Typography in Persona 5/Persona Book Sleeve PRINT.pdf" target="_blank">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="1" width="10" height="13" rx="1.5" stroke="#1A1A1A" stroke-width="1.2"/><path d="M5 5h6M5 8h6M5 11h4" stroke="#1A1A1A" stroke-width="1.2" stroke-linecap="round"/><path d="M10 1v3.5H13" stroke="#1A1A1A" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Book Sleeve Print Pattern — open PDF ↗
+        </a>
+      </div>
+
+      <!-- PRODUCTION -->
+      <div class="proj-detail-section" id="p5-production">
+        <div class="proj-detail-section-label">Production</div>
+        <div class="proj-detail-h2">Securing the Treasure — Producing the Book and Book Sleeve</div>
+        <p class="proj-detail-p" style="font-style:italic;color:var(--muted)">With my spreads and cover being print-ready, I begin physically producing my book.</p>
+        <div class="proj-img-grid proj-img-grid-2">
+          <img src="Typography in Persona 5/My prototype print! part 1.png" style="width:100%;border-radius:6px;display:block">
+          <img src="Typography in Persona 5/My prototype print! part 2.png" style="width:100%;border-radius:6px;display:block">
+        </div>
+        <p class="proj-img-caption">My prototype print!</p>
+        <p class="proj-detail-p">Now that I was back on campus, I immediately started my production process. The first step was to run a test print on regular copy paper and build a prototype of my book. I did this during class.</p>
+        <p class="proj-detail-p">While cutting the pages at home, I had a horrible accident with the Xacto knife and ended up cutting my finger badly. After doing first aid on my finger, I finished my prototype, which I was satisfied with despite the injury.</p>
+        <p class="proj-detail-p">After completing the prototype, I began printing the body copies of my book. I planned to produce four copies: one for testing production and parameters (you can never be too careful), one for myself (sophomore review), one to submit to Kelcey (as required), and one for my friend, who was genuinely interested in my book (an honor to share it with them).</p>
+        <p class="proj-detail-p">Since I was sharing paper purchased with my friend and classmate Katie Shih, we printed the body copies together on the Ricoh printer in Anna Hiss Gymnasium. I also printed the cover and book sleeve, both on the thicker paper provided by the design lab.</p>
+        <p class="proj-detail-p">While cutting my first body copy, I noticed a small graphical mistake on one of the pages. I had to manually collate the affected signature and reprint that page. It was stressful, but since I was on schedule, I reminded myself that everything was okay and successfully reprinted the page.</p>
+        <p class="proj-detail-p">With all body copies corrected, I began full production. At Anna Hiss Gymnasium, I cut every page of my body copies, followed by their covers and book sleeves. I used a bone folder to score and fold each page. Once everything was cut, I started binding and compiling the books. I documented the process with photos to capture each step.</p>
+        <div class="proj-img-grid proj-img-grid-3">
+          <img src="Typography in Persona 5/CUTTING AND ASSEMBLING 1.png" style="width:100%;border-radius:6px;display:block">
+          <img src="Typography in Persona 5/CUTTING AND ASSEMBLING 2.png" style="width:100%;border-radius:6px;display:block">
+          <img src="Typography in Persona 5/CUTTING AND ASSEMBLING 3.png" style="width:100%;border-radius:6px;display:block">
+          <img src="Typography in Persona 5/CUTTING AND ASSEMBLING 4.png" style="width:100%;border-radius:6px;display:block">
+          <img src="Typography in Persona 5/CUTTING AND ASSEMBLING 5.png" style="width:100%;border-radius:6px;display:block">
+        </div>
+        <p class="proj-img-caption">Cutting and assembling the books.</p>
+        <p class="proj-detail-p">This was a completely new experience for me. While the process was daunting, I was satisfied with both my effort and the copies I produced.</p>
+        <div class="proj-img-grid proj-img-grid-3">
+          <img src="Typography in Persona 5/Production of the book sleeves! 1.png" style="width:100%;border-radius:6px;display:block">
+          <img src="Typography in Persona 5/Production of the book sleeves! 2.png" style="width:100%;border-radius:6px;display:block">
+          <img src="Typography in Persona 5/Production of the book sleeves! 3.png" style="width:100%;border-radius:6px;display:block">
+        </div>
+        <p class="proj-img-caption">Production of the book sleeves!</p>
+        <p class="proj-detail-p">The book sleeve presented its own challenge. I knew that black ink could crack along fold lines, but I had to move forward. I minimized damage by scoring extensively before folding, but the results were still not perfect. I then used glue to secure the sleeve, as tape (used in the prototype) would not have held the structure properly and would have been too obvious. After a lot of trial and effort, I successfully created four book sleeves, including one for testing. While the quality wasn't exactly what I had hoped for, I had to make concessions due to time constraints and move forward.</p>
+        <img src="Typography in Persona 5/final physical book sleeve.png" style="width:100%;border-radius:6px;display:block;margin-bottom:4px">
+        <p class="proj-img-caption">The finished book sleeve.</p>
+        <img src="Typography in Persona 5/All four copies in all their glory!.png" style="width:100%;border-radius:6px;display:block;margin-bottom:4px">
+        <p class="proj-img-caption">All four copies in all their glory!</p>
+
+        <div class="proj-detail-h3" style="margin-top:32px">Spread by Spread — The Physical Book</div>
+        <p class="proj-detail-p">Below, you will find photographs of each spread in real life that I took.</p>
+        <img src="Typography in Persona 5/final physical photo 1.png" style="width:100%;border-radius:6px;display:block;margin-bottom:4px">
+        <p class="proj-img-caption">Front cover</p>
+        <div class="proj-img-grid proj-img-grid-2">
+          <img src="Typography in Persona 5/final physical photo 2.png" style="width:100%;border-radius:6px;display:block">
+          <img src="Typography in Persona 5/final physical photo 3.png" style="width:100%;border-radius:6px;display:block">
+          <img src="Typography in Persona 5/final physical photo 4.png" style="width:100%;border-radius:6px;display:block">
+          <img src="Typography in Persona 5/final physical photo 5.png" style="width:100%;border-radius:6px;display:block">
+          <img src="Typography in Persona 5/final physical photo 6.png" style="width:100%;border-radius:6px;display:block">
+          <img src="Typography in Persona 5/final physical photo 7.png" style="width:100%;border-radius:6px;display:block">
+          <img src="Typography in Persona 5/final physical photo 8.png" style="width:100%;border-radius:6px;display:block">
+          <img src="Typography in Persona 5/final physical photo 9.png" style="width:100%;border-radius:6px;display:block">
+          <img src="Typography in Persona 5/final physical photo 10.png" style="width:100%;border-radius:6px;display:block">
+          <img src="Typography in Persona 5/final physical photo 11.png" style="width:100%;border-radius:6px;display:block">
+          <img src="Typography in Persona 5/final physical photo 12.png" style="width:100%;border-radius:6px;display:block">
+          <img src="Typography in Persona 5/final physical photo 13.png" style="width:100%;border-radius:6px;display:block">
+          <img src="Typography in Persona 5/final physical photo 14.png" style="width:100%;border-radius:6px;display:block">
+          <img src="Typography in Persona 5/final physical photo 15.png" style="width:100%;border-radius:6px;display:block">
+          <img src="Typography in Persona 5/final physical photo 16.png" style="width:100%;border-radius:6px;display:block">
+          <img src="Typography in Persona 5/final physical photo 17.png" style="width:100%;border-radius:6px;display:block">
+          <img src="Typography in Persona 5/final physical photo 18.png" style="width:100%;border-radius:6px;display:block">
+        </div>
+        <img src="Typography in Persona 5/final physical photo 19.png" style="width:100%;border-radius:6px;display:block;margin-top:12px;margin-bottom:4px">
+        <p class="proj-img-caption">Back Cover</p>
+        <img src="Typography in Persona 5/final physical photo 20.png" style="width:100%;border-radius:6px;display:block;margin-top:12px;margin-bottom:4px">
+        <div class="proj-img-grid proj-img-grid-2" style="margin-top:12px">
+          <img src="Typography in Persona 5/Book Coming Out of Sleeve Hero.png" style="width:100%;border-radius:6px;display:block">
+          <img src="Typography in Persona 5/Hero, Book in Book Sleeve.jpg" style="width:100%;border-radius:6px;display:block">
+        </div>
+        <p class="proj-img-caption">Two copies together. Book in book sleeve.</p>
+      </div>
+
+      <!-- CRITIQUE -->
+      <div class="proj-detail-section" id="p5-critique">
+        <div class="proj-detail-section-label">Critique</div>
+        <div class="proj-detail-h2">Battle Report — In-Class Critique</div>
+        <p class="proj-detail-p" style="font-style:italic;color:var(--muted)">With the book ready to turn in, I received in-class critique from a peer.</p>
+        <div class="proj-img-grid proj-img-grid-2" style="align-items:start">
+          <img src="Typography in Persona 5/critique sheet 1.png" style="width:100%;border-radius:6px;display:block">
+          <div>
+            <p class="proj-detail-p">With all my books made, it was time to go into class and submit my best copy to Professor Kelcey, who would keep it in her archive forever. In class, we did a simple critique, where we got assigned a person and wrote on a sheet of paper what we thought of the book and responded to the guided questions.</p>
+            <p class="proj-detail-p">The person who critiqued my book was Jessica Zhu. To the left is a photo I took of her critique sheet that I got to read. She said she overall enjoyed the experience of the book itself and its layouts, but the craftsmanship of the book sleeve could be improved. I agree with a lot of her points, especially the ones regarding the book sleeve. I appreciate her kind words as well!</p>
+          </div>
+        </div>
+        <img src="Typography in Persona 5/sending her off.png" style="width:100%;border-radius:6px;display:block;margin-top:14px;margin-bottom:4px">
+        <p class="proj-img-caption">With the critique over, I had to say bye to my most heralded copy of the book. I hope Professor Kelcey enjoys flipping through it!</p>
+      </div>
+
+      <!-- REFLECTION -->
+      <div class="proj-detail-section" id="p5-reflection">
+        <div class="proj-detail-section-label">Reflection</div>
+        <div class="proj-detail-h2">Lessons, Opportunities, and Final Thoughts</div>
+        <p class="proj-detail-p" style="font-style:italic;color:var(--muted)">I finish the project knowing that I finally conquered layout design and the ever-so-daunting Adobe InDesign, producing a book on a game I love and contributing to the study of type within video games.</p>
+        <p class="proj-detail-p">This project allowed me to bring together everything I learned about typography over the semester into a true labor of love. From conducting research, designing spreads, to compiling and producing a physical book, every step challenged me in new ways. Never did I imagine I would be able to use InDesign to this extent, or write and produce my own book, but here we are. I am immensely grateful for the guidance I received from Professor Gray and the growth I experienced throughout this class. Going from someone who had never touched InDesign to holding a book I created in my hands feels surreal, and I still can't believe it.</p>
+        <p class="proj-detail-p">Though I am proud of what I have made, I recognize that there is always room for improvement. When I produce more copies of this book, I plan to refine the book sleeve and experiment with ways to make it more polished and durable. I am eager to continue exploring layout design and producing research books in this manner. While this project required immense effort, time, and many lost hours of sleep, it has been incredibly rewarding. I am excited to continue pushing my creative boundaries and bringing more research and design projects to life in this manner, going into the future.</p>
+      </div>
+
     </div>
   </div>
 </div>
@@ -1017,132 +1383,6 @@ audio{accent-color:#1A1A1A}
   </div>
 </div>
 
-<!-- CERAMIC SPEAKER -->
-<div class="proj-detail-page" id="proj-ceramic-speaker">
-  <div class="proj-detail-nav">
-    <div class="proj-detail-breadcrumb">
-      <span onclick="showPage('3d')">3D & Product Design</span>
-      <span class="sep">›</span>
-      <span style="color:#1A1A1A;font-weight:500">Ceramic Speaker</span>
-    </div>
-    <div><button class="proj-nav-btn" onclick="showPage('3d')">← Back to category</button></div>
-  </div>
-  <div class="proj-detail-hero">
-    <div class="proj-detail-kicker">3D & Product Design · Industrial Design</div>
-    <div class="proj-detail-title">Ceramic Speaker</div>
-    <p class="proj-detail-tagline">A Bluetooth speaker concept exploring the material tension between hand-thrown ceramic forms and precision audio engineering — where craft meets tech.</p>
-    <div class="proj-detail-meta-row">
-      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">5 weeks</div></div>
-      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Course</div><div class="proj-detail-meta-val">3D Product Design Studio</div></div>
-      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">Blender, Procreate, Keyshot</div></div>
-      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Type</div><div class="proj-detail-meta-val">Academic / Concept</div></div>
-    </div>
-  </div>
-  <div class="proj-detail-cover accent-3d" style="height:420px">
-    <div class="proj-detail-cover-inner" style="flex-direction:column;gap:12px">
-      <svg width="280" height="200" viewBox="0 0 280 200" fill="none"><ellipse cx="140" cy="175" rx="80" ry="18" fill="#C8B030" opacity="0.25"/><rect x="76" y="40" width="128" height="130" rx="24" fill="#D8C040" opacity="0.4"/><rect x="96" y="22" width="88" height="26" rx="12" fill="#C0A820" opacity="0.35"/><circle cx="140" cy="105" r="28" fill="#fff" opacity="0.45"/><circle cx="140" cy="105" r="14" fill="#C8B030" opacity="0.3"/></svg>
-      <span style="font-size:12px;color:#C0A820;opacity:0.7;font-weight:500">[ Cover placeholder — replace with Blender render ]</span>
-    </div>
-  </div>
-  <div class="proj-detail-body" style="display:block">
-    <div class="proj-detail-content">
-      <div class="proj-detail-section">
-        <div class="proj-detail-section-label">Concept</div>
-        <div class="proj-detail-h2">Form as material conversation</div>
-        <p class="proj-detail-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. The brief asked for a consumer electronics product that used an unexpected material. Ceramic was the choice — not just as surface treatment, but as a genuine structural material that would influence the product's proportions, weight, and texture in ways plastic or aluminum couldn't.</p>
-        <p class="proj-detail-p">The design challenge: ceramic forms are organic and irregular; speaker acoustics require precise geometries. The tension between those two requirements became the concept itself.</p>
-      </div>
-      <div class="proj-detail-section">
-        <div class="proj-detail-section-label">Development</div>
-        <div class="proj-detail-h2">Sketch to render</div>
-        <div class="proj-detail-process-steps">
-          <div class="proj-process-step"><div class="proj-process-num">01</div><div class="proj-process-step-content"><div class="proj-process-step-title">Reference & material research</div><div class="proj-process-step-desc">Studied ceramic production techniques, acoustic enclosure geometry, and existing soft-goods consumer electronics (Sonos, Bang & Olufsen, Transparent). Identified the design language of "quiet confidence."</div></div></div>
-          <div class="proj-process-step"><div class="proj-process-num">02</div><div class="proj-process-step-content"><div class="proj-process-step-title">Thumbnail sketches (30+)</div><div class="proj-process-step-desc">Explored a wide range of forms — cylindrical, vessel-like, stacked, asymmetric. Narrowed to three directions through peer review. Selected the "stacked vessel" form for its material honesty.</div></div></div>
-          <div class="proj-process-step"><div class="proj-process-num">03</div><div class="proj-process-step-content"><div class="proj-process-step-title">3D modeling in Blender</div><div class="proj-process-step-desc">Built the form using subdivision surface modeling to preserve organic curves. Detailed the speaker grille, control interface, and cable routing while maintaining the handmade silhouette.</div></div></div>
-          <div class="proj-process-step"><div class="proj-process-num">04</div><div class="proj-process-step-content"><div class="proj-process-step-title">Rendering & material study</div><div class="proj-process-step-desc">Developed two colorway options (natural stoneware, matte black) with brass accent hardware. Rendered across studio, lifestyle, and detail views.</div></div></div>
-        </div>
-      </div>
-      <div class="proj-detail-section">
-        <div class="proj-detail-section-label">Final Renders</div>
-        <div class="proj-detail-h2">The object</div>
-        <div class="proj-img-grid proj-img-grid-2">
-          <div class="proj-img-placeholder tall"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Front 3/4 render — stoneware</span></div>
-          <div class="proj-img-placeholder tall"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Rear / detail render</span></div>
-        </div>
-        <div class="proj-img-placeholder wide"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><path d="M6 28l8-8 6 6 4-4 10 10" stroke="#ccc" stroke-width="1.5" stroke-linecap="round"/></svg><span>Lifestyle context render</span></div>
-      </div>
-      <div class="proj-detail-section">
-        <div class="proj-detail-section-label">Reflection</div>
-        <div class="proj-detail-h2">What I took away</div>
-        <p class="proj-detail-p">Lorem ipsum dolor sit amet. This was my first project where the material genuinely dictated the form rather than the other way around. Working in Blender pushed me to think about volume and weight in a way flat design doesn't — every decision about curve radius had an implication for manufacturing, structural integrity, and how it would feel in someone's hands.</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- STUDIO IDENT (Motion) -->
-<div class="proj-detail-page" id="proj-studio-ident">
-  <div class="proj-detail-nav">
-    <div class="proj-detail-breadcrumb">
-      <span onclick="showPage('motion')">Motion Graphics & Videography</span>
-      <span class="sep">›</span>
-      <span style="color:#1A1A1A;font-weight:500">Studio Ident Package</span>
-    </div>
-    <div><button class="proj-nav-btn" onclick="showPage('motion')">← Back to category</button></div>
-  </div>
-  <div class="proj-detail-hero">
-    <div class="proj-detail-kicker">Motion Graphics & Videography · Brand Animation</div>
-    <div class="proj-detail-title">Studio Ident Package</div>
-    <p class="proj-detail-tagline">A full motion identity package for a fictional creative studio — logo animation, bumpers, lower thirds, and a title card system designed for broadcast and social.</p>
-    <div class="proj-detail-meta-row">
-      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">4 weeks</div></div>
-      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Course</div><div class="proj-detail-meta-val">Motion Graphics Studio</div></div>
-      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">After Effects, Illustrator</div></div>
-      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Type</div><div class="proj-detail-meta-val">Academic</div></div>
-    </div>
-  </div>
-  <div class="proj-detail-cover accent-motion" style="height:420px">
-    <div class="proj-detail-cover-inner" style="flex-direction:column;gap:12px">
-      <svg width="320" height="180" viewBox="0 0 320 180" fill="none"><circle cx="160" cy="90" r="60" fill="rgba(255,255,255,0.4)"/><polygon points="145,68 145,112 185,90" fill="#1A1A1A" opacity="0.4"/><circle cx="160" cy="90" r="72" stroke="#1A1A1A" stroke-width="1" opacity="0.1"/></svg>
-      <span style="font-size:12px;color:#1A1A1A;opacity:0.5;font-weight:500">[ Cover placeholder — replace with still frame from animation ]</span>
-    </div>
-  </div>
-  <div class="proj-detail-body" style="display:block">
-    <div class="proj-detail-content">
-      <div class="proj-detail-section">
-        <div class="proj-detail-section-label">Brief</div>
-        <div class="proj-detail-h2">Bringing a brand to life in time</div>
-        <p class="proj-detail-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. The project brief: design a complete motion identity for a fictional creative studio. The identity had to work across a 15-second logo ident, a 3-second social bumper, and a set of reusable broadcast components — all expressing the same personality while functioning independently.</p>
-        <p class="proj-detail-p">The fictional studio concept: a boutique design firm known for typography-led work with a dry, intellectual edge. The motion language had to reflect that.</p>
-      </div>
-      <div class="proj-detail-section">
-        <div class="proj-detail-section-label">Process</div>
-        <div class="proj-detail-h2">Building the motion language</div>
-        <div class="proj-detail-process-steps">
-          <div class="proj-process-step"><div class="proj-process-num">01</div><div class="proj-process-step-content"><div class="proj-process-step-title">Motion moodboard</div><div class="proj-process-step-desc">Referenced editorial animation, title sequences (Saul Bass, Kyle Cooper), and kinetic typography work. Identified the studio's motion vocabulary: deliberate, unhurried, typographically confident.</div></div></div>
-          <div class="proj-process-step"><div class="proj-process-num">02</div><div class="proj-process-step-content"><div class="proj-process-step-title">Storyboarding</div><div class="proj-process-step-desc">Storyboarded the 15-second ident in 12 frames before opening After Effects. Defined the easing approach (custom bezier, never ease-in-out defaults) and the grid system the animation would follow.</div></div></div>
-          <div class="proj-process-step"><div class="proj-process-num">03</div><div class="proj-process-step-content"><div class="proj-process-step-title">After Effects build</div><div class="proj-process-step-desc">Built the ident using shape layers and text animators, no stock effects. Created a master composition with swappable elements so components could be updated globally.</div></div></div>
-          <div class="proj-process-step"><div class="proj-process-num">04</div><div class="proj-process-step-content"><div class="proj-process-step-title">Component system</div><div class="proj-process-step-desc">Adapted the core animation into the bumper, lower thirds, and title card system. Each component shares the same easing and timing DNA while working independently.</div></div></div>
-        </div>
-      </div>
-      <div class="proj-detail-section">
-        <div class="proj-detail-section-label">Final Work</div>
-        <div class="proj-detail-h2">Stills from the animation</div>
-        <div class="proj-img-placeholder wide"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="14" stroke="#ccc" stroke-width="1.5"/><polygon points="16,14 16,26 28,20" fill="#ccc"/></svg><span>Logo ident — 15 sec [ video placeholder ]</span></div>
-        <div class="proj-img-grid proj-img-grid-2">
-          <div class="proj-img-placeholder wide"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Lower third — style A</span></div>
-          <div class="proj-img-placeholder wide"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Title card — intro variant</span></div>
-        </div>
-      </div>
-      <div class="proj-detail-section">
-        <div class="proj-detail-section-label">Reflection</div>
-        <div class="proj-detail-h2">What I learned</div>
-        <p class="proj-detail-p">Lorem ipsum dolor sit amet. Motion design is timing more than anything else — and timing is surprisingly hard to articulate. The gap between "almost right" and "exactly right" is a matter of 3 frames and a bezier handle. This project taught me to slow down and listen to animation the way you listen to music: feel the beat before you adjust the graph editor.</p>
-      </div>
-    </div>
-  </div>
-</div>
-
 <!-- HIGH NOON LIVERY -->
 <div class="proj-detail-page" id="proj-high-noon-livery">
   <div class="proj-detail-nav">
@@ -1206,53 +1446,167 @@ audio{accent-color:#1A1A1A}
     <div class="proj-detail-breadcrumb">
       <span onclick="showPage('graphic')">2D & Graphic Design</span>
       <span class="sep">›</span>
-      <span style="color:#1A1A1A;font-weight:500">Hajra Waheed — An Asylum in the Sea</span>
+      <span style="color:#1A1A1A;font-weight:500">Watermarks: Hajra Waheed's Asylum in the Sea</span>
     </div>
     <div><button class="proj-nav-btn" onclick="showPage('graphic')">← Back to category</button></div>
   </div>
+
   <div class="proj-detail-hero">
     <div class="proj-detail-kicker">2D & Graphic Design · Editorial Spreads</div>
-    <div class="proj-detail-title">Hajra Waheed — An Asylum in the Sea</div>
-    <p class="proj-detail-tagline">A typographic and editorial response to Hajra Waheed's haunting artist book — designing spreads that sit alongside her imagery of displacement, water, and the in-between without speaking over them.</p>
+    <div class="proj-detail-title">Watermarks: Hajra Waheed's Asylum in the Sea</div>
+    <p class="proj-detail-tagline">Exhibition spread design responding to Hajra Waheed's artist book. Two different approaches, each working with the formal qualities of her work in a distinct way, developed across multiple rounds of critique.</p>
     <div class="proj-detail-meta-row">
-      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Year</div><div class="proj-detail-meta-val">2024</div></div>
-      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">InDesign, Illustrator, Photoshop</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Year</div><div class="proj-detail-meta-val">2025</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Instructor</div><div class="proj-detail-meta-val">Kevin Auer</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">InDesign</div></div>
       <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Type</div><div class="proj-detail-meta-val">Editorial Design</div></div>
     </div>
   </div>
-  <div class="proj-detail-cover" style="height:420px;background:#050F1E">
-    <div class="proj-detail-cover-inner" style="flex-direction:column;gap:12px">
-      <svg width="420" height="200" viewBox="0 0 420 200" fill="none"><rect width="420" height="200" fill="#050F1E"/><ellipse cx="210" cy="200" rx="280" ry="150" fill="#0D2E55" opacity="0.8"/><path d="M0 130 Q105 90 210 118 Q315 146 420 108 L420 200 L0 200Z" fill="#1A4A7A" opacity="0.7"/><path d="M0 150 Q105 128 210 138 Q315 150 420 132 L420 200 L0 200Z" fill="#224F80" opacity="0.6"/><line x1="0" y1="80" x2="420" y2="80" stroke="#4A90D9" stroke-width="0.5" opacity="0.25"/><line x1="0" y1="94" x2="420" y2="94" stroke="#4A90D9" stroke-width="0.5" opacity="0.2"/><line x1="0" y1="108" x2="420" y2="108" stroke="#4A90D9" stroke-width="0.5" opacity="0.15"/></svg>
-      <span style="font-size:12px;color:#4A90D9;opacity:0.7;font-weight:500">[ Cover image placeholder ]</span>
+
+  <!-- HERO GALLERY -->
+  <div style="border-bottom:1px solid var(--border)">
+    <div style="position:relative;overflow:hidden;aspect-ratio:16/7;border-bottom:1px solid var(--border)">
+      <img src="Hajra Waheed Asylum in the Sea/kevin spreads POST CRITIQYE.png" style="width:100%;height:100%;object-fit:cover;display:block" alt="Final exhibition spread">
+      <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.65) 0%,rgba(0,0,0,0.15) 45%,transparent 100%)"></div>
+      <div style="position:absolute;bottom:36px;left:48px">
+        <div style="font-family:'Fredoka',sans-serif;font-size:54px;font-weight:600;color:#fff;line-height:1.05;letter-spacing:0.3px">Watermarks</div>
+        <div style="font-family:'Fredoka',sans-serif;font-size:24px;font-weight:500;color:rgba(255,255,255,0.85);margin-top:6px;letter-spacing:0.2px">Hajra Waheed's Asylum in the Sea</div>
+        <div style="font-size:13px;color:rgba(255,255,255,0.6);margin-top:6px;font-weight:400;letter-spacing:0.3px">Exhibition Spread Design · 2025</div>
+      </div>
+    </div>
+    <div style="padding:32px 48px;display:grid;grid-template-columns:1fr 1fr;gap:14px;background:#fafafa">
+      <div class="smt-lb-thumb" onclick="openLightbox('Hajra Waheed Asylum in the Sea/kevin spreads POST CRITIQYE.png')" style="overflow:hidden;border-radius:4px">
+        <img src="Hajra Waheed Asylum in the Sea/kevin spreads POST CRITIQYE.png" style="width:100%;display:block" alt="Final spread 1">
+        <div class="smt-lb-badge">Click to zoom</div>
+      </div>
+      <div class="smt-lb-thumb" onclick="openLightbox('Hajra Waheed Asylum in the Sea/kevin spreads POST CRITIQYE2.png')" style="overflow:hidden;border-radius:4px">
+        <img src="Hajra Waheed Asylum in the Sea/kevin spreads POST CRITIQYE2.png" style="width:100%;display:block" alt="Final spread 2">
+        <div class="smt-lb-badge">Click to zoom</div>
+      </div>
     </div>
   </div>
-  <div class="proj-detail-body" style="display:block">
+
+  <div class="proj-detail-body">
+    <div class="proj-detail-sidebar">
+      <div class="proj-detail-sidebar-section">
+        <div class="proj-detail-sidebar-label">Contents</div>
+        <div class="proj-toc-list">
+          <a class="proj-toc-link" onclick="document.getElementById('hajra-overview').scrollIntoView({behavior:'smooth'})">Overview</a>
+          <a class="proj-toc-link" onclick="document.getElementById('hajra-sketching').scrollIntoView({behavior:'smooth'})">Sketching</a>
+          <a class="proj-toc-link" onclick="document.getElementById('hajra-design').scrollIntoView({behavior:'smooth'})">Design</a>
+          <a class="proj-toc-link" onclick="document.getElementById('hajra-critique').scrollIntoView({behavior:'smooth'})">Critique</a>
+          <a class="proj-toc-link" onclick="document.getElementById('hajra-revisions').scrollIntoView({behavior:'smooth'})">Revisions</a>
+          <a class="proj-toc-link" onclick="document.getElementById('hajra-final').scrollIntoView({behavior:'smooth'})">Final</a>
+          <a class="proj-toc-link" onclick="document.getElementById('hajra-reflection').scrollIntoView({behavior:'smooth'})">Reflection</a>
+        </div>
+      </div>
+    </div>
+
     <div class="proj-detail-content">
-      <div class="proj-detail-section">
-        <div class="proj-detail-section-label">Context</div>
-        <div class="proj-detail-h2">The book as starting point</div>
-        <p class="proj-detail-p">Hajra Waheed's <em>An Asylum in the Sea</em> is an artist book built around the experience of displacement — of bodies in open water, of documents and borders, of bureaucratic limbo. It uses found images, fragmented text, and deliberate silence. The challenge of designing editorial spreads in response to this work is not to explain it, but to extend its atmosphere without colonizing it.</p>
-        <p class="proj-detail-p">The design decisions lean into restraint: wide margins, sparse type, extended leading, and a palette pulled directly from the book's color temperature — deep navy, muted slate, near-white fog. Nothing competes. Everything listens.</p>
+
+      <!-- OVERVIEW -->
+      <div class="proj-detail-section" id="hajra-overview">
+        <div class="proj-detail-section-label">Overview</div>
+        <div class="proj-detail-h2">Designing Around the Work</div>
+        <p class="proj-detail-p">This project asked me to design exhibition spreads for Hajra Waheed's artist book <em>Asylum in the Sea</em>. The goal was to create layouts that could sit alongside her work in a real exhibition context, giving viewers information about the piece while still letting the artwork do what it needs to do.</p>
+        <p class="proj-detail-p">I ended up developing two pretty different approaches: one experimental, where the spread's design directly responds to the formal qualities of the artwork, and one more traditional, where clean structure and photography carry the layout. Both had something going for them, and the critique process helped me figure out which direction was worth pushing.</p>
       </div>
-      <div class="proj-detail-section">
-        <div class="proj-detail-section-label">Design Decisions</div>
-        <div class="proj-detail-h2">How the spreads work</div>
-        <div class="proj-detail-process-steps">
-          <div class="proj-process-step"><div class="proj-process-num">01</div><div class="proj-process-step-content"><div class="proj-process-step-title">Grid as breathing room</div><div class="proj-process-step-desc">The grid is deliberately wide-margined — text blocks occupy less than half the available space on most spreads. The silence around the words is part of the meaning.</div></div></div>
-          <div class="proj-process-step"><div class="proj-process-num">02</div><div class="proj-process-step-content"><div class="proj-process-step-title">Typography without decoration</div><div class="proj-process-step-desc">A single typeface family, light to regular weights, set at generous leading. No display sizes, no hierarchy that draws the eye away from the imagery. The type is a vessel, not a voice.</div></div></div>
-          <div class="proj-process-step"><div class="proj-process-num">03</div><div class="proj-process-step-content"><div class="proj-process-step-title">Image and text as equal partners</div><div class="proj-process-step-desc">Each spread was designed with Waheed's images in mind — text placement responds to where the eye rests in the photograph, never competing with or captioning the image.</div></div></div>
+
+      <!-- SKETCHING -->
+      <div class="proj-detail-section" id="hajra-sketching">
+        <div class="proj-detail-section-label">Sketching</div>
+        <div class="proj-detail-h2">Figuring It Out on Paper</div>
+        <p class="proj-detail-p">The first step, as always, was to create sketches. I'm not very familiar with exhibition design or sketching for that kind of layout, but I tried my best. I used simple boxes and lines and let myself experiment freely while coming up with ideas. I kept thinking about different ways to place the information while still respecting and highlighting the artwork.</p>
+        <div class="proj-img-grid proj-img-grid-2" style="margin-top:20px">
+          <div class="smt-lb-thumb" onclick="openLightbox('Hajra Waheed Asylum in the Sea/image.png')">
+            <img src="Hajra Waheed Asylum in the Sea/image.png" style="width:100%;display:block" alt="Sketches page 1">
+            <div class="smt-lb-badge">Click to zoom</div>
+          </div>
+          <div class="smt-lb-thumb" onclick="openLightbox('Hajra Waheed Asylum in the Sea/image (1).png')">
+            <img src="Hajra Waheed Asylum in the Sea/image (1).png" style="width:100%;display:block" alt="Sketches page 2">
+            <div class="smt-lb-badge">Click to zoom</div>
+          </div>
+        </div>
+        <p class="proj-img-caption">Early sketches exploring layout ideas for the exhibition spreads.</p>
+        <p class="proj-detail-p">During critique, people responded well to my idea of getting creative with the title. I also got the suggestion to create a spread directly inspired by the formal qualities of the work itself, which felt like a genuinely interesting direction to take.</p>
+      </div>
+
+      <!-- DESIGN -->
+      <div class="proj-detail-section" id="hajra-design">
+        <div class="proj-detail-section-label">Design</div>
+        <div class="proj-detail-h2">Letting the Artwork Lead</div>
+        <div class="proj-img-grid proj-img-grid-2" style="margin-bottom:20px">
+          <div class="smt-lb-thumb" onclick="openLightbox('Hajra Waheed Asylum in the Sea/kevin spreads 1 png.png')">
+            <img src="Hajra Waheed Asylum in the Sea/kevin spreads 1 png.png" style="width:100%;display:block" alt="Spread 1">
+            <div class="smt-lb-badge">Click to zoom</div>
+          </div>
+          <div class="smt-lb-thumb" onclick="openLightbox('Hajra Waheed Asylum in the Sea/kevin spreads 2 png.png')">
+            <img src="Hajra Waheed Asylum in the Sea/kevin spreads 2 png.png" style="width:100%;display:block" alt="Spread 2">
+            <div class="smt-lb-badge">Click to zoom</div>
+          </div>
+        </div>
+        <p class="proj-detail-p">Once I started laying out the spreads in InDesign, I found myself paying closer attention to the artwork and using its details to guide my design decisions. I chose an eggshell off-white background because it reflects the main color in the piece and creates a calm, clean look. I also made a wooden frame around the image to echo the way Hajra Waheed frames her work in real life, which helped the spread feel more connected to the original artwork.</p>
+        <p class="proj-detail-p">As I zoomed in on the piece, I noticed smaller visual elements that inspired more choices. I added red text to highlight important information, just as Waheed does in her work, and drew lines that connect the images to the text so the layout mirrors her style of guiding the viewer's eye. I liked stepping away from more traditional layout conventions and letting the artwork's formal qualities shape the design. It made the spread feel more intentional and let the artwork influence both the structure and the overall mood.</p>
+        <p class="proj-detail-p">My next spreads ended up being much more traditional. I really liked the photos taken of the work, so I used them to help guide how I aligned the text. I made sure the straight edges in the images lined up cleanly with the edges of the page to create a more organized look. I also enjoyed experimenting with the placement of the images and the quotes to find a balance that felt right.</p>
+        <div class="smt-lb-thumb" onclick="openLightbox('Hajra Waheed Asylum in the Sea/kevin spreads 3 png.png')" style="margin-bottom:12px">
+          <img src="Hajra Waheed Asylum in the Sea/kevin spreads 3 png.png" style="width:100%;display:block" alt="Experimental spread layout">
+          <div class="smt-lb-badge">Click to zoom</div>
+        </div>
+        <div class="smt-lb-thumb" onclick="openLightbox('Hajra Waheed Asylum in the Sea/kevin spreads 4 png.png')">
+          <img src="Hajra Waheed Asylum in the Sea/kevin spreads 4 png.png" style="width:100%;display:block" alt="Traditional spread layout">
+          <div class="smt-lb-badge">Click to zoom</div>
         </div>
       </div>
-      <div class="proj-detail-section">
-        <div class="proj-detail-section-label">Spreads</div>
-        <div class="proj-detail-h2">Final pages</div>
-        <div class="proj-img-placeholder wide"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><path d="M6 28l8-8 6 6 4-4 10 10" stroke="#ccc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Opening spread</span></div>
-        <div class="proj-img-grid proj-img-grid-2">
-          <div class="proj-img-placeholder wide"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Text + image spread</span></div>
-          <div class="proj-img-placeholder wide"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Typographic spread</span></div>
+
+      <!-- CRITIQUE -->
+      <div class="proj-detail-section" id="hajra-critique">
+        <div class="proj-detail-section-label">Critique</div>
+        <div class="proj-detail-h2">What the Room Responded To</div>
+        <p class="proj-detail-p">During the critique, everyone enjoyed looking at both designs, but Professor Kevin was especially enthusiastic about my experimental approach. He said he really liked how I committed to a concept and pushed for something unconventional that aligned with the subject matter, rather than relying on the typical structure of an exhibition spread. Although he felt my second design was well executed, he encouraged me to break out of the mold and continue iterating on the first concept.</p>
+        <p class="proj-detail-p">As for feedback, the group suggested introducing more variety in the initial spreads. Having them look so similar made them feel repetitive, so even though the concept was strong, I needed to think further about how to make each spread more engaging and distinct while still staying true to my overall vision.</p>
+        <div class="proj-img-grid proj-img-grid-2" style="margin-top:20px">
+          <div class="smt-lb-thumb" onclick="openLightbox('Hajra Waheed Asylum in the Sea/kevin spreads prefinal critique.png')">
+            <img src="Hajra Waheed Asylum in the Sea/kevin spreads prefinal critique.png" style="width:100%;display:block" alt="Pre-final critique spread 1">
+            <div class="smt-lb-badge">Click to zoom</div>
+          </div>
+          <div class="smt-lb-thumb" onclick="openLightbox('Hajra Waheed Asylum in the Sea/kevin spreads prefinal critique2.png')">
+            <img src="Hajra Waheed Asylum in the Sea/kevin spreads prefinal critique2.png" style="width:100%;display:block" alt="Pre-final critique spread 2">
+            <div class="smt-lb-badge">Click to zoom</div>
+          </div>
         </div>
-        <div class="proj-img-placeholder wide"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Closing spread</span></div>
+        <p class="proj-img-caption">The spreads brought into critique.</p>
       </div>
+
+      <!-- REVISIONS -->
+      <div class="proj-detail-section" id="hajra-revisions">
+        <div class="proj-detail-section-label">Revisions</div>
+        <div class="proj-detail-h2">Zooming In</div>
+        <p class="proj-detail-p">For the changes, I focused primarily on revising the first spread. My friend Julie mentioned that the layout almost feels like you're zooming in on the piece as you move from one spread to the next. Building on her observation, I decided to highlight the artwork in the first spread and then make the second spread feel like you've tapped in to zoom closer and see more detail in Hajra Waheed's piece. To achieve this, I extended the rectangle the piece sits on so that it breaks the frame, removed the lines I previously had, and emphasized the artwork within the image itself.</p>
+        <p class="proj-detail-p">During the critique, Professor Kevin again responded positively to my concept and creativity. He pointed out that the background behind the column and piece could be distracting, and suggested removing it so viewers can more clearly see the connection I'm trying to establish through the design and concept. Overall, the revision was well received, and he appreciated how I stepped outside the typical mold to execute a layout that responds directly to the artwork.</p>
+      </div>
+
+      <!-- FINAL -->
+      <div class="proj-detail-section" id="hajra-final">
+        <div class="proj-detail-section-label">Final</div>
+        <div class="proj-detail-h2">The Submitted Work</div>
+        <p class="proj-detail-p">After the final critique, I applied the slight changes Kevin suggested. I liked his reasoning and the direction it pushed the work, so I committed to it.</p>
+        <div class="smt-lb-thumb" onclick="openLightbox('Hajra Waheed Asylum in the Sea/kevin spreads POST CRITIQYE.png')" style="margin-bottom:12px">
+          <img src="Hajra Waheed Asylum in the Sea/kevin spreads POST CRITIQYE.png" style="width:100%;display:block" alt="Final spread 1">
+          <div class="smt-lb-badge">Click to zoom</div>
+        </div>
+        <div class="smt-lb-thumb" onclick="openLightbox('Hajra Waheed Asylum in the Sea/kevin spreads POST CRITIQYE2.png')">
+          <img src="Hajra Waheed Asylum in the Sea/kevin spreads POST CRITIQYE2.png" style="width:100%;display:block" alt="Final spread 2">
+          <div class="smt-lb-badge">Click to zoom</div>
+        </div>
+      </div>
+
+      <!-- REFLECTION -->
+      <div class="proj-detail-section" id="hajra-reflection">
+        <div class="proj-detail-section-label">Reflection</div>
+        <div class="proj-detail-h2">Breaking Out of the Norm</div>
+        <p class="proj-detail-p">I really enjoyed experimenting with these spreads. I liked thinking about how they might exist in a hypothetical space alongside the artwork, and how a visitor would experience them, making connections between the layout, the information, and the piece in front of them. I'm satisfied with the result, and I'm glad I pushed myself to break out of the norm with this project. Moving forward, I hope to continue experimenting and creating work in a similar vein when designing spreads.</p>
+      </div>
+
     </div>
   </div>
 </div>
@@ -1436,30 +1790,10 @@ audio{accent-color:#1A1A1A}
 
 <div class="proj-detail-page" id="proj-verdant-ui"><div class="proj-detail-nav"><div class="proj-detail-breadcrumb"><span onclick="showPage('ux')">UX/UI & Game Design</span><span class="sep">›</span><span style="color:#1A1A1A;font-weight:500">Verdant — UI System</span></div><div><button class="proj-nav-btn" onclick="showPage('ux')">← Back</button></div></div><div class="proj-detail-hero"><div class="proj-detail-kicker">UX/UI & Game Design · Game UI</div><div class="proj-detail-title">Verdant — UI System</div><p class="proj-detail-tagline">A complete in-game UI system for Verdant — menus, HUD, inventory, and dialogue interfaces designed to feel organic without breaking the world's visual rules.</p><div class="proj-detail-meta-row"><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">6 weeks</div></div><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">Figma, Illustrator</div></div></div></div><div class="proj-detail-cover" style="height:380px;background:#E8F0FF"><div class="proj-detail-cover-inner" style="flex-direction:column;gap:12px"><svg width="380" height="200" viewBox="0 0 380 200" fill="none"><rect x="20" y="20" width="340" height="160" rx="10" fill="#8090E0" opacity="0.2"/><rect x="36" y="36" width="100" height="70" rx="6" fill="#6070C8" opacity="0.35"/><rect x="152" y="36" width="76" height="30" rx="5" fill="#6070C8" opacity="0.3"/><rect x="152" y="74" width="76" height="30" rx="5" fill="#6070C8" opacity="0.25"/><rect x="246" y="36" width="98" height="70" rx="6" fill="#6070C8" opacity="0.2"/></svg><span style="font-size:12px;color:#6070C8;opacity:0.7;font-weight:500">[ Cover placeholder ]</span></div></div><div class="proj-detail-body" style="display:block"><div class="proj-detail-content"><div class="proj-detail-section"><div class="proj-detail-section-label">Overview</div><div class="proj-detail-h2">UI as world extension</div><p class="proj-detail-p">Lorem ipsum dolor sit amet. The Verdant UI system was designed as a companion to the level design project — a complete interface suite for the game's menus, HUD, inventory, and dialogue. The design constraint: the UI had to feel like it was grown, not built. Organic edge treatments, muted earthy tones, and hand-drawn texture elements give the interface a diegetic quality without sacrificing readability.</p></div><div class="proj-detail-section"><div class="proj-detail-section-label">Key Screens</div><div class="proj-detail-h2">The system</div><div class="proj-img-grid proj-img-grid-2"><div class="proj-img-placeholder wide"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Main menu</span></div><div class="proj-img-placeholder wide"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>In-game HUD</span></div><div class="proj-img-placeholder wide"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Inventory panel</span></div><div class="proj-img-placeholder wide"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Dialogue UI</span></div></div></div></div></div></div>
 
-<!-- Wayfinder, Petal, Sprout, Facet, Vessel, Orbit — stub detail pages -->
+<!-- Wayfinder, Petal — stub detail pages -->
 <div class="proj-detail-page" id="proj-wayfinder"><div class="proj-detail-nav"><div class="proj-detail-breadcrumb"><span onclick="showPage('ux')">UX/UI & Game Design</span><span class="sep">›</span><span style="color:#1A1A1A;font-weight:500">Wayfinder</span></div><div><button class="proj-nav-btn" onclick="showPage('ux')">← Back</button></div></div><div class="proj-detail-hero"><div class="proj-detail-kicker">UX/UI & Game Design · UX Research</div><div class="proj-detail-title">Wayfinder</div><p class="proj-detail-tagline">End-to-end UX research case study for a campus wayfinding redesign — interviews, journey maps, accessibility audit, and redesign recommendations.</p><div class="proj-detail-meta-row"><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">8 weeks · Fall 2023</div></div><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">Figma, Miro, Maze</div></div></div></div><div class="proj-detail-cover" style="height:360px;background:#E8F4FF"><div class="proj-detail-cover-inner" style="flex-direction:column;gap:12px"><svg width="360" height="180" viewBox="0 0 360 180" fill="none"><circle cx="100" cy="90" r="50" stroke="#3a90d0" stroke-width="1.5" fill="none" opacity="0.35"/><circle cx="260" cy="90" r="40" stroke="#3a90d0" stroke-width="1.5" fill="none" opacity="0.35"/><line x1="100" y1="90" x2="260" y2="90" stroke="#3a90d0" stroke-width="1.5" opacity="0.25"/><circle cx="100" cy="90" r="8" fill="#3a90d0" opacity="0.5"/><circle cx="260" cy="90" r="8" fill="#3a90d0" opacity="0.5"/><circle cx="180" cy="50" r="8" fill="#3a90d0" opacity="0.4"/></svg><span style="font-size:12px;color:#3a90d0;opacity:0.7;font-weight:500">[ Cover placeholder ]</span></div></div><div class="proj-detail-body" style="display:block"><div class="proj-detail-content"><div class="proj-detail-section"><div class="proj-detail-section-label">Overview</div><div class="proj-detail-h2">Research-first wayfinding</div><p class="proj-detail-p">Lorem ipsum dolor sit amet. Wayfinder was a research-first UX project focused on the experience of navigating UT Austin's campus — particularly for first-year students, visitors, and users with mobility needs. The project moved from 12 user interviews through affinity mapping, journey mapping, and a full accessibility audit of existing campus signage to a final set of redesign recommendations.</p></div><div class="proj-detail-section"><div class="proj-detail-section-label">Research Artifacts</div><div class="proj-detail-h2">Key deliverables</div><div class="proj-img-placeholder wide"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Affinity map — research synthesis</span></div><div class="proj-img-placeholder wide"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>User journey map</span></div></div></div></div></div>
 
 <div class="proj-detail-page" id="proj-petal"><div class="proj-detail-nav"><div class="proj-detail-breadcrumb"><span onclick="showPage('ux')">UX/UI & Game Design</span><span class="sep">›</span><span style="color:#1A1A1A;font-weight:500">Petal</span></div><div><button class="proj-nav-btn" onclick="showPage('ux')">← Back</button></div></div><div class="proj-detail-hero"><div class="proj-detail-kicker">UX/UI & Game Design · App Design</div><div class="proj-detail-title">Petal</div><p class="proj-detail-tagline">A mobile wellness app designed for gentle habit tracking — soft, non-judgmental, and built around the idea that small things compound.</p><div class="proj-detail-meta-row"><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">6 weeks · Fall 2022</div></div><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">Figma</div></div></div></div><div class="proj-detail-cover" style="height:360px;background:#FDF0FF"><div class="proj-detail-cover-inner" style="flex-direction:column;gap:12px"><svg width="280" height="180" viewBox="0 0 280 180" fill="none"><rect x="100" y="15" width="80" height="150" rx="14" fill="#C880E8" opacity="0.25"/><rect x="112" y="30" width="56" height="10" rx="4" fill="#9040C0" opacity="0.45"/><rect x="112" y="48" width="40" height="8" rx="3" fill="#9040C0" opacity="0.3"/><rect x="112" y="66" width="56" height="40" rx="8" fill="#9040C0" opacity="0.2"/></svg><span style="font-size:12px;color:#9040C0;opacity:0.7;font-weight:500">[ Cover placeholder ]</span></div></div><div class="proj-detail-body" style="display:block"><div class="proj-detail-content"><div class="proj-detail-section"><div class="proj-detail-section-label">Overview</div><div class="proj-detail-h2">Habit tracking without shame</div><p class="proj-detail-p">Lorem ipsum dolor sit amet. Petal is a wellness app designed around a single idea: most habit apps feel like report cards. Petal removes all streaks, scores, and failure states — replacing them with a growing garden visualization that reflects accumulation, not performance. The UI design prioritizes softness, breathing room, and micro-interactions that feel rewarding without being addictive.</p></div><div class="proj-detail-section"><div class="proj-detail-section-label">Key Screens</div><div class="proj-detail-h2">Screens</div><div class="proj-img-grid proj-img-grid-3"><div class="proj-img-placeholder tall"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Garden home</span></div><div class="proj-img-placeholder tall"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Log habit</span></div><div class="proj-img-placeholder tall"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Weekly reflection</span></div></div></div></div></div></div>
-
-<!-- 3D stubs -->
-<div class="proj-detail-page" id="proj-sprout"><div class="proj-detail-nav"><div class="proj-detail-breadcrumb"><span onclick="showPage('3d')">3D & Product Design</span><span class="sep">›</span><span style="color:#1A1A1A;font-weight:500">Sprout</span></div><div><button class="proj-nav-btn" onclick="showPage('3d')">← Back</button></div></div><div class="proj-detail-hero"><div class="proj-detail-kicker">3D & Product Design · Product Design</div><div class="proj-detail-title">Sprout — Planter System</div><p class="proj-detail-tagline">A modular planter system designed for small-space urban living — stackable, self-watering, and made from recycled polymer.</p><div class="proj-detail-meta-row"><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">5 weeks</div></div><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">Blender, Procreate</div></div></div></div><div class="proj-detail-cover" style="height:360px;background:#EEFFF5"><div class="proj-detail-cover-inner" style="flex-direction:column;gap:12px"><svg width="280" height="200" viewBox="0 0 280 200" fill="none"><ellipse cx="140" cy="175" rx="70" ry="15" fill="#50C880" opacity="0.2"/><path d="M90 160 L90 70 Q90 55 105 55 L175 55 Q190 55 190 70 L190 160 Z" fill="#60D890" opacity="0.3"/><rect x="108" y="88" width="64" height="44" rx="8" fill="#30A860" opacity="0.35"/></svg><span style="font-size:12px;color:#30A860;opacity:0.7;font-weight:500">[ Cover placeholder ]</span></div></div><div class="proj-detail-body" style="display:block"><div class="proj-detail-content"><div class="proj-detail-section"><div class="proj-detail-section-label">Overview</div><div class="proj-detail-h2">Designing for small spaces</div><p class="proj-detail-p">Lorem ipsum dolor sit amet. Sprout is a modular planter system designed around one constraint: it must work in a studio apartment with no outdoor space. The stackable modules use passive water-wicking technology, meaning the reservoirs are filled from the bottom and the substrate draws water up as needed — eliminating overwatering as a failure mode. The form language is rounded and friendly; the material is recycled HDPE in a matte speckle finish.</p></div><div class="proj-detail-section"><div class="proj-detail-section-label">Process & Renders</div><div class="proj-detail-h2">Development</div><div class="proj-img-grid proj-img-grid-2"><div class="proj-img-placeholder wide"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Sketch development</span></div><div class="proj-img-placeholder wide"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Final render</span></div></div></div></div></div></div>
-
-<div class="proj-detail-page" id="proj-facet"><div class="proj-detail-nav"><div class="proj-detail-breadcrumb"><span onclick="showPage('3d')">3D & Product Design</span><span class="sep">›</span><span style="color:#1A1A1A;font-weight:500">Facet</span></div><div><button class="proj-nav-btn" onclick="showPage('3d')">← Back</button></div></div><div class="proj-detail-hero"><div class="proj-detail-kicker">3D & Product Design · Lamp / Prototype</div><div class="proj-detail-title">Facet — Lamp Prototype</div><p class="proj-detail-tagline">A parametric table lamp built from folded aluminum panels — exploring how repetitive geometric facets can distribute light and create form simultaneously.</p><div class="proj-detail-meta-row"><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">6 weeks · Spring 2023</div></div><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">Blender, Grasshopper (concept), hand-built prototype</div></div></div></div><div class="proj-detail-cover" style="height:360px;background:#FFFAF0"><div class="proj-detail-cover-inner" style="flex-direction:column;gap:12px"><svg width="280" height="200" viewBox="0 0 280 200" fill="none"><path d="M140 30 L200 90 L200 165 L140 180 L80 165 L80 90 Z" fill="#E8C840" opacity="0.3"/><path d="M140 30 L200 90 L140 110 L80 90 Z" fill="#D0A820" opacity="0.25"/><path d="M140 110 L200 90 L200 165 L140 180 Z" fill="#B89010" opacity="0.2"/></svg><span style="font-size:12px;color:#C0A820;opacity:0.7;font-weight:500">[ Cover placeholder ]</span></div></div><div class="proj-detail-body" style="display:block"><div class="proj-detail-content"><div class="proj-detail-section"><div class="proj-detail-section-label">Overview</div><div class="proj-detail-h2">Form follows facet</div><p class="proj-detail-p">Lorem ipsum dolor sit amet. Facet started as a parametric study in Grasshopper — exploring how geometric folding patterns change the quality of light diffusion. The concept was developed into a physical prototype using hand-cut and folded aluminum sheet, proving that the digital form could be manufactured with basic tools. The final lamp creates dramatic shadow patterns at low angles and diffuses softly when the source is overhead.</p></div><div class="proj-detail-section"><div class="proj-detail-section-label">Work</div><div class="proj-img-grid proj-img-grid-2"><div class="proj-img-placeholder wide"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Blender model — multiple views</span></div><div class="proj-img-placeholder wide"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Physical prototype — lit</span></div></div></div></div></div></div>
-
-<div class="proj-detail-page" id="proj-vessel"><div class="proj-detail-nav"><div class="proj-detail-breadcrumb"><span onclick="showPage('3d')">3D & Product Design</span><span class="sep">›</span><span style="color:#1A1A1A;font-weight:500">Vessel</span></div><div><button class="proj-nav-btn" onclick="showPage('3d')">← Back</button></div></div><div class="proj-detail-hero"><div class="proj-detail-kicker">3D & Product Design · Product Design</div><div class="proj-detail-title">Vessel — Water Bottle</div><p class="proj-detail-tagline">A water bottle concept exploring the ergonomics of single-handed use — grip geometry, balance point, and cap interaction all designed for one hand.</p><div class="proj-detail-meta-row"><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">4 weeks · Fall 2023</div></div><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">Blender, Procreate</div></div></div></div><div class="proj-detail-cover" style="height:360px;background:#F0F8FF"><div class="proj-detail-cover-inner" style="flex-direction:column;gap:12px"><svg width="260" height="200" viewBox="0 0 260 200" fill="none"><rect x="90" y="50" width="80" height="120" rx="18" fill="#80B8E8" opacity="0.35"/><rect x="105" y="28" width="50" height="26" rx="10" fill="#60A0D8" opacity="0.3"/><ellipse cx="130" cy="172" rx="40" ry="10" fill="#4080B8" opacity="0.2"/></svg><span style="font-size:12px;color:#4080B8;opacity:0.7;font-weight:500">[ Cover placeholder ]</span></div></div><div class="proj-detail-body" style="display:block"><div class="proj-detail-content"><div class="proj-detail-section"><div class="proj-detail-section-label">Overview</div><div class="proj-detail-h2">Designed for the hand</div><p class="proj-detail-p">Lorem ipsum dolor sit amet. Vessel is a water bottle concept built around one ergonomic constraint: everything must be operable with one hand without shifting grip. The cap opens with a quarter-turn from thumb pressure, the body tapers toward a natural grip zone, and the balance point is calibrated for full, half, and empty fill levels. The form was developed from hand-drawn sketches to Blender model to final rendered views.</p></div><div class="proj-detail-section"><div class="proj-detail-section-label">Development</div><div class="proj-img-grid proj-img-grid-2"><div class="proj-img-placeholder wide"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Sketch development sheets</span></div><div class="proj-img-placeholder wide"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Final render — 3 colorways</span></div></div></div></div></div></div>
-
-<div class="proj-detail-page" id="proj-orbit"><div class="proj-detail-nav"><div class="proj-detail-breadcrumb"><span onclick="showPage('3d')">3D & Product Design</span><span class="sep">›</span><span style="color:#1A1A1A;font-weight:500">Orbit</span></div><div><button class="proj-nav-btn" onclick="showPage('3d')">← Back</button></div></div><div class="proj-detail-hero"><div class="proj-detail-kicker">3D & Product Design · Concept Design</div><div class="proj-detail-title">Orbit — Desk Clock</div><p class="proj-detail-tagline">A desk clock concept where time is expressed through concentric rings rather than hands — a study in minimalism and kinetic legibility.</p><div class="proj-detail-meta-row"><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">3 weeks · Fall 2022</div></div><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">Blender, Procreate</div></div></div></div><div class="proj-detail-cover" style="height:360px;background:#FFF5F8"><div class="proj-detail-cover-inner" style="flex-direction:column;gap:12px"><svg width="260" height="200" viewBox="0 0 260 200" fill="none"><circle cx="130" cy="100" r="70" fill="#F0A0B8" opacity="0.25"/><circle cx="130" cy="100" r="50" fill="#E07090" opacity="0.2"/><circle cx="130" cy="100" r="30" fill="#C04060" opacity="0.25"/><circle cx="130" cy="100" r="10" fill="#C04060" opacity="0.35"/></svg><span style="font-size:12px;color:#C04060;opacity:0.7;font-weight:500">[ Cover placeholder ]</span></div></div><div class="proj-detail-body" style="display:block"><div class="proj-detail-content"><div class="proj-detail-section"><div class="proj-detail-section-label">Overview</div><div class="proj-detail-h2">Time as orbit</div><p class="proj-detail-p">Lorem ipsum dolor sit amet. Orbit is an early concept project exploring an alternative way of displaying time. Three concentric rings rotate at different speeds — hours, minutes, seconds — with a fixed reading marker. The aesthetic is inspired by planetary mechanics and orrery design. The project focused on developing the concept through rapid sketch ideation before producing a final Blender model and rendered views.</p></div><div class="proj-detail-section"><div class="proj-detail-section-label">Work</div><div class="proj-img-placeholder wide"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Final render</span></div></div></div></div></div></div>
-
-<!-- Motion stubs -->
-<div class="proj-detail-page" id="proj-pulse"><div class="proj-detail-nav"><div class="proj-detail-breadcrumb"><span onclick="showPage('motion')">Motion Graphics & Videography</span><span class="sep">›</span><span style="color:#1A1A1A;font-weight:500">Pulse</span></div><div><button class="proj-nav-btn" onclick="showPage('motion')">← Back</button></div></div><div class="proj-detail-hero"><div class="proj-detail-kicker">Motion Graphics & Videography · Kinetic Typography</div><div class="proj-detail-title">Pulse</div><p class="proj-detail-tagline">A one-minute kinetic typography piece set to an original music track — letterforms that breathe, spike, and collapse with the audio waveform.</p><div class="proj-detail-meta-row"><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">3 weeks · Spring 2024</div></div><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">After Effects, Illustrator</div></div></div></div><div class="proj-detail-cover" style="height:360px;background:#E8F8FF"><div class="proj-detail-cover-inner" style="flex-direction:column;gap:12px"><svg width="380" height="180" viewBox="0 0 380 180" fill="none"><path d="M20 100 Q80 20 140 90 Q200 160 260 60 Q320 20 380 100" stroke="#4498D8" stroke-width="3" fill="none" opacity="0.4"/><circle cx="20" cy="100" r="6" fill="#4498D8" opacity="0.5"/><circle cx="140" cy="90" r="6" fill="#4498D8" opacity="0.5"/><circle cx="260" cy="60" r="6" fill="#4498D8" opacity="0.5"/><circle cx="380" cy="100" r="6" fill="#4498D8" opacity="0.5"/></svg><span style="font-size:12px;color:#4498D8;opacity:0.7;font-weight:500">[ Cover placeholder — still frame ]</span></div></div><div class="proj-detail-body" style="display:block"><div class="proj-detail-content"><div class="proj-detail-section"><div class="proj-detail-section-label">Overview</div><div class="proj-detail-h2">Type that moves with sound</div><p class="proj-detail-p">Lorem ipsum dolor sit amet. Pulse was a kinetic typography project driven by a single brief: make text feel like music. The one-minute piece uses a custom track (produced in GarageBand) as the structural backbone — every typographic movement is synced to a beat, breath, or note. The letterforms stretch, collapse, rotate, and blur in direct response to the audio, creating the sensation that the text is alive.</p></div><div class="proj-detail-section"><div class="proj-detail-section-label">Work</div><div class="proj-img-placeholder wide"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="14" stroke="#ccc" stroke-width="1.5"/><polygon points="16,14 16,26 28,20" fill="#ccc"/></svg><span>Pulse — 1 min [ video placeholder ]</span></div><div class="proj-img-grid proj-img-grid-3"><div class="proj-img-placeholder wide"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Frame 00:08</span></div><div class="proj-img-placeholder wide"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Frame 00:32</span></div><div class="proj-img-placeholder wide"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Frame 00:54</span></div></div></div></div></div></div>
-
-<div class="proj-detail-page" id="proj-golden-hour"><div class="proj-detail-nav"><div class="proj-detail-breadcrumb"><span onclick="showPage('motion')">Motion Graphics & Videography</span><span class="sep">›</span><span style="color:#1A1A1A;font-weight:500">Golden Hour</span></div><div><button class="proj-nav-btn" onclick="showPage('motion')">← Back</button></div></div><div class="proj-detail-hero"><div class="proj-detail-kicker">Motion Graphics & Videography · Title Sequence</div><div class="proj-detail-title">Golden Hour</div><p class="proj-detail-tagline">A broadcast title sequence for a fictional documentary series about contemporary craft makers — warm, unhurried, and typographically grounded.</p><div class="proj-detail-meta-row"><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">4 weeks</div></div><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">After Effects, Illustrator</div></div></div></div><div class="proj-detail-cover" style="height:360px;background:#FFF8E0"><div class="proj-detail-cover-inner" style="flex-direction:column;gap:12px"><svg width="380" height="180" viewBox="0 0 380 180" fill="none"><rect x="40" y="40" width="300" height="100" rx="10" fill="#E8C840" opacity="0.3"/><rect x="64" y="60" width="252" height="16" rx="5" fill="#C0A020" opacity="0.5"/><rect x="64" y="84" width="180" height="12" rx="4" fill="#C0A020" opacity="0.3"/></svg><span style="font-size:12px;color:#C0A020;opacity:0.7;font-weight:500">[ Cover placeholder — still frame ]</span></div></div><div class="proj-detail-body" style="display:block"><div class="proj-detail-content"><div class="proj-detail-section"><div class="proj-detail-section-label">Overview</div><div class="proj-detail-h2">Broadcast with texture</div><p class="proj-detail-p">Lorem ipsum dolor sit amet. Golden Hour is a 30-second title sequence designed for a fictional documentary series about contemporary craft makers — potters, weavers, glassblowers, and woodworkers. The visual language is warm and tactile: filmed textures (grain, linen, bark) play behind slow-moving type, with a color palette of deep amber, burnt sienna, and warm cream. The motion is deliberate and patient — matching the pace of hand-made things.</p></div><div class="proj-detail-section"><div class="proj-detail-section-label">Work</div><div class="proj-img-placeholder wide"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="14" stroke="#ccc" stroke-width="1.5"/><polygon points="16,14 16,26 28,20" fill="#ccc"/></svg><span>Golden Hour title sequence — 30 sec [ video ]</span></div></div></div></div></div></div>
-
-<div class="proj-detail-page" id="proj-bloom-loop"><div class="proj-detail-nav"><div class="proj-detail-breadcrumb"><span onclick="showPage('motion')">Motion Graphics & Videography</span><span class="sep">›</span><span style="color:#1A1A1A;font-weight:500">Bloom Loop</span></div><div><button class="proj-nav-btn" onclick="showPage('motion')">← Back</button></div></div><div class="proj-detail-hero"><div class="proj-detail-kicker">Motion Graphics & Videography · Social Animation</div><div class="proj-detail-title">Bloom Loop</div><p class="proj-detail-tagline">A seamlessly looping animation designed for social media — floral forms expanding and collapsing in a continuous, meditative cycle.</p><div class="proj-detail-meta-row"><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">2 weeks · Fall 2023</div></div><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">After Effects, Illustrator</div></div></div></div><div class="proj-detail-cover" style="height:360px;background:#F8F0FF"><div class="proj-detail-cover-inner"><svg width="260" height="200" viewBox="0 0 260 200" fill="none"><circle cx="130" cy="100" r="70" fill="#B880E8" opacity="0.25"/><circle cx="130" cy="100" r="48" fill="#9050C0" opacity="0.2"/><path d="M88 100 Q130 54 172 100 Q130 146 88 100Z" fill="#7030A0" opacity="0.3"/></svg></div></div><div class="proj-detail-body" style="display:block"><div class="proj-detail-content"><div class="proj-detail-section"><div class="proj-detail-section-label">Overview</div><p class="proj-detail-p">Lorem ipsum dolor sit amet. Bloom Loop is a social-first animation designed around the seamless loop — where the last frame is identical to the first so the animation plays infinitely without a visible reset. The floral forms use After Effects expressions to drive their timing, meaning the animation is generative rather than hand-keyframed at every point. The piece was designed for Instagram at 1:1 and 9:16 aspect ratios.</p></div><div class="proj-detail-section"><div class="proj-detail-section-label">Work</div><div class="proj-img-placeholder wide"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="14" stroke="#ccc" stroke-width="1.5"/><polygon points="16,14 16,26 28,20" fill="#ccc"/></svg><span>Bloom Loop [ video — 8 sec loop ]</span></div></div></div></div></div></div>
-
-<div class="proj-detail-page" id="proj-roots"><div class="proj-detail-nav"><div class="proj-detail-breadcrumb"><span onclick="showPage('motion')">Motion Graphics & Videography</span><span class="sep">›</span><span style="color:#1A1A1A;font-weight:500">Roots</span></div><div><button class="proj-nav-btn" onclick="showPage('motion')">← Back</button></div></div><div class="proj-detail-hero"><div class="proj-detail-kicker">Motion Graphics & Videography · Documentary</div><div class="proj-detail-title">Roots</div><p class="proj-detail-tagline">A 4-minute short documentary about a community garden in East Austin — told through intimate handheld footage, ambient sound, and minimal narration.</p><div class="proj-detail-meta-row"><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">6 weeks · Fall 2023</div></div><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">Premiere Pro, Audition</div></div></div></div><div class="proj-detail-cover" style="height:360px;background:#F0FFF8"><div class="proj-detail-cover-inner" style="flex-direction:column;gap:12px"><svg width="380" height="180" viewBox="0 0 380 180" fill="none"><rect x="20" y="40" width="160" height="120" rx="8" fill="#60C890" opacity="0.25"/><rect x="200" y="20" width="160" height="150" rx="8" fill="#40A870" opacity="0.2"/></svg><span style="font-size:12px;color:#30A060;opacity:0.7;font-weight:500">[ Cover placeholder — film still ]</span></div></div><div class="proj-detail-body" style="display:block"><div class="proj-detail-content"><div class="proj-detail-section"><div class="proj-detail-section-label">Overview</div><p class="proj-detail-p">Lorem ipsum dolor sit amet. Roots is a short documentary about a community garden in East Austin — specifically about three gardeners who have tended the same plots for over a decade. The film is observational: handheld footage, ambient sound, and interview fragments. No voiceover, no music score, no exposition. The editorial approach lets the textures of the space — dirt, water, light through leaves — carry the emotional weight.</p></div><div class="proj-detail-section"><div class="proj-detail-section-label">Stills</div><div class="proj-img-grid proj-img-grid-3"><div class="proj-img-placeholder wide"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Film still 01</span></div><div class="proj-img-placeholder wide"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Film still 02</span></div><div class="proj-img-placeholder wide"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Film still 03</span></div></div></div></div></div></div>
-
-<div class="proj-detail-page" id="proj-peak"><div class="proj-detail-nav"><div class="proj-detail-breadcrumb"><span onclick="showPage('motion')">Motion Graphics & Videography</span><span class="sep">›</span><span style="color:#1A1A1A;font-weight:500">Peak</span></div><div><button class="proj-nav-btn" onclick="showPage('motion')">← Back</button></div></div><div class="proj-detail-hero"><div class="proj-detail-kicker">Motion Graphics & Videography · Logo Animation</div><div class="proj-detail-title">Peak — Animated Logo</div><p class="proj-detail-tagline">A logo animation for a fictional outdoor apparel brand — the mountain-form mark builds, breathes, and resolves in under 3 seconds.</p><div class="proj-detail-meta-row"><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">2 weeks · Fall 2023</div></div><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">After Effects, Illustrator</div></div></div></div><div class="proj-detail-cover" style="height:360px;background:#FFF5F0"><div class="proj-detail-cover-inner"><svg width="380" height="180" viewBox="0 0 380 180" fill="none"><path d="M60 155 L150 40 L240 110 L300 70 L360 155 Z" fill="#F09060" opacity="0.3" stroke="#D07040" stroke-width="1.5"/></svg></div></div><div class="proj-detail-body" style="display:block"><div class="proj-detail-content"><div class="proj-detail-section"><div class="proj-detail-section-label">Overview</div><p class="proj-detail-p">Lorem ipsum dolor sit amet. Peak is a logo animation project for a fictional outdoor apparel brand. The brief asked for a 2–3 second logo reveal that would work as a pre-roll ident, social avatar animation, and loading screen. The mark — a stylized mountain — draws itself using trim path animations, then settles with a subtle breathing loop. The timing was calibrated to feel confident, not flashy.</p></div><div class="proj-detail-section"><div class="proj-detail-section-label">Work</div><div class="proj-img-placeholder wide"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="14" stroke="#ccc" stroke-width="1.5"/><polygon points="16,14 16,26 28,20" fill="#ccc"/></svg><span>Peak animation — 3 sec [ video ]</span></div></div></div></div></div></div>
 
 <!-- Archive stubs -->
 <div class="proj-detail-page" id="proj-fragments"><div class="proj-detail-nav"><div class="proj-detail-breadcrumb"><span onclick="showPage('archive')">Archive</span><span class="sep">›</span><span style="color:#1A1A1A;font-weight:500">Fragments</span></div><div><button class="proj-nav-btn" onclick="showPage('archive')">← Back</button></div></div><div class="proj-detail-hero"><div class="proj-detail-kicker">Archive · Digital Collage</div><div class="proj-detail-title">Fragments</div><p class="proj-detail-tagline">A personal collage series exploring memory, materiality, and the aesthetics of the found — made over two weeks as a self-assigned visual experiment.</p><div class="proj-detail-meta-row"><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Year</div><div class="proj-detail-meta-val">2024</div></div><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">Photoshop, Procreate</div></div></div></div><div class="proj-detail-cover" style="height:360px;background:#F4F4F4"><div class="proj-detail-cover-inner" style="flex-direction:column;gap:12px"><svg width="360" height="180" viewBox="0 0 360 180" fill="none"><rect x="20" y="30" width="100" height="120" rx="6" fill="#bbb" opacity="0.4"/><rect x="140" y="60" width="80" height="80" rx="5" fill="#ccc" opacity="0.35"/><rect x="240" y="20" width="100" height="150" rx="5" fill="#aaa" opacity="0.4"/></svg><span style="font-size:12px;color:#888;opacity:0.7;font-weight:500">[ Cover placeholder ]</span></div></div><div class="proj-detail-body" style="display:block"><div class="proj-detail-content"><div class="proj-detail-section"><div class="proj-detail-section-label">Overview</div><p class="proj-detail-p">Lorem ipsum dolor sit amet. Fragments is a personal collage series made during a two-week creative sprint — sourcing imagery from scanned paper, fabric textures, and found photography to build layered compositions that feel like disassembled memories. No brief, no deliverable: just an exercise in making something by feel.</p></div><div class="proj-detail-section"><div class="proj-detail-section-label">Series</div><div class="proj-img-grid proj-img-grid-3"><div class="proj-img-placeholder square"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Fragment 01</span></div><div class="proj-img-placeholder square"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Fragment 02</span></div><div class="proj-img-placeholder square"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Fragment 03</span></div></div></div></div></div></div>
@@ -2839,7 +3173,10 @@ function showProject(slug) {
   if (pg) pg.classList.add('active');
   window.scrollTo(0, 0);
   closeWorksMenu();
-  if (slug === 'persona5-type') initP5Flipbook();
+  renderMoreProjects(slug);
+  if (slug === 'persona5-type') {
+    initP5Flipbook();
+  }
 }
 
 // ── WORKS DROPDOWN ──
@@ -2975,11 +3312,15 @@ async function p5HeroRenderPage(pageNum, canvasId) {
   if (!pageNum) { canvas.style.display = 'none'; return; }
   canvas.style.display = 'block';
   const page = await p5HeroPdf.getPage(pageNum);
-  const viewport = page.getViewport({ scale: 1.8 });
+  var natural = page.getViewport({ scale: 1 });
+  var dpr = window.devicePixelRatio || 1;
+  var targetW = 440 * Math.min(dpr, 3);
+  var scale = targetW / natural.width;
+  var viewport = page.getViewport({ scale: scale });
   canvas.width = viewport.width;
   canvas.height = viewport.height;
-  canvas.style.height = '100%';
-  canvas.style.width = 'auto';
+  canvas.style.width = '100%';
+  canvas.style.height = 'auto';
   await page.render({ canvasContext: canvas.getContext('2d'), viewport }).promise;
 }
 
@@ -2993,6 +3334,10 @@ async function p5HeroShowView(idx, initial) {
   }
   const view = p5HeroViews[idx];
   await Promise.all([p5HeroRenderPage(view[0], 'p5-hero-left'), p5HeroRenderPage(view[1], 'p5-hero-right')]);
+  var leftCanvas = document.getElementById('p5-hero-left');
+  var isSingle = !view[1];
+  if (leftCanvas) leftCanvas.style.maxWidth = isSingle ? '50%' : '';
+  spread.style.justifyContent = isSingle ? 'center' : '';
   p5HeroIdx = idx;
   document.querySelectorAll('.p5-hero-dot').forEach(function(d, i) { d.classList.toggle('active', i === idx); });
   spread.style.opacity = '1';
@@ -3002,7 +3347,113 @@ async function p5HeroShowView(idx, initial) {
 function p5HeroPrev() { if (!p5Transitioning && p5HeroIdx > 0) p5HeroShowView(p5HeroIdx - 1); }
 function p5HeroNext() { if (!p5Transitioning && p5HeroIdx < p5HeroViews.length - 1) p5HeroShowView(p5HeroIdx + 1); }
 function p5HeroGoto(idx) { if (!p5Transitioning && idx !== p5HeroIdx) p5HeroShowView(idx); }
+
+// ── BACK TO TOP ──
+window.addEventListener('scroll', function() {
+  var btn = document.getElementById('btt-btn');
+  if (btn) btn.classList.toggle('visible', window.scrollY > 300);
+});
+document.addEventListener('DOMContentLoaded', function() {
+  var btn = document.getElementById('btt-btn');
+  if (btn) btn.addEventListener('click', function() { window.scrollTo({top:0, behavior:'smooth'}); });
+});
+
+// ── MORE PROJECTS DATA ──
+var projMeta = {
+  // ── Graphic (all 6 from page-graphic grid) ──
+  'persona5-type':   {title:'Typography in Persona 5',   cat:'graphic', catLabel:'2D & Graphic Design', sub:'Book Design',      accent:'accent-graphic'},
+  'high-noon-livery':{title:'High Noon Livery',          cat:'graphic', catLabel:'2D & Graphic Design', sub:'Livery Design',    accent:'accent-graphic'},
+  'hajra-waheed':    {title:"Watermarks: Hajra Waheed's Asylum in the Sea", cat:'graphic', catLabel:'2D & Graphic Design', sub:'Editorial Spreads', accent:'accent-graphic'},
+  'logos-branding':  {title:'Logos & Branding',          cat:'graphic', catLabel:'2D & Graphic Design', sub:'Brand Identity',   accent:'accent-graphic'},
+  'merchandise':     {title:'Merchandise',               cat:'graphic', catLabel:'2D & Graphic Design', sub:'Merch Design',     accent:'accent-graphic'},
+  'posters':         {title:'Posters',                   cat:'graphic', catLabel:'2D & Graphic Design', sub:'Poster Design',    accent:'accent-graphic'},
+  // ── UX (all 5 from page-ux grid) ──
+  'quest-app':       {title:'Quest Companion App',       cat:'ux',      catLabel:'UX/UI & Game Design', sub:'App Design',       accent:'accent-ux'},
+  'verdant-ui':      {title:'Verdant — UI System',       cat:'ux',      catLabel:'UX/UI & Game Design', sub:'Game UI',          accent:'accent-ux'},
+  'verdant-level':   {title:'Verdant — Level Design',    cat:'ux',      catLabel:'UX/UI & Game Design', sub:'Level Design',     accent:'accent-ux'},
+  'wayfinder':       {title:'Wayfinder',                 cat:'ux',      catLabel:'UX/UI & Game Design', sub:'UX Research',      accent:'accent-ux'},
+  'petal':           {title:'Petal',                     cat:'ux',      catLabel:'UX/UI & Game Design', sub:'App Design',       accent:'accent-ux'},
+  // ── 3D (only the 4 listed on page-3d grid) ──
+  'ecoleander':      {title:'The Ecoleander',            cat:'3d',      catLabel:'3D & Product Design', sub:'Product Design',   accent:'accent-3d'},
+  'smrutea':         {title:'Smrutea',                   cat:'3d',      catLabel:'3D & Product Design', sub:'Product Design',   accent:'accent-3d'},
+  'flipula':         {title:'The Flipula',               cat:'3d',      catLabel:'3D & Product Design', sub:'Product Design',   accent:'accent-3d'},
+  'adobe-cabin':     {title:'Dream Cabin: Adobe Revival',cat:'3d',      catLabel:'3D & Product Design', sub:'Architecture',     accent:'accent-3d'},
+  // ── Archive (all 4 from page-archive grid) ──
+  'fragments':       {title:'Fragments',                 cat:'archive', catLabel:'Archive',              sub:'Digital Collage',  accent:'accent-archive'},
+  'sketchbook':      {title:'Sketchbook Vol. 3',         cat:'archive', catLabel:'Archive',              sub:'Sketchbook',       accent:'accent-archive'},
+  'type-study':      {title:'Type Study',                cat:'archive', catLabel:'Archive',              sub:'Typography',       accent:'accent-archive'},
+  'systems':         {title:'Systems',                   cat:'archive', catLabel:'Archive',              sub:'Information Design',accent:'accent-archive'}
+};
+
+function renderMoreProjects(slug) {
+  var pageEl = document.getElementById('proj-' + slug);
+  if (!pageEl) return;
+  if (pageEl.querySelector('.more-projs')) return;
+  var meta = projMeta[slug];
+  if (!meta) return;
+  var siblings = Object.keys(projMeta).filter(function(s) {
+    return s !== slug && projMeta[s].cat === meta.cat;
+  }).slice(0, 3);
+  if (!siblings.length) return;
+
+  var grid = document.createElement('div');
+  grid.className = 'more-projs-grid';
+
+  siblings.forEach(function(s) {
+    var m = projMeta[s];
+
+    // Clone thumbnail from the existing discipline-page card
+    var srcThumb = document.querySelector('[onclick="showProject(\'' + s + '\')"] .proj-thumb-inner');
+    var thumbNode;
+    if (srcThumb) {
+      thumbNode = srcThumb.cloneNode(true);
+      // Swap class so our CSS sizing rules apply
+      thumbNode.className = thumbNode.className.replace(/\bproj-thumb-inner\b/, 'more-proj-thumb-inner');
+      if (!/\bmore-proj-thumb-inner\b/.test(thumbNode.className)) {
+        thumbNode.className = 'more-proj-thumb-inner ' + thumbNode.className;
+      }
+      // Remove any hover overlay that may have been inside proj-thumb (sibling, not child — but safety)
+      thumbNode.querySelectorAll('.proj-hover').forEach(function(el) { el.remove(); });
+      // Lazy-load any images inside
+      thumbNode.querySelectorAll('img').forEach(function(img) { img.loading = 'lazy'; img.decoding = 'async'; });
+    } else {
+      thumbNode = document.createElement('div');
+      thumbNode.className = 'more-proj-thumb-inner ' + m.accent;
+    }
+
+    var item = document.createElement('div');
+    item.className = 'more-proj-item';
+    item.setAttribute('onclick', 'showProject(\'' + s + '\')');
+
+    var thumb = document.createElement('div');
+    thumb.className = 'more-proj-thumb';
+    thumb.appendChild(thumbNode);
+
+    var foot = document.createElement('div');
+    foot.className = 'more-proj-foot';
+    foot.innerHTML =
+      '<div><div class="more-proj-name">' + m.title + '</div>' +
+      '<div class="more-proj-sub">' + m.sub + '</div></div>' +
+      '<span class="more-proj-arr">→</span>';
+
+    item.appendChild(thumb);
+    item.appendChild(foot);
+    grid.appendChild(item);
+  });
+
+  var wrap = document.createElement('div');
+  wrap.className = 'more-projs';
+  var head = document.createElement('div');
+  head.className = 'more-projs-head';
+  head.innerHTML =
+    '<div class="more-projs-label">More in ' + meta.catLabel + '</div>' +
+    '<span class="more-projs-all" onclick="showPage(\'' + meta.cat + '\')">See all →</span>';
+  wrap.appendChild(head);
+  wrap.appendChild(grid);
+  pageEl.appendChild(wrap);
+}
 </script>
+<button class="btt" id="btt-btn" aria-label="Back to top"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 11V3M7 3L3 7M7 3L11 7" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
 </body>
 </html>
 
