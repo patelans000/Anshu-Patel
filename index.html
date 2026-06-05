@@ -430,6 +430,41 @@ audio{accent-color:#1A1A1A}
 .p5-hero-dots{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);display:flex;gap:6px;z-index:20}
 .p5-hero-dot{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,0.22);cursor:pointer;transition:background 0.25s,transform 0.25s}
 .p5-hero-dot.active{background:rgba(255,255,255,0.85);transform:scale(1.25)}
+/* ── POSTER GALLERY & DRAWER ── */
+.poster-gallery{padding:48px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.poster-card{display:flex;flex-direction:column}
+.poster-card-img{aspect-ratio:2/3;overflow:hidden;background:#fff;border:1px solid var(--border);position:relative}
+.poster-card-img img{width:100%;height:100%;object-fit:contain;display:block;transition:transform 0.4s ease}
+.poster-card-img:hover img{transform:scale(1.04)}
+.poster-card-foot{padding:10px 0 0;display:flex;justify-content:space-between;align-items:center;gap:6px}
+.poster-card-name{font-size:13px;font-weight:500;color:#1A1A1A}
+.poster-process-btn{font-size:12px;color:var(--muted);background:none;border:none;padding:0;cursor:pointer;font-family:inherit;text-decoration:underline;text-underline-offset:2px;transition:color 0.15s;white-space:nowrap;flex-shrink:0}
+.poster-process-btn:hover{color:#1A1A1A}
+.poster-title-reel{position:absolute;top:0;left:0;height:100%;display:flex;align-items:stretch;animation:poster-title-scroll 26s linear infinite}
+.poster-reel-img{height:100%;width:auto;display:block;flex-shrink:0;object-fit:contain;background:#fff}
+.proj:hover .poster-title-reel{animation-play-state:paused}
+@keyframes poster-title-scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.poster-drawer-overlay{position:fixed;inset:0;background:rgba(0,0,0,0);pointer-events:none;z-index:900;transition:background 0.3s}
+.poster-drawer-overlay.open{background:rgba(0,0,0,0.5);pointer-events:all}
+.poster-drawer{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid var(--border);border-radius:16px 16px 0 0;z-index:901;transform:translateY(100%);transition:transform 0.38s cubic-bezier(0.32,0.72,0,1);max-height:82vh;display:flex;flex-direction:column;box-shadow:0 -8px 40px rgba(0,0,0,0.14)}
+.poster-drawer.open{transform:translateY(0)}
+.poster-drawer-bar{display:flex;justify-content:center;padding:12px 0 0;flex-shrink:0;cursor:pointer}
+.poster-drawer-bar span{width:36px;height:4px;background:#ddd;border-radius:2px;display:block}
+.poster-drawer-header{display:flex;justify-content:space-between;align-items:center;padding:8px 40px 14px;border-bottom:1px solid var(--border);flex-shrink:0}
+.poster-drawer-title-text{font-family:'Fredoka',sans-serif;font-size:22px;font-weight:600}
+.poster-drawer-close{background:none;border:1px solid var(--border);border-radius:100px;padding:5px 14px;font-size:12px;cursor:pointer;font-family:inherit;color:var(--muted);transition:all 0.15s}
+.poster-drawer-close:hover{color:#1A1A1A;border-color:#bbb}
+.poster-drawer-scroll{overflow-y:auto;flex:1;min-height:0}
+.poster-drawer-body{padding:40px;max-width:640px;margin:0 auto}
+.poster-process-content{display:none}
+.poster-process-content.active{display:block}
+.poster-process-section{margin-bottom:40px}
+.poster-process-section:last-child{margin-bottom:0}
+@media(max-width:768px){.poster-gallery{padding:28px 20px 40px;grid-template-columns:repeat(2,1fr);gap:14px}.poster-drawer-header{padding:8px 20px 12px}.poster-drawer-body{padding:24px 20px}}
+#proj-logos-branding .proj-detail-content{max-width:680px;padding:48px 48px;margin:0 auto}
+#proj-logos-branding .proj-detail-content img{width:100%;height:auto;display:block}
+#proj-logos-branding .proj-detail-sidebar::-webkit-scrollbar{display:none}
+#proj-logos-branding .proj-detail-sidebar{-ms-overflow-style:none;scrollbar-width:none}
 /* ── BACK TO TOP ── */
 .btt{position:fixed;bottom:28px;right:28px;width:42px;height:42px;background:#1A1A1A;border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:500;opacity:0;pointer-events:none;transform:translateY(8px);transition:opacity 0.2s,transform 0.2s;box-shadow:0 2px 12px rgba(0,0,0,0.2)}
 .btt.visible{opacity:1;pointer-events:all;transform:none}
@@ -650,16 +685,44 @@ audio{accent-color:#1A1A1A}
       <div class="proj-foot"><span class="proj-name">Watermarks: Hajra Waheed's Asylum in the Sea</span><span class="proj-meta">Fall 2025</span></div>
     </div>
     <div class="proj" onclick="showProject('logos-branding')">
-      <div class="proj-thumb"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#FAFAF5"><svg width="160" height="120" viewBox="0 0 160 120" fill="none"><rect x="8" y="8" width="68" height="48" rx="4" fill="#FFF0A8" stroke="#D4B900" stroke-width="1"/><circle cx="42" cy="32" r="13" fill="#BF5700" opacity="0.8"/><circle cx="42" cy="32" r="7" fill="#FFF0A8" opacity="0.9"/><rect x="84" y="8" width="68" height="48" rx="4" fill="#FFF0A8" stroke="#D4B900" stroke-width="1"/><polygon points="118,14 132,36 104,36" fill="#CC0000" opacity="0.85"/><polygon points="118,22 127,34 109,34" fill="#FFF0A8" opacity="1"/><rect x="8" y="64" width="68" height="48" rx="4" fill="#FFF0A8" stroke="#D4B900" stroke-width="1"/><rect x="22" y="80" width="40" height="5" rx="2" fill="#BF5700" opacity="0.8"/><rect x="22" y="88" width="30" height="5" rx="2" fill="#BF5700" opacity="0.5"/><rect x="22" y="96" width="40" height="5" rx="2" fill="#BF5700" opacity="0.3"/><rect x="84" y="64" width="68" height="48" rx="4" fill="#FFF0A8" stroke="#D4B900" stroke-width="1"/><circle cx="118" cy="88" r="14" fill="#1A1A1A" opacity="0.7"/><circle cx="118" cy="88" r="8" fill="#D4380D" opacity="0.9"/><circle cx="118" cy="88" r="4" fill="#1A1A1A" opacity="0.9"/></svg></div><div class="proj-hover"><div class="proj-hover-text">Logomarks, brand identity, visual systems</div></div></div>
-      <div class="proj-foot"><span class="proj-name">Logos & Branding</span><span class="proj-meta">2022–2025</span></div>
+      <div class="proj-thumb" style="overflow:hidden;position:relative;background:#fff">
+        <div class="poster-title-reel" style="animation-duration:20s">
+          <div style="height:100%;width:160px;flex-shrink:0;display:flex;align-items:center;justify-content:center;padding:16px"><img loading="lazy" src="Dragon Wars/LHR_Logo.png" style="max-height:100%;max-width:100%;object-fit:contain;display:block" alt=""></div>
+          <div style="height:100%;width:160px;flex-shrink:0;display:flex;align-items:center;justify-content:center;padding:16px"><img loading="lazy" src="Dragon Wars/dragonwars png-01-01.png" style="max-height:100%;max-width:100%;object-fit:contain;display:block" alt=""></div>
+          <div style="height:100%;width:160px;flex-shrink:0;display:flex;align-items:center;justify-content:center;padding:16px"><img loading="lazy" src="Hookem Bhangra Logo/HB logo png black present in bg and letter-01.png" style="max-height:100%;max-width:100%;object-fit:contain;display:block" alt=""></div>
+          <div style="height:100%;width:160px;flex-shrink:0;display:flex;align-items:center;justify-content:center;padding:16px"><img loading="lazy" src="The Pyrography Project/pyrography project pngs-01.png" style="max-height:100%;max-width:100%;object-fit:contain;display:block" alt=""></div>
+          <div style="height:100%;width:160px;flex-shrink:0;display:flex;align-items:center;justify-content:center;padding:16px" aria-hidden="true"><img loading="lazy" src="Dragon Wars/LHR_Logo.png" style="max-height:100%;max-width:100%;object-fit:contain;display:block" alt=""></div>
+          <div style="height:100%;width:160px;flex-shrink:0;display:flex;align-items:center;justify-content:center;padding:16px" aria-hidden="true"><img loading="lazy" src="Dragon Wars/dragonwars png-01-01.png" style="max-height:100%;max-width:100%;object-fit:contain;display:block" alt=""></div>
+          <div style="height:100%;width:160px;flex-shrink:0;display:flex;align-items:center;justify-content:center;padding:16px" aria-hidden="true"><img loading="lazy" src="Hookem Bhangra Logo/HB logo png black present in bg and letter-01.png" style="max-height:100%;max-width:100%;object-fit:contain;display:block" alt=""></div>
+          <div style="height:100%;width:160px;flex-shrink:0;display:flex;align-items:center;justify-content:center;padding:16px" aria-hidden="true"><img loading="lazy" src="The Pyrography Project/pyrography project pngs-01.png" style="max-height:100%;max-width:100%;object-fit:contain;display:block" alt=""></div>
+        </div>
+        <div class="proj-hover"><div class="proj-hover-text">Logomarks, brand identity, visual systems</div></div>
+      </div>
+      <div class="proj-foot"><span class="proj-name">Logos & Branding</span><span class="proj-meta">2025–2026</span></div>
     </div>
     <div class="proj" onclick="showProject('merchandise')">
       <div class="proj-thumb"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#F8F5FF"><svg width="160" height="120" viewBox="0 0 160 120" fill="none"><path d="M38 32 L22 52 L42 57 L42 98 L82 98 L82 57 L102 57 L122 52 L106 32 L96 44 Q82 34 68 44 Z" fill="#BF5700" opacity="0.2"/><path d="M38 32 L22 52 L42 57 L42 98 L82 98 L82 57 L102 57 L122 52 L106 32 L96 44 Q82 34 68 44 Z" stroke="#BF5700" stroke-width="1.5" fill="none" opacity="0.6"/><circle cx="62" cy="72" r="9" fill="#BF5700" opacity="0.25"/><path d="M97 30 L85 46 L97 50 L97 85 L122 85 L122 50 L134 50 L146 46 L134 30 L128 38 Q114 30 103 38 Z" fill="#1A1A1A" opacity="0.1"/><path d="M97 30 L85 46 L97 50 L97 85 L122 85 L122 50 L134 50 L146 46 L134 30 L128 38 Q114 30 103 38 Z" stroke="#1A1A1A" stroke-width="1.2" fill="none" opacity="0.35"/></svg></div><div class="proj-hover"><div class="proj-hover-text">Apparel design, merchandise graphics, print production</div></div></div>
       <div class="proj-foot"><span class="proj-name">Merchandise</span><span class="proj-meta">2023–2025</span></div>
     </div>
     <div class="proj" onclick="showProject('posters')">
-      <div class="proj-thumb"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#FAFAF8"><svg width="160" height="120" viewBox="0 0 160 120" fill="none"><rect x="14" y="8" width="60" height="104" rx="3" fill="#F0EBE0" stroke="#D8D0C0" stroke-width="1"/><rect x="22" y="18" width="44" height="5" rx="1" fill="#1A1A1A" opacity="0.55"/><rect x="22" y="27" width="32" height="3" rx="1" fill="#1A1A1A" opacity="0.3"/><rect x="22" y="36" width="44" height="52" rx="2" fill="#D4B900" opacity="0.55"/><rect x="22" y="36" width="44" height="52" rx="2" fill="none" stroke="#B89800" stroke-width="0.5"/><rect x="86" y="8" width="60" height="104" rx="3" fill="#E8EAF0" stroke="#C8CCD8" stroke-width="1"/><rect x="94" y="18" width="44" height="5" rx="1" fill="#1A1A1A" opacity="0.55"/><rect x="94" y="27" width="32" height="3" rx="1" fill="#1A1A1A" opacity="0.3"/><rect x="94" y="36" width="44" height="52" rx="2" fill="#4A6080" opacity="0.35"/></svg></div><div class="proj-hover"><div class="proj-hover-text">Typographic posters, editorial design, print</div></div></div>
-      <div class="proj-foot"><span class="proj-name">Posters</span><span class="proj-meta">2023–2024</span></div>
+      <div class="proj-thumb" style="overflow:hidden;position:relative">
+        <div class="poster-title-reel">
+          <img loading="lazy" src="Typographic Follies/Anshu_Patel_Version_1.jpg" class="poster-reel-img" alt="">
+          <img loading="lazy" src="Typographic Follies/Anshu_Patel_Version_2.jpg" class="poster-reel-img" alt="">
+          <img loading="lazy" src="Typographic Follies/Anshu_Patel_Version_3.jpg" class="poster-reel-img" alt="">
+          <img loading="lazy" src="Nerds Poster/images in communication final poster-03-03.png" class="poster-reel-img" alt="">
+          <img loading="lazy" src="Doomsday Poster/Print for ARTL for Kevin's Class with glow in the dark vision-01.png" class="poster-reel-img" alt="">
+          <img loading="lazy" src="Artist Book Poster/Artist Book Posters done for process blog-07.png" class="poster-reel-img" alt="">
+          <img loading="lazy" src="Typographic Follies/Anshu_Patel_Version_1.jpg" class="poster-reel-img" aria-hidden="true" alt="">
+          <img loading="lazy" src="Typographic Follies/Anshu_Patel_Version_2.jpg" class="poster-reel-img" aria-hidden="true" alt="">
+          <img loading="lazy" src="Typographic Follies/Anshu_Patel_Version_3.jpg" class="poster-reel-img" aria-hidden="true" alt="">
+          <img loading="lazy" src="Nerds Poster/images in communication final poster-03-03.png" class="poster-reel-img" aria-hidden="true" alt="">
+          <img loading="lazy" src="Doomsday Poster/Print for ARTL for Kevin's Class with glow in the dark vision-01.png" class="poster-reel-img" aria-hidden="true" alt="">
+          <img loading="lazy" src="Artist Book Poster/Artist Book Posters done for process blog-07.png" class="poster-reel-img" aria-hidden="true" alt="">
+        </div>
+        <div class="proj-hover"><div class="proj-hover-text">Concept posters, typographic series, process-driven design</div></div>
+      </div>
+      <div class="proj-foot"><span class="proj-name">Posters</span><span class="proj-meta">2025</span></div>
     </div>
   </div>
 </div>
@@ -669,7 +732,7 @@ audio{accent-color:#1A1A1A}
   <div class="disc-header">
     <div class="disc-header-left">
       <div class="disc-title">UX/UI & Game Design</div>
-      <p class="disc-desc">User research, interaction design, UI systems, game design documents, and level design — work that thinks through people and play.</p>
+      <p class="disc-desc">User research, interaction design, UI systems, game design documents, and level design,work that thinks through people and play.</p>
     </div>
     <div><span class="disc-back" onclick="showPage('home')">← All work</span></div>
   </div>
@@ -680,19 +743,19 @@ audio{accent-color:#1A1A1A}
     </div>
     <div class="proj" onclick="showProject('verdant-ui')">
       <div class="proj-thumb"><div class="proj-thumb-inner accent-misc1" style="width:100%;height:100%"><svg width="160" height="120" viewBox="0 0 160 120" fill="none"><rect x="40" y="30" width="80" height="60" rx="8" fill="#8090E0" opacity="0.3"/><rect x="52" y="42" width="30" height="20" rx="4" fill="#6070C8" opacity="0.4"/><circle cx="104" cy="60" r="12" fill="#6070C8" opacity="0.3"/><rect x="96" y="56" width="16" height="8" rx="2" fill="#6070C8" opacity="0.35"/></svg></div><div class="proj-hover"><div class="proj-hover-text">Interface design, menus, HUD system</div></div></div>
-      <div class="proj-foot"><span class="proj-name">Verdant — UI System</span><span class="proj-meta">2024</span></div>
+      <div class="proj-foot"><span class="proj-name">Verdant: UI System</span><span class="proj-meta">2024</span></div>
     </div>
     <div class="proj" onclick="showProject('verdant-level')">
       <div class="proj-thumb"><div class="proj-thumb-inner accent-misc2" style="width:100%;height:100%"><svg width="160" height="120" viewBox="0 0 160 120" fill="none"><rect x="24" y="30" width="112" height="60" rx="8" fill="#60C890" opacity="0.3"/><rect x="34" y="42" width="26" height="18" rx="4" fill="#30A060" opacity="0.4"/><rect x="68" y="38" width="58" height="9" rx="3" fill="#30A060" opacity="0.35"/><rect x="68" y="52" width="42" height="7" rx="3" fill="#30A060" opacity="0.25"/></svg></div><div class="proj-hover"><div class="proj-hover-text">Level design, GDD, puzzle logic</div></div></div>
-      <div class="proj-foot"><span class="proj-name">Verdant — Level Design</span><span class="proj-meta">2023</span></div>
+      <div class="proj-foot"><span class="proj-name">Verdant: Level Design</span><span class="proj-meta">2023</span></div>
     </div>
     <div class="proj" onclick="showProject('wayfinder')">
       <div class="proj-thumb"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#E8F4FF"><svg width="160" height="120" viewBox="0 0 160 120" fill="none"><circle cx="55" cy="60" r="26" stroke="#3a90d0" stroke-width="1.5" fill="none" opacity="0.4"/><circle cx="105" cy="60" r="20" stroke="#3a90d0" stroke-width="1.5" fill="none" opacity="0.4"/><line x1="55" y1="60" x2="105" y2="60" stroke="#3a90d0" stroke-width="1.5" opacity="0.3"/><circle cx="55" cy="60" r="5" fill="#3a90d0" opacity="0.5"/><circle cx="105" cy="60" r="5" fill="#3a90d0" opacity="0.5"/></svg></div><div class="proj-hover"><div class="proj-hover-text">User research, journey mapping, testing</div></div></div>
-      <div class="proj-foot"><span class="proj-name">Wayfinder — UX Research</span><span class="proj-meta">2023</span></div>
+      <div class="proj-foot"><span class="proj-name">Wayfinder: UX Research</span><span class="proj-meta">2023</span></div>
     </div>
     <div class="proj" onclick="showProject('petal')">
       <div class="proj-thumb"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#FDF0FF"><svg width="160" height="120" viewBox="0 0 160 120" fill="none"><rect x="30" y="25" width="44" height="70" rx="8" fill="#C880E8" opacity="0.3"/><rect x="38" y="35" width="28" height="5" rx="2" fill="#9040C0" opacity="0.5"/><rect x="38" y="45" width="22" height="4" rx="2" fill="#9040C0" opacity="0.3"/><rect x="86" y="35" width="44" height="60" rx="8" fill="#C880E8" opacity="0.2"/></svg></div><div class="proj-hover"><div class="proj-hover-text">Mobile app design, interaction patterns</div></div></div>
-      <div class="proj-foot"><span class="proj-name">Petal — Wellness App</span><span class="proj-meta">2022</span></div>
+      <div class="proj-foot"><span class="proj-name">Petal: Wellness App</span><span class="proj-meta">2022</span></div>
     </div>
   </div>
 </div>
@@ -901,14 +964,14 @@ audio{accent-color:#1A1A1A}
   <div class="disc-header">
     <div class="disc-header-left">
       <div class="disc-title">Miscellaneous Archive</div>
-      <p class="disc-desc">Class projects, personal explorations, quick studies, and things that don't fit anywhere else — but were worth keeping.</p>
+      <p class="disc-desc">Class projects, personal explorations, quick studies, and things that don't fit anywhere else,but were worth keeping.</p>
     </div>
     <div><span class="disc-back" onclick="showPage('home')">← All work</span></div>
   </div>
   <div class="proj-grid proj-grid-3">
     <div class="proj" onclick="showProject('fragments')">
       <div class="proj-thumb"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#F4F4F4"><svg width="160" height="120" viewBox="0 0 160 120" fill="none"><rect x="30" y="30" width="44" height="60" rx="5" fill="#bbb" opacity="0.45"/><rect x="82" y="40" width="44" height="44" rx="5" fill="#ccc" opacity="0.4"/><rect x="96" y="22" width="22" height="22" rx="4" fill="#aaa" opacity="0.4"/></svg></div><div class="proj-hover"><div class="proj-hover-text">Personal exploration, digital collage</div></div></div>
-      <div class="proj-foot"><span class="proj-name">Fragments — Digital Collage Study</span><span class="proj-meta">2024</span></div>
+      <div class="proj-foot"><span class="proj-name">Fragments: Digital Collage Study</span><span class="proj-meta">2024</span></div>
     </div>
     <div class="proj" onclick="showProject('sketchbook')">
       <div class="proj-thumb"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#FFFFF0"><svg width="160" height="120" viewBox="0 0 160 120" fill="none"><path d="M40 90 Q60 50 80 70 Q100 90 120 30" stroke="#8a8a00" stroke-width="2" fill="none" opacity="0.4" stroke-linecap="round"/><path d="M50 95 Q70 60 90 75 Q110 90 130 40" stroke="#8a8a00" stroke-width="1" fill="none" opacity="0.25" stroke-linecap="round"/></svg></div><div class="proj-hover"><div class="proj-hover-text">Sketchbook, observational drawing</div></div></div>
@@ -916,11 +979,11 @@ audio{accent-color:#1A1A1A}
     </div>
     <div class="proj" onclick="showProject('type-study')">
       <div class="proj-thumb"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#F0F4FF"><svg width="160" height="120" viewBox="0 0 160 120" fill="none"><text x="30" y="56" font-family="serif" font-size="40" fill="#8090C0" opacity="0.5" font-weight="bold">Aa</text><rect x="30" y="68" width="100" height="3" rx="1.5" fill="#8090C0" opacity="0.2"/><rect x="30" y="76" width="70" height="3" rx="1.5" fill="#8090C0" opacity="0.15"/></svg></div><div class="proj-hover"><div class="proj-hover-text">Type design exploration, class project</div></div></div>
-      <div class="proj-foot"><span class="proj-name">Type Study — Letterform Exploration</span><span class="proj-meta">2023</span></div>
+      <div class="proj-foot"><span class="proj-name">Type Study: Letterform Exploration</span><span class="proj-meta">2023</span></div>
     </div>
     <div class="proj" onclick="showProject('systems')">
       <div class="proj-thumb"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#FFF8F0"><svg width="160" height="120" viewBox="0 0 160 120" fill="none"><circle cx="60" cy="55" r="22" stroke="#E08040" stroke-width="1.5" fill="none" opacity="0.4"/><circle cx="100" cy="65" r="16" stroke="#E08040" stroke-width="1.5" fill="none" opacity="0.3"/><line x1="60" y1="55" x2="100" y2="65" stroke="#E08040" stroke-width="1" opacity="0.25"/></svg></div><div class="proj-hover"><div class="proj-hover-text">Systems thinking, diagram design</div></div></div>
-      <div class="proj-foot"><span class="proj-name">Systems — Diagram Workshop</span><span class="proj-meta">2023</span></div>
+      <div class="proj-foot"><span class="proj-name">Systems: Diagram Workshop</span><span class="proj-meta">2023</span></div>
     </div>
   </div>
 </div>
@@ -960,7 +1023,7 @@ audio{accent-color:#1A1A1A}
       <div class="about-section">
         <div class="skill-group">
           <div class="skill-group-label">Tools</div>
-          <div class="skill-list"><span class="stag">Unity</span><span class="stag">Adobe Illustrator</span><span class="stag">Photoshop</span><span class="stag">InDesign</span><span class="stag">After Effects</span><span class="stag">Substance Painter</span><span class="stag">GitHub</span><span class="stag">VS Code</span><span class="stag">Rhino 3D</span><span class="stag">Autodesk Maya</span><span class="stag">HTML</span><span class="stag">CSS</span><span class="stag">Java</span><span class="stag">Figma</span><span class="stag">Basic C++</span></div>
+          <div class="skill-list"><span class="stag">Unity</span><span class="stag">Adobe Illustrator</span><span class="stag">Photoshop</span><span class="stag">InDesign</span><span class="stag">After Effects</span><span class="stag">Substance Painter</span><span class="stag">GitHub</span><span class="stag">VS Code</span><span class="stag">Rhino 3D</span><span class="stag">Autodesk Maya</span><span class="stag">HTML</span><span class="stag">CSS</span><span class="stag">Java</span><span class="stag">Figma</span><span class="stag">C++</span></div>
         </div>
         <div class="skill-group">
           <div class="skill-group-label">Skills</div>
@@ -1010,7 +1073,7 @@ audio{accent-color:#1A1A1A}
   </div>
   <div style="border-bottom:1px solid var(--border)">
     <div style="position:relative;overflow:hidden;aspect-ratio:16/7;border-bottom:1px solid var(--border)">
-      <img loading="lazy" src="Typography in Persona 5/Hero, Title Card.png" style="width:100%;height:100%;object-fit:cover;display:block" alt="Typography in Persona 5 — Cover">
+      <img loading="lazy" src="Typography in Persona 5/Hero, Title Card.png" style="width:100%;height:100%;object-fit:cover;display:block" alt="Typography in Persona 5,Cover">
       <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.72) 0%,rgba(0,0,0,0.18) 50%,transparent 100%)"></div>
       <div style="position:absolute;bottom:36px;left:48px">
         <div style="font-family:'Fredoka',sans-serif;font-size:54px;font-weight:600;color:#fff;line-height:1.05;letter-spacing:0.3px">Typography in Persona 5</div>
@@ -1107,7 +1170,7 @@ audio{accent-color:#1A1A1A}
       <!-- RESEARCH -->
       <div class="proj-detail-section" id="p5-research">
         <div class="proj-detail-section-label">Research</div>
-        <div class="proj-detail-h2">Exploring the Metaverse — Gathering Information</div>
+        <div class="proj-detail-h2">Exploring the Metaverse: Gathering Information</div>
         <p class="proj-detail-p" style="font-style:italic;color:var(--muted)">I dove into websites, articles, books, online forums, and emailed professionals to gather research and insights to support the creation and content of my book.</p>
 
         <div class="proj-detail-h3">Compiling a Miro Board</div>
@@ -1116,7 +1179,7 @@ audio{accent-color:#1A1A1A}
         <div class="proj-miro-wrap">
           <iframe src="https://miro.com/app/live-embed/uXjVJAUyZPs=/" allow="fullscreen; clipboard-read; clipboard-write" allowfullscreen></iframe>
         </div>
-        <p class="proj-img-caption">Explore my Miro board above — click to interact.</p>
+        <p class="proj-img-caption">Explore my Miro board above, click to interact.</p>
         <div class="proj-kp">
           <div class="proj-kp-label">Key Takeaways</div>
           <ul>
@@ -1147,22 +1210,19 @@ audio{accent-color:#1A1A1A}
         <div class="proj-img-grid proj-img-grid-3">
           <div class="smt-lb-thumb" onclick="openLightbox('Typography in Persona 5/Above is the email exchange me and Charlotte had! PART 1.png')">
             <div style="overflow:hidden;border-radius:6px"><img loading="lazy" src="Typography in Persona 5/Above is the email exchange me and Charlotte had! PART 1.png" style="width:100%;display:block"></div>
-            <div class="smt-lb-badge">Expand</div>
-          </div>
+                      </div>
           <div class="smt-lb-thumb" onclick="openLightbox('Typography in Persona 5/Above is the email exchange me and Charlotte had! part 2.png')">
             <div style="overflow:hidden;border-radius:6px"><img loading="lazy" src="Typography in Persona 5/Above is the email exchange me and Charlotte had! part 2.png" style="width:100%;display:block"></div>
-            <div class="smt-lb-badge">Expand</div>
-          </div>
+                      </div>
           <div class="smt-lb-thumb" onclick="openLightbox('Typography in Persona 5/Above is the email exchange me and Charlotte had! PART 3.png')">
             <div style="overflow:hidden;border-radius:6px"><img loading="lazy" src="Typography in Persona 5/Above is the email exchange me and Charlotte had! PART 3.png" style="width:100%;display:block"></div>
-            <div class="smt-lb-badge">Expand</div>
-          </div>
+                      </div>
         </div>
         <p class="proj-img-caption">The email exchange between me and Charlotte. Click any image to expand.</p>
         <div class="proj-kp">
           <div class="proj-kp-label">Key Takeaways</div>
           <ul>
-            <li>Don't be afraid to reach out to professionals — most are happy to offer guidance and support.</li>
+            <li>Don't be afraid to reach out to professionals,most are happy to offer guidance and support.</li>
             <li>I now have a complete understanding of the key fonts and typefaces used in the game, without needing to guess or do excessive research.</li>
           </ul>
         </div>
@@ -1222,7 +1282,7 @@ audio{accent-color:#1A1A1A}
       <!-- DESIGN -->
       <div class="proj-detail-section" id="p5-design">
         <div class="proj-detail-section-label">Design</div>
-        <div class="proj-detail-h2">Making the Calling Card — Designing the Actual Book</div>
+        <div class="proj-detail-h2">Making the Calling Card: Designing the Actual Book</div>
         <p class="proj-detail-p" style="font-style:italic;color:var(--muted)">With all my content developed, I spend many hours designing my spreads in Adobe InDesign.</p>
 
         <div class="proj-detail-h3">Designing the Book</div>
@@ -1256,14 +1316,14 @@ audio{accent-color:#1A1A1A}
         <p class="proj-detail-p">I also made the pattern that I would use to make the book sleeve I wanted to make. I wanted the book sleeve to look like the protagonist's school bag, and make the experience feel like you found a calling card (the book) in his school bag. Below is a PDF of that pattern that I printed and used once I returned to campus.</p>
         <a class="proj-pdf-link" href="Typography in Persona 5/Persona Book Sleeve PRINT.pdf" target="_blank">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="1" width="10" height="13" rx="1.5" stroke="#1A1A1A" stroke-width="1.2"/><path d="M5 5h6M5 8h6M5 11h4" stroke="#1A1A1A" stroke-width="1.2" stroke-linecap="round"/><path d="M10 1v3.5H13" stroke="#1A1A1A" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Book Sleeve Print Pattern — open PDF ↗
+          Book Sleeve Print Pattern · open PDF ↗
         </a>
       </div>
 
       <!-- PRODUCTION -->
       <div class="proj-detail-section" id="p5-production">
         <div class="proj-detail-section-label">Production</div>
-        <div class="proj-detail-h2">Securing the Treasure — Producing the Book and Book Sleeve</div>
+        <div class="proj-detail-h2">Securing the Treasure: Producing the Book and Book Sleeve</div>
         <p class="proj-detail-p" style="font-style:italic;color:var(--muted)">With my spreads and cover being print-ready, I begin physically producing my book.</p>
         <div class="proj-img-grid proj-img-grid-2">
           <img loading="lazy" src="Typography in Persona 5/My prototype print! part 1.png" style="width:100%;border-radius:6px;display:block">
@@ -1297,7 +1357,7 @@ audio{accent-color:#1A1A1A}
         <img loading="lazy" src="Typography in Persona 5/All four copies in all their glory!.png" style="width:100%;border-radius:6px;display:block;margin-bottom:4px">
         <p class="proj-img-caption">All four copies in all their glory!</p>
 
-        <div class="proj-detail-h3" style="margin-top:32px">Spread by Spread — The Physical Book</div>
+        <div class="proj-detail-h3" style="margin-top:32px">Spread by Spread: The Physical Book</div>
         <p class="proj-detail-p">Below, you will find photographs of each spread in real life that I took.</p>
         <img loading="lazy" src="Typography in Persona 5/final physical photo 1.png" style="width:100%;border-radius:6px;display:block;margin-bottom:4px">
         <p class="proj-img-caption">Front cover</p>
@@ -1333,7 +1393,7 @@ audio{accent-color:#1A1A1A}
       <!-- CRITIQUE -->
       <div class="proj-detail-section" id="p5-critique">
         <div class="proj-detail-section-label">Critique</div>
-        <div class="proj-detail-h2">Battle Report — In-Class Critique</div>
+        <div class="proj-detail-h2">Battle Report: In-Class Critique</div>
         <p class="proj-detail-p" style="font-style:italic;color:var(--muted)">With the book ready to turn in, I received in-class critique from a peer.</p>
         <div class="proj-img-grid proj-img-grid-2" style="align-items:start">
           <img loading="lazy" src="Typography in Persona 5/critique sheet 1.png" style="width:100%;border-radius:6px;display:block">
@@ -1372,7 +1432,7 @@ audio{accent-color:#1A1A1A}
   <div class="proj-detail-hero">
     <div class="proj-detail-kicker">UX/UI & Game Design · App Design</div>
     <div class="proj-detail-title">Quest Companion App</div>
-    <p class="proj-detail-tagline">A mobile companion app designed for tabletop RPG players — tracking quests, inventory, and character arcs across campaigns without breaking immersion.</p>
+    <p class="proj-detail-tagline">A mobile companion app designed for tabletop RPG players,tracking quests, inventory, and character arcs across campaigns without breaking immersion.</p>
     <div class="proj-detail-meta-row">
       <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">8 weeks</div></div>
       <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Course</div><div class="proj-detail-meta-val">Interaction Design Studio</div></div>
@@ -1383,7 +1443,7 @@ audio{accent-color:#1A1A1A}
   <div class="proj-detail-cover accent-ux" style="height:420px">
     <div class="proj-detail-cover-inner" style="flex-direction:column;gap:12px">
       <svg width="320" height="180" viewBox="0 0 320 180" fill="none"><rect x="80" y="20" width="160" height="140" rx="18" fill="#90C8F0" opacity="0.35"/><rect x="96" y="38" width="128" height="14" rx="5" fill="#4498D8" opacity="0.55"/><rect x="96" y="60" width="90" height="10" rx="4" fill="#4498D8" opacity="0.35"/><rect x="96" y="76" width="128" height="10" rx="4" fill="#4498D8" opacity="0.2"/><rect x="96" y="96" width="60" height="28" rx="8" fill="#4498D8" opacity="0.25"/><rect x="164" y="96" width="60" height="28" rx="8" fill="#4498D8" opacity="0.2"/></svg>
-      <span style="font-size:12px;color:#4498D8;opacity:0.7;font-weight:500">[ Cover image placeholder — replace with hi-fi prototype screenshot ]</span>
+      <span style="font-size:12px;color:#4498D8;opacity:0.7;font-weight:500">[ Cover image placeholder,replace with hi-fi prototype screenshot ]</span>
     </div>
   </div>
   <div class="proj-detail-body" style="display:block">
@@ -1391,13 +1451,13 @@ audio{accent-color:#1A1A1A}
       <div class="proj-detail-section">
         <div class="proj-detail-section-label">Problem</div>
         <div class="proj-detail-h2">The gap in the experience</div>
-        <p class="proj-detail-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tabletop RPG players currently rely on a patchwork of tools — notes apps, Discord messages, physical notebooks, PDFs — to track the sprawling details of a campaign. The friction of switching between systems during play breaks immersion and creates real information loss.</p>
-        <p class="proj-detail-p">This project asked: what would a companion tool look like if it was designed from the ground up for how players actually play — messy, spontaneous, and story-first?</p>
+        <p class="proj-detail-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tabletop RPG players currently rely on a patchwork of tools,notes apps, Discord messages, physical notebooks, PDFs,to track the sprawling details of a campaign. The friction of switching between systems during play breaks immersion and creates real information loss.</p>
+        <p class="proj-detail-p">This project asked: what would a companion tool look like if it was designed from the ground up for how players actually play,messy, spontaneous, and story-first?</p>
       </div>
       <div class="proj-detail-section">
         <div class="proj-detail-section-label">Research</div>
         <div class="proj-detail-h2">Understanding the player</div>
-        <p class="proj-detail-p">Conducted 6 semi-structured interviews with TTRPG players ranging from casual to experienced. Ran a competitive audit of 8 existing tools. Key insight: players didn't want another system to maintain — they wanted something that stayed out of the way and surfaced the right information at the right moment.</p>
+        <p class="proj-detail-p">Conducted 6 semi-structured interviews with TTRPG players ranging from casual to experienced. Ran a competitive audit of 8 existing tools. Key insight: players didn't want another system to maintain,they wanted something that stayed out of the way and surfaced the right information at the right moment.</p>
         <div class="proj-img-placeholder wide"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><path d="M6 28l8-8 6 6 4-4 10 10" stroke="#ccc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Affinity map / research synthesis</span></div>
       </div>
       <div class="proj-detail-section">
@@ -1405,7 +1465,7 @@ audio{accent-color:#1A1A1A}
         <div class="proj-detail-h2">From flows to frames</div>
         <div class="proj-detail-process-steps">
           <div class="proj-process-step"><div class="proj-process-num">01</div><div class="proj-process-step-content"><div class="proj-process-step-title">User flows & IA</div><div class="proj-process-step-desc">Mapped 4 primary user flows: starting a session, logging a quest update, searching past notes, and ending a session with a summary. Hierarchy was built around the session as the primary unit.</div></div></div>
-          <div class="proj-process-step"><div class="proj-process-num">02</div><div class="proj-process-step-content"><div class="proj-process-step-title">Low-fi wireframes</div><div class="proj-process-step-desc">Three rounds of lo-fi wireframing, each tested with 2 participants. Major finding: the "quest log" metaphor wasn't landing — players thought in terms of NPCs and events, not missions.</div></div></div>
+          <div class="proj-process-step"><div class="proj-process-num">02</div><div class="proj-process-step-content"><div class="proj-process-step-title">Low-fi wireframes</div><div class="proj-process-step-desc">Three rounds of lo-fi wireframing, each tested with 2 participants. Major finding: the "quest log" metaphor wasn't landing,players thought in terms of NPCs and events, not missions.</div></div></div>
           <div class="proj-process-step"><div class="proj-process-num">03</div><div class="proj-process-step-content"><div class="proj-process-step-title">Usability testing (Maze)</div><div class="proj-process-step-desc">Remote usability test with 8 participants on mid-fi prototype. 73% task completion rate on first run. Iterated navigation and entry points based on drop-off data.</div></div></div>
           <div class="proj-process-step"><div class="proj-process-num">04</div><div class="proj-process-step-content"><div class="proj-process-step-title">Hi-fi & handoff</div><div class="proj-process-step-desc">Produced hi-fi prototype in Figma with a custom design system: dark mode-first, accessible contrast ratios, and a typographic system inspired by fantasy game UIs without being clichéd.</div></div></div>
         </div>
@@ -1422,7 +1482,7 @@ audio{accent-color:#1A1A1A}
       <div class="proj-detail-section">
         <div class="proj-detail-section-label">Reflection</div>
         <div class="proj-detail-h2">What I took away</div>
-        <p class="proj-detail-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. This project pushed me to design for a specific subculture — not a generic "user" — which meant the research had to be real and the design had to earn trust. The biggest lesson: the best game UI disappears. It gives you exactly what you need exactly when you need it, then gets out of the way.</p>
+        <p class="proj-detail-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. This project pushed me to design for a specific subculture,not a generic "user",which meant the research had to be real and the design had to earn trust. The biggest lesson: the best game UI disappears. It gives you exactly what you need exactly when you need it, then gets out of the way.</p>
       </div>
     </div>
   </div>
@@ -1434,7 +1494,7 @@ audio{accent-color:#1A1A1A}
     <div class="proj-detail-breadcrumb">
       <span onclick="showPage('ux')">UX/UI & Game Design</span>
       <span class="sep">›</span>
-      <span style="color:#1A1A1A;font-weight:500">Verdant — Level Design</span>
+      <span style="color:#1A1A1A;font-weight:500">Verdant: Level Design</span>
     </div>
     <div><button class="proj-nav-btn" onclick="showPage('ux')">← Back to category</button></div>
   </div>
@@ -1452,7 +1512,7 @@ audio{accent-color:#1A1A1A}
   <div class="proj-detail-cover accent-misc2" style="height:420px">
     <div class="proj-detail-cover-inner" style="flex-direction:column;gap:12px">
       <svg width="400" height="200" viewBox="0 0 400 200" fill="none"><rect x="20" y="120" width="360" height="60" rx="4" fill="#60C890" opacity="0.2"/><rect x="20" y="100" width="60" height="80" rx="4" fill="#40A870" opacity="0.3"/><rect x="100" y="80" width="40" height="100" rx="4" fill="#40A870" opacity="0.25"/><rect x="160" y="60" width="80" height="120" rx="4" fill="#40A870" opacity="0.2"/><rect x="260" y="90" width="50" height="90" rx="4" fill="#40A870" opacity="0.28"/><circle cx="200" cy="55" r="14" fill="#FFF5A0" opacity="0.6"/></svg>
-      <span style="font-size:12px;color:#30A060;opacity:0.7;font-weight:500">[ Cover image placeholder — replace with level map or key screenshot ]</span>
+      <span style="font-size:12px;color:#30A060;opacity:0.7;font-weight:500">[ Cover image placeholder,replace with level map or key screenshot ]</span>
     </div>
   </div>
   <div class="proj-detail-body" style="display:block">
@@ -1460,8 +1520,8 @@ audio{accent-color:#1A1A1A}
       <div class="proj-detail-section">
         <div class="proj-detail-section-label">Concept</div>
         <div class="proj-detail-h2">The design premise</div>
-        <p class="proj-detail-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Verdant is a 2D puzzle-platformer set in a world reclaimed by nature, where a small robot must navigate ruins using a light mechanic — casting light reveals paths, activates ancient machinery, and frightens away plant-creatures that block the way.</p>
-        <p class="proj-detail-p">The core design constraint: every puzzle must be solvable through observation alone. No tutorials, no hint systems — the environment teaches the rules through layered environmental storytelling.</p>
+        <p class="proj-detail-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Verdant is a 2D puzzle-platformer set in a world reclaimed by nature, where a small robot must navigate ruins using a light mechanic,casting light reveals paths, activates ancient machinery, and frightens away plant-creatures that block the way.</p>
+        <p class="proj-detail-p">The core design constraint: every puzzle must be solvable through observation alone. No tutorials, no hint systems,the environment teaches the rules through layered environmental storytelling.</p>
       </div>
       <div class="proj-detail-section">
         <div class="proj-detail-section-label">Process</div>
@@ -1469,21 +1529,21 @@ audio{accent-color:#1A1A1A}
         <div class="proj-detail-process-steps">
           <div class="proj-process-step"><div class="proj-process-num">01</div><div class="proj-process-step-content"><div class="proj-process-step-title">Mechanic definition</div><div class="proj-process-step-desc">Defined 4 light mechanic interactions before designing a single room. Each interaction was documented with expected player behavior and intended emotional beat.</div></div></div>
           <div class="proj-process-step"><div class="proj-process-num">02</div><div class="proj-process-step-content"><div class="proj-process-step-title">Bubble diagrams → tile maps</div><div class="proj-process-step-desc">Sketched each level as a bubble diagram (spaces and connections) before translating to grid. This kept the spatial logic clean before visual noise was added.</div></div></div>
-          <div class="proj-process-step"><div class="proj-process-num">03</div><div class="proj-process-step-content"><div class="proj-process-step-title">Playtesting (3 rounds)</div><div class="proj-process-step-desc">Watched 8 participants attempt Level 1. Collected think-aloud data. Key failure: players didn't realize the plant-creatures were afraid of light — added visual flinch animation to telegraph the rule.</div></div></div>
+          <div class="proj-process-step"><div class="proj-process-num">03</div><div class="proj-process-step-content"><div class="proj-process-step-title">Playtesting (3 rounds)</div><div class="proj-process-step-desc">Watched 8 participants attempt Level 1. Collected think-aloud data. Key failure: players didn't realize the plant-creatures were afraid of light,added visual flinch animation to telegraph the rule.</div></div></div>
           <div class="proj-process-step"><div class="proj-process-num">04</div><div class="proj-process-step-content"><div class="proj-process-step-title">Difficulty tuning & GDD finalization</div><div class="proj-process-step-desc">Adjusted puzzle complexity curves based on playtest data. Wrote full GDD including narrative overview, mechanic reference, level briefs, and design rationale for each room.</div></div></div>
         </div>
       </div>
       <div class="proj-detail-section">
         <div class="proj-detail-section-label">Level Maps</div>
         <div class="proj-detail-h2">The three levels</div>
-        <div class="proj-img-placeholder wide"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><path d="M6 28l8-8 6 6 4-4 10 10" stroke="#ccc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Level 1 — The Greenhouse (annotated map)</span></div>
-        <div class="proj-img-placeholder wide"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><path d="M6 28l8-8 6 6 4-4 10 10" stroke="#ccc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Level 2 — The Undercroft (annotated map)</span></div>
-        <div class="proj-img-placeholder wide"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><path d="M6 28l8-8 6 6 4-4 10 10" stroke="#ccc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Level 3 — The Spire (annotated map)</span></div>
+        <div class="proj-img-placeholder wide"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><path d="M6 28l8-8 6 6 4-4 10 10" stroke="#ccc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Level 1,The Greenhouse (annotated map)</span></div>
+        <div class="proj-img-placeholder wide"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><path d="M6 28l8-8 6 6 4-4 10 10" stroke="#ccc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Level 2,The Undercroft (annotated map)</span></div>
+        <div class="proj-img-placeholder wide"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><path d="M6 28l8-8 6 6 4-4 10 10" stroke="#ccc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Level 3,The Spire (annotated map)</span></div>
       </div>
       <div class="proj-detail-section">
         <div class="proj-detail-section-label">Reflection</div>
         <div class="proj-detail-h2">What I learned</div>
-        <p class="proj-detail-p">Lorem ipsum dolor sit amet. Designing levels taught me that a good puzzle isn't clever — it's clear. The "aha" moment only works if the player can see the pieces; the designer's job is arranging them so the solution feels inevitable in hindsight. The hardest part was resisting the urge to add complexity when simplicity was working.</p>
+        <p class="proj-detail-p">Lorem ipsum dolor sit amet. Designing levels taught me that a good puzzle isn't clever,it's clear. The "aha" moment only works if the player can see the pieces; the designer's job is arranging them so the solution feels inevitable in hindsight. The hardest part was resisting the urge to add complexity when simplicity was working.</p>
       </div>
     </div>
   </div>
@@ -1529,7 +1589,6 @@ audio{accent-color:#1A1A1A}
     <div style="padding:24px 48px;background:#fafafa;display:flex;justify-content:center">
       <div class="smt-lb-thumb" onclick="openLightbox('High Noon Livery/final (1).png')" style="overflow:hidden;border-radius:4px;max-width:420px;width:100%">
         <img loading="lazy" src="High Noon Livery/final (1).png" style="width:100%;display:block" alt="High Noon final livery full file">
-        <div class="smt-lb-badge">Click to zoom</div>
       </div>
     </div>
   </div>
@@ -1592,17 +1651,11 @@ audio{accent-color:#1A1A1A}
         <p class="proj-detail-p">Each team member developed their own slide presentation exploring different visual directions and uploaded them to Miro, where we could review, discuss, and build upon each other's ideas. The concepts I brought to the table were largely exploratory. I was interested in testing bold forms, distinctive patterns, and graphic systems that could give <em>High Noon</em> a unique visual identity and help it stand out both on the road and in competition settings.</p>
         <div class="proj-img-grid proj-img-grid-3" style="margin-top:16px">
           <div class="smt-lb-thumb" onclick="openLightbox('High Noon Livery/image.png')">
-            <img loading="lazy" src="High Noon Livery/image.png" style="width:100%;display:block" alt="Anshu's concept presentation slide 1">
-            <div class="smt-lb-badge">Click to zoom</div>
-          </div>
+            <img loading="lazy" src="High Noon Livery/image.png" style="width:100%;display:block" alt="Anshu's concept presentation slide 1">          </div>
           <div class="smt-lb-thumb" onclick="openLightbox('High Noon Livery/image (1).png')">
-            <img loading="lazy" src="High Noon Livery/image (1).png" style="width:100%;display:block" alt="Anshu's concept presentation slide 2">
-            <div class="smt-lb-badge">Click to zoom</div>
-          </div>
+            <img loading="lazy" src="High Noon Livery/image (1).png" style="width:100%;display:block" alt="Anshu's concept presentation slide 2">          </div>
           <div class="smt-lb-thumb" onclick="openLightbox('High Noon Livery/image (2).png')">
-            <img loading="lazy" src="High Noon Livery/image (2).png" style="width:100%;display:block" alt="Anshu's concept presentation slide 3">
-            <div class="smt-lb-badge">Click to zoom</div>
-          </div>
+            <img loading="lazy" src="High Noon Livery/image (2).png" style="width:100%;display:block" alt="Anshu's concept presentation slide 3">          </div>
         </div>
         <p class="proj-img-caption">Slides from my concept presentation, exploring bold forms and graphic systems for the livery.</p>
       </div>
@@ -1615,13 +1668,9 @@ audio{accent-color:#1A1A1A}
         <p class="proj-detail-p">The idea felt especially fitting because it translated an aspect of the car's function into a visual language. Rather than relying on graphics commonly seen in solar racing, the heat map gradient offered a way to communicate solar energy through color, movement, and form.</p>
         <div class="proj-img-grid proj-img-grid-2" style="margin-top:20px">
           <div class="smt-lb-thumb" onclick="openLightbox('High Noon Livery/image (3).png')">
-            <img loading="lazy" src="High Noon Livery/image (3).png" style="width:100%;display:block" alt="Heat map gradient references">
-            <div class="smt-lb-badge">Click to zoom</div>
-          </div>
+            <img loading="lazy" src="High Noon Livery/image (3).png" style="width:100%;display:block" alt="Heat map gradient references">          </div>
           <div class="smt-lb-thumb" onclick="openLightbox('High Noon Livery/image (4).png')">
-            <img loading="lazy" src="High Noon Livery/image (4).png" style="width:100%;display:block" alt="Heat map gradient references 2">
-            <div class="smt-lb-badge">Click to zoom</div>
-          </div>
+            <img loading="lazy" src="High Noon Livery/image (4).png" style="width:100%;display:block" alt="Heat map gradient references 2">          </div>
         </div>
         <p class="proj-img-caption">Heat map gradient references I added to the Miro board. These references shaped the visual language that became the foundation of the livery.</p>
       </div>
@@ -1634,8 +1683,7 @@ audio{accent-color:#1A1A1A}
         <p class="proj-detail-p">Throughout this process, we also had to work within the requirements of the competition. Visibility regulations, sponsor placement, and other technical constraints all influenced our decisions. Every concept had to balance creative ambition with practicality, ensuring our vision could be executed while remaining compliant with competition guidelines.</p>
         <div class="smt-lb-thumb" onclick="openLightbox('High Noon Livery/image (5).png')" style="margin-top:20px">
           <img loading="lazy" src="High Noon Livery/image (5).png" style="width:100%;display:block" alt="Sketch exploration and critique">
-          <div class="smt-lb-badge">Click to zoom</div>
-        </div>
+          </div>
         <p class="proj-img-caption">Sketch exploration across the team, with each person developing concepts independently before coming together to critique.</p>
       </div>
 
@@ -1646,13 +1694,11 @@ audio{accent-color:#1A1A1A}
         <p class="proj-detail-p">After the sketch phase, we moved into low fidelity Illustrator renderings, which we referred to as our second iterations. Using feedback from critiques, we translated the strongest concepts into more developed digital proposals. These designs were created on two scaled vehicle outlines extracted from a UV unwrap of the car. Working directly on the vehicle's geometry allowed us to evaluate how graphics would flow across the body, test color placement, and better understand how each concept would read at full scale.</p>
         <div class="smt-lb-thumb" onclick="openLightbox('High Noon Livery/image (6).png')" style="margin-top:20px;margin-bottom:10px">
           <img loading="lazy" src="High Noon Livery/image (6).png" style="width:100%;display:block" alt="Second iterations on vehicle outline">
-          <div class="smt-lb-badge">Click to zoom</div>
-        </div>
+          </div>
         <p class="proj-detail-p">This is one of my first ever iterations. I explored versions that used larger, more solid graphic shapes. As I developed them further, I realized they would not work well with many of the project's requirements, including sponsor placement, visibility considerations, and the overall form of the vehicle. While these concepts were ultimately set aside, they helped clarify the constraints we needed to design within and informed later iterations.</p>
         <div class="smt-lb-thumb" onclick="openLightbox('High Noon Livery/image (7).png')">
           <img loading="lazy" src="High Noon Livery/image (7).png" style="width:100%;display:block" alt="My first iteration with solid graphic shapes">
-          <div class="smt-lb-badge">Click to zoom</div>
-        </div>
+          </div>
         <p class="proj-img-caption">My early iteration using larger, more solid graphic shapes. A direction that was ultimately set aside, but it helped clarify constraints.</p>
       </div>
 
@@ -1671,13 +1717,11 @@ audio{accent-color:#1A1A1A}
         <p class="proj-detail-p">With the overall direction approved, we moved into our third iterations and began incorporating sponsor logos into the designs. This stage was challenging. Everyone on the team was balancing a heavy workload, and finding logo locations that satisfied sponsor requirements while preserving the integrity of the design took a lot of trial and error. Over time, we refined the layouts and found solutions that worked for both the sponsors and the overall livery.</p>
         <div class="smt-lb-thumb" onclick="openLightbox('High Noon Livery/image (8).png')" style="margin-top:20px;margin-bottom:10px">
           <img loading="lazy" src="High Noon Livery/image (8).png" style="width:100%;display:block" alt="My third iteration concept on Miro">
-          <div class="smt-lb-badge">Click to zoom</div>
-        </div>
+          </div>
         <p class="proj-img-caption">One of my concepts posted to the Miro board during the third iteration phase.</p>
         <div class="smt-lb-thumb" onclick="openLightbox('High Noon Livery/image (9).png')" style="margin-top:20px">
           <img loading="lazy" src="High Noon Livery/image (9).png" style="width:100%;display:block" alt="Everyone else's iterations">
-          <div class="smt-lb-badge">Click to zoom</div>
-        </div>
+          </div>
         <p class="proj-img-caption">The full spread of third-iteration concepts from across the team.</p>
       </div>
 
@@ -1689,14 +1733,12 @@ audio{accent-color:#1A1A1A}
         <p class="proj-detail-p">In parallel, I compiled a range of potential fonts for the "80" numbering and shared them with Maya. She then used her laptop to consolidate all of these inputs and begin assembling the final livery direction.</p>
         <div class="smt-lb-thumb" onclick="openLightbox('High Noon Livery/image (10).png')" style="margin-top:20px">
           <img loading="lazy" src="High Noon Livery/image (10).png" style="width:100%;display:block" alt="Font options for the 80 numbering">
-          <div class="smt-lb-badge">Click to zoom</div>
-        </div>
+          </div>
         <p class="proj-img-caption">Font options I compiled for the "80" race number, shared with Maya for the final assembly.</p>
         <p class="proj-detail-p">In the following days, Maya and I met frequently to work directly on the design together. We would switch between laptops and build the livery side by side, iterating in real time. My role during this stage focused on refining sponsor logo placement, positioning the required driver and team lead names, and generally acting as a second set of eyes for Maya as she consolidated the final composition.</p>
         <div class="smt-lb-thumb" onclick="openLightbox('High Noon Livery/image (11).png')" style="margin-top:20px">
           <img loading="lazy" src="High Noon Livery/image (11).png" style="width:100%;display:block" alt="Livery in progress">
-          <div class="smt-lb-badge">Click to zoom</div>
-        </div>
+          </div>
         <p class="proj-img-caption">The livery in progress. A constant back-and-forth of real-time adjustments for clarity and competition compliance.</p>
       </div>
 
@@ -1707,8 +1749,7 @@ audio{accent-color:#1A1A1A}
         <p class="proj-detail-p">The final livery for <em>High Noon</em>. A heat map gradient wrapping a solar racing vehicle, with a Longhorn silhouette cutout and carefully placed sponsor branding. Seen in person, it stopped people to look. The reactions it got made the whole thing feel worth it.</p>
         <div class="smt-lb-thumb" onclick="openLightbox('High Noon Livery/final (1).png')">
           <img loading="lazy" src="High Noon Livery/final (1).png" style="width:100%;display:block" alt="Final High Noon livery">
-          <div class="smt-lb-badge">Click to zoom</div>
-        </div>
+          </div>
       </div>
 
       <!-- REFLECTION -->
@@ -1725,7 +1766,7 @@ audio{accent-color:#1A1A1A}
   </div>
 </div>
 
-<!-- HAJRA WAHEED — AN ASYLUM IN THE SEA -->
+<!-- HAJRA WAHEED,AN ASYLUM IN THE SEA -->
 <div class="proj-detail-page" id="proj-hajra-waheed">
   <div class="proj-detail-nav">
     <div class="proj-detail-breadcrumb">
@@ -1763,11 +1804,9 @@ audio{accent-color:#1A1A1A}
     <div style="padding:32px 48px;display:grid;grid-template-columns:1fr 1fr;gap:14px;background:#fafafa">
       <div class="smt-lb-thumb" onclick="openLightbox('Hajra Waheed Asylum in the Sea/kevin spreads POST CRITIQYE.png')" style="overflow:hidden;border-radius:4px">
         <img loading="lazy" src="Hajra Waheed Asylum in the Sea/kevin spreads POST CRITIQYE.png" style="width:100%;display:block" alt="Final spread 1">
-        <div class="smt-lb-badge">Click to zoom</div>
       </div>
       <div class="smt-lb-thumb" onclick="openLightbox('Hajra Waheed Asylum in the Sea/kevin spreads POST CRITIQYE2.png')" style="overflow:hidden;border-radius:4px">
         <img loading="lazy" src="Hajra Waheed Asylum in the Sea/kevin spreads POST CRITIQYE2.png" style="width:100%;display:block" alt="Final spread 2">
-        <div class="smt-lb-badge">Click to zoom</div>
       </div>
     </div>
   </div>
@@ -1805,13 +1844,9 @@ audio{accent-color:#1A1A1A}
         <p class="proj-detail-p">The first step, as always, was to create sketches. I'm not very familiar with exhibition design or sketching for that kind of layout, but I tried my best. I used simple boxes and lines and let myself experiment freely while coming up with ideas. I kept thinking about different ways to place the information while still respecting and highlighting the artwork.</p>
         <div class="proj-img-grid proj-img-grid-2" style="margin-top:20px">
           <div class="smt-lb-thumb" onclick="openLightbox('Hajra Waheed Asylum in the Sea/image.png')">
-            <img loading="lazy" src="Hajra Waheed Asylum in the Sea/image.png" style="width:100%;display:block" alt="Sketches page 1">
-            <div class="smt-lb-badge">Click to zoom</div>
-          </div>
+            <img loading="lazy" src="Hajra Waheed Asylum in the Sea/image.png" style="width:100%;display:block" alt="Sketches page 1">          </div>
           <div class="smt-lb-thumb" onclick="openLightbox('Hajra Waheed Asylum in the Sea/image (1).png')">
-            <img loading="lazy" src="Hajra Waheed Asylum in the Sea/image (1).png" style="width:100%;display:block" alt="Sketches page 2">
-            <div class="smt-lb-badge">Click to zoom</div>
-          </div>
+            <img loading="lazy" src="Hajra Waheed Asylum in the Sea/image (1).png" style="width:100%;display:block" alt="Sketches page 2">          </div>
         </div>
         <p class="proj-img-caption">Early sketches exploring layout ideas for the exhibition spreads.</p>
         <p class="proj-detail-p">During critique, people responded well to my idea of getting creative with the title. I also got the suggestion to create a spread directly inspired by the formal qualities of the work itself, which felt like a genuinely interesting direction to take.</p>
@@ -1823,25 +1858,19 @@ audio{accent-color:#1A1A1A}
         <div class="proj-detail-h2">Letting the Artwork Lead</div>
         <div class="proj-img-grid proj-img-grid-2" style="margin-bottom:20px">
           <div class="smt-lb-thumb" onclick="openLightbox('Hajra Waheed Asylum in the Sea/kevin spreads 1 png.png')">
-            <img loading="lazy" src="Hajra Waheed Asylum in the Sea/kevin spreads 1 png.png" style="width:100%;display:block" alt="Spread 1">
-            <div class="smt-lb-badge">Click to zoom</div>
-          </div>
+            <img loading="lazy" src="Hajra Waheed Asylum in the Sea/kevin spreads 1 png.png" style="width:100%;display:block" alt="Spread 1">          </div>
           <div class="smt-lb-thumb" onclick="openLightbox('Hajra Waheed Asylum in the Sea/kevin spreads 2 png.png')">
-            <img loading="lazy" src="Hajra Waheed Asylum in the Sea/kevin spreads 2 png.png" style="width:100%;display:block" alt="Spread 2">
-            <div class="smt-lb-badge">Click to zoom</div>
-          </div>
+            <img loading="lazy" src="Hajra Waheed Asylum in the Sea/kevin spreads 2 png.png" style="width:100%;display:block" alt="Spread 2">          </div>
         </div>
         <p class="proj-detail-p">Once I started laying out the spreads in InDesign, I found myself paying closer attention to the artwork and using its details to guide my design decisions. I chose an eggshell off-white background because it reflects the main color in the piece and creates a calm, clean look. I also made a wooden frame around the image to echo the way Hajra Waheed frames her work in real life, which helped the spread feel more connected to the original artwork.</p>
         <p class="proj-detail-p">As I zoomed in on the piece, I noticed smaller visual elements that inspired more choices. I added red text to highlight important information, just as Waheed does in her work, and drew lines that connect the images to the text so the layout mirrors her style of guiding the viewer's eye. I liked stepping away from more traditional layout conventions and letting the artwork's formal qualities shape the design. It made the spread feel more intentional and let the artwork influence both the structure and the overall mood.</p>
         <p class="proj-detail-p">My next spreads ended up being much more traditional. I really liked the photos taken of the work, so I used them to help guide how I aligned the text. I made sure the straight edges in the images lined up cleanly with the edges of the page to create a more organized look. I also enjoyed experimenting with the placement of the images and the quotes to find a balance that felt right.</p>
         <div class="smt-lb-thumb" onclick="openLightbox('Hajra Waheed Asylum in the Sea/kevin spreads 3 png.png')" style="margin-bottom:12px">
           <img loading="lazy" src="Hajra Waheed Asylum in the Sea/kevin spreads 3 png.png" style="width:100%;display:block" alt="Experimental spread layout">
-          <div class="smt-lb-badge">Click to zoom</div>
-        </div>
+          </div>
         <div class="smt-lb-thumb" onclick="openLightbox('Hajra Waheed Asylum in the Sea/kevin spreads 4 png.png')">
           <img loading="lazy" src="Hajra Waheed Asylum in the Sea/kevin spreads 4 png.png" style="width:100%;display:block" alt="Traditional spread layout">
-          <div class="smt-lb-badge">Click to zoom</div>
-        </div>
+          </div>
       </div>
 
       <!-- CRITIQUE -->
@@ -1852,13 +1881,9 @@ audio{accent-color:#1A1A1A}
         <p class="proj-detail-p">As for feedback, the group suggested introducing more variety in the initial spreads. Having them look so similar made them feel repetitive, so even though the concept was strong, I needed to think further about how to make each spread more engaging and distinct while still staying true to my overall vision.</p>
         <div class="proj-img-grid proj-img-grid-2" style="margin-top:20px">
           <div class="smt-lb-thumb" onclick="openLightbox('Hajra Waheed Asylum in the Sea/kevin spreads prefinal critique.png')">
-            <img loading="lazy" src="Hajra Waheed Asylum in the Sea/kevin spreads prefinal critique.png" style="width:100%;display:block" alt="Pre-final critique spread 1">
-            <div class="smt-lb-badge">Click to zoom</div>
-          </div>
+            <img loading="lazy" src="Hajra Waheed Asylum in the Sea/kevin spreads prefinal critique.png" style="width:100%;display:block" alt="Pre-final critique spread 1">          </div>
           <div class="smt-lb-thumb" onclick="openLightbox('Hajra Waheed Asylum in the Sea/kevin spreads prefinal critique2.png')">
-            <img loading="lazy" src="Hajra Waheed Asylum in the Sea/kevin spreads prefinal critique2.png" style="width:100%;display:block" alt="Pre-final critique spread 2">
-            <div class="smt-lb-badge">Click to zoom</div>
-          </div>
+            <img loading="lazy" src="Hajra Waheed Asylum in the Sea/kevin spreads prefinal critique2.png" style="width:100%;display:block" alt="Pre-final critique spread 2">          </div>
         </div>
         <p class="proj-img-caption">The spreads brought into critique.</p>
       </div>
@@ -1878,12 +1903,10 @@ audio{accent-color:#1A1A1A}
         <p class="proj-detail-p">After the final critique, I applied the slight changes Kevin suggested. I liked his reasoning and the direction it pushed the work, so I committed to it.</p>
         <div class="smt-lb-thumb" onclick="openLightbox('Hajra Waheed Asylum in the Sea/kevin spreads POST CRITIQYE.png')" style="margin-bottom:12px">
           <img loading="lazy" src="Hajra Waheed Asylum in the Sea/kevin spreads POST CRITIQYE.png" style="width:100%;display:block" alt="Final spread 1">
-          <div class="smt-lb-badge">Click to zoom</div>
-        </div>
+          </div>
         <div class="smt-lb-thumb" onclick="openLightbox('Hajra Waheed Asylum in the Sea/kevin spreads POST CRITIQYE2.png')">
           <img loading="lazy" src="Hajra Waheed Asylum in the Sea/kevin spreads POST CRITIQYE2.png" style="width:100%;display:block" alt="Final spread 2">
-          <div class="smt-lb-badge">Click to zoom</div>
-        </div>
+          </div>
       </div>
 
       <!-- REFLECTION -->
@@ -1910,48 +1933,153 @@ audio{accent-color:#1A1A1A}
   <div class="proj-detail-hero">
     <div class="proj-detail-kicker">2D & Graphic Design · Brand Identity</div>
     <div class="proj-detail-title">Logos & Branding</div>
-    <p class="proj-detail-tagline">A collection of logomarks and brand identities designed for student organizations, competitive teams, and creative projects across UT Austin — each one a different problem, a different community, a different visual answer.</p>
+    <p class="proj-detail-tagline">Logos, brand systems, and identity work for student organizations and class projects across UT Austin.</p>
     <div class="proj-detail-meta-row">
-      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Years</div><div class="proj-detail-meta-val">2022–2025</div></div>
-      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">Illustrator, Photoshop</div></div>
-      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Type</div><div class="proj-detail-meta-val">Brand Identity / Freelance</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Years</div><div class="proj-detail-meta-val">2025–2026</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">Illustrator, Canva, Notion</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Type</div><div class="proj-detail-meta-val">Brand Identity</div></div>
     </div>
   </div>
-  <div class="proj-detail-cover" style="height:360px;background:#FAFAF0">
-    <div class="proj-detail-cover-inner" style="flex-direction:column;gap:12px">
-      <svg width="420" height="180" viewBox="0 0 420 180" fill="none"><rect x="20" y="20" width="88" height="60" rx="5" fill="#FFF0A8" stroke="#D4B900" stroke-width="1.5"/><circle cx="64" cy="50" r="18" fill="#BF5700" opacity="0.8"/><circle cx="64" cy="50" r="10" fill="#FFF0A8" opacity="0.9"/><rect x="122" y="20" width="88" height="60" rx="5" fill="#FFF0A8" stroke="#D4B900" stroke-width="1.5"/><polygon points="166,26 186,56 146,56" fill="#CC0000" opacity="0.85"/><polygon points="166,34 181,54 151,54" fill="#FFF0A8" opacity="1"/><rect x="224" y="20" width="88" height="60" rx="5" fill="#FFF0A8" stroke="#D4B900" stroke-width="1.5"/><rect x="240" y="38" width="56" height="7" rx="2" fill="#BF5700" opacity="0.8"/><rect x="240" y="50" width="42" height="7" rx="2" fill="#BF5700" opacity="0.5"/><rect x="326" y="20" width="88" height="60" rx="5" fill="#FFF0A8" stroke="#D4B900" stroke-width="1.5"/><circle cx="370" cy="50" r="20" fill="#1A1A1A" opacity="0.7"/><circle cx="370" cy="50" r="11" fill="#D4380D" opacity="0.9"/><circle cx="370" cy="50" r="5" fill="#1A1A1A" opacity="0.9"/></svg>
-      <span style="font-size:12px;color:#BF5700;opacity:0.7;font-weight:500">[ Cover image placeholder ]</span>
+
+  <div class="proj-detail-body">
+    <div class="proj-detail-sidebar">
+      <div class="proj-detail-sidebar-section">
+        <div class="proj-detail-sidebar-label">Contents</div>
+        <div class="proj-toc-list">
+          <a class="proj-toc-link" onclick="document.getElementById('lb-lhr').scrollIntoView({behavior:'smooth'})">Longhorn Racing</a>
+          <a class="proj-toc-link" onclick="document.getElementById('lb-dragon').scrollIntoView({behavior:'smooth'})">Dragon Wars</a>
+          <a class="proj-toc-link" onclick="document.getElementById('lb-hb').scrollIntoView({behavior:'smooth'})">Hook 'em Bhangra</a>
+          <a class="proj-toc-link" onclick="document.getElementById('lb-pyro').scrollIntoView({behavior:'smooth'})">The Pyrography Project</a>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="proj-detail-body" style="display:block">
     <div class="proj-detail-content">
 
-      <div class="proj-detail-section">
-        <div class="proj-detail-section-label">Hook 'em Bhangra</div>
-        <div class="proj-detail-h2">South Asian dance team identity</div>
-        <p class="proj-detail-p">Hook 'em Bhangra is UT Austin's premier Bhangra dance team — bringing together the energy of competitive South Asian folk dance with a distinctly Longhorn identity. The logomark needed to honor that dual identity: rooted in cultural tradition, unmistakably UT.</p>
-        <div class="proj-img-placeholder wide"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><path d="M6 28l8-8 6 6 4-4 10 10" stroke="#ccc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Hook 'em Bhangra — logo suite</span></div>
+      <!-- LONGHORN RACING -->
+      <div class="proj-detail-section" id="lb-lhr">
+        <div class="proj-detail-section-label">Longhorn Racing · Spring 2026 – Present</div>
+        <div class="proj-detail-h2">Brand Book & PR Hub</div>
+        <p class="proj-detail-p">I created a comprehensive Brand Book for the organization, centered on accessibility, branding consistency, and knowledge transfer. Before this initiative, we lacked a centralized resource like this, and members often struggled to understand and apply the organization's brand identity effectively.</p>
+        <p class="proj-detail-p">Prior to my election as Public Relations Officer, I received frequent feedback that branding resources were scattered across numerous files, difficult to locate, outdated, or simply unusable. One of my first priorities after being elected was to make these resources more accessible and practical for everyone.</p>
+        <p class="proj-detail-p">To address this, I developed an accessible Notion-based Public Relations Hub for LHR. Its most notable feature is an interactive Brand Book and set of branding guidelines that make it easy for members to find, understand, and apply our visual identity standards. Beyond the Brand Book itself, this PR Hub serves as a centralized knowledge base providing resources and training materials on graphic design, media production, branding, and other communications-related skills. It was designed not only to improve brand consistency but also to support the long-term development and onboarding of future members.</p>
+        <p class="proj-detail-p">Take a look for yourself!</p>
+        <div style="border:1px solid var(--border);overflow:hidden;margin-top:20px">
+          <div style="background:var(--gray);padding:18px 22px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;gap:16px">
+            <div>
+              <div style="font-size:10px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin-bottom:4px">Notion</div>
+              <div style="font-size:14px;font-weight:600;color:#1A1A1A">Brand Book & Guidelines</div>
+            </div>
+            <a href="https://stormy-asparagus-6c0.notion.site/Brand-Book-Guidelines-359dbf3c76a48048b2a4d4c890f675a3?source=copy_link" target="_blank" style="font-size:12px;color:var(--muted);text-decoration:underline;text-underline-offset:2px;white-space:nowrap;transition:color 0.15s" onmouseover="this.style.color='#1A1A1A'" onmouseout="this.style.color='var(--muted)'">Open →</a>
+          </div>
+          <div style="padding:18px 22px">
+            <p style="font-size:13px;color:#555;line-height:1.7;margin:0">Includes color palette, typography standards, logo usage rules, tone of voice, photography guidelines, and templates. Accessible to all LHR members through the PR Hub.</p>
+          </div>
+        </div>
+        <div style="border:1px solid var(--border);overflow:hidden;margin-top:12px">
+          <div style="background:var(--gray);padding:18px 22px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;gap:16px">
+            <div>
+              <div style="font-size:10px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin-bottom:4px">Notion</div>
+              <div style="font-size:14px;font-weight:600;color:#1A1A1A">Public Relations Hub</div>
+            </div>
+            <a href="https://app.notion.com/p/LHR-Public-Relations-Hub-34ddbf3c76a4803f8db8f381ca338be4?source=copy_link" target="_blank" style="font-size:12px;color:var(--muted);text-decoration:underline;text-underline-offset:2px;white-space:nowrap;transition:color 0.15s" onmouseover="this.style.color='#1A1A1A'" onmouseout="this.style.color='var(--muted)'">Open →</a>
+          </div>
+          <div style="padding:18px 22px">
+            <p style="font-size:13px;color:#555;line-height:1.7;margin:0">The full knowledge base for LHR members,resources and training materials on graphic design, media production, branding, and communications. Built for onboarding and long-term consistency.</p>
+          </div>
+        </div>
       </div>
 
-      <div class="proj-detail-section">
-        <div class="proj-detail-section-label">The Pyrography Project</div>
-        <div class="proj-detail-h2">Art studio identity</div>
-        <p class="proj-detail-p">The Pyrography Project is a student organization within UT Austin's College of Fine Arts focused on pyrography — the art of drawing with fire on wood. As Graphic Designer, I developed a visual identity that felt as textural and tactile as the medium itself: marks that looked burned in rather than printed on.</p>
-        <div class="proj-img-placeholder wide"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><path d="M6 28l8-8 6 6 4-4 10 10" stroke="#ccc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>The Pyrography Project — logo suite</span></div>
+      <!-- DRAGON WARS -->
+      <div class="proj-detail-section" id="lb-dragon">
+        <div class="proj-detail-section-label">Dragon Wars · Fall 2025 · Foundations of AET</div>
+        <div class="proj-detail-h2">Rapid Prototyped Card Game</div>
+        <p class="proj-detail-p">Created branding for a rapid prototyping card game project with a one-day turnaround. I was in charge of branding, creative direction, layout, and narrative. Kodi Khiraoui did the dragon head art, Sophia Scott did the skill art inside the cards, and Tristan Teng did scribe work, writing and lore.</p>
+        <p class="proj-detail-p">Team: Anshu Patel (Lead), Kodi Khiraoui, Tristan Teng, Sophia Scott.</p>
+        <div class="smt-lb-thumb" onclick="openLightbox('Dragon Wars/dragonwars png-01-01.png','#fff')" style="margin-top:16px;background:#fff;border:1px solid var(--border);padding:24px;display:flex;align-items:center;justify-content:center">
+          <img loading="lazy" src="Dragon Wars/dragonwars png-01-01.png" style="max-height:160px;width:auto;display:block" alt="Dragon Wars logo">
+        </div>
+        <p class="proj-img-caption">Logo I designed.</p>
+        <div class="proj-img-grid proj-img-grid-3" style="margin-top:20px;align-items:start">
+          <div class="smt-lb-thumb" onclick="openLightbox('Dragon Wars/1.png')">
+            <img loading="lazy" src="Dragon Wars/1.png" style="width:100%;display:block" alt="Card 1">
+          </div>
+          <div class="smt-lb-thumb" onclick="openLightbox('Dragon Wars/3.png')">
+            <img loading="lazy" src="Dragon Wars/3.png" style="width:100%;display:block" alt="Card 3">
+          </div>
+          <div class="smt-lb-thumb" onclick="openLightbox('Dragon Wars/2.png')">
+            <img loading="lazy" src="Dragon Wars/2.png" style="width:100%;display:block" alt="Card 2">
+          </div>
+          <div style="display:flex;flex-direction:column;gap:4px">
+            <div class="smt-lb-thumb" onclick="openLightbox('Dragon Wars/6.png')">
+              <img loading="lazy" src="Dragon Wars/6.png" style="width:100%;display:block" alt="Card 6">
+            </div>
+            <p class="proj-img-caption" style="margin-bottom:0">Back of card</p>
+          </div>
+          <div class="smt-lb-thumb" onclick="openLightbox('Dragon Wars/4.png')">
+            <img loading="lazy" src="Dragon Wars/4.png" style="width:100%;display:block" alt="Card 4">
+          </div>
+          <div class="smt-lb-thumb" onclick="openLightbox('Dragon Wars/5.png')">
+            <img loading="lazy" src="Dragon Wars/5.png" style="width:100%;display:block" alt="Card 5">
+          </div>
+        </div>
+        <div class="smt-lb-thumb" onclick="openLightbox('Dragon Wars/RULES PAGE.png')" style="margin-top:16px">
+          <img loading="lazy" src="Dragon Wars/RULES PAGE.png" style="width:100%;display:block" alt="Rules page">
+        </div>
+        <div style="border:1px solid var(--border);overflow:hidden;margin-top:16px">
+          <div style="background:var(--gray);padding:18px 22px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;gap:16px">
+            <div>
+              <div style="font-size:10px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin-bottom:4px">PDF</div>
+              <div style="font-size:14px;font-weight:600;color:#1A1A1A">Dragon Wars Final Presentation</div>
+            </div>
+            <a href="Dragon Wars/DRAGON WARS FINAL PRESENTATION.pdf" target="_blank" style="font-size:12px;color:var(--muted);text-decoration:underline;text-underline-offset:2px;white-space:nowrap;transition:color 0.15s" onmouseover="this.style.color='#1A1A1A'" onmouseout="this.style.color='var(--muted)'">Open →</a>
+          </div>
+          <div style="padding:18px 22px">
+            <p style="font-size:13px;color:#555;line-height:1.7;margin:0">Final presentation slides for the Dragon Wars rapid prototyping project, covering the game concept, card design, rules, and team contributions.</p>
+          </div>
+        </div>
       </div>
 
-      <div class="proj-detail-section">
-        <div class="proj-detail-section-label">Longhorn Racing</div>
-        <div class="proj-detail-h2">Formula SAE team identity</div>
-        <p class="proj-detail-p">Longhorn Racing is UT Austin's Formula SAE team — engineering and racing a fully student-built open-wheel car. The logomark needed to read at speed: legible on a race car at full throttle, bold enough to hold at any scale from a helmet decal to a team banner.</p>
-        <div class="proj-img-placeholder wide"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><path d="M6 28l8-8 6 6 4-4 10 10" stroke="#ccc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Longhorn Racing — logo suite</span></div>
+      <!-- HOOK 'EM BHANGRA -->
+      <div class="proj-detail-section" id="lb-hb">
+        <div class="proj-detail-section-label">Hook 'em Bhangra · Fall 2025</div>
+        <div class="proj-detail-h2">2025–2026 Season Logo</div>
+        <p class="proj-detail-p">This is the logo I designed for Hook 'em Bhangra's 2025-2026 season. Prior to developing the logo, I had drafted multiple concepts, and my fellow executive team members and I decided on a street-style, graffiti-inspired theme. This logo reflects that vision, using our team colors of orange, black, and white and transforming our emblem into a graffiti-style design to capture the energy of the season.</p>
+        <div class="smt-lb-thumb" onclick="openLightbox('Hookem Bhangra Logo/HB logo png black present in bg and letter-01.png')" style="margin-top:16px">
+          <img loading="lazy" src="Hookem Bhangra Logo/HB logo png black present in bg and letter-01.png" style="width:100%;display:block" alt="Hook em Bhangra logo">
+        </div>
+        <p class="proj-detail-p" style="margin-top:16px"><span style="cursor:pointer;text-decoration:underline;text-underline-offset:2px" onclick="showProject('merchandise')">Click here to see the merchandise created with this design.</span></p>
       </div>
 
-      <div class="proj-detail-section">
-        <div class="proj-detail-section-label">Dragon Wars</div>
-        <div class="proj-detail-h2">Gaming tournament identity</div>
-        <p class="proj-detail-p">Dragon Wars is a competitive gaming tournament with an identity that needed to land as hard in a digital context as it does on printed materials. Bold, aggressive, and unmistakably esports — without collapsing into visual cliché.</p>
-        <div class="proj-img-placeholder wide"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><path d="M6 28l8-8 6 6 4-4 10 10" stroke="#ccc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Dragon Wars — logo suite</span></div>
+      <!-- THE PYROGRAPHY PROJECT -->
+      <div class="proj-detail-section" id="lb-pyro">
+        <div class="proj-detail-section-label">The Pyrography Project · Spring 2026</div>
+        <div class="proj-detail-h2">Logo & Brand Identity</div>
+        <p class="proj-detail-p">The Pyrography Project was born at the University of Texas at Austin College of Fine Arts as a student-led collaboration rooted in artistic citizenship. Supported by a $2,000 Artistic Citizenship Collaborative Creative Grant, the project brings together students from different disciplines who believe art can strengthen communities and encourage care for place.</p>
+        <p class="proj-detail-p">I was asked by my friend Clark White to join him in applying for the grant. Once we received it, I took on the role of graphic designer and brand developer for the project. I created the color palette, designed the logo, built a simple Canva website, and managed the project's Instagram account and visual identity.</p>
+        <p class="proj-detail-p">We are actually taking this initiative beyond its original one-year requirement and plan to continue growing it throughout our junior year. The project has become something we are committed to developing long-term, and I am excited to continue contributing to its growth and impact.</p>
+        <div class="proj-img-grid proj-img-grid-3" style="margin-top:16px">
+          <div class="smt-lb-thumb" onclick="openLightbox('The Pyrography Project/pyrography project pngs-01.png')">
+            <img loading="lazy" src="The Pyrography Project/pyrography project pngs-01.png" style="width:100%;display:block" alt="Pyrography Project branding 1">
+          </div>
+          <div class="smt-lb-thumb" onclick="openLightbox('The Pyrography Project/pyrography project pngs-02.png')">
+            <img loading="lazy" src="The Pyrography Project/pyrography project pngs-02.png" style="width:100%;display:block" alt="Pyrography Project branding 2">
+          </div>
+          <div class="smt-lb-thumb" onclick="openLightbox('The Pyrography Project/pyrography project pngs-03.png')">
+            <img loading="lazy" src="The Pyrography Project/pyrography project pngs-03.png" style="width:100%;display:block" alt="Pyrography Project branding 3">
+          </div>
+        </div>
+        <div style="border:1px solid var(--border);overflow:hidden;margin-top:20px">
+          <div style="background:var(--gray);padding:18px 22px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;gap:16px">
+            <div>
+              <div style="font-size:10px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin-bottom:4px">Canva Website</div>
+              <div style="font-size:14px;font-weight:600;color:#1A1A1A">The Pyrography Project</div>
+            </div>
+            <a href="https://utstudent.my.canva.site/the-pyrography-project" target="_blank" style="font-size:12px;color:var(--muted);text-decoration:underline;text-underline-offset:2px;white-space:nowrap;transition:color 0.15s" onmouseover="this.style.color='#1A1A1A'" onmouseout="this.style.color='var(--muted)'">Open →</a>
+          </div>
+          <div style="padding:18px 22px">
+            <p style="font-size:13px;color:#555;line-height:1.7;margin:0">The website I built for the project in Canva, covering the project's mission, team, and community work in the Texas Hill Country.</p>
+          </div>
+        </div>
       </div>
 
     </div>
@@ -1971,7 +2099,7 @@ audio{accent-color:#1A1A1A}
   <div class="proj-detail-hero">
     <div class="proj-detail-kicker">2D & Graphic Design · Merchandise Design</div>
     <div class="proj-detail-title">Merchandise</div>
-    <p class="proj-detail-tagline">Apparel and merchandise graphics for organizations I've worked with — from racing team gear to cultural event merch, each piece designed to be worn with pride and survive the wash.</p>
+    <p class="proj-detail-tagline">Apparel and merchandise graphics for organizations I've worked with,from racing team gear to cultural event merch, each piece designed to be worn with pride and survive the wash.</p>
     <div class="proj-detail-meta-row">
       <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Years</div><div class="proj-detail-meta-val">2023–2025</div></div>
       <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">Illustrator, Photoshop</div></div>
@@ -1990,30 +2118,30 @@ audio{accent-color:#1A1A1A}
       <div class="proj-detail-section">
         <div class="proj-detail-section-label">Longhorn Racing Solar</div>
         <div class="proj-detail-h2">Solar car team apparel</div>
-        <p class="proj-detail-p">Merchandise for UT Austin's solar car racing division — a team that designs, builds, and races a solar-powered vehicle across cross-country circuits. The apparel graphics needed to feel technical and future-facing while staying grounded in Longhorn brand territory.</p>
+        <p class="proj-detail-p">Merchandise for UT Austin's solar car racing division,a team that designs, builds, and races a solar-powered vehicle across cross-country circuits. The apparel graphics needed to feel technical and future-facing while staying grounded in Longhorn brand territory.</p>
         <div class="proj-img-grid proj-img-grid-2">
-          <div class="proj-img-placeholder wide"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>LHR Solar — shirt design</span></div>
-          <div class="proj-img-placeholder wide"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>LHR Solar — mockup</span></div>
+          <div class="proj-img-placeholder wide"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>LHR Solar,shirt design</span></div>
+          <div class="proj-img-placeholder wide"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>LHR Solar,mockup</span></div>
         </div>
       </div>
 
       <div class="proj-detail-section">
         <div class="proj-detail-section-label">Hook 'em Bhangra</div>
         <div class="proj-detail-h2">Dance team apparel</div>
-        <p class="proj-detail-p">Apparel for Hook 'em Bhangra's performance season — worn onstage and at competitions. The designs needed energy that reads across a dance floor: bold graphics, high contrast, and type that holds even when the wearer is mid-bhangra.</p>
+        <p class="proj-detail-p">Apparel for Hook 'em Bhangra's performance season,worn onstage and at competitions. The designs needed energy that reads across a dance floor: bold graphics, high contrast, and type that holds even when the wearer is mid-bhangra.</p>
         <div class="proj-img-grid proj-img-grid-2">
-          <div class="proj-img-placeholder wide"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Hook 'em Bhangra — shirt design</span></div>
-          <div class="proj-img-placeholder wide"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Hook 'em Bhangra — mockup</span></div>
+          <div class="proj-img-placeholder wide"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Hook 'em Bhangra,shirt design</span></div>
+          <div class="proj-img-placeholder wide"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Hook 'em Bhangra,mockup</span></div>
         </div>
       </div>
 
       <div class="proj-detail-section">
         <div class="proj-detail-section-label">Bharat Yatra</div>
         <div class="proj-detail-h2">Cultural event merchandise</div>
-        <p class="proj-detail-p">Bharat Yatra — Journey to India — is a cultural celebration event bringing together South Asian heritage, performance, and community. The merchandise design drew from Indian textile patterns, folk art motifs, and a warm, festive palette to create pieces that felt like keepsakes, not just event merch.</p>
+        <p class="proj-detail-p">Bharat Yatra,Journey to India,is a cultural celebration event bringing together South Asian heritage, performance, and community. The merchandise design drew from Indian textile patterns, folk art motifs, and a warm, festive palette to create pieces that felt like keepsakes, not just event merch.</p>
         <div class="proj-img-grid proj-img-grid-2">
-          <div class="proj-img-placeholder wide"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Bharat Yatra — shirt design</span></div>
-          <div class="proj-img-placeholder wide"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Bharat Yatra — mockup</span></div>
+          <div class="proj-img-placeholder wide"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Bharat Yatra,shirt design</span></div>
+          <div class="proj-img-placeholder wide"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Bharat Yatra,mockup</span></div>
         </div>
       </div>
 
@@ -2031,64 +2159,367 @@ audio{accent-color:#1A1A1A}
     </div>
     <div><button class="proj-nav-btn" onclick="showPage('graphic')">← Back to category</button></div>
   </div>
-  <div class="proj-detail-hero">
+  <div class="proj-detail-hero" style="border-bottom:1px solid var(--border)">
     <div class="proj-detail-kicker">2D & Graphic Design · Poster Design</div>
     <div class="proj-detail-title">Posters</div>
-    <p class="proj-detail-tagline">Two poster projects — one an experimental typographic exploration, one a class assignment that turned into something I actually wanted to hang on a wall.</p>
-    <div class="proj-detail-meta-row">
-      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Years</div><div class="proj-detail-meta-val">2023–2024</div></div>
-      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">Illustrator, InDesign, Photoshop</div></div>
-      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Type</div><div class="proj-detail-meta-val">Academic / Personal</div></div>
-    </div>
+    <p class="proj-detail-tagline">A collection of posters from Images in Communication (DES 321) and Typography 1 (DES 325). Each one went through rounds of sketching, critique, and iteration. Click "Process" on any poster to see how it got made.</p>
   </div>
-  <div class="proj-detail-cover" style="height:360px;background:#FAFAF8">
-    <div class="proj-detail-cover-inner" style="flex-direction:column;gap:12px">
-      <svg width="360" height="200" viewBox="0 0 360 200" fill="none"><rect x="30" y="10" width="130" height="180" rx="4" fill="#F0EBE0" stroke="#D0C8B8" stroke-width="1.5"/><rect x="46" y="26" width="98" height="8" rx="2" fill="#1A1A1A" opacity="0.6"/><rect x="46" y="40" width="68" height="5" rx="2" fill="#1A1A1A" opacity="0.35"/><rect x="46" y="54" width="98" height="100" rx="3" fill="#D4B900" opacity="0.6"/><rect x="200" y="10" width="130" height="180" rx="4" fill="#E8EAF0" stroke="#C0C4D0" stroke-width="1.5"/><rect x="216" y="26" width="98" height="8" rx="2" fill="#1A1A1A" opacity="0.6"/><rect x="216" y="40" width="68" height="5" rx="2" fill="#1A1A1A" opacity="0.35"/><rect x="216" y="54" width="98" height="100" rx="3" fill="#4A6080" opacity="0.35"/></svg>
-      <span style="font-size:12px;color:#888;opacity:0.7;font-weight:500">[ Cover image placeholder ]</span>
+
+  <div class="poster-gallery">
+    <div class="poster-card">
+      <div class="poster-card-img smt-lb-thumb" onclick="openLightbox('Typographic Follies/Anshu_Patel_Version_1.jpg')">
+        <img loading="lazy" src="Typographic Follies/Anshu_Patel_Version_1.jpg" style="width:100%;height:100%;object-fit:contain;display:block" alt="Typographic Follies 1">
+      </div>
+      <div class="poster-card-foot">
+        <span class="poster-card-name">Typographic Follies I</span>
+        <button class="poster-process-btn" onclick="openPosterProcess('typographic-follies')">Process</button>
+      </div>
     </div>
-  </div>
-  <div class="proj-detail-body" style="display:block">
-    <div class="proj-detail-content">
-
-      <div class="proj-detail-section">
-        <div class="proj-detail-section-label">Typographic Follies</div>
-        <div class="proj-detail-h2">Breaking the rules, deliberately</div>
-        <p class="proj-detail-p">Typographic Follies is an experimental poster project built around a simple premise: take a typographic rule, state it clearly, then violate it in the most visually coherent way possible. The poster series explores optical alignment, weight contrast, hierarchy, and negative space — each one a demonstration and a counter-demonstration at the same time.</p>
-        <div class="proj-img-grid proj-img-grid-2">
-          <div class="proj-img-placeholder tall"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Typographic Follies — poster</span></div>
-          <div class="proj-img-placeholder tall"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Detail / alternate version</span></div>
-        </div>
+    <div class="poster-card">
+      <div class="poster-card-img smt-lb-thumb" onclick="openLightbox('Typographic Follies/Anshu_Patel_Version_2.jpg')">
+        <img loading="lazy" src="Typographic Follies/Anshu_Patel_Version_2.jpg" style="width:100%;height:100%;object-fit:contain;display:block" alt="Typographic Follies 2">
       </div>
-
-      <div class="proj-detail-section">
-        <div class="proj-detail-section-label">Kevin's Class</div>
-        <div class="proj-detail-h2">A class assignment that got interesting</div>
-        <p class="proj-detail-p">A poster project from class that started as a constrained assignment and became something worth finishing properly. The brief pushed toward a specific visual territory — and somewhere in the iteration process, a design emerged that felt more personal than academic. The final poster is the thing I actually wanted to make.</p>
-        <div class="proj-img-grid proj-img-grid-2">
-          <div class="proj-img-placeholder tall"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Kevin's Class — final poster</span></div>
-          <div class="proj-img-placeholder tall"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Process / earlier iteration</span></div>
-        </div>
+      <div class="poster-card-foot">
+        <span class="poster-card-name">Typographic Follies II</span>
+        <button class="poster-process-btn" onclick="openPosterProcess('typographic-follies')">Process</button>
       </div>
-
+    </div>
+    <div class="poster-card">
+      <div class="poster-card-img smt-lb-thumb" onclick="openLightbox('Typographic Follies/Anshu_Patel_Version_3.jpg')">
+        <img loading="lazy" src="Typographic Follies/Anshu_Patel_Version_3.jpg" style="width:100%;height:100%;object-fit:contain;display:block" alt="Typographic Follies 3">
+      </div>
+      <div class="poster-card-foot">
+        <span class="poster-card-name">Typographic Follies III</span>
+        <button class="poster-process-btn" onclick="openPosterProcess('typographic-follies')">Process</button>
+      </div>
+    </div>
+    <div class="poster-card">
+      <div class="poster-card-img smt-lb-thumb" onclick="openLightbox('Nerds Poster/images in communication final poster-03-03.png')">
+        <img loading="lazy" src="Nerds Poster/images in communication final poster-03-03.png" style="width:100%;height:100%;object-fit:contain;display:block" alt="Nerds poster">
+      </div>
+      <div class="poster-card-foot">
+        <span class="poster-card-name">Nerds</span>
+        <button class="poster-process-btn" onclick="openPosterProcess('nerds')">Process</button>
+      </div>
+    </div>
+    <div class="poster-card">
+      <div class="poster-card-img smt-lb-thumb" onclick="openLightbox(this.dataset.lb)" data-lb="Doomsday Poster/Print for ARTL for Kevin's Class with glow in the dark vision-01.png">
+        <img loading="lazy" src="Doomsday Poster/Print for ARTL for Kevin's Class with glow in the dark vision-01.png" style="width:100%;height:100%;object-fit:contain;display:block" alt="Doomsday poster">
+      </div>
+      <div class="poster-card-foot">
+        <span class="poster-card-name">Doomsday</span>
+        <button class="poster-process-btn" onclick="openPosterProcess('doomsday')">Process</button>
+      </div>
+    </div>
+    <div class="poster-card">
+      <div class="poster-card-img smt-lb-thumb" onclick="openLightbox('Artist Book Poster/Artist Book Posters done for process blog-07.png')">
+        <img loading="lazy" src="Artist Book Poster/Artist Book Posters done for process blog-07.png" style="width:100%;height:100%;object-fit:contain;display:block" alt="Artist Book poster">
+      </div>
+      <div class="poster-card-foot">
+        <span class="poster-card-name">Artist Book</span>
+        <button class="poster-process-btn" onclick="openPosterProcess('artist-book')">Process</button>
+      </div>
     </div>
   </div>
 </div>
 
-<div class="proj-detail-page" id="proj-verdant-ui"><div class="proj-detail-nav"><div class="proj-detail-breadcrumb"><span onclick="showPage('ux')">UX/UI & Game Design</span><span class="sep">›</span><span style="color:#1A1A1A;font-weight:500">Verdant — UI System</span></div><div><button class="proj-nav-btn" onclick="showPage('ux')">← Back</button></div></div><div class="proj-detail-hero"><div class="proj-detail-kicker">UX/UI & Game Design · Game UI</div><div class="proj-detail-title">Verdant — UI System</div><p class="proj-detail-tagline">A complete in-game UI system for Verdant — menus, HUD, inventory, and dialogue interfaces designed to feel organic without breaking the world's visual rules.</p><div class="proj-detail-meta-row"><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">6 weeks</div></div><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">Figma, Illustrator</div></div></div></div><div class="proj-detail-cover" style="height:380px;background:#E8F0FF"><div class="proj-detail-cover-inner" style="flex-direction:column;gap:12px"><svg width="380" height="200" viewBox="0 0 380 200" fill="none"><rect x="20" y="20" width="340" height="160" rx="10" fill="#8090E0" opacity="0.2"/><rect x="36" y="36" width="100" height="70" rx="6" fill="#6070C8" opacity="0.35"/><rect x="152" y="36" width="76" height="30" rx="5" fill="#6070C8" opacity="0.3"/><rect x="152" y="74" width="76" height="30" rx="5" fill="#6070C8" opacity="0.25"/><rect x="246" y="36" width="98" height="70" rx="6" fill="#6070C8" opacity="0.2"/></svg><span style="font-size:12px;color:#6070C8;opacity:0.7;font-weight:500">[ Cover placeholder ]</span></div></div><div class="proj-detail-body" style="display:block"><div class="proj-detail-content"><div class="proj-detail-section"><div class="proj-detail-section-label">Overview</div><div class="proj-detail-h2">UI as world extension</div><p class="proj-detail-p">Lorem ipsum dolor sit amet. The Verdant UI system was designed as a companion to the level design project — a complete interface suite for the game's menus, HUD, inventory, and dialogue. The design constraint: the UI had to feel like it was grown, not built. Organic edge treatments, muted earthy tones, and hand-drawn texture elements give the interface a diegetic quality without sacrificing readability.</p></div><div class="proj-detail-section"><div class="proj-detail-section-label">Key Screens</div><div class="proj-detail-h2">The system</div><div class="proj-img-grid proj-img-grid-2"><div class="proj-img-placeholder wide"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Main menu</span></div><div class="proj-img-placeholder wide"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>In-game HUD</span></div><div class="proj-img-placeholder wide"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Inventory panel</span></div><div class="proj-img-placeholder wide"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Dialogue UI</span></div></div></div></div></div></div>
+<!-- POSTER PROCESS DRAWER (body level, outside contain:layout) -->
+<div class="poster-drawer-overlay" id="poster-drawer-overlay" onclick="closePosterProcess()"></div>
+<div class="poster-drawer" id="poster-drawer">
+    <div class="poster-drawer-bar" onclick="closePosterProcess()"><span></span></div>
+    <div class="poster-drawer-header">
+      <div class="poster-drawer-title-text" id="poster-drawer-title"></div>
+      <button class="poster-drawer-close" onclick="closePosterProcess()">✕</button>
+    </div>
+    <div class="poster-drawer-scroll">
+      <div class="poster-drawer-body">
 
-<!-- Wayfinder, Petal — stub detail pages -->
-<div class="proj-detail-page" id="proj-wayfinder"><div class="proj-detail-nav"><div class="proj-detail-breadcrumb"><span onclick="showPage('ux')">UX/UI & Game Design</span><span class="sep">›</span><span style="color:#1A1A1A;font-weight:500">Wayfinder</span></div><div><button class="proj-nav-btn" onclick="showPage('ux')">← Back</button></div></div><div class="proj-detail-hero"><div class="proj-detail-kicker">UX/UI & Game Design · UX Research</div><div class="proj-detail-title">Wayfinder</div><p class="proj-detail-tagline">End-to-end UX research case study for a campus wayfinding redesign — interviews, journey maps, accessibility audit, and redesign recommendations.</p><div class="proj-detail-meta-row"><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">8 weeks · Fall 2023</div></div><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">Figma, Miro, Maze</div></div></div></div><div class="proj-detail-cover" style="height:360px;background:#E8F4FF"><div class="proj-detail-cover-inner" style="flex-direction:column;gap:12px"><svg width="360" height="180" viewBox="0 0 360 180" fill="none"><circle cx="100" cy="90" r="50" stroke="#3a90d0" stroke-width="1.5" fill="none" opacity="0.35"/><circle cx="260" cy="90" r="40" stroke="#3a90d0" stroke-width="1.5" fill="none" opacity="0.35"/><line x1="100" y1="90" x2="260" y2="90" stroke="#3a90d0" stroke-width="1.5" opacity="0.25"/><circle cx="100" cy="90" r="8" fill="#3a90d0" opacity="0.5"/><circle cx="260" cy="90" r="8" fill="#3a90d0" opacity="0.5"/><circle cx="180" cy="50" r="8" fill="#3a90d0" opacity="0.4"/></svg><span style="font-size:12px;color:#3a90d0;opacity:0.7;font-weight:500">[ Cover placeholder ]</span></div></div><div class="proj-detail-body" style="display:block"><div class="proj-detail-content"><div class="proj-detail-section"><div class="proj-detail-section-label">Overview</div><div class="proj-detail-h2">Research-first wayfinding</div><p class="proj-detail-p">Lorem ipsum dolor sit amet. Wayfinder was a research-first UX project focused on the experience of navigating UT Austin's campus — particularly for first-year students, visitors, and users with mobility needs. The project moved from 12 user interviews through affinity mapping, journey mapping, and a full accessibility audit of existing campus signage to a final set of redesign recommendations.</p></div><div class="proj-detail-section"><div class="proj-detail-section-label">Research Artifacts</div><div class="proj-detail-h2">Key deliverables</div><div class="proj-img-placeholder wide"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Affinity map — research synthesis</span></div><div class="proj-img-placeholder wide"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>User journey map</span></div></div></div></div></div>
+        <!-- ══ NERDS ══ -->
+        <div class="poster-process-content" id="process-nerds">
 
-<div class="proj-detail-page" id="proj-petal"><div class="proj-detail-nav"><div class="proj-detail-breadcrumb"><span onclick="showPage('ux')">UX/UI & Game Design</span><span class="sep">›</span><span style="color:#1A1A1A;font-weight:500">Petal</span></div><div><button class="proj-nav-btn" onclick="showPage('ux')">← Back</button></div></div><div class="proj-detail-hero"><div class="proj-detail-kicker">UX/UI & Game Design · App Design</div><div class="proj-detail-title">Petal</div><p class="proj-detail-tagline">A mobile wellness app designed for gentle habit tracking — soft, non-judgmental, and built around the idea that small things compound.</p><div class="proj-detail-meta-row"><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">6 weeks · Fall 2022</div></div><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">Figma</div></div></div></div><div class="proj-detail-cover" style="height:360px;background:#FDF0FF"><div class="proj-detail-cover-inner" style="flex-direction:column;gap:12px"><svg width="280" height="180" viewBox="0 0 280 180" fill="none"><rect x="100" y="15" width="80" height="150" rx="14" fill="#C880E8" opacity="0.25"/><rect x="112" y="30" width="56" height="10" rx="4" fill="#9040C0" opacity="0.45"/><rect x="112" y="48" width="40" height="8" rx="3" fill="#9040C0" opacity="0.3"/><rect x="112" y="66" width="56" height="40" rx="8" fill="#9040C0" opacity="0.2"/></svg><span style="font-size:12px;color:#9040C0;opacity:0.7;font-weight:500">[ Cover placeholder ]</span></div></div><div class="proj-detail-body" style="display:block"><div class="proj-detail-content"><div class="proj-detail-section"><div class="proj-detail-section-label">Overview</div><div class="proj-detail-h2">Habit tracking without shame</div><p class="proj-detail-p">Lorem ipsum dolor sit amet. Petal is a wellness app designed around a single idea: most habit apps feel like report cards. Petal removes all streaks, scores, and failure states — replacing them with a growing garden visualization that reflects accumulation, not performance. The UI design prioritizes softness, breathing room, and micro-interactions that feel rewarding without being addictive.</p></div><div class="proj-detail-section"><div class="proj-detail-section-label">Key Screens</div><div class="proj-detail-h2">Screens</div><div class="proj-img-grid proj-img-grid-3"><div class="proj-img-placeholder tall"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Garden home</span></div><div class="proj-img-placeholder tall"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Log habit</span></div><div class="proj-img-placeholder tall"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Weekly reflection</span></div></div></div></div></div></div>
+          <div class="poster-process-section">
+            <div class="proj-detail-section-label">Sketching</div>
+            <p class="proj-detail-p">The first step was to create a range of sketches and then narrow them down for class critique. I had a lot of initial sketches, experimenting with various treatments to see which ones translated best into a strong design. By sketching multiple options, I was able to explore different shapes, textures, and visual identities without committing too early.</p>
+            <p class="proj-detail-p">In class, I presented my selected six sketches and received feedback from my peers and instructor. The consensus was that my Nerds candy concepts stood out the most. They felt that these sketches best communicated my intended idea of something "chaotic yet cohesive." Reflecting on this stage, I'm glad I began with a broad range of ideas, as it gave me confidence in choosing a direction.</p>
+            <div class="smt-lb-thumb" style="margin-top:16px" onclick="openLightbox('Nerds Poster/sketches for Nerds poster.png')">
+              <img loading="lazy" src="Nerds Poster/sketches for Nerds poster.png" style="width:100%;display:block" alt="Nerds poster sketches">            </div>
+            <p class="proj-img-caption">Initial sketch explorations presented in class critique.</p>
+          </div>
+
+          <div class="poster-process-section">
+            <div class="proj-detail-section-label">First Iterations</div>
+            <div class="proj-img-grid proj-img-grid-2" style="margin-top:8px">
+              <div class="smt-lb-thumb" onclick="openLightbox('Nerds Poster/posters mock up - images in communication-02.png')">
+                <img loading="lazy" src="Nerds Poster/posters mock up - images in communication-02.png" style="width:100%;display:block" alt="First iteration mockup">
+                      </div>
+              <div class="smt-lb-thumb" onclick="openLightbox('Nerds Poster/posters mock up - images in communication-01.png')">
+                <img loading="lazy" src="Nerds Poster/posters mock up - images in communication-01.png" style="width:100%;display:block" alt="First iteration mockup 2">
+                      </div>
+            </div>
+            <p class="proj-img-caption">First iterations developed from the Nerds concept direction.</p>
+          </div>
+
+          <div class="poster-process-section">
+            <div class="proj-detail-section-label">Refinement & Critique</div>
+            <p class="proj-detail-p">For the iteration I brought to our last critique round, I adjusted the positioning of the letters that spelled out "Nerds" in all lowercase. I duplicated the text, changed the duplicate to blue, and overlaid it. This created a risograph-like effect where the overlapping colors blended into purple, which also references the grape flavor of the candy. I liked this effect much more because it added to the overall concept of the design.</p>
+            <p class="proj-detail-p">I also refined the scale of the book page layout to make it neater and more balanced. I maintained text hierarchy consistency to ensure the design remained reflective of the original packaging's structure. During the critique, my classmates and professor suggested fixing the spacing of the secondary text and refining the overlap so it looks less like a direct duplication. Instead, they encouraged me to make the letters slightly different and imperfect, as if retraced by hand.</p>
+            <div class="smt-lb-thumb" style="margin-top:16px" onclick="openLightbox('Nerds Poster/images in communication final critique ver-03.png')">
+              <img loading="lazy" src="Nerds Poster/images in communication final critique ver-03.png" style="width:100%;display:block" alt="Critique version">            </div>
+            <p class="proj-img-caption">The version brought to the final critique round.</p>
+          </div>
+
+          <div class="poster-process-section">
+            <div class="proj-detail-section-label">Final</div>
+            <p class="proj-detail-p">I realized that I actually preferred my text overlaying and being on top of the secondary text. On second thought, I liked that effect better, so I updated my poster to reflect it. With these changes, I completed my final iteration of the Nerds poster, keeping the idea of "chaotic yet cohesive" as the main concept.</p>
+            <div class="smt-lb-thumb" style="margin-top:16px" onclick="openLightbox('Nerds Poster/images in communication final poster-03-03.png')">
+              <img loading="lazy" src="Nerds Poster/images in communication final poster-03-03.png" style="width:100%;display:block" alt="Final Nerds poster">            </div>
+          </div>
+
+          <div class="poster-process-section">
+            <div class="proj-detail-section-label">Reflection</div>
+            <p class="proj-detail-p">This project gave me the chance to see, like I have many times before, how an idea can grow from sketches to a final design through feedback and iteration. Starting with many sketches let me try out a multitude of ideas before narrowing down to the Nerds candy concept. Critique helped guide my choices, especially with hierarchy, spacing, color, and making the letterforms feel more natural. In the end, I created a design that feels structured but still playfully chaotic.</p>
+          </div>
+
+        </div>
+
+        <!-- ══ DOOMSDAY ══ -->
+        <div class="poster-process-content" id="process-doomsday">
+
+          <div class="poster-process-section">
+            <div class="proj-detail-section-label">The Assignment</div>
+            <p class="proj-detail-p">This project was the Drawing from Source Material: Transforming Forms assignment. Our professor put up several physical posters in class, and we had one hour to record as much information and detail as we could observe. After that, we would never see the posters again, so whatever we captured in that short timeframe became the foundation for our design process.</p>
+            <p class="proj-detail-p">I sketched quickly, noting shapes, colors, typography choices, and compositional elements that stood out to me. These raw observations became the source material I could later reinterpret. These are the sketches I made directly from the source posters, which I later used as building blocks for my final concept.</p>
+            <div class="proj-img-grid proj-img-grid-3" style="margin-top:16px">
+              <div class="smt-lb-thumb" onclick="openLightbox('Doomsday Poster/image.png')">
+                <img loading="lazy" src="Doomsday Poster/image.png" style="width:100%;display:block" alt="Observational sketch 1">
+                      </div>
+              <div class="smt-lb-thumb" onclick="openLightbox('Doomsday Poster/image (1).png')">
+                <img loading="lazy" src="Doomsday Poster/image (1).png" style="width:100%;display:block" alt="Observational sketch 2">
+                      </div>
+              <div class="smt-lb-thumb" onclick="openLightbox('Doomsday Poster/image (2).png')">
+                <img loading="lazy" src="Doomsday Poster/image (2).png" style="width:100%;display:block" alt="Observational sketch 3">
+                      </div>
+            </div>
+            <div class="proj-img-grid proj-img-grid-2" style="margin-top:12px">
+              <div class="smt-lb-thumb" onclick="openLightbox('Doomsday Poster/image (3).png')">
+                <img loading="lazy" src="Doomsday Poster/image (3).png" style="width:100%;display:block" alt="Observational sketch 4">
+                      </div>
+              <div class="smt-lb-thumb" onclick="openLightbox('Doomsday Poster/image (4).png')">
+                <img loading="lazy" src="Doomsday Poster/image (4).png" style="width:100%;display:block" alt="Observational sketch 5">
+                      </div>
+            </div>
+            <p class="proj-img-caption">Observational sketches made in class from the source posters.</p>
+          </div>
+
+          <div class="poster-process-section">
+            <div class="proj-detail-section-label">Sketching & Direction</div>
+            <p class="proj-detail-p">Then I began to play around with messaging and creating a variety of sketches. While revisiting my observational sketches, I found myself especially drawn to the use of eyes and hands in one of the posters. I was also inspired by the bold wording and text treatments found in several propaganda posters, as well as the use of negative space in the orange-colored "DDC vs. Austin" poster.</p>
+            <p class="proj-detail-p">As I experimented, my messaging started to lean toward addressing the dangers of modern-day technology and its impacts on our world and privacy. I was also strongly drawn to messaging that highlights urgent issues such as pollution, global warming, and the idea that our planet is being harmed by human actions. This call-to-action theme became central to my sketches.</p>
+            <p class="proj-detail-p">During the desk critique, my desk mates gave me valuable pointers. When brainstorming ways to move beyond the paper, I introduced the idea of having two different versions of the poster on one page using invisible glow-in-the-dark paint, a concept my desk mates loved. They noted that while my idea and message felt solid, I needed a clearer central direction. The conversation about glow-in-the-dark paint motivated me to keep pushing my ideas further.</p>
+          </div>
+
+          <div class="poster-process-section">
+            <div class="proj-detail-section-label">Preliminary Designs</div>
+            <p class="proj-detail-p">For the prelims, I aimed to convey a clear, streamlined message: "Our planet is endangered." I drew inspiration from the "DDC vs Austin" poster's use of negative space, the overall tone of propaganda posters, and a striking poster featuring two black hands prying open eyes. As you review my preliminary designs, you will notice that 2 out of 3 include the text "89 SECONDS TO MIDNIGHT," referencing the <a href="https://thebulletin.org/doomsday-clock/" target="_blank" style="color:#1A1A1A;text-decoration:underline">Bulletin of the Atomic Scientists' Doomsday Clock</a>.</p>
+            <div class="smt-lb-thumb" style="margin-top:16px" onclick="openLightbox('Doomsday Poster/prelims for design from source material-03.png')">
+              <img loading="lazy" src="Doomsday Poster/prelims for design from source material-03.png" style="width:100%;display:block" alt="Prelim 1: crows and tree">            </div>
+            <p class="proj-img-caption">Preliminary design 1: two crows whose beaks form the silhouette of a white tree on fire, with "89 Seconds to Midnight." The first time I explored negative space this way.</p>
+            <div class="smt-lb-thumb" style="margin-top:16px" onclick="openLightbox('Doomsday Poster/prelims for design from source material-02.png')">
+              <img loading="lazy" src="Doomsday Poster/prelims for design from source material-02.png" style="width:100%;display:block" alt="Prelim 2: hand holding earth bomb">            </div>
+            <p class="proj-img-caption">Preliminary design 2: a stark black hand gripping a bomb shaped like the Earth, with "89 SECONDS TO MIDNIGHT" at the top. A more immediate, literal interpretation.</p>
+            <div class="smt-lb-thumb" style="margin-top:16px" onclick="openLightbox('Doomsday Poster/prelims for design from source material-01.png')">
+              <img loading="lazy" src="Doomsday Poster/prelims for design from source material-01.png" style="width:100%;display:block" alt="Prelim 3: hands with flame">            </div>
+            <p class="proj-img-caption">Preliminary design 3: hands reaching upward with a white flame silhouette, the smoke forming the shapes of Earth's continents. My weakest of the three compositionally.</p>
+          </div>
+
+          <div class="poster-process-section">
+            <div class="proj-detail-section-label">Critique & Email Exchange</div>
+            <p class="proj-detail-p">On the day of the critique, I printed all three posters and pinned them up. When it was my turn, I presented each design, explaining my message, the details I included, and my sources of inspiration. I also emphasized that these posters did not yet include the tertiary details I planned to add using translucent glow-in-the-dark paint.</p>
+            <p class="proj-detail-p">To my surprise, the only design that generated discussion was my second poster, the one featuring the hand holding the Earth bomb. The most useful feedback I received was the recommendation to consider screen printing, to avoid doodles that could lessen the seriousness of the poster, and to limit my color palette.</p>
+            <p class="proj-detail-p">After reflecting, taking notes, and sketching further, I concluded that my poster featuring the two crows offered the strongest opportunity to push my boundaries and incorporate the glow-in-the-dark elements I had envisioned. I sent Professor Kevin an email that night to discuss moving forward with a different design than the one critiqued.</p>
+            <div class="proj-img-grid proj-img-grid-2" style="margin-top:16px">
+              <div class="smt-lb-thumb" onclick="openLightbox('Doomsday Poster/image (5).png')">
+                <img loading="lazy" src="Doomsday Poster/image (5).png" style="width:100%;display:block" alt="Email to Kevin">
+                      </div>
+              <div class="smt-lb-thumb" onclick="openLightbox('Doomsday Poster/image (6).png')">
+                <img loading="lazy" src="Doomsday Poster/image (6).png" style="width:100%;display:block" alt="Kevin's response">
+                      </div>
+            </div>
+            <p class="proj-img-caption">The email exchange with Professor Kevin. His points were immensely helpful in allowing me to refine my design while staying true to my vision.</p>
+          </div>
+
+          <div class="poster-process-section">
+            <div class="proj-detail-section-label">Refining the Design</div>
+            <p class="proj-detail-p">I decided to make the fire more dynamic, limited the color palette significantly, moved the text to the top and increased its size, and adjusted the tree silhouette to be more symmetrical, balanced, and better integrated into the crows' beaks. I also shifted the entire graphic downward and added skulls within the crows' heads to further emphasize my concept. Overall, these changes made me much more confident in the design and strengthened the impact of my message.</p>
+            <div class="smt-lb-thumb" style="margin-top:16px" onclick="openLightbox(this.dataset.lb)" data-lb="Doomsday Poster/Print for ARTL for Kevin's Class print  NO GLOW-01.png">
+              <img loading="lazy" src="Doomsday Poster/Print for ARTL for Kevin's Class print  NO GLOW-01.png" style="width:100%;display:block" alt="Final print version">            </div>
+            <p class="proj-img-caption">The final iteration sent to the ARTL Lab to be printed.</p>
+            <p class="proj-detail-p" style="margin-top:16px">I also created a mockup to show where the glow-in-the-dark details would be applied. I added geometric factory buildings at the bottom, with smoke rising from the chimneys forming an arrow-like shape, using green to reflect how the glow-in-the-dark paint would appear.</p>
+            <div class="smt-lb-thumb" style="margin-top:12px" onclick="openLightbox(this.dataset.lb)" data-lb="Doomsday Poster/Print for ARTL for Kevin's Class with glow in the dark vision-01.png">
+              <img loading="lazy" src="Doomsday Poster/Print for ARTL for Kevin's Class with glow in the dark vision-01.png" style="width:100%;display:block" alt="Glow in the dark mockup">            </div>
+            <p class="proj-img-caption">Mockup showing where the glow-in-the-dark elements would be applied.</p>
+          </div>
+
+          <div class="poster-process-section">
+            <div class="proj-detail-section-label">In Class with Kevin</div>
+            <p class="proj-detail-p">In class, Professor Kevin saw my poster, recalled our email exchanges, and introduced the idea of using monochrome color palettes for future iterations. Here is what we developed together in class, which I am including for reference in case I use it in a future iteration.</p>
+            <div class="smt-lb-thumb" style="margin-top:12px" onclick="openLightbox('Doomsday Poster/kevin color changes for poster-01-01.png')">
+              <img loading="lazy" src="Doomsday Poster/kevin color changes for poster-01-01.png" style="width:100%;display:block" alt="Monochrome version with Kevin">            </div>
+            <p class="proj-img-caption">The monochrome color direction developed together in class.</p>
+          </div>
+
+          <div class="poster-process-section">
+            <div class="proj-detail-section-label">Painting Process</div>
+            <p class="proj-detail-p">Before starting the painting process, I considered screen printing but ultimately decided against it. The main issue was the viscosity of the glow-in-the-dark paint. If I had tried to screen print, I would have needed to dilute it significantly, which would likely have reduced its glow. I had already swatched the paint and found that, despite its thickness, it would still require multiple coats even without dilution. Hand painting felt like the best way to preserve both the visual impact and the glow effect I was aiming for.</p>
+            <p class="proj-detail-p">On Thursday, I picked up my print and began the painting process after my classes. Initially, I had planned for the glow-in-the-dark elements to be completely invisible, but after testing it, I realized I didn't like that effect. I decided I wanted the green buildings and smoke to be both visible and glow in the dark. Using paint allowed the poster to have more texture, which aligned with my goal of introducing a physical medium. Even with multiple layers, it took several hours to get the glow right.</p>
+            <div class="proj-img-grid proj-img-grid-2" style="margin-top:16px">
+              <div class="smt-lb-thumb" onclick="openLightbox('Doomsday Poster/image (7).png')">
+                <img loading="lazy" src="Doomsday Poster/image (7).png" style="width:100%;display:block" alt="Process photo between coats">
+                      </div>
+              <div class="smt-lb-thumb" onclick="openLightbox('Doomsday Poster/image (8).png')">
+                <img loading="lazy" src="Doomsday Poster/image (8).png" style="width:100%;display:block" alt="Process photo">
+                      </div>
+            </div>
+            <p class="proj-img-caption">Between coats of paint.</p>
+            <video controls preload="none" style="width:100%;display:block;margin-top:16px;border-radius:4px">
+              <source src="Doomsday Poster/VID20251002235458.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div class="poster-process-section">
+            <div class="proj-detail-section-label">Final Critique & Reflection</div>
+            <p class="proj-detail-p">The final critique went well. I was the last person to present since we had to turn off the lights to see the glow effect. Unfortunately, because of the daylight and the light streaming in from the hallway, the glow didn't show up very well, but it was okay. I received feedback mainly about the color, and most of the critique focused on what I could try in the future and what materials I might use to elevate the overall composition.</p>
+            <p class="proj-detail-p">This project taught me how to transform observation into something more personal. Starting from quickly recorded sketches of existing posters, I developed a design that evolved into a message about environmental destruction. Experimenting with color, negative space, and glow-in-the-dark paint pushed me to think beyond traditional mediums and consider how materials can add meaning. The feedback I received helped me think about future improvements in materials and composition, and I may revisit this piece for my sophomore review to continue refining it.</p>
+          </div>
+
+        </div>
+
+        <!-- ══ ARTIST BOOK ══ -->
+        <div class="poster-process-content" id="process-artist-book">
+
+          <div class="poster-process-section">
+            <div class="proj-detail-section-label">The Assignment</div>
+            <p class="proj-detail-p">In class, we were introduced to the Artist Book Poster and were randomly assigned our artist book, which Professor Kevin checked out from the Fine Arts Library and gave us. We were to analyze the book over the course of a week and write a one-page analysis, then develop a presentation for it the next week.</p>
+            <p class="proj-detail-p">The book I got assigned was <em>Modelling Standard</em> by Jorge Satorre and Erick Beltrán with drawings by Jorge Aviña. We were asked to explore both the visual and conceptual aspects of the work, including the author's background, the inspiration behind the book, its intended purpose, and potential directions for composition.</p>
+            <a href="Artist Book Poster/Modelling Standard Paper Done - Anshu Patel.pdf" target="_blank" class="proj-pdf-link" style="margin-top:14px">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="2" y="1" width="10" height="12" rx="1.5" stroke="#1A1A1A" stroke-width="1.2"/><path d="M4 5h6M4 7.5h6M4 10h4" stroke="#1A1A1A" stroke-width="1" stroke-linecap="round"/></svg>
+              Research Paper: Modelling Standard
+            </a>
+          </div>
+
+          <div class="poster-process-section">
+            <div class="proj-detail-section-label">Sketches</div>
+            <p class="proj-detail-p">We also presented our findings to the whole class to introduce everyone to the book we were studying. Afterward, we began making sketches and discussing them in groups. I created a variety of sketches, some inspired by the concepts of microhistory and others focused on the formal aspects of the book itself. For the conceptual posters, I explored ideas such as microhistory, apophenia, and connection, among others.</p>
+            <div class="proj-img-grid proj-img-grid-2" style="margin-top:16px">
+              <div class="smt-lb-thumb" onclick="openLightbox('Artist Book Poster/image.png')">
+                <img loading="lazy" src="Artist Book Poster/image.png" style="width:100%;display:block" alt="Sketches page 1">
+                      </div>
+              <div class="smt-lb-thumb" onclick="openLightbox('Artist Book Poster/image (1).png')">
+                <img loading="lazy" src="Artist Book Poster/image (1).png" style="width:100%;display:block" alt="Sketches page 2">
+                      </div>
+            </div>
+            <p class="proj-img-caption">Sketch explorations, both conceptual and formal.</p>
+          </div>
+
+          <div class="poster-process-section">
+            <div class="proj-detail-section-label">Group Critique & Preliminary Designs</div>
+            <p class="proj-detail-p">We had a group critique where we shared our work and discussed the reasoning behind our approaches. My peers appreciated the variety in my sketches and provided guidance on which concepts had the strongest potential. The critique was especially valuable for helping me narrow my focus and identify a clear direction.</p>
+            <div class="proj-img-grid proj-img-grid-2" style="margin-top:16px">
+              <div class="smt-lb-thumb" onclick="openLightbox('Artist Book Poster/Artist Book Posters wip-01.png')">
+                <img loading="lazy" src="Artist Book Poster/Artist Book Posters wip-01.png" style="width:100%;display:block" alt="Preliminary design 1">
+                      </div>
+              <div class="smt-lb-thumb" onclick="openLightbox('Artist Book Poster/Artist Book Posters wip-04.png')">
+                <img loading="lazy" src="Artist Book Poster/Artist Book Posters wip-04.png" style="width:100%;display:block" alt="Preliminary design 2">
+                      </div>
+              <div class="smt-lb-thumb" onclick="openLightbox('Artist Book Poster/Artist Book Posters wip-02.png')">
+                <img loading="lazy" src="Artist Book Poster/Artist Book Posters wip-02.png" style="width:100%;display:block" alt="Preliminary design 3">
+                      </div>
+              <div class="smt-lb-thumb" onclick="openLightbox('Artist Book Poster/Artist Book Posters wip-03.png')">
+                <img loading="lazy" src="Artist Book Poster/Artist Book Posters wip-03.png" style="width:100%;display:block" alt="Preliminary design 4">
+                      </div>
+            </div>
+            <p class="proj-img-caption">Four preliminary designs. The first is based on apophenia, the second on colonial microhistory, and the last two are formal designs using scanned pages from the book.</p>
+          </div>
+
+          <div class="poster-process-section">
+            <div class="proj-detail-section-label">Final Iteration</div>
+            <p class="proj-detail-p">During the critique, my Cyanobacteria poster received very positive feedback. Kevin especially liked the composition and the idea behind it. The main piece of critique I received was to make the text less direct and lean into the theme of people perceiving things that aren't inherently there.</p>
+            <p class="proj-detail-p">The changes I made were relatively minimal but intentional. I changed the background border to black and converted both images into halftone greyscale for a more cohesive visual effect. I also introduced speech bubbles as a subtler, more indirect text element. One bubble says "How's the weather, Jim?" while the other responds with "Not great," written in Wingdings. This further develops my concept of humans forming associations and seeing faces or stories in objects that don't inherently possess those qualities. Finally, I printed the poster in the Design Lab on off-white paper, which I felt complemented the graphic more effectively.</p>
+            <div class="smt-lb-thumb" style="margin-top:16px" onclick="openLightbox('Artist Book Poster/Artist Book Posters done for process blog-07.png')">
+              <img loading="lazy" src="Artist Book Poster/Artist Book Posters done for process blog-07.png" style="width:100%;display:block" alt="Final cyanobacteria poster">            </div>
+            <div class="smt-lb-thumb" style="margin-top:12px" onclick="openLightbox('Artist Book Poster/image (2).png')">
+              <img loading="lazy" src="Artist Book Poster/image (2).png" style="width:100%;display:block" alt="Final poster detail">            </div>
+            <p class="proj-img-caption">Final poster, printed on off-white paper in the Design Lab.</p>
+          </div>
+
+          <div class="poster-process-section">
+            <div class="proj-detail-section-label">Reflection</div>
+            <p class="proj-detail-p">After the final critique, I was not asked to make any further changes. Kevin mentioned that the adjustments I had already made were effective and successfully conveyed my intended message. In my final reflection, I realized that this project was quite different from anything I've done before. I've never created a poster in this style, and I consider it to be rather unconventional compared to typical modern poster designs. Despite that, I believe my ideas and concepts came through effectively. I was pleased with the opportunity to experiment, take creative risks, and learn new approaches to visual communication through this project.</p>
+            <p class="proj-detail-p">Original image of Cyanobacteria credited to <a href="https://www.reddit.com/r/mildlyinteresting/comments/mn30gq/this_cyanobacteria_looks_like_a_smiley_face/" target="_blank" style="color:#1A1A1A;text-decoration:underline">this Reddit post</a>.</p>
+          </div>
+
+          <div class="poster-process-section">
+            <div class="proj-detail-section-label">Rework / Remix</div>
+            <p class="proj-detail-p">I got Melinda's poster for the remake. We were to take a poster made by someone else and use it as a launching point to create a new poster with a whole other concept.</p>
+            <div class="proj-img-grid proj-img-grid-2" style="margin-top:16px">
+              <div class="smt-lb-thumb" onclick="openLightbox('Artist Book Poster/melinda og poster.png')">
+                <img loading="lazy" src="Artist Book Poster/melinda og poster.png" style="width:100%;display:block" alt="Melinda's original poster">
+                      </div>
+              <div class="smt-lb-thumb" onclick="openLightbox('Artist Book Poster/remix poster kevin mine-01.png')">
+                <img loading="lazy" src="Artist Book Poster/remix poster kevin mine-01.png" style="width:100%;display:block" alt="My remix poster">
+                      </div>
+            </div>
+            <p class="proj-img-caption">Melinda's original poster (left) and the poster I made (right).</p>
+          </div>
+
+        </div>
+
+        <!-- ══ TYPOGRAPHIC FOLLIES ══ -->
+        <div class="poster-process-content" id="process-typographic-follies">
+
+          <div class="poster-process-section">
+            <div class="proj-detail-section-label">The Assignment</div>
+            <p class="proj-detail-p">For this project, we had to design a series of three black-and-white typographic posters that demonstrated hierarchy using only type in InDesign. The constraints were strict: we could not use imagery, shapes, color, or grayscale, and each poster had to follow specific type limitations. I chose Aglet Slab as my type family.</p>
+            <p class="proj-detail-p">Each poster had its own constraint built into the brief, specifically designed to push us toward understanding hierarchy and how to communicate information clearly through type alone. One poster required a single point size, forcing hierarchy through spacing and placement only. Another allowed one weight but four point sizes, so scale had to do all the work. The third allowed up to four weights from the same family, introducing contrast through weight variation. Because the project relied entirely on typographic control, I focused on hierarchy, balance, and rhythm through adjustments in kerning, tracking, and leading. These subtle refinements helped guide the viewer's eye and emphasize key information without breaking the constraints. This process really strengthened my understanding of how spacing, scale, and alignment can create structure and visual interest even under tight limitations.</p>
+          </div>
+
+          <div class="poster-process-section">
+            <div class="proj-detail-section-label">The Three Posters</div>
+            <div class="proj-img-grid proj-img-grid-3" style="margin-top:8px">
+              <div class="smt-lb-thumb" onclick="openLightbox('Typographic Follies/Anshu_Patel_Version_1.jpg')">
+                <img loading="lazy" src="Typographic Follies/Anshu_Patel_Version_1.jpg" style="width:100%;display:block" alt="Typographic Follies Version 1">
+                      </div>
+              <div class="smt-lb-thumb" onclick="openLightbox('Typographic Follies/Anshu_Patel_Version_2.jpg')">
+                <img loading="lazy" src="Typographic Follies/Anshu_Patel_Version_2.jpg" style="width:100%;display:block" alt="Typographic Follies Version 2">
+                      </div>
+              <div class="smt-lb-thumb" onclick="openLightbox('Typographic Follies/Anshu_Patel_Version_3.jpg')">
+                <img loading="lazy" src="Typographic Follies/Anshu_Patel_Version_3.jpg" style="width:100%;display:block" alt="Typographic Follies Version 3">
+                      </div>
+            </div>
+            <p class="proj-img-caption">Version 1: single point size. Version 2: one weight, four sizes. Version 3: up to 4 weights.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+<div class="proj-detail-page" id="proj-verdant-ui"><div class="proj-detail-nav"><div class="proj-detail-breadcrumb"><span onclick="showPage('ux')">UX/UI & Game Design</span><span class="sep">›</span><span style="color:#1A1A1A;font-weight:500">Verdant: UI System</span></div><div><button class="proj-nav-btn" onclick="showPage('ux')">← Back</button></div></div><div class="proj-detail-hero"><div class="proj-detail-kicker">UX/UI & Game Design · Game UI</div><div class="proj-detail-title">Verdant: UI System</div><p class="proj-detail-tagline">A complete in-game UI system for Verdant,menus, HUD, inventory, and dialogue interfaces designed to feel organic without breaking the world's visual rules.</p><div class="proj-detail-meta-row"><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">6 weeks</div></div><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">Figma, Illustrator</div></div></div></div><div class="proj-detail-cover" style="height:380px;background:#E8F0FF"><div class="proj-detail-cover-inner" style="flex-direction:column;gap:12px"><svg width="380" height="200" viewBox="0 0 380 200" fill="none"><rect x="20" y="20" width="340" height="160" rx="10" fill="#8090E0" opacity="0.2"/><rect x="36" y="36" width="100" height="70" rx="6" fill="#6070C8" opacity="0.35"/><rect x="152" y="36" width="76" height="30" rx="5" fill="#6070C8" opacity="0.3"/><rect x="152" y="74" width="76" height="30" rx="5" fill="#6070C8" opacity="0.25"/><rect x="246" y="36" width="98" height="70" rx="6" fill="#6070C8" opacity="0.2"/></svg><span style="font-size:12px;color:#6070C8;opacity:0.7;font-weight:500">[ Cover placeholder ]</span></div></div><div class="proj-detail-body" style="display:block"><div class="proj-detail-content"><div class="proj-detail-section"><div class="proj-detail-section-label">Overview</div><div class="proj-detail-h2">UI as world extension</div><p class="proj-detail-p">Lorem ipsum dolor sit amet. The Verdant UI system was designed as a companion to the level design project,a complete interface suite for the game's menus, HUD, inventory, and dialogue. The design constraint: the UI had to feel like it was grown, not built. Organic edge treatments, muted earthy tones, and hand-drawn texture elements give the interface a diegetic quality without sacrificing readability.</p></div><div class="proj-detail-section"><div class="proj-detail-section-label">Key Screens</div><div class="proj-detail-h2">The system</div><div class="proj-img-grid proj-img-grid-2"><div class="proj-img-placeholder wide"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Main menu</span></div><div class="proj-img-placeholder wide"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>In-game HUD</span></div><div class="proj-img-placeholder wide"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Inventory panel</span></div><div class="proj-img-placeholder wide"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Dialogue UI</span></div></div></div></div></div></div>
+
+<!-- Wayfinder, Petal,stub detail pages -->
+<div class="proj-detail-page" id="proj-wayfinder"><div class="proj-detail-nav"><div class="proj-detail-breadcrumb"><span onclick="showPage('ux')">UX/UI & Game Design</span><span class="sep">›</span><span style="color:#1A1A1A;font-weight:500">Wayfinder</span></div><div><button class="proj-nav-btn" onclick="showPage('ux')">← Back</button></div></div><div class="proj-detail-hero"><div class="proj-detail-kicker">UX/UI & Game Design · UX Research</div><div class="proj-detail-title">Wayfinder</div><p class="proj-detail-tagline">End-to-end UX research case study for a campus wayfinding redesign,interviews, journey maps, accessibility audit, and redesign recommendations.</p><div class="proj-detail-meta-row"><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">8 weeks · Fall 2023</div></div><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">Figma, Miro, Maze</div></div></div></div><div class="proj-detail-cover" style="height:360px;background:#E8F4FF"><div class="proj-detail-cover-inner" style="flex-direction:column;gap:12px"><svg width="360" height="180" viewBox="0 0 360 180" fill="none"><circle cx="100" cy="90" r="50" stroke="#3a90d0" stroke-width="1.5" fill="none" opacity="0.35"/><circle cx="260" cy="90" r="40" stroke="#3a90d0" stroke-width="1.5" fill="none" opacity="0.35"/><line x1="100" y1="90" x2="260" y2="90" stroke="#3a90d0" stroke-width="1.5" opacity="0.25"/><circle cx="100" cy="90" r="8" fill="#3a90d0" opacity="0.5"/><circle cx="260" cy="90" r="8" fill="#3a90d0" opacity="0.5"/><circle cx="180" cy="50" r="8" fill="#3a90d0" opacity="0.4"/></svg><span style="font-size:12px;color:#3a90d0;opacity:0.7;font-weight:500">[ Cover placeholder ]</span></div></div><div class="proj-detail-body" style="display:block"><div class="proj-detail-content"><div class="proj-detail-section"><div class="proj-detail-section-label">Overview</div><div class="proj-detail-h2">Research-first wayfinding</div><p class="proj-detail-p">Lorem ipsum dolor sit amet. Wayfinder was a research-first UX project focused on the experience of navigating UT Austin's campus,particularly for first-year students, visitors, and users with mobility needs. The project moved from 12 user interviews through affinity mapping, journey mapping, and a full accessibility audit of existing campus signage to a final set of redesign recommendations.</p></div><div class="proj-detail-section"><div class="proj-detail-section-label">Research Artifacts</div><div class="proj-detail-h2">Key deliverables</div><div class="proj-img-placeholder wide"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Affinity map,research synthesis</span></div><div class="proj-img-placeholder wide"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>User journey map</span></div></div></div></div></div>
+
+<div class="proj-detail-page" id="proj-petal"><div class="proj-detail-nav"><div class="proj-detail-breadcrumb"><span onclick="showPage('ux')">UX/UI & Game Design</span><span class="sep">›</span><span style="color:#1A1A1A;font-weight:500">Petal</span></div><div><button class="proj-nav-btn" onclick="showPage('ux')">← Back</button></div></div><div class="proj-detail-hero"><div class="proj-detail-kicker">UX/UI & Game Design · App Design</div><div class="proj-detail-title">Petal</div><p class="proj-detail-tagline">A mobile wellness app designed for gentle habit tracking,soft, non-judgmental, and built around the idea that small things compound.</p><div class="proj-detail-meta-row"><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">6 weeks · Fall 2022</div></div><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">Figma</div></div></div></div><div class="proj-detail-cover" style="height:360px;background:#FDF0FF"><div class="proj-detail-cover-inner" style="flex-direction:column;gap:12px"><svg width="280" height="180" viewBox="0 0 280 180" fill="none"><rect x="100" y="15" width="80" height="150" rx="14" fill="#C880E8" opacity="0.25"/><rect x="112" y="30" width="56" height="10" rx="4" fill="#9040C0" opacity="0.45"/><rect x="112" y="48" width="40" height="8" rx="3" fill="#9040C0" opacity="0.3"/><rect x="112" y="66" width="56" height="40" rx="8" fill="#9040C0" opacity="0.2"/></svg><span style="font-size:12px;color:#9040C0;opacity:0.7;font-weight:500">[ Cover placeholder ]</span></div></div><div class="proj-detail-body" style="display:block"><div class="proj-detail-content"><div class="proj-detail-section"><div class="proj-detail-section-label">Overview</div><div class="proj-detail-h2">Habit tracking without shame</div><p class="proj-detail-p">Lorem ipsum dolor sit amet. Petal is a wellness app designed around a single idea: most habit apps feel like report cards. Petal removes all streaks, scores, and failure states,replacing them with a growing garden visualization that reflects accumulation, not performance. The UI design prioritizes softness, breathing room, and micro-interactions that feel rewarding without being addictive.</p></div><div class="proj-detail-section"><div class="proj-detail-section-label">Key Screens</div><div class="proj-detail-h2">Screens</div><div class="proj-img-grid proj-img-grid-3"><div class="proj-img-placeholder tall"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Garden home</span></div><div class="proj-img-placeholder tall"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Log habit</span></div><div class="proj-img-placeholder tall"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Weekly reflection</span></div></div></div></div></div></div>
 
 <!-- Archive stubs -->
-<div class="proj-detail-page" id="proj-fragments"><div class="proj-detail-nav"><div class="proj-detail-breadcrumb"><span onclick="showPage('archive')">Archive</span><span class="sep">›</span><span style="color:#1A1A1A;font-weight:500">Fragments</span></div><div><button class="proj-nav-btn" onclick="showPage('archive')">← Back</button></div></div><div class="proj-detail-hero"><div class="proj-detail-kicker">Archive · Digital Collage</div><div class="proj-detail-title">Fragments</div><p class="proj-detail-tagline">A personal collage series exploring memory, materiality, and the aesthetics of the found — made over two weeks as a self-assigned visual experiment.</p><div class="proj-detail-meta-row"><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Year</div><div class="proj-detail-meta-val">2024</div></div><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">Photoshop, Procreate</div></div></div></div><div class="proj-detail-cover" style="height:360px;background:#F4F4F4"><div class="proj-detail-cover-inner" style="flex-direction:column;gap:12px"><svg width="360" height="180" viewBox="0 0 360 180" fill="none"><rect x="20" y="30" width="100" height="120" rx="6" fill="#bbb" opacity="0.4"/><rect x="140" y="60" width="80" height="80" rx="5" fill="#ccc" opacity="0.35"/><rect x="240" y="20" width="100" height="150" rx="5" fill="#aaa" opacity="0.4"/></svg><span style="font-size:12px;color:#888;opacity:0.7;font-weight:500">[ Cover placeholder ]</span></div></div><div class="proj-detail-body" style="display:block"><div class="proj-detail-content"><div class="proj-detail-section"><div class="proj-detail-section-label">Overview</div><p class="proj-detail-p">Lorem ipsum dolor sit amet. Fragments is a personal collage series made during a two-week creative sprint — sourcing imagery from scanned paper, fabric textures, and found photography to build layered compositions that feel like disassembled memories. No brief, no deliverable: just an exercise in making something by feel.</p></div><div class="proj-detail-section"><div class="proj-detail-section-label">Series</div><div class="proj-img-grid proj-img-grid-3"><div class="proj-img-placeholder square"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Fragment 01</span></div><div class="proj-img-placeholder square"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Fragment 02</span></div><div class="proj-img-placeholder square"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Fragment 03</span></div></div></div></div></div></div>
+<div class="proj-detail-page" id="proj-fragments"><div class="proj-detail-nav"><div class="proj-detail-breadcrumb"><span onclick="showPage('archive')">Archive</span><span class="sep">›</span><span style="color:#1A1A1A;font-weight:500">Fragments</span></div><div><button class="proj-nav-btn" onclick="showPage('archive')">← Back</button></div></div><div class="proj-detail-hero"><div class="proj-detail-kicker">Archive · Digital Collage</div><div class="proj-detail-title">Fragments</div><p class="proj-detail-tagline">A personal collage series exploring memory, materiality, and the aesthetics of the found,made over two weeks as a self-assigned visual experiment.</p><div class="proj-detail-meta-row"><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Year</div><div class="proj-detail-meta-val">2024</div></div><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">Photoshop, Procreate</div></div></div></div><div class="proj-detail-cover" style="height:360px;background:#F4F4F4"><div class="proj-detail-cover-inner" style="flex-direction:column;gap:12px"><svg width="360" height="180" viewBox="0 0 360 180" fill="none"><rect x="20" y="30" width="100" height="120" rx="6" fill="#bbb" opacity="0.4"/><rect x="140" y="60" width="80" height="80" rx="5" fill="#ccc" opacity="0.35"/><rect x="240" y="20" width="100" height="150" rx="5" fill="#aaa" opacity="0.4"/></svg><span style="font-size:12px;color:#888;opacity:0.7;font-weight:500">[ Cover placeholder ]</span></div></div><div class="proj-detail-body" style="display:block"><div class="proj-detail-content"><div class="proj-detail-section"><div class="proj-detail-section-label">Overview</div><p class="proj-detail-p">Lorem ipsum dolor sit amet. Fragments is a personal collage series made during a two-week creative sprint,sourcing imagery from scanned paper, fabric textures, and found photography to build layered compositions that feel like disassembled memories. No brief, no deliverable: just an exercise in making something by feel.</p></div><div class="proj-detail-section"><div class="proj-detail-section-label">Series</div><div class="proj-img-grid proj-img-grid-3"><div class="proj-img-placeholder square"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Fragment 01</span></div><div class="proj-img-placeholder square"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Fragment 02</span></div><div class="proj-img-placeholder square"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Fragment 03</span></div></div></div></div></div></div>
 
-<div class="proj-detail-page" id="proj-sketchbook"><div class="proj-detail-nav"><div class="proj-detail-breadcrumb"><span onclick="showPage('archive')">Archive</span><span class="sep">›</span><span style="color:#1A1A1A;font-weight:500">Sketchbook Vol. 3</span></div><div><button class="proj-nav-btn" onclick="showPage('archive')">← Back</button></div></div><div class="proj-detail-hero"><div class="proj-detail-kicker">Archive · Sketchbook</div><div class="proj-detail-title">Sketchbook Vol. 3</div><p class="proj-detail-tagline">Selected pages from the third sketchbook — observational drawings, thumbnail explorations, character doodles, and the strange things that appear during lecture.</p><div class="proj-detail-meta-row"><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Year</div><div class="proj-detail-meta-val">2024</div></div><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">Procreate, pencil</div></div></div></div><div class="proj-detail-cover" style="height:360px;background:#FFFFF0"><div class="proj-detail-cover-inner"><svg width="380" height="180" viewBox="0 0 380 180" fill="none"><path d="M40 150 Q100 80 180 120 Q260 160 340 50" stroke="#8a8a00" stroke-width="3" fill="none" opacity="0.3" stroke-linecap="round"/><path d="M60 155 Q120 90 200 125 Q280 160 360 60" stroke="#8a8a00" stroke-width="1.5" fill="none" opacity="0.2" stroke-linecap="round"/></svg></div></div><div class="proj-detail-body" style="display:block"><div class="proj-detail-content"><div class="proj-detail-section"><div class="proj-detail-section-label">Selected pages</div><div class="proj-img-grid proj-img-grid-2"><div class="proj-img-placeholder tall"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Page spread 1</span></div><div class="proj-img-placeholder tall"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Page spread 2</span></div></div></div></div></div></div>
+<div class="proj-detail-page" id="proj-sketchbook"><div class="proj-detail-nav"><div class="proj-detail-breadcrumb"><span onclick="showPage('archive')">Archive</span><span class="sep">›</span><span style="color:#1A1A1A;font-weight:500">Sketchbook Vol. 3</span></div><div><button class="proj-nav-btn" onclick="showPage('archive')">← Back</button></div></div><div class="proj-detail-hero"><div class="proj-detail-kicker">Archive · Sketchbook</div><div class="proj-detail-title">Sketchbook Vol. 3</div><p class="proj-detail-tagline">Selected pages from the third sketchbook,observational drawings, thumbnail explorations, character doodles, and the strange things that appear during lecture.</p><div class="proj-detail-meta-row"><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Year</div><div class="proj-detail-meta-val">2024</div></div><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">Procreate, pencil</div></div></div></div><div class="proj-detail-cover" style="height:360px;background:#FFFFF0"><div class="proj-detail-cover-inner"><svg width="380" height="180" viewBox="0 0 380 180" fill="none"><path d="M40 150 Q100 80 180 120 Q260 160 340 50" stroke="#8a8a00" stroke-width="3" fill="none" opacity="0.3" stroke-linecap="round"/><path d="M60 155 Q120 90 200 125 Q280 160 360 60" stroke="#8a8a00" stroke-width="1.5" fill="none" opacity="0.2" stroke-linecap="round"/></svg></div></div><div class="proj-detail-body" style="display:block"><div class="proj-detail-content"><div class="proj-detail-section"><div class="proj-detail-section-label">Selected pages</div><div class="proj-img-grid proj-img-grid-2"><div class="proj-img-placeholder tall"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Page spread 1</span></div><div class="proj-img-placeholder tall"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Page spread 2</span></div></div></div></div></div></div>
 
-<div class="proj-detail-page" id="proj-type-study"><div class="proj-detail-nav"><div class="proj-detail-breadcrumb"><span onclick="showPage('archive')">Archive</span><span class="sep">›</span><span style="color:#1A1A1A;font-weight:500">Type Study</span></div><div><button class="proj-nav-btn" onclick="showPage('archive')">← Back</button></div></div><div class="proj-detail-hero"><div class="proj-detail-kicker">Archive · Typography</div><div class="proj-detail-title">Type Study</div><p class="proj-detail-tagline">Letterform exploration from a typography class — studying the anatomy, proportion, and optical corrections that make type feel right.</p><div class="proj-detail-meta-row"><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Year</div><div class="proj-detail-meta-val">2023</div></div><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Course</div><div class="proj-detail-meta-val">Typography I</div></div></div></div><div class="proj-detail-cover" style="height:360px;background:#F0F4FF"><div class="proj-detail-cover-inner"><svg width="360" height="180" viewBox="0 0 360 180" fill="none"><text x="60" y="130" font-family="serif" font-size="100" fill="#8090C0" opacity="0.3" font-weight="bold">Aa</text></svg></div></div><div class="proj-detail-body" style="display:block"><div class="proj-detail-content"><div class="proj-detail-section"><div class="proj-detail-section-label">Overview</div><p class="proj-detail-p">Lorem ipsum dolor sit amet. A semester-long letterform exploration project from Typography I, studying how typefaces achieve optical balance — why a circle must overshoot a square's baseline to appear the same size, why strokes thin and thick to create rhythm, and how the negative space within a letter defines its personality as much as the positive form.</p></div><div class="proj-detail-section"><div class="proj-detail-section-label">Work</div><div class="proj-img-grid proj-img-grid-2"><div class="proj-img-placeholder tall"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Letterform studies</span></div><div class="proj-img-placeholder tall"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Final specimens</span></div></div></div></div></div></div>
+<div class="proj-detail-page" id="proj-type-study"><div class="proj-detail-nav"><div class="proj-detail-breadcrumb"><span onclick="showPage('archive')">Archive</span><span class="sep">›</span><span style="color:#1A1A1A;font-weight:500">Type Study</span></div><div><button class="proj-nav-btn" onclick="showPage('archive')">← Back</button></div></div><div class="proj-detail-hero"><div class="proj-detail-kicker">Archive · Typography</div><div class="proj-detail-title">Type Study</div><p class="proj-detail-tagline">Letterform exploration from a typography class,studying the anatomy, proportion, and optical corrections that make type feel right.</p><div class="proj-detail-meta-row"><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Year</div><div class="proj-detail-meta-val">2023</div></div><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Course</div><div class="proj-detail-meta-val">Typography I</div></div></div></div><div class="proj-detail-cover" style="height:360px;background:#F0F4FF"><div class="proj-detail-cover-inner"><svg width="360" height="180" viewBox="0 0 360 180" fill="none"><text x="60" y="130" font-family="serif" font-size="100" fill="#8090C0" opacity="0.3" font-weight="bold">Aa</text></svg></div></div><div class="proj-detail-body" style="display:block"><div class="proj-detail-content"><div class="proj-detail-section"><div class="proj-detail-section-label">Overview</div><p class="proj-detail-p">Lorem ipsum dolor sit amet. A semester-long letterform exploration project from Typography I, studying how typefaces achieve optical balance,why a circle must overshoot a square's baseline to appear the same size, why strokes thin and thick to create rhythm, and how the negative space within a letter defines its personality as much as the positive form.</p></div><div class="proj-detail-section"><div class="proj-detail-section-label">Work</div><div class="proj-img-grid proj-img-grid-2"><div class="proj-img-placeholder tall"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Letterform studies</span></div><div class="proj-img-placeholder tall"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>Final specimens</span></div></div></div></div></div></div>
 
-<div class="proj-detail-page" id="proj-systems"><div class="proj-detail-nav"><div class="proj-detail-breadcrumb"><span onclick="showPage('archive')">Archive</span><span class="sep">›</span><span style="color:#1A1A1A;font-weight:500">Systems</span></div><div><button class="proj-nav-btn" onclick="showPage('archive')">← Back</button></div></div><div class="proj-detail-hero"><div class="proj-detail-kicker">Archive · Systems Thinking</div><div class="proj-detail-title">Systems — Diagram Workshop</div><p class="proj-detail-tagline">A diagram design workshop exploring how to visualize complex systems — feedback loops, stakeholder maps, and information flows — as clear, readable graphics.</p><div class="proj-detail-meta-row"><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Year</div><div class="proj-detail-meta-val">2023</div></div><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Course</div><div class="proj-detail-meta-val">Information Design</div></div></div></div><div class="proj-detail-cover" style="height:360px;background:#FFF8F0"><div class="proj-detail-cover-inner"><svg width="380" height="180" viewBox="0 0 380 180" fill="none"><circle cx="100" cy="90" r="50" stroke="#E08040" stroke-width="1.5" fill="none" opacity="0.35"/><circle cx="240" cy="90" r="40" stroke="#E08040" stroke-width="1.5" fill="none" opacity="0.35"/><circle cx="320" cy="60" r="28" stroke="#E08040" stroke-width="1.5" fill="none" opacity="0.3"/><line x1="100" y1="90" x2="240" y2="90" stroke="#E08040" stroke-width="1" opacity="0.25"/><line x1="240" y1="90" x2="320" y2="60" stroke="#E08040" stroke-width="1" opacity="0.2"/></svg></div></div><div class="proj-detail-body" style="display:block"><div class="proj-detail-content"><div class="proj-detail-section"><div class="proj-detail-section-label">Overview</div><p class="proj-detail-p">Lorem ipsum dolor sit amet. A workshop project from Information Design exploring how to translate complex systems into clear visual diagrams. Produced three diagram types: a stakeholder map for a community health initiative, a feedback loop diagram for a social media recommendation system, and an information flow diagram for a public transit network.</p></div><div class="proj-detail-section"><div class="proj-detail-section-label">Diagrams</div><div class="proj-img-placeholder wide"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>All three diagrams</span></div></div></div></div></div></div>
+<div class="proj-detail-page" id="proj-systems"><div class="proj-detail-nav"><div class="proj-detail-breadcrumb"><span onclick="showPage('archive')">Archive</span><span class="sep">›</span><span style="color:#1A1A1A;font-weight:500">Systems</span></div><div><button class="proj-nav-btn" onclick="showPage('archive')">← Back</button></div></div><div class="proj-detail-hero"><div class="proj-detail-kicker">Archive · Systems Thinking</div><div class="proj-detail-title">Systems: Diagram Workshop</div><p class="proj-detail-tagline">A diagram design workshop exploring how to visualize complex systems,feedback loops, stakeholder maps, and information flows,as clear, readable graphics.</p><div class="proj-detail-meta-row"><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Year</div><div class="proj-detail-meta-val">2023</div></div><div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Course</div><div class="proj-detail-meta-val">Information Design</div></div></div></div><div class="proj-detail-cover" style="height:360px;background:#FFF8F0"><div class="proj-detail-cover-inner"><svg width="380" height="180" viewBox="0 0 380 180" fill="none"><circle cx="100" cy="90" r="50" stroke="#E08040" stroke-width="1.5" fill="none" opacity="0.35"/><circle cx="240" cy="90" r="40" stroke="#E08040" stroke-width="1.5" fill="none" opacity="0.35"/><circle cx="320" cy="60" r="28" stroke="#E08040" stroke-width="1.5" fill="none" opacity="0.3"/><line x1="100" y1="90" x2="240" y2="90" stroke="#E08040" stroke-width="1" opacity="0.25"/><line x1="240" y1="90" x2="320" y2="60" stroke="#E08040" stroke-width="1" opacity="0.2"/></svg></div></div><div class="proj-detail-body" style="display:block"><div class="proj-detail-content"><div class="proj-detail-section"><div class="proj-detail-section-label">Overview</div><p class="proj-detail-p">Lorem ipsum dolor sit amet. A workshop project from Information Design exploring how to translate complex systems into clear visual diagrams. Produced three diagram types: a stakeholder map for a community health initiative, a feedback loop diagram for a social media recommendation system, and an information flow diagram for a public transit network.</p></div><div class="proj-detail-section"><div class="proj-detail-section-label">Diagrams</div><div class="proj-img-placeholder wide"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="#ccc" stroke-width="1.5"/><circle cx="14" cy="15" r="3" fill="#ccc"/></svg><span>All three diagrams</span></div></div></div></div></div></div>
 
 <!-- THE ECOLEANDER -->
 <div class="proj-detail-page" id="proj-ecoleander">
@@ -2659,8 +3090,7 @@ audio{accent-color:#1A1A1A}
         </div>
         <div class="smt-lb-thumb" onclick="openLightbox('Smrutea/Tiffin Decals Print Test.png')" style="margin-bottom:14px">
           <div style="overflow:hidden"><img loading="lazy" src="Smrutea/Tiffin Decals Print Test.png" style="width:100%;display:block" alt="Print test for decals"></div>
-          <div class="smt-lb-badge">Expand</div>
-        </div>
+                  </div>
 
         <div class="proj-detail-h3">Applying the Sticker Wraps to the Tiffin</div>
         <p class="proj-detail-p">Wanting to ensure my dimensions were correct and have time to adjust if something was wrong, I headed to the Design Lab to cut out all my vinyls. Although I accidentally cut my finger in the process, I still managed to apply the vinyls successfully. I noticed the measurements for the top rim were slightly off, so I updated my file and planned to reprint that section for a cleaner wrap.</p>
@@ -2699,15 +3129,13 @@ audio{accent-color:#1A1A1A}
           <div>
             <div class="smt-lb-thumb" onclick="openLightbox('Smrutea/Timeline Black Back.png')" style="margin-bottom:4px">
               <div style="overflow:hidden"><img loading="lazy" src="Smrutea/Timeline Black Back.png" style="width:100%;display:block" alt="Timeline black version"></div>
-              <div class="smt-lb-badge">Expand</div>
-            </div>
+                          </div>
             <p class="proj-img-caption">The initial black version, switched to green for more vibrancy.</p>
           </div>
           <div>
             <div class="smt-lb-thumb" onclick="openLightbox('Smrutea/Timeline Green Back.png')" style="margin-bottom:4px">
               <div style="overflow:hidden"><img loading="lazy" src="Smrutea/Timeline Green Back.png" style="width:100%;display:block" alt="Timeline green version"></div>
-              <div class="smt-lb-badge">Expand</div>
-            </div>
+                          </div>
             <p class="proj-img-caption">The final green timeline for the wrap-around slip.</p>
           </div>
         </div>
@@ -2716,8 +3144,7 @@ audio{accent-color:#1A1A1A}
         <p class="proj-detail-p">I created inserts for each tier: one tier holds the masala, with the insert labeled in both English and Hindi along with images and names of each spice; the other tier is labeled "chai" in English and Hindi and includes instructions for making an authentic brew at home using the ingredients in the kit.</p>
         <div class="smt-lb-thumb" onclick="openLightbox('Smrutea/Circle Inserts.png')" style="margin-bottom:14px">
           <div style="overflow:hidden"><img loading="lazy" src="Smrutea/Circle Inserts.png" style="width:100%;display:block" alt="Circle tier inserts"></div>
-          <div class="smt-lb-badge">Expand</div>
-        </div>
+                  </div>
 
         <div class="proj-detail-h3">Making the Outer Design for the Wrap-Around Label</div>
         <p class="proj-detail-p">I finished the remaining packaging components in class, including the nutrition facts, the timeline, and other supporting details, before heading to the Design Lab to finalize the prints. I explained my packaging decisions to Professor Catterall, who was especially excited about the name of my brand. <strong>Smrutea</strong> is a wordplay on the Hindi word <em>smruti</em>, meaning remembrance, often associated with meaningful objects. She gave me her journal so I could write out everything I knew about the word, which was a really special moment.</p>
@@ -2727,22 +3154,19 @@ audio{accent-color:#1A1A1A}
         <p class="proj-img-caption">Me writing the meaning of smruti in Professor Catterall's journal.</p>
         <div class="smt-lb-thumb" onclick="openLightbox('Smrutea/Smrutea wrap around label.png')" style="max-width:42%;margin:0 auto 4px">
           <div style="overflow:hidden"><img loading="lazy" src="Smrutea/Smrutea wrap around label.png" style="width:100%;display:block" alt="Full wrap around label design"></div>
-          <div class="smt-lb-badge">Expand</div>
-        </div>
+                  </div>
         <p class="proj-img-caption" style="text-align:center">The complete wrap-around slip I designed for the packaging.</p>
         <div class="proj-img-grid proj-img-grid-2" style="margin-bottom:4px">
           <div>
             <div class="smt-lb-thumb" onclick="openLightbox('Smrutea/Smrutea Wrap around label front title.png')" style="margin-bottom:4px">
               <div style="overflow:hidden"><img loading="lazy" src="Smrutea/Smrutea Wrap around label front title.png" style="width:100%;display:block" alt="Label front title face"></div>
-              <div class="smt-lb-badge">Expand</div>
-            </div>
+                          </div>
             <p class="proj-img-caption">Close-up of the front title face.</p>
           </div>
           <div>
             <div class="smt-lb-thumb" onclick="openLightbox('Smrutea/Smrutea Wrap around label close up nutrition facts.png')" style="margin-bottom:4px">
               <div style="overflow:hidden"><img loading="lazy" src="Smrutea/Smrutea Wrap around label close up nutrition facts.png" style="width:100%;display:block" alt="Nutrition facts label"></div>
-              <div class="smt-lb-badge">Expand</div>
-            </div>
+                          </div>
             <p class="proj-img-caption">The nutrition facts label, made using a generator with real tea packaging as reference.</p>
           </div>
         </div>
@@ -2860,19 +3284,19 @@ audio{accent-color:#1A1A1A}
         <div class="proj-detail-h2">Creating the Title Block Posters</div>
         <p class="proj-detail-p">I created all of my title blocks for the critique presentation. For the tiffin title block, Professor Catterall and I had difficulty finding a suitable reference, so I ended up drawing it myself, using my own tiffin as the reference and measuring each part to create the final technical drawings.</p>
         <div style="overflow:hidden;border-radius:8px;border:1px solid var(--border);margin-bottom:14px">
-          <img loading="lazy" src="Smrutea/Title Block 1 - Tiffin Decals.png" style="width:100%;display:block" alt="Title Block — Tiffin Decals">
+          <img loading="lazy" src="Smrutea/Title Block 1 - Tiffin Decals.png" style="width:100%;display:block" alt="Title Block,Tiffin Decals">
         </div>
         <div style="overflow:hidden;border-radius:8px;border:1px solid var(--border);margin-bottom:14px">
-          <img loading="lazy" src="Smrutea/Title Block 2 - Tiffin Inserts.png" style="width:100%;display:block" alt="Title Block — Tiffin Inserts">
+          <img loading="lazy" src="Smrutea/Title Block 2 - Tiffin Inserts.png" style="width:100%;display:block" alt="Title Block,Tiffin Inserts">
         </div>
         <div style="overflow:hidden;border-radius:8px;border:1px solid var(--border);margin-bottom:14px">
-          <img loading="lazy" src="Smrutea/Title Block 3 - Tiffin Vinyl Wrap.png" style="width:100%;display:block" alt="Title Block — Tiffin Vinyl Wrap">
+          <img loading="lazy" src="Smrutea/Title Block 3 - Tiffin Vinyl Wrap.png" style="width:100%;display:block" alt="Title Block,Tiffin Vinyl Wrap">
         </div>
         <div style="overflow:hidden;border-radius:8px;border:1px solid var(--border);margin-bottom:14px">
-          <img loading="lazy" src="Smrutea/Title Block 4- Metal Tiffin.png" style="width:100%;display:block" alt="Title Block — Metal Tiffin">
+          <img loading="lazy" src="Smrutea/Title Block 4- Metal Tiffin.png" style="width:100%;display:block" alt="Title Block,Metal Tiffin">
         </div>
         <div style="overflow:hidden;border-radius:8px;border:1px solid var(--border);margin-bottom:14px">
-          <img loading="lazy" src="Smrutea/Title Block 5 - Tea and Spice Pouches.png" style="width:100%;display:block" alt="Title Block — Tea and Spice Pouches">
+          <img loading="lazy" src="Smrutea/Title Block 5 - Tea and Spice Pouches.png" style="width:100%;display:block" alt="Title Block,Tea and Spice Pouches">
         </div>
       </div>
 
@@ -3288,7 +3712,7 @@ audio{accent-color:#1A1A1A}
 
   <!-- HERO: POSTER ONLY -->
   <div style="border-bottom:1px solid var(--border);background:#f2ece4;display:flex;justify-content:center;align-items:center;padding:40px 48px">
-    <img loading="lazy" src="Adobe Cabin/Final Poster.jpg" style="max-height:90vh;max-width:100%;object-fit:contain;display:block" alt="Dream Cabin: Adobe Revival — Final Poster">
+    <img loading="lazy" src="Adobe Cabin/Final Poster.jpg" style="max-height:90vh;max-width:100%;object-fit:contain;display:block" alt="Dream Cabin: Adobe Revival,Final Poster">
   </div>
 
   <div class="proj-detail-body">
@@ -3556,8 +3980,12 @@ function smtPrev() { smtGoto(smtIdx - 1); }
 setInterval(smtNext, 4000);
 
 // ── LIGHTBOX ──
-function openLightbox(src) {
-  document.getElementById('smt-lightbox-img').src = src;
+function openLightbox(src, bg) {
+  var img = document.getElementById('smt-lightbox-img');
+  img.src = src;
+  img.style.background = bg || '';
+  img.style.padding = bg ? '24px' : '';
+  img.style.borderRadius = bg ? '8px' : '';
   document.getElementById('smt-lightbox').classList.add('open');
 }
 function closeLightbox() {
@@ -3591,7 +4019,7 @@ async function initP5Flipbook() {
     p5HeroReady = true;
     p5BuildDots();
     await p5HeroShowView(0, true);
-  } catch(e) { /* silently fail — hero stays dark */ }
+  } catch(e) { /* silently fail,hero stays dark */ }
 }
 
 function p5BuildDots() {
@@ -3647,6 +4075,25 @@ function p5HeroPrev() { if (!p5Transitioning && p5HeroIdx > 0) p5HeroShowView(p5
 function p5HeroNext() { if (!p5Transitioning && p5HeroIdx < p5HeroViews.length - 1) p5HeroShowView(p5HeroIdx + 1); }
 function p5HeroGoto(idx) { if (!p5Transitioning && idx !== p5HeroIdx) p5HeroShowView(idx); }
 
+// ── POSTER PROCESS DRAWER ──
+var posterTitles = {nerds:'Nerds',doomsday:'Doomsday','artist-book':'Artist Book','typographic-follies':'Typographic Follies'};
+function openPosterProcess(id) {
+  document.querySelectorAll('.poster-process-content').forEach(function(el){ el.classList.remove('active'); });
+  var c = document.getElementById('process-' + id);
+  if (c) c.classList.add('active');
+  document.getElementById('poster-drawer-title').textContent = posterTitles[id] || id;
+  document.getElementById('poster-drawer').classList.add('open');
+  document.getElementById('poster-drawer-overlay').classList.add('open');
+  document.querySelector('.poster-drawer-scroll').scrollTop = 0;
+  document.body.style.overflow = 'hidden';
+}
+function closePosterProcess() {
+  document.getElementById('poster-drawer').classList.remove('open');
+  document.getElementById('poster-drawer-overlay').classList.remove('open');
+  document.body.style.overflow = '';
+  document.querySelectorAll('#poster-drawer video').forEach(function(v){ v.pause(); });
+}
+
 // ── BACK TO TOP ──
 var bttCategoryPages = ['page-graphic','page-ux','page-3d','page-motion','page-archive'];
 function bttUpdate() {
@@ -3675,8 +4122,8 @@ var projMeta = {
   'posters':         {title:'Posters',                   cat:'graphic', catLabel:'2D & Graphic Design', sub:'Poster Design',    accent:'accent-graphic'},
   // ── UX (all 5 from page-ux grid) ──
   'quest-app':       {title:'Quest Companion App',       cat:'ux',      catLabel:'UX/UI & Game Design', sub:'App Design',       accent:'accent-ux'},
-  'verdant-ui':      {title:'Verdant — UI System',       cat:'ux',      catLabel:'UX/UI & Game Design', sub:'Game UI',          accent:'accent-ux'},
-  'verdant-level':   {title:'Verdant — Level Design',    cat:'ux',      catLabel:'UX/UI & Game Design', sub:'Level Design',     accent:'accent-ux'},
+  'verdant-ui':      {title:'Verdant: UI System',       cat:'ux',      catLabel:'UX/UI & Game Design', sub:'Game UI',          accent:'accent-ux'},
+  'verdant-level':   {title:'Verdant: Level Design',    cat:'ux',      catLabel:'UX/UI & Game Design', sub:'Level Design',     accent:'accent-ux'},
   'wayfinder':       {title:'Wayfinder',                 cat:'ux',      catLabel:'UX/UI & Game Design', sub:'UX Research',      accent:'accent-ux'},
   'petal':           {title:'Petal',                     cat:'ux',      catLabel:'UX/UI & Game Design', sub:'App Design',       accent:'accent-ux'},
   // ── 3D (only the 4 listed on page-3d grid) ──
@@ -3708,23 +4155,34 @@ function renderMoreProjects(slug) {
   siblings.forEach(function(s) {
     var m = projMeta[s];
 
-    // Clone thumbnail from the existing discipline-page card
-    var srcThumb = document.querySelector('[onclick="showProject(\'' + s + '\')"] .proj-thumb-inner');
+    // Build thumbnail
     var thumbNode;
+    var srcThumb = document.querySelector('[onclick="showProject(\'' + s + '\')"] .proj-thumb-inner');
     if (srcThumb) {
       thumbNode = srcThumb.cloneNode(true);
-      // Swap class so our CSS sizing rules apply
       thumbNode.className = thumbNode.className.replace(/\bproj-thumb-inner\b/, 'more-proj-thumb-inner');
-      if (!/\bmore-proj-thumb-inner\b/.test(thumbNode.className)) {
-        thumbNode.className = 'more-proj-thumb-inner ' + thumbNode.className;
-      }
-      // Remove any hover overlay that may have been inside proj-thumb (sibling, not child — but safety)
+      if (!/\bmore-proj-thumb-inner\b/.test(thumbNode.className)) thumbNode.className = 'more-proj-thumb-inner ' + thumbNode.className;
       thumbNode.querySelectorAll('.proj-hover').forEach(function(el) { el.remove(); });
-      // Lazy-load any images inside
       thumbNode.querySelectorAll('img').forEach(function(img) { img.loading = 'lazy'; img.decoding = 'async'; });
     } else {
-      thumbNode = document.createElement('div');
-      thumbNode.className = 'more-proj-thumb-inner ' + m.accent;
+      // For reel-style cards (no proj-thumb-inner), clone the full proj-thumb contents
+      var srcProjThumb = document.querySelector('[onclick="showProject(\'' + s + '\')"] .proj-thumb');
+      if (srcProjThumb) {
+        thumbNode = document.createElement('div');
+        thumbNode.className = 'more-proj-thumb-inner';
+        thumbNode.style.cssText = 'position:relative;overflow:hidden;width:100%;height:100%';
+        if (srcProjThumb.style.background) thumbNode.style.background = srcProjThumb.style.background;
+        Array.from(srcProjThumb.children).forEach(function(child) {
+          if (!child.classList.contains('proj-hover')) {
+            var clone = child.cloneNode(true);
+            clone.querySelectorAll('img').forEach(function(img) { img.loading = 'lazy'; img.decoding = 'async'; });
+            thumbNode.appendChild(clone);
+          }
+        });
+      } else {
+        thumbNode = document.createElement('div');
+        thumbNode.className = 'more-proj-thumb-inner ' + m.accent;
+      }
     }
 
     var item = document.createElement('div');
