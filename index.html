@@ -365,6 +365,8 @@ audio{accent-color:#1A1A1A}
 #proj-ecoleander .proj-detail-sidebar::-webkit-scrollbar{display:none}
 #proj-ecoleander .proj-detail-sidebar{-ms-overflow-style:none;scrollbar-width:none}
 #proj-smrutea .proj-detail-content{max-width:680px;padding:48px 48px;margin:0 auto}
+#proj-spotify-feature .proj-detail-content{max-width:680px;padding:48px 48px;margin:0 auto}
+#proj-oracle .proj-detail-content{max-width:680px;padding:48px 48px;margin:0 auto}
 #proj-smrutea .proj-detail-content div[style*="overflow:hidden"]{border:none!important;border-radius:0!important}
 #proj-smrutea .proj-detail-content img{width:100%;height:auto;display:block;border-radius:0!important}
 #proj-smrutea .proj-detail-sidebar::-webkit-scrollbar{display:none}
@@ -388,9 +390,11 @@ audio{accent-color:#1A1A1A}
 #smt-lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.93);z-index:10000;display:none;align-items:center;justify-content:center;cursor:zoom-out;padding:24px}
 #smt-lightbox.open{display:flex}
 #smt-lightbox img{max-width:90vw;max-height:90vh;object-fit:contain;border-radius:4px}
-.smt-lb-thumb{cursor:zoom-in;position:relative}
-.smt-lb-thumb img{transition:opacity 0.15s}
-.smt-lb-thumb:hover img{opacity:0.88}
+.smt-lb-thumb{cursor:zoom-in;position:relative;overflow:hidden}
+.smt-lb-thumb img{transition:opacity 0.2s}
+.smt-lb-thumb:hover img{opacity:0.82}
+.smt-lb-thumb::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,0);transition:background 0.2s;pointer-events:none}
+.smt-lb-thumb:hover::after{background:rgba(0,0,0,0.22)}
 .smt-lb-badge{position:absolute;bottom:7px;right:7px;background:rgba(0,0,0,0.5);color:#fff;font-size:10px;padding:2px 8px;border-radius:10px;pointer-events:none;letter-spacing:0.05em;font-weight:500;font-family:'Outfit',sans-serif;z-index:2}
 .smt-cg{grid-template-columns:1fr 1fr 1fr;gap:10px;transition:opacity 0.6s ease}
 .smt-dot{width:7px;height:7px;border-radius:50%;background:#D0D0D0;cursor:pointer;transition:background 0.2s;display:inline-block}
@@ -486,6 +490,18 @@ audio{accent-color:#1A1A1A}
 .more-proj-name{font-size:13px;font-weight:600}
 .more-proj-sub{font-size:11px;color:var(--muted);margin-top:2px}
 .more-proj-arr{font-size:14px;color:var(--muted);flex-shrink:0}
+.spotify-slides-wrap{position:relative;background:#1a1a1a;overflow:hidden}
+#spotify-slides-canvas{display:block;width:100%;height:auto;transition:opacity 0.18s}
+.spotify-slides-nav{position:absolute;top:0;bottom:0;width:50%;z-index:10;cursor:pointer}
+.spotify-slides-nav-prev{left:0}
+.spotify-slides-nav-next{right:0}
+.spotify-slides-nav-prev::after{content:'‹';position:absolute;left:18px;top:50%;transform:translateY(-50%);color:rgba(255,255,255,0);font-size:32px;line-height:1;transition:color 0.2s}
+.spotify-slides-nav-next::after{content:'›';position:absolute;right:18px;top:50%;transform:translateY(-50%);color:rgba(255,255,255,0);font-size:32px;line-height:1;transition:color 0.2s}
+.spotify-slides-nav-prev:hover::after,.spotify-slides-nav-next:hover::after{color:rgba(255,255,255,0.6)}
+.spotify-slides-counter{position:absolute;bottom:14px;right:16px;font-size:11px;color:rgba(255,255,255,0.45);z-index:20;font-weight:600;letter-spacing:0.5px}
+.spotify-slides-dots{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);display:flex;gap:5px;z-index:20;flex-wrap:wrap;justify-content:center;max-width:80%}
+.spotify-slides-dot{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,0.2);cursor:pointer;transition:background 0.2s,transform 0.2s;flex-shrink:0}
+.spotify-slides-dot.active{background:rgba(255,255,255,0.85);transform:scale(1.25)}
 .merch-carousel{position:relative;user-select:none}
 .merch-carousel-slide{display:none}
 .merch-carousel-slide.active{display:block}
@@ -495,6 +511,15 @@ audio{accent-color:#1A1A1A}
 .merch-carousel-btn{background:none;border:1px solid var(--border);border-radius:100px;width:32px;height:32px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;transition:border-color 0.15s;color:#1A1A1A;flex-shrink:0}
 .merch-carousel-btn:hover{border-color:#bbb}
 .merch-carousel-counter{font-size:12px;color:var(--muted);font-weight:500}
+#proj-choco-knight .merch-carousel-img-wrap{height:auto;min-height:320px}
+#ck-lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.93);z-index:10000;display:none;align-items:center;justify-content:center;padding:24px;gap:16px}
+#ck-lightbox.open{display:flex}
+#ck-lightbox img{max-width:calc(90vw - 120px);max-height:90vh;object-fit:contain;cursor:default}
+.ck-lb-btn{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:#fff;width:44px;height:44px;cursor:pointer;font-size:20px;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background 0.15s;font-family:inherit}
+.ck-lb-btn:hover{background:rgba(255,255,255,0.22)}
+#proj-choco-knight .proj-detail-content{max-width:680px;padding:48px 48px;margin:0 auto}
+@font-face{font-family:'Featherfont';src:url('media/Featherform/Featherfont-Regular.otf') format('opentype'),url('media/Featherform/Featherfont-Regular.ttf') format('truetype')}
+#proj-featherform .proj-detail-content{max-width:680px;padding:48px 48px;margin:0 auto}
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 </head>
@@ -525,7 +550,6 @@ audio{accent-color:#1A1A1A}
           <span class="works-menu-dot" style="background:#FFF0A8;border:1px solid #e8e0a0"></span>
           2D & Graphic Design
         </a>
-        <div class="works-menu-divider"></div>
         <a onclick="showPage('archive');closeWorksMenu()" onmouseenter="preloadPage('archive')" id="nav-archive">
           <span class="works-menu-dot" style="background:#E8E8E8"></span>
           Archive
@@ -565,7 +589,7 @@ audio{accent-color:#1A1A1A}
       <div class="home-proj-thumb"><div class="home-proj-thumb-inner accent-graphic">
         <svg width="140" height="80" viewBox="0 0 140 80" fill="none"><rect x="30" y="16" width="80" height="50" rx="10" fill="#FFD1E4" opacity="0.45"/><rect x="40" y="26" width="60" height="7" rx="3" fill="#FF9BC2" opacity="0.55"/><rect x="40" y="38" width="42" height="5" rx="2" fill="#FF9BC2" opacity="0.4"/><rect x="40" y="48" width="56" height="5" rx="2" fill="#FFBAD7" opacity="0.25"/></svg>
       </div></div>
-      <div class="home-proj-info"><div class="home-proj-left"><div class="home-proj-title">UX/UI & Game Design</div><div class="home-proj-sub">Case studies, interfaces, systems, levels</div></div><span class="home-proj-arrow">→</span></div>
+      <div class="home-proj-info"><div class="home-proj-left"><div class="home-proj-title">UX/UI & Game Design</div><div class="home-proj-sub">A collection of my game design and UX/UI work, from a disco typing game to a magical personality quiz.</div></div><span class="home-proj-arrow">→</span></div>
     </div>
     <div class="home-proj-block" onclick="showPage('3d')" onmouseenter="preloadPage('3d')">
       <div class="home-proj-thumb">
@@ -755,30 +779,51 @@ audio{accent-color:#1A1A1A}
   <div class="disc-header">
     <div class="disc-header-left">
       <div class="disc-title">UX/UI & Game Design</div>
-      <p class="disc-desc">User research, interaction design, UI systems, game design documents, and level design,work that thinks through people and play.</p>
+      <p class="disc-desc">A collection of my game design and UX/UI work, from a disco typing game to a magical personality quiz. Click on a card below to get more details!</p>
     </div>
     <div><span class="disc-back" onclick="showPage('home')">← All work</span></div>
   </div>
   <div class="proj-grid proj-grid-3">
-    <div class="proj" onclick="showProject('quest-app')">
-      <div class="proj-thumb"><div class="proj-thumb-inner accent-ux" style="width:100%;height:100%"><svg width="160" height="120" viewBox="0 0 160 120" fill="none"><rect x="28" y="20" width="104" height="80" rx="12" fill="#90C8F0" opacity="0.35"/><rect x="38" y="32" width="84" height="10" rx="4" fill="#4498D8" opacity="0.55"/><rect x="38" y="48" width="60" height="7" rx="3" fill="#4498D8" opacity="0.35"/><rect x="38" y="60" width="84" height="7" rx="3" fill="#4498D8" opacity="0.2"/><rect x="38" y="72" width="40" height="7" rx="3" fill="#4498D8" opacity="0.15"/></svg></div><div class="proj-hover"><div class="proj-hover-text">UX research, flows, high-fidelity prototype</div></div></div>
-      <div class="proj-foot"><span class="proj-name">Quest Companion App</span><span class="proj-meta">2024</span></div>
+    <div class="proj" onclick="showProject('discotype')">
+      <div class="proj-thumb" style="background:#FFF0F5"><div class="proj-thumb-inner" style="width:100%;height:100%"><svg width="160" height="120" viewBox="0 0 160 120" fill="none"><circle cx="80" cy="32" r="16" stroke="#FF5599" stroke-width="1.5" fill="none" opacity="0.5"/><rect x="22" y="58" width="14" height="38" rx="3" fill="#FF5599" opacity="0.5"/><rect x="40" y="68" width="14" height="28" rx="3" fill="#FF88CC" opacity="0.4"/><rect x="58" y="52" width="14" height="44" rx="3" fill="#AA44FF" opacity="0.45"/><rect x="76" y="62" width="14" height="34" rx="3" fill="#FF5599" opacity="0.35"/><rect x="94" y="56" width="14" height="40" rx="3" fill="#FF88CC" opacity="0.4"/><rect x="112" y="70" width="14" height="26" rx="3" fill="#AA44FF" opacity="0.35"/><circle cx="45" cy="42" r="2.5" fill="#FFD700" opacity="0.7"/><circle cx="120" cy="38" r="2" fill="#FF5599" opacity="0.6"/><circle cx="130" cy="58" r="3" fill="#AA44FF" opacity="0.5"/><circle cx="25" cy="48" r="2" fill="#FFD700" opacity="0.5"/></svg></div><div class="proj-hover"><div class="proj-hover-text">Typography, interaction design, animation</div></div></div>
+      <div class="proj-foot"><span class="proj-name">DiscoType!</span><span class="proj-meta">2025</span></div>
     </div>
-    <div class="proj" onclick="showProject('verdant-ui')">
-      <div class="proj-thumb"><div class="proj-thumb-inner accent-misc1" style="width:100%;height:100%"><svg width="160" height="120" viewBox="0 0 160 120" fill="none"><rect x="40" y="30" width="80" height="60" rx="8" fill="#8090E0" opacity="0.3"/><rect x="52" y="42" width="30" height="20" rx="4" fill="#6070C8" opacity="0.4"/><circle cx="104" cy="60" r="12" fill="#6070C8" opacity="0.3"/><rect x="96" y="56" width="16" height="8" rx="2" fill="#6070C8" opacity="0.35"/></svg></div><div class="proj-hover"><div class="proj-hover-text">Interface design, menus, HUD system</div></div></div>
-      <div class="proj-foot"><span class="proj-name">Verdant: UI System</span><span class="proj-meta">2024</span></div>
+    <div class="proj" onclick="showProject('oracle')">
+      <div class="proj-thumb" style="overflow:hidden">
+        <div class="proj-thumb-inner" style="width:100%;height:100%">
+          <img loading="lazy" src="media/Oracle/Homepage Title Graphic.png" style="width:100%;height:100%;object-fit:cover;display:block" alt="Oracle">
+        </div>
+        <div class="proj-hover"><div class="proj-hover-text">Interactive web design, personality quiz, original illustration</div></div>
+      </div>
+      <div class="proj-foot"><span class="proj-name">Oracle</span><span class="proj-meta">Spring 2026</span></div>
     </div>
-    <div class="proj" onclick="showProject('verdant-level')">
-      <div class="proj-thumb"><div class="proj-thumb-inner accent-misc2" style="width:100%;height:100%"><svg width="160" height="120" viewBox="0 0 160 120" fill="none"><rect x="24" y="30" width="112" height="60" rx="8" fill="#60C890" opacity="0.3"/><rect x="34" y="42" width="26" height="18" rx="4" fill="#30A060" opacity="0.4"/><rect x="68" y="38" width="58" height="9" rx="3" fill="#30A060" opacity="0.35"/><rect x="68" y="52" width="42" height="7" rx="3" fill="#30A060" opacity="0.25"/></svg></div><div class="proj-hover"><div class="proj-hover-text">Level design, GDD, puzzle logic</div></div></div>
-      <div class="proj-foot"><span class="proj-name">Verdant: Level Design</span><span class="proj-meta">2023</span></div>
+    <div class="proj" onclick="showProject('featherform')">
+      <div class="proj-thumb"><div class="proj-thumb-inner" style="width:100%;height:100%"><img loading="lazy" src="media/Featherform/Featherform Title Screen Hero.png" style="width:100%;height:100%;object-fit:cover;display:block" alt="Featherform"></div><div class="proj-hover"><div class="proj-hover-text">Game UI design, custom typeface, Unity prototype</div></div></div>
+      <div class="proj-foot"><span class="proj-name">Featherform</span><span class="proj-meta">Spring 2026</span></div>
     </div>
-    <div class="proj" onclick="showProject('wayfinder')">
-      <div class="proj-thumb"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#E8F4FF"><svg width="160" height="120" viewBox="0 0 160 120" fill="none"><circle cx="55" cy="60" r="26" stroke="#3a90d0" stroke-width="1.5" fill="none" opacity="0.4"/><circle cx="105" cy="60" r="20" stroke="#3a90d0" stroke-width="1.5" fill="none" opacity="0.4"/><line x1="55" y1="60" x2="105" y2="60" stroke="#3a90d0" stroke-width="1.5" opacity="0.3"/><circle cx="55" cy="60" r="5" fill="#3a90d0" opacity="0.5"/><circle cx="105" cy="60" r="5" fill="#3a90d0" opacity="0.5"/></svg></div><div class="proj-hover"><div class="proj-hover-text">User research, journey mapping, testing</div></div></div>
-      <div class="proj-foot"><span class="proj-name">Wayfinder: UX Research</span><span class="proj-meta">2023</span></div>
+    <div class="proj" onclick="showProject('stellar-exploration')">
+      <div class="proj-thumb" style="background:#0D1117"><div class="proj-thumb-inner" style="width:100%;height:100%"><svg width="160" height="120" viewBox="0 0 160 120" fill="none"><circle cx="30" cy="25" r="1.5" fill="#fff" opacity="0.8"/><circle cx="55" cy="15" r="1" fill="#fff" opacity="0.6"/><circle cx="120" cy="20" r="1.5" fill="#fff" opacity="0.7"/><circle cx="140" cy="35" r="1" fill="#fff" opacity="0.5"/><circle cx="18" cy="70" r="1" fill="#fff" opacity="0.5"/><circle cx="145" cy="80" r="1.5" fill="#fff" opacity="0.6"/><circle cx="100" cy="10" r="1" fill="#fff" opacity="0.4"/><circle cx="42" cy="95" r="1" fill="#fff" opacity="0.4"/><circle cx="88" cy="65" r="28" fill="#334466" opacity="0.8"/><circle cx="88" cy="65" r="28" stroke="#6688CC" stroke-width="1.2" fill="none" opacity="0.5"/><ellipse cx="88" cy="65" rx="44" ry="10" stroke="#6688CC" stroke-width="1" fill="none" opacity="0.4"/><circle cx="132" cy="58" r="7" fill="#8899BB" opacity="0.6"/></svg></div><div class="proj-hover"><div class="proj-hover-text">App design, UX research, navigation systems</div></div></div>
+      <div class="proj-foot"><span class="proj-name">Stellar Exploration</span><span class="proj-meta">2025</span></div>
     </div>
-    <div class="proj" onclick="showProject('petal')">
-      <div class="proj-thumb"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#FDF0FF"><svg width="160" height="120" viewBox="0 0 160 120" fill="none"><rect x="30" y="25" width="44" height="70" rx="8" fill="#C880E8" opacity="0.3"/><rect x="38" y="35" width="28" height="5" rx="2" fill="#9040C0" opacity="0.5"/><rect x="38" y="45" width="22" height="4" rx="2" fill="#9040C0" opacity="0.3"/><rect x="86" y="35" width="44" height="60" rx="8" fill="#C880E8" opacity="0.2"/></svg></div><div class="proj-hover"><div class="proj-hover-text">Mobile app design, interaction patterns</div></div></div>
-      <div class="proj-foot"><span class="proj-name">Petal: Wellness App</span><span class="proj-meta">2022</span></div>
+    <div class="proj" onclick="showProject('silent-spellcraft')">
+      <div class="proj-thumb" style="background:#0E1020"><div class="proj-thumb-inner" style="width:100%;height:100%"><svg width="160" height="120" viewBox="0 0 160 120" fill="none"><circle cx="80" cy="60" r="46" stroke="#8888FF" stroke-width="1" opacity="0.35" stroke-dasharray="4 3"/><circle cx="80" cy="60" r="30" stroke="#8888FF" stroke-width="1.2" opacity="0.5"/><circle cx="80" cy="60" r="12" fill="#4444AA" opacity="0.5"/><circle cx="80" cy="60" r="5" fill="#9999FF" opacity="0.7"/><polygon points="80,30 88,52 112,52 93,66 100,88 80,74 60,88 67,66 48,52 72,52" stroke="#8888FF" stroke-width="1" fill="none" opacity="0.3"/></svg></div><div class="proj-hover"><div class="proj-hover-text">Game UI, interaction design, visual design</div></div></div>
+      <div class="proj-foot"><span class="proj-name">Silent Spellcraft</span><span class="proj-meta">2025</span></div>
+    </div>
+    <div class="proj" onclick="showProject('choco-knight')">
+      <div class="proj-thumb"><div class="proj-thumb-inner" style="width:100%;height:100%"><img loading="lazy" src="media/Choco Knight Documentation/1.png" style="width:100%;height:100%;object-fit:cover;display:block" alt="Choco Knight"></div><div class="proj-hover"><div class="proj-hover-text">2D pixel platformer, game design, level design</div></div></div>
+      <div class="proj-foot"><span class="proj-name">Choco Knight</span><span class="proj-meta">Fall 2025</span></div>
+    </div>
+    <div class="proj" onclick="showProject('spotify-feature')">
+      <div class="proj-thumb" style="overflow:hidden">
+        <div class="proj-thumb-inner" style="width:100%;height:100%">
+          <img loading="lazy" src="media/Spotify feature/Spotify Slides.png" style="width:100%;height:100%;object-fit:cover;display:block" alt="Spotify: Designing a New Microinteraction">
+        </div>
+        <div class="proj-hover"><div class="proj-hover-text">Product design, feature concept, UX research</div></div>
+      </div>
+      <div class="proj-foot"><span class="proj-name">Spotify: Designing a New Microinteraction</span><span class="proj-meta">Spring 2025</span></div>
+    </div>
+    <div style="grid-column:span 2;display:flex;align-items:center;justify-content:center;padding:24px 32px;border:1px solid var(--border);background:#FFC8D8">
+      <p style="font-size:20px;font-weight:600;color:#1A1A1A;font-style:italic;line-height:1.4;text-align:center;margin:0">And last but not least, this website was designed and developed by yours truly! :)</p>
     </div>
   </div>
 </div>
@@ -1046,7 +1091,7 @@ audio{accent-color:#1A1A1A}
       <div class="about-section">
         <div class="skill-group">
           <div class="skill-group-label">Tools</div>
-          <div class="skill-list"><span class="stag">Unity</span><span class="stag">Adobe Illustrator</span><span class="stag">Photoshop</span><span class="stag">InDesign</span><span class="stag">After Effects</span><span class="stag">Substance Painter</span><span class="stag">GitHub</span><span class="stag">VS Code</span><span class="stag">Rhino 3D</span><span class="stag">Autodesk Maya</span><span class="stag">HTML</span><span class="stag">CSS</span><span class="stag">Java</span><span class="stag">Figma</span><span class="stag">C++</span></div>
+          <div class="skill-list"><span class="stag">Unity</span><span class="stag">Adobe Illustrator</span><span class="stag">Photoshop</span><span class="stag">InDesign</span><span class="stag">After Effects</span><span class="stag">Substance Painter</span><span class="stag">GitHub</span><span class="stag">VS Code</span><span class="stag">Rhino 3D</span><span class="stag">Autodesk Maya</span><span class="stag">HTML</span><span class="stag">CSS</span><span class="stag">Java</span><span class="stag">Figma</span><span class="stag">Basic C++</span></div>
         </div>
         <div class="skill-group">
           <div class="skill-group-label">Skills</div>
@@ -1507,6 +1552,869 @@ audio{accent-color:#1A1A1A}
         <div class="proj-detail-h2">What I took away</div>
         <p class="proj-detail-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. This project pushed me to design for a specific subculture,not a generic "user",which meant the research had to be real and the design had to earn trust. The biggest lesson: the best game UI disappears. It gives you exactly what you need exactly when you need it, then gets out of the way.</p>
       </div>
+    </div>
+  </div>
+</div>
+
+<!-- DISCOTYPE -->
+<div class="proj-detail-page" id="proj-discotype">
+  <div class="proj-detail-nav">
+    <div class="proj-detail-breadcrumb">
+      <span onclick="showPage('ux')">UX/UI & Game Design</span>
+      <span class="sep">›</span>
+      <span style="color:#1A1A1A;font-weight:500">DiscoType!</span>
+    </div>
+    <div><button class="proj-nav-btn" onclick="showPage('ux')">← Back to category</button></div>
+  </div>
+  <div class="proj-detail-hero">
+    <div class="proj-detail-kicker">UX/UI & Game Design · Interaction Design</div>
+    <div class="proj-detail-title">DiscoType!</div>
+    <p class="proj-detail-tagline">Content coming soon.</p>
+    <div class="proj-detail-meta-row">
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Year</div><div class="proj-detail-meta-val">2025</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">Figma</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Type</div><div class="proj-detail-meta-val">Interaction Design</div></div>
+    </div>
+  </div>
+  <div class="proj-detail-body" style="display:block">
+    <div class="proj-detail-content">
+      <div class="proj-detail-section">
+        <div class="proj-detail-section-label">Overview</div>
+        <div class="proj-detail-h2">Coming soon</div>
+        <p class="proj-detail-p">Details for this project will be added soon.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ORACLE -->
+<div class="proj-detail-page" id="proj-oracle">
+  <div class="proj-detail-nav">
+    <div class="proj-detail-breadcrumb">
+      <span onclick="showPage('ux')">UX/UI & Game Design</span>
+      <span class="sep">›</span>
+      <span style="color:#1A1A1A;font-weight:500">Oracle</span>
+    </div>
+    <div><button class="proj-nav-btn" onclick="showPage('ux')">← Back to category</button></div>
+  </div>
+  <div class="proj-detail-hero">
+    <div class="proj-detail-kicker">UX/UI & Game Design · Interactive Web Design</div>
+    <div class="proj-detail-title">Oracle</div>
+    <p class="proj-detail-tagline">The Oracle tells your future in a lighthearted, personalized way, pairing your result with a recommended genre and media to explore. A magical personality quiz built as an interactive web experience with original illustration and animation.</p>
+    <div class="proj-detail-meta-row">
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Course</div><div class="proj-detail-meta-val">AET 330T Exploring User Interaction</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Instructor</div><div class="proj-detail-meta-val">Sydney Parks</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Semester</div><div class="proj-detail-meta-val">Spring 2026</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">HTML/CSS/JS, Illustrator, Canva, Figma</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Type</div><div class="proj-detail-meta-val">Interactive Web Design</div></div>
+    </div>
+  </div>
+  <div style="position:relative;cursor:pointer;border-bottom:1px solid var(--border)" onclick="window.open('https://patelans000.github.io/Oracle/','_blank')">
+    <img loading="lazy" src="media/Oracle/Homepage Title Graphic.png" style="width:100%;display:block" alt="Oracle homepage">
+    <div style="position:absolute;bottom:0;left:0;right:0;padding:20px 32px;background:linear-gradient(transparent,rgba(0,0,0,0.75));pointer-events:none;z-index:2;display:flex;justify-content:space-between;align-items:flex-end">
+      <div>
+        <div style="font-size:10px;color:rgba(255,255,255,0.5);font-weight:600;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:5px">UX/UI & Game Design · Interactive Web Design</div>
+        <div style="font-size:16px;color:#fff;font-weight:600;font-family:'Fredoka',sans-serif">Oracle</div>
+      </div>
+      <div style="font-size:13px;color:#fff;font-weight:600;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.35);padding:8px 16px;backdrop-filter:blur(4px);white-space:nowrap">Play it yourself! →</div>
+    </div>
+  </div>
+  <div style="background:#0d0d0d;border-bottom:1px solid var(--border);padding:24px 48px;display:flex;align-items:center;justify-content:center">
+    <video controls autoplay muted playsinline style="width:100%;max-width:720px;display:block;filter:saturate(1.4) contrast(1.05)">
+      <source src="media/Oracle/Full Video Walkthrough.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="proj-detail-body">
+    <div class="proj-detail-sidebar">
+      <div class="proj-detail-sidebar-section">
+        <div class="proj-detail-sidebar-label">Contents</div>
+        <div class="proj-toc-list">
+          <a class="proj-toc-link" onclick="document.getElementById('oracle-concept').scrollIntoView({behavior:'smooth'})">Concept & Ideation</a>
+          <a class="proj-toc-link" onclick="document.getElementById('oracle-color').scrollIntoView({behavior:'smooth'})">Color, Type & Grid</a>
+          <a class="proj-toc-link" onclick="document.getElementById('oracle-figma').scrollIntoView({behavior:'smooth'})">Figma Prototype</a>
+          <a class="proj-toc-link" onclick="document.getElementById('oracle-interactions').scrollIntoView({behavior:'smooth'})">Interaction Design</a>
+          <a class="proj-toc-link" onclick="document.getElementById('oracle-coding').scrollIntoView({behavior:'smooth'})">Process: Coding</a>
+          <a class="proj-toc-link" onclick="document.getElementById('oracle-assets').scrollIntoView({behavior:'smooth'})">Process: Assets</a>
+          <a class="proj-toc-link" onclick="document.getElementById('oracle-testing').scrollIntoView({behavior:'smooth'})">Usability Testing</a>
+          <a class="proj-toc-link" onclick="document.getElementById('oracle-live').scrollIntoView({behavior:'smooth'})">Live Site</a>
+          <a class="proj-toc-link" onclick="document.getElementById('oracle-reflection').scrollIntoView({behavior:'smooth'})">Reflection</a>
+        </div>
+      </div>
+    </div>
+    <div class="proj-detail-content">
+
+      <div class="proj-detail-section" id="oracle-concept">
+        <div class="proj-detail-section-label">Concept & Ideation</div>
+        <div class="proj-detail-h2">Finding the Oracle</div>
+        <p class="proj-detail-p">I began my ideation process using sticky notes on Miro to explore a wide range of possibilities. I wrote down a plethora of ideas before narrowing them down to the concept I ultimately pursued: Oracle. I consume a lot of content and have a strong affinity for magical and whimsical themes, so I wanted to merge those interests into a playful, interactive website. The Oracle allows users to have their "future told" in a lighthearted way while also receiving a recommended genre and accompanying media, creating an engaging experience.</p>
+        <div class="proj-img-grid proj-img-grid-2" style="margin-top:20px">
+          <div class="smt-lb-thumb" onclick="openLightbox('media/Oracle/Miro 1.png')" style="background:#f5f5f5;height:220px;display:flex;align-items:center;justify-content:center">
+            <img loading="lazy" src="media/Oracle/Miro 1.png" style="max-width:100%;max-height:220px;object-fit:contain;display:block" alt="Miro ideation board">
+          </div>
+          <div class="smt-lb-thumb" onclick="openLightbox('media/Oracle/Miro 2.png')" style="background:#f5f5f5;height:220px;display:flex;align-items:center;justify-content:center">
+            <img loading="lazy" src="media/Oracle/Miro 2.png" style="max-width:100%;max-height:220px;object-fit:contain;display:block" alt="Miro ideation close-up">
+          </div>
+        </div>
+        <div class="smt-lb-thumb" onclick="openLightbox('media/Oracle/Miro 3.png')" style="margin-top:12px;background:#f5f5f5;height:220px;display:flex;align-items:center;justify-content:center">
+          <img loading="lazy" src="media/Oracle/Miro 3.png" style="max-width:100%;max-height:220px;object-fit:contain;display:block" alt="Miro ideation detail">
+        </div>
+        <p class="proj-img-caption">Miro sticky note ideation</p>
+      </div>
+
+      <div class="proj-detail-section" id="oracle-color">
+        <div class="proj-detail-section-label">Color, Typography & Grid</div>
+        <div class="proj-detail-h2">Purples, Greens, and Pixel Magic</div>
+        <p class="proj-detail-p">I explored various color palettes on Coolors before settling on one that felt right. From the beginning, I knew I wanted to work with purples and greens since those colors immediately come to mind when I think of an oracle concept (likely influenced by Percy Jackson). For the logo and title typography, I used TAN Grandeur, which I customized by adding star emblems. Its wispy, magical, and whimsical qualities perfectly capture the oracle theme. I paired this with VT323, a pixel-style font, to create a connection between video games and the interactive nature of the website. The overall design was meant to feel playful while still supporting the project's core themes. I also applied the grid systems introduced in class to guide the placement of elements throughout the layout.</p>
+        <div class="smt-lb-thumb" onclick="openLightbox('media/Oracle/Fonts and colors and grid.png')" style="margin-top:20px">
+          <img loading="lazy" src="media/Oracle/Fonts and colors and grid.png" style="width:100%;display:block" alt="Fonts, colors, and grid">
+        </div>
+        <p class="proj-img-caption">Color palette, typography, and grid system</p>
+      </div>
+
+      <div class="proj-detail-section" id="oracle-figma">
+        <div class="proj-detail-section-label">Figma Prototype</div>
+        <div class="proj-detail-h2">Wireframes and Screens</div>
+        <p class="proj-detail-p">Interact with and inspect my Figma screens below.</p>
+        <div style="margin-top:20px;background:#f5f5f5;overflow:hidden">
+          <video loop autoplay muted playsinline style="width:100%;display:block">
+            <source src="media/Oracle/Prototype Wireframe Video.mp4" type="video/mp4">
+          </video>
+        </div>
+        <p class="proj-img-caption">Prototype walkthrough</p>
+        <div style="border:1px solid var(--border);overflow:hidden;margin-top:20px">
+          <div style="background:var(--gray);padding:18px 22px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;gap:16px">
+            <div>
+              <div style="font-size:10px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin-bottom:4px">Figma</div>
+              <div style="font-size:14px;font-weight:600;color:#1A1A1A">Oracle Prototype V1</div>
+            </div>
+            <a href="https://www.figma.com/design/1HOVl1FtBDDJxaHKjVPN0O/Oracle-Reading-Quiz-Prototype?node-id=0-1&p=f&t=yqg46gEztdq3ubmV-0" target="_blank" style="font-size:12px;color:var(--muted);text-decoration:underline;text-underline-offset:2px;white-space:nowrap;transition:color 0.15s" onmouseover="this.style.color='#1A1A1A'" onmouseout="this.style.color='var(--muted)'">Open →</a>
+          </div>
+          <iframe style="border:none;width:100%;display:block" height="480" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fdesign%2F1HOVl1FtBDDJxaHKjVPN0O%2FOracle-Reading-Quiz-Prototype%3Fnode-id%3D0-1%26p%3Df%26t%3Dyqg46gEztdq3ubmV-0" allowfullscreen></iframe>
+        </div>
+        <div style="border:1px solid var(--border);overflow:hidden;margin-top:12px">
+          <div style="background:var(--gray);padding:18px 22px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;gap:16px">
+            <div>
+              <div style="font-size:10px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin-bottom:4px">Figma</div>
+              <div style="font-size:14px;font-weight:600;color:#1A1A1A">Oracle Prototype V2</div>
+            </div>
+            <a href="https://www.figma.com/design/1HOVl1FtBDDJxaHKjVPN0O/Oracle-Reading-Quiz-Prototype?node-id=20-363&t=4yJeYGS0gCcP5Cfe-1" target="_blank" style="font-size:12px;color:var(--muted);text-decoration:underline;text-underline-offset:2px;white-space:nowrap;transition:color 0.15s" onmouseover="this.style.color='#1A1A1A'" onmouseout="this.style.color='var(--muted)'">Open →</a>
+          </div>
+          <iframe style="border:none;width:100%;display:block" height="480" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fdesign%2F1HOVl1FtBDDJxaHKjVPN0O%2FOracle-Reading-Quiz-Prototype%3Fnode-id%3D20-363%26t%3D4yJeYGS0gCcP5Cfe-1" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <div class="proj-detail-section" id="oracle-interactions">
+        <div class="proj-detail-section-label">Interaction Design & Animation</div>
+        <div class="proj-detail-h2">Motion as Communication</div>
+        <p class="proj-detail-p">Motion and glow are used throughout to guide user interaction and attention. Pulsing elements signal the system is waiting for input, floating animations make the interface feel alive, and scaling and glow effects on hover clearly communicate interactivity. They were also the most fun to experiment with. Made it all magical.</p>
+
+        <div class="proj-detail-section-label" style="margin-top:32px">Homepage Entry</div>
+        <p class="proj-detail-p">When the user hovers, the element slightly grows and shows a soft green glow. This signals it is clickable and meant to be interacted with. The glow draws attention to it as an important entry point, and the quick transition makes the interaction feel responsive and smooth.</p>
+        <video loop autoplay muted playsinline style="width:calc(100% + 48px);margin-left:-24px;display:block;margin-top:16px">
+          <source src="media/Oracle/Interaction Homepage.mp4" type="video/mp4">
+        </video>
+
+        <div class="proj-detail-section-label" style="margin-top:32px">Oracle Image & Speech Bubble</div>
+        <p class="proj-detail-p">The oracle image stays still at first. When hovered, it slightly grows and gains a glowing shadow. When clicked, it briefly shrinks to show it has been pressed. These small movements help users understand the image is interactive and give physical-like feedback, similar to pressing a real button.</p>
+        <p class="proj-detail-p">The speech bubble gently floats up and down at all times. It is not clickable, but the movement makes it feel alive, like the oracle is actively speaking. This keeps the viewer's attention and supports the storytelling aspect of the experience.</p>
+        <div class="proj-img-grid proj-img-grid-2" style="margin-top:16px;margin-left:-24px;margin-right:-24px;width:calc(100% + 48px)">
+          <video loop autoplay muted playsinline style="width:100%;display:block">
+            <source src="media/Oracle/Interaction ClickHover Oracle.mp4" type="video/mp4">
+          </video>
+          <video loop autoplay muted playsinline style="width:100%;display:block">
+            <source src="media/Oracle/Interaction Animation Speech Bubble.mp4" type="video/mp4">
+          </video>
+        </div>
+
+        <div class="proj-detail-section-label" style="margin-top:32px">Answer Buttons & Results</div>
+        <p class="proj-detail-p">When the answer buttons are not being hovered, they continuously pulse with a shifting glow to highlight their importance and signal the experience is waiting for input. When hovered, the buttons become slightly larger and begin to jitter. The scale increase clearly communicates interactivity, while the jitter adds a sense of energy and urgency, almost like the button is reacting to the user's presence. On the results page, media images slightly grow and gain a layered glow on hover, while the image inside also scales up to create a sense of depth. The restart button behaves exactly like the start button, creating familiar, consistent behavior.</p>
+        <video loop autoplay muted playsinline style="width:calc(100% + 48px);margin-left:-24px;display:block;margin-top:16px">
+          <source src="media/Oracle/Results Interaction Animation.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <div class="proj-detail-section" id="oracle-coding">
+        <div class="proj-detail-section-label">Process: Coding</div>
+        <div class="proj-detail-h2">Building the Foundations</div>
+        <p class="proj-detail-p">I started by making a really barebones website to test out my layout, mechanics, and color palette to see if I could even bring my concept to life. I did extensive self-teaching and reviewed code I had learned my freshman year in an intro UX/UI class, and used AI when necessary to build a general wireframe for my website. I needed some assistance with code formatting, flexbox, and similar concepts, but I successfully created a functioning, animated website that I understand. After establishing the core functionality, I was able to focus on the design aspects, drawing and implementing all of the graphic elements as SVGs/PNGs. I'm glad I established the core functionality first.</p>
+        <div class="smt-lb-thumb" onclick="openLightbox('media/Oracle/Working Progress Illustrator.png')" style="margin-top:20px">
+          <img loading="lazy" src="media/Oracle/Working Progress Illustrator.png" style="width:100%;display:block" alt="Working progress in Illustrator">
+        </div>
+        <p class="proj-img-caption">Asset development in Illustrator</p>
+      </div>
+
+      <div class="proj-detail-section" id="oracle-assets">
+        <div class="proj-detail-section-label">Process: Making Assets</div>
+        <div class="proj-detail-h2">The Oracle, the Background, and the Logo</div>
+        <p class="proj-detail-p">The main assets I developed were the image of the Oracle, the background, and the logo. I created the Oracle herself using Illustrator and vector tools. The background was originally sourced from Amit Ginni Patpatia on ArtStation and then recolored to match my color palette. The logo was designed in Canva using TAN Grandeur, and I added my own embellishments to make it feel more distinctive and logo-like. Bringing all of these elements together made the project feel complete and especially satisfying.</p>
+        <div class="proj-img-grid proj-img-grid-2" style="margin-top:20px">
+          <div class="smt-lb-thumb" onclick="openLightbox('media/Oracle/oracle.png')" style="background:#1a1020;height:260px;display:flex;align-items:center;justify-content:center">
+            <img loading="lazy" src="media/Oracle/oracle.png" style="max-width:100%;max-height:260px;object-fit:contain;display:block" alt="Oracle character illustration">
+          </div>
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <div class="smt-lb-thumb" onclick="openLightbox('media/Oracle/logo.png')" style="background:#1a1020;flex:1;display:flex;align-items:center;justify-content:center;padding:16px">
+              <img loading="lazy" src="media/Oracle/logo.png" style="max-width:100%;max-height:120px;object-fit:contain;display:block" alt="Oracle logo">
+            </div>
+            <div class="smt-lb-thumb" onclick="openLightbox('media/Oracle/background.png')" style="flex:1;overflow:hidden;height:120px">
+              <img loading="lazy" src="media/Oracle/background.png" style="width:100%;height:100%;object-fit:cover;display:block" alt="Oracle background">
+            </div>
+          </div>
+        </div>
+        <p class="proj-img-caption">Oracle illustration, logo, and background</p>
+      </div>
+
+      <div class="proj-detail-section" id="oracle-testing">
+        <div class="proj-detail-section-label">Usability Testing</div>
+        <div class="proj-detail-h2">Three Testers, Great Feedback</div>
+        <p class="proj-detail-p">My three users were so helpful. Some highlights from their feedback:</p>
+        <ul style="margin:16px 0 0 20px;display:flex;flex-direction:column;gap:10px">
+          <li style="font-size:14px;color:#555;line-height:1.7">"Maybe try to have it where on each new page it goes back to the top, so it is more responsive."</li>
+          <li style="font-size:14px;color:#555;line-height:1.7">"The hover animations are so cute and engaging."</li>
+          <li style="font-size:14px;color:#555;line-height:1.7">"The illustration of the Oracle is very nice and cute."</li>
+          <li style="font-size:14px;color:#555;line-height:1.7">"The buttons are so interesting and engaging."</li>
+          <li style="font-size:14px;color:#555;line-height:1.7">"The website is very poetic in the answer choices."</li>
+          <li style="font-size:14px;color:#555;line-height:1.7">"Maybe put a 'let's discover...' since it was unclear when it would end."</li>
+          <li style="font-size:14px;color:#555;line-height:1.7">"Color palette is awesome and great contrast."</li>
+          <li style="font-size:14px;color:#555;line-height:1.7">"Is this a quiz?"</li>
+        </ul>
+        <div class="smt-lb-thumb" onclick="openLightbox('media/Oracle/Quotes from playtesting.png')" style="margin-top:20px">
+          <img loading="lazy" src="media/Oracle/Quotes from playtesting.png" style="width:100%;display:block" alt="Quotes from playtesting">
+        </div>
+        <p class="proj-img-caption">Playtesting feedback notes</p>
+      </div>
+
+      <div class="proj-detail-section" id="oracle-live">
+        <div class="proj-detail-section-label">Full Walkthrough & Live Site</div>
+        <div class="proj-detail-h2">See It in Action</div>
+        <video controls style="width:100%;display:block;margin-bottom:16px;filter:saturate(1.4) contrast(1.05)">
+          <source src="media/Oracle/Full Video Walkthrough.mp4" type="video/mp4">
+        </video>
+        <div style="border:1px solid var(--border);overflow:hidden;margin-top:4px">
+          <div style="background:var(--gray);padding:18px 22px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;gap:16px">
+            <div>
+              <div style="font-size:10px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin-bottom:4px">Live Site</div>
+              <div style="font-size:14px;font-weight:600;color:#1A1A1A">Oracle</div>
+            </div>
+            <a href="https://patelans000.github.io/Oracle/" target="_blank" style="font-size:12px;color:var(--muted);text-decoration:underline;text-underline-offset:2px;white-space:nowrap;transition:color 0.15s" onmouseover="this.style.color='#1A1A1A'" onmouseout="this.style.color='var(--muted)'">Open →</a>
+          </div>
+          <div style="padding:18px 22px"><p style="font-size:13px;color:#555;line-height:1.7;margin:0">The live, interactive Oracle quiz. Answer the questions and see what the Oracle has in store for you.</p></div>
+        </div>
+        <p class="proj-detail-p" style="margin-top:20px;font-size:13px;color:var(--muted)">Background illustration sourced from <a href="https://www.artstation.com/artwork/d8vN2e" target="_blank" style="color:var(--muted);text-underline-offset:2px;text-decoration:underline">Amit Ginni Patpatia on ArtStation</a>, recolored to match the Oracle's palette.</p>
+      </div>
+
+      <div class="proj-detail-section" id="oracle-reflection">
+        <div class="proj-detail-section-label">Reflection</div>
+        <div class="proj-detail-h2">First Time Building Something</div>
+        <p class="proj-detail-p">This is my first time developing something and it was so fun! It was really daunting at first and I really thought I bit off more than I could chew, but researching resources and just figuring it out as I went really helped. Professor Parks loved it!</p>
+
+        <div class="proj-detail-section-label" style="margin-top:32px">Instructor Feedback</div>
+        <div class="proj-detail-h2">Professor Parks</div>
+        <p class="proj-detail-p">Documentation is thorough: concept, color, Figma, interaction, and iteration all there. I appreciate that you are one of the only people to include a short video on the interaction/animation page. The custom illustration process is well documented. The push on concept is about personalization. I think the answer options you gave are ambiguous and poetic enough to be accessible for anyone. We can create our own ideas for what each sentence means and that makes it feel personal. I feel this has a target audience who is younger (maybe add in visuals next to each answer for further entertainment). I'm wondering how you chose the final media selection. You might talk a little bit about that in your documentation.</p>
+
+        <div class="proj-detail-section-label" style="margin-top:24px">Visual Design · 25/25</div>
+        <p class="proj-detail-p">The oracle illustration is stunning and carries the whole visual identity. I feel like the bottom part of your illustration is cut off. You might shape that to work with the project's composition a little more. The purple/magenta with glowing outline creates real atmosphere. When I view it fullscreen the layout shifts and you fixed the scroll problem. Visually, it's clear you put thought into every detail. The font choice is perfect for both display and paragraph (good contrast). Clean and readable (minimal). The background feels like it's pushed back on the visual plane which is nice for the user to focus on main content.</p>
+
+        <div class="proj-detail-section-label" style="margin-top:20px">Interaction Design & Animation · 18/20</div>
+        <p class="proj-detail-p">The glowing outline, button jitter, and speech bubble animations all make the oracle feel alive. I'm not just clicking; I'm having a conversation. One thought for next time: what if the oracle's glow shifted color or intensity as it learns more about you? Warming up, or flickering if I give contradictory answers? That kind of reactive feedback would make the experience even more immersive. Also, this is a perfect project to include character animation for a more immersive feel. I want to be talking to the oracle, not just focused on the text. The animation feedback for affordance design works well. Consider experimental page transitions too and sound feedback for the buttons.</p>
+
+        <div class="proj-callout" style="background:var(--pink);margin-top:20px"><strong>Update:</strong> I have implemented the scroll and question transition improvements!</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- FEATHERFORM -->
+<div class="proj-detail-page" id="proj-featherform">
+  <div class="proj-detail-nav">
+    <div class="proj-detail-breadcrumb">
+      <span onclick="showPage('ux')">UX/UI & Game Design</span>
+      <span class="sep">›</span>
+      <span style="color:#1A1A1A;font-weight:500">Featherform</span>
+    </div>
+    <div><button class="proj-nav-btn" onclick="showPage('ux')">← Back to category</button></div>
+  </div>
+  <div class="proj-detail-hero">
+    <div class="proj-detail-kicker">UX/UI & Game Design · Game UI Design</div>
+    <div class="proj-detail-title">Featherform</div>
+    <p class="proj-detail-tagline">A cozy sci-fi farming game prototype featuring an original logotype, a custom hand-crafted typeface, and Unity-built UI screens published live on Itch.io. FEATHERFORM is a fictional single-player farming RPG set on a Martian colony where you play as a space pigeon restoring the planet.</p>
+    <div class="proj-detail-meta-row">
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Course</div><div class="proj-detail-meta-val">AET 330T Typography in Games</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Instructors</div><div class="proj-detail-meta-val">Jessie Contour & Kelcey Gray</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Semester</div><div class="proj-detail-meta-val">Spring 2026</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">Unity, Illustrator, Calligraphr</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Type</div><div class="proj-detail-meta-val">Game UI Design</div></div>
+    </div>
+  </div>
+  <div style="position:relative;cursor:pointer;border-bottom:1px solid var(--border)" onclick="window.open('https://patelans006.itch.io/featherform','_blank')">
+    <img loading="lazy" src="media/Featherform/Featherform Title Screen Hero.png" style="width:100%;display:block" alt="Featherform title screen">
+    <div style="position:absolute;bottom:0;left:0;right:0;padding:20px 32px;background:linear-gradient(transparent,rgba(0,0,0,0.75));pointer-events:none;z-index:2;display:flex;justify-content:space-between;align-items:flex-end">
+      <div>
+        <div style="font-size:10px;color:rgba(255,255,255,0.5);font-weight:600;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:5px">UX/UI & Game Design · Game UI Design</div>
+        <div style="font-size:16px;color:#fff;font-weight:600">Featherform</div>
+      </div>
+      <div style="font-size:13px;color:#fff;font-weight:600;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.35);padding:8px 16px;backdrop-filter:blur(4px);white-space:nowrap">Play on Itch.io →</div>
+    </div>
+  </div>
+  <div class="proj-detail-body">
+    <div class="proj-detail-sidebar">
+      <div class="proj-detail-sidebar-section">
+        <div class="proj-detail-sidebar-label">Contents</div>
+        <div class="proj-toc-list">
+          <a class="proj-toc-link" onclick="document.getElementById('ff-brief').scrollIntoView({behavior:'smooth'})">Brief</a>
+          <a class="proj-toc-link" onclick="document.getElementById('ff-concept').scrollIntoView({behavior:'smooth'})">Game Concept</a>
+          <a class="proj-toc-link" onclick="document.getElementById('ff-logo').scrollIntoView({behavior:'smooth'})">Logo</a>
+          <a class="proj-toc-link" onclick="document.getElementById('ff-font').scrollIntoView({behavior:'smooth'})">Featherfont</a>
+          <a class="proj-toc-link" onclick="document.getElementById('ff-screens').scrollIntoView({behavior:'smooth'})">Screens</a>
+          <a class="proj-toc-link" onclick="document.getElementById('ff-assets').scrollIntoView({behavior:'smooth'})">Assets & Process</a>
+          <a class="proj-toc-link" onclick="document.getElementById('ff-live').scrollIntoView({behavior:'smooth'})">Live on Itch.io</a>
+          <a class="proj-toc-link" onclick="document.getElementById('ff-reflection').scrollIntoView({behavior:'smooth'})">Reflection</a>
+        </div>
+      </div>
+    </div>
+    <div class="proj-detail-content">
+
+      <div class="proj-detail-section" id="ff-brief">
+        <div class="proj-detail-section-label">Brief</div>
+        <div class="proj-detail-h2">The Assignment</div>
+        <div class="proj-callout" style="background:var(--pink);margin-bottom:20px"><strong>This is a prototype</strong> built for a game design course. The game is fictional and the Unity build demonstrates the UI prototype, not a full playable game.</div>
+        <p class="proj-detail-p">The assignment was to invent a fictional digital game and build a prototype for it from scratch. That meant coming up with the concept, designing a logo, creating a whole custom font, and designing a start screen and a gameplay screen. Then we built both screens in Unity, wired up the button interactions, and published the final WebGL build live on Itch.io.</p>
+      </div>
+
+      <div class="proj-detail-section" id="ff-concept">
+        <div class="proj-detail-section-label">Game Concept</div>
+        <div class="proj-detail-h2">FEATHERFORM</div>
+        <p class="proj-detail-p">FEATHERFORM is a single-player farming RPG (with optional multiplayer) set on a cozy sci-fi Mars farm, rated Everyone 10+. You play as a space pigeon who farms, terraforms land, grows alien crops, and cares for little Martian animals while restoring the planet. It's relaxed and exploration-based, with crafting, farm upgrades, and simple story objectives. Light, comedic, and cozy.</p>
+        <div class="proj-detail-section-label" style="margin-top:28px">Inspiration</div>
+        <p class="proj-detail-p">The concept pulled from four places.</p>
+        <ul style="margin:12px 0 0 20px;display:flex;flex-direction:column;gap:10px">
+          <li style="font-size:14px;color:#555;line-height:1.7"><strong>The Martian:</strong> farming on Mars, just cozier.</li>
+          <li style="font-size:14px;color:#555;line-height:1.7"><strong>Stardew Valley:</strong> the slow farming rhythm and caring about your little piece of land.</li>
+          <li style="font-size:14px;color:#555;line-height:1.7"><strong>The Pigeon Children's Books:</strong> the pigeon protagonist and the humor.</li>
+          <li style="font-size:14px;color:#555;line-height:1.7"><strong>Red Rising:</strong> Mars and rebuilding a world from scratch.</li>
+        </ul>
+      </div>
+
+      <div class="proj-detail-section" id="ff-logo">
+        <div class="proj-detail-section-label">Logo</div>
+        <div class="proj-detail-h2">30 Sketches, One Winner</div>
+        <p class="proj-detail-p">I sketched thirty logos to explore different directions. Sketch 25 was my favorite, and it turned out to be Professor Kelcey's favorite too!</p>
+        <div class="smt-lb-thumb" onclick="openLightbox('media/Featherform/Logo Sketches.png')" style="margin-top:20px">
+          <img loading="lazy" src="media/Featherform/Logo Sketches.png" style="width:100%;display:block" alt="Logo sketches">
+        </div>
+        <p class="proj-img-caption">Thirty logo sketches. Sketch 25 selected for development.</p>
+        <div class="proj-detail-section-label" style="margin-top:32px">Final Logo</div>
+        <div class="smt-lb-thumb" onclick="openLightbox('media/Featherform/FEATHERFORM logotype-06.png')" style="margin-top:12px">
+          <img loading="lazy" src="media/Featherform/FEATHERFORM logotype-06.png" style="width:100%;display:block" alt="Featherform final logo">
+        </div>
+        <p class="proj-img-caption">Final logotype</p>
+        <div class="proj-detail-section-label" style="margin-top:32px">Logo on Title Screen</div>
+        <div class="smt-lb-thumb" onclick="openLightbox('media/Featherform/Featherform Title Screen Hero.png')" style="margin-top:12px">
+          <img loading="lazy" src="media/Featherform/Featherform Title Screen Hero.png" style="width:100%;display:block" alt="Logo placed on title screen">
+        </div>
+        <p class="proj-img-caption">Logo on the title screen</p>
+      </div>
+
+      <div class="proj-detail-section" id="ff-font">
+        <div class="proj-detail-section-label">Featherfont</div>
+        <div class="proj-detail-h2">A Custom Sci-Fi Typeface</div>
+        <p class="proj-detail-p">I did five rounds of uppercase and lowercase sketches to figure out the direction for the font. I wanted something sci-fi but still playful, so I went with hard vector lines with rounded caps. I used Calligraphr to actually build the font from my hand-drawn letterforms. Professor Kelcey pointed out her favorites as marked in the sketches.</p>
+        <div class="smt-lb-thumb" onclick="openLightbox('media/Featherform/Font Sketches.png')" style="margin-top:20px">
+          <img loading="lazy" src="media/Featherform/Font Sketches.png" style="width:100%;display:block" alt="Font sketches with Kelcey's feedback">
+        </div>
+        <p class="proj-img-caption">Uppercase and lowercase sketches with Professor Kelcey's feedback marked</p>
+
+        <div class="proj-detail-section-label" style="margin-top:32px">Featherfont in Context</div>
+        <p class="proj-detail-p">Hard vector lines, rounded caps. Sci-fi but still playful. Below are the font slides.</p>
+        <div class="smt-lb-thumb" onclick="openLightbox('media/Featherform/Font.png')" style="margin-top:16px">
+          <img loading="lazy" src="media/Featherform/Font.png" style="width:100%;display:block" alt="Featherfont character set">
+        </div>
+        <div class="proj-img-grid proj-img-grid-2" style="margin-top:8px">
+          <div class="smt-lb-thumb" onclick="openLightbox('media/Featherform/Font 2.png')">
+            <img loading="lazy" src="media/Featherform/Font 2.png" style="width:100%;display:block" alt="Featherfont slide 2">
+          </div>
+          <div class="smt-lb-thumb" onclick="openLightbox('media/Featherform/Font 3.png')">
+            <img loading="lazy" src="media/Featherform/Font 3.png" style="width:100%;display:block" alt="Featherfont slide 3">
+          </div>
+          <div class="smt-lb-thumb" onclick="openLightbox('media/Featherform/Font 4.png')">
+            <img loading="lazy" src="media/Featherform/Font 4.png" style="width:100%;display:block" alt="Featherfont slide 4">
+          </div>
+          <div class="smt-lb-thumb" onclick="openLightbox('media/Featherform/Font 5.png')">
+            <img loading="lazy" src="media/Featherform/Font 5.png" style="width:100%;display:block" alt="Featherfont slide 5">
+          </div>
+        </div>
+        <div class="smt-lb-thumb" onclick="openLightbox('media/Featherform/Font 6.png')" style="margin-top:8px">
+          <img loading="lazy" src="media/Featherform/Font 6.png" style="width:100%;display:block" alt="Featherfont slide 6">
+        </div>
+
+        <div class="proj-detail-section-label" style="margin-top:32px">Live Preview</div>
+        <div style="border:1px solid var(--border);overflow:hidden;margin-top:12px">
+          <div style="background:var(--gray);padding:14px 20px;border-bottom:1px solid var(--border)">
+            <div style="font-size:10px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted)">Featherfont · Type Specimen</div>
+          </div>
+          <div style="padding:48px 36px;background:#0d0d1a;color:#fff">
+            <div style="font-family:'Featherfont',monospace;font-size:60px;letter-spacing:4px;margin-bottom:24px">FEATHERFORM</div>
+            <div style="font-family:'Featherfont',monospace;font-size:32px;letter-spacing:2px;margin-bottom:14px;opacity:0.7">A B C D E F G H I J K L M</div>
+            <div style="font-family:'Featherfont',monospace;font-size:32px;letter-spacing:2px;margin-bottom:14px;opacity:0.7">N O P Q R S T U V W X Y Z</div>
+            <div style="font-family:'Featherfont',monospace;font-size:32px;letter-spacing:2px;margin-bottom:14px;opacity:0.6">a b c d e f g h i j k l m</div>
+            <div style="font-family:'Featherfont',monospace;font-size:32px;letter-spacing:2px;margin-bottom:14px;opacity:0.6">n o p q r s t u v w x y z</div>
+            <div style="font-family:'Featherfont',monospace;font-size:32px;letter-spacing:2px;margin-bottom:14px;opacity:0.5">0 1 2 3 4 5 6 7 8 9</div>
+            <div style="font-family:'Featherfont',monospace;font-size:32px;letter-spacing:2px;opacity:0.4">. ! ?</div>
+          </div>
+        </div>
+
+        <div class="proj-detail-section-label" style="margin-top:32px">Download Featherfont</div>
+        <div style="display:flex;gap:10px;margin-top:12px;flex-wrap:wrap">
+          <a href="media/Featherform/Featherfont-Regular.otf" download class="proj-pdf-link">Featherfont OTF</a>
+          <a href="media/Featherform/Featherfont-Regular.ttf" download class="proj-pdf-link">Featherfont TTF</a>
+          <a href="media/Featherform/featherform font on template.pdf" download class="proj-pdf-link">Font on Template (PDF)</a>
+        </div>
+      </div>
+
+      <div class="proj-detail-section" id="ff-screens">
+        <div class="proj-detail-section-label">Screens</div>
+        <div class="proj-detail-h2">Start Screen & Gameplay Screen</div>
+        <p class="proj-detail-p">I designed both screens and then rebuilt them in Unity using Canvas and UI elements. The start screen has the logo and a button menu. The gameplay screen shows the relevant UI with scores and items, and key presses trigger updates live.</p>
+        <div class="smt-lb-thumb" onclick="openLightbox('media/Featherform/FEATHERFORM SCREEN 1.png')" style="margin-top:20px">
+          <img loading="lazy" src="media/Featherform/FEATHERFORM SCREEN 1.png" style="width:100%;display:block" alt="Featherform start screen">
+        </div>
+        <p class="proj-img-caption">Start screen</p>
+        <div class="smt-lb-thumb" onclick="openLightbox('media/Featherform/FEATHERFORM SCREEN 2.png')" style="margin-top:16px">
+          <img loading="lazy" src="media/Featherform/FEATHERFORM SCREEN 2.png" style="width:100%;display:block" alt="Featherform gameplay screen">
+        </div>
+        <p class="proj-img-caption">Gameplay screen</p>
+      </div>
+
+      <div class="proj-detail-section" id="ff-assets">
+        <div class="proj-detail-section-label">Assets & Process</div>
+        <div class="proj-detail-h2">Vector Illustrations & Reference</div>
+        <p class="proj-detail-p">I used vector illustrations online as reference and image traced some of them to speed things up. All sources are cited below.</p>
+        <div class="proj-img-grid proj-img-grid-3" style="margin-top:20px">
+          <div class="smt-lb-thumb" onclick="openLightbox('media/Featherform/reference (1).jpeg')">
+            <img loading="lazy" src="media/Featherform/reference (1).jpeg" style="width:100%;display:block" alt="Reference 1">
+          </div>
+          <div class="smt-lb-thumb" onclick="openLightbox('media/Featherform/reference (2).jpeg')">
+            <img loading="lazy" src="media/Featherform/reference (2).jpeg" style="width:100%;display:block" alt="Reference 2">
+          </div>
+          <div class="smt-lb-thumb" onclick="openLightbox('media/Featherform/reference (3).jpeg')">
+            <img loading="lazy" src="media/Featherform/reference (3).jpeg" style="width:100%;display:block" alt="Reference 3">
+          </div>
+        </div>
+        <p class="proj-img-caption">Reference and source material</p>
+        <div class="proj-detail-section-label" style="margin-top:28px">Citations</div>
+        <ul style="margin:12px 0 0 0;list-style:none;padding:0;display:flex;flex-direction:column;gap:8px">
+          <li style="font-size:13px;line-height:1.6"><a href="https://www.freepik.com/premium-vector/mars-landscape-background-with-flat-design_3253064.htm" target="_blank" style="color:var(--muted);text-decoration:underline;text-underline-offset:2px">Mars landscape background (Freepik)</a></li>
+          <li style="font-size:13px;line-height:1.6"><a href="https://www.artstation.com/artwork/Poan9Z" target="_blank" style="color:var(--muted);text-decoration:underline;text-underline-offset:2px">Sci-fi environment reference (ArtStation)</a></li>
+          <li style="font-size:13px;line-height:1.6"><a href="https://stock.adobe.com/images/stone-rock-pile-isolated-on-white-background-big-boulder-element-granite-block-for-ui-games-decoration-clipart-in-cartoon-style-vector-illustration/442062431" target="_blank" style="color:var(--muted);text-decoration:underline;text-underline-offset:2px">Rock / boulder UI element (Adobe Stock)</a></li>
+          <li style="font-size:13px;line-height:1.6"><a href="https://www.shutterstock.com/image-vector/funny-colorful-vector-fantasy-plants-isolated-368410196" target="_blank" style="color:var(--muted);text-decoration:underline;text-underline-offset:2px">Fantasy plants (Shutterstock)</a></li>
+          <li style="font-size:13px;line-height:1.6"><a href="https://www.vecteezy.com/vector-art/830983-set-of-rocks-and-stones" target="_blank" style="color:var(--muted);text-decoration:underline;text-underline-offset:2px">Rocks and stones set (Vecteezy)</a></li>
+        </ul>
+      </div>
+
+      <div class="proj-detail-section" id="ff-live">
+        <div class="proj-detail-section-label">Live on Itch.io</div>
+        <div class="proj-detail-h2">Play the Prototype</div>
+        <p class="proj-detail-p">The WebGL build is live on Itch.io. Click Start to enter the game, then use the keys listed on the page to trigger UI updates on the gameplay screen.</p>
+        <div style="border:1px solid var(--border);overflow:hidden;margin-top:16px">
+          <div style="background:var(--gray);padding:18px 22px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;gap:16px">
+            <div>
+              <div style="font-size:10px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin-bottom:4px">Itch.io · WebGL Prototype</div>
+              <div style="font-size:14px;font-weight:600;color:#1A1A1A">Featherform</div>
+            </div>
+            <a href="https://patelans006.itch.io/featherform" target="_blank" style="font-size:12px;color:var(--muted);text-decoration:underline;text-underline-offset:2px;white-space:nowrap;transition:color 0.15s" onmouseover="this.style.color='#1A1A1A'" onmouseout="this.style.color='var(--muted)'">Open →</a>
+          </div>
+          <div style="padding:18px 22px"><p style="font-size:13px;color:#555;line-height:1.7;margin:0">A fictional cozy sci-fi farming game. Play as a space pigeon farming on Mars. Click Start on the title screen, then press the keys listed on the page to interact with the gameplay UI.</p></div>
+        </div>
+      </div>
+
+      <div class="proj-detail-section" id="ff-reflection">
+        <div class="proj-detail-section-label">Reflection</div>
+        <div class="proj-detail-h2">A Completely New Experience</div>
+        <p class="proj-detail-p">This was also a completely new and exciting experience for me! Being able to bring a concept to life, even as a prototype, was incredibly rewarding. Designing a logo and creating an entire font from scratch was such a cool challenge and a valuable skill to develop. Overall, the whole process was super exciting and gave me the opportunity to learn so much. If I had more time, I would definitely refine the graphics and illustrations further, but I am really proud of what I was able to accomplish.</p>
+
+        <div class="proj-detail-section-label" style="margin-top:32px">Instructor Feedback</div>
+        <div class="proj-detail-h2">Professors Contour and Gray</div>
+        <p class="proj-detail-p">Both professors praised the strength of my visual development process, particularly the variety of inspiration, thorough logo exploration, and strong iteration work. They felt the logo successfully communicated the retrofuturistic sci-fi space pigeon concept and appreciated how the research informed the final design. The custom font received especially positive feedback for its consistency and how well it complemented the logo and overall visual identity. They also noted that the color choices and UI elements worked cohesively with the game's aesthetic, creating a strong and unified visual direction. One area for improvement was refining some of the vector curves and details for a more polished finish. Overall, they commended the project's execution, presentation, and completion, highlighting the thoughtful process and strong final outcome.</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- STELLAR EXPLORATION -->
+<div class="proj-detail-page" id="proj-stellar-exploration">
+  <div class="proj-detail-nav">
+    <div class="proj-detail-breadcrumb">
+      <span onclick="showPage('ux')">UX/UI & Game Design</span>
+      <span class="sep">›</span>
+      <span style="color:#1A1A1A;font-weight:500">Stellar Exploration</span>
+    </div>
+    <div><button class="proj-nav-btn" onclick="showPage('ux')">← Back to category</button></div>
+  </div>
+  <div class="proj-detail-hero">
+    <div class="proj-detail-kicker">UX/UI & Game Design · App Design</div>
+    <div class="proj-detail-title">Stellar Exploration</div>
+    <p class="proj-detail-tagline">Content coming soon.</p>
+    <div class="proj-detail-meta-row">
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Year</div><div class="proj-detail-meta-val">2025</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">Figma</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Type</div><div class="proj-detail-meta-val">App Design</div></div>
+    </div>
+  </div>
+  <div class="proj-detail-body" style="display:block">
+    <div class="proj-detail-content">
+      <div class="proj-detail-section">
+        <div class="proj-detail-section-label">Overview</div>
+        <div class="proj-detail-h2">Coming soon</div>
+        <p class="proj-detail-p">Details for this project will be added soon.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SILENT SPELLCRAFT -->
+<div class="proj-detail-page" id="proj-silent-spellcraft">
+  <div class="proj-detail-nav">
+    <div class="proj-detail-breadcrumb">
+      <span onclick="showPage('ux')">UX/UI & Game Design</span>
+      <span class="sep">›</span>
+      <span style="color:#1A1A1A;font-weight:500">Silent Spellcraft</span>
+    </div>
+    <div><button class="proj-nav-btn" onclick="showPage('ux')">← Back to category</button></div>
+  </div>
+  <div class="proj-detail-hero">
+    <div class="proj-detail-kicker">UX/UI & Game Design · Game UI</div>
+    <div class="proj-detail-title">Silent Spellcraft</div>
+    <p class="proj-detail-tagline">Content coming soon.</p>
+    <div class="proj-detail-meta-row">
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Year</div><div class="proj-detail-meta-val">2025</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">Figma</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Type</div><div class="proj-detail-meta-val">Game UI Design</div></div>
+    </div>
+  </div>
+  <div class="proj-detail-body" style="display:block">
+    <div class="proj-detail-content">
+      <div class="proj-detail-section">
+        <div class="proj-detail-section-label">Overview</div>
+        <div class="proj-detail-h2">Coming soon</div>
+        <p class="proj-detail-p">Details for this project will be added soon.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CHOCO KNIGHT -->
+<div class="proj-detail-page" id="proj-choco-knight">
+  <div class="proj-detail-nav">
+    <div class="proj-detail-breadcrumb">
+      <span onclick="showPage('ux')">UX/UI & Game Design</span>
+      <span class="sep">›</span>
+      <span style="color:#1A1A1A;font-weight:500">Choco Knight</span>
+    </div>
+    <div><button class="proj-nav-btn" onclick="showPage('ux')">← Back to category</button></div>
+  </div>
+  <div class="proj-detail-hero">
+    <div class="proj-detail-kicker">UX/UI & Game Design · Game Design</div>
+    <div class="proj-detail-title">Choco Knight</div>
+    <p class="proj-detail-tagline">A 2D pixel platformer. Embark on a sweet adventure as a cake-loving knight on a quest to reunite with her one true love... cake! Explore a colorful pastry world, overcome tasty obstacles, and conquer sugary challenges to reach your ultimate dessert destiny.</p>
+    <div class="proj-detail-meta-row">
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Course</div><div class="proj-detail-meta-val">AET 312 Games and Interactivity</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Instructors</div><div class="proj-detail-meta-val">Jessie Contour & Evan Kice</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Semester</div><div class="proj-detail-meta-val">Fall 2025</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Type</div><div class="proj-detail-meta-val">Game Design</div></div>
+    </div>
+  </div>
+  <div style="position:relative;cursor:pointer;border-bottom:1px solid var(--border)" onclick="window.open('https://patelans006.itch.io/choco-knight','_blank')">
+    <img loading="lazy" src="media/Choco Knight Documentation/1.png" style="width:100%;display:block" alt="Choco Knight">
+    <div style="position:absolute;bottom:0;left:0;right:0;padding:20px 32px;background:linear-gradient(transparent,rgba(0,0,0,0.75));pointer-events:none;z-index:2;display:flex;justify-content:space-between;align-items:flex-end">
+      <div>
+        <div style="font-size:10px;color:rgba(255,255,255,0.5);font-weight:600;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:5px">UX/UI & Game Design · Game Design</div>
+        <div style="font-size:16px;color:#fff;font-weight:600">Choco Knight</div>
+      </div>
+      <div style="font-size:13px;color:#fff;font-weight:600;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.35);padding:8px 16px;backdrop-filter:blur(4px);white-space:nowrap">Play on Itch.io →</div>
+    </div>
+  </div>
+  <div class="proj-detail-body">
+    <div class="proj-detail-sidebar">
+      <div class="proj-detail-sidebar-section">
+        <div class="proj-detail-sidebar-label">Contents</div>
+        <div class="proj-toc-list">
+          <a class="proj-toc-link" onclick="document.getElementById('ck-overview').scrollIntoView({behavior:'smooth'})">Overview</a>
+          <a class="proj-toc-link" onclick="document.getElementById('ck-slides').scrollIntoView({behavior:'smooth'})">Process Slides</a>
+          <a class="proj-toc-link" onclick="document.getElementById('ck-live').scrollIntoView({behavior:'smooth'})">Play It</a>
+        </div>
+      </div>
+    </div>
+    <div class="proj-detail-content">
+
+      <div class="proj-detail-section" id="ck-overview">
+        <div class="proj-detail-section-label">Overview</div>
+        <div class="proj-detail-h2">A Sweet Adventure</div>
+        <div class="proj-callout" style="background:var(--pink);margin-bottom:20px">This game was created as part of my Games and Interactivity class at the University of Texas at Austin. I built it using an instructor-developed game kit. I recolored and implemented the visual assets, and designed the levels and overall gameplay experience.</div>
+        <p class="proj-detail-p">A 2D pixel platformer. Embark on a sweet adventure as a cake-loving knight on a quest to reunite with her one true love... cake! Explore a colorful pastry world, overcome tasty obstacles, and conquer sugary challenges to reach your ultimate dessert destiny.</p>
+      </div>
+
+      <div class="proj-detail-section" id="ck-slides">
+        <div class="proj-detail-section-label">Process Slides</div>
+        <div class="proj-detail-h2">Full Documentation</div>
+        <p class="proj-detail-p">This project was fully documented in a slide format according to the course requirements. Go through each slide below.</p>
+        <div class="merch-carousel" id="choco-carousel" style="margin-top:20px">
+          <div class="merch-carousel-slide active"><div class="merch-carousel-img-wrap" style="cursor:zoom-in" onclick="openCKLightbox(this)"><img loading="lazy" src="media/Choco Knight Documentation/1.png" alt="Slide 1"></div></div>
+          <div class="merch-carousel-slide"><div class="merch-carousel-img-wrap" style="cursor:zoom-in" onclick="openCKLightbox(this)"><img loading="lazy" src="media/Choco Knight Documentation/2.png" alt="Slide 2"></div></div>
+          <div class="merch-carousel-slide"><div class="merch-carousel-img-wrap" style="cursor:zoom-in" onclick="openCKLightbox(this)"><img loading="lazy" src="media/Choco Knight Documentation/3.png" alt="Slide 3"></div></div>
+          <div class="merch-carousel-slide"><div class="merch-carousel-img-wrap" style="cursor:zoom-in" onclick="openCKLightbox(this)"><img loading="lazy" src="media/Choco Knight Documentation/4.png" alt="Slide 4"></div></div>
+          <div class="merch-carousel-slide"><div class="merch-carousel-img-wrap" style="cursor:zoom-in" onclick="openCKLightbox(this)"><img loading="lazy" src="media/Choco Knight Documentation/5.png" alt="Slide 5"></div></div>
+          <div class="merch-carousel-slide"><div class="merch-carousel-img-wrap" style="cursor:zoom-in" onclick="openCKLightbox(this)"><img loading="lazy" src="media/Choco Knight Documentation/6.png" alt="Slide 6"></div></div>
+          <div class="merch-carousel-slide"><div class="merch-carousel-img-wrap" style="cursor:zoom-in" onclick="openCKLightbox(this)"><img loading="lazy" src="media/Choco Knight Documentation/7.png" alt="Slide 7"></div></div>
+          <div class="merch-carousel-slide"><div class="merch-carousel-img-wrap" style="cursor:zoom-in" onclick="openCKLightbox(this)"><img loading="lazy" src="media/Choco Knight Documentation/8.png" alt="Slide 8"></div></div>
+          <div class="merch-carousel-slide"><div class="merch-carousel-img-wrap" style="cursor:zoom-in" onclick="openCKLightbox(this)"><img loading="lazy" src="media/Choco Knight Documentation/9.png" alt="Slide 9"></div></div>
+          <div class="merch-carousel-slide"><div class="merch-carousel-img-wrap" style="cursor:zoom-in" onclick="openCKLightbox(this)"><img loading="lazy" src="media/Choco Knight Documentation/10.png" alt="Slide 10"></div></div>
+          <div class="merch-carousel-slide"><div class="merch-carousel-img-wrap" style="cursor:zoom-in" onclick="openCKLightbox(this)"><img loading="lazy" src="media/Choco Knight Documentation/11.png" alt="Slide 11"></div></div>
+          <div class="merch-carousel-slide"><div class="merch-carousel-img-wrap" style="cursor:zoom-in" onclick="openCKLightbox(this)"><img loading="lazy" src="media/Choco Knight Documentation/12.png" alt="Slide 12"></div></div>
+          <div class="merch-carousel-slide"><div class="merch-carousel-img-wrap" style="cursor:zoom-in" onclick="openCKLightbox(this)"><img loading="lazy" src="media/Choco Knight Documentation/13.png" alt="Slide 13"></div></div>
+          <div class="merch-carousel-slide"><div class="merch-carousel-img-wrap" style="cursor:zoom-in" onclick="openCKLightbox(this)"><img loading="lazy" src="media/Choco Knight Documentation/14.png" alt="Slide 14"></div></div>
+          <div class="merch-carousel-slide"><div class="merch-carousel-img-wrap" style="cursor:zoom-in" onclick="openCKLightbox(this)"><img loading="lazy" src="media/Choco Knight Documentation/15.png" alt="Slide 15"></div></div>
+          <div class="merch-carousel-slide"><div class="merch-carousel-img-wrap" style="cursor:zoom-in" onclick="openCKLightbox(this)"><img loading="lazy" src="media/Choco Knight Documentation/16.png" alt="Slide 16"></div></div>
+          <div class="merch-carousel-slide"><div class="merch-carousel-img-wrap" style="cursor:zoom-in" onclick="openCKLightbox(this)"><img loading="lazy" src="media/Choco Knight Documentation/17.png" alt="Slide 17"></div></div>
+          <div class="merch-carousel-slide"><div class="merch-carousel-img-wrap" style="cursor:zoom-in" onclick="openCKLightbox(this)"><img loading="lazy" src="media/Choco Knight Documentation/18.png" alt="Slide 18"></div></div>
+          <div class="merch-carousel-slide"><div class="merch-carousel-img-wrap" style="cursor:zoom-in" onclick="openCKLightbox(this)"><img loading="lazy" src="media/Choco Knight Documentation/19.png" alt="Slide 19"></div></div>
+          <div class="merch-carousel-slide"><div class="merch-carousel-img-wrap" style="cursor:zoom-in" onclick="openCKLightbox(this)"><img loading="lazy" src="media/Choco Knight Documentation/20.png" alt="Slide 20"></div></div>
+          <div class="merch-carousel-slide"><div class="merch-carousel-img-wrap" style="cursor:zoom-in" onclick="openCKLightbox(this)"><img loading="lazy" src="media/Choco Knight Documentation/21.png" alt="Slide 21"></div></div>
+          <div class="merch-carousel-slide"><div class="merch-carousel-img-wrap" style="cursor:zoom-in" onclick="openCKLightbox(this)"><img loading="lazy" src="media/Choco Knight Documentation/22.png" alt="Slide 22"></div></div>
+          <div class="merch-carousel-slide"><div class="merch-carousel-img-wrap" style="cursor:zoom-in" onclick="openCKLightbox(this)"><img loading="lazy" src="media/Choco Knight Documentation/23.png" alt="Slide 23"></div></div>
+          <div class="merch-carousel-controls">
+            <button class="merch-carousel-btn" onclick="stepCarousel('choco-carousel',-1)">&#8592;</button>
+            <span class="merch-carousel-counter" id="choco-carousel-counter">1 / 23</span>
+            <button class="merch-carousel-btn" onclick="stepCarousel('choco-carousel',1)">&#8594;</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-detail-section" id="ck-live">
+        <div class="proj-detail-section-label">Play It</div>
+        <div class="proj-detail-h2">Live on Itch.io</div>
+        <div style="border:1px solid var(--border);overflow:hidden;margin-top:16px">
+          <div style="background:var(--gray);padding:18px 22px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;gap:16px">
+            <div>
+              <div style="font-size:10px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin-bottom:4px">Itch.io · 2D Platformer</div>
+              <div style="font-size:14px;font-weight:600;color:#1A1A1A">Choco Knight</div>
+            </div>
+            <a href="https://patelans006.itch.io/choco-knight" target="_blank" style="font-size:12px;color:var(--muted);text-decoration:underline;text-underline-offset:2px;white-space:nowrap;transition:color 0.15s" onmouseover="this.style.color='#1A1A1A'" onmouseout="this.style.color='var(--muted)'">Open →</a>
+          </div>
+          <div style="padding:18px 22px"><p style="font-size:13px;color:#555;line-height:1.7;margin:0">A cake-loving knight on a quest for dessert. A 2D pixel platformer built in Games and Interactivity at UT Austin.</p></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- SPOTIFY FEATURE -->
+<div class="proj-detail-page" id="proj-spotify-feature">
+  <div class="proj-detail-nav">
+    <div class="proj-detail-breadcrumb">
+      <span onclick="showPage('ux')">UX/UI & Game Design</span>
+      <span class="sep">›</span>
+      <span style="color:#1A1A1A;font-weight:500">Spotify: Designing a New Microinteraction</span>
+    </div>
+    <div><button class="proj-nav-btn" onclick="showPage('ux')">← Back to category</button></div>
+  </div>
+  <div class="proj-detail-hero">
+    <div class="proj-detail-kicker">UX/UI & Game Design · Micro-interaction Design</div>
+    <div class="proj-detail-title">Spotify: Designing a New Microinteraction</div>
+    <p class="proj-detail-tagline">How might we create meaningful and mind-opening music discovery experiences for university students so that they are able to connect more to their surroundings and others?</p>
+    <div class="proj-detail-meta-row">
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Course</div><div class="proj-detail-meta-val">Intro to User Interaction</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Semester</div><div class="proj-detail-meta-val">Spring 2025</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">Figma, Canva</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Type</div><div class="proj-detail-meta-val">Feature Concept</div></div>
+    </div>
+  </div>
+  <div class="smt-lb-thumb" onclick="window.open('media/Spotify feature/Spotify Slides.pdf','_blank')" style="border-bottom:1px solid var(--border);cursor:pointer">
+    <img loading="lazy" src="media/Spotify feature/Spotify Slides.png" style="width:100%;display:block" alt="Spotify Slides cover">
+    <div style="position:absolute;bottom:0;left:0;right:0;padding:20px 32px;background:linear-gradient(transparent,rgba(0,0,0,0.72));pointer-events:none;z-index:2">
+      <div style="font-size:10px;color:rgba(255,255,255,0.5);font-weight:600;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:5px">UX/UI & Game Design · Micro-interaction Design</div>
+      <div style="font-size:16px;color:#fff;font-weight:600;font-family:'Fredoka',sans-serif">Spotify: Designing a New Microinteraction</div>
+    </div>
+  </div>
+  <div style="height:600px;background:#121212;overflow:hidden;border-top:1px solid #222;border-bottom:1px solid #222;display:flex;align-items:center;justify-content:center">
+    <iframe style="border:none;border-radius:8px" width="304" height="556" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FIt7fHdbqm8dW93LvSSZzE4%2FSpotify-Omicron%3Fnode-id%3D7-35%26p%3Df%26t%3DLy6GSbqYWkl0FEMM-1%26scaling%3Dscale-down%26content-scaling%3Dfixed%26page-id%3D0%253A1" allowfullscreen></iframe>
+  </div>
+  <div class="proj-detail-body">
+    <div class="proj-detail-sidebar">
+      <div class="proj-detail-sidebar-section">
+        <div class="proj-detail-sidebar-label">Contents</div>
+        <div class="proj-toc-list">
+          <a class="proj-toc-link" onclick="document.getElementById('spotify-brief').scrollIntoView({behavior:'smooth'})">Brief & Persona</a>
+          <a class="proj-toc-link" onclick="document.getElementById('spotify-analysis').scrollIntoView({behavior:'smooth'})">Interface Analysis</a>
+          <a class="proj-toc-link" onclick="document.getElementById('spotify-opportunities').scrollIntoView({behavior:'smooth'})">Design Opportunities</a>
+          <a class="proj-toc-link" onclick="document.getElementById('spotify-concept').scrollIntoView({behavior:'smooth'})">The Concept</a>
+          <a class="proj-toc-link" onclick="document.getElementById('spotify-process').scrollIntoView({behavior:'smooth'})">Process</a>
+          <a class="proj-toc-link" onclick="document.getElementById('spotify-testing').scrollIntoView({behavior:'smooth'})">User Testing</a>
+          <a class="proj-toc-link" onclick="document.getElementById('spotify-iteration').scrollIntoView({behavior:'smooth'})">Iteration</a>
+          <a class="proj-toc-link" onclick="document.getElementById('spotify-reflection').scrollIntoView({behavior:'smooth'})">Reflection</a>
+        </div>
+      </div>
+    </div>
+    <div class="proj-detail-content">
+
+      <div class="proj-detail-section" id="spotify-brief">
+        <div class="proj-detail-section-label">Brief & Persona</div>
+        <div class="proj-detail-h2">Meet Omicron</div>
+        <p class="proj-detail-p">My assigned persona is "University Student Omicron," who is seeking mind-opening experiences and meaningful connections. Their motivations are based on wanting to foster a sense of kinship and becoming more attuned to their environment and the people around them. The problem statement emphasizes the need to "help in opening space for meaningful attention."</p>
+        <p class="proj-detail-p">I relate to Omicron as a university student. Many students (including me) want to make friends, develop long-lasting bonds, break out of routine, and connect to their environment on a deeper level. My personal experiences of being a Spotify warrior (I listen to music whenever I am doing quite literally anything) and always seeking to find new music and share music tastes informed my design. A Spotify task flow with an emphasis on finding something new to listen to aligns quite well with the persona's need for connection and meaningful experiences.</p>
+        <div class="proj-detail-section-label" style="margin-top:28px">Existing Task Flow</div>
+        <div class="proj-detail-h2">How I Already Discover Music</div>
+        <p class="proj-detail-p">Open the app (neutral, just ready to listen). Scroll to "Made For Anshu Patel" (mild excitement). Click Discover Weekly (subtle anticipation; it's built from data Spotify has on what I actually listen to). Scroll through songs (curious). Click on one and play (curious and excited to hear something fresh, especially with my habit of replaying the same songs on loop).</p>
+        <p class="proj-detail-p">The interface alters my umwelt by framing music discovery as effortless and personal. But with the algorithm, Spotify also narrows my world by predicting what I want to hear, which can limit exposure to diverse or unfamiliar songs.</p>
+      </div>
+
+      <div class="proj-detail-section" id="spotify-analysis">
+        <div class="proj-detail-section-label">Interface Analysis</div>
+        <div class="proj-detail-h2">"Made For You" and What It Limits</div>
+        <p class="proj-detail-p">The central design pattern I analyzed was the "Made For [Username]" categorization on Spotify's home screen. It makes a vast music catalog feel curated, personal, and approachable. But it also frames discovery as something that happens to you, not something you participate in.</p>
+        <div class="proj-img-grid proj-img-grid-2" style="margin-top:20px">
+          <div class="smt-lb-thumb" onclick="openLightbox('media/Spotify feature/CamScanner 01-21-2025 00.55.jpg.png')" style="background:#f5f5f5;display:flex;align-items:center;justify-content:center;height:300px">
+            <img loading="lazy" src="media/Spotify feature/CamScanner 01-21-2025 00.55.jpg.png" style="max-width:100%;max-height:300px;object-fit:contain;display:block" alt="Low-fi wireframe sketches of Made For You section">
+          </div>
+          <div class="smt-lb-thumb" onclick="openLightbox('media/Spotify feature/CamScanner 01-21-2025 02.51.jpg.png')" style="background:#f5f5f5;display:flex;align-items:center;justify-content:center;height:300px">
+            <img loading="lazy" src="media/Spotify feature/CamScanner 01-21-2025 02.51.jpg.png" style="max-width:100%;max-height:300px;object-fit:contain;display:block" alt="Laban movement and mechanisms framework drawings">
+          </div>
+        </div>
+        <p class="proj-img-caption">Low-fi wireframes and analysis sketches</p>
+        <p class="proj-detail-p" style="margin-top:20px">The <strong>Laban Movement Analysis</strong> captures the feel of using the app well: direct focus (single-task scrolling), light weight (no physical effort), sustained time (user sets the pace), free flow (no enforced path). Scrolling through Spotify is leisurely and unconstrained.</p>
+        <p class="proj-detail-p">The <strong>Mechanisms & Conditions Framework</strong> showed something more pointed: the app encourages passive exploration while actively discouraging active search. The Search tab is tiny at the bottom of the screen. The home screen suggestions are displayed prominently and brightly. The design is making a choice about what kind of discovery it wants you to do.</p>
+      </div>
+
+      <div class="proj-detail-section" id="spotify-opportunities">
+        <div class="proj-detail-section-label">Design Opportunities</div>
+        <div class="proj-detail-h2">Three Directions</div>
+        <p class="proj-detail-p">The analysis surfaced three design opportunities, all pointing at the same gap: Spotify's social and environmental discovery is underdeveloped.</p>
+        <div class="proj-detail-process-steps">
+          <div class="proj-process-step"><div class="proj-process-num">01</div><div class="proj-process-step-content"><div class="proj-process-step-title">Geographical Music Suggestions</div><div class="proj-process-step-desc">Let users discover music recommended by people in their area. Ties music to place, fosters community, and helps students feel attuned to their environment, which is exactly what Omicron wants.</div></div></div>
+          <div class="proj-process-step"><div class="proj-process-num">02</div><div class="proj-process-step-content"><div class="proj-process-step-title">Social Discovery</div><div class="proj-process-step-desc">Enable sharing and exploring Discover Weekly playlists with friends. People find music through social connections all the time, but Spotify doesn't let that integrate back into the algorithm.</div></div></div>
+          <div class="proj-process-step"><div class="proj-process-num">03</div><div class="proj-process-step-content"><div class="proj-process-step-title">Event-Based Recommendations</div><div class="proj-process-step-desc">Music suggestions tied to specific campus spaces and events. A study lounge playlist, a football game's shared listening queue. Context-aware music that connects students to their immediate environment.</div></div></div>
+        </div>
+        <p class="proj-detail-p" style="margin-top:20px">I moved forward with the first one. It felt the most grounded and the most Spotify-native.</p>
+      </div>
+
+      <div class="proj-detail-section" id="spotify-concept">
+        <div class="proj-detail-section-label">The Concept</div>
+        <div class="proj-detail-h2">Local Eye</div>
+        <p class="proj-detail-p">The "Local Eye" is an eye icon added to Spotify's now-playing screen. Tapping it opens two options: recommend the song you're currently hearing to people in your area, or open a playlist of what locals around you are recommending. Think of it like a rotating Top 100 that refreshes as people listen more and suggest new things, inspired by how Spotify's Blend playlists show who added each song.</p>
+        <div class="smt-lb-thumb" onclick="openLightbox('media/Spotify feature/CamScanner 01-28-2025 22.07.jpg')" style="margin-top:20px;max-width:480px">
+          <img loading="lazy" src="media/Spotify feature/CamScanner 01-28-2025 22.07.jpg" style="width:100%;display:block" alt="Local Eye concept sketch">
+        </div>
+        <p class="proj-img-caption">Concept sketch</p>
+        <p class="proj-detail-p" style="margin-top:20px">The eye icon reinforces the concept of attentiveness and engagement. The interaction plays with contemplation and community-driven interest. You contemplate what you want to recommend and what others around you are suggesting, and you have to be genuinely interested in contributing to (and drawing from) your community's listening habits to keep using it.</p>
+        <p class="proj-detail-p">It addresses Max-Neef human needs directly:</p>
+        <ul style="margin:10px 0 0 20px;display:flex;flex-direction:column;gap:8px">
+          <li style="font-size:14px;color:#555;line-height:1.7"><strong>Participation:</strong> engaging with your local community and demographic through music</li>
+          <li style="font-size:14px;color:#555;line-height:1.7"><strong>Affection:</strong> fostering social bonds by sharing music taste</li>
+          <li style="font-size:14px;color:#555;line-height:1.7"><strong>Understanding:</strong> discovering new songs and understanding the people around you</li>
+          <li style="font-size:14px;color:#555;line-height:1.7"><strong>Leisure:</strong> making music discovery feel like a social hobby, like pinning something on Pinterest or liking something on Instagram</li>
+          <li style="font-size:14px;color:#555;line-height:1.7"><strong>Identity:</strong> expressing yourself through what you choose to recommend</li>
+        </ul>
+        <p class="proj-detail-p" style="margin-top:16px">Per feedback from classmate Maya Ramani, I removed the original blinking animation from the eye icon, since it wouldn't be seen at that scale and added unnecessary complexity. Users simply tap the eye and get prompted with their two choices.</p>
+      </div>
+
+      <div class="proj-detail-section" id="spotify-process">
+        <div class="proj-detail-section-label">Process</div>
+        <div class="proj-detail-h2">Ideation to Prototype</div>
+        <div class="proj-img-grid proj-img-grid-2" style="margin-top:20px">
+          <div class="smt-lb-thumb" onclick="openLightbox('media/Spotify feature/CamScanner 01-28-2025 18.14_1.jpg')" style="background:#f5f5f5;display:flex;align-items:center;justify-content:center;height:280px">
+            <img loading="lazy" src="media/Spotify feature/CamScanner 01-28-2025 18.14_1.jpg" style="max-width:100%;max-height:280px;object-fit:contain;display:block" alt="Full ideation map">
+          </div>
+          <div class="smt-lb-thumb" onclick="openLightbox('media/Spotify feature/CamScanner 01-28-2025 18.14_5.jpg')" style="background:#f5f5f5;display:flex;align-items:center;justify-content:center;height:280px">
+            <img loading="lazy" src="media/Spotify feature/CamScanner 01-28-2025 18.14_5.jpg" style="max-width:100%;max-height:280px;object-fit:contain;display:block" alt="Ideation map close-up">
+          </div>
+        </div>
+        <p class="proj-img-caption">Ideation map</p>
+        <div class="smt-lb-thumb" onclick="openLightbox('media/Spotify feature/CamScanner 01-29-2025 01.50_1.jpg')" style="margin-top:12px;background:#f5f5f5;display:flex;align-items:center;justify-content:center;height:300px">
+          <img loading="lazy" src="media/Spotify feature/CamScanner 01-29-2025 01.50_1.jpg" style="max-width:100%;max-height:300px;object-fit:contain;display:block" alt="Userflow and wireframe sketches">
+        </div>
+        <p class="proj-img-caption">Userflow and wireframe sketches</p>
+        <p class="proj-detail-p" style="margin-top:20px">Sketching the userflow was where the idea really solidified. I realized the interaction is simpler than I initially thought, and that's a good thing. I also added handling for duplicate suggestions mid-sketch, drawing from how Spotify's Blend playlists attribute songs to specific people.</p>
+        <p class="proj-detail-p">Wireframing in Figma went faster than expected. I made two versions. The first was polished enough that version two only needed small adjustments (tweaking opacity on the pop-up tint, adding a drop shadow to the "add away!" button). Spending more time on fidelity than necessary in medium-fi was a lesson learned, but it paid off when moving to the prototype.</p>
+        <div style="border:1px solid var(--border);overflow:hidden;margin-top:24px">
+          <div style="background:var(--gray);padding:18px 22px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;gap:16px">
+            <div>
+              <div style="font-size:10px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin-bottom:4px">Figma</div>
+              <div style="font-size:14px;font-weight:600;color:#1A1A1A">Wireframe V1</div>
+            </div>
+            <a href="https://www.figma.com/design/It7fHdbqm8dW93LvSSZzE4/Spotify-Omicron?node-id=24-36&t=0oxKFr7PEbIWGVEm-1" target="_blank" style="font-size:12px;color:var(--muted);text-decoration:underline;text-underline-offset:2px;white-space:nowrap;transition:color 0.15s" onmouseover="this.style.color='#1A1A1A'" onmouseout="this.style.color='var(--muted)'">Open →</a>
+          </div>
+          <iframe style="border:none;width:100%;display:block" height="480" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fdesign%2FIt7fHdbqm8dW93LvSSZzE4%2FSpotify-Omicron%3Fnode-id%3D24-36%26t%3D0oxKFr7PEbIWGVEm-1" allowfullscreen></iframe>
+        </div>
+        <div style="border:1px solid var(--border);overflow:hidden;margin-top:12px">
+          <div style="background:var(--gray);padding:18px 22px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;gap:16px">
+            <div>
+              <div style="font-size:10px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin-bottom:4px">Figma</div>
+              <div style="font-size:14px;font-weight:600;color:#1A1A1A">Wireframe V2</div>
+            </div>
+            <a href="https://www.figma.com/design/It7fHdbqm8dW93LvSSZzE4/Spotify-Omicron?node-id=24-160&t=0oxKFr7PEbIWGVEm-1" target="_blank" style="font-size:12px;color:var(--muted);text-decoration:underline;text-underline-offset:2px;white-space:nowrap;transition:color 0.15s" onmouseover="this.style.color='#1A1A1A'" onmouseout="this.style.color='var(--muted)'">Open →</a>
+          </div>
+          <iframe style="border:none;width:100%;display:block" height="480" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fdesign%2FIt7fHdbqm8dW93LvSSZzE4%2FSpotify-Omicron%3Fnode-id%3D24-160%26t%3D0oxKFr7PEbIWGVEm-1" allowfullscreen></iframe>
+        </div>
+        <div style="border:1px solid var(--border);overflow:hidden;margin-top:12px">
+          <div style="background:var(--gray);padding:18px 22px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;gap:16px">
+            <div>
+              <div style="font-size:10px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin-bottom:4px">Figma</div>
+              <div style="font-size:14px;font-weight:600;color:#1A1A1A">Working Prototype</div>
+            </div>
+            <a href="https://www.figma.com/proto/It7fHdbqm8dW93LvSSZzE4/Spotify-Omicron?node-id=7-35&p=f&t=Ly6GSbqYWkl0FEMM-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1" target="_blank" style="font-size:12px;color:var(--muted);text-decoration:underline;text-underline-offset:2px;white-space:nowrap;transition:color 0.15s" onmouseover="this.style.color='#1A1A1A'" onmouseout="this.style.color='var(--muted)'">Open →</a>
+          </div>
+          <iframe style="border:none;width:100%;display:block" height="600" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FIt7fHdbqm8dW93LvSSZzE4%2FSpotify-Omicron%3Fnode-id%3D7-35%26p%3Df%26t%3DLy6GSbqYWkl0FEMM-1%26scaling%3Dscale-down%26content-scaling%3Dfixed%26page-id%3D0%253A1" allowfullscreen></iframe>
+        </div>
+        <div style="border:1px solid var(--border);overflow:hidden;margin-top:12px">
+          <div style="background:var(--gray);padding:18px 22px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;gap:16px">
+            <div>
+              <div style="font-size:10px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin-bottom:4px">PDF</div>
+              <div style="font-size:14px;font-weight:600;color:#1A1A1A">Pitch Deck</div>
+            </div>
+            <a href="media/Spotify feature/Spotify Slides.pdf" target="_blank" style="font-size:12px;color:var(--muted);text-decoration:underline;text-underline-offset:2px;white-space:nowrap;transition:color 0.15s" onmouseover="this.style.color='#1A1A1A'" onmouseout="this.style.color='var(--muted)'">Open →</a>
+          </div>
+          <div class="spotify-slides-wrap">
+            <canvas id="spotify-slides-canvas"></canvas>
+            <div class="spotify-slides-nav spotify-slides-nav-prev" onclick="spotifyPrev()"></div>
+            <div class="spotify-slides-nav spotify-slides-nav-next" onclick="spotifyNext()"></div>
+            <div class="spotify-slides-dots" id="spotify-slides-dots"></div>
+            <div class="spotify-slides-counter" id="spotify-slides-counter"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-detail-section" id="spotify-testing">
+        <div class="proj-detail-section-label">User Testing</div>
+        <div class="proj-detail-h2">Two Testers, One Intuitive Interaction</div>
+        <p class="proj-detail-p">Both participants naturally knew what to do. Yay script! Figma screwed things over a couple times with click registration, but it worked out. Both seemed to enjoy the multiple options and how simple the interaction was. I liked how they were acting out what they were doing, which was fun and helpful to watch.</p>
+        <p class="proj-detail-p">The interface is intuitive and easy to navigate according to my testers, following Spotify's familiar design. Users can easily recognize symbols and interact without memorization, and the design encourages exploration and engagement with local users. Minimal errors occur due to the simple and clear structure.</p>
+        <p class="proj-detail-p">What I need to address based on feedback: clarify the definition of "local music" so users understand its purpose, make the icon more prominent while maintaining Spotify's clean design language, and create more ways to access the feature beyond just the now-playing screen.</p>
+      </div>
+
+      <div class="proj-detail-section" id="spotify-iteration">
+        <div class="proj-detail-section-label">Iteration</div>
+        <div class="proj-detail-h2">What I'd Change with Full Build Capabilities</div>
+        <p class="proj-detail-p">These changes are listed with the idea that I would have the full capabilities to implement them just as well as Spotify (not limited by what Figma allows me to do).</p>
+        <ul style="margin:16px 0 0 20px;display:flex;flex-direction:column;gap:10px">
+          <li style="font-size:14px;color:#555;line-height:1.7">I would add a small animation when a song is added so it's more noticeable.</li>
+          <li style="font-size:14px;color:#555;line-height:1.7">I would include an "Undo" option to make it easier to exit Local Music.</li>
+          <li style="font-size:14px;color:#555;line-height:1.7">I would add a quick tooltip to explain the eye icon on first use, implemented only when the feature is first discovered, not every time.</li>
+          <li style="font-size:14px;color:#555;line-height:1.7">I would adjust the eye icon slightly so it stands out without being distracting. I wanted to emulate Spotify's simplicity, but I think I'd want something more playful moving forward.</li>
+          <li style="font-size:14px;color:#555;line-height:1.7">I would clarify how "local" is defined and maybe add an option to expand beyond the immediate area. This needs a limit, since at some point "local" just shifts into a global top 100.</li>
+          <li style="font-size:14px;color:#555;line-height:1.7">I would add a feature where you can click the profiles of people who suggested a song.</li>
+          <li style="font-size:14px;color:#555;line-height:1.7">I would add the ability to actually scroll through the songs, but that's more of a refining-the-prototype thing.</li>
+        </ul>
+      </div>
+
+      <div class="proj-detail-section" id="spotify-reflection">
+        <div class="proj-detail-section-label">Reflection</div>
+        <div class="proj-detail-h2">Music as Belonging</div>
+        <p class="proj-detail-p">My microinteraction changes how university students like Omicron experience and share music, making them feel more connected to the people around them and fostering more attunement to their environment. It creates a world where music isn't just personal, streamlined, and generalized, but a shared, local experience -- shaping how they discover new music and artists. Instead of just relying on algorithms, they help curate music for the community around them, reviving a ritual of collective music discovery. It's supposed to sort of emulate how mixtapes or early radio shaped social listening.</p>
+        <p class="proj-detail-p">The interface changes their umwelt by making them see music as something that can belong to a place, not just a personal playlist. "Local" stops being just about geography and starts feeling more like a cultural identity. As a medium, the interface shifts music discovery from isolated and passive to social and intentional -- which fits with McLuhan's idea that the medium shapes how we experience the message. If we are bound to experience music through a platform like Spotify, it should be more social and community-oriented than what it is now.</p>
+        <p class="proj-detail-p" style="color:var(--muted);font-style:italic">P.S. I just like to think about if this interface was actually adopted. Imagine the social media discourse: "The people in Austin know what real music is, because why are the Local Music suggestions in Huntsville genuinely horrendous." It's so curious to think about what kind of discourse something like this would generate.</p>
+      </div>
+
     </div>
   </div>
 </div>
@@ -3825,6 +4733,11 @@ audio{accent-color:#1A1A1A}
 <div id="smt-lightbox" onclick="closeLightbox()">
   <img loading="lazy" src="" alt="Expanded design file" id="smt-lightbox-img">
 </div>
+<div id="ck-lightbox" onclick="if(event.target===this)closeCKLightbox()">
+  <button id="ck-lb-prev" class="ck-lb-btn" onclick="ckLightboxStep(-1)">&#8592;</button>
+  <img src="" alt="Slide" id="ck-lb-img">
+  <button id="ck-lb-next" class="ck-lb-btn" onclick="ckLightboxStep(1)">&#8594;</button>
+</div>
 
 <!-- FOOTER -->
 <footer class="site-footer">
@@ -3929,6 +4842,14 @@ function showProject(slug) {
   if (slug === 'persona5-type') {
     initP5Flipbook();
   }
+  if (slug === 'spotify-feature') {
+    setTimeout(initSpotifySlides, 50);
+  }
+  if (slug === 'oracle') {
+    setTimeout(function() {
+      document.querySelectorAll('#proj-oracle video[autoplay]').forEach(function(v) { v.play(); });
+    }, 100);
+  }
 }
 
 // ── WORKS DROPDOWN ──
@@ -4020,7 +4941,32 @@ function openLightbox(src, bg) {
 function closeLightbox() {
   document.getElementById('smt-lightbox').classList.remove('open');
 }
+
+// ── CHOCO KNIGHT SLIDE LIGHTBOX ──
+var ckLbIdx = 0;
+var ckSlideCount = 23;
+function openCKLightbox(el) {
+  var wraps = Array.from(document.querySelectorAll('#choco-carousel .merch-carousel-img-wrap'));
+  ckLbIdx = wraps.indexOf(el);
+  if (ckLbIdx < 0) ckLbIdx = 0;
+  document.getElementById('ck-lb-img').src = 'media/Choco Knight Documentation/' + (ckLbIdx + 1) + '.png';
+  document.getElementById('ck-lightbox').classList.add('open');
+}
+function closeCKLightbox() {
+  document.getElementById('ck-lightbox').classList.remove('open');
+}
+function ckLightboxStep(dir) {
+  ckLbIdx = (ckLbIdx + dir + ckSlideCount) % ckSlideCount;
+  document.getElementById('ck-lb-img').src = 'media/Choco Knight Documentation/' + (ckLbIdx + 1) + '.png';
+}
+
 document.addEventListener('keydown', function(e) {
+  if (document.getElementById('ck-lightbox').classList.contains('open')) {
+    if (e.key === 'ArrowLeft') ckLightboxStep(-1);
+    else if (e.key === 'ArrowRight') ckLightboxStep(1);
+    else if (e.key === 'Escape') closeCKLightbox();
+    return;
+  }
   if (e.key === 'Escape') closeLightbox();
 });
 
@@ -4043,7 +4989,7 @@ async function initP5Flipbook() {
   if (!window.pdfjsLib) return;
   pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
   try {
-    p5HeroPdf = await pdfjsLib.getDocument('Typography%20in%20Persona%205/Persona%205%20Type%20Study.pdf').promise;
+    p5HeroPdf = await pdfjsLib.getDocument('media/Typography%20in%20Persona%205/Persona%205%20Type%20Study.pdf').promise;
     p5HeroViews = p5BuildViews(p5HeroPdf.numPages);
     p5HeroReady = true;
     p5BuildDots();
@@ -4104,6 +5050,73 @@ function p5HeroPrev() { if (!p5Transitioning && p5HeroIdx > 0) p5HeroShowView(p5
 function p5HeroNext() { if (!p5Transitioning && p5HeroIdx < p5HeroViews.length - 1) p5HeroShowView(p5HeroIdx + 1); }
 function p5HeroGoto(idx) { if (!p5Transitioning && idx !== p5HeroIdx) p5HeroShowView(idx); }
 
+// ── SPOTIFY SLIDES VIEWER ──
+var spotifyPdf = null, spotifyPage = 1, spotifyTotal = 0, spotifyReady = false, spotifyBusy = false;
+
+async function initSpotifySlides() {
+  if (spotifyReady) return;
+  if (!window.pdfjsLib) return;
+  pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+  try {
+    spotifyPdf = await pdfjsLib.getDocument('media/Spotify%20feature/Spotify%20Slides.pdf').promise;
+    spotifyTotal = spotifyPdf.numPages;
+    spotifyReady = true;
+    await spotifyRenderTo(1, 'spotify-cover-canvas');
+    await spotifyRenderTo(1, 'spotify-slides-canvas');
+    spotifyBuildDots();
+    spotifySetCounter();
+  } catch(e) {}
+}
+
+async function spotifyRenderTo(n, id) {
+  var canvas = document.getElementById(id);
+  if (!canvas || !spotifyPdf) return;
+  var page = await spotifyPdf.getPage(n);
+  var dpr = window.devicePixelRatio || 1;
+  var w = (canvas.offsetWidth || 900) * Math.min(dpr, 2);
+  var nat = page.getViewport({ scale: 1 });
+  var vp = page.getViewport({ scale: w / nat.width });
+  canvas.width = vp.width;
+  canvas.height = vp.height;
+  canvas.style.width = '100%';
+  canvas.style.height = 'auto';
+  await page.render({ canvasContext: canvas.getContext('2d'), viewport: vp }).promise;
+}
+
+function spotifyBuildDots() {
+  var el = document.getElementById('spotify-slides-dots');
+  if (!el) return;
+  el.innerHTML = '';
+  for (var i = 1; i <= spotifyTotal; i++) {
+    var d = document.createElement('div');
+    d.className = 'spotify-slides-dot' + (i === 1 ? ' active' : '');
+    (function(pg) { d.onclick = function(e) { e.stopPropagation(); spotifyGoto(pg); }; })(i);
+    el.appendChild(d);
+  }
+}
+
+function spotifySetCounter() {
+  var el = document.getElementById('spotify-slides-counter');
+  if (el) el.textContent = spotifyPage + ' / ' + spotifyTotal;
+}
+
+async function spotifyGoto(n) {
+  if (spotifyBusy || !spotifyReady || n < 1 || n > spotifyTotal || n === spotifyPage) return;
+  spotifyBusy = true;
+  var canvas = document.getElementById('spotify-slides-canvas');
+  if (canvas) canvas.style.opacity = '0';
+  await new Promise(function(r) { setTimeout(r, 180); });
+  spotifyPage = n;
+  await spotifyRenderTo(n, 'spotify-slides-canvas');
+  if (canvas) canvas.style.opacity = '1';
+  document.querySelectorAll('.spotify-slides-dot').forEach(function(d, i) { d.classList.toggle('active', i + 1 === n); });
+  spotifySetCounter();
+  spotifyBusy = false;
+}
+
+function spotifyPrev() { spotifyGoto(spotifyPage - 1); }
+function spotifyNext() { spotifyGoto(spotifyPage + 1); }
+
 // ── POSTER PROCESS DRAWER ──
 var posterTitles = {nerds:'Nerds',doomsday:'Doomsday','artist-book':'Artist Book','typographic-follies':'Typographic Follies'};
 function openPosterProcess(id) {
@@ -4161,12 +5174,14 @@ var projMeta = {
   'logos-branding':  {title:'Logos & Branding',          cat:'graphic', catLabel:'2D & Graphic Design', sub:'Brand Identity',   accent:'accent-graphic'},
   'merchandise':     {title:'Merchandise',               cat:'graphic', catLabel:'2D & Graphic Design', sub:'Merch Design',     accent:'accent-graphic'},
   'posters':         {title:'Posters',                   cat:'graphic', catLabel:'2D & Graphic Design', sub:'Poster Design',    accent:'accent-graphic'},
-  // ── UX (all 5 from page-ux grid) ──
-  'quest-app':       {title:'Quest Companion App',       cat:'ux',      catLabel:'UX/UI & Game Design', sub:'App Design',       accent:'accent-ux'},
-  'verdant-ui':      {title:'Verdant: UI System',       cat:'ux',      catLabel:'UX/UI & Game Design', sub:'Game UI',          accent:'accent-ux'},
-  'verdant-level':   {title:'Verdant: Level Design',    cat:'ux',      catLabel:'UX/UI & Game Design', sub:'Level Design',     accent:'accent-ux'},
-  'wayfinder':       {title:'Wayfinder',                 cat:'ux',      catLabel:'UX/UI & Game Design', sub:'UX Research',      accent:'accent-ux'},
-  'petal':           {title:'Petal',                     cat:'ux',      catLabel:'UX/UI & Game Design', sub:'App Design',       accent:'accent-ux'},
+  // ── UX (all 6 from page-ux grid) ──
+  'discotype':           {title:'DiscoType!',             cat:'ux', catLabel:'UX/UI & Game Design', sub:'Interaction Design', accent:'accent-ux'},
+  'oracle':              {title:'Oracle',                  cat:'ux', catLabel:'UX/UI & Game Design', sub:'Interactive Web',    accent:'accent-ux'},
+  'featherform':         {title:'Featherform',             cat:'ux', catLabel:'UX/UI & Game Design', sub:'Game UI Design',     accent:'accent-ux'},
+  'stellar-exploration': {title:'Stellar Exploration',     cat:'ux', catLabel:'UX/UI & Game Design', sub:'App Design',         accent:'accent-ux'},
+  'silent-spellcraft':   {title:'Silent Spellcraft',       cat:'ux', catLabel:'UX/UI & Game Design', sub:'Game UI',            accent:'accent-ux'},
+  'choco-knight':        {title:'Choco Knight',                               cat:'ux', catLabel:'UX/UI & Game Design', sub:'Game Design',       accent:'accent-ux'},
+  'spotify-feature':     {title:'Spotify: Designing a New Microinteraction',  cat:'ux', catLabel:'UX/UI & Game Design', sub:'Micro-interaction', accent:'accent-ux'},
   // ── 3D (only the 4 listed on page-3d grid) ──
   'ecoleander':      {title:'The Ecoleander',            cat:'3d',      catLabel:'3D & Product Design', sub:'Product Design',   accent:'accent-3d'},
   'smrutea':         {title:'Smrutea',                   cat:'3d',      catLabel:'3D & Product Design', sub:'Product Design',   accent:'accent-3d'},
