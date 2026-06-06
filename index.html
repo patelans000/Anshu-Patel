@@ -52,9 +52,9 @@ nav{padding:22px 48px;display:flex;align-items:center;justify-content:space-betw
 @keyframes home-bounce{0%{transform:translateY(0) scale(1)}50%{transform:translateY(-8px) scale(1.02)}100%{transform:translateY(-4px) scale(1.01)}}
 
 /* ── HOME PROJECT GRID ── */
-.home-proj-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--border)}
+.home-proj-grid{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid var(--border)}
 .home-proj-block{border-right:1px solid var(--border);border-bottom:1px solid var(--border);cursor:pointer;transition:background 0.2s;overflow:hidden}
-.home-proj-block:nth-child(3n){border-right:none}
+.home-proj-block:nth-child(2n){border-right:none}
 .home-proj-block:hover{background:var(--gray)}
 .home-proj-block:hover .home-proj-thumb-inner{transform:scale(1.03)}
 .home-proj-thumb{aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
@@ -121,8 +121,6 @@ nav{padding:22px 48px;display:flex;align-items:center;justify-content:space-betw
   .home-hi{font-size:40px}
   .home-illustration{min-height:260px}
   .home-proj-grid{grid-template-columns:repeat(2,1fr)}
-  .home-proj-block:nth-child(3n){border-right:1px solid var(--border)}
-  .home-proj-block:nth-child(2n){border-right:none}
 
   /* DISCIPLINE PAGES */
   .disc-header{grid-template-columns:1fr;gap:14px;padding:28px 20px 24px}
@@ -535,8 +533,12 @@ audio{accent-color:#1A1A1A}
 #proj-stellar-exploration .proj-detail-content img{width:100%;height:auto;display:block;border-radius:0!important}
 #proj-stellar-exploration .proj-detail-sidebar::-webkit-scrollbar{display:none}
 #proj-stellar-exploration .proj-detail-sidebar{-ms-overflow-style:none;scrollbar-width:none}
+#proj-silent-spellcraft .proj-detail-content{max-width:680px;padding:48px 48px;margin:0 auto}
+#proj-silent-spellcraft .proj-detail-content img{width:100%;height:auto;display:block;border-radius:0!important}
+#proj-silent-spellcraft .proj-detail-sidebar::-webkit-scrollbar{display:none}
+#proj-silent-spellcraft .proj-detail-sidebar{-ms-overflow-style:none;scrollbar-width:none}
 </style>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js" defer></script>
 <script>
 (function(){
   function hideBroken(img){img.style.visibility='hidden';}
@@ -580,10 +582,6 @@ audio{accent-color:#1A1A1A}
           <span class="works-menu-dot" style="background:#FFF0A8;border:1px solid #e8e0a0"></span>
           2D & Graphic Design
         </a>
-        <a onclick="showPage('archive');closeWorksMenu()" onmouseenter="preloadPage('archive')" id="nav-archive">
-          <span class="works-menu-dot" style="background:#E8E8E8"></span>
-          Archive
-        </a>
       </div>
     </div>
     <a onclick="showPage('about')" id="nav-about">About</a>
@@ -596,7 +594,7 @@ audio{accent-color:#1A1A1A}
     <div class="home-hero-top">
       <div>
         <h1 class="home-hi">Hi! I'm Anshu.</h1>
-        <p class="home-bio">A multimedia designer passionate about interactive design and exploring how to craft playful, meaningful experiences across diverse mediums.</p>
+        <p class="home-bio">A multidisciplinary designer passionate about interactive design and exploring how to craft playful, meaningful experiences across diverse mediums.</p>
         <div class="home-degree-block">
           <div class="home-degree-row">
             <span class="home-degree-pill">B.F.A Design</span>
@@ -652,12 +650,6 @@ audio{accent-color:#1A1A1A}
         </div>
       </div>
       <div class="home-proj-info"><div class="home-proj-left"><div class="home-proj-title">2D & Graphic Design</div><div class="home-proj-sub">A variety of my graphic design work, from layout design to livery design.</div></div><span class="home-proj-arrow">→</span></div>
-    </div>
-    <div class="home-proj-block" onclick="showPage('archive')">
-      <div class="home-proj-thumb"><div class="home-proj-thumb-inner accent-archive">
-        <svg width="140" height="80" viewBox="0 0 140 80" fill="none"><rect x="28" y="24" width="32" height="32" rx="5" fill="#ccc" opacity="0.5"/><rect x="66" y="30" width="22" height="22" rx="4" fill="#bbb" opacity="0.4"/><rect x="94" y="20" width="18" height="40" rx="4" fill="#ddd" opacity="0.5"/></svg>
-      </div></div>
-      <div class="home-proj-info"><div class="home-proj-left"><div class="home-proj-title">Miscellaneous Archive</div><div class="home-proj-sub">Experiments, class work, sketches</div></div><span class="home-proj-arrow">→</span></div>
     </div>
   </div>
 
@@ -840,8 +832,8 @@ audio{accent-color:#1A1A1A}
       <div class="proj-foot"><span class="proj-name">Stellar Exploration</span><span class="proj-meta">Spring 2026</span></div>
     </div>
     <div class="proj" onclick="showProject('silent-spellcraft')">
-      <div class="proj-thumb" style="background:#0E1020"><div class="proj-thumb-inner" style="width:100%;height:100%"><svg width="160" height="120" viewBox="0 0 160 120" fill="none"><circle cx="80" cy="60" r="46" stroke="#8888FF" stroke-width="1" opacity="0.35" stroke-dasharray="4 3"/><circle cx="80" cy="60" r="30" stroke="#8888FF" stroke-width="1.2" opacity="0.5"/><circle cx="80" cy="60" r="12" fill="#4444AA" opacity="0.5"/><circle cx="80" cy="60" r="5" fill="#9999FF" opacity="0.7"/><polygon points="80,30 88,52 112,52 93,66 100,88 80,74 60,88 67,66 48,52 72,52" stroke="#8888FF" stroke-width="1" fill="none" opacity="0.3"/></svg></div><div class="proj-hover"><div class="proj-hover-text">Game UI, interaction design, visual design</div></div></div>
-      <div class="proj-foot"><span class="proj-name">Silent Spellcraft</span><span class="proj-meta">2025</span></div>
+      <div class="proj-thumb" style="overflow:hidden"><div class="proj-thumb-inner" style="width:100%;height:100%"><img loading="lazy" src="media/Silent Spellcraft/Title Card.png" style="width:100%;height:100%;object-fit:cover;display:block" alt="Silent Spellcraft"></div><div class="proj-hover"><div class="proj-hover-text">ASL hand tracking, unconventional interaction, game UI</div></div></div>
+      <div class="proj-foot"><span class="proj-name">Silent Spellcraft</span><span class="proj-meta">Spring 2026</span></div>
     </div>
     <div class="proj" onclick="showProject('choco-knight')">
       <div class="proj-thumb"><div class="proj-thumb-inner" style="width:100%;height:100%"><img loading="lazy" src="media/Choco Knight Documentation/1.png" style="width:100%;height:100%;object-fit:cover;display:block" alt="Choco Knight"></div><div class="proj-hover"><div class="proj-hover-text">2D pixel platformer, game design, level design</div></div></div>
@@ -1061,34 +1053,6 @@ audio{accent-color:#1A1A1A}
   </div>
 </div>
 
-<!-- ══════════════════ ARCHIVE LIST ══════════════════ -->
-<div class="page" id="page-archive">
-  <div class="disc-header">
-    <div class="disc-header-left">
-      <div class="disc-title">Miscellaneous Archive</div>
-      <p class="disc-desc">Class projects, personal explorations, quick studies, and things that don't fit anywhere else,but were worth keeping.</p>
-    </div>
-    <div><span class="disc-back" onclick="showPage('home')">← All work</span></div>
-  </div>
-  <div class="proj-grid proj-grid-3">
-    <div class="proj" onclick="showProject('fragments')">
-      <div class="proj-thumb"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#F4F4F4"><svg width="160" height="120" viewBox="0 0 160 120" fill="none"><rect x="30" y="30" width="44" height="60" rx="5" fill="#bbb" opacity="0.45"/><rect x="82" y="40" width="44" height="44" rx="5" fill="#ccc" opacity="0.4"/><rect x="96" y="22" width="22" height="22" rx="4" fill="#aaa" opacity="0.4"/></svg></div><div class="proj-hover"><div class="proj-hover-text">Personal exploration, digital collage</div></div></div>
-      <div class="proj-foot"><span class="proj-name">Fragments: Digital Collage Study</span><span class="proj-meta">2024</span></div>
-    </div>
-    <div class="proj" onclick="showProject('sketchbook')">
-      <div class="proj-thumb"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#FFFFF0"><svg width="160" height="120" viewBox="0 0 160 120" fill="none"><path d="M40 90 Q60 50 80 70 Q100 90 120 30" stroke="#8a8a00" stroke-width="2" fill="none" opacity="0.4" stroke-linecap="round"/><path d="M50 95 Q70 60 90 75 Q110 90 130 40" stroke="#8a8a00" stroke-width="1" fill="none" opacity="0.25" stroke-linecap="round"/></svg></div><div class="proj-hover"><div class="proj-hover-text">Sketchbook, observational drawing</div></div></div>
-      <div class="proj-foot"><span class="proj-name">Sketchbook Vol. 3</span><span class="proj-meta">2024</span></div>
-    </div>
-    <div class="proj" onclick="showProject('type-study')">
-      <div class="proj-thumb"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#F0F4FF"><svg width="160" height="120" viewBox="0 0 160 120" fill="none"><text x="30" y="56" font-family="serif" font-size="40" fill="#8090C0" opacity="0.5" font-weight="bold">Aa</text><rect x="30" y="68" width="100" height="3" rx="1.5" fill="#8090C0" opacity="0.2"/><rect x="30" y="76" width="70" height="3" rx="1.5" fill="#8090C0" opacity="0.15"/></svg></div><div class="proj-hover"><div class="proj-hover-text">Type design exploration, class project</div></div></div>
-      <div class="proj-foot"><span class="proj-name">Type Study: Letterform Exploration</span><span class="proj-meta">2023</span></div>
-    </div>
-    <div class="proj" onclick="showProject('systems')">
-      <div class="proj-thumb"><div class="proj-thumb-inner" style="width:100%;height:100%;background:#FFF8F0"><svg width="160" height="120" viewBox="0 0 160 120" fill="none"><circle cx="60" cy="55" r="22" stroke="#E08040" stroke-width="1.5" fill="none" opacity="0.4"/><circle cx="100" cy="65" r="16" stroke="#E08040" stroke-width="1.5" fill="none" opacity="0.3"/><line x1="60" y1="55" x2="100" y2="65" stroke="#E08040" stroke-width="1" opacity="0.25"/></svg></div><div class="proj-hover"><div class="proj-hover-text">Systems thinking, diagram design</div></div></div>
-      <div class="proj-foot"><span class="proj-name">Systems: Diagram Workshop</span><span class="proj-meta">2023</span></div>
-    </div>
-  </div>
-</div>
 
 <!-- ══════════════════ ABOUT ══════════════════ -->
 <div class="page" id="page-about">
@@ -1653,7 +1617,7 @@ audio{accent-color:#1A1A1A}
       <div class="proj-detail-section" id="dt-brief">
         <div class="proj-detail-section-label">Brief</div>
         <div class="proj-detail-h2">The Assignment</div>
-        <div class="proj-callout" style="margin-bottom:20px"><strong>This is a high-fidelity prototype</strong> built for a game design course. The Unity build demonstrates the full UI prototype with a functional gameplay mechanic, not a finished commercial game.</div>
+        <div class="proj-callout" style="margin-bottom:20px"><strong>This is a high-fidelity prototype</strong> built for Typography in Games. The Unity build demonstrates the full UI prototype with a functional gameplay mechanic, not a finished commercial game.</div>
         <p class="proj-detail-p">The assignment was to invent a brand new game, design a logo and custom font for it, build a full suite of game screens in Unity (title, main menu, and at least two additional screens including a gameplay screen with a functional mechanic), wire all the scenes together, and publish a live WebGL build on Itch.io. We also designed a tutorial and delivered a final slide deck with full documentation.</p>
       </div>
 
@@ -2590,22 +2554,161 @@ audio{accent-color:#1A1A1A}
     <div><button class="proj-nav-btn" onclick="showPage('ux')">← Back to category</button></div>
   </div>
   <div class="proj-detail-hero">
-    <div class="proj-detail-kicker">UX/UI & Game Design · Game UI</div>
+    <div class="proj-detail-kicker">UX/UI & Game Design · Unconventional Interaction</div>
     <div class="proj-detail-title">Silent Spellcraft</div>
-    <p class="proj-detail-tagline">Content coming soon.</p>
+    <p class="proj-detail-tagline">An interactive browser-based game that uses real-time ASL hand gesture recognition to cast spells. Your hands are the controller.</p>
     <div class="proj-detail-meta-row">
-      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Year</div><div class="proj-detail-meta-val">2025</div></div>
-      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">Figma</div></div>
-      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Type</div><div class="proj-detail-meta-val">Game UI Design</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Course</div><div class="proj-detail-meta-val">AET 330T Exploring User Interaction</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Instructor</div><div class="proj-detail-meta-val">Sydney Parks</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Semester</div><div class="proj-detail-meta-val">Spring 2026</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">2 weeks</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">HTML, CSS, JavaScript, MediaPipe, Copilot</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Type</div><div class="proj-detail-meta-val">Unconventional Interaction</div></div>
     </div>
   </div>
-  <div class="proj-detail-body" style="display:block">
-    <div class="proj-detail-content">
-      <div class="proj-detail-section">
-        <div class="proj-detail-section-label">Overview</div>
-        <div class="proj-detail-h2">Coming soon</div>
-        <p class="proj-detail-p">Details for this project will be added soon.</p>
+  <div style="border-bottom:1px solid var(--border)">
+    <img loading="lazy" src="media/Silent Spellcraft/Title Card.png" style="width:100%;display:block" alt="Silent Spellcraft title card">
+  </div>
+  <div style="background:#0d0d0d;border-bottom:1px solid var(--border)">
+    <video autoplay loop muted playsinline style="width:100%;max-height:72vh;object-fit:contain;display:block">
+      <source src="media/Silent Spellcraft/Final Walkthrough.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div style="background:var(--pink);padding:14px 32px;border-bottom:1px solid var(--border)">
+    <p style="font-size:13px;font-weight:500;color:#1A1A1A;margin:0;line-height:1.6"><strong>Note:</strong> Silent Spellcraft is a working prototype actively in development. The hand tracking system is being refined and gesture recognition accuracy can vary depending on lighting conditions. What you're seeing is a functional proof of concept, not a finished product.</p>
+  </div>
+  <div class="proj-detail-body">
+    <div class="proj-detail-sidebar">
+      <div class="proj-detail-sidebar-section">
+        <div class="proj-detail-sidebar-label">Contents</div>
+        <div class="proj-toc-list">
+          <a class="proj-toc-link" onclick="document.getElementById('ss-brief').scrollIntoView({behavior:'smooth'})">Brief</a>
+          <a class="proj-toc-link" onclick="document.getElementById('ss-interaction').scrollIntoView({behavior:'smooth'})">Unconventional Interaction</a>
+          <a class="proj-toc-link" onclick="document.getElementById('ss-affordance').scrollIntoView({behavior:'smooth'})">Affordance Design</a>
+          <a class="proj-toc-link" onclick="document.getElementById('ss-design').scrollIntoView({behavior:'smooth'})">Design Decisions</a>
+          <a class="proj-toc-link" onclick="document.getElementById('ss-process').scrollIntoView({behavior:'smooth'})">Process & Iterations</a>
+          <a class="proj-toc-link" onclick="document.getElementById('ss-final').scrollIntoView({behavior:'smooth'})">Final Result</a>
+          <a class="proj-toc-link" onclick="document.getElementById('ss-reflect').scrollIntoView({behavior:'smooth'})">Looking Back</a>
+        </div>
       </div>
+    </div>
+    <div class="proj-detail-content">
+
+      <div class="proj-detail-section" id="ss-brief">
+        <div class="proj-detail-section-label">Brief</div>
+        <div class="proj-detail-h2">The Assignment</div>
+        <div class="proj-callout" style="margin-bottom:20px">Design and build an interactive experience using an <strong>unconventional interaction</strong> as the primary input. Mouse clicks and keyboard presses don't count. Explore embodiment, gesture-based control, and spatial design. Two weeks.</div>
+        <p class="proj-detail-p">Tools included anything that could support the idea: ml5.js, Python, TouchDesigner, Unity, Arduino, VR. The concept and execution were fully open, which made scoping the project carefully one of the most important early decisions.</p>
+        <div style="border:1px solid var(--border);overflow:hidden;margin-top:20px">
+          <div style="background:var(--gray);padding:18px 22px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;gap:16px">
+            <div>
+              <div style="font-size:10px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin-bottom:4px">Live Prototype</div>
+              <div style="font-size:14px;font-weight:600;color:#1A1A1A">Silent Spellcraft</div>
+            </div>
+            <a href="https://patelans000.github.io/Silent-Spellcraft/" target="_blank" style="font-size:12px;color:var(--muted);text-decoration:underline;text-underline-offset:2px;white-space:nowrap;transition:color 0.15s" onmouseover="this.style.color='#1A1A1A'" onmouseout="this.style.color='var(--muted)'">Play the latest build →</a>
+          </div>
+          <div style="padding:18px 22px"><p style="font-size:13px;color:#555;line-height:1.7;margin:0">Open in a desktop browser with camera access enabled. Show your hand and fingerspell to cast spells.</p></div>
+        </div>
+
+        <div class="proj-detail-h2" style="margin-top:32px">Concept</div>
+        <p class="proj-detail-p">After researching the scope of the project and my current technical limits, I decided to focus on ASL fingerspelling (the alphabet) rather than full sign language vocabulary. Fingerspelling is a core part of American Sign Language, used for names, places, and words without their own sign, and it was a realistic scope to implement within two weeks.</p>
+        <p class="proj-detail-p">The experience is an interactive learning game where the player takes on the role of a fairy defending themselves from approaching magical creatures. Each creature represents a letter of the alphabet, and the player must perform the correct ASL hand sign to defeat it. My research included exploring tools like fingerspelling.xyz, which helped me understand how repetition and visual prompts support memorization of the ASL alphabet. This project applies those ideas in a game format to make practicing fingerspelling more engaging.</p>
+        <div class="smt-lb-thumb" onclick="openLightbox('media/Silent Spellcraft/Ideation.png')" style="margin-top:20px">
+          <img loading="lazy" src="media/Silent Spellcraft/Ideation.png" alt="Ideation and concept work">
+        </div>
+        <p class="proj-img-caption">Early ideation</p>
+      </div>
+
+      <div class="proj-detail-section" id="ss-interaction">
+        <div class="proj-detail-section-label">Unconventional Interaction</div>
+        <div class="proj-detail-h2">Your Hand is the Controller</div>
+        <p class="proj-detail-p">Silent Spellcraft uses a camera-based hand gesture recognition system instead of traditional keyboard or mouse input. It's powered by MediaPipe Hands, running directly in the browser using WebAssembly and WebGL. The user's webcam captures their hand, and the system detects 21 hand landmark points in real time. Those landmarks are analyzed using a custom geometry-based classifier that compares finger positions, distances, and joint angles to recognize ASL fingerspelling letters.</p>
+        <p class="proj-detail-p">When the detected letter matches the on-screen prompt, a hold-progress bar fills to represent spell charging. Once complete, the fairy casts a spell to defeat the approaching creature. This method was chosen because it lets players practice real ASL hand shapes through physical movement rather than button presses, keeps all processing local in the browser without needing a server, and turns the user's own hand into the primary controller.</p>
+        <video autoplay loop muted playsinline style="width:100%;display:block;margin-top:20px">
+          <source src="media/Silent Spellcraft/Hand Tracking Unconvential Interaction.mp4" type="video/mp4">
+        </video>
+        <p class="proj-img-caption">Real-time hand tracking in action</p>
+      </div>
+
+      <div class="proj-detail-section" id="ss-affordance">
+        <div class="proj-detail-section-label">Affordance Design</div>
+        <div class="proj-detail-h2">Communicating Without Words</div>
+        <p class="proj-detail-p">The affordance design in Silent Spellcraft is built to guide the user through visual cues, spatial layout, and minimal text. The landing page explains the goal in structured steps so players know what to expect before they jump in.</p>
+        <p class="proj-detail-p">On the main interface, each dark creature carries a letter, signaling which ASL handshape to form. The charge bar above the detected sign gives real-time visual feedback. Spatially, the player's hand appears in a dedicated camera box, target letters are positioned directly in front of the character, and prompts sit right below the feed, keeping the user's attention in one focused area. Progression is gradual: Level 1 introduces only a few letters to avoid cognitive overload, and the alphabet chart gives players a reference to compare handshapes.</p>
+        <p class="proj-detail-p">The affordance design also borrows from familiar platformer conventions, making it immediately recognizable. The fairy reacts dynamically to spell casts, providing visual feedback that reinforces the game's mechanics. By blending those familiar conventions with clear visual cues and interactive guidance, the game communicates what to do without feeling overwhelming.</p>
+        <div class="smt-lb-thumb" onclick="openLightbox('media/Silent Spellcraft/Affordance Design 2.png')" style="margin-top:20px">
+          <img loading="lazy" src="media/Silent Spellcraft/Affordance Design 2.png" alt="Affordance design screenshot">
+        </div>
+        <p class="proj-img-caption">Main game interface</p>
+        <video autoplay loop muted playsinline style="width:100%;display:block;margin-top:12px">
+          <source src="media/Silent Spellcraft/Affordance Design.mp4" type="video/mp4">
+        </video>
+        <p class="proj-img-caption">Affordance design in action</p>
+      </div>
+
+      <div class="proj-detail-section" id="ss-design">
+        <div class="proj-detail-section-label">Design Decisions</div>
+        <div class="proj-detail-h2">Color, Characters, and Type</div>
+        <p class="proj-detail-p">The game leans into pinks and softer, traditionally "feminine" tones. This was a deliberate personal choice and a pushback against the tendency to avoid these aesthetics in game design. The palette maintains enough contrast for clarity and readability, showing that a playful, cute aesthetic can coexist with strong visual communication.</p>
+        <p class="proj-detail-p">The fairy companion is designed with brown skin, both for representation I want to see in games and for visual contrast within the environment. It helps the character stand out while reflecting a genuine commitment to diversity in character design.</p>
+        <p class="proj-detail-p">For type, Crimson Pro is used throughout to support a clear visual hierarchy. It's highly legible for instructions and interactive elements while still carrying an elegant, stylized quality that fits the aesthetic.</p>
+        <div class="smt-lb-thumb" onclick="openLightbox('media/Silent Spellcraft/Font and Color Palette.png')" style="margin-top:20px">
+          <img loading="lazy" src="media/Silent Spellcraft/Font and Color Palette.png" alt="Font and color palette">
+        </div>
+        <p class="proj-img-caption">Color palette and typography</p>
+      </div>
+
+      <div class="proj-detail-section" id="ss-process">
+        <div class="proj-detail-section-label">Process & Iterations</div>
+        <div class="proj-detail-h2">Building It Out</div>
+        <p class="proj-detail-p">I started by integrating an existing ASL fingerspelling library to get a working proof of concept, then layered my own designs and assets on top. The gesture recognition system is still being dialed in. The library I'm using has inconsistencies that I'm actively working through, and performance can be affected by lighting conditions. Debugging this while also building out the visual side of the game has been the main challenge of the project.</p>
+        <p class="proj-detail-p">This project was built using JavaScript with MediaPipe Hands. AI coding tools (Copilot and web-based assistance) helped me navigate the technical complexity of the gesture recognition system, especially in areas where the documentation was sparse. Using whatever tools are available to ship something real is part of the process.</p>
+        <video autoplay loop muted playsinline style="width:100%;display:block;margin-top:20px">
+          <source src="media/Silent Spellcraft/Prototype Code.mp4" type="video/mp4">
+        </video>
+        <p class="proj-img-caption">Early prototype and code</p>
+
+        <div class="proj-detail-h2" style="margin-top:36px">Assets</div>
+        <p class="proj-detail-p">During spring break I collected and created the visual assets for Silent Spellcraft. I selected and adjusted many of them to match the color palette, keeping the visuals consistent and cohesive across the interface. Characters, environments, and UI elements were all brought into alignment so the game feels like a unified visual world.</p>
+        <div class="proj-img-grid proj-img-grid-2" style="margin-top:20px">
+          <div class="smt-lb-thumb" onclick="openLightbox('media/Silent Spellcraft/Assets I created.png')">
+            <img loading="lazy" src="media/Silent Spellcraft/Assets I created.png" alt="Assets I created">
+          </div>
+          <div class="smt-lb-thumb" onclick="openLightbox('media/Silent Spellcraft/Assets in Progress.png')">
+            <img loading="lazy" src="media/Silent Spellcraft/Assets in Progress.png" alt="Assets in progress">
+          </div>
+        </div>
+        <p class="proj-img-caption">Assets created and in progress</p>
+      </div>
+
+      <div class="proj-detail-section" id="ss-final">
+        <div class="proj-detail-section-label">Final Result</div>
+        <div class="proj-detail-h2">Full Walkthrough</div>
+        <video autoplay loop muted playsinline style="width:100%;display:block;margin-bottom:20px">
+          <source src="media/Silent Spellcraft/Final Walkthrough.mp4" type="video/mp4">
+        </video>
+        <div style="border:1px solid var(--border);overflow:hidden">
+          <div style="background:var(--gray);padding:18px 22px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;gap:16px">
+            <div>
+              <div style="font-size:10px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin-bottom:4px">Live Prototype</div>
+              <div style="font-size:14px;font-weight:600;color:#1A1A1A">Silent Spellcraft</div>
+            </div>
+            <a href="https://patelans000.github.io/Silent-Spellcraft/" target="_blank" style="font-size:12px;color:var(--muted);text-decoration:underline;text-underline-offset:2px;white-space:nowrap;transition:color 0.15s" onmouseover="this.style.color='#1A1A1A'" onmouseout="this.style.color='var(--muted)'">Play the latest build →</a>
+          </div>
+          <div style="padding:18px 22px"><p style="font-size:13px;color:#555;line-height:1.7;margin:0">Open in a desktop browser with camera access enabled. Show your hand and fingerspell to cast spells.</p></div>
+        </div>
+      </div>
+
+      <div class="proj-detail-section" id="ss-reflect">
+        <div class="proj-detail-section-label">Looking Back</div>
+        <div class="proj-detail-h2">Reflection</div>
+        <p class="proj-detail-p">This was definitely a challenge for me. I yet again attempted to do something I had never done before and it was a journey. Since this is still a prototype, once I get more time I really want to make it more developed and more designed in the way I actually envision it, refining everything from mechanics to layout with a lot more playtesting. But for a prototype I was quite satisfied. And Professor Parks told me this is the most developed project anyone has submitted for this assignment yet, which meant a lot.</p>
+
+        <div class="proj-detail-h2" style="margin-top:32px">Professor Feedback</div>
+        <p class="proj-detail-p">Great reasoning for why I chose this interaction, and it has a clear relationship with the concept. Fun and engaging way to teach someone sign language, and the gameplay can help with speed and accuracy. The fairy casting spells was a wonderful design choice because it makes the player feel as if they are genuinely casting a spell with their hand. Overall, great job communicating a lot of information to the user, and the fact that there is so much going on makes this an exciting project. This is a great start.</p>
+        <p class="proj-detail-p">Great eye for design. The depth created through blurred backgrounds and drop shadows was a nice touch, and the characters are very cute. Very unique overall. Feels like a distinct personal style with the color palette and the abstract creatures. The documentation was thorough with clear zoom ins on design details and the assets I created really came through. The amount of thought put into every decision came across clearly. Looks perfect. You offer wonderful feedback when you pitch in!</p>
+      </div>
+
     </div>
   </div>
 </div>
@@ -5261,13 +5364,13 @@ audio{accent-color:#1A1A1A}
 // ── PAGE / PROJECT ROUTING ──
 const pages = {
   home:'page-home', graphic:'page-graphic', ux:'page-ux',
-  '3d':'page-3d', motion:'page-motion', archive:'page-archive', about:'page-about'
+  '3d':'page-3d', motion:'page-motion', about:'page-about'
 };
 const navIds = {
   home:'nav-home', graphic:'nav-graphic', ux:'nav-ux',
-  '3d':'nav-3d', motion:'nav-motion', archive:'nav-archive', about:'nav-about'
+  '3d':'nav-3d', motion:'nav-motion', about:'nav-about'
 };
-const workPages = ['graphic','ux','3d','motion','archive'];
+const workPages = ['graphic','ux','3d','motion'];
 
 // ── AUDIO PLAYER ──
 function toggleAudio() {
@@ -5310,6 +5413,9 @@ function pauseAllMedia() {
   document.querySelectorAll('audio, video').forEach(el => {
     if (!el.paused) el.pause();
   });
+  document.querySelectorAll('.proj-detail-page video').forEach(function(v) {
+    v.preload = 'none';
+  });
   const audio = document.getElementById('audio-player');
   const btn = document.getElementById('audio-btn');
   if (audio && btn) {
@@ -5317,6 +5423,10 @@ function pauseAllMedia() {
     btn.classList.remove('playing');
   }
 }
+// On load: prevent browser from buffering any hidden project videos
+document.querySelectorAll('.proj-detail-page video').forEach(function(v) {
+  v.preload = 'none';
+});
 
 function showPage(id) {
   pauseAllMedia();
@@ -5354,12 +5464,17 @@ function showProject(slug) {
   }
   if (slug === 'oracle') {
     setTimeout(function() {
-      document.querySelectorAll('#proj-oracle video[autoplay]').forEach(function(v) { v.muted = true; v.play().catch(function(){}); });
+      document.querySelectorAll('#proj-oracle video[autoplay]').forEach(function(v) { v.preload = 'auto'; v.muted = true; v.play().catch(function(){}); });
     }, 100);
   }
   if (slug === 'stellar-exploration') {
     setTimeout(function() {
-      document.querySelectorAll('#proj-stellar-exploration video[autoplay]').forEach(function(v) { v.currentTime = 0; v.muted = true; v.play().catch(function(){}); });
+      document.querySelectorAll('#proj-stellar-exploration video[autoplay]').forEach(function(v) { v.preload = 'auto'; v.currentTime = 0; v.muted = true; v.play().catch(function(){}); });
+    }, 100);
+  }
+  if (slug === 'silent-spellcraft') {
+    setTimeout(function() {
+      document.querySelectorAll('#proj-silent-spellcraft video[autoplay]').forEach(function(v) { v.preload = 'auto'; v.currentTime = 0; v.muted = true; v.play().catch(function(){}); });
     }, 100);
   }
   if (slug === 'discotype') {
@@ -5367,13 +5482,14 @@ function showProject(slug) {
       var v = document.getElementById('dt-hero-video');
       var btn = document.getElementById('dt-audio-btn');
       if (v) {
+        v.preload = 'auto';
         v.currentTime = 0;
         v.muted = false;
         v.play().catch(function() { v.muted = true; if (btn) btn.textContent = 'sound off'; });
         if (btn) btn.textContent = 'sound on';
       }
       document.querySelectorAll('#proj-discotype video[autoplay]').forEach(function(vid) {
-        if (vid !== v) { vid.muted = true; vid.play(); }
+        if (vid !== v) { vid.preload = 'auto'; vid.muted = true; vid.play(); }
       });
     }, 50);
   }
@@ -5684,7 +5800,7 @@ function stepCarousel(id, dir) {
 }
 
 // ── BACK TO TOP ──
-var bttCategoryPages = ['page-graphic','page-ux','page-3d','page-motion','page-archive'];
+var bttCategoryPages = ['page-graphic','page-ux','page-3d','page-motion'];
 function bttUpdate() {
   var btn = document.getElementById('btt-btn');
   if (!btn) return;
