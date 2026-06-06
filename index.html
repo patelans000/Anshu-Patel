@@ -145,6 +145,9 @@ nav{padding:22px 48px;display:flex;align-items:center;justify-content:space-betw
   .proj-grid-3{grid-template-columns:repeat(2,1fr)}
   .proj-grid-3 .proj:nth-child(3n){border-right:1px solid var(--border)}
   .proj-grid-3 .proj:nth-child(2n){border-right:none}
+  .proj-foot{min-height:52px}
+  .proj-name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0;flex-shrink:1}
+  .proj-meta{flex-shrink:0;padding-left:8px}
 
   /* PROJECT DETAIL */
   .proj-detail-nav{padding:12px 20px}
@@ -379,7 +382,7 @@ nav{padding:22px 48px;display:flex;align-items:center;justify-content:space-betw
 .about-intro-descriptors{font-size:22px;font-weight:500;line-height:1.5;margin-bottom:32px;color:#1A1A1A;display:flex;align-items:center;flex-wrap:wrap;gap:6px}
 .about-intro-filler{display:inline}
 .about-intro-rotate-wrap{display:inline-block;position:relative;vertical-align:baseline}
-.rotating-descriptor{display:inline-block;position:relative;height:1.2em;vertical-align:middle;min-width:160px;overflow:hidden}
+.rotating-descriptor{display:inline-block;position:relative;height:2.1em;vertical-align:middle;min-width:160px;overflow:hidden}
 .descriptor-item{position:absolute;left:0;top:50%;white-space:nowrap;opacity:0;transform:translateY(calc(-50% + 2px));transition:opacity 0.4s ease,transform 0.4s ease;font-weight:600;color:#1A1A1A;background:var(--yellow);padding:4px 10px;border-radius:4px;font-size:22px}
 .descriptor-item.active{opacity:1;transform:translateY(-50%)}
 .about-p{font-size:14px;color:#444;line-height:1.85;margin-bottom:14px}
