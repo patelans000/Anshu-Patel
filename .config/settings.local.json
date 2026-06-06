@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(cd \"c:\\\\Users\\\\citru\\\\OneDrive\\\\Documents\\\\GitHub\\\\Anshu Patel Portfolio\"; Start-Process powershell -ArgumentList '-NoProfile -Command \"npx --yes serve . -p 3456\"' -PassThru | Select-Object Id)",
+      "PowerShell(Start-Sleep -Seconds 4; try { \\(Invoke-WebRequest -Uri \"http://localhost:3456\" -TimeoutSec 5\\).StatusCode } catch { \"not ready: $_\" })",
+      "PowerShell(cd \"c:\\\\Users\\\\citru\\\\OneDrive\\\\Documents\\\\GitHub\\\\Anshu Patel Portfolio\"; Get-ChildItem \"media\\\\Silent Spellcraft\" | ForEach-Object { $_.Name })",
+      "PowerShell(cd \"c:\\\\Users\\\\citru\\\\OneDrive\\\\Documents\\\\GitHub\\\\Anshu Patel Portfolio\"; Start-Process python -ArgumentList '-m http.server 3456' -PassThru | Select-Object Id; Start-Sleep -Seconds 2; try { \\(Invoke-WebRequest -Uri \"http://localhost:3456\" -TimeoutSec 5\\).StatusCode } catch { \"Server not ready: $_\" })"
+    ]
+  }
+}
