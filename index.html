@@ -130,8 +130,10 @@ nav{padding:22px 48px;display:flex;align-items:center;justify-content:space-betw
   /* HOME */
   .home-hero{padding:36px 20px 32px}
   .home-hero-top{grid-template-columns:1fr}
-  .home-hi{font-size:40px}
-  .home-illustration{min-height:260px}
+  .home-hi{font-size:36px}
+  .home-bio{max-width:100%}
+  .home-degree-pill{white-space:normal;flex-shrink:1;max-width:100%}
+  .home-illustration{min-height:unset;aspect-ratio:unset;height:220px}
   .home-proj-grid{grid-template-columns:repeat(2,1fr)}
 
   /* DISCIPLINE PAGES */
@@ -225,10 +227,11 @@ nav{padding:22px 48px;display:flex;align-items:center;justify-content:space-betw
 
 @media (max-width: 480px){
   /* HOME */
-  .home-hi{font-size:32px}
+  .home-hi{font-size:28px}
   /* DISCIPLINE PAGES */
-  .disc-title{font-size:26px}
+  .disc-title{font-size:24px}
   .home-proj-grid{grid-template-columns:1fr}
+  .home-illustration{height:180px}
   .home-proj-block:nth-child(2n){border-right:1px solid var(--border)}
 
   /* PROJECT GRIDS */
@@ -608,6 +611,10 @@ audio{accent-color:#1A1A1A}
 (function(){
   function hideBroken(img){img.style.visibility='hidden';}
   document.addEventListener('DOMContentLoaded',function(){
+    if (window.innerWidth <= 768) {
+      var n = document.getElementById('mobile-notice');
+      if (n) n.style.display = 'flex';
+    }
     document.querySelectorAll('img').forEach(function(img){
       img.addEventListener('error',function(){hideBroken(this);});
       if(img.complete&&img.naturalWidth===0&&img.getAttribute('src'))hideBroken(img);
@@ -622,6 +629,10 @@ audio{accent-color:#1A1A1A}
 </head>
 <body>
 
+<div id="mobile-notice" style="display:none;position:sticky;top:0;z-index:200;background:#1A1A1A;color:#ccc;font-size:12px;padding:10px 16px;text-align:center;font-family:'Outfit',sans-serif;align-items:center;justify-content:center;gap:10px;border-bottom:1px solid #333">
+  <span>For the best experience, view on desktop.</span>
+  <button onclick="document.getElementById('mobile-notice').style.display='none'" style="background:none;border:1px solid #444;color:#888;font-size:11px;padding:3px 10px;border-radius:100px;cursor:pointer;font-family:inherit;flex-shrink:0">Dismiss</button>
+</div>
 <nav>
   <span class="logo" onclick="showPage('home')">anshu patel <span style="font-size:22px;opacity:0.9;font-weight:300;color:#fff">*</span></span>
   <div class="nav-links">
