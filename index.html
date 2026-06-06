@@ -41,6 +41,11 @@ nav{padding:22px 48px;display:flex;align-items:center;justify-content:space-betw
 .works-menu a.active{color:#fff;font-weight:500}
 .works-menu-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
 .works-menu-divider{height:1px;background:#333;margin:4px 0}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;flex-shrink:0}
+.nav-hamburger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:transform 0.25s ease,opacity 0.2s ease}
+.nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-hamburger.open span:nth-child(2){opacity:0}
+.nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
 /* ── PAGE SYSTEM ── */
 .page{display:none;animation:fadein 0.3s ease}
@@ -126,6 +131,21 @@ nav{padding:22px 48px;display:flex;align-items:center;justify-content:space-betw
 @media (max-width: 768px){
   /* NAV */
   nav{padding:14px 20px}
+  .nav-hamburger{display:flex}
+  #nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:rgba(20,20,20,0.98);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid #333;flex-direction:column;padding:0;z-index:99;gap:0}
+  #nav-links.open{display:flex}
+  #nav-links > a{font-size:14px;padding:14px 20px;border-radius:0;color:#888;border-bottom:1px solid #222}
+  #nav-links > a.active,#nav-links > a:hover{color:#fff}
+  #nav-links .works-dropdown{border-bottom:1px solid #222}
+  #nav-links .works-trigger{font-size:14px;padding:14px 20px;width:100%;box-sizing:border-box;color:#888;border-radius:0}
+  #nav-links .works-trigger.has-active,#nav-links .works-trigger.open{color:#fff}
+  #nav-links .works-menu{position:static !important;opacity:1 !important;pointer-events:all !important;transform:none !important;transition:none !important;background:#1a1a1a;border:none;border-radius:0;border-top:1px solid #222;padding:4px 0;min-width:0;width:100%;max-width:100%;display:none}
+  #nav-links .works-menu.open{display:block}
+  #nav-links .works-menu a{padding:12px 32px;border-radius:0;font-size:13px}
+
+  /* EXPERIENCE */
+  .exp-header{margin-bottom:24px}
+  .exp-title{font-size:26px}
 
   /* HOME */
   .home-hero{padding:36px 20px 32px}
@@ -242,6 +262,7 @@ nav{padding:22px 48px;display:flex;align-items:center;justify-content:space-betw
   .proj-grid-3 .proj{border-right:none}
   .proj-grid-2{grid-template-columns:1fr}
   .proj-grid-2 .proj{border-right:none}
+  .proj-grid [style*="grid-column:span 2"]{grid-column:span 1 !important;padding:20px !important}
 
   /* PROJECT DETAIL */
   .proj-detail-title{font-size:26px}
@@ -638,7 +659,7 @@ audio{accent-color:#1A1A1A}
 </div>
 <nav>
   <span class="logo" onclick="showPage('home')">anshu patel <span style="font-size:22px;opacity:0.9;font-weight:300;color:#fff">*</span></span>
-  <div class="nav-links">
+  <div class="nav-links" id="nav-links">
     <a onclick="showPage('home')" id="nav-home" class="active">Home</a>
     <div class="works-dropdown" id="works-dropdown">
       <div class="works-trigger" id="works-trigger" onclick="toggleWorksMenu()">
@@ -665,6 +686,9 @@ audio{accent-color:#1A1A1A}
     </div>
     <a onclick="showPage('about')" id="nav-about">About</a>
   </div>
+  <button class="nav-hamburger" id="nav-hamburger" onclick="toggleMobileNav()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
 <!-- ══════════════════ HOME ══════════════════ -->
@@ -5534,6 +5558,7 @@ function showPage(id) {
   else { trigger.classList.remove('has-active'); }
   window.scrollTo(0, 0);
   closeWorksMenu();
+  closeMobileNav();
   bttUpdate();
 }
 
@@ -5545,6 +5570,7 @@ function showProject(slug) {
   if (pg) pg.classList.add('active');
   window.scrollTo(0, 0);
   closeWorksMenu();
+  closeMobileNav();
   renderMoreProjects(slug);
   if (slug === 'persona5-type') {
     initP5Flipbook();
@@ -5604,9 +5630,23 @@ function closeWorksMenu() {
   document.getElementById('works-menu').classList.remove('open');
   document.getElementById('works-trigger').classList.remove('open');
 }
+function toggleMobileNav() {
+  var hamburger = document.getElementById('nav-hamburger');
+  var links = document.getElementById('nav-links');
+  hamburger.classList.toggle('open');
+  links.classList.toggle('open');
+}
+function closeMobileNav() {
+  var hamburger = document.getElementById('nav-hamburger');
+  var links = document.getElementById('nav-links');
+  if (hamburger) hamburger.classList.remove('open');
+  if (links) links.classList.remove('open');
+}
 document.addEventListener('click', function(e) {
   const dd = document.getElementById('works-dropdown');
   if (dd && !dd.contains(e.target)) closeWorksMenu();
+  const nav = document.querySelector('nav');
+  if (nav && !nav.contains(e.target)) closeMobileNav();
 });
 
 // ── EXPERIENCE ACCORDION ──
