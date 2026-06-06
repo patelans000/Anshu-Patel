@@ -671,7 +671,7 @@ audio{accent-color:#1A1A1A}
       <div class="home-proj-thumb">
         <div class="home-proj-thumb-inner" style="position:relative;width:100%;height:100%;background:#C8EDDA">
           <video id="home-motion-vid" autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(1) contrast(1.2)">
-            <source src="media/videos/LHR Solar Motion Graphics.mp4" type="video/mp4">
+            <source src="media/videos/LHR%20Solar%20Motion%20Graphics.mp4" type="video/mp4" onerror="this.parentElement.style.display='none'">
           </video>
           <div style="position:absolute;inset:0;background:#C8EDDA;mix-blend-mode:multiply;opacity:0.85;pointer-events:none"></div>
         </div>
@@ -951,10 +951,13 @@ audio{accent-color:#1A1A1A}
   <div class="motion-gallery">
     <div class="motion-panel">
       <div class="motion-media">
-        <video class="motion-video" controls preload="metadata" playsinline>
-          <source src="media/videos/LHR Solar Motion Graphics.mp4" type="video/mp4">
+        <video class="motion-video" controls preload="auto" playsinline>
+          <source src="media/videos/LHR%20Solar%20Motion%20Graphics.mp4" type="video/mp4" onerror="this.parentElement.style.display='none'">
           Your browser does not support HTML5 video.
         </video>
+      </div>
+      <div class="motion-copy">
+        <p class="motion-text">Motion graphics package produced for Longhorn Racing Solar's 2025–2026 season.</p>
       </div>
     </div>
     <div class="motion-panel">
