@@ -832,7 +832,7 @@ audio{accent-color:#1A1A1A}
       <div class="proj-foot"><span class="proj-name">Stellar Exploration</span><span class="proj-meta">Spring 2026</span></div>
     </div>
     <div class="proj" onclick="showProject('silent-spellcraft')">
-      <div class="proj-thumb" style="overflow:hidden"><div class="proj-thumb-inner" style="width:100%;height:100%"><img loading="lazy" src="media/Silent Spellcraft/Title Card.png" style="width:100%;height:100%;object-fit:cover;display:block" alt="Silent Spellcraft"></div><div class="proj-hover"><div class="proj-hover-text">ASL hand tracking, unconventional interaction, game UI</div></div></div>
+      <div class="proj-thumb" style="overflow:hidden"><div class="proj-thumb-inner" style="width:100%;height:100%"><img loading="lazy" src="media/Silent SpellCraft/Title Card.png" style="width:100%;height:100%;object-fit:cover;display:block" alt="Silent Spellcraft"></div><div class="proj-hover"><div class="proj-hover-text">ASL hand tracking, unconventional interaction, game UI</div></div></div>
       <div class="proj-foot"><span class="proj-name">Silent Spellcraft</span><span class="proj-meta">Spring 2026</span></div>
     </div>
     <div class="proj" onclick="showProject('choco-knight')">
@@ -2567,11 +2567,11 @@ audio{accent-color:#1A1A1A}
     </div>
   </div>
   <div style="border-bottom:1px solid var(--border)">
-    <img loading="lazy" src="media/Silent Spellcraft/Title Card.png" style="width:100%;display:block" alt="Silent Spellcraft title card">
+    <img loading="lazy" src="media/Silent SpellCraft/Title Card.png" style="width:100%;display:block" alt="Silent Spellcraft title card">
   </div>
   <div style="background:#0d0d0d;border-bottom:1px solid var(--border)">
     <video autoplay loop muted playsinline style="width:100%;max-height:72vh;object-fit:contain;display:block">
-      <source src="media/Silent Spellcraft/Final Walkthrough.mp4" type="video/mp4">
+      <source src="media/Silent SpellCraft/Final Walkthrough.mp4" type="video/mp4">
     </video>
   </div>
   <div style="background:var(--pink);padding:14px 32px;border-bottom:1px solid var(--border)">
@@ -2613,8 +2613,8 @@ audio{accent-color:#1A1A1A}
         <div class="proj-detail-h2" style="margin-top:32px">Concept</div>
         <p class="proj-detail-p">After researching the scope of the project and my current technical limits, I decided to focus on ASL fingerspelling (the alphabet) rather than full sign language vocabulary. Fingerspelling is a core part of American Sign Language, used for names, places, and words without their own sign, and it was a realistic scope to implement within two weeks.</p>
         <p class="proj-detail-p">The experience is an interactive learning game where the player takes on the role of a fairy defending themselves from approaching magical creatures. Each creature represents a letter of the alphabet, and the player must perform the correct ASL hand sign to defeat it. My research included exploring tools like fingerspelling.xyz, which helped me understand how repetition and visual prompts support memorization of the ASL alphabet. This project applies those ideas in a game format to make practicing fingerspelling more engaging.</p>
-        <div class="smt-lb-thumb" onclick="openLightbox('media/Silent Spellcraft/Ideation.png')" style="margin-top:20px">
-          <img loading="lazy" src="media/Silent Spellcraft/Ideation.png" alt="Ideation and concept work">
+        <div class="smt-lb-thumb" onclick="openLightbox('media/Silent SpellCraft/Ideation.png')" style="margin-top:20px">
+          <img loading="lazy" src="media/Silent SpellCraft/Ideation.png" alt="Ideation and concept work">
         </div>
         <p class="proj-img-caption">Early ideation</p>
       </div>
@@ -2625,7 +2625,7 @@ audio{accent-color:#1A1A1A}
         <p class="proj-detail-p">Silent Spellcraft uses a camera-based hand gesture recognition system instead of traditional keyboard or mouse input. It's powered by MediaPipe Hands, running directly in the browser using WebAssembly and WebGL. The user's webcam captures their hand, and the system detects 21 hand landmark points in real time. Those landmarks are analyzed using a custom geometry-based classifier that compares finger positions, distances, and joint angles to recognize ASL fingerspelling letters.</p>
         <p class="proj-detail-p">When the detected letter matches the on-screen prompt, a hold-progress bar fills to represent spell charging. Once complete, the fairy casts a spell to defeat the approaching creature. This method was chosen because it lets players practice real ASL hand shapes through physical movement rather than button presses, keeps all processing local in the browser without needing a server, and turns the user's own hand into the primary controller.</p>
         <video autoplay loop muted playsinline style="width:100%;display:block;margin-top:20px">
-          <source src="media/Silent Spellcraft/Hand Tracking Unconvential Interaction.mp4" type="video/mp4">
+          <source src="media/Silent SpellCraft/Hand Tracking Unconvential Interaction.mp4" type="video/mp4">
         </video>
         <p class="proj-img-caption">Real-time hand tracking in action</p>
       </div>
@@ -2636,12 +2636,12 @@ audio{accent-color:#1A1A1A}
         <p class="proj-detail-p">The affordance design in Silent Spellcraft is built to guide the user through visual cues, spatial layout, and minimal text. The landing page explains the goal in structured steps so players know what to expect before they jump in.</p>
         <p class="proj-detail-p">On the main interface, each dark creature carries a letter, signaling which ASL handshape to form. The charge bar above the detected sign gives real-time visual feedback. Spatially, the player's hand appears in a dedicated camera box, target letters are positioned directly in front of the character, and prompts sit right below the feed, keeping the user's attention in one focused area. Progression is gradual: Level 1 introduces only a few letters to avoid cognitive overload, and the alphabet chart gives players a reference to compare handshapes.</p>
         <p class="proj-detail-p">The affordance design also borrows from familiar platformer conventions, making it immediately recognizable. The fairy reacts dynamically to spell casts, providing visual feedback that reinforces the game's mechanics. By blending those familiar conventions with clear visual cues and interactive guidance, the game communicates what to do without feeling overwhelming.</p>
-        <div class="smt-lb-thumb" onclick="openLightbox('media/Silent Spellcraft/Affordance Design 2.png')" style="margin-top:20px">
-          <img loading="lazy" src="media/Silent Spellcraft/Affordance Design 2.png" alt="Affordance design screenshot">
+        <div class="smt-lb-thumb" onclick="openLightbox('media/Silent SpellCraft/Affordance Design 2.png')" style="margin-top:20px">
+          <img loading="lazy" src="media/Silent SpellCraft/Affordance Design 2.png" alt="Affordance design screenshot">
         </div>
         <p class="proj-img-caption">Main game interface</p>
         <video autoplay loop muted playsinline style="width:100%;display:block;margin-top:12px">
-          <source src="media/Silent Spellcraft/Affordance Design.mp4" type="video/mp4">
+          <source src="media/Silent SpellCraft/Affordance Design.mp4" type="video/mp4">
         </video>
         <p class="proj-img-caption">Affordance design in action</p>
       </div>
@@ -2652,8 +2652,8 @@ audio{accent-color:#1A1A1A}
         <p class="proj-detail-p">The game leans into pinks and softer, traditionally "feminine" tones. This was a deliberate personal choice and a pushback against the tendency to avoid these aesthetics in game design. The palette maintains enough contrast for clarity and readability, showing that a playful, cute aesthetic can coexist with strong visual communication.</p>
         <p class="proj-detail-p">The fairy companion is designed with brown skin, both for representation I want to see in games and for visual contrast within the environment. It helps the character stand out while reflecting a genuine commitment to diversity in character design.</p>
         <p class="proj-detail-p">For type, Crimson Pro is used throughout to support a clear visual hierarchy. It's highly legible for instructions and interactive elements while still carrying an elegant, stylized quality that fits the aesthetic.</p>
-        <div class="smt-lb-thumb" onclick="openLightbox('media/Silent Spellcraft/Font and Color Palette.png')" style="margin-top:20px">
-          <img loading="lazy" src="media/Silent Spellcraft/Font and Color Palette.png" alt="Font and color palette">
+        <div class="smt-lb-thumb" onclick="openLightbox('media/Silent SpellCraft/Font and Color Palette.png')" style="margin-top:20px">
+          <img loading="lazy" src="media/Silent SpellCraft/Font and Color Palette.png" alt="Font and color palette">
         </div>
         <p class="proj-img-caption">Color palette and typography</p>
       </div>
@@ -2664,18 +2664,18 @@ audio{accent-color:#1A1A1A}
         <p class="proj-detail-p">I started by integrating an existing ASL fingerspelling library to get a working proof of concept, then layered my own designs and assets on top. The gesture recognition system is still being dialed in. The library I'm using has inconsistencies that I'm actively working through, and performance can be affected by lighting conditions. Debugging this while also building out the visual side of the game has been the main challenge of the project.</p>
         <p class="proj-detail-p">This project was built using JavaScript with MediaPipe Hands. AI coding tools (Copilot and web-based assistance) helped me navigate the technical complexity of the gesture recognition system, especially in areas where the documentation was sparse. Using whatever tools are available to ship something real is part of the process.</p>
         <video autoplay loop muted playsinline style="width:100%;display:block;margin-top:20px">
-          <source src="media/Silent Spellcraft/Prototype Code.mp4" type="video/mp4">
+          <source src="media/Silent SpellCraft/Prototype Code.mp4" type="video/mp4">
         </video>
         <p class="proj-img-caption">Early prototype and code</p>
 
         <div class="proj-detail-h2" style="margin-top:36px">Assets</div>
         <p class="proj-detail-p">During spring break I collected and created the visual assets for Silent Spellcraft. I selected and adjusted many of them to match the color palette, keeping the visuals consistent and cohesive across the interface. Characters, environments, and UI elements were all brought into alignment so the game feels like a unified visual world.</p>
         <div class="proj-img-grid proj-img-grid-2" style="margin-top:20px">
-          <div class="smt-lb-thumb" onclick="openLightbox('media/Silent Spellcraft/Assets I created.png')">
-            <img loading="lazy" src="media/Silent Spellcraft/Assets I created.png" alt="Assets I created">
+          <div class="smt-lb-thumb" onclick="openLightbox('media/Silent SpellCraft/Assets I created.png')">
+            <img loading="lazy" src="media/Silent SpellCraft/Assets I created.png" alt="Assets I created">
           </div>
-          <div class="smt-lb-thumb" onclick="openLightbox('media/Silent Spellcraft/Assets in Progress.png')">
-            <img loading="lazy" src="media/Silent Spellcraft/Assets in Progress.png" alt="Assets in progress">
+          <div class="smt-lb-thumb" onclick="openLightbox('media/Silent SpellCraft/Assets in Progress.png')">
+            <img loading="lazy" src="media/Silent SpellCraft/Assets in Progress.png" alt="Assets in progress">
           </div>
         </div>
         <p class="proj-img-caption">Assets created and in progress</p>
@@ -2685,7 +2685,7 @@ audio{accent-color:#1A1A1A}
         <div class="proj-detail-section-label">Final Result</div>
         <div class="proj-detail-h2">Full Walkthrough</div>
         <video autoplay loop muted playsinline style="width:100%;display:block;margin-bottom:20px">
-          <source src="media/Silent Spellcraft/Final Walkthrough.mp4" type="video/mp4">
+          <source src="media/Silent SpellCraft/Final Walkthrough.mp4" type="video/mp4">
         </video>
         <div style="border:1px solid var(--border);overflow:hidden">
           <div style="background:var(--gray);padding:18px 22px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;gap:16px">
