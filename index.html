@@ -5543,7 +5543,10 @@ document.querySelectorAll('.motion-gallery video').forEach(function(v) {
   });
 });
 
+var _histNav = false;
+
 function showPage(id) {
+  if (!_histNav) history.pushState({type:'page', id:id}, '', id === 'home' ? location.pathname + location.search : '#' + id);
   pauseAllMedia();
   const prev = document.querySelector('.page.active, .proj-detail-page.active');
   if (prev) prev.classList.remove('active');
@@ -5569,6 +5572,7 @@ function showPage(id) {
 }
 
 function showProject(slug) {
+  if (!_histNav) history.pushState({type:'project', slug:slug}, '', '#' + slug);
   pauseAllMedia();
   const prev = document.querySelector('.page.active, .proj-detail-page.active');
   if (prev) prev.classList.remove('active');
@@ -5616,6 +5620,36 @@ function showProject(slug) {
     }, 50);
   }
 }
+
+// ── HISTORY / BACK-BUTTON ROUTING ──
+window.addEventListener('popstate', function(e) {
+  var state = e.state;
+  _histNav = true;
+  if (state && state.type === 'project') {
+    showProject(state.slug);
+  } else if (state && state.type === 'page') {
+    showPage(state.id);
+  } else {
+    showPage('home');
+  }
+  _histNav = false;
+});
+
+// Seed the initial history entry and handle deep-link hashes
+(function() {
+  var hash = location.hash.slice(1);
+  if (!hash || hash === 'home') {
+    history.replaceState({type:'page', id:'home'}, '', location.pathname + location.search);
+  } else if (pages[hash]) {
+    history.replaceState({type:'page', id:hash}, '', '#' + hash);
+    _histNav = true; showPage(hash); _histNav = false;
+  } else if (document.getElementById('proj-' + hash)) {
+    history.replaceState({type:'project', slug:hash}, '', '#' + hash);
+    _histNav = true; showProject(hash); _histNav = false;
+  } else {
+    history.replaceState({type:'page', id:'home'}, '', location.pathname + location.search);
+  }
+})();
 
 function toggleDTAudio() {
   var video = document.getElementById('dt-hero-video');
