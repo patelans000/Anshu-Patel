@@ -135,7 +135,8 @@ nav{padding:22px 48px;display:flex;align-items:center;justify-content:space-betw
 
   /* DISCIPLINE PAGES */
   .disc-header{grid-template-columns:1fr;gap:14px;padding:28px 20px 24px}
-  .disc-title{font-size:34px}
+  .disc-title{font-size:34px;max-width:100%;box-sizing:border-box}
+  #page-motion .disc-title,#page-ux .disc-title,#page-3d .disc-title,#page-graphic .disc-title,#page-archive .disc-title{max-width:100%;box-sizing:border-box}
 
   /* PROJECT GRIDS */
   .proj-grid-3{grid-template-columns:repeat(2,1fr)}
@@ -156,14 +157,26 @@ nav{padding:22px 48px;display:flex;align-items:center;justify-content:space-betw
   #proj-smrutea .proj-detail-content,
   #proj-flipula .proj-detail-content,
   #proj-hajra-waheed .proj-detail-content,
-  #proj-high-noon-livery .proj-detail-content{padding:28px 20px}
+  #proj-high-noon-livery .proj-detail-content,
+  #proj-discotype .proj-detail-content,
+  #proj-featherform .proj-detail-content,
+  #proj-stellar-exploration .proj-detail-content,
+  #proj-silent-spellcraft .proj-detail-content,
+  #proj-choco-knight .proj-detail-content,
+  #proj-spotify-feature .proj-detail-content,
+  #proj-oracle .proj-detail-content,
+  #proj-logos-branding .proj-detail-content{padding:28px 20px}
 
   /* PROJECT HERO OVERLAY (inline style overrides) */
   .proj-detail-page [style*="bottom:36px"]{bottom:16px !important;left:20px !important;right:20px !important}
   .proj-detail-page [style*="font-size:54px"]{font-size:28px !important}
   .proj-detail-page [style*="font-size:24px;font-weight:500"]{font-size:16px !important}
   .proj-detail-page [style*="padding:12px 48px"]{padding:10px 20px !important}
+  .proj-detail-page [style*="padding:24px 48px"]{padding:16px 20px !important}
   .proj-detail-page [style*="padding:32px 48px"]{padding:16px 20px !important}
+  .proj-detail-page [style*="padding:40px 48px"]{padding:24px 20px !important}
+  .proj-detail-page [style*="grid-template-columns:1fr 2.5fr"]{grid-template-columns:1fr !important}
+  .proj-detail-page [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr !important}
 
   /* IMAGE GRIDS */
   .proj-img-grid-3{grid-template-columns:repeat(2,1fr)}
@@ -192,6 +205,8 @@ nav{padding:22px 48px;display:flex;align-items:center;justify-content:space-betw
 @media (max-width: 480px){
   /* HOME */
   .home-hi{font-size:32px}
+  /* DISCIPLINE PAGES */
+  .disc-title{font-size:26px}
   .home-proj-grid{grid-template-columns:1fr}
   .home-proj-block:nth-child(2n){border-right:1px solid var(--border)}
 
