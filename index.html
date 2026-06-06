@@ -1,6 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+<link rel="icon" type="image/png" href="media/Favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -520,8 +521,37 @@ audio{accent-color:#1A1A1A}
 #proj-choco-knight .proj-detail-content{max-width:680px;padding:48px 48px;margin:0 auto}
 @font-face{font-family:'Featherfont';src:url('media/Featherform/Featherfont-Regular.otf') format('opentype'),url('media/Featherform/Featherfont-Regular.ttf') format('truetype')}
 #proj-featherform .proj-detail-content{max-width:680px;padding:48px 48px;margin:0 auto}
+@font-face{font-family:'Discotype';src:url('media/DiscoType!/Discotype-Regular%20%281%29.otf') format('opentype'),url('media/DiscoType!/Discotype-Regular.ttf') format('truetype')}
+#proj-discotype .proj-detail-content{max-width:680px;padding:48px 48px;margin:0 auto}
+#proj-discotype .proj-detail-content div[style*="overflow:hidden"]{border-radius:0!important}
+#proj-discotype .proj-detail-content img{width:100%;height:auto;display:block;border-radius:0!important}
+#proj-discotype .proj-callout,#proj-oracle .proj-callout,#proj-featherform .proj-callout,#proj-stellar-exploration .proj-callout,#proj-silent-spellcraft .proj-callout,#proj-choco-knight .proj-callout,#proj-spotify-feature .proj-callout{background:var(--pink)}
+#proj-oracle video{filter:saturate(1.5) contrast(1.05)}
+#dt-font-input::placeholder{color:rgba(255,94,173,0.35)}
+#ff-font-input::placeholder{color:rgba(255,255,255,0.25)}
+#proj-discotype .proj-detail-sidebar::-webkit-scrollbar{display:none}
+#proj-discotype .proj-detail-sidebar{-ms-overflow-style:none;scrollbar-width:none}
+#proj-stellar-exploration .proj-detail-content{max-width:680px;padding:48px 48px;margin:0 auto}
+#proj-stellar-exploration .proj-detail-content img{width:100%;height:auto;display:block;border-radius:0!important}
+#proj-stellar-exploration .proj-detail-sidebar::-webkit-scrollbar{display:none}
+#proj-stellar-exploration .proj-detail-sidebar{-ms-overflow-style:none;scrollbar-width:none}
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script>
+(function(){
+  function hideBroken(img){img.style.visibility='hidden';}
+  document.addEventListener('DOMContentLoaded',function(){
+    document.querySelectorAll('img').forEach(function(img){
+      img.addEventListener('error',function(){hideBroken(this);});
+      if(img.complete&&img.naturalWidth===0)hideBroken(img);
+    });
+    new MutationObserver(function(ms){ms.forEach(function(m){m.addedNodes.forEach(function(n){
+      if(n.tagName==='IMG')n.addEventListener('error',function(){hideBroken(this);});
+      if(n.querySelectorAll)n.querySelectorAll('img').forEach(function(img){img.addEventListener('error',function(){hideBroken(this);});});
+    });});}).observe(document.body,{childList:true,subtree:true});
+  });
+})();
+</script>
 </head>
 <body>
 
@@ -586,35 +616,39 @@ audio{accent-color:#1A1A1A}
 
   <div class="home-proj-grid">
     <div class="home-proj-block" onclick="showPage('ux')">
-      <div class="home-proj-thumb"><div class="home-proj-thumb-inner accent-graphic">
-        <svg width="140" height="80" viewBox="0 0 140 80" fill="none"><rect x="30" y="16" width="80" height="50" rx="10" fill="#FFD1E4" opacity="0.45"/><rect x="40" y="26" width="60" height="7" rx="3" fill="#FF9BC2" opacity="0.55"/><rect x="40" y="38" width="42" height="5" rx="2" fill="#FF9BC2" opacity="0.4"/><rect x="40" y="48" width="56" height="5" rx="2" fill="#FFBAD7" opacity="0.25"/></svg>
-      </div></div>
+      <div class="home-proj-thumb" style="overflow:hidden">
+        <div class="home-proj-thumb-inner" style="position:relative;width:100%;height:100%;background:#FFC8D8">
+          <img src="media/DiscoType!/Title card png.png" style="width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(1) contrast(1.2)" alt="UX/UI & Game Design">
+          <div style="position:absolute;inset:0;background:#FFC8D8;mix-blend-mode:multiply;opacity:0.85;pointer-events:none"></div>
+        </div>
+      </div>
       <div class="home-proj-info"><div class="home-proj-left"><div class="home-proj-title">UX/UI & Game Design</div><div class="home-proj-sub">A collection of my game design and UX/UI work, from a disco typing game to a magical personality quiz.</div></div><span class="home-proj-arrow">→</span></div>
     </div>
     <div class="home-proj-block" onclick="showPage('3d')" onmouseenter="preloadPage('3d')">
       <div class="home-proj-thumb">
         <div class="home-proj-thumb-inner" style="position:relative;width:100%;height:100%;background:#B8DFFF">
-          <img loading="lazy" src="media/The Ecoleander/Photoshoot 7.jpg" style="width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(1) contrast(1.2);mix-blend-mode:multiply" alt="3D & Product Design">
+          <img src="media/The Ecoleander/Photoshoot 7.jpg" style="width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(1) contrast(1.2)" alt="3D & Product Design">
+          <div style="position:absolute;inset:0;background:#B8DFFF;mix-blend-mode:multiply;opacity:0.85;pointer-events:none"></div>
         </div>
       </div>
       <div class="home-proj-info"><div class="home-proj-left"><div class="home-proj-title">3D & Product Design</div><div class="home-proj-sub">A collection of industrial design projects, from product concepts to prototypes.</div></div><span class="home-proj-arrow">→</span></div>
     </div>
     <div class="home-proj-block" onclick="showPage('motion')">
       <div class="home-proj-thumb">
-        <div class="home-proj-thumb-inner" style="position:relative;width:100%;height:100%">
+        <div class="home-proj-thumb-inner" style="position:relative;width:100%;height:100%;background:#C8EDDA">
           <video id="home-motion-vid" autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(1) contrast(1.2)">
             <source src="media/videos/LHR Solar Motion Graphics.mp4" type="video/mp4">
           </video>
-          <div style="position:absolute;inset:0;background:#C8EDDA;mix-blend-mode:multiply;pointer-events:none"></div>
+          <div style="position:absolute;inset:0;background:#C8EDDA;mix-blend-mode:multiply;opacity:0.85;pointer-events:none"></div>
         </div>
       </div>
       <div class="home-proj-info"><div class="home-proj-left"><div class="home-proj-title">Motion Graphics & Videography</div><div class="home-proj-sub">A variety of videos I have produced from hype videos to fan edits.</div></div><span class="home-proj-arrow">→</span></div>
     </div>
     <div class="home-proj-block" onclick="showPage('graphic')">
       <div class="home-proj-thumb" style="overflow:hidden">
-        <div class="home-proj-thumb-inner" style="position:relative;width:100%;height:100%">
-          <img loading="lazy" src="media/Typography in Persona 5/Hero, Title Card.png" style="width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(1) contrast(1.5) brightness(0.75)">
-          <div style="position:absolute;inset:0;background:#FFF0A8;mix-blend-mode:multiply;pointer-events:none"></div>
+        <div class="home-proj-thumb-inner" style="position:relative;width:100%;height:100%;background:#FFF0A8">
+          <img src="media/Typography in Persona 5/Hero, Title Card.png" style="width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(1) contrast(1.5) brightness(0.75)">
+          <div style="position:absolute;inset:0;background:#FFF0A8;mix-blend-mode:multiply;opacity:0.85;pointer-events:none"></div>
         </div>
       </div>
       <div class="home-proj-info"><div class="home-proj-left"><div class="home-proj-title">2D & Graphic Design</div><div class="home-proj-sub">A variety of my graphic design work, from layout design to livery design.</div></div><span class="home-proj-arrow">→</span></div>
@@ -785,8 +819,8 @@ audio{accent-color:#1A1A1A}
   </div>
   <div class="proj-grid proj-grid-3">
     <div class="proj" onclick="showProject('discotype')">
-      <div class="proj-thumb" style="background:#FFF0F5"><div class="proj-thumb-inner" style="width:100%;height:100%"><svg width="160" height="120" viewBox="0 0 160 120" fill="none"><circle cx="80" cy="32" r="16" stroke="#FF5599" stroke-width="1.5" fill="none" opacity="0.5"/><rect x="22" y="58" width="14" height="38" rx="3" fill="#FF5599" opacity="0.5"/><rect x="40" y="68" width="14" height="28" rx="3" fill="#FF88CC" opacity="0.4"/><rect x="58" y="52" width="14" height="44" rx="3" fill="#AA44FF" opacity="0.45"/><rect x="76" y="62" width="14" height="34" rx="3" fill="#FF5599" opacity="0.35"/><rect x="94" y="56" width="14" height="40" rx="3" fill="#FF88CC" opacity="0.4"/><rect x="112" y="70" width="14" height="26" rx="3" fill="#AA44FF" opacity="0.35"/><circle cx="45" cy="42" r="2.5" fill="#FFD700" opacity="0.7"/><circle cx="120" cy="38" r="2" fill="#FF5599" opacity="0.6"/><circle cx="130" cy="58" r="3" fill="#AA44FF" opacity="0.5"/><circle cx="25" cy="48" r="2" fill="#FFD700" opacity="0.5"/></svg></div><div class="proj-hover"><div class="proj-hover-text">Typography, interaction design, animation</div></div></div>
-      <div class="proj-foot"><span class="proj-name">DiscoType!</span><span class="proj-meta">2025</span></div>
+      <div class="proj-thumb" style="overflow:hidden"><div class="proj-thumb-inner" style="width:100%;height:100%"><img loading="lazy" src="media/DiscoType!/Title card png.png" style="width:100%;height:100%;object-fit:cover;display:block" alt="DiscoType!"></div><div class="proj-hover"><div class="proj-hover-text">Game UI design, custom typeface, Unity prototype</div></div></div>
+      <div class="proj-foot"><span class="proj-name">DiscoType!</span><span class="proj-meta">Spring 2026</span></div>
     </div>
     <div class="proj" onclick="showProject('oracle')">
       <div class="proj-thumb" style="overflow:hidden">
@@ -802,8 +836,8 @@ audio{accent-color:#1A1A1A}
       <div class="proj-foot"><span class="proj-name">Featherform</span><span class="proj-meta">Spring 2026</span></div>
     </div>
     <div class="proj" onclick="showProject('stellar-exploration')">
-      <div class="proj-thumb" style="background:#0D1117"><div class="proj-thumb-inner" style="width:100%;height:100%"><svg width="160" height="120" viewBox="0 0 160 120" fill="none"><circle cx="30" cy="25" r="1.5" fill="#fff" opacity="0.8"/><circle cx="55" cy="15" r="1" fill="#fff" opacity="0.6"/><circle cx="120" cy="20" r="1.5" fill="#fff" opacity="0.7"/><circle cx="140" cy="35" r="1" fill="#fff" opacity="0.5"/><circle cx="18" cy="70" r="1" fill="#fff" opacity="0.5"/><circle cx="145" cy="80" r="1.5" fill="#fff" opacity="0.6"/><circle cx="100" cy="10" r="1" fill="#fff" opacity="0.4"/><circle cx="42" cy="95" r="1" fill="#fff" opacity="0.4"/><circle cx="88" cy="65" r="28" fill="#334466" opacity="0.8"/><circle cx="88" cy="65" r="28" stroke="#6688CC" stroke-width="1.2" fill="none" opacity="0.5"/><ellipse cx="88" cy="65" rx="44" ry="10" stroke="#6688CC" stroke-width="1" fill="none" opacity="0.4"/><circle cx="132" cy="58" r="7" fill="#8899BB" opacity="0.6"/></svg></div><div class="proj-hover"><div class="proj-hover-text">App design, UX research, navigation systems</div></div></div>
-      <div class="proj-foot"><span class="proj-name">Stellar Exploration</span><span class="proj-meta">2025</span></div>
+      <div class="proj-thumb" style="overflow:hidden;background:#0D1117"><div class="proj-thumb-inner" style="width:100%;height:100%"><img loading="lazy" src="media/Stellar Exploration - A Scale of Our Universe/Title Screen.png" style="width:100%;height:100%;object-fit:cover;display:block" alt="Stellar Exploration"></div><div class="proj-hover"><div class="proj-hover-text">Data visualization, interactive web, cinematic UI</div></div></div>
+      <div class="proj-foot"><span class="proj-name">Stellar Exploration</span><span class="proj-meta">Spring 2026</span></div>
     </div>
     <div class="proj" onclick="showProject('silent-spellcraft')">
       <div class="proj-thumb" style="background:#0E1020"><div class="proj-thumb-inner" style="width:100%;height:100%"><svg width="160" height="120" viewBox="0 0 160 120" fill="none"><circle cx="80" cy="60" r="46" stroke="#8888FF" stroke-width="1" opacity="0.35" stroke-dasharray="4 3"/><circle cx="80" cy="60" r="30" stroke="#8888FF" stroke-width="1.2" opacity="0.5"/><circle cx="80" cy="60" r="12" fill="#4444AA" opacity="0.5"/><circle cx="80" cy="60" r="5" fill="#9999FF" opacity="0.7"/><polygon points="80,30 88,52 112,52 93,66 100,88 80,74 60,88 67,66 48,52 72,52" stroke="#8888FF" stroke-width="1" fill="none" opacity="0.3"/></svg></div><div class="proj-hover"><div class="proj-hover-text">Game UI, interaction design, visual design</div></div></div>
@@ -1567,22 +1601,325 @@ audio{accent-color:#1A1A1A}
     <div><button class="proj-nav-btn" onclick="showPage('ux')">← Back to category</button></div>
   </div>
   <div class="proj-detail-hero">
-    <div class="proj-detail-kicker">UX/UI & Game Design · Interaction Design</div>
+    <div class="proj-detail-kicker">UX/UI & Game Design · Game UI Design</div>
     <div class="proj-detail-title">DiscoType!</div>
-    <p class="proj-detail-tagline">Content coming soon.</p>
+    <p class="proj-detail-tagline">A colorful typing game where you play as a dancer and type along to the music. Every letter moves your character frame by frame, turning your typing into smooth dance moves. DiscoType! features an original logotype, a custom hand-crafted typeface, and a fully connected Unity prototype published live on Itch.io.</p>
     <div class="proj-detail-meta-row">
-      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Year</div><div class="proj-detail-meta-val">2025</div></div>
-      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">Figma</div></div>
-      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Type</div><div class="proj-detail-meta-val">Interaction Design</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Course</div><div class="proj-detail-meta-val">AET 330T Typography in Games</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Instructors</div><div class="proj-detail-meta-val">Jessie Contour &amp; Kelcey Gray</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Semester</div><div class="proj-detail-meta-val">Spring 2026</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Team</div><div class="proj-detail-meta-val">Anshu Patel (Lead), Carly Mills, Miranda Cruz</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">Unity, Illustrator, Calligraphr, Miro</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Type</div><div class="proj-detail-meta-val">Game UI Design</div></div>
     </div>
   </div>
-  <div class="proj-detail-body" style="display:block">
-    <div class="proj-detail-content">
-      <div class="proj-detail-section">
-        <div class="proj-detail-section-label">Overview</div>
-        <div class="proj-detail-h2">Coming soon</div>
-        <p class="proj-detail-p">Details for this project will be added soon.</p>
+  <div style="position:relative;border-bottom:1px solid var(--border);background:#0d0d0d">
+    <video id="dt-hero-video" autoplay loop muted playsinline style="width:100%;max-height:72vh;object-fit:contain;display:block">
+      <source src="media/DiscoType!/DiscoType full playthrough.mp4" type="video/mp4">
+    </video>
+    <div style="position:absolute;bottom:0;left:0;right:0;padding:20px 32px;background:linear-gradient(transparent,rgba(0,0,0,0.75));z-index:2;display:flex;justify-content:space-between;align-items:flex-end">
+      <div style="pointer-events:none">
+        <div style="font-size:10px;color:rgba(255,255,255,0.5);font-weight:600;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:5px">UX/UI &amp; Game Design · Game UI Design</div>
+        <div style="font-size:16px;color:#fff;font-weight:600">DiscoType!</div>
       </div>
+      <div style="display:flex;gap:8px;align-items:center">
+        <button id="dt-audio-btn" onclick="toggleDTAudio()" style="font-size:11px;font-weight:600;letter-spacing:0.8px;text-transform:uppercase;color:#fff;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.35);padding:8px 14px;backdrop-filter:blur(4px);cursor:pointer;font-family:inherit;transition:background 0.15s;white-space:nowrap" onmouseover="this.style.background='rgba(255,255,255,0.25)'" onmouseout="this.style.background='rgba(255,255,255,0.15)'">sound off</button>
+        <a href="https://internetcarly.itch.io/discotype" target="_blank" style="font-size:13px;color:#fff;font-weight:600;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.35);padding:8px 16px;backdrop-filter:blur(4px);white-space:nowrap;text-decoration:none;transition:background 0.15s" onmouseover="this.style.background='rgba(255,255,255,0.25)'" onmouseout="this.style.background='rgba(255,255,255,0.15)'">Play on Itch.io →</a>
+      </div>
+    </div>
+  </div>
+  <div class="proj-detail-body">
+    <div class="proj-detail-sidebar">
+      <div class="proj-detail-sidebar-section">
+        <div class="proj-detail-sidebar-label">Contents</div>
+        <div class="proj-toc-list">
+          <a class="proj-toc-link" onclick="document.getElementById('dt-brief').scrollIntoView({behavior:'smooth'})">Brief</a>
+          <a class="proj-toc-link" onclick="document.getElementById('dt-team').scrollIntoView({behavior:'smooth'})">The Team</a>
+          <a class="proj-toc-link" onclick="document.getElementById('dt-concept').scrollIntoView({behavior:'smooth'})">Game Concept</a>
+          <a class="proj-toc-link" onclick="document.getElementById('dt-paper').scrollIntoView({behavior:'smooth'})">Paper Prototyping</a>
+          <a class="proj-toc-link" onclick="document.getElementById('dt-visual').scrollIntoView({behavior:'smooth'})">Color &amp; Aesthetic</a>
+          <a class="proj-toc-link" onclick="document.getElementById('dt-logo').scrollIntoView({behavior:'smooth'})">Logo</a>
+          <a class="proj-toc-link" onclick="document.getElementById('dt-font').scrollIntoView({behavior:'smooth'})">DiscoType Font</a>
+          <a class="proj-toc-link" onclick="document.getElementById('dt-callouts').scrollIntoView({behavior:'smooth'})">Callouts</a>
+          <a class="proj-toc-link" onclick="document.getElementById('dt-characters').scrollIntoView({behavior:'smooth'})">Characters &amp; Animation</a>
+          <a class="proj-toc-link" onclick="document.getElementById('dt-screens').scrollIntoView({behavior:'smooth'})">Screens</a>
+          <a class="proj-toc-link" onclick="document.getElementById('dt-live').scrollIntoView({behavior:'smooth'})">Play It</a>
+          <a class="proj-toc-link" onclick="document.getElementById('dt-reflection').scrollIntoView({behavior:'smooth'})">Reflection</a>
+        </div>
+      </div>
+    </div>
+    <div class="proj-detail-content">
+
+      <div class="proj-detail-section" id="dt-brief">
+        <div class="proj-detail-section-label">Brief</div>
+        <div class="proj-detail-h2">The Assignment</div>
+        <div class="proj-callout" style="margin-bottom:20px"><strong>This is a high-fidelity prototype</strong> built for a game design course. The Unity build demonstrates the full UI prototype with a functional gameplay mechanic, not a finished commercial game.</div>
+        <p class="proj-detail-p">The assignment was to invent a brand new game, design a logo and custom font for it, build a full suite of game screens in Unity (title, main menu, and at least two additional screens including a gameplay screen with a functional mechanic), wire all the scenes together, and publish a live WebGL build on Itch.io. We also designed a tutorial and delivered a final slide deck with full documentation.</p>
+      </div>
+
+      <div class="proj-detail-section" id="dt-team">
+        <div class="proj-detail-section-label">The Team</div>
+        <div class="proj-detail-h2">The Phrog Girls</div>
+        <p class="proj-detail-p">Our class started with a mixer activity that the whole class joked about sounding like speed dating. Since the class is split between AET and Design students, and I am double-majoring in both, I made an effort to meet everyone. After the session, I was genuinely honored to be approached separately by two AET students, Carly Mills and Miranda Cruz, who both asked if I wanted to team up. We checked in with Professors Jessie Contour and Kelcey Gray, who gave us the green light (and laughed at how excited we were), and the "phrog girls" team was born.</p>
+        <p class="proj-detail-p">All our communication happened over Discord and in person, and everyone stayed on top of things throughout. Miro became our best friend for the creative process. We compiled almost all of our ideation and prototypes there to keep everything in one place.</p>
+        <div class="proj-miro-wrap" style="margin-top:20px">
+          <iframe src="https://miro.com/app/live-embed/uXjVG2XqzGo=/?moveToViewport=-18808,-8450,36000,20000&embedId=discotype-board" allowfullscreen></iframe>
+        </div>
+        <p class="proj-img-caption">Full process board on Miro — drag to explore</p>
+        <div style="margin-top:24px;border:1px solid var(--border);padding:16px 20px;background:var(--gray)">
+          <div style="font-size:10px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin-bottom:12px">Team Roles</div>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <div style="display:grid;grid-template-columns:160px 1fr;gap:12px;font-size:13px"><span style="color:var(--muted)">Anshu Patel</span><span style="color:#1A1A1A;font-weight:500">Lead, Visual Designer (logo, font, callouts, UI)</span></div>
+            <div style="display:grid;grid-template-columns:160px 1fr;gap:12px;font-size:13px"><span style="color:var(--muted)">Carly Mills</span><span style="color:#1A1A1A;font-weight:500">Programmer (Unity, mechanics, asset implementation, UX/UI)</span></div>
+            <div style="display:grid;grid-template-columns:160px 1fr;gap:12px;font-size:13px"><span style="color:var(--muted)">Miranda Cruz</span><span style="color:#1A1A1A;font-weight:500">Animator (wireframing, character design, animation)</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-detail-section" id="dt-concept">
+        <div class="proj-detail-section-label">Game Concept</div>
+        <div class="proj-detail-h2">DiscoType!</div>
+        <p class="proj-detail-p">Our first task after the mixer was to each brainstorm three game concepts with mood boards and research. After we shared our ideas with each other, Carly and Miranda both voted to move forward with mine. I was so touched by that, and honestly still am.</p>
+        <p class="proj-detail-p">The three of us brought a variety of creative ideas to the table, but we all felt Anshu's initial concept had the best balance of scope, aesthetic specificity, and mechanics. Anshu's disco dance floor inspired typing game won the vote.</p>
+        <div class="proj-callout" style="margin:20px 0"><strong>DiscoType!</strong> is a colorful typing game where you play as a dancer of your choice and type along to the music. Every letter you press moves your character frame by frame, turning your typing into smooth dance moves and nonstop rhythm. Before the song ends, type as fast as you can to raise your WPM and keep the performance going. With bright colors, lively visuals, and fun dancing characters, DiscoType! transforms typing practice into an exciting challenge full of energy and style.</div>
+        <p class="proj-detail-p">The aesthetic was inspired by 70s and 80s disco culture, which gave us a rich visual reference library to draw from and a very clear direction for the whole project.</p>
+        <div class="smt-lb-thumb" onclick="openLightbox('media/DiscoType!/All three ideas.png')" style="margin-top:20px">
+          <img loading="lazy" src="media/DiscoType!/All three ideas.png" alt="All three brainstormed game ideas">
+        </div>
+        <p class="proj-img-caption">All three brainstormed game ideas on Miro</p>
+      </div>
+
+      <div class="proj-detail-section" id="dt-paper">
+        <div class="proj-detail-section-label">Paper Prototyping</div>
+        <div class="proj-detail-h2">Dance Floor, IRL</div>
+        <p class="proj-detail-p">Paper prototyping a typing game was genuinely confusing at first. We were unsure how to approach it, so we brought our concerns to Professors Jessie Contour and Kelcey Gray. They suggested we use an existing typing game to simulate our mechanics in real life, so that's exactly what we did.</p>
+        <p class="proj-detail-p">Fortunately, my best friends were visiting for a sleepover around that time. I voluntold them to help, and they were more than happy. We ran the prototype using Nitrotype: one person called out how the player was performing while another person physically danced to represent the dancer's response to that performance. The results were pretty interesting.</p>
+        <p class="proj-detail-p">Players responded positively to seeing their typing speed reflected in the dancer's movements, and they quickly understood the connection between performance and visual feedback. The dancer was occasionally distracting, but we attributed that mostly to having a real person in the room rather than an on-screen character. We logged it as something a digital implementation would naturally solve.</p>
+        <p class="proj-detail-p">We also landed on an important design decision: we initially planned a competitive two-dancer setup with one acting as a bot opponent, but simplified to a single dancer on the dance floor. It made the concept cleaner and helped us hit all our goals without overcomplicating the prototype.</p>
+        <div class="smt-lb-thumb" onclick="openLightbox('media/DiscoType!/Paper prototyping.png')" style="margin-top:20px">
+          <img loading="lazy" src="media/DiscoType!/Paper prototyping.png" alt="Paper prototyping session">
+        </div>
+        <p class="proj-img-caption">Paper prototyping documentation</p>
+      </div>
+
+      <div class="proj-detail-section" id="dt-visual">
+        <div class="proj-detail-section-label">Color &amp; Aesthetic</div>
+        <div class="proj-detail-h2">Vibey, Groovy, Disco Futuristic</div>
+        <p class="proj-detail-p">We settled on a color palette that captures the energy of the whole game: bold, vibrant, and unmistakably disco. Every design decision from the logo to the screens was rooted in this direction.</p>
+        <div class="smt-lb-thumb" onclick="openLightbox('media/DiscoType!/Color palette.png')" style="margin-top:20px">
+          <img loading="lazy" src="media/DiscoType!/Color palette.png" alt="DiscoType! color palette">
+        </div>
+        <p class="proj-img-caption">The DiscoType! color palette</p>
+        <div class="proj-detail-section-label" style="margin-top:32px">Early Unity Prototype</div>
+        <p class="proj-detail-p">While I was working on the visual identity, Carly got started in Unity. She used a robot GIF as a placeholder for the player character during early development. That robot ended up becoming a hidden easter egg in the final game.</p>
+        <div class="smt-lb-thumb" onclick="openLightbox('media/DiscoType!/early Prototype of game.png')" style="margin-top:16px">
+          <img loading="lazy" src="media/DiscoType!/early Prototype of game.png" alt="Early Unity prototype with robot placeholder">
+        </div>
+        <p class="proj-img-caption">Carly prototyping the game with a robot GIF as a placeholder, who later became an easter egg character</p>
+        <div class="proj-detail-section-label" style="margin-top:32px">Early Wireframes</div>
+        <div class="proj-img-grid proj-img-grid-2" style="margin-top:16px">
+          <div class="smt-lb-thumb" onclick="openLightbox('media/DiscoType!/Wireframes Early 1.png')">
+            <img loading="lazy" src="media/DiscoType!/Wireframes Early 1.png" alt="Early wireframes page 1">
+          </div>
+          <div class="smt-lb-thumb" onclick="openLightbox('media/DiscoType!/Wireframes Early 2.png')">
+            <img loading="lazy" src="media/DiscoType!/Wireframes Early 2.png" alt="Early wireframes page 2">
+          </div>
+        </div>
+        <p class="proj-img-caption">Miranda's early UX wireframes</p>
+      </div>
+
+      <div class="proj-detail-section" id="dt-logo">
+        <div class="proj-detail-section-label">Logo</div>
+        <div class="proj-detail-h2">30 Sketches, One Winner</div>
+        <p class="proj-detail-p">I produced 30 unique logo sketches based on a variety of aesthetic references, then had Carly and Miranda circle their favorites. We moved forward with sketch number 3.</p>
+        <div class="smt-lb-thumb" onclick="openLightbox('media/DiscoType!/Logo sketches.png')" style="margin-top:20px">
+          <img loading="lazy" src="media/DiscoType!/Logo sketches.png" alt="30 logo sketches">
+        </div>
+        <p class="proj-img-caption">30 logo sketches. Sketch 3 selected for development.</p>
+        <div class="proj-detail-section-label" style="margin-top:32px">Final Logotype</div>
+        <div class="smt-lb-thumb" onclick="openLightbox('media/DiscoType!/Final Logotype.png')" style="margin-top:12px">
+          <img loading="lazy" src="media/DiscoType!/Final Logotype.png" alt="DiscoType! final logotype">
+        </div>
+        <p class="proj-img-caption">Final logotype</p>
+        <div class="proj-detail-section-label" style="margin-top:32px">Logotype in Context</div>
+        <div class="smt-lb-thumb" onclick="openLightbox('media/DiscoType!/Logo in Context.png')" style="margin-top:12px">
+          <img loading="lazy" src="media/DiscoType!/Logo in Context.png" alt="Logotype placed in context">
+        </div>
+        <p class="proj-img-caption">Logotype in context</p>
+      </div>
+
+      <div class="proj-detail-section" id="dt-font">
+        <div class="proj-detail-section-label">DiscoType Font</div>
+        <div class="proj-detail-h2">The Font</div>
+        <p class="proj-detail-p">I began font creation by producing a range of Homra sketches. We reviewed them together and landed on a display typeface inspired by groovy, retro aesthetics. I sent the in-progress font to Professor Kelcey for feedback during development and implemented her suggestions into the final version.</p>
+        <p class="proj-detail-p">I named the font DiscoType because it was made specifically for the game, and it just fit perfectly. We paired it with Futura throughout for the typing text, since Futura matched the retro aesthetic while staying clean and legible at any size.</p>
+        <div class="smt-lb-thumb" onclick="openLightbox('media/DiscoType!/Homra sketches.png')" style="margin-top:20px">
+          <img loading="lazy" src="media/DiscoType!/Homra sketches.png" alt="Homra sketches for the font">
+        </div>
+        <p class="proj-img-caption">Homra sketches exploring the font direction</p>
+        <div class="proj-img-grid proj-img-grid-2" style="margin-top:20px">
+          <div class="smt-lb-thumb" onclick="openLightbox('media/DiscoType!/Font inspo.png')">
+            <img loading="lazy" src="media/DiscoType!/Font inspo.png" alt="Font inspiration">
+          </div>
+          <div class="smt-lb-thumb" onclick="openLightbox('media/DiscoType!/Font Feedback Kelcey.png')">
+            <img loading="lazy" src="media/DiscoType!/Font Feedback Kelcey.png" alt="Feedback from Professor Kelcey">
+          </div>
+        </div>
+        <p class="proj-img-caption">Font inspiration (left) and feedback from Professor Kelcey (right)</p>
+        <div class="proj-detail-section-label" style="margin-top:32px">Final Font</div>
+        <div class="smt-lb-thumb" onclick="openLightbox('media/DiscoType!/Final Font.png')" style="margin-top:12px">
+          <img loading="lazy" src="media/DiscoType!/Final Font.png" alt="DiscoType font full character set">
+        </div>
+        <p class="proj-img-caption">DiscoType complete character set</p>
+
+        <div class="proj-detail-section-label" style="margin-top:32px">Live Preview</div>
+        <div style="border:1px solid var(--border);overflow:hidden;margin-top:12px">
+          <div style="background:var(--gray);padding:14px 20px;border-bottom:1px solid var(--border)">
+            <div style="font-size:10px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted)">DiscoType · Type Specimen</div>
+          </div>
+          <div style="padding:36px 36px 48px;background:#1a0933;color:#fff">
+            <input id="dt-font-input" type="text" placeholder="type something..." style="width:100%;background:transparent;border:none;border-bottom:1px solid rgba(255,94,173,0.3);outline:none;font-family:'Discotype',sans-serif;font-size:42px;letter-spacing:3px;color:#FF5EAD;padding:0 0 12px;margin-bottom:36px;display:block;caret-color:#FF5EAD">
+            <div style="font-family:'Discotype',sans-serif;font-size:52px;letter-spacing:4px;margin-bottom:28px;color:#FF5EAD">DiscoType</div>
+            <div style="font-family:'Discotype',sans-serif;font-size:28px;letter-spacing:2px;margin-bottom:14px;opacity:0.8">A B C D E F G H I J K L M</div>
+            <div style="font-family:'Discotype',sans-serif;font-size:28px;letter-spacing:2px;margin-bottom:14px;opacity:0.8">N O P Q R S T U V W X Y Z</div>
+            <div style="font-family:'Discotype',sans-serif;font-size:28px;letter-spacing:2px;margin-bottom:14px;opacity:0.65">a b c d e f g h i j k l m</div>
+            <div style="font-family:'Discotype',sans-serif;font-size:28px;letter-spacing:2px;margin-bottom:14px;opacity:0.65">n o p q r s t u v w x y z</div>
+            <div style="font-family:'Discotype',sans-serif;font-size:28px;letter-spacing:2px;opacity:0.5">0 1 2 3 4 5 6 7 8 9 . ! ?</div>
+          </div>
+        </div>
+
+        <div class="proj-detail-section-label" style="margin-top:32px">Download DiscoType</div>
+        <div style="display:flex;gap:10px;margin-top:12px;flex-wrap:wrap">
+          <a href="media/DiscoType!/Discotype-Regular%20%281%29.otf" download class="proj-pdf-link">DiscoType OTF</a>
+          <a href="media/DiscoType!/Discotype-Regular.ttf" download class="proj-pdf-link">DiscoType TTF</a>
+        </div>
+      </div>
+
+      <div class="proj-detail-section" id="dt-callouts">
+        <div class="proj-detail-section-label">Callouts</div>
+        <div class="proj-detail-h2">Custom Callouts</div>
+        <p class="proj-detail-p">To provide encouraging, real-time feedback to players during gameplay, I designed custom callouts using the DiscoType font and refined them in Adobe Illustrator. They are styled in the game's theme pink to feel vibrant and on-brand.</p>
+        <div class="smt-lb-thumb" onclick="openLightbox('media/DiscoType!/Call outs.png')" style="margin-top:20px">
+          <img loading="lazy" src="media/DiscoType!/Call outs.png" alt="All callouts together">
+        </div>
+        <p class="proj-img-caption">All callouts used in the game</p>
+      </div>
+
+      <div class="proj-detail-section" id="dt-characters">
+        <div class="proj-detail-section-label">Characters &amp; Animation</div>
+        <div class="proj-detail-h2">The Characters</div>
+        <p class="proj-detail-p">Carly and Miranda worked together on character designs, coloring, and animation. Since I am a dancer, I contributed by sending Miranda reference videos to support her animation work. Watching our characters come to life from sketches to final sprite sheets was genuinely one of the most exciting parts of the project.</p>
+        <div class="proj-img-grid proj-img-grid-2" style="margin-top:20px">
+          <div class="smt-lb-thumb" onclick="openLightbox('media/DiscoType!/Character Ideation.png')">
+            <img loading="lazy" src="media/DiscoType!/Character Ideation.png" alt="Character ideation sketches">
+          </div>
+          <div class="smt-lb-thumb" onclick="openLightbox('media/DiscoType!/Character Concept Art.png')">
+            <img loading="lazy" src="media/DiscoType!/Character Concept Art.png" alt="Character concept art">
+          </div>
+        </div>
+        <p class="proj-img-caption">Character ideation and concept art</p>
+        <div class="smt-lb-thumb" onclick="openLightbox('media/DiscoType!/Alien Girl Final Art.png')" style="margin-top:12px">
+          <img loading="lazy" src="media/DiscoType!/Alien Girl Final Art.png" alt="Alien girl final character art">
+        </div>
+        <p class="proj-img-caption">Alien girl final character art</p>
+        <div class="smt-lb-thumb" onclick="openLightbox('media/DiscoType!/Sprite Sheets.png')" style="margin-top:12px">
+          <img loading="lazy" src="media/DiscoType!/Sprite Sheets.png" alt="Character sprite sheets">
+        </div>
+        <p class="proj-img-caption">Character sprite sheets</p>
+        <div class="proj-detail-section-label" style="margin-top:32px">Animation Process</div>
+        <video autoplay loop muted playsinline style="width:100%;display:block;margin-top:12px">
+          <source src="media/DiscoType!/Animation Work Flow Loop.mp4" type="video/mp4">
+        </video>
+        <p class="proj-img-caption">Animation workflow loop</p>
+        <div class="proj-detail-section-label" style="margin-top:24px">Final Animations</div>
+        <video autoplay loop muted playsinline style="width:100%;display:block;margin-top:12px">
+          <source src="media/DiscoType!/Final Animations Video Loop.mp4" type="video/mp4">
+        </video>
+        <p class="proj-img-caption">Final character animations</p>
+      </div>
+
+      <div class="proj-detail-section" id="dt-screens">
+        <div class="proj-detail-section-label">Screens</div>
+        <div class="proj-detail-h2">All the Screens</div>
+        <p class="proj-detail-p">Once the visual identity was established, we built out all the game screens and connected them in Unity. Every screen transitions to the next using buttons or keypresses. The screen flow diagram shows how they all link together.</p>
+        <div class="smt-lb-thumb" onclick="openLightbox('media/DiscoType!/Flow Chart.png')" style="margin-top:20px">
+          <img loading="lazy" src="media/DiscoType!/Flow Chart.png" alt="Screen flow diagram">
+        </div>
+        <p class="proj-img-caption">Screen flow diagram</p>
+        <div class="proj-detail-section-label" style="margin-top:32px">Title / Home Screen</div>
+        <div class="smt-lb-thumb" onclick="openLightbox('media/DiscoType!/Home Screen.png')" style="margin-top:12px">
+          <img loading="lazy" src="media/DiscoType!/Home Screen.png" alt="Title and home screen">
+        </div>
+        <div class="proj-detail-section-label" style="margin-top:28px">Tutorial Screens</div>
+        <div class="smt-lb-thumb" onclick="openLightbox('media/DiscoType!/Tutorial Screens.png')" style="margin-top:12px">
+          <img loading="lazy" src="media/DiscoType!/Tutorial Screens.png" alt="Tutorial screens">
+        </div>
+        <div class="proj-detail-section-label" style="margin-top:28px">Character Select</div>
+        <div class="smt-lb-thumb" onclick="openLightbox('media/DiscoType!/Character Select Screen.png')" style="margin-top:12px">
+          <img loading="lazy" src="media/DiscoType!/Character Select Screen.png" alt="Character select screen">
+        </div>
+        <div class="proj-detail-section-label" style="margin-top:28px">Song Select</div>
+        <div class="smt-lb-thumb" onclick="openLightbox('media/DiscoType!/Music Select Screen.png')" style="margin-top:12px">
+          <img loading="lazy" src="media/DiscoType!/Music Select Screen.png" alt="Song select screen">
+        </div>
+        <div class="proj-detail-section-label" style="margin-top:28px">Gameplay Screen</div>
+        <div class="smt-lb-thumb" onclick="openLightbox('media/DiscoType!/Gameplay Screen.png')" style="margin-top:12px">
+          <img loading="lazy" src="media/DiscoType!/Gameplay Screen.png" alt="Gameplay screen">
+        </div>
+        <div class="proj-detail-section-label" style="margin-top:28px">Finish Screen</div>
+        <div class="smt-lb-thumb" onclick="openLightbox('media/DiscoType!/Finished screen.png')" style="margin-top:12px">
+          <img loading="lazy" src="media/DiscoType!/Finished screen.png" alt="Finish screen">
+        </div>
+        <div class="proj-detail-section-label" style="margin-top:28px">Results Screen</div>
+        <div class="smt-lb-thumb" onclick="openLightbox('media/DiscoType!/Results screen.png')" style="margin-top:12px">
+          <img loading="lazy" src="media/DiscoType!/Results screen.png" alt="Results screen">
+        </div>
+        <div class="proj-detail-section-label" style="margin-top:28px">Assets</div>
+        <div class="smt-lb-thumb" onclick="openLightbox('media/DiscoType!/Assets.png')" style="margin-top:12px;background:#1a1a2e">
+          <img loading="lazy" src="media/DiscoType!/Assets.png" alt="Game assets developed by Anshu Patel and Carly Mills">
+        </div>
+        <p class="proj-img-caption">Assets developed by Anshu Patel and Carly Mills</p>
+      </div>
+
+      <div class="proj-detail-section" id="dt-live">
+        <div class="proj-detail-section-label">Play It</div>
+        <div class="proj-detail-h2">Full Playthrough</div>
+        <video controls style="width:100%;display:block;margin-bottom:20px;filter:saturate(1.5) contrast(1.05)">
+          <source src="media/DiscoType!/DiscoType full playthrough.mp4" type="video/mp4">
+        </video>
+        <div style="border:1px solid var(--border);overflow:hidden">
+          <div style="background:var(--gray);padding:18px 22px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;gap:16px">
+            <div>
+              <div style="font-size:10px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin-bottom:4px">Itch.io · WebGL Prototype</div>
+              <div style="font-size:14px;font-weight:600;color:#1A1A1A">DiscoType!</div>
+            </div>
+            <a href="https://internetcarly.itch.io/discotype" target="_blank" style="font-size:12px;color:var(--muted);text-decoration:underline;text-underline-offset:2px;white-space:nowrap;transition:color 0.15s" onmouseover="this.style.color='#1A1A1A'" onmouseout="this.style.color='var(--muted)'">Open →</a>
+          </div>
+          <div style="padding:18px 22px"><p style="font-size:13px;color:#555;line-height:1.7;margin:0">A colorful disco typing game. Choose your dancer, pick a song, and type along to the music. Every letter you press moves your character. See how high you can push your WPM before the song ends.</p></div>
+        </div>
+      </div>
+
+      <div class="proj-detail-section" id="dt-reflection">
+        <div class="proj-detail-section-label">Reflection</div>
+        <div class="proj-detail-h2">Looking Back</div>
+        <p class="proj-detail-p">Making DiscoType! was an incredibly fun and rewarding experience. Each of us had the opportunity to contribute to the parts we were most passionate about, and collaborating as a team made the whole process even more fulfilling. We are especially proud to see our original vision and aesthetic come to life in the final product.</p>
+        <p class="proj-detail-p">While there were moments when managing so many moving parts became challenging, we worked through them and maintained strong communication throughout. This is what allowed us to stay on track and bring DiscoType! together as something cohesive. Given more time, we would love to add more songs (ideally ones we produce ourselves), new characters, and more animations to expand the experience. Overall, we are really proud of this prototype and excited to keep creating.</p>
+
+        <div class="proj-detail-section-label" style="margin-top:32px">Instructor Feedback</div>
+        <div class="proj-detail-h2">Professors Contour and Gray</div>
+        <p class="proj-detail-p">Both professors praised the clarity of the game description and how immediately fun the core mechanic is: type fast, perform better. Kelcey called out the clear shared visual direction and noted the game has "live stats" that she loved. Jessie described it as "futuristic disco meets Club Penguin dancing rhythm game" with tight, polished inspiration.</p>
+        <p class="proj-detail-p">On the visual side, Kelcey praised the logo sketches and the strong consistency of the final font, and appreciated how mindful we were of scope ("If you have more moving parts, it's going to take longer"). Jessie complimented the polish of the font and how well the aesthetic carried across every element of the project.</p>
+        <p class="proj-detail-p">On the presentation, Kelcey noted that our team dynamic was genuinely evident in how we presented. Jessie found the presentation very organized and was able to get right into the game demo. Kelcey's final note: "Successful collaborations and shared passion yield great games." Jessie loved the sound effects and stats.</p>
+
+        <div class="proj-detail-section-label" style="margin-top:32px">Citations</div>
+        <ul style="margin:12px 0 0 0;list-style:none;padding:0;display:flex;flex-direction:column;gap:8px">
+          <li style="font-size:13px;line-height:1.6"><a href="https://www.pbs.org/articles/the-dazzling-daring-history-of-disco" target="_blank" style="color:var(--muted);text-decoration:underline;text-underline-offset:2px">The Dazzling, Daring History of Disco (PBS)</a></li>
+          <li style="font-size:13px;color:#555;line-height:1.6">Sound effects sourced from Pixabay (user 9jackjack8)</li>
+          <li style="font-size:13px;color:#555;line-height:1.6">Claude AI was used for coding assistance</li>
+          <li style="font-size:13px;color:#555;line-height:1.6">All music and copyrighted material belongs to the respective artists and was used for educational and prototyping purposes only</li>
+        </ul>
+      </div>
+
     </div>
   </div>
 </div>
@@ -1620,7 +1957,7 @@ audio{accent-color:#1A1A1A}
     </div>
   </div>
   <div style="background:#0d0d0d;border-bottom:1px solid var(--border);padding:24px 48px;display:flex;align-items:center;justify-content:center">
-    <video controls autoplay muted playsinline style="width:100%;max-width:720px;display:block;filter:saturate(1.4) contrast(1.05)">
+    <video controls autoplay muted playsinline style="width:100%;max-width:720px;display:block">
       <source src="media/Oracle/Full Video Walkthrough.mp4" type="video/mp4">
     </video>
   </div>
@@ -1809,13 +2146,7 @@ audio{accent-color:#1A1A1A}
 
         <div class="proj-detail-section-label" style="margin-top:32px">Instructor Feedback</div>
         <div class="proj-detail-h2">Professor Parks</div>
-        <p class="proj-detail-p">Documentation is thorough: concept, color, Figma, interaction, and iteration all there. I appreciate that you are one of the only people to include a short video on the interaction/animation page. The custom illustration process is well documented. The push on concept is about personalization. I think the answer options you gave are ambiguous and poetic enough to be accessible for anyone. We can create our own ideas for what each sentence means and that makes it feel personal. I feel this has a target audience who is younger (maybe add in visuals next to each answer for further entertainment). I'm wondering how you chose the final media selection. You might talk a little bit about that in your documentation.</p>
-
-        <div class="proj-detail-section-label" style="margin-top:24px">Visual Design · 25/25</div>
-        <p class="proj-detail-p">The oracle illustration is stunning and carries the whole visual identity. I feel like the bottom part of your illustration is cut off. You might shape that to work with the project's composition a little more. The purple/magenta with glowing outline creates real atmosphere. When I view it fullscreen the layout shifts and you fixed the scroll problem. Visually, it's clear you put thought into every detail. The font choice is perfect for both display and paragraph (good contrast). Clean and readable (minimal). The background feels like it's pushed back on the visual plane which is nice for the user to focus on main content.</p>
-
-        <div class="proj-detail-section-label" style="margin-top:20px">Interaction Design & Animation · 18/20</div>
-        <p class="proj-detail-p">The glowing outline, button jitter, and speech bubble animations all make the oracle feel alive. I'm not just clicking; I'm having a conversation. One thought for next time: what if the oracle's glow shifted color or intensity as it learns more about you? Warming up, or flickering if I give contradictory answers? That kind of reactive feedback would make the experience even more immersive. Also, this is a perfect project to include character animation for a more immersive feel. I want to be talking to the oracle, not just focused on the text. The animation feedback for affordance design works well. Consider experimental page transitions too and sound feedback for the buttons.</p>
+        <p class="proj-detail-p">Documentation is thorough: concept, color, Figma, interaction, and iteration all there. I appreciate that you are one of the only people to include a short video on the interaction/animation page. The custom illustration process is well documented. The answer options are ambiguous and poetic enough to be accessible for anyone — we can create our own ideas for what each sentence means and that makes it feel personal. The oracle illustration is stunning and carries the whole visual identity. The purple/magenta with glowing outline creates real atmosphere. Visually, it's clear you put thought into every detail. The font choice is perfect for both display and paragraph (good contrast). Clean and readable (minimal). The background feels like it's pushed back on the visual plane which is nice for the user to focus on main content. The glowing outline, button jitter, and speech bubble animations all make the oracle feel alive. The animation feedback for affordance design works well.</p>
 
         <div class="proj-callout" style="background:var(--pink);margin-top:20px"><strong>Update:</strong> I have implemented the scroll and question transition improvements!</div>
       </div>
@@ -1952,7 +2283,8 @@ audio{accent-color:#1A1A1A}
           <div style="background:var(--gray);padding:14px 20px;border-bottom:1px solid var(--border)">
             <div style="font-size:10px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted)">Featherfont · Type Specimen</div>
           </div>
-          <div style="padding:48px 36px;background:#0d0d1a;color:#fff">
+          <div style="padding:36px 36px 48px;background:#0d0d1a;color:#fff">
+            <input id="ff-font-input" type="text" placeholder="TYPE SOMETHING..." style="width:100%;background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,0.2);outline:none;font-family:'Featherfont',monospace;font-size:42px;letter-spacing:3px;color:#fff;padding:0 0 12px;margin-bottom:36px;display:block;caret-color:#fff">
             <div style="font-family:'Featherfont',monospace;font-size:60px;letter-spacing:4px;margin-bottom:24px">FEATHERFORM</div>
             <div style="font-family:'Featherfont',monospace;font-size:32px;letter-spacing:2px;margin-bottom:14px;opacity:0.7">A B C D E F G H I J K L M</div>
             <div style="font-family:'Featherfont',monospace;font-size:32px;letter-spacing:2px;margin-bottom:14px;opacity:0.7">N O P Q R S T U V W X Y Z</div>
@@ -2052,22 +2384,197 @@ audio{accent-color:#1A1A1A}
     <div><button class="proj-nav-btn" onclick="showPage('ux')">← Back to category</button></div>
   </div>
   <div class="proj-detail-hero">
-    <div class="proj-detail-kicker">UX/UI & Game Design · App Design</div>
-    <div class="proj-detail-title">Stellar Exploration</div>
-    <p class="proj-detail-tagline">Content coming soon.</p>
+    <div class="proj-detail-kicker">UX/UI & Game Design · Data Visualization</div>
+    <div class="proj-detail-title">Stellar Exploration: The Scale of Our Universe</div>
+    <p class="proj-detail-tagline">An interactive, cinematic star map built from real data, showing the stars closest to our Sun and telling the story of just how small we are and how vast space truly is.</p>
     <div class="proj-detail-meta-row">
-      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Year</div><div class="proj-detail-meta-val">2025</div></div>
-      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">Figma</div></div>
-      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Type</div><div class="proj-detail-meta-val">App Design</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Course</div><div class="proj-detail-meta-val">AET 330T Exploring User Interaction</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Instructor</div><div class="proj-detail-meta-val">Sydney Parks</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Semester</div><div class="proj-detail-meta-val">Spring 2026</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">2 weeks</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">HTML/CSS/JS, Kaggle, Copilot</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Type</div><div class="proj-detail-meta-val">Data Visualization</div></div>
     </div>
   </div>
-  <div class="proj-detail-body" style="display:block">
-    <div class="proj-detail-content">
-      <div class="proj-detail-section">
-        <div class="proj-detail-section-label">Overview</div>
-        <div class="proj-detail-h2">Coming soon</div>
-        <p class="proj-detail-p">Details for this project will be added soon.</p>
+  <div style="position:relative;cursor:pointer;border-bottom:1px solid var(--border);overflow:hidden" onclick="window.open('https://patelans000.github.io/StellarExploration/','_blank')">
+    <img loading="lazy" src="media/Stellar Exploration - A Scale of Our Universe/Title Screen.png" style="width:100%;display:block;transform:scale(1.14);transform-origin:center center" alt="Stellar Exploration title screen">
+    <div style="position:absolute;bottom:0;left:0;right:0;padding:20px 32px;background:linear-gradient(transparent,rgba(0,0,0,0.75));pointer-events:none;z-index:2;display:flex;justify-content:space-between;align-items:flex-end">
+      <div>
+        <div style="font-size:10px;color:rgba(255,255,255,0.5);font-weight:600;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:5px">UX/UI &amp; Game Design · Data Visualization</div>
+        <div style="font-size:16px;color:#fff;font-weight:600">Stellar Exploration: The Scale of Our Universe</div>
       </div>
+      <div style="font-size:13px;color:#fff;font-weight:600;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.35);padding:8px 16px;backdrop-filter:blur(4px);white-space:nowrap">Explore it →</div>
+    </div>
+  </div>
+  <div style="background:#0D1117;border-bottom:1px solid var(--border)">
+    <video id="se-hero-video" autoplay loop muted playsinline style="width:100%;max-height:72vh;object-fit:contain;display:block">
+      <source src="media/Stellar Exploration - A Scale of Our Universe/Stellar Exploration Final Video.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="proj-detail-body">
+    <div class="proj-detail-sidebar">
+      <div class="proj-detail-sidebar-section">
+        <div class="proj-detail-sidebar-label">Contents</div>
+        <div class="proj-toc-list">
+          <a class="proj-toc-link" onclick="document.getElementById('se-brief').scrollIntoView({behavior:'smooth'})">Brief</a>
+          <a class="proj-toc-link" onclick="document.getElementById('se-concept').scrollIntoView({behavior:'smooth'})">Concept & Ideation</a>
+          <a class="proj-toc-link" onclick="document.getElementById('se-dataset').scrollIntoView({behavior:'smooth'})">Dataset</a>
+          <a class="proj-toc-link" onclick="document.getElementById('se-sketches').scrollIntoView({behavior:'smooth'})">Sketches</a>
+          <a class="proj-toc-link" onclick="document.getElementById('se-process').scrollIntoView({behavior:'smooth'})">Process & Iteration</a>
+          <a class="proj-toc-link" onclick="document.getElementById('se-design').scrollIntoView({behavior:'smooth'})">Design Decisions</a>
+          <a class="proj-toc-link" onclick="document.getElementById('se-live').scrollIntoView({behavior:'smooth'})">Final Result</a>
+          <a class="proj-toc-link" onclick="document.getElementById('se-reflect').scrollIntoView({behavior:'smooth'})">Looking Back</a>
+        </div>
+      </div>
+    </div>
+    <div class="proj-detail-content">
+
+      <div class="proj-detail-section" id="se-brief">
+        <div class="proj-detail-section-label">Brief</div>
+        <div class="proj-detail-h2">The Assignment</div>
+        <div class="proj-callout" style="margin-bottom:20px">Create an <strong>interactive experience driven by data.</strong> Gather a dataset that interests you, understand the story it tells, and communicate that narrative visually. Limit the amount of text. Communicate through icons, visuals, and interaction. Two weeks.</div>
+        <p class="proj-detail-p">The project could be a data visualization, a data-driven artwork, an interactive narrative, or a game-like interface. The brief was intentionally open-ended, which made choosing the right concept and scoping it carefully especially important.</p>
+      </div>
+
+      <div class="proj-detail-section" id="se-concept">
+        <div class="proj-detail-section-label">Concept & Ideation</div>
+        <div class="proj-detail-h2">A Map of Our Neighbors</div>
+        <p class="proj-detail-p">I started brainstorming on Miro with sticky notes, exploring a wide range of possibilities before landing on space. I knew early on that I wanted to create something cinematic and exploratory, so I looked for datasets about the stars nearest to our Sun.</p>
+        <p class="proj-detail-p">My concept became a distance-based star map built from real data, showing every star closest to us. The story I wanted to tell is about scale: how tiny our world and solar system are in the bigger picture, and how vast and open space truly is. Not overwhelming, just something that makes you stop and feel it.</p>
+        <div class="smt-lb-thumb" onclick="openLightbox('media/Stellar Exploration - A Scale of Our Universe/Ideation Miro.png')" style="margin-top:20px">
+          <img loading="lazy" src="media/Stellar Exploration - A Scale of Our Universe/Ideation Miro.png" alt="Miro ideation board">
+        </div>
+        <p class="proj-img-caption">Miro ideation board</p>
+        <div class="proj-miro-wrap" style="margin-top:16px">
+          <iframe src="https://miro.com/app/live-embed/uXjVG_inSJc=/?embedId=stellar-board" allowfullscreen></iframe>
+        </div>
+        <p class="proj-img-caption">Full process board on Miro, drag to explore</p>
+      </div>
+
+      <div class="proj-detail-section" id="se-dataset">
+        <div class="proj-detail-section-label">Dataset</div>
+        <div class="proj-detail-h2">Cleaning the Data</div>
+        <p class="proj-detail-p">I found a stars dataset on Kaggle in CSV format and converted it to JSON so I could use it in the visualization. Once I started working with the data I found a lot of duplicate entries, so I went through it carefully and removed the less accurate ones. I also researched and manually added data for our own Sun, since I wanted it to be the anchor of the whole map.</p>
+        <div style="border:1px solid var(--border);overflow:hidden;margin-top:16px">
+          <div style="background:var(--gray);padding:14px 20px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;gap:16px">
+            <div>
+              <div style="font-size:10px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin-bottom:4px">Kaggle · Dataset</div>
+              <div style="font-size:14px;font-weight:600;color:#1A1A1A">Stars Dataset</div>
+            </div>
+            <a href="https://www.kaggle.com/datasets/waqi786/stars-dataset" target="_blank" style="font-size:12px;color:var(--muted);text-decoration:underline;text-underline-offset:2px;white-space:nowrap;transition:color 0.15s" onmouseover="this.style.color='#1A1A1A'" onmouseout="this.style.color='var(--muted)'">Open →</a>
+          </div>
+          <div style="padding:14px 20px"><p style="font-size:13px;color:#555;line-height:1.7;margin:0">Original CSV converted to JSON, duplicates cleaned, and Sun data added manually.</p></div>
+        </div>
+      </div>
+
+
+      <div class="proj-detail-section" id="se-sketches">
+        <div class="proj-detail-section-label">Sketches</div>
+        <div class="proj-detail-h2">Scoping It Out</div>
+        <p class="proj-detail-p">With only two weeks on the clock I had to nail down scope early and commit to a direction before building anything. These sketches show me thinking through potential pathways and ideas.</p>
+        <div class="proj-img-grid proj-img-grid-2" style="margin-top:20px">
+          <div class="smt-lb-thumb" onclick="openLightbox('media/Stellar Exploration - A Scale of Our Universe/Sketches 1.png')">
+            <img loading="lazy" src="media/Stellar Exploration - A Scale of Our Universe/Sketches 1.png" alt="Concept sketches page 1">
+          </div>
+          <div class="smt-lb-thumb" onclick="openLightbox('media/Stellar Exploration - A Scale of Our Universe/Sketches 2.png')">
+            <img loading="lazy" src="media/Stellar Exploration - A Scale of Our Universe/Sketches 2.png" alt="Concept sketches page 2">
+          </div>
+        </div>
+        <p class="proj-img-caption">Early concept sketches</p>
+      </div>
+
+      <div class="proj-detail-section" id="se-process">
+        <div class="proj-detail-section-label">Process & Iteration</div>
+        <div class="proj-detail-h2">Building It Up</div>
+        <p class="proj-detail-p">I started with an extremely barebones version built straight from my sketches: minimal animations, basically click-and-draw functionality. I used it to experiment with placement, test out ideas, and figure out exactly what I wanted to showcase before committing to any real polish.</p>
+        <video autoplay loop muted playsinline style="width:100%;display:block;margin-top:20px">
+          <source src="media/Stellar Exploration - A Scale of Our Universe/Prototype Video.mp4" type="video/mp4">
+        </video>
+        <p class="proj-img-caption">Early iteration</p>
+        <p class="proj-detail-p" style="margin-top:20px">I was also a bit concerned about using too much text in the project, so I reached out to our class TA, Helena. She was super helpful throughout the whole process, especially during usability testing.</p>
+        <div class="smt-lb-thumb" onclick="openLightbox('media/Stellar Exploration - A Scale of Our Universe/Helena and I Email.png')" style="margin-top:16px">
+          <img loading="lazy" src="media/Stellar Exploration - A Scale of Our Universe/Helena and I Email.png" alt="Email to TA Helena">
+        </div>
+        <p class="proj-img-caption">Reaching out to TA Helena for feedback</p>
+
+        <div class="proj-detail-section-label" style="margin-top:32px">Usability Testing</div>
+        <p class="proj-detail-p">The usability test was really helpful. People enjoyed what they saw so far, but Helena's feedback made it clear the project had a lot more potential. She told me to make it more cinematic and to think less about presenting data and more about the story I wanted to tell. What did I want people to feel? What did I want them to experience? That advice completely sparked the grind to maximize the project and bring it to life the way I originally envisioned.</p>
+        <div class="smt-lb-thumb" onclick="openLightbox('media/Stellar Exploration - A Scale of Our Universe/Usabaility Testing quotes.png')" style="margin-top:16px">
+          <img loading="lazy" src="media/Stellar Exploration - A Scale of Our Universe/Usabaility Testing quotes.png" alt="Usability testing notes">
+        </div>
+        <p class="proj-img-caption">Usability testing</p>
+      </div>
+
+      <div class="proj-detail-section" id="se-design">
+        <div class="proj-detail-section-label">Design Decisions</div>
+        <div class="proj-detail-h2">Title Screen</div>
+        <p class="proj-detail-p">Our Sun, colored according to its spectral class, greets the user on the title screen. I used a serif font for the main title to give it a cinematic feel, paired with a smaller UI font for descriptions to keep the text clean and readable. Subtle animations throughout set the tone and make the whole experience feel more like a film than a chart.</p>
+        <div class="smt-lb-thumb" onclick="openLightbox('media/Stellar Exploration - A Scale of Our Universe/Title Screen.png')" style="margin-top:20px">
+          <img loading="lazy" src="media/Stellar Exploration - A Scale of Our Universe/Title Screen.png" alt="Title screen">
+        </div>
+        <p class="proj-img-caption">Title screen</p>
+        <video autoplay loop muted playsinline style="width:100%;display:block;margin-top:12px">
+          <source src="media/Stellar Exploration - A Scale of Our Universe/Title Screen Video.mp4" type="video/mp4">
+        </video>
+        <p class="proj-img-caption">Title screen animation</p>
+
+        <div class="proj-detail-h2" style="margin-top:40px">Main Screen</div>
+        <p class="proj-detail-p">The main screen features a spectral color key, with every star colored by its spectral class. Faint rings show light year distances. An animated zoom bar shows how far in or out you are. A button lets explorers return to the center. When you hover a star, its data is revealed with animations that clearly signal which one is selected.</p>
+        <div class="smt-lb-thumb" onclick="openLightbox('media/Stellar Exploration - A Scale of Our Universe/Main Screen Screenshot.png')" style="margin-top:20px">
+          <img loading="lazy" src="media/Stellar Exploration - A Scale of Our Universe/Main Screen Screenshot.png" alt="Main screen">
+        </div>
+        <p class="proj-img-caption">Main screen</p>
+        <video autoplay loop muted playsinline style="width:100%;display:block;margin-top:12px">
+          <source src="media/Stellar Exploration - A Scale of Our Universe/Main Screen video.mp4" type="video/mp4">
+        </video>
+        <p class="proj-img-caption">Main screen interaction</p>
+
+        <div class="proj-detail-h2" style="margin-top:40px">Animation Close-ups</div>
+        <p class="proj-detail-p">The zoom-out animation when entering the main screen makes the experience feel dramatic and sets up a sense of exploration right away. The zoom scale bar shows how deep in you are. Hover animations and a cursor change help signal which star is selected.</p>
+        <div class="proj-img-grid proj-img-grid-2" style="margin-top:20px;grid-template-columns:3fr 2fr">
+          <video autoplay loop muted playsinline style="width:100%;display:block">
+            <source src="media/Stellar Exploration - A Scale of Our Universe/The zoom-out animation when entering the main screen makes the experience feel more dramatic and cinematic..mp4" type="video/mp4">
+          </video>
+          <video autoplay loop muted playsinline style="width:100%;display:block">
+            <source src="media/Stellar Exploration - A Scale of Our Universe/Zoom scale bar that lets users see how zoomed they are..mp4" type="video/mp4">
+          </video>
+        </div>
+        <p class="proj-img-caption">Zoom animation (left) and hover interaction (right)</p>
+      </div>
+
+      <div class="proj-detail-section" id="se-live">
+        <div class="proj-detail-section-label">Final Result</div>
+        <div class="proj-detail-h2">Full Walkthrough</div>
+        <video controls loop style="width:100%;display:block;margin-bottom:20px">
+          <source src="media/Stellar Exploration - A Scale of Our Universe/Stellar Exploration Final Video.mp4" type="video/mp4">
+        </video>
+        <div style="border:1px solid var(--border);overflow:hidden">
+          <div style="background:var(--gray);padding:18px 22px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;gap:16px">
+            <div>
+              <div style="font-size:10px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin-bottom:4px">Live Site</div>
+              <div style="font-size:14px;font-weight:600;color:#1A1A1A">Stellar Exploration</div>
+            </div>
+            <a href="https://patelans000.github.io/StellarExploration/" target="_blank" style="font-size:12px;color:var(--muted);text-decoration:underline;text-underline-offset:2px;white-space:nowrap;transition:color 0.15s" onmouseover="this.style.color='#1A1A1A'" onmouseout="this.style.color='var(--muted)'">Open →</a>
+          </div>
+          <div style="padding:18px 22px"><p style="font-size:13px;color:#555;line-height:1.7;margin:0">An interactive star map built from real data. Scroll to zoom, hover to explore each star, and feel the scale of our corner of the universe.</p></div>
+        </div>
+        <div class="proj-detail-section-label" style="margin-top:32px">Citations</div>
+        <ul style="margin:12px 0 0 0;list-style:none;padding:0;display:flex;flex-direction:column;gap:8px">
+          <li style="font-size:13px;line-height:1.6"><a href="https://www.kaggle.com/datasets/waqi786/stars-dataset" target="_blank" style="color:var(--muted);text-decoration:underline;text-underline-offset:2px">Stars Dataset (Kaggle)</a></li>
+          <li style="font-size:13px;color:#555;line-height:1.6">All additional resources included on the Miro board</li>
+          <li style="font-size:13px;color:#555;line-height:1.6">This project was made with the help of Copilot</li>
+        </ul>
+      </div>
+
+      <div class="proj-detail-section" id="se-reflect">
+        <div class="proj-detail-section-label">Looking Back</div>
+        <div class="proj-detail-h2">Reflection</div>
+        <p class="proj-detail-p">I love space so I had so much fun with this one. If we had more time, I would have drawn a distinct personality for each star and included the educational timeline idea I had initially in my sketches. This project got really nice feedback and responses and everyone really liked it, which was awesome.</p>
+
+        <div class="proj-detail-h2" style="margin-top:32px">Professor Feedback</div>
+        <p class="proj-detail-p">Lovely writing that clarifies project scope. It's great to read that you edited down the redundancies and added more to your dataset. Great work with the zoom in on design and short callouts telling me why. This is one of the best documentations from this project. It feels like a story with how you walk through the process. Your writing feels personalized but professional. The first thing I notice is color, used to indicate type. Since the main focus is supposed to be scale, the intro animation is perfect. You use negative space and circle size to communicate scale. The scroll-out interaction is designed to emphasize that main concept. It's a nice condensed experience. Overall design is clean and very aesthetically stunning. The greatest strength of the piece is that cinematic feel and I think this is something you can take into all your future work! Great work on making me feel like a tiny little speck. You found data that seems pretty straightforward, but you created an interface that developed it into an interesting experience that provoked curiosity and emotion. Wonderfully done. Very helpful "return to sun" button. You did a good job of limiting the text to the most important information and revealing it through hover.</p>
+      </div>
+
     </div>
   </div>
 </div>
@@ -4847,9 +5354,37 @@ function showProject(slug) {
   }
   if (slug === 'oracle') {
     setTimeout(function() {
-      document.querySelectorAll('#proj-oracle video[autoplay]').forEach(function(v) { v.play(); });
+      document.querySelectorAll('#proj-oracle video[autoplay]').forEach(function(v) { v.muted = true; v.play().catch(function(){}); });
     }, 100);
   }
+  if (slug === 'stellar-exploration') {
+    setTimeout(function() {
+      document.querySelectorAll('#proj-stellar-exploration video[autoplay]').forEach(function(v) { v.currentTime = 0; v.muted = true; v.play().catch(function(){}); });
+    }, 100);
+  }
+  if (slug === 'discotype') {
+    setTimeout(function() {
+      var v = document.getElementById('dt-hero-video');
+      var btn = document.getElementById('dt-audio-btn');
+      if (v) {
+        v.currentTime = 0;
+        v.muted = false;
+        v.play().catch(function() { v.muted = true; if (btn) btn.textContent = 'sound off'; });
+        if (btn) btn.textContent = 'sound on';
+      }
+      document.querySelectorAll('#proj-discotype video[autoplay]').forEach(function(vid) {
+        if (vid !== v) { vid.muted = true; vid.play(); }
+      });
+    }, 50);
+  }
+}
+
+function toggleDTAudio() {
+  var video = document.getElementById('dt-hero-video');
+  var btn = document.getElementById('dt-audio-btn');
+  if (!video) return;
+  video.muted = !video.muted;
+  btn.textContent = video.muted ? 'sound off' : 'sound on';
 }
 
 // ── WORKS DROPDOWN ──
@@ -5178,7 +5713,7 @@ var projMeta = {
   'discotype':           {title:'DiscoType!',             cat:'ux', catLabel:'UX/UI & Game Design', sub:'Interaction Design', accent:'accent-ux'},
   'oracle':              {title:'Oracle',                  cat:'ux', catLabel:'UX/UI & Game Design', sub:'Interactive Web',    accent:'accent-ux'},
   'featherform':         {title:'Featherform',             cat:'ux', catLabel:'UX/UI & Game Design', sub:'Game UI Design',     accent:'accent-ux'},
-  'stellar-exploration': {title:'Stellar Exploration',     cat:'ux', catLabel:'UX/UI & Game Design', sub:'App Design',         accent:'accent-ux'},
+  'stellar-exploration': {title:'Stellar Exploration: The Scale of Our Universe', cat:'ux', catLabel:'UX/UI & Game Design', sub:'Data Visualization', accent:'accent-ux'},
   'silent-spellcraft':   {title:'Silent Spellcraft',       cat:'ux', catLabel:'UX/UI & Game Design', sub:'Game UI',            accent:'accent-ux'},
   'choco-knight':        {title:'Choco Knight',                               cat:'ux', catLabel:'UX/UI & Game Design', sub:'Game Design',       accent:'accent-ux'},
   'spotify-feature':     {title:'Spotify: Designing a New Microinteraction',  cat:'ux', catLabel:'UX/UI & Game Design', sub:'Micro-interaction', accent:'accent-ux'},
