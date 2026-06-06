@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(python --version)",
+      "PowerShell(python3 --version)",
+      "PowerShell(node -e \"require\\('child_process'\\).execSync\\('npx playwright install chromium --with-deps', {stdio:'pipe'}\\); console.log\\('done'\\);\" 2>&1)",
+      "PowerShell(Get-Command node -ErrorAction SilentlyContinue | Select-Object Source; Get-Command npx -ErrorAction SilentlyContinue | Select-Object Source; \\(Get-Command node.exe -ErrorAction SilentlyContinue\\).Source)",
+      "PowerShell($nodePaths = @\\(\"C:\\\\Program Files\\\\nodejs\\\\node.exe\",\"C:\\\\Program Files \\(x86\\)\\\\nodejs\\\\node.exe\",\"$env:APPDATA\\\\npm\\\\node.exe\",\"$env:LOCALAPPDATA\\\\Programs\\\\nodejs\\\\node.exe\"\\); foreach\\($p in $nodePaths\\){if\\(Test-Path $p\\){Write-Output $p}})",
+      "Read(//c/Program Files/**)",
+      "PowerShell(Start-Process \"c:\\\\Users\\\\citru\\\\OneDrive\\\\Documents\\\\GitHub\\\\Anshu Patel Portfolio\\\\index.html\")",
+      "PowerShell($edge = \"C:\\\\Program Files \\(x86\\)\\\\Microsoft\\\\Edge\\\\Application\\\\msedge.exe\"; $chrome = \"C:\\\\Program Files\\\\Google\\\\Chrome\\\\Application\\\\chrome.exe\"; if\\(Test-Path $edge\\){\"Edge: $edge\"} elseif\\(Test-Path $chrome\\){\"Chrome: $chrome\"} else{\"neither found\"})"
+    ]
+  }
+}
