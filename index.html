@@ -5583,6 +5583,7 @@ setInterval(smtNext, 4000);
 // ── LIGHTBOX ──
 function openLightbox(src, bg) {
   var img = document.getElementById('smt-lightbox-img');
+  img.style.visibility = '';
   img.src = src;
   img.style.background = bg || '';
   img.style.padding = bg ? '24px' : '';
@@ -5600,7 +5601,9 @@ function openCKLightbox(el) {
   var wraps = Array.from(document.querySelectorAll('#choco-carousel .merch-carousel-img-wrap'));
   ckLbIdx = wraps.indexOf(el);
   if (ckLbIdx < 0) ckLbIdx = 0;
-  document.getElementById('ck-lb-img').src = 'media/Choco Knight Documentation/' + (ckLbIdx + 1) + '.png';
+  var lbImg = document.getElementById('ck-lb-img');
+  lbImg.style.visibility = '';
+  lbImg.src = 'media/Choco Knight Documentation/' + (ckLbIdx + 1) + '.png';
   document.getElementById('ck-lightbox').classList.add('open');
 }
 function closeCKLightbox() {
@@ -5608,7 +5611,9 @@ function closeCKLightbox() {
 }
 function ckLightboxStep(dir) {
   ckLbIdx = (ckLbIdx + dir + ckSlideCount) % ckSlideCount;
-  document.getElementById('ck-lb-img').src = 'media/Choco Knight Documentation/' + (ckLbIdx + 1) + '.png';
+  var lbImg = document.getElementById('ck-lb-img');
+  lbImg.style.visibility = '';
+  lbImg.src = 'media/Choco Knight Documentation/' + (ckLbIdx + 1) + '.png';
 }
 
 document.addEventListener('keydown', function(e) {
