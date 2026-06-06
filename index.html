@@ -5532,10 +5532,15 @@ function pauseAllMedia() {
 document.querySelectorAll('.proj-detail-page video').forEach(function(v) {
   v.preload = 'none';
 });
-// Retry stalled motion gallery videos
+// Retry errored motion gallery videos (once only)
 document.querySelectorAll('.motion-gallery video').forEach(function(v) {
-  v.addEventListener('stalled', function() { this.load(); });
-  v.addEventListener('error', function() { var self = this; setTimeout(function() { self.load(); }, 800); });
+  var retried = false;
+  v.addEventListener('error', function() {
+    if (retried) return;
+    retried = true;
+    var self = this;
+    setTimeout(function() { self.load(); }, 800);
+  });
 });
 
 function showPage(id) {
