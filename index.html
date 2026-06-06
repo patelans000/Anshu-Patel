@@ -545,7 +545,7 @@ audio{accent-color:#1A1A1A}
   document.addEventListener('DOMContentLoaded',function(){
     document.querySelectorAll('img').forEach(function(img){
       img.addEventListener('error',function(){hideBroken(this);});
-      if(img.complete&&img.naturalWidth===0)hideBroken(img);
+      if(img.complete&&img.naturalWidth===0&&img.getAttribute('src'))hideBroken(img);
     });
     new MutationObserver(function(ms){ms.forEach(function(m){m.addedNodes.forEach(function(n){
       if(n.tagName==='IMG')n.addEventListener('error',function(){hideBroken(this);});
