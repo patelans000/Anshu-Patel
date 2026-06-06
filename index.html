@@ -1,6 +1,17 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anshu Patel — Portfolio</title>
+<meta name="description" content="A multidisciplinary designer passionate about interactive design and crafting playful, meaningful experiences across diverse mediums.">
+<meta property="og:title" content="Anshu Patel — Portfolio">
+<meta property="og:description" content="A multidisciplinary designer passionate about interactive design and crafting playful, meaningful experiences across diverse mediums.">
+<meta property="og:image" content="media/Link Photo.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Anshu Patel — Portfolio">
+<meta name="twitter:description" content="A multidisciplinary designer passionate about interactive design and crafting playful, meaningful experiences across diverse mediums.">
+<meta name="twitter:image" content="media/Link Photo.png">
 <link rel="icon" type="image/png" href="media/Favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
@@ -202,6 +213,14 @@ nav{padding:22px 48px;display:flex;align-items:center;justify-content:space-betw
   /* ABOUT */
   .about-intro-descriptors{font-size:18px}
   .rotating-descriptor{min-width:120px}
+  /* NAV - works dropdown anchor right so it doesn't overflow */
+  .works-menu{left:auto;right:0;transform:translateY(-4px);min-width:unset;width:calc(100vw - 40px)}
+  .works-menu.open{transform:translateY(0)}
+}
+
+@media (max-width:360px){
+  .logo{font-size:16px}
+  .nav-links a,.works-trigger{padding:4px 5px;font-size:11px}
 }
 
 /* ── PROJECT DETAIL PAGE ── */
@@ -480,6 +499,8 @@ audio{accent-color:#1A1A1A}
 .more-projs-all:hover{color:#1A1A1A;border-color:#bbb}
 .more-projs-grid{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--border)}
 .more-proj-item{cursor:pointer;overflow:hidden;border-right:1px solid var(--border);transition:background 0.2s}
+.more-proj-item.mpv-init{opacity:0;transform:scale(0.94) translateY(10px);transition:background 0.2s,opacity 0.45s ease,transform 0.45s ease}
+.more-proj-item.mpv-init.mpv{opacity:1;transform:none}
 .more-proj-item:last-child{border-right:none}
 .more-proj-item:hover{background:var(--gray)}
 .more-proj-item:hover .more-proj-thumb-inner{transform:scale(1.04)}
@@ -597,7 +618,7 @@ audio{accent-color:#1A1A1A}
         <p class="home-bio">A multidisciplinary designer passionate about interactive design and exploring how to craft playful, meaningful experiences across diverse mediums.</p>
         <div class="home-degree-block">
           <div class="home-degree-row">
-            <span class="home-degree-pill">B.F.A Design</span>
+            <span class="home-degree-pill">B.F.A. Design</span>
             <span class="home-degree-pill ux">B.S. Arts &amp; Entertainment Technologies</span>
           </div>
           <div class="home-degree-location">
@@ -1093,7 +1114,7 @@ audio{accent-color:#1A1A1A}
         </div>
         <div class="skill-group">
           <div class="skill-group-label">Skills</div>
-          <div class="skill-list"><span class="stag">Graphic Design</span><span class="stag">Motion Design</span><span class="stag">Game Design</span><span class="stag">Narrative Design</span><span class="stag">UX/UI</span><span class="stag">Programming</span><span class="stag">Prototyping</span><span class="stag">Typeface Design</span></div>
+          <div class="skill-list"><span class="stag">Graphic Design</span><span class="stag">Motion Design</span><span class="stag">Game Design</span><span class="stag">Narrative Design</span><span class="stag">UX/UI</span><span class="stag">Programming</span><span class="stag">Prototyping</span><span class="stag">Typeface Design</span><span class="stag">Product Design</span><span class="stag">Photography & Videography</span></div>
         </div>
       </div>
       <div class="about-section">
@@ -1243,7 +1264,7 @@ audio{accent-color:#1A1A1A}
         <p class="proj-detail-p">One of the first things I knew about this book is that I would self-author it. To do that successfully, I had to gather a wealth of resources. So to the internet I went!</p>
         <p class="proj-detail-p">I created a Miro board to compile websites that could guide my research, as well as sources for font specimens. When gathering materials, I didn't limit myself to typography alone. It was also important to collect research from related fields, such as game psychology, UX/UI design, and more, as these insights would help supplement my work. I also explored Reddit forums, where the community is very active, to see if others had similar questions or inquiries.</p>
         <div class="proj-miro-wrap">
-          <iframe src="https://miro.com/app/live-embed/uXjVJAUyZPs=/" allow="fullscreen; clipboard-read; clipboard-write" allowfullscreen></iframe>
+          <iframe src="https://miro.com/app/live-embed/uXjVJAUyZPs=/" allow="fullscreen; clipboard-read; clipboard-write" allow="clipboard-write fullscreen" allowfullscreen></iframe>
         </div>
         <p class="proj-img-caption">Explore my Miro board above, click to interact.</p>
         <div class="proj-kp">
@@ -1309,7 +1330,7 @@ audio{accent-color:#1A1A1A}
         <p class="proj-detail-p" style="font-style:italic;color:var(--muted)">As part of the project requirements, I was asked to compile information and present my ideas to the class, explaining the topic I was covering, why I chose it, and how I planned to structure the information.</p>
         <p class="proj-detail-p">Here you can go through the presentation I curated for class. It is important to note that a lot of the information was verbally communicated by me, supported by the animations and images in the presentation.</p>
         <div class="proj-miro-wrap">
-          <iframe src="https://www.canva.com/design/DAG2Yx6JfNE/JVo_Sok14Cwxcz_cFPY7-w/view?embed" allow="fullscreen" allowfullscreen></iframe>
+          <iframe src="https://www.canva.com/design/DAG2Yx6JfNE/JVo_Sok14Cwxcz_cFPY7-w/view?embed" allow="fullscreen" allow="clipboard-write fullscreen" allowfullscreen></iframe>
         </div>
         <p class="proj-img-caption">Click through the slides above to explore the full presentation.</p>
         <p class="proj-detail-p">The presentation proved to be immensely helpful for me, as it made a rough outline of what I would include and how I could talk about it. It also helped me develop ideas on how I could have visual graphics interact with the text and content within the book itself. Professor Kelcey's feedback was to talk a bit slower next time, and that she enjoyed the slide layout and animations, as well as the sources I was utilizing to help me make this book.</p>
@@ -1627,7 +1648,7 @@ audio{accent-color:#1A1A1A}
         <p class="proj-detail-p">Our class started with a mixer activity that the whole class joked about sounding like speed dating. Since the class is split between AET and Design students, and I am double-majoring in both, I made an effort to meet everyone. After the session, I was genuinely honored to be approached separately by two AET students, Carly Mills and Miranda Cruz, who both asked if I wanted to team up. We checked in with Professors Jessie Contour and Kelcey Gray, who gave us the green light (and laughed at how excited we were), and the "phrog girls" team was born.</p>
         <p class="proj-detail-p">All our communication happened over Discord and in person, and everyone stayed on top of things throughout. Miro became our best friend for the creative process. We compiled almost all of our ideation and prototypes there to keep everything in one place.</p>
         <div class="proj-miro-wrap" style="margin-top:20px">
-          <iframe src="https://miro.com/app/live-embed/uXjVG2XqzGo=/?moveToViewport=-18808,-8450,36000,20000&embedId=discotype-board" allowfullscreen></iframe>
+          <iframe src="https://miro.com/app/live-embed/uXjVG2XqzGo=/?moveToViewport=-18808,-8450,36000,20000&embedId=discotype-board" allow="clipboard-write fullscreen" allowfullscreen></iframe>
         </div>
         <p class="proj-img-caption">Full process board on Miro — drag to explore</p>
         <div style="margin-top:24px;border:1px solid var(--border);padding:16px 20px;background:var(--gray)">
@@ -1990,7 +2011,7 @@ audio{accent-color:#1A1A1A}
             </div>
             <a href="https://www.figma.com/design/1HOVl1FtBDDJxaHKjVPN0O/Oracle-Reading-Quiz-Prototype?node-id=0-1&p=f&t=yqg46gEztdq3ubmV-0" target="_blank" style="font-size:12px;color:var(--muted);text-decoration:underline;text-underline-offset:2px;white-space:nowrap;transition:color 0.15s" onmouseover="this.style.color='#1A1A1A'" onmouseout="this.style.color='var(--muted)'">Open →</a>
           </div>
-          <iframe style="border:none;width:100%;display:block" height="480" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fdesign%2F1HOVl1FtBDDJxaHKjVPN0O%2FOracle-Reading-Quiz-Prototype%3Fnode-id%3D0-1%26p%3Df%26t%3Dyqg46gEztdq3ubmV-0" allowfullscreen></iframe>
+          <iframe style="border:none;width:100%;display:block" height="480" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fdesign%2F1HOVl1FtBDDJxaHKjVPN0O%2FOracle-Reading-Quiz-Prototype%3Fnode-id%3D0-1%26p%3Df%26t%3Dyqg46gEztdq3ubmV-0" allow="clipboard-write fullscreen" allowfullscreen></iframe>
         </div>
         <div style="border:1px solid var(--border);overflow:hidden;margin-top:12px">
           <div style="background:var(--gray);padding:18px 22px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;gap:16px">
@@ -2000,7 +2021,7 @@ audio{accent-color:#1A1A1A}
             </div>
             <a href="https://www.figma.com/design/1HOVl1FtBDDJxaHKjVPN0O/Oracle-Reading-Quiz-Prototype?node-id=20-363&t=4yJeYGS0gCcP5Cfe-1" target="_blank" style="font-size:12px;color:var(--muted);text-decoration:underline;text-underline-offset:2px;white-space:nowrap;transition:color 0.15s" onmouseover="this.style.color='#1A1A1A'" onmouseout="this.style.color='var(--muted)'">Open →</a>
           </div>
-          <iframe style="border:none;width:100%;display:block" height="480" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fdesign%2F1HOVl1FtBDDJxaHKjVPN0O%2FOracle-Reading-Quiz-Prototype%3Fnode-id%3D20-363%26t%3D4yJeYGS0gCcP5Cfe-1" allowfullscreen></iframe>
+          <iframe style="border:none;width:100%;display:block" height="480" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fdesign%2F1HOVl1FtBDDJxaHKjVPN0O%2FOracle-Reading-Quiz-Prototype%3Fnode-id%3D20-363%26t%3D4yJeYGS0gCcP5Cfe-1" allow="clipboard-write fullscreen" allowfullscreen></iframe>
         </div>
       </div>
 
@@ -2410,7 +2431,7 @@ audio{accent-color:#1A1A1A}
         </div>
         <p class="proj-img-caption">Miro ideation board</p>
         <div class="proj-miro-wrap" style="margin-top:16px">
-          <iframe src="https://miro.com/app/live-embed/uXjVG_inSJc=/?embedId=stellar-board" allowfullscreen></iframe>
+          <iframe src="https://miro.com/app/live-embed/uXjVG_inSJc=/?embedId=stellar-board" allow="clipboard-write fullscreen" allowfullscreen></iframe>
         </div>
         <p class="proj-img-caption">Full process board on Miro, drag to explore</p>
       </div>
@@ -2847,9 +2868,11 @@ audio{accent-color:#1A1A1A}
       <div style="font-size:16px;color:#fff;font-weight:600;font-family:'Fredoka',sans-serif">Spotify: Designing a New Microinteraction</div>
     </div>
   </div>
-  <div style="height:600px;background:#121212;overflow:hidden;border-top:1px solid #222;border-bottom:1px solid #222;display:flex;align-items:center;justify-content:center">
-    <iframe style="border:none;border-radius:8px" width="304" height="556" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FIt7fHdbqm8dW93LvSSZzE4%2FSpotify-Omicron%3Fnode-id%3D7-35%26p%3Df%26t%3DLy6GSbqYWkl0FEMM-1%26scaling%3Dscale-down%26content-scaling%3Dfixed%26page-id%3D0%253A1" allowfullscreen></iframe>
-  </div>
+  <a href="https://www.figma.com/proto/It7fHdbqm8dW93LvSSZzE4/Spotify-Omicron?node-id=7-35&p=f&t=Ly6GSbqYWkl0FEMM-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1" target="_blank" style="display:flex;padding:20px 32px;background:#121212;border-top:1px solid #222;border-bottom:1px solid #222;align-items:center;justify-content:center;gap:12px;text-decoration:none;transition:background 0.15s" onmouseover="this.style.background='#191919'" onmouseout="this.style.background='#121212'">
+    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><rect x="1" y="1" width="7" height="7" rx="2" fill="#F24E1E"/><rect x="1" y="10" width="7" height="7" rx="2" fill="#FF7262"/><rect x="10" y="1" width="7" height="7" rx="2" fill="#A259FF"/><circle cx="13.5" cy="13.5" r="3.5" fill="#1ABCFE"/></svg>
+    <span style="font-size:14px;color:#fff;font-weight:500;font-family:'Outfit',sans-serif">Try the interactive prototype in Figma</span>
+    <span style="font-size:14px;color:rgba(255,255,255,0.4)">→</span>
+  </a>
   <div class="proj-detail-body">
     <div class="proj-detail-sidebar">
       <div class="proj-detail-sidebar-section">
@@ -2954,7 +2977,7 @@ audio{accent-color:#1A1A1A}
             </div>
             <a href="https://www.figma.com/design/It7fHdbqm8dW93LvSSZzE4/Spotify-Omicron?node-id=24-36&t=0oxKFr7PEbIWGVEm-1" target="_blank" style="font-size:12px;color:var(--muted);text-decoration:underline;text-underline-offset:2px;white-space:nowrap;transition:color 0.15s" onmouseover="this.style.color='#1A1A1A'" onmouseout="this.style.color='var(--muted)'">Open →</a>
           </div>
-          <iframe style="border:none;width:100%;display:block" height="480" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fdesign%2FIt7fHdbqm8dW93LvSSZzE4%2FSpotify-Omicron%3Fnode-id%3D24-36%26t%3D0oxKFr7PEbIWGVEm-1" allowfullscreen></iframe>
+          <iframe style="border:none;width:100%;display:block" height="480" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fdesign%2FIt7fHdbqm8dW93LvSSZzE4%2FSpotify-Omicron%3Fnode-id%3D24-36%26t%3D0oxKFr7PEbIWGVEm-1" allow="clipboard-write fullscreen" allowfullscreen></iframe>
         </div>
         <div style="border:1px solid var(--border);overflow:hidden;margin-top:12px">
           <div style="background:var(--gray);padding:18px 22px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;gap:16px">
@@ -2964,7 +2987,7 @@ audio{accent-color:#1A1A1A}
             </div>
             <a href="https://www.figma.com/design/It7fHdbqm8dW93LvSSZzE4/Spotify-Omicron?node-id=24-160&t=0oxKFr7PEbIWGVEm-1" target="_blank" style="font-size:12px;color:var(--muted);text-decoration:underline;text-underline-offset:2px;white-space:nowrap;transition:color 0.15s" onmouseover="this.style.color='#1A1A1A'" onmouseout="this.style.color='var(--muted)'">Open →</a>
           </div>
-          <iframe style="border:none;width:100%;display:block" height="480" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fdesign%2FIt7fHdbqm8dW93LvSSZzE4%2FSpotify-Omicron%3Fnode-id%3D24-160%26t%3D0oxKFr7PEbIWGVEm-1" allowfullscreen></iframe>
+          <iframe style="border:none;width:100%;display:block" height="480" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fdesign%2FIt7fHdbqm8dW93LvSSZzE4%2FSpotify-Omicron%3Fnode-id%3D24-160%26t%3D0oxKFr7PEbIWGVEm-1" allow="clipboard-write fullscreen" allowfullscreen></iframe>
         </div>
         <div style="border:1px solid var(--border);overflow:hidden;margin-top:12px">
           <div style="background:var(--gray);padding:18px 22px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;gap:16px">
@@ -2974,7 +2997,7 @@ audio{accent-color:#1A1A1A}
             </div>
             <a href="https://www.figma.com/proto/It7fHdbqm8dW93LvSSZzE4/Spotify-Omicron?node-id=7-35&p=f&t=Ly6GSbqYWkl0FEMM-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1" target="_blank" style="font-size:12px;color:var(--muted);text-decoration:underline;text-underline-offset:2px;white-space:nowrap;transition:color 0.15s" onmouseover="this.style.color='#1A1A1A'" onmouseout="this.style.color='var(--muted)'">Open →</a>
           </div>
-          <iframe style="border:none;width:100%;display:block" height="600" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FIt7fHdbqm8dW93LvSSZzE4%2FSpotify-Omicron%3Fnode-id%3D7-35%26p%3Df%26t%3DLy6GSbqYWkl0FEMM-1%26scaling%3Dscale-down%26content-scaling%3Dfixed%26page-id%3D0%253A1" allowfullscreen></iframe>
+          <iframe style="border:none;width:100%;display:block" height="600" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FIt7fHdbqm8dW93LvSSZzE4%2FSpotify-Omicron%3Fnode-id%3D7-35%26p%3Df%26t%3DLy6GSbqYWkl0FEMM-1%26scaling%3Dscale-down%26content-scaling%3Dfixed%26page-id%3D0%253A1" allow="clipboard-write fullscreen" allowfullscreen></iframe>
         </div>
         <div style="border:1px solid var(--border);overflow:hidden;margin-top:12px">
           <div style="background:var(--gray);padding:18px 22px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;gap:16px">
@@ -3180,7 +3203,7 @@ audio{accent-color:#1A1A1A}
         <div class="proj-detail-h2">Everything on Miro</div>
         <p class="proj-detail-p">The full design process, from initial concept presentations to reference boards, sketch reviews, and iteration rounds, was documented and discussed on Miro. The board shows the evolution of the livery from first ideas to the final direction.</p>
         <div class="proj-miro-wrap">
-          <iframe src="https://miro.com/app/live-embed/uXjVHKeZEj8=/?embedMode=view_only_without_ui&moveToWidget=3458764635824447762&cot=14" loading="lazy" allowfullscreen></iframe>
+          <iframe src="https://miro.com/app/live-embed/uXjVHKeZEj8=/?embedMode=view_only_without_ui&moveToWidget=3458764635824447762&cot=14" loading="lazy" allow="clipboard-write fullscreen" allowfullscreen></iframe>
         </div>
         <p class="proj-img-caption">Full process board: reference gathering, concept presentations, sketches, and iterations all in one place.</p>
       </div>
@@ -4182,7 +4205,7 @@ audio{accent-color:#1A1A1A}
 
         <div class="proj-detail-h3">Library and Archive Research</div>
         <div class="proj-miro-wrap">
-          <iframe src="https://miro.com/app/live-embed/uXjVJBMWtP8=/" allow="fullscreen; clipboard-read; clipboard-write" allowfullscreen></iframe>
+          <iframe src="https://miro.com/app/live-embed/uXjVJBMWtP8=/" allow="fullscreen; clipboard-read; clipboard-write" allow="clipboard-write fullscreen" allowfullscreen></iframe>
         </div>
         <p class="proj-img-caption">The Miro board I compiled of my research.</p>
         <p class="proj-detail-p">I explored the Rosenberg Library archives, the Galveston and Texas History Center's digital collections, and the International Oleander Society's pages. This research helped me uncover the history, stories, and visual context of Galveston's history.</p>
@@ -4557,7 +4580,7 @@ audio{accent-color:#1A1A1A}
 
         <div class="proj-detail-h3">Making a Miro Board + Compiling Sketches</div>
         <div class="proj-miro-wrap">
-          <iframe src="https://miro.com/app/live-embed/uXjVJvVKFaA=/" allow="fullscreen; clipboard-read; clipboard-write" allowfullscreen></iframe>
+          <iframe src="https://miro.com/app/live-embed/uXjVJvVKFaA=/" allow="fullscreen; clipboard-read; clipboard-write" allow="clipboard-write fullscreen" allowfullscreen></iframe>
         </div>
         <p class="proj-img-caption">Explore the full Miro board above.</p>
         <p class="proj-detail-p">As I often do at the start of design projects, I created a Miro board to compile my research, ideas, and preliminary sketches before settling on a final concept. This included my exploration of the tea strainer, discussions with Professor Catterall, and my temporary concept of a tea kit that later evolved to focus on chai itself.</p>
@@ -5305,7 +5328,7 @@ audio{accent-color:#1A1A1A}
         <div class="proj-detail-h2">Reference &amp; Inspiration</div>
         <p class="proj-detail-p">I put together a Miro board of reference images and did some research to guide my design process. Looking into Adobe Revival architecture, with its earthy walls, flat roofs, and deep-set openings, gave me a solid visual and material language to pull from. Having it all in one place was really helpful to stay inspired throughout the project.</p>
         <div class="proj-miro-wrap">
-          <iframe src="https://miro.com/app/live-embed/uXjVITdfzbk=/" allow="fullscreen; clipboard-read; clipboard-write" allowfullscreen></iframe>
+          <iframe src="https://miro.com/app/live-embed/uXjVITdfzbk=/" allow="fullscreen; clipboard-read; clipboard-write" allow="clipboard-write fullscreen" allowfullscreen></iframe>
         </div>
         <p class="proj-img-caption">Miro board of reference images and research compiled to guide the design.</p>
       </div>
@@ -5427,6 +5450,11 @@ function pauseAllMedia() {
 document.querySelectorAll('.proj-detail-page video').forEach(function(v) {
   v.preload = 'none';
 });
+// Retry stalled motion gallery videos
+document.querySelectorAll('.motion-gallery video').forEach(function(v) {
+  v.addEventListener('stalled', function() { this.load(); });
+  v.addEventListener('error', function() { var self = this; setTimeout(function() { self.load(); }, 800); });
+});
 
 function showPage(id) {
   pauseAllMedia();
@@ -5435,6 +5463,10 @@ function showPage(id) {
   const pg = document.getElementById(pages[id]);
   if (pg) pg.classList.add('active');
   if (id === 'home') { const hv = document.getElementById('home-motion-vid'); if (hv) hv.play(); }
+  if (id === 'motion') {
+    var fv = document.querySelector('.motion-gallery .motion-panel:first-child video');
+    if (fv && fv.readyState < 2) { fv.load(); }
+  }
   const prevNav = document.querySelector('.nav-links a.active');
   if (prevNav) prevNav.classList.remove('active');
   const nv = document.getElementById(navIds[id]);
@@ -5834,7 +5866,7 @@ var projMeta = {
   'discotype':           {title:'DiscoType!',             cat:'ux', catLabel:'UX/UI & Game Design', sub:'Interaction Design', accent:'accent-ux'},
   'oracle':              {title:'Oracle',                  cat:'ux', catLabel:'UX/UI & Game Design', sub:'Interactive Web',    accent:'accent-ux'},
   'featherform':         {title:'Featherform',             cat:'ux', catLabel:'UX/UI & Game Design', sub:'Game UI Design',     accent:'accent-ux'},
-  'stellar-exploration': {title:'Stellar Exploration: The Scale of Our Universe', cat:'ux', catLabel:'UX/UI & Game Design', sub:'Data Visualization', accent:'accent-ux'},
+  'stellar-exploration': {title:'Stellar Exploration', cat:'ux', catLabel:'UX/UI & Game Design', sub:'Data Visualization', accent:'accent-ux'},
   'silent-spellcraft':   {title:'Silent Spellcraft',       cat:'ux', catLabel:'UX/UI & Game Design', sub:'Game UI',            accent:'accent-ux'},
   'choco-knight':        {title:'Choco Knight',                               cat:'ux', catLabel:'UX/UI & Game Design', sub:'Game Design',       accent:'accent-ux'},
   'spotify-feature':     {title:'Spotify: Designing a New Microinteraction',  cat:'ux', catLabel:'UX/UI & Game Design', sub:'Micro-interaction', accent:'accent-ux'},
@@ -5876,6 +5908,9 @@ function renderMoreProjects(slug) {
       if (!/\bmore-proj-thumb-inner\b/.test(thumbNode.className)) thumbNode.className = 'more-proj-thumb-inner ' + thumbNode.className;
       thumbNode.querySelectorAll('.proj-hover').forEach(function(el) { el.remove(); });
       thumbNode.querySelectorAll('img').forEach(function(img) { img.loading = 'lazy'; img.decoding = 'async'; });
+      if (s === 'stellar-exploration') {
+        thumbNode.querySelectorAll('img').forEach(function(img) { img.style.transform = 'scale(1.25)'; img.style.transition = 'transform 0.4s ease'; });
+      }
     } else {
       // For reel-style cards (no proj-thumb-inner), clone the full proj-thumb contents
       var srcProjThumb = document.querySelector('[onclick="showProject(\'' + s + '\')"] .proj-thumb');
@@ -5927,6 +5962,19 @@ function renderMoreProjects(slug) {
   wrap.appendChild(head);
   wrap.appendChild(grid);
   pageEl.appendChild(wrap);
+
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) { e.target.classList.add('mpv'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.1 });
+    grid.querySelectorAll('.more-proj-item').forEach(function(el, i) {
+      el.classList.add('mpv-init');
+      el.style.transitionDelay = (i * 0.08) + 's';
+      io.observe(el);
+    });
+  }
 }
 </script>
 <button class="btt" id="btt-btn" aria-label="Back to top"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 11V3M7 3L3 7M7 3L11 7" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
