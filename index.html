@@ -5545,6 +5545,7 @@ function showPage(id) {
   const pg = document.getElementById(pages[id]);
   if (pg) pg.classList.add('active');
   if (id === 'home') { const hv = document.getElementById('home-motion-vid'); if (hv) hv.play(); }
+  if (id === 'about') requestAnimationFrame(sizeRotatingDescriptor);
   if (id === 'motion') {
     var fv = document.querySelector('.motion-gallery .motion-panel:first-child video');
     if (fv && fv.readyState < 2) { fv.load(); }
@@ -5665,7 +5666,6 @@ function sizeRotatingDescriptor() {
   });
   if (maxWidth > 0) container.style.minWidth = Math.ceil(maxWidth) + 'px';
 }
-document.fonts.ready.then(sizeRotatingDescriptor);
 
 function rotateDescriptor() {
   const items = document.querySelectorAll('.descriptor-item');
