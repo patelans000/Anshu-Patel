@@ -1851,7 +1851,7 @@ audio{accent-color:#1A1A1A}
             <div style="font-family:'Discotype',sans-serif;font-size:28px;letter-spacing:2px;margin-bottom:14px;opacity:0.8">N O P Q R S T U V W X Y Z</div>
             <div style="font-family:'Discotype',sans-serif;font-size:28px;letter-spacing:2px;margin-bottom:14px;opacity:0.65">a b c d e f g h i j k l m</div>
             <div style="font-family:'Discotype',sans-serif;font-size:28px;letter-spacing:2px;margin-bottom:14px;opacity:0.65">n o p q r s t u v w x y z</div>
-            <div style="font-family:'Discotype',sans-serif;font-size:28px;letter-spacing:2px;opacity:0.5">0 1 2 3 4 5 6 7 8 9 . ! ?</div>
+            <div style="font-family:'Discotype',sans-serif;font-size:28px;letter-spacing:2px;opacity:0.5">0 1 2 3 4 5 6 7 8 9 . !</div>
           </div>
         </div>
 
@@ -5655,6 +5655,18 @@ function toggleExp(id) {
 }
 
 // ── ROTATING DESCRIPTOR ──
+function sizeRotatingDescriptor() {
+  var container = document.getElementById('rotating-descriptor');
+  if (!container) return;
+  var maxWidth = 0;
+  container.querySelectorAll('.descriptor-item').forEach(function(item) {
+    var w = item.getBoundingClientRect().width;
+    if (w > maxWidth) maxWidth = w;
+  });
+  if (maxWidth > 0) container.style.minWidth = Math.ceil(maxWidth) + 'px';
+}
+document.fonts.ready.then(sizeRotatingDescriptor);
+
 function rotateDescriptor() {
   const items = document.querySelectorAll('.descriptor-item');
   if (!items.length) return;
