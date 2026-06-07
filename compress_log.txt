@@ -1,0 +1,434 @@
+﻿=== Compression started 06/07/2026 02:36:34 ===
+Found 27 videos to process
+
+Processing video: Animation Work Flow Loop.mp4 (6.7 MB)
+  Done: 6.7 MB -> 1.9 MB (saved 4.8 MB)
+
+Processing video: DiscoType full playthrough.mp4 (58.2 MB)
+  Done: 58.2 MB -> 34.2 MB (saved 24 MB)
+
+Processing video: Final Animations Video Loop.mp4 (6.9 MB)
+  Done: 6.9 MB -> 1.8 MB (saved 5.1 MB)
+
+Processing video: Full Video Walkthrough.mp4 (11.9 MB)
+  Skipping - already at 1443k bps
+
+Processing video: Interaction Animation Speech Bubble.mp4 (5.7 MB)
+  Done: 5.7 MB -> 0.7 MB (saved 5 MB)
+
+Processing video: Interaction ClickHover Oracle.mp4 (6.4 MB)
+  Done: 6.4 MB -> 0.8 MB (saved 5.6 MB)
+
+Processing video: Prototype Wireframe Video.mp4 (8.9 MB)
+  Done: 8.9 MB -> 1.3 MB (saved 7.6 MB)
+
+Processing video: Results Interaction Animation.mp4 (7.6 MB)
+  Done: 7.6 MB -> 1 MB (saved 6.6 MB)
+
+Processing video: Final Walkthrough.mp4 (45.4 MB)
+  Done: 45.4 MB -> 42.9 MB (saved 2.5 MB)
+
+Processing video: Stellar Exploration Final Video.mp4 (33.1 MB)
+  Done: 33.1 MB -> 15.6 MB (saved 17.5 MB)
+
+Processing video: Ecoleander Advertise Reel.mp4 (31.5 MB)
+  Done: 31.5 MB -> 28 MB (saved 3.5 MB)
+
+Processing video: Alucard Tepes.mp4 (30.1 MB)
+  Done: 30.1 MB -> 17.3 MB (saved 12.8 MB)
+
+Processing video: Carmen Sandiego.mp4 (20.5 MB)
+  Done: 20.5 MB -> 10.6 MB (saved 9.9 MB)
+
+Processing video: Ellie and Joel.mp4 (54 MB)
+  Done: 54 MB -> 34.6 MB (saved 19.4 MB)
+
+Processing video: Gojo Satoru.mp4 (24.6 MB)
+  Done: 24.6 MB -> 12.2 MB (saved 12.4 MB)
+
+Processing video: Jason Todd.mp4 (32.9 MB)
+  Done: 32.9 MB -> 20.3 MB (saved 12.6 MB)
+
+Processing video: LHR Solar Motion Graphics.mp4 (15.6 MB)
+  Done: 15.6 MB -> 14.6 MB (saved 1 MB)
+
+Processing video: Maki Zenin.mp4 (31.2 MB)
+  Done: 31.2 MB -> 28.2 MB (saved 3 MB)
+
+Processing video: Nightcrawler.mp4 (18.2 MB)
+  Done: 18.2 MB -> 11.7 MB (saved 6.5 MB)
+
+Processing video: Noctis Lucis Caelum.mp4 (40.4 MB)
+  Done: 40.4 MB -> 11.7 MB (saved 28.7 MB)
+
+Processing video: Pride and Prejudice.mp4 (39.5 MB)
+  Done: 39.5 MB -> 19.4 MB (saved 20.1 MB)
+
+Processing video: Roy Mustang.mp4 (31.6 MB)
+  Done: 31.6 MB -> 8.5 MB (saved 23.1 MB)
+
+Processing video: Snake.mp4 (33.6 MB)
+  Done: 33.6 MB -> 14 MB (saved 19.6 MB)
+
+Processing video: Unveiling LHR Video.mp4 (72 MB)
+  Done: 72 MB -> 42.2 MB (saved 29.8 MB)
+
+Processing video: YooHanKim.mp4 (30.3 MB)
+  Done: 30.3 MB -> 24.8 MB (saved 5.5 MB)
+
+Processing video: Zelda.mp4 (29.5 MB)
+  Done: 29.5 MB -> 8.4 MB (saved 21.1 MB)
+
+Processing video: Zuko.mp4 (57.9 MB)
+  Done: 57.9 MB -> 18.5 MB (saved 39.4 MB)
+
+=== Images ===
+Found 30 JPEGs to process
+
+Processing image: Final Poster.jpg (16.7 MB)
+  Done: 16.7 MB -> 3.8 MB (saved 12.9 MB)
+
+Processing image: Hero image 3.jpg (1.9 MB)
+  Done: 1.9 MB -> 1.4 MB (saved 0.5 MB)
+
+Processing image: Hero image 4.jpg (5.8 MB)
+  Done: 5.8 MB -> 2.2 MB (saved 3.6 MB)
+
+Processing image: Tiffin Photoshoot Storyboard 1.jpg (4.9 MB)
+  Done: 4.9 MB -> 1.7 MB (saved 3.2 MB)
+
+Processing image: Tiffin Photoshoot Storyboard 10.jpg (4.5 MB)
+  Done: 4.5 MB -> 1.5 MB (saved 3 MB)
+
+Processing image: Tiffin Photoshoot Storyboard 11.jpg (4.5 MB)
+  Done: 4.5 MB -> 1.4 MB (saved 3.1 MB)
+
+Processing image: Tiffin Photoshoot Storyboard 12.jpg (5.8 MB)
+  Done: 5.8 MB -> 2.2 MB (saved 3.6 MB)
+
+Processing image: Tiffin Photoshoot Storyboard 3.jpg (5.4 MB)
+  Done: 5.4 MB -> 2 MB (saved 3.4 MB)
+
+Processing image: Tiffin Photoshoot Storyboard 4.jpg (5.6 MB)
+  Done: 5.6 MB -> 2.1 MB (saved 3.5 MB)
+
+Processing image: Tiffin Photoshoot Storyboard 5.jpg (5.5 MB)
+  Done: 5.5 MB -> 2.1 MB (saved 3.4 MB)
+
+Processing image: Tiffin Photoshoot Storyboard 6.jpg (5.6 MB)
+  Done: 5.6 MB -> 2.4 MB (saved 3.2 MB)
+
+Processing image: Tiffin Photoshoot Storyboard 7.jpg (5.5 MB)
+  Done: 5.5 MB -> 2.3 MB (saved 3.2 MB)
+
+Processing image: Tiffin Photoshoot Storyboard 8.jpg (5.8 MB)
+  Done: 5.8 MB -> 2.5 MB (saved 3.3 MB)
+
+Processing image: Tiffin Photoshoot Storyboard 9.jpg (5.4 MB)
+  Done: 5.4 MB -> 2 MB (saved 3.4 MB)
+
+Processing image: Photoshoot 1.jpg (6.4 MB)
+  Done: 6.4 MB -> 2.5 MB (saved 3.9 MB)
+
+Processing image: Photoshoot 10.jpg (6.1 MB)
+  Done: 6.1 MB -> 2.6 MB (saved 3.5 MB)
+
+Processing image: Photoshoot 11.jpg (5.7 MB)
+  Done: 5.7 MB -> 2.5 MB (saved 3.2 MB)
+
+Processing image: Photoshoot 2.jpg (6.7 MB)
+  Done: 6.7 MB -> 2.7 MB (saved 4 MB)
+
+Processing image: Photoshoot 3.jpg (8.7 MB)
+  Done: 8.7 MB -> 3.9 MB (saved 4.8 MB)
+
+Processing image: Photoshoot 4.jpg (7 MB)
+  Done: 7 MB -> 2.8 MB (saved 4.2 MB)
+
+Processing image: Photoshoot 5.jpg (7.4 MB)
+  Done: 7.4 MB -> 3.1 MB (saved 4.3 MB)
+
+Processing image: Photoshoot 6.jpg (4.8 MB)
+  Done: 4.8 MB -> 1.6 MB (saved 3.2 MB)
+
+Processing image: Photoshoot 7.jpg (5.9 MB)
+  Done: 5.9 MB -> 2.1 MB (saved 3.8 MB)
+
+Processing image: Photoshoot 8.jpg (7.2 MB)
+  Done: 7.2 MB -> 3.2 MB (saved 4 MB)
+
+Processing image: Photoshoot 9.jpg (4.8 MB)
+  Done: 4.8 MB -> 1.8 MB (saved 3 MB)
+
+Processing image: Flipula Presentation Poster.jpg (3.8 MB)
+  Done: 3.8 MB -> 2.1 MB (saved 1.7 MB)
+
+Processing image: Anshu_Patel_Version_1.jpg (3.1 MB)
+  Done: 3.1 MB -> 1.6 MB (saved 1.5 MB)
+
+Processing image: Anshu_Patel_Version_2.jpg (1.9 MB)
+  Done: 1.9 MB -> 0.8 MB (saved 1.1 MB)
+
+Processing image: Anshu_Patel_Version_3.jpg (3.6 MB)
+  Done: 3.6 MB -> 1.9 MB (saved 1.7 MB)
+
+Processing image: Hero, Book in Book Sleeve.jpg (5.2 MB)
+  Done: 5.2 MB -> 0.4 MB (saved 4.8 MB)
+
+=== Large PNGs ===
+Found 84 PNGs to process
+
+Processing PNG: Artist Book Posters done for process blog-07.png (3.2 MB)
+  Done: 3.2 MB -> 3.1 MB (saved 0.1 MB)
+
+Processing PNG: Artist Book Posters wip-01.png (4.6 MB)
+  Done: 4.6 MB -> 4.4 MB (saved 0.2 MB)
+
+Processing PNG: Artist Book Posters wip-02.png (18.4 MB)
+  Done: 18.4 MB -> 18.1 MB (saved 0.3 MB)
+
+Processing PNG: Artist Book Posters wip-04.png (8.6 MB)
+  Done: 8.6 MB -> 8.1 MB (saved 0.5 MB)
+
+Processing PNG: melinda og poster.png (27.9 MB)
+  Done: 27.9 MB -> 26.1 MB (saved 1.8 MB)
+
+Processing PNG: remix poster kevin mine-01.png (3.4 MB)
+  Done: 3.4 MB -> 3.1 MB (saved 0.3 MB)
+
+Processing PNG: Logo sketches.png (2.3 MB)
+  Done: 2.3 MB -> 1.8 MB (saved 0.5 MB)
+
+Processing PNG: Paper prototyping.png (2.1 MB)
+  Done: 2.1 MB -> 1.4 MB (saved 0.7 MB)
+
+Processing PNG: image (1).png (2.5 MB)
+  Done: 2.5 MB -> 1.9 MB (saved 0.6 MB)
+
+Processing PNG: image (3).png (2.3 MB)
+  Done: 2.3 MB -> 1.8 MB (saved 0.5 MB)
+
+Processing PNG: image.png (2.1 MB)
+  Done: 2.1 MB -> 1.6 MB (saved 0.5 MB)
+
+Processing PNG: RULES PAGE.png (4.4 MB)
+  Done: 4.4 MB -> 4.3 MB (saved 0.1 MB)
+
+Processing PNG: FEATHERFORM SCREEN 1.png (3.2 MB)
+  Done: 3.2 MB -> 3 MB (saved 0.2 MB)
+
+Processing PNG: FEATHERFORM SCREEN 2.png (3.2 MB)
+  Done: 3.2 MB -> 3 MB (saved 0.2 MB)
+
+Processing PNG: kevin spreads 1 png.png (2 MB)
+  Done: 2 MB -> 2 MB (saved 0 MB)
+
+Processing PNG: kevin spreads 2 png.png (2.4 MB)
+  Done: 2.4 MB -> 2.3 MB (saved 0.1 MB)
+
+Processing PNG: kevin spreads POST CRITIQYE2.png (2.4 MB)
+  Done: 2.4 MB -> 2.4 MB (saved 0 MB)
+
+Processing PNG: kevin spreads prefinal critique2.png (2.4 MB)
+  Done: 2.4 MB -> 2.4 MB (saved 0 MB)
+
+Processing PNG: final (1).png (7.9 MB)
+  Done: 7.9 MB -> 7.5 MB (saved 0.4 MB)
+
+Processing PNG: final cropped.png (7.3 MB)
+  Done: 7.3 MB -> 6.6 MB (saved 0.7 MB)
+
+Processing PNG: Hero Image.png (3.7 MB)
+  Done: 3.7 MB -> 3.6 MB (saved 0.1 MB)
+
+Processing PNG: image (1).png (3.3 MB)
+  Done: 3.3 MB -> 2.7 MB (saved 0.6 MB)
+
+Processing PNG: image (2).png (2.9 MB)
+  Done: 2.9 MB -> 2.4 MB (saved 0.5 MB)
+
+Processing PNG: image (3).png (2.5 MB)
+  Done: 2.5 MB -> 2 MB (saved 0.5 MB)
+
+Processing PNG: image (4).png (2.4 MB)
+  Done: 2.4 MB -> 1.6 MB (saved 0.8 MB)
+
+Processing PNG: image.png (2.3 MB)
+  Done: 2.3 MB -> 1.8 MB (saved 0.5 MB)
+
+Processing PNG: background.png (2.8 MB)
+  Done: 2.8 MB -> 1.8 MB (saved 1 MB)
+
+Processing PNG: Bottom view of technical parts.png (2.1 MB)
+  Done: 2.1 MB -> 1.6 MB (saved 0.5 MB)
+
+Processing PNG: Cardboard Prototype 1.png (4.1 MB)
+  Done: 4.1 MB -> 3.3 MB (saved 0.8 MB)
+
+Processing PNG: Cardboard Prototype 2.png (3 MB)
+  Done: 3 MB -> 2.2 MB (saved 0.8 MB)
+
+Processing PNG: Close up photo of inserts instructions.png (2.9 MB)
+  Done: 2.9 MB -> 2.3 MB (saved 0.6 MB)
+
+Processing PNG: Critique set up.png (3.1 MB)
+  Done: 3.1 MB -> 2.5 MB (saved 0.6 MB)
+
+Processing PNG: Cutting at home.png (2.7 MB)
+  Done: 2.7 MB -> 2 MB (saved 0.7 MB)
+
+Processing PNG: Hero image 1.png (2.3 MB)
+  Done: 2.3 MB -> 1.8 MB (saved 0.5 MB)
+
+Processing PNG: Hero image 2.png (3.7 MB)
+  Done: 3.7 MB -> 3.6 MB (saved 0.1 MB)
+
+Processing PNG: Inserts glued and assembled.png (4 MB)
+  Done: 4 MB -> 3 MB (saved 1 MB)
+
+Processing PNG: Inserts in tiffin.png (3 MB)
+  Done: 3 MB -> 2.1 MB (saved 0.9 MB)
+
+Processing PNG: More progress home wrap around label and timeline.png (2.9 MB)
+  Done: 2.9 MB -> 2.4 MB (saved 0.5 MB)
+
+Processing PNG: Paper Prototype 1.png (2.1 MB)
+  Done: 2.1 MB -> 1.6 MB (saved 0.5 MB)
+
+Processing PNG: Progress Cutting.png (2.5 MB)
+  Done: 2.5 MB -> 2.1 MB (saved 0.4 MB)
+
+Processing PNG: Reprinted Wrap Around once I returned to school more vibrant.png (3 MB)
+  Done: 3 MB -> 2.7 MB (saved 0.3 MB)
+
+Processing PNG: Securing label with tape.png (2.6 MB)
+  Done: 2.6 MB -> 2 MB (saved 0.6 MB)
+
+Processing PNG: Tiffin assembled front.png (2.5 MB)
+  Done: 2.5 MB -> 1.9 MB (saved 0.6 MB)
+
+Processing PNG: Tiffin handle poking out as intended.png (2.2 MB)
+  Done: 2.2 MB -> 1.6 MB (saved 0.6 MB)
+
+Processing PNG: Tiffin Photoshoot Storyboard 2.png (3.7 MB)
+  Done: 3.7 MB -> 3.6 MB (saved 0.1 MB)
+
+Processing PNG: All Printed Materials Spread.png (3.9 MB)
+  Done: 3.9 MB -> 3.4 MB (saved 0.5 MB)
+
+Processing PNG: Attaching Fabric Interface.png (2.6 MB)
+  Done: 2.6 MB -> 2.3 MB (saved 0.3 MB)
+
+Processing PNG: Bag Mechanic Successfully Working.png (2.2 MB)
+  Done: 2.2 MB -> 1.7 MB (saved 0.5 MB)
+
+Processing PNG: Bag with Tag.png (3.1 MB)
+  Done: 3.1 MB -> 2.7 MB (saved 0.4 MB)
+
+Processing PNG: Ecoleander Main Poster.png (5.6 MB)
+  Done: 5.6 MB -> 4.9 MB (saved 0.7 MB)
+
+Processing PNG: Ecoleander Sewing Guide.png (2.6 MB)
+  Done: 2.6 MB -> 2.2 MB (saved 0.4 MB)
+
+Processing PNG: Ironing on Design.png (2.3 MB)
+  Done: 2.3 MB -> 1.7 MB (saved 0.6 MB)
+
+Processing PNG: Me Ironing Fabric.png (2.1 MB)
+  Done: 2.1 MB -> 1.7 MB (saved 0.4 MB)
+
+Processing PNG: Progress Fixing Flaps.png (3.3 MB)
+  Done: 3.3 MB -> 2.9 MB (saved 0.4 MB)
+
+Processing PNG: Progress Photo The Gift Reading Notes.png (2.2 MB)
+  Done: 2.2 MB -> 1.7 MB (saved 0.5 MB)
+
+Processing PNG: sketches 1.png (3 MB)
+  Done: 3 MB -> 2.4 MB (saved 0.6 MB)
+
+Processing PNG: sketches 2.png (2.6 MB)
+  Done: 2.6 MB -> 2.1 MB (saved 0.5 MB)
+
+Processing PNG: sketches 3.png (2.2 MB)
+  Done: 2.2 MB -> 1.8 MB (saved 0.4 MB)
+
+Processing PNG: A picture I got of my side view post cutting and taping back together.png (2.1 MB)
+  Done: 2.1 MB -> 1.6 MB (saved 0.5 MB)
+
+Processing PNG: Iteration 1 front view.png (2.3 MB)
+  Done: 2.3 MB -> 1.8 MB (saved 0.5 MB)
+
+Processing PNG: Iteration 1 Side view.png (2.4 MB)
+  Done: 2.4 MB -> 1.8 MB (saved 0.6 MB)
+
+Processing PNG: Iteration 2 Back view.png (2.5 MB)
+  Done: 2.5 MB -> 1.8 MB (saved 0.7 MB)
+
+Processing PNG: Iteration 3.png (2.2 MB)
+  Done: 2.2 MB -> 1.6 MB (saved 0.6 MB)
+
+Processing PNG: Orthographic sketch of reference spatula.png (2.9 MB)
+  Done: 2.9 MB -> 2 MB (saved 0.9 MB)
+
+Processing PNG: Quesadilla reference.png (10.1 MB)
+  Done: 10.1 MB -> 7.7 MB (saved 2.4 MB)
+
+Processing PNG: Shop sketch test Iteration 4.png (2.7 MB)
+  Done: 2.7 MB -> 2.5 MB (saved 0.2 MB)
+
+Processing PNG: Spatula reference in kitchen 2.png (2.4 MB)
+  Done: 2.4 MB -> 1.9 MB (saved 0.5 MB)
+
+Processing PNG: Spatula reference in kitchen.png (2.3 MB)
+  Done: 2.3 MB -> 1.8 MB (saved 0.5 MB)
+
+Processing PNG: What my spatula looked like unwrapped from all the tape and after the cuts - side view.png (2.7 MB)
+  Done: 2.7 MB -> 2.5 MB (saved 0.2 MB)
+
+Processing PNG: What my spatula looked like unwrapped from all the tape and after the cuts - top view.png (2.7 MB)
+  Done: 2.7 MB -> 2.5 MB (saved 0.2 MB)
+
+Processing PNG: All four copies in all their glory!.png (4.1 MB)
+  Done: 4.1 MB -> 3.7 MB (saved 0.4 MB)
+
+Processing PNG: Book Dummy 1.png (3.1 MB)
+  Done: 3.1 MB -> 2.2 MB (saved 0.9 MB)
+
+Processing PNG: CUTTING AND ASSEMBLING 1.png (2.8 MB)
+  Done: 2.8 MB -> 2.5 MB (saved 0.3 MB)
+
+Processing PNG: CUTTING AND ASSEMBLING 2.png (2.9 MB)
+  Done: 2.9 MB -> 2.6 MB (saved 0.3 MB)
+
+Processing PNG: CUTTING AND ASSEMBLING 3.png (2.1 MB)
+  Done: 2.1 MB -> 1.7 MB (saved 0.4 MB)
+
+Processing PNG: CUTTING AND ASSEMBLING 4.png (2.7 MB)
+  Done: 2.7 MB -> 2.3 MB (saved 0.4 MB)
+
+Processing PNG: CUTTING AND ASSEMBLING 5.png (2.6 MB)
+  Done: 2.6 MB -> 2.2 MB (saved 0.4 MB)
+
+Processing PNG: final physical photo 3.png (2.2 MB)
+  Done: 2.2 MB -> 1.7 MB (saved 0.5 MB)
+
+Processing PNG: final physical photo 6.png (2.4 MB)
+  Done: 2.4 MB -> 1.9 MB (saved 0.5 MB)
+
+Processing PNG: My prototype print! part 1.png (3.3 MB)
+  Done: 3.3 MB -> 2.3 MB (saved 1 MB)
+
+Processing PNG: My prototype print! part 2.png (4.5 MB)
+  Done: 4.5 MB -> 3.5 MB (saved 1 MB)
+
+Processing PNG: Production of the book sleeves! 1.png (4.3 MB)
+  Done: 4.3 MB -> 3.9 MB (saved 0.4 MB)
+
+Processing PNG: Production of the book sleeves! 2.png (2.5 MB)
+  Done: 2.5 MB -> 2.1 MB (saved 0.4 MB)
+
+Processing PNG: Some photos I took while working on the spreads in InDesign. PART 3.png (2.2 MB)
+  Done: 2.2 MB -> 1.7 MB (saved 0.5 MB)
+
+=== DONE 06/07/2026 02:43:33 ===
+Total media size after: 1095 MB
