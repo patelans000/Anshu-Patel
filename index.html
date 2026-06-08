@@ -5515,6 +5515,8 @@ function preloadPage(id) {
 }
 
 function pauseAllMedia() {
+  _pendingVideoTimers.forEach(function(t) { clearTimeout(t); });
+  _pendingVideoTimers = [];
   document.querySelectorAll('audio, video').forEach(el => {
     if (!el.paused) el.pause();
   });
@@ -5544,9 +5546,25 @@ document.querySelectorAll('.motion-gallery video').forEach(function(v) {
 });
 
 var _histNav = false;
+var _navLock = false;
+var _navLockTimer = null;
+var _pendingVideoTimers = [];
+
+function _setNavLock() {
+  _navLock = true;
+  clearTimeout(_navLockTimer);
+  _navLockTimer = setTimeout(function() { _navLock = false; }, 400);
+}
+
+function _navTimeout(fn, ms) {
+  var t = setTimeout(fn, ms);
+  _pendingVideoTimers.push(t);
+  return t;
+}
 
 function showPage(id) {
-  if (!_histNav) history.pushState({type:'page', id:id}, '', id === 'home' ? location.pathname + location.search : '#' + id);
+  if (!_histNav && _navLock) return;
+  if (!_histNav) { _setNavLock(); history.pushState({type:'page', id:id}, '', id === 'home' ? location.pathname + location.search : '#' + id); }
   pauseAllMedia();
   const prev = document.querySelector('.page.active, .proj-detail-page.active');
   if (prev) prev.classList.remove('active');
@@ -5572,7 +5590,8 @@ function showPage(id) {
 }
 
 function showProject(slug) {
-  if (!_histNav) history.pushState({type:'project', slug:slug}, '', '#' + slug);
+  if (!_histNav && _navLock) return;
+  if (!_histNav) { _setNavLock(); history.pushState({type:'project', slug:slug}, '', '#' + slug); }
   pauseAllMedia();
   const prev = document.querySelector('.page.active, .proj-detail-page.active');
   if (prev) prev.classList.remove('active');
@@ -5586,25 +5605,25 @@ function showProject(slug) {
     initP5Flipbook();
   }
   if (slug === 'spotify-feature') {
-    setTimeout(initSpotifySlides, 50);
+    _navTimeout(initSpotifySlides, 50);
   }
   if (slug === 'oracle') {
-    setTimeout(function() {
+    _navTimeout(function() {
       document.querySelectorAll('#proj-oracle video[autoplay]').forEach(function(v) { v.preload = 'auto'; v.muted = true; v.play().catch(function(){}); });
     }, 100);
   }
   if (slug === 'stellar-exploration') {
-    setTimeout(function() {
+    _navTimeout(function() {
       document.querySelectorAll('#proj-stellar-exploration video[autoplay]').forEach(function(v) { v.preload = 'auto'; v.currentTime = 0; v.muted = true; v.play().catch(function(){}); });
     }, 100);
   }
   if (slug === 'silent-spellcraft') {
-    setTimeout(function() {
+    _navTimeout(function() {
       document.querySelectorAll('#proj-silent-spellcraft video[autoplay]').forEach(function(v) { v.preload = 'auto'; v.currentTime = 0; v.muted = true; v.play().catch(function(){}); });
     }, 100);
   }
   if (slug === 'discotype') {
-    setTimeout(function() {
+    _navTimeout(function() {
       var v = document.getElementById('dt-hero-video');
       var btn = document.getElementById('dt-audio-btn');
       if (v) {
