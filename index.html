@@ -5517,18 +5517,50 @@ function preloadPage(id) {
 function pauseAllMedia() {
   _pendingVideoTimers.forEach(function(t) { clearTimeout(t); });
   _pendingVideoTimers = [];
-  document.querySelectorAll('audio, video').forEach(el => {
-    if (!el.paused) el.pause();
-  });
-  document.querySelectorAll('.proj-detail-page video').forEach(function(v) {
-    v.preload = 'none';
+  // Pause non-project media (motion gallery, home video, about audio)
+  document.querySelectorAll('.motion-gallery video, #home-motion-vid').forEach(function(v) {
+    if (!v.paused) v.pause();
   });
   const audio = document.getElementById('audio-player');
   const btn = document.getElementById('audio-btn');
   if (audio && btn) {
+    if (!audio.paused) audio.pause();
     btn.textContent = '▶';
     btn.classList.remove('playing');
   }
+  // Fully unload all project detail videos to free mobile memory
+  document.querySelectorAll('.proj-detail-page video').forEach(function(v) {
+    v.pause();
+    v.querySelectorAll('source').forEach(function(s) {
+      if (s.src && !s.dataset.src) s.dataset.src = s.getAttribute('src');
+      s.removeAttribute('src');
+    });
+    if (!v.querySelector('source') && v.src && !v.dataset.src) {
+      v.dataset.src = v.getAttribute('src');
+      v.removeAttribute('src');
+    }
+    v.load();
+  });
+  // Unload Miro/iframe embeds in project pages
+  document.querySelectorAll('.proj-detail-page iframe').forEach(function(f) {
+    if (f.src && f.src !== 'about:blank' && !f.dataset.src) f.dataset.src = f.src;
+    if (f.src !== 'about:blank') f.src = 'about:blank';
+  });
+}
+
+function hydrateProject(slug) {
+  var proj = document.getElementById('proj-' + slug);
+  if (!proj) return;
+  proj.querySelectorAll('video').forEach(function(v) {
+    v.querySelectorAll('source[data-src]').forEach(function(s) {
+      s.setAttribute('src', s.dataset.src);
+    });
+    if (v.dataset.src) v.setAttribute('src', v.dataset.src);
+    v.load();
+  });
+  proj.querySelectorAll('iframe[data-src]').forEach(function(f) {
+    f.src = f.dataset.src;
+  });
 }
 // On load: prevent browser from buffering any hidden project videos
 document.querySelectorAll('.proj-detail-page video').forEach(function(v) {
@@ -5564,7 +5596,7 @@ function _navTimeout(fn, ms) {
 
 function showPage(id) {
   if (!_histNav && _navLock) return;
-  if (!_histNav) { _setNavLock(); history.pushState({type:'page', id:id}, '', id === 'home' ? location.pathname + location.search : '#' + id); }
+  if (!_histNav) { _setNavLock(); history.pushState({type:'page', id:id}, '', id === 'home' ? '/' : '/' + id); }
   pauseAllMedia();
   const prev = document.querySelector('.page.active, .proj-detail-page.active');
   if (prev) prev.classList.remove('active');
@@ -5591,12 +5623,13 @@ function showPage(id) {
 
 function showProject(slug) {
   if (!_histNav && _navLock) return;
-  if (!_histNav) { _setNavLock(); history.pushState({type:'project', slug:slug}, '', '#' + slug); }
+  if (!_histNav) { _setNavLock(); history.pushState({type:'project', slug:slug}, '', '/' + slug); }
   pauseAllMedia();
   const prev = document.querySelector('.page.active, .proj-detail-page.active');
   if (prev) prev.classList.remove('active');
   const pg = document.getElementById('proj-' + slug);
   if (pg) pg.classList.add('active');
+  hydrateProject(slug);
   window.scrollTo(0, 0);
   closeWorksMenu();
   closeMobileNav();
@@ -5654,19 +5687,33 @@ window.addEventListener('popstate', function(e) {
   _histNav = false;
 });
 
-// Seed the initial history entry and handle deep-link hashes
+// Seed the initial history entry — supports clean URLs, 404.html redirect, and legacy #hash links
 (function() {
-  var hash = location.hash.slice(1);
-  if (!hash || hash === 'home') {
-    history.replaceState({type:'page', id:'home'}, '', location.pathname + location.search);
-  } else if (pages[hash]) {
-    history.replaceState({type:'page', id:hash}, '', '#' + hash);
-    _histNav = true; showPage(hash); _histNav = false;
-  } else if (document.getElementById('proj-' + hash)) {
-    history.replaceState({type:'project', slug:hash}, '', '#' + hash);
-    _histNav = true; showProject(hash); _histNav = false;
+  // Decode GitHub Pages 404 redirect: /?/ux or /?/oracle
+  var sp = window.location.search;
+  if (sp && sp[1] === '/') {
+    var parts = sp.slice(1).split('&').map(function(s) { return s.replace(/~and~/g, '&'); });
+    history.replaceState(null, null, parts[0] + (parts[1] ? '?' + parts[1] : '') + window.location.hash);
+  }
+  // Redirect legacy #hash links to clean paths
+  var legacyHash = location.hash.slice(1);
+  if (legacyHash && legacyHash !== 'home') {
+    if (pages[legacyHash] || document.getElementById('proj-' + legacyHash)) {
+      history.replaceState(null, null, '/' + legacyHash);
+    }
+  }
+  // Read the route from the clean path
+  var path = location.pathname.slice(1).replace(/\/$/, '') || 'home';
+  if (path === 'home' || path === '') {
+    history.replaceState({type:'page', id:'home'}, '', '/');
+  } else if (pages[path]) {
+    history.replaceState({type:'page', id:path}, '', '/' + path);
+    _histNav = true; showPage(path); _histNav = false;
+  } else if (document.getElementById('proj-' + path)) {
+    history.replaceState({type:'project', slug:path}, '', '/' + path);
+    _histNav = true; showProject(path); _histNav = false;
   } else {
-    history.replaceState({type:'page', id:'home'}, '', location.pathname + location.search);
+    history.replaceState({type:'page', id:'home'}, '', '/');
   }
 })();
 
