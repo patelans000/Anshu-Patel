@@ -5573,6 +5573,46 @@ var _navLock = false;
 var _navLockTimer = null;
 var _pendingVideoTimers = [];
 
+// ── TOC SCROLLSPY ──
+var _tocScrollFn = null;
+function _teardownTocScrollspy() {
+  if (_tocScrollFn) { window.removeEventListener('scroll', _tocScrollFn); _tocScrollFn = null; }
+}
+function initTocScrollspy(slug) {
+  _teardownTocScrollspy();
+  var proj = document.getElementById('proj-' + slug);
+  if (!proj) return;
+  var sidebar = proj.querySelector('.proj-detail-sidebar');
+  if (!sidebar) return;
+  var tocLinks = sidebar.querySelectorAll('.proj-toc-link');
+  if (!tocLinks.length) return;
+  var idToLink = {};
+  var sectionIds = [];
+  tocLinks.forEach(function(link) {
+    var m = (link.getAttribute('onclick') || '').match(/getElementById\(['"]([^'"]+)['"]\)/);
+    if (m) { idToLink[m[1]] = link; sectionIds.push(m[1]); }
+  });
+  if (!sectionIds.length) return;
+  var threshold = 73 + 120;
+  var ticking = false;
+  function update() {
+    ticking = false;
+    var active = sectionIds[0];
+    for (var i = 0; i < sectionIds.length; i++) {
+      var el = document.getElementById(sectionIds[i]);
+      if (!el) continue;
+      if (el.getBoundingClientRect().top <= threshold) active = sectionIds[i];
+    }
+    tocLinks.forEach(function(l) { l.classList.remove('toc-active'); });
+    if (active && idToLink[active]) idToLink[active].classList.add('toc-active');
+  }
+  _tocScrollFn = function() {
+    if (!ticking) { ticking = true; requestAnimationFrame(update); }
+  };
+  window.addEventListener('scroll', _tocScrollFn, { passive: true });
+  update();
+}
+
 function _setNavLock() {
   _navLock = true;
   clearTimeout(_navLockTimer);
@@ -5588,6 +5628,7 @@ function _navTimeout(fn, ms) {
 function showPage(id) {
   if (!_histNav && _navLock) return;
   if (!_histNav) { _setNavLock(); history.pushState({type:'page', id:id}, '', id === 'home' ? '/' : '/' + id); }
+  _teardownTocScrollspy();
   pauseAllMedia();
   const prev = document.querySelector('.page.active, .proj-detail-page.active');
   if (prev) prev.classList.remove('active');
@@ -5625,6 +5666,7 @@ function showProject(slug) {
   closeWorksMenu();
   closeMobileNav();
   renderMoreProjects(slug);
+  initTocScrollspy(slug);
   if (slug === 'persona5-type') {
     initP5Flipbook();
   }
