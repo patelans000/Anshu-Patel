@@ -117,7 +117,7 @@ nav{padding:22px 48px;display:flex;align-items:center;justify-content:space-betw
 .motion-gallery{padding:40px 20px 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px;max-width:980px;margin:0 auto}
 .motion-panel{overflow:hidden;position:relative;padding:0;background:transparent;border:none;border-radius:0;box-shadow:none}
 .motion-media{overflow:hidden;padding:0;border-radius:0;display:flex;justify-content:center;align-items:center}
-.motion-video{width:auto;max-width:100%;display:block;height:auto;object-fit:unset;border-radius:0}
+.motion-video{width:auto;max-width:100%;display:block;height:auto;object-fit:unset;border-radius:0;aspect-ratio:16/9}
 .motion-audio{width:100%;max-width:680px;margin-top:14px;display:block;border-radius:0}
 .motion-copy{padding:18px 0 0}
 .motion-text{font-size:15px;color:#333;line-height:1.9;margin-bottom:0;max-width:720px}
@@ -5570,6 +5570,21 @@ document.querySelectorAll('.motion-gallery video').forEach(function(v) {
     setTimeout(function() { self.load(); }, 800);
   });
 });
+
+// Load metadata (first frame poster) for motion videos as they enter the viewport
+(function() {
+  var motionVideos = document.querySelectorAll('.motion-video[preload="none"]');
+  if (!motionVideos.length) return;
+  var obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting && entry.target.preload === 'none') {
+        entry.target.preload = 'metadata';
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { rootMargin: '200px' });
+  motionVideos.forEach(function(v) { obs.observe(v); });
+})();
 
 var _histNav = false;
 var _navLock = false;
