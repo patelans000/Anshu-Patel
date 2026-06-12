@@ -5925,7 +5925,10 @@ function p5BuildViews(total) {
 
 async function initP5Flipbook() {
   if (p5HeroReady) return;
-  if (!window.pdfjsLib) return;
+  if (!window.pdfjsLib) {
+    window.addEventListener('load', initP5Flipbook, {once: true});
+    return;
+  }
   pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
   try {
     p5HeroPdf = await pdfjsLib.getDocument('media/Typography%20in%20Persona%205/Persona%205%20Type%20Study.pdf').promise;
@@ -5994,7 +5997,10 @@ var spotifyPdf = null, spotifyPage = 1, spotifyTotal = 0, spotifyReady = false, 
 
 async function initSpotifySlides() {
   if (spotifyReady) return;
-  if (!window.pdfjsLib) return;
+  if (!window.pdfjsLib) {
+    window.addEventListener('load', initSpotifySlides, {once: true});
+    return;
+  }
   pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
   try {
     spotifyPdf = await pdfjsLib.getDocument('media/Spotify%20feature/Spotify%20Slides.pdf').promise;
