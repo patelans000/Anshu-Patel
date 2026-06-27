@@ -1199,7 +1199,7 @@ audio{accent-color:#1A1A1A}
       <div class="about-section">
         <div class="about-section-label">Some fun bits and bobs</div>
         <div class="fun-list">
-          <div class="fun-row"><span class="fun-key">Listening to</span><span class="fun-val fun-audio"><button class="audio-play-btn" id="audio-btn" onclick="toggleAudio()">▶</button><audio id="audio-player" src="media/06. FINAL FANTASY XVI - Find the Flame.mp3"></audio><span>Find the Flame by Masayoshi Soken</span></span></div>
+          <div class="fun-row"><span class="fun-key">Listening to</span><span class="fun-val fun-audio"><button class="audio-play-btn" id="audio-btn" onclick="toggleAudio()" aria-label="Play"><svg id="audio-icon-play" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg><svg id="audio-icon-pause" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="13" height="13" fill="currentColor" style="display:none"><rect x="5" y="3" width="4" height="18"/><rect x="15" y="3" width="4" height="18"/></svg></button><audio id="audio-player" src="media/06. FINAL FANTASY XVI - Find the Flame.mp3"></audio><span>Find the Flame by Masayoshi Soken</span></span></div>
           <div class="fun-row"><span class="fun-key">Currently playing</span><span class="fun-val">Final Fantasy XV, League of Legends, Tears of the Kingdom</span></div>
           <div class="fun-row"><span class="fun-key">Currently reading</span><span class="fun-val">Witch Hat Atelier, Morning Star, Hench</span></div>
           <div class="fun-row"><span class="fun-key">Currently learning</span><span class="fun-val">Motion typography and 3D sculpting</span></div>
@@ -5332,13 +5332,19 @@ const workPages = ['graphic','ux','3d','motion'];
 function toggleAudio() {
   const audio = document.getElementById('audio-player');
   const btn = document.getElementById('audio-btn');
+  const iconPlay = document.getElementById('audio-icon-play');
+  const iconPause = document.getElementById('audio-icon-pause');
   if (audio.paused) {
     audio.play();
-    btn.textContent = '⏸';
+    iconPlay.style.display = 'none';
+    iconPause.style.display = '';
+    btn.setAttribute('aria-label', 'Pause');
     btn.classList.add('playing');
   } else {
     audio.pause();
-    btn.textContent = '▶';
+    iconPlay.style.display = '';
+    iconPause.style.display = 'none';
+    btn.setAttribute('aria-label', 'Play');
     btn.classList.remove('playing');
   }
 }
@@ -5347,7 +5353,11 @@ document.addEventListener('DOMContentLoaded', function() {
   if (audio) {
     audio.addEventListener('ended', function() {
       const btn = document.getElementById('audio-btn');
-      btn.textContent = '▶';
+      const iconPlay = document.getElementById('audio-icon-play');
+      const iconPause = document.getElementById('audio-icon-pause');
+      iconPlay.style.display = '';
+      iconPause.style.display = 'none';
+      btn.setAttribute('aria-label', 'Play');
       btn.classList.remove('playing');
     });
   }
@@ -5376,7 +5386,11 @@ function pauseAllMedia() {
   const btn = document.getElementById('audio-btn');
   if (audio && btn) {
     if (!audio.paused) audio.pause();
-    btn.textContent = '▶';
+    const iconPlay = document.getElementById('audio-icon-play');
+    const iconPause = document.getElementById('audio-icon-pause');
+    if (iconPlay) iconPlay.style.display = '';
+    if (iconPause) iconPause.style.display = 'none';
+    btn.setAttribute('aria-label', 'Play');
     btn.classList.remove('playing');
   }
   // Fully unload all project detail videos to free mobile memory
