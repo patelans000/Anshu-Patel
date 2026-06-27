@@ -238,13 +238,6 @@ nav{padding:22px 48px;display:flex;align-items:center;justify-content:space-betw
   .exp-section{padding:48px 20px}
   .exp-row-left{grid-template-columns:1fr;gap:2px}
 
-  /* ABOUT */
-  .about-wrap{display:block;min-height:unset}
-  .about-left{position:static;height:auto;padding:32px 20px 24px;border-right:none;border-bottom:1px solid var(--border)}
-  .about-portrait{max-height:200px}
-  .about-right{height:auto;overflow:visible;padding:32px 20px}
-  .fun-row{grid-template-columns:100px 1fr}
-
   /* FOOTER */
   .site-footer{flex-direction:column;gap:14px;padding:28px 20px;align-items:flex-start}
 }
@@ -281,10 +274,6 @@ nav{padding:22px 48px;display:flex;align-items:center;justify-content:space-betw
   /* POSTER GALLERY */
   .poster-gallery{grid-template-columns:1fr}
 
-  /* ABOUT */
-  .about-intro-descriptors{font-size:18px}
-  .descriptor-item{font-size:18px}
-  .rotating-descriptor{min-width:120px}
   /* NAV - works dropdown anchor right so it doesn't overflow */
   .works-menu{left:auto;right:0;transform:translateY(-4px);min-width:unset;width:calc(100vw - 40px)}
   .works-menu.open{transform:translateY(0)}
@@ -423,6 +412,19 @@ audio{accent-color:#1A1A1A}
 .audio-play-btn:hover{transform:scale(1.08);background:#FFE680}
 .audio-play-btn.playing{background:var(--blue)}
 .audio-play-btn.playing:hover{background:#A8CFFF}
+
+@media (max-width:768px){
+  .about-wrap{display:block;min-height:unset}
+  .about-left{position:static;height:auto;padding:32px 20px 24px;border-right:none;border-bottom:1px solid var(--border)}
+  .about-portrait{max-height:200px}
+  .about-right{height:auto;overflow:visible;padding:32px 20px}
+  .fun-row{grid-template-columns:100px 1fr}
+}
+@media (max-width:480px){
+  .about-intro-descriptors{font-size:18px}
+  .descriptor-item{font-size:18px}
+  .rotating-descriptor{min-width:120px}
+}
 
 /* ── COLOR ACCENTS ── */
 .accent-graphic{background:#FFD9E8}
@@ -1162,7 +1164,7 @@ audio{accent-color:#1A1A1A}
       <div class="about-contact">
         <a href="mailto:patelans006@gmail.com">patelans006@gmail.com</a>
         <a href="https://www.linkedin.com/in/anshu-patel006" target="_blank">LinkedIn ↗</a>
-        <a href="https://drive.google.com/file/d/16Tg-6LAu3ySjs8WW43PqGIZTyIwOv6DE/view?usp=sharing" target="_blank">Resume ↗</a>
+        <a href="https://drive.google.com/file/d/16VUpKYkK2z4wUNV4X9m_DdyY5ktcA9ac/view?usp=sharing" target="_blank">Resume ↗</a>
       </div>
     </div>
     <div class="about-right">
@@ -5309,7 +5311,7 @@ audio{accent-color:#1A1A1A}
   <div class="footer-links">
     <a href="mailto:patelans006@gmail.com">Email</a>
     <a href="https://www.linkedin.com/in/anshu-patel006" target="_blank">LinkedIn</a>
-    <a href="https://drive.google.com/file/d/16Tg-6LAu3ySjs8WW43PqGIZTyIwOv6DE/view?usp=sharing" target="_blank">Resume</a>
+    <a href="https://drive.google.com/file/d/16VUpKYkK2z4wUNV4X9m_DdyY5ktcA9ac/view?usp=sharing" target="_blank">Resume</a>
   </div>
   <div class="footer-copy">© 2026 Anshu Patel</div>
 </footer>
