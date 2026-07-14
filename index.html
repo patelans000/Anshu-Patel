@@ -3,29 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Anshu Patel • Portfolio</title>
+<title>Anshu Patel - Portfolio</title>
 <meta name="description" content="A multidisciplinary designer passionate about interactive design and crafting playful, meaningful experiences across diverse mediums.">
-<meta property="og:title" content="Anshu Patel • Portfolio">
+<meta property="og:title" content="Anshu Patel - Portfolio">
 <meta property="og:description" content="A multidisciplinary designer passionate about interactive design and crafting playful, meaningful experiences across diverse mediums.">
 <meta property="og:image" content="media/Link Photo.png">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Anshu Patel • Portfolio">
+<meta name="twitter:title" content="Anshu Patel - Portfolio">
 <meta name="twitter:description" content="A multidisciplinary designer passionate about interactive design and crafting playful, meaningful experiences across diverse mediums.">
 <meta name="twitter:image" content="media/Link Photo.png">
 <link rel="icon" type="image/png" href="media/Favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Fruktur&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--blue:#B8DFFF;--yellow:#FFF0A8;--pink:#FFC8D8;--black:#1A1A1A;--muted:#999;--border:#E8E8E8;--gray:#F7F7F7}
 html{overflow-x:clip}
 body{font-family:'Outfit','Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;overflow-x:clip;min-height:100vh;max-width:100%}
-h1,h2,h3,h4,h5,h6,.logo,.home-hi,.disc-title,.proj-detail-title,.proj-detail-h2,.exp-title,.about-name,.about-intro-heading,.proj-detail-h3,.footer-left,.poster-drawer-title-text,.more-projs-label{font-family:'Outfit','Segoe UI',Arial,sans-serif!important}
+h1,h2,h3,h4,h5,h6,.home-hi,.disc-title,.proj-detail-title,.proj-detail-h2,.exp-title,.about-intro-heading,.proj-detail-h3,.poster-drawer-title-text,.more-projs-label{font-family:'Outfit','Segoe UI',Arial,sans-serif!important}
+.name-accent{font-family:'Fruktur',cursive}
+.about-name{font-family:'Fruktur',cursive!important;letter-spacing:0.6px}
 
 /* -- NAV -- */
 nav{padding:22px 48px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #333;position:sticky;top:0;background:rgba(20,20,20,0.97);backdrop-filter:blur(8px);z-index:100}
-.logo{font-family:'Outfit',sans-serif;font-size:19px;font-weight:600;color:#fff;cursor:pointer;text-decoration:none;letter-spacing:0.2px}
+.logo{font-family:'Fruktur',cursive;font-size:22px;font-weight:400;color:#fff;cursor:pointer;text-decoration:none;letter-spacing:0.8px}
 .nav-links{display:flex;gap:4px;align-items:center;position:relative}
 .nav-links a{font-size:13px;font-weight:400;color:#888;text-decoration:none;padding:5px 12px;border-radius:100px;cursor:pointer;transition:color 0.15s,background 0.15s}
 .nav-links a:hover{color:#fff}
@@ -124,198 +126,6 @@ nav{padding:22px 48px;display:flex;align-items:center;justify-content:space-betw
 .motion-copy{padding:18px 0 0}
 .motion-text{font-size:15px;color:#333;line-height:1.9;margin-bottom:0;max-width:720px}
 .motion-text strong{font-weight:400;}
-
-@media (max-width: 1024px){
-  .motion-gallery{grid-template-columns:1fr}
-}
-
-/* -- RESPONSIVE (mobile + tablet: single column, centered) -- */
-@media (max-width: 1024px){
-  /* NAV */
-  nav{padding:14px 20px}
-  .about-portrait{max-height:none;aspect-ratio:4/5;max-width:320px;margin:0 auto 24px}
-  .about-portrait-inner{display:flex;align-items:center;justify-content:center;overflow:hidden;background:transparent}
-  .proj-detail-hero{align-items:center;text-align:center}
-  .proj-detail-meta-row{align-items:center}
-  .proj-detail-content{align-items:center;text-align:center}
-  .proj-detail-content > *{margin-left:auto;margin-right:auto}
-  .about-intro-descriptors{justify-content:center;text-align:center;width:100%;max-width:100%;margin:0 auto}
-  .about-portrait-inner img{width:100%;height:100%;object-fit:contain;object-position:center center}
-  .nav-hamburger{display:flex}
-  #nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:rgba(20,20,20,0.98);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid #333;flex-direction:column;padding:0;z-index:99;gap:0}
-  #nav-links.open{display:flex}
-  #nav-links > a{font-size:14px;padding:14px 20px;border-radius:0;color:#888;border-bottom:1px solid #222}
-  #nav-links > a.active,#nav-links > a:hover{color:#fff}
-  #nav-links .works-dropdown{border-bottom:1px solid #222}
-  #nav-links .works-trigger{font-size:14px;padding:14px 20px;width:100%;box-sizing:border-box;color:#888;border-radius:0}
-  #nav-links .works-trigger.has-active,#nav-links .works-trigger.open{color:#fff}
-  #nav-links .works-menu{position:static !important;opacity:1 !important;pointer-events:all !important;transform:none !important;transition:none !important;background:#1a1a1a;border:none;border-radius:0;border-top:1px solid #222;padding:4px 0;min-width:0;width:100%;max-width:100%;display:none}
-  #nav-links .works-menu.open{display:block}
-  #nav-links .works-menu a{padding:12px 32px;border-radius:0;font-size:13px}
-
-  /* EXPERIENCE - centered single column */
-  .exp-section{padding:48px 20px}
-  .exp-header{margin-bottom:28px;justify-content:center;align-items:center;flex-direction:column;text-align:center}
-  .exp-title{font-size:26px;max-width:100%}
-  .exp-row{grid-template-columns:1fr;align-items:center;gap:16px;padding:18px 0}
-  .exp-row-left{display:grid;grid-template-columns:1fr;gap:12px;align-items:center;justify-items:center;text-align:center}
-  .exp-row-left .exp-period{justify-self:center}
-  .exp-row-left .exp-role-wrap{max-width:100%;min-width:0}
-  .exp-toggle{justify-self:center}
-  .exp-details-inner{padding:18px 16px;max-width:100%}
-  .exp-item.open{overflow:visible}
-  .exp-item.open .exp-details{max-height:none;overflow:visible}
-  .exp-detail-text{font-size:15px;line-height:1.95;max-width:100%;text-align:center;margin-left:auto;margin-right:auto}
-  .exp-tags{justify-content:center;gap:8px}
-
-  /* HOME */
-  .home-hero{padding:36px 20px 32px;text-align:center}
-  .home-hero-top{grid-template-columns:1fr;row-gap:28px}
-  .home-hero-top > div:first-child{order:2}
-  .home-illustration{order:1;min-height:unset;aspect-ratio:unset;height:220px;margin:0 auto 24px}
-  .home-hi{font-size:36px;margin:0 auto 24px;max-width:100%}
-  .home-bio{max-width:100%;margin:0 auto;line-height:1.95;margin-bottom:24px;padding:0 6px}
-  .home-degree-block{gap:14px;display:flex;flex-direction:column;align-items:center;justify-content:center}
-  .home-degree-row{justify-content:center;gap:10px;flex-wrap:wrap}
-  .home-degree-location{justify-content:center;display:flex;align-items:flex-start;gap:8px}
-  .home-degree-pill{white-space:normal;flex-shrink:1;max-width:100%}
-  .home-proj-grid{grid-template-columns:1fr}
-  .home-proj-grid .home-proj-block{border-right:none}
-  .home-proj-info{flex-direction:column;align-items:center;text-align:center}
-
-  /* DISCIPLINE PAGES */
-  .disc-header{grid-template-columns:1fr;gap:14px;padding:28px 20px 24px;align-items:center;text-align:center}
-  .disc-header-left{justify-self:center}
-  .disc-header > div:last-child{justify-self:center}
-  .disc-title{font-size:34px;max-width:100%;box-sizing:border-box}
-  #page-motion .disc-title,#page-ux .disc-title,#page-3d .disc-title,#page-graphic .disc-title,#page-archive .disc-title{max-width:100%;box-sizing:border-box}
-
-  /* PROJECT GRIDS - single column */
-  .proj-grid-3{grid-template-columns:1fr}
-  .proj-grid-3 .proj{border-right:none}
-  .proj-grid-2{grid-template-columns:1fr}
-  .proj-grid-2 .proj{border-right:none}
-  .proj-grid [style*="grid-column:span 2"]{grid-column:span 1 !important;padding:20px !important}
-  .proj-foot{min-height:52px}
-  .proj-name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0;flex-shrink:1}
-  .proj-meta{flex-shrink:0;padding-left:8px}
-
-  /* PROJECT DETAIL - centered, sidebar hidden */
-  .proj-detail-nav{padding:12px 20px;display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center}
-  .proj-detail-nav-arrows{justify-content:center}
-  .proj-detail-hero{padding:28px 20px 24px;display:flex;flex-direction:column;align-items:center;text-align:center}
-  .proj-detail-title{font-size:34px}
-  .proj-detail-tagline{font-size:15px;max-width:100%}
-  .proj-detail-meta-row{gap:18px;display:flex;flex-direction:column;align-items:center}
-  .proj-detail-body{grid-template-columns:1fr}
-  .proj-detail-sidebar{display:none}
-  .proj-detail-content{padding:28px 20px;display:flex;flex-direction:column;align-items:center;text-align:left}
-  .proj-detail-content > *{width:100%;max-width:720px;margin:0 auto}
-  #proj-ecoleander .proj-detail-content,
-  #proj-persona5-type .proj-detail-content,
-  #proj-smrutea .proj-detail-content,
-  #proj-flipula .proj-detail-content,
-  #proj-hajra-waheed .proj-detail-content,
-  #proj-high-noon-livery .proj-detail-content,
-  #proj-discotype .proj-detail-content,
-  #proj-featherform .proj-detail-content,
-  #proj-stellar-exploration .proj-detail-content,
-  #proj-silent-spellcraft .proj-detail-content,
-  #proj-choco-knight .proj-detail-content,
-  #proj-spotify-feature .proj-detail-content,
-  #proj-oracle .proj-detail-content,
-  #proj-logos-branding .proj-detail-content,
-  #proj-adobe-cabin .proj-detail-content{padding:28px 20px}
-  .proj-detail-page [style*="calc(100% + 48px)"]{width:100% !important;margin-left:0 !important;margin-right:0 !important}
-
-  /* PROJECT HERO OVERLAY (inline style overrides) */
-  .proj-detail-page [style*="bottom:36px"]{bottom:16px !important;left:20px !important;right:20px !important}
-  .proj-detail-page [style*="font-size:54px"]{font-size:28px !important}
-  .proj-detail-page [style*="font-size:24px;font-weight:500"]{font-size:16px !important}
-  .proj-detail-page [style*="padding:12px 48px"]{padding:10px 20px !important}
-  .proj-detail-page [style*="padding:24px 48px"]{padding:16px 20px !important}
-  .proj-detail-page [style*="padding:32px 48px"]{padding:16px 20px !important}
-  .proj-detail-page [style*="padding:40px 48px"]{padding:24px 20px !important}
-  .proj-detail-page [style*="padding:36px 36px"]{padding:20px !important}
-  .proj-detail-page [style*="font-size:52px"]{font-size:26px !important;letter-spacing:2px !important}
-  .proj-detail-page [style*="font-size:60px"]{font-size:28px !important;letter-spacing:2px !important}
-  .proj-detail-page [style*="font-size:42px"]{font-size:22px !important;letter-spacing:1px !important}
-  .proj-detail-page [style*="grid-template-columns:1fr 2.5fr"]{grid-template-columns:1fr !important}
-  .proj-detail-page [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr !important}
-  .proj-detail-page [style*="grid-template-columns:3fr 2fr"]{grid-template-columns:1fr !important}
-  .proj-detail-page [style*="grid-template-columns:2fr 3fr"]{grid-template-columns:1fr !important}
-  .proj-detail-page [style*="height:420px"]{height:auto !important;aspect-ratio:16/7 !important}
-
-  /* MIRO EMBEDS */
-  .proj-miro-wrap{height:260px}
-
-  /* FIGMA EMBEDS - the HTML height attribute isn't responsive on its own */
-  iframe[height="480"]{height:300px}
-  iframe[height="600"]{height:340px}
-
-  /* SMRUTEA HERO CAROUSEL - single column so nothing shrinks/clips */
-  .smt-cg{grid-template-columns:1fr}
-
-  /* MERCH CAROUSEL */
-  .merch-carousel-img-wrap{height:260px}
-  #proj-choco-knight .merch-carousel-img-wrap{height:auto;min-height:200px}
-
-  /* POSTER GALLERY */
-  .poster-gallery{grid-template-columns:1fr;padding:24px 20px;gap:14px}
-
-  /* P5 FLIPBOOK - stack canvases vertically */
-  .p5-hero-spread{flex-direction:column}
-
-  /* IMAGE GRIDS */
-  .proj-img-grid-2{grid-template-columns:1fr}
-  .proj-img-grid-3{grid-template-columns:1fr}
-
-  /* MORE PROJECTS */
-  .more-projs{padding:28px 20px 40px}
-  .more-projs-grid{grid-template-columns:1fr}
-  .more-projs-grid .more-proj-item{border-right:none}
-
-  /* FOOTER */
-  .site-footer{flex-direction:column;gap:14px;padding:28px 20px;align-items:flex-start}
-}
-
-@media (max-width: 480px){
-  .exp-details-inner{padding:16px 14px}
-  .exp-item{overflow:visible}
-  .exp-detail-text{font-size:15px;line-height:2}
-
-  /* HOME */
-  .home-hi{font-size:28px}
-  .home-bio{font-size:14px;max-width:100%;padding:0 6px}
-  .home-degree-row{gap:8px}
-  .home-degree-location{gap:6px}
-  .home-degree-pill{font-size:11px;padding:5px 10px}
-  /* DISCIPLINE PAGES */
-  .disc-title{font-size:24px}
-  .home-illustration{height:180px}
-
-  /* PROJECT DETAIL */
-  .proj-detail-title{font-size:26px}
-
-  /* MIRO + CAROUSEL */
-  .proj-miro-wrap{height:200px}
-  .merch-carousel-img-wrap{height:220px}
-  iframe[height="480"]{height:240px}
-  iframe[height="600"]{height:260px}
-
-  /* SMRUTEA ARROWS - keep clear of the viewport edge on narrow phones */
-  .smt-arrow-l{left:-6px}
-  .smt-arrow-r{right:-6px}
-
-  /* NAV - works dropdown anchor right so it doesn't overflow */
-  .works-menu{left:auto;right:0;transform:translateY(-4px);min-width:unset;width:calc(100vw - 40px)}
-  .works-menu.open{transform:translateY(0)}
-}
-
-@media (max-width:360px){
-  .logo{font-size:16px}
-  .nav-links a,.works-trigger{padding:4px 5px;font-size:11px}
-}
 
 /* -- PROJECT DETAIL PAGE -- */
 .proj-detail-page{display:none;animation:fadein 0.3s ease}
@@ -423,13 +233,14 @@ nav{padding:22px 48px;display:flex;align-items:center;justify-content:space-betw
 .about-section-label{font-size:11px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
 .about-intro-line{font-size:14px;font-weight:400;line-height:1.5;margin-bottom:12px;color:#444}
 .about-intro-heading{font-family:'Outfit',sans-serif;font-size:28px;font-weight:600;line-height:1.2;margin-bottom:16px;color:#1A1A1A}
-.about-intro-descriptors{font-size:22px;font-weight:500;line-height:1.5;margin-bottom:32px;color:#1A1A1A;display:flex;align-items:center;flex-wrap:wrap;gap:6px}
+.about-intro-descriptors{font-size:22px;font-weight:500;line-height:1.7;margin-bottom:40px;color:#1A1A1A;display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px}
+.about-intro-lead{display:block}
 .about-intro-filler{display:inline}
 .about-intro-rotate-wrap{display:inline-block;position:relative;vertical-align:baseline}
-.rotating-descriptor{display:inline-block;position:relative;height:2.1em;vertical-align:middle;min-width:160px;overflow:hidden}
-.descriptor-item{position:absolute;left:0;top:50%;white-space:nowrap;opacity:0;transform:translateY(calc(-50% + 2px));transition:opacity 0.4s ease,transform 0.4s ease;font-weight:600;color:#1A1A1A;background:var(--yellow);padding:4px 10px;border-radius:4px;font-size:22px}
+.rotating-descriptor{display:inline-block;position:relative;height:2.3em;vertical-align:middle;min-width:160px;overflow:hidden}
+.descriptor-item{position:absolute;left:0;top:50%;white-space:nowrap;opacity:0;transform:translateY(calc(-50% + 2px));transition:opacity 0.4s ease,transform 0.4s ease;font-weight:600;color:#1A1A1A;background:var(--yellow);padding:6px 12px;border-radius:4px;font-size:22px}
 .descriptor-item.active{opacity:1;transform:translateY(-50%)}
-.about-p{font-size:14px;color:#444;line-height:1.85;margin-bottom:14px}
+.about-p{font-size:14px;color:#444;line-height:2.05;margin-bottom:20px}
 .about-p:last-child{margin-bottom:0}
 .skill-group{margin-bottom:20px}
 .skill-group-label{font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
@@ -535,7 +346,8 @@ audio{accent-color:#1A1A1A}
 
 /* -- FOOTER -- */
 .site-footer{background:#1A1A1A;color:#888;padding:40px 48px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid #333;margin-top:80px}
-.footer-left{font-family:'Outfit',sans-serif;font-size:16px;color:#fff;font-weight:600;letter-spacing:0.2px}
+.footer-left{font-family:'Fruktur',cursive;font-size:19px;color:#fff;font-weight:400;letter-spacing:0.8px;display:flex;align-items:center;gap:8px}
+.footer-logo-icon{height:1.3em;width:auto;opacity:0.9}
 .footer-links{display:flex;gap:24px}
 .footer-links a{font-size:13px;color:#666;text-decoration:none;transition:color 0.15s}
 .footer-links a:hover{color:var(--pink)}
@@ -670,6 +482,200 @@ audio{accent-color:#1A1A1A}
 #proj-silent-spellcraft .proj-detail-content img{width:100%;height:auto;display:block;border-radius:0!important}
 #proj-silent-spellcraft .proj-detail-sidebar::-webkit-scrollbar{display:none}
 #proj-silent-spellcraft .proj-detail-sidebar{-ms-overflow-style:none;scrollbar-width:none}
+
+/* -- RESPONSIVE (mobile + tablet: single column, centered) -- */
+/* Placed last in the stylesheet on purpose: with equal-specificity selectors, later source order wins the
+   cascade regardless of @media wrapping, so this must stay after every unconditional/per-project rule above. */
+@media (max-width: 1024px){
+  .motion-gallery{grid-template-columns:1fr}
+
+  /* NAV */
+  nav{padding:14px 20px}
+  .about-portrait{max-height:none;aspect-ratio:4/5;max-width:320px;margin:0 auto 24px}
+  .about-portrait-inner{display:flex;align-items:center;justify-content:center;overflow:hidden;background:transparent}
+  .proj-detail-hero{align-items:center;text-align:center}
+  .proj-detail-meta-row{align-items:center}
+  .proj-detail-content{align-items:center;text-align:center}
+  .proj-detail-content > *{margin-left:auto;margin-right:auto}
+  .about-intro-descriptors{justify-content:center;text-align:center;width:100%;max-width:100%;margin:0 auto}
+  .about-portrait-inner img{width:100%;height:100%;object-fit:contain;object-position:center center}
+  .nav-hamburger{display:flex}
+  #nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:rgba(20,20,20,0.98);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid #333;flex-direction:column;padding:0;z-index:99;gap:0}
+  #nav-links.open{display:flex}
+  #nav-links > a{font-size:14px;padding:14px 20px;border-radius:0;color:#888;border-bottom:1px solid #222}
+  #nav-links > a.active,#nav-links > a:hover{color:#fff}
+  #nav-links .works-dropdown{border-bottom:1px solid #222}
+  #nav-links .works-trigger{font-size:14px;padding:14px 20px;width:100%;box-sizing:border-box;color:#888;border-radius:0}
+  #nav-links .works-trigger.has-active,#nav-links .works-trigger.open{color:#fff}
+  #nav-links .works-menu{position:static !important;opacity:1 !important;pointer-events:all !important;transform:none !important;transition:none !important;background:#1a1a1a;border:none;border-radius:0;border-top:1px solid #222;padding:4px 0;min-width:0;width:100%;max-width:100%;display:none}
+  #nav-links .works-menu.open{display:block}
+  #nav-links .works-menu a{padding:12px 32px;border-radius:0;font-size:13px}
+
+  /* EXPERIENCE - centered single column */
+  .exp-section{padding:48px 20px}
+  .exp-header{margin-bottom:28px;justify-content:center;align-items:center;flex-direction:column;text-align:center}
+  .exp-title{font-size:26px;max-width:100%}
+  .exp-row{grid-template-columns:1fr;align-items:center;gap:16px;padding:18px 0}
+  .exp-row-left{display:grid;grid-template-columns:1fr;gap:12px;align-items:center;justify-items:center;text-align:center}
+  .exp-row-left .exp-period{justify-self:center}
+  .exp-row-left .exp-role-wrap{max-width:100%;min-width:0}
+  .exp-toggle{justify-self:center}
+  .exp-details-inner{padding:18px 16px;max-width:100%}
+  .exp-item.open{overflow:visible}
+  .exp-item.open .exp-details{max-height:none;overflow:visible}
+  .exp-detail-text{font-size:15px;line-height:1.95;max-width:100%;text-align:center;margin-left:auto;margin-right:auto}
+  .exp-tags{justify-content:center;gap:8px}
+
+  /* HOME */
+  .home-hero{padding:36px 20px 32px;text-align:center}
+  .home-hero-top{grid-template-columns:1fr;row-gap:28px}
+  .home-hero-top > div:first-child{order:2}
+  .home-illustration{order:1;min-height:unset;aspect-ratio:unset;height:220px;margin:0 auto 24px}
+  .home-hi{font-size:36px;margin:0 auto 24px;max-width:100%}
+  .home-bio{max-width:100%;margin:0 auto;line-height:1.95;margin-bottom:24px;padding:0 6px}
+  .home-degree-block{gap:14px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+  .home-degree-row{justify-content:center;gap:10px;flex-wrap:wrap}
+  .home-degree-location{justify-content:center;display:flex;align-items:flex-start;gap:8px}
+  .home-degree-pill{white-space:normal;flex-shrink:1;max-width:100%}
+  .home-proj-grid{grid-template-columns:1fr}
+  .home-proj-grid .home-proj-block{border-right:none}
+  .home-proj-info{flex-direction:column;align-items:center;text-align:center}
+
+  /* DISCIPLINE PAGES */
+  .disc-header{grid-template-columns:1fr;gap:14px;padding:28px 20px 24px;align-items:center;text-align:center}
+  .disc-header-left{justify-self:center}
+  .disc-header > div:last-child{justify-self:center}
+  .disc-title{font-size:34px;max-width:100%;box-sizing:border-box}
+  #page-motion .disc-title,#page-ux .disc-title,#page-3d .disc-title,#page-graphic .disc-title,#page-archive .disc-title{max-width:100%;box-sizing:border-box}
+
+  /* PROJECT GRIDS - single column */
+  .proj-grid-3{grid-template-columns:1fr}
+  .proj-grid-3 .proj{border-right:none}
+  .proj-grid-2{grid-template-columns:1fr}
+  .proj-grid-2 .proj{border-right:none}
+  .proj-grid [style*="grid-column:span 2"]{grid-column:span 1 !important;padding:20px !important}
+  .proj-foot{min-height:52px}
+  .proj-name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0;flex-shrink:1}
+  .proj-meta{flex-shrink:0;padding-left:8px}
+
+  /* PROJECT DETAIL - centered, sidebar hidden */
+  .proj-detail-nav{padding:12px 20px;display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center}
+  .proj-detail-nav-arrows{justify-content:center}
+  .proj-detail-hero{padding:28px 20px 24px;display:flex;flex-direction:column;align-items:center;text-align:center}
+  .proj-detail-title{font-size:34px}
+  .proj-detail-tagline{font-size:15px;max-width:100%}
+  .proj-detail-meta-row{gap:18px;display:flex;flex-direction:column;align-items:center}
+  .proj-detail-body{grid-template-columns:1fr}
+  .proj-detail-sidebar{display:none}
+  .proj-detail-content{padding:28px 20px;display:flex;flex-direction:column;align-items:center;text-align:left;max-width:none}
+  .proj-detail-content > *{width:100%;max-width:720px;margin:0 auto}
+  #proj-ecoleander .proj-detail-content,
+  #proj-persona5-type .proj-detail-content,
+  #proj-smrutea .proj-detail-content,
+  #proj-flipula .proj-detail-content,
+  #proj-hajra-waheed .proj-detail-content,
+  #proj-high-noon-livery .proj-detail-content,
+  #proj-discotype .proj-detail-content,
+  #proj-featherform .proj-detail-content,
+  #proj-stellar-exploration .proj-detail-content,
+  #proj-silent-spellcraft .proj-detail-content,
+  #proj-choco-knight .proj-detail-content,
+  #proj-spotify-feature .proj-detail-content,
+  #proj-oracle .proj-detail-content,
+  #proj-logos-branding .proj-detail-content,
+  #proj-adobe-cabin .proj-detail-content{padding:28px 20px;max-width:none}
+  .proj-detail-page [style*="calc(100% + 48px)"]{width:100% !important;margin-left:0 !important;margin-right:0 !important}
+
+  /* PROJECT HERO OVERLAY (inline style overrides) */
+  .proj-detail-page [style*="bottom:36px"]{bottom:16px !important;left:20px !important;right:20px !important}
+  .proj-detail-page [style*="font-size:54px"]{font-size:28px !important}
+  .proj-detail-page [style*="font-size:24px;font-weight:500"]{font-size:16px !important}
+  .proj-detail-page [style*="padding:12px 48px"]{padding:10px 20px !important}
+  .proj-detail-page [style*="padding:24px 48px"]{padding:16px 20px !important}
+  .proj-detail-page [style*="padding:32px 48px"]{padding:16px 20px !important}
+  .proj-detail-page [style*="padding:40px 48px"]{padding:24px 20px !important}
+  .proj-detail-page [style*="padding:36px 36px"]{padding:20px !important}
+  .proj-detail-page [style*="font-size:52px"]{font-size:26px !important;letter-spacing:2px !important}
+  .proj-detail-page [style*="font-size:60px"]{font-size:28px !important;letter-spacing:2px !important}
+  .proj-detail-page [style*="font-size:42px"]{font-size:22px !important;letter-spacing:1px !important}
+  .proj-detail-page [style*="grid-template-columns:1fr 2.5fr"]{grid-template-columns:1fr !important}
+  .proj-detail-page [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr !important}
+  .proj-detail-page [style*="grid-template-columns:3fr 2fr"]{grid-template-columns:1fr !important}
+  .proj-detail-page [style*="grid-template-columns:2fr 3fr"]{grid-template-columns:1fr !important}
+  .proj-detail-page [style*="grid-template-columns:160px 1fr"]{grid-template-columns:1fr !important}
+  .proj-detail-page [style*="height:420px"]{height:auto !important;aspect-ratio:16/7 !important}
+
+  /* MIRO EMBEDS */
+  .proj-miro-wrap{height:260px}
+
+  /* FIGMA EMBEDS - the HTML height attribute isn't responsive on its own */
+  iframe[height="480"]{height:300px}
+  iframe[height="600"]{height:340px}
+
+  /* SMRUTEA HERO CAROUSEL - single column so nothing shrinks/clips */
+  .smt-cg{grid-template-columns:1fr}
+
+  /* MERCH CAROUSEL */
+  .merch-carousel-img-wrap{height:260px}
+  #proj-choco-knight .merch-carousel-img-wrap{height:auto;min-height:200px}
+
+  /* POSTER GALLERY */
+  .poster-gallery{grid-template-columns:1fr;padding:24px 20px;gap:14px}
+
+  /* P5 FLIPBOOK - stack canvases vertically */
+  .p5-hero-spread{flex-direction:column}
+
+  /* IMAGE GRIDS */
+  .proj-img-grid-2{grid-template-columns:1fr}
+  .proj-img-grid-3{grid-template-columns:1fr}
+
+  /* MORE PROJECTS */
+  .more-projs{padding:28px 20px 40px}
+  .more-projs-grid{grid-template-columns:1fr}
+  .more-projs-grid .more-proj-item{border-right:none}
+
+  /* FOOTER */
+  .site-footer{flex-direction:column;gap:14px;padding:28px 20px;align-items:center}
+  .footer-left{flex-direction:column;gap:6px}
+}
+
+@media (max-width: 480px){
+  .exp-details-inner{padding:16px 14px}
+  .exp-item{overflow:visible}
+  .exp-detail-text{font-size:15px;line-height:2}
+
+  /* HOME */
+  .home-hi{font-size:28px}
+  .home-bio{font-size:14px;max-width:100%;padding:0 6px}
+  .home-degree-row{gap:8px}
+  .home-degree-location{gap:6px}
+  .home-degree-pill{font-size:11px;padding:5px 10px}
+  /* DISCIPLINE PAGES */
+  .disc-title{font-size:24px}
+  .home-illustration{height:180px}
+
+  /* PROJECT DETAIL */
+  .proj-detail-title{font-size:26px}
+
+  /* MIRO + CAROUSEL */
+  .proj-miro-wrap{height:200px}
+  .merch-carousel-img-wrap{height:220px}
+  iframe[height="480"]{height:240px}
+  iframe[height="600"]{height:260px}
+
+  /* SMRUTEA ARROWS - keep clear of the viewport edge on narrow phones */
+  .smt-arrow-l{left:-6px}
+  .smt-arrow-r{right:-6px}
+
+  /* NAV - works dropdown anchor right so it doesn't overflow */
+  .works-menu{left:auto;right:0;transform:translateY(-4px);min-width:unset;width:calc(100vw - 40px)}
+  .works-menu.open{transform:translateY(0)}
+}
+
+@media (max-width:360px){
+  .logo{font-size:16px}
+  .nav-links a,.works-trigger{padding:4px 5px;font-size:11px}
+}
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js" defer></script>
 <script>
@@ -699,7 +705,7 @@ audio{accent-color:#1A1A1A}
   <button onclick="document.getElementById('mobile-notice').style.display='none'" style="background:none;border:1px solid #444;color:#888;font-size:11px;padding:3px 10px;border-radius:100px;cursor:pointer;font-family:inherit;flex-shrink:0">Dismiss</button>
 </div>
 <nav>
-  <span class="logo" onclick="showPage('home')"><img src="media/Favicon.png" style="height:1.1em;width:auto;vertical-align:middle;position:relative;top:-2px;margin-right:5px;opacity:0.9"> anshu patel</span>
+  <span class="logo" onclick="showPage('home')"><img src="media/Favicon.png" style="height:1.1em;width:auto;vertical-align:middle;position:relative;top:-2px;margin-right:5px;opacity:0.9"> Anshu Patel</span>
   <div class="nav-links" id="nav-links">
     <a onclick="showPage('home')" id="nav-home" class="active">Home</a>
     <div class="works-dropdown" id="works-dropdown">
@@ -737,7 +743,7 @@ audio{accent-color:#1A1A1A}
   <div class="home-hero">
     <div class="home-hero-top">
       <div>
-        <h1 class="home-hi">Hi! I'm Anshu.</h1>
+        <h1 class="home-hi">Hi! I'm <span class="name-accent">Anshu.</span></h1>
         <p class="home-bio">A multidisciplinary designer passionate about interactive design and visual identity, exploring how to craft playful, meaningful experiences across diverse mediums.</p>
         <div class="home-degree-block">
           <div class="home-degree-row">
@@ -1213,10 +1219,10 @@ audio{accent-color:#1A1A1A}
     </div>
     <div class="about-right">
       <div class="about-section">
-        <h2 class="about-intro-heading">Hi, I'm Anshu!</h2>
+        <h2 class="about-intro-heading">Hi, I'm <span class="name-accent">Anshu!</span></h2>
 
         <!-- Rotating intro line -->
-        <p class="about-intro-descriptors">A designer and a <span class="rotating-descriptor" id="rotating-descriptor"><span class="descriptor-item active">eccentric gamer</span><span class="descriptor-item">cat lover</span><span class="descriptor-item">cookie cake decorator</span><span class="descriptor-item">fangirl</span><span class="descriptor-item">comics enthusiast</span><span class="descriptor-item">dancer</span><span class="descriptor-item">fontphile</span><span class="descriptor-item">awesome little sister &gt;:)</span><span class="descriptor-item">DIY barber</span><span class="descriptor-item">figurine collector</span><span class="descriptor-item">keychain hoarder</span></span></p>
+        <p class="about-intro-descriptors"><span class="about-intro-lead">A designer and a</span><span class="rotating-descriptor" id="rotating-descriptor"><span class="descriptor-item active">eccentric gamer</span><span class="descriptor-item">cat lover</span><span class="descriptor-item">cookie cake decorator</span><span class="descriptor-item">fangirl</span><span class="descriptor-item">comics enthusiast</span><span class="descriptor-item">dancer</span><span class="descriptor-item">fontphile</span><span class="descriptor-item">awesome little sister &gt;:)</span><span class="descriptor-item">DIY barber</span><span class="descriptor-item">figurine collector</span><span class="descriptor-item">keychain hoarder</span></span></p>
 
         <p class="about-p">I'm a <strong>multidisciplinary designer</strong> currently pursuing a <strong>B.F.A. in Design and a B.S. in Arts & Entertainment Technologies</strong> at the University of Texas at Austin. I am the first student (of two) to ever pursue this combination of degrees simultaneously!</p>
 
@@ -5357,7 +5363,7 @@ audio{accent-color:#1A1A1A}
 
 <!-- FOOTER -->
 <footer class="site-footer">
-  <div class="footer-left">anshu patel</div>
+  <div class="footer-left"><img src="media/Favicon.png" class="footer-logo-icon" alt="">Anshu Patel</div>
   <div class="footer-links">
     <a href="mailto:patelans006@gmail.com">Email</a>
     <a href="https://www.linkedin.com/in/anshu-patel006" target="_blank">LinkedIn ↗</a>
