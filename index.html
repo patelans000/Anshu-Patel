@@ -1,29 +1,31 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Anshu Patel — Portfolio</title>
+<title>Anshu Patel • Portfolio</title>
 <meta name="description" content="A multidisciplinary designer passionate about interactive design and crafting playful, meaningful experiences across diverse mediums.">
-<meta property="og:title" content="Anshu Patel — Portfolio">
+<meta property="og:title" content="Anshu Patel • Portfolio">
 <meta property="og:description" content="A multidisciplinary designer passionate about interactive design and crafting playful, meaningful experiences across diverse mediums.">
 <meta property="og:image" content="media/Link Photo.png">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Anshu Patel — Portfolio">
+<meta name="twitter:title" content="Anshu Patel • Portfolio">
 <meta name="twitter:description" content="A multidisciplinary designer passionate about interactive design and crafting playful, meaningful experiences across diverse mediums.">
 <meta name="twitter:image" content="media/Link Photo.png">
 <link rel="icon" type="image/png" href="media/Favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--blue:#B8DFFF;--yellow:#FFF0A8;--pink:#FFC8D8;--black:#1A1A1A;--muted:#999;--border:#E8E8E8;--gray:#F7F7F7}
 html{overflow-x:clip}
-body{font-family:'Outfit',sans-serif;background:#fff;color:#1A1A1A;overflow-x:clip;min-height:100vh;max-width:100%}
+body{font-family:'Outfit','Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;overflow-x:clip;min-height:100vh;max-width:100%}
+h1,h2,h3,h4,h5,h6,.logo,.home-hi,.disc-title,.proj-detail-title,.proj-detail-h2,.exp-title,.about-name,.about-intro-heading,.proj-detail-h3,.footer-left,.poster-drawer-title-text,.more-projs-label{font-family:'Outfit','Segoe UI',Arial,sans-serif!important}
 
-/* ── NAV ── */
+/* -- NAV -- */
 nav{padding:22px 48px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #333;position:sticky;top:0;background:rgba(20,20,20,0.97);backdrop-filter:blur(8px);z-index:100}
-.logo{font-family:'Fredoka',sans-serif;font-size:19px;font-weight:600;color:#fff;cursor:pointer;text-decoration:none;letter-spacing:0.2px}
+.logo{font-family:'Outfit',sans-serif;font-size:19px;font-weight:600;color:#fff;cursor:pointer;text-decoration:none;letter-spacing:0.2px}
 .nav-links{display:flex;gap:4px;align-items:center;position:relative}
 .nav-links a{font-size:13px;font-weight:400;color:#888;text-decoration:none;padding:5px 12px;border-radius:100px;cursor:pointer;transition:color 0.15s,background 0.15s}
 .nav-links a:hover{color:#fff}
@@ -32,7 +34,7 @@ nav{padding:22px 48px;display:flex;align-items:center;justify-content:space-betw
 .works-trigger{font-size:13px;font-weight:400;color:#888;padding:5px 12px;border-radius:100px;cursor:pointer;transition:color 0.15s;display:flex;align-items:center;gap:5px;user-select:none}
 .works-trigger:hover,.works-trigger.open{color:#fff}
 .works-trigger.has-active{color:#fff;font-weight:500}
-.works-caret{font-size:9px;transition:transform 0.2s;opacity:0.5;margin-top:1px}
+.works-caret{font-size:0.9em;transition:transform 0.2s;opacity:0.5;align-self:center}
 .works-trigger.open .works-caret{transform:rotate(180deg)}
 .works-menu{position:absolute;top:calc(100% + 8px);left:50%;background:#1e1e1e;border:1px solid #333;border-radius:12px;padding:6px;min-width:220px;width:auto;max-width:calc(100vw - 80px);opacity:0;pointer-events:none;transform:translate(-50%,-4px);transition:opacity 0.15s,transform 0.15s;z-index:200}
 .works-menu.open{opacity:1;pointer-events:all;transform:translate(-50%,0)}
@@ -47,15 +49,15 @@ nav{padding:22px 48px;display:flex;align-items:center;justify-content:space-betw
 .nav-hamburger.open span:nth-child(2){opacity:0}
 .nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
-/* ── PAGE SYSTEM ── */
+/* -- PAGE SYSTEM -- */
 .page{display:none;animation:fadein 0.3s ease}
 .page.active{display:block}
 @keyframes fadein{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 
-/* ── HOME ── */
+/* -- HOME -- */
 .home-hero{padding:80px 48px 72px;border-bottom:1px solid var(--border);max-width:1120px;margin:0 auto}
 .home-hero-top{display:grid;grid-template-columns:1fr minmax(420px, 620px);gap:32px;align-items:center}
-.home-hi{font-family:'Fredoka',sans-serif;font-size:58px;font-weight:600;line-height:1.05;max-width:580px;margin-bottom:28px}
+.home-hi{font-family:'Outfit',sans-serif;font-size:58px;font-weight:600;line-height:1.05;max-width:580px;margin-bottom:28px}
 .home-bio{font-size:15px;color:#444;line-height:1.8;max-width:480px;margin-bottom:20px}
 .home-degree-block{display:flex;flex-direction:column;gap:8px}
 .home-degree-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
@@ -68,7 +70,7 @@ nav{padding:22px 48px;display:flex;align-items:center;justify-content:space-betw
 
 @keyframes home-bounce{0%{transform:translateY(0) scale(1)}50%{transform:translateY(-8px) scale(1.02)}100%{transform:translateY(-4px) scale(1.01)}}
 
-/* ── HOME PROJECT GRID ── */
+/* -- HOME PROJECT GRID -- */
 .home-proj-grid{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid var(--border)}
 .home-proj-block{border-right:1px solid var(--border);border-bottom:1px solid var(--border);cursor:pointer;transition:background 0.2s;overflow:hidden}
 .home-proj-block:nth-child(2n){border-right:none}
@@ -82,10 +84,10 @@ nav{padding:22px 48px;display:flex;align-items:center;justify-content:space-betw
 .home-proj-sub{font-size:11px;color:var(--muted);margin-top:2px}
 .home-proj-arrow{font-size:16px;color:var(--muted);flex-shrink:0}
 
-/* ── DISCIPLINE PAGE ── */
+/* -- DISCIPLINE PAGE -- */
 .disc-header{padding:56px 20px 40px;border-bottom:1px solid var(--border);display:grid;grid-template-columns:1fr auto;align-items:end;gap:40px;max-width:980px;margin:0 auto}
 .disc-label{font-size:11px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
-.disc-title{font-family:'Fredoka',sans-serif;font-size:46px;font-weight:600;line-height:1.05;margin-bottom:14px}
+.disc-title{font-family:'Outfit',sans-serif;font-size:46px;font-weight:600;line-height:1.05;margin-bottom:14px}
 /* Discipline page title accent backgrounds */
 #page-motion .disc-title{background:#C8EDDA;color:#1A1A1A;display:inline-block;padding:8px 14px;border-radius:8px}
 #page-ux .disc-title{background:#FFC8D8;color:#1A1A1A;display:inline-block;padding:8px 14px;border-radius:8px}
@@ -96,7 +98,7 @@ nav{padding:22px 48px;display:flex;align-items:center;justify-content:space-betw
 .disc-back{font-size:13px;color:var(--muted);cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border:1px solid var(--border);border-radius:100px;transition:all 0.15s}
 .disc-back:hover{color:#1A1A1A;border-color:#bbb}
 
-/* ── PROJECT GRID ── */
+/* -- PROJECT GRID -- */
 .proj-grid{padding:0;display:grid}
 .proj-grid-3{grid-template-columns:repeat(3,1fr)}
 .proj-grid-2{grid-template-columns:repeat(2,1fr)}
@@ -123,14 +125,22 @@ nav{padding:22px 48px;display:flex;align-items:center;justify-content:space-betw
 .motion-text{font-size:15px;color:#333;line-height:1.9;margin-bottom:0;max-width:720px}
 .motion-text strong{font-weight:400;}
 
-@media (max-width: 920px){
+@media (max-width: 1024px){
   .motion-gallery{grid-template-columns:1fr}
 }
 
-/* ── RESPONSIVE ── */
-@media (max-width: 768px){
+/* -- RESPONSIVE (mobile + tablet: single column, centered) -- */
+@media (max-width: 1024px){
   /* NAV */
   nav{padding:14px 20px}
+  .about-portrait{max-height:none;aspect-ratio:4/5;max-width:320px;margin:0 auto 24px}
+  .about-portrait-inner{display:flex;align-items:center;justify-content:center;overflow:hidden;background:transparent}
+  .proj-detail-hero{align-items:center;text-align:center}
+  .proj-detail-meta-row{align-items:center}
+  .proj-detail-content{align-items:center;text-align:center}
+  .proj-detail-content > *{margin-left:auto;margin-right:auto}
+  .about-intro-descriptors{justify-content:center;text-align:center;width:100%;max-width:100%;margin:0 auto}
+  .about-portrait-inner img{width:100%;height:100%;object-fit:contain;object-position:center center}
   .nav-hamburger{display:flex}
   #nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:rgba(20,20,20,0.98);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid #333;flex-direction:column;padding:0;z-index:99;gap:0}
   #nav-links.open{display:flex}
@@ -143,41 +153,64 @@ nav{padding:22px 48px;display:flex;align-items:center;justify-content:space-betw
   #nav-links .works-menu.open{display:block}
   #nav-links .works-menu a{padding:12px 32px;border-radius:0;font-size:13px}
 
-  /* EXPERIENCE */
-  .exp-header{margin-bottom:24px}
-  .exp-title{font-size:26px}
+  /* EXPERIENCE - centered single column */
+  .exp-section{padding:48px 20px}
+  .exp-header{margin-bottom:28px;justify-content:center;align-items:center;flex-direction:column;text-align:center}
+  .exp-title{font-size:26px;max-width:100%}
+  .exp-row{grid-template-columns:1fr;align-items:center;gap:16px;padding:18px 0}
+  .exp-row-left{display:grid;grid-template-columns:1fr;gap:12px;align-items:center;justify-items:center;text-align:center}
+  .exp-row-left .exp-period{justify-self:center}
+  .exp-row-left .exp-role-wrap{max-width:100%;min-width:0}
+  .exp-toggle{justify-self:center}
+  .exp-details-inner{padding:18px 16px;max-width:100%}
+  .exp-item.open{overflow:visible}
+  .exp-item.open .exp-details{max-height:none;overflow:visible}
+  .exp-detail-text{font-size:15px;line-height:1.95;max-width:100%;text-align:center;margin-left:auto;margin-right:auto}
+  .exp-tags{justify-content:center;gap:8px}
 
   /* HOME */
-  .home-hero{padding:36px 20px 32px}
-  .home-hero-top{grid-template-columns:1fr}
-  .home-hi{font-size:36px}
-  .home-bio{max-width:100%}
+  .home-hero{padding:36px 20px 32px;text-align:center}
+  .home-hero-top{grid-template-columns:1fr;row-gap:28px}
+  .home-hero-top > div:first-child{order:2}
+  .home-illustration{order:1;min-height:unset;aspect-ratio:unset;height:220px;margin:0 auto 24px}
+  .home-hi{font-size:36px;margin:0 auto 24px;max-width:100%}
+  .home-bio{max-width:100%;margin:0 auto;line-height:1.95;margin-bottom:24px;padding:0 6px}
+  .home-degree-block{gap:14px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+  .home-degree-row{justify-content:center;gap:10px;flex-wrap:wrap}
+  .home-degree-location{justify-content:center;display:flex;align-items:flex-start;gap:8px}
   .home-degree-pill{white-space:normal;flex-shrink:1;max-width:100%}
-  .home-illustration{min-height:unset;aspect-ratio:unset;height:220px}
-  .home-proj-grid{grid-template-columns:repeat(2,1fr)}
+  .home-proj-grid{grid-template-columns:1fr}
+  .home-proj-grid .home-proj-block{border-right:none}
+  .home-proj-info{flex-direction:column;align-items:center;text-align:center}
 
   /* DISCIPLINE PAGES */
-  .disc-header{grid-template-columns:1fr;gap:14px;padding:28px 20px 24px}
+  .disc-header{grid-template-columns:1fr;gap:14px;padding:28px 20px 24px;align-items:center;text-align:center}
+  .disc-header-left{justify-self:center}
+  .disc-header > div:last-child{justify-self:center}
   .disc-title{font-size:34px;max-width:100%;box-sizing:border-box}
   #page-motion .disc-title,#page-ux .disc-title,#page-3d .disc-title,#page-graphic .disc-title,#page-archive .disc-title{max-width:100%;box-sizing:border-box}
 
-  /* PROJECT GRIDS */
-  .proj-grid-3{grid-template-columns:repeat(2,1fr)}
-  .proj-grid-3 .proj:nth-child(3n){border-right:1px solid var(--border)}
-  .proj-grid-3 .proj:nth-child(2n){border-right:none}
+  /* PROJECT GRIDS - single column */
+  .proj-grid-3{grid-template-columns:1fr}
+  .proj-grid-3 .proj{border-right:none}
+  .proj-grid-2{grid-template-columns:1fr}
+  .proj-grid-2 .proj{border-right:none}
+  .proj-grid [style*="grid-column:span 2"]{grid-column:span 1 !important;padding:20px !important}
   .proj-foot{min-height:52px}
   .proj-name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0;flex-shrink:1}
   .proj-meta{flex-shrink:0;padding-left:8px}
 
-  /* PROJECT DETAIL */
-  .proj-detail-nav{padding:12px 20px}
-  .proj-detail-hero{padding:28px 20px 24px}
+  /* PROJECT DETAIL - centered, sidebar hidden */
+  .proj-detail-nav{padding:12px 20px;display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center}
+  .proj-detail-nav-arrows{justify-content:center}
+  .proj-detail-hero{padding:28px 20px 24px;display:flex;flex-direction:column;align-items:center;text-align:center}
   .proj-detail-title{font-size:34px}
-  .proj-detail-tagline{font-size:15px}
-  .proj-detail-meta-row{gap:18px}
+  .proj-detail-tagline{font-size:15px;max-width:100%}
+  .proj-detail-meta-row{gap:18px;display:flex;flex-direction:column;align-items:center}
   .proj-detail-body{grid-template-columns:1fr}
   .proj-detail-sidebar{display:none}
-  .proj-detail-content{padding:28px 20px}
+  .proj-detail-content{padding:28px 20px;display:flex;flex-direction:column;align-items:center;text-align:left}
+  .proj-detail-content > *{width:100%;max-width:720px;margin:0 auto}
   #proj-ecoleander .proj-detail-content,
   #proj-persona5-type .proj-detail-content,
   #proj-smrutea .proj-detail-content,
@@ -193,6 +226,7 @@ nav{padding:22px 48px;display:flex;align-items:center;justify-content:space-betw
   #proj-oracle .proj-detail-content,
   #proj-logos-branding .proj-detail-content,
   #proj-adobe-cabin .proj-detail-content{padding:28px 20px}
+  .proj-detail-page [style*="calc(100% + 48px)"]{width:100% !important;margin-left:0 !important;margin-right:0 !important}
 
   /* PROJECT HERO OVERLAY (inline style overrides) */
   .proj-detail-page [style*="bottom:36px"]{bottom:16px !important;left:20px !important;right:20px !important}
@@ -215,64 +249,63 @@ nav{padding:22px 48px;display:flex;align-items:center;justify-content:space-betw
   /* MIRO EMBEDS */
   .proj-miro-wrap{height:260px}
 
+  /* FIGMA EMBEDS - the HTML height attribute isn't responsive on its own */
+  iframe[height="480"]{height:300px}
+  iframe[height="600"]{height:340px}
+
+  /* SMRUTEA HERO CAROUSEL - single column so nothing shrinks/clips */
+  .smt-cg{grid-template-columns:1fr}
+
   /* MERCH CAROUSEL */
   .merch-carousel-img-wrap{height:260px}
   #proj-choco-knight .merch-carousel-img-wrap{height:auto;min-height:200px}
 
   /* POSTER GALLERY */
-  .poster-gallery{grid-template-columns:repeat(2,1fr);padding:24px 20px;gap:14px}
+  .poster-gallery{grid-template-columns:1fr;padding:24px 20px;gap:14px}
 
   /* P5 FLIPBOOK - stack canvases vertically */
   .p5-hero-spread{flex-direction:column}
 
   /* IMAGE GRIDS */
-  .proj-img-grid-3{grid-template-columns:repeat(2,1fr)}
+  .proj-img-grid-2{grid-template-columns:1fr}
+  .proj-img-grid-3{grid-template-columns:1fr}
 
   /* MORE PROJECTS */
   .more-projs{padding:28px 20px 40px}
-  .more-projs-grid{grid-template-columns:repeat(2,1fr)}
-  .more-projs-grid .more-proj-item:last-child{border-right:1px solid var(--border)}
-  .more-projs-grid .more-proj-item:nth-child(2n){border-right:none}
-
-  /* EXPERIENCE */
-  .exp-section{padding:48px 20px}
-  .exp-row-left{grid-template-columns:1fr;gap:2px}
+  .more-projs-grid{grid-template-columns:1fr}
+  .more-projs-grid .more-proj-item{border-right:none}
 
   /* FOOTER */
   .site-footer{flex-direction:column;gap:14px;padding:28px 20px;align-items:flex-start}
 }
 
 @media (max-width: 480px){
+  .exp-details-inner{padding:16px 14px}
+  .exp-item{overflow:visible}
+  .exp-detail-text{font-size:15px;line-height:2}
+
   /* HOME */
   .home-hi{font-size:28px}
+  .home-bio{font-size:14px;max-width:100%;padding:0 6px}
+  .home-degree-row{gap:8px}
+  .home-degree-location{gap:6px}
+  .home-degree-pill{font-size:11px;padding:5px 10px}
   /* DISCIPLINE PAGES */
   .disc-title{font-size:24px}
-  .home-proj-grid{grid-template-columns:1fr}
   .home-illustration{height:180px}
-  .home-proj-block:nth-child(2n){border-right:1px solid var(--border)}
-
-  /* PROJECT GRIDS */
-  .proj-grid-3{grid-template-columns:1fr}
-  .proj-grid-3 .proj{border-right:none}
-  .proj-grid-2{grid-template-columns:1fr}
-  .proj-grid-2 .proj{border-right:none}
-  .proj-grid [style*="grid-column:span 2"]{grid-column:span 1 !important;padding:20px !important}
 
   /* PROJECT DETAIL */
   .proj-detail-title{font-size:26px}
-  .proj-img-grid-2{grid-template-columns:1fr}
-  .proj-img-grid-3{grid-template-columns:1fr}
-
-  /* MORE PROJECTS */
-  .more-projs-grid{grid-template-columns:1fr}
-  .more-projs-grid .more-proj-item{border-right:none}
 
   /* MIRO + CAROUSEL */
   .proj-miro-wrap{height:200px}
   .merch-carousel-img-wrap{height:220px}
+  iframe[height="480"]{height:240px}
+  iframe[height="600"]{height:260px}
 
-  /* POSTER GALLERY */
-  .poster-gallery{grid-template-columns:1fr}
+  /* SMRUTEA ARROWS - keep clear of the viewport edge on narrow phones */
+  .smt-arrow-l{left:-6px}
+  .smt-arrow-r{right:-6px}
 
   /* NAV - works dropdown anchor right so it doesn't overflow */
   .works-menu{left:auto;right:0;transform:translateY(-4px);min-width:unset;width:calc(100vw - 40px)}
@@ -284,7 +317,7 @@ nav{padding:22px 48px;display:flex;align-items:center;justify-content:space-betw
   .nav-links a,.works-trigger{padding:4px 5px;font-size:11px}
 }
 
-/* ── PROJECT DETAIL PAGE ── */
+/* -- PROJECT DETAIL PAGE -- */
 .proj-detail-page{display:none;animation:fadein 0.3s ease}
 .proj-detail-page.active{display:block}
 .proj-detail-nav{padding:20px 48px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
@@ -298,7 +331,7 @@ nav{padding:22px 48px;display:flex;align-items:center;justify-content:space-betw
 
 .proj-detail-hero{padding:64px 48px 48px;border-bottom:1px solid var(--border)}
 .proj-detail-kicker{font-size:11px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
-.proj-detail-title{font-family:'Fredoka',sans-serif;font-size:52px;font-weight:600;line-height:1.05;margin-bottom:16px}
+.proj-detail-title{font-family:'Outfit',sans-serif;font-size:52px;font-weight:600;line-height:1.05;margin-bottom:16px}
 .proj-detail-tagline{font-size:17px;color:#444;line-height:1.7;max-width:600px;margin-bottom:32px}
 .proj-detail-meta-row{display:flex;gap:40px;flex-wrap:wrap}
 .proj-detail-meta-item{}
@@ -317,7 +350,7 @@ nav{padding:22px 48px;display:flex;align-items:center;justify-content:space-betw
 .proj-detail-content{padding:56px 64px}
 .proj-detail-section{margin-bottom:56px}
 .proj-detail-section-label{font-size:11px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted);margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--border)}
-.proj-detail-h2{font-family:'Fredoka',sans-serif;font-size:26px;font-weight:600;margin-bottom:14px}
+.proj-detail-h2{font-family:'Outfit',sans-serif;font-size:26px;font-weight:600;margin-bottom:14px}
 .proj-detail-p{font-size:14px;color:#444;line-height:1.85;margin-bottom:14px}
 .proj-detail-p:last-child{margin-bottom:0}
 
@@ -344,11 +377,11 @@ nav{padding:22px 48px;display:flex;align-items:center;justify-content:space-betw
 .proj-quote p{font-size:15px;font-style:italic;color:#444;line-height:1.7}
 .proj-quote cite{font-size:12px;color:var(--muted);display:block;margin-top:8px;font-style:normal}
 
-/* ── EXPERIENCE SECTION ── */
+/* -- EXPERIENCE SECTION -- */
 .exp-section{padding:80px 48px;border-top:1px solid var(--border)}
 .exp-header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:40px}
 .exp-section-label{font-size:11px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted)}
-.exp-title{font-family:'Fredoka',sans-serif;font-size:32px;font-weight:600}
+.exp-title{font-family:'Outfit',sans-serif;font-size:32px;font-weight:600}
 .exp-list{display:flex;flex-direction:column;gap:0}
 .exp-item{border-top:1px solid var(--border);overflow:hidden}
 .exp-item:last-child{border-bottom:1px solid var(--border)}
@@ -365,7 +398,7 @@ nav{padding:22px 48px;display:flex;align-items:center;justify-content:space-betw
 .exp-toggle-icon{font-size:18px;font-weight:700;color:var(--muted);line-height:1;transition:transform 0.3s ease}
 .exp-item.open .exp-toggle-icon{transform:rotate(90deg);color:#1A1A1A}
 .exp-details{max-height:0;overflow:hidden;transition:max-height 0.35s ease}
-.exp-item.open .exp-details{max-height:400px;background:var(--blue);border-radius:0 0 8px 8px}
+.exp-item.open .exp-details{max-height:none;overflow:visible;background:var(--blue);border-radius:0 0 8px 8px}
 .exp-details-inner{padding:20px;border-radius:8px}
 .exp-item.open .exp-detail-text{color:#1A1A1A;font-weight:500}
 .exp-detail-text{font-size:14px;color:var(--muted);line-height:1.8;margin-bottom:14px;max-width:560px}
@@ -373,13 +406,13 @@ nav{padding:22px 48px;display:flex;align-items:center;justify-content:space-betw
 .exp-item.open .exp-tag{background:#fff;color:#1A1A1A;border-color:#fff}
 .exp-tag{font-size:11px;padding:4px 10px;border-radius:6px;background:var(--gray);color:#1A1A1A;border:1px solid var(--border)}
 
-/* ── ABOUT ── */
+/* -- ABOUT -- */
 .about-wrap{display:grid;grid-template-columns:380px 1fr;min-height:calc(100vh - 73px)}
 .about-left{border-right:1px solid var(--border);padding:56px 48px;position:sticky;top:73px;height:calc(100vh - 73px);display:flex;flex-direction:column}
-.about-portrait{width:100%;aspect-ratio:3/4;border-radius:8px;overflow:hidden;margin-bottom:24px;background:var(--blue);position:relative;flex-shrink:0;max-height:280px}
-.about-portrait-inner{width:100%;height:100%;background:#f4f9ff}
-.about-portrait-inner img{width:100%;height:100%;object-fit:cover;display:block}
-.about-name{font-family:'Fredoka',sans-serif;font-size:24px;font-weight:600;margin-bottom:4px}
+.about-portrait{width:100%;aspect-ratio:3/4;border-radius:8px;overflow:hidden;margin-bottom:24px;position:relative;flex-shrink:0;max-height:280px}
+.about-portrait-inner{width:100%;height:100%}
+.about-portrait-inner img{width:100%;height:100%;object-fit:contain;object-position:center center;display:block}
+.about-name{font-family:'Outfit',sans-serif;font-size:24px;font-weight:600;margin-bottom:4px}
 .about-role{font-size:13px;color:var(--muted);margin-bottom:24px}
 .about-contact{display:flex;flex-direction:column;gap:8px;margin-top:auto}
 .about-contact a{font-size:13px;color:var(--muted);text-decoration:none;transition:color 0.15s}
@@ -389,7 +422,7 @@ nav{padding:22px 48px;display:flex;align-items:center;justify-content:space-betw
 .about-section:last-child{border-bottom:none}
 .about-section-label{font-size:11px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
 .about-intro-line{font-size:14px;font-weight:400;line-height:1.5;margin-bottom:12px;color:#444}
-.about-intro-heading{font-family:'Fredoka',sans-serif;font-size:28px;font-weight:600;line-height:1.2;margin-bottom:16px;color:#1A1A1A}
+.about-intro-heading{font-family:'Outfit',sans-serif;font-size:28px;font-weight:600;line-height:1.2;margin-bottom:16px;color:#1A1A1A}
 .about-intro-descriptors{font-size:22px;font-weight:500;line-height:1.5;margin-bottom:32px;color:#1A1A1A;display:flex;align-items:center;flex-wrap:wrap;gap:6px}
 .about-intro-filler{display:inline}
 .about-intro-rotate-wrap{display:inline-block;position:relative;vertical-align:baseline}
@@ -413,12 +446,15 @@ audio{accent-color:#1A1A1A}
 .audio-play-btn.playing{background:var(--blue)}
 .audio-play-btn.playing:hover{background:#A8CFFF}
 
-@media (max-width:768px){
+@media (max-width:1024px){
   .about-wrap{display:block;min-height:unset}
-  .about-left{position:static;height:auto;padding:32px 20px 24px;border-right:none;border-bottom:1px solid var(--border)}
+  .about-left{position:static;height:auto;padding:32px 20px 24px;border-right:none;border-bottom:1px solid var(--border);align-items:center;text-align:center}
   .about-portrait{max-height:200px}
-  .about-right{height:auto;overflow:visible;padding:32px 20px}
-  .fun-row{grid-template-columns:100px 1fr}
+  .about-right{height:auto;overflow:visible;padding:32px 20px;text-align:center}
+  .about-intro-descriptors{justify-content:center;text-align:center;width:100%;max-width:100%;margin:0 auto}
+  .skill-list{justify-content:center}
+  .about-contact{align-items:center}
+  .fun-row{display:grid;grid-template-columns:1fr;justify-items:center;text-align:center;gap:10px}
 }
 @media (max-width:480px){
   .about-intro-descriptors{font-size:18px}
@@ -426,7 +462,7 @@ audio{accent-color:#1A1A1A}
   .rotating-descriptor{min-width:120px}
 }
 
-/* ── COLOR ACCENTS ── */
+/* -- COLOR ACCENTS -- */
 .accent-graphic{background:#FFD9E8}
 .accent-ux{background:#D6EFFF}
 .accent-3d{background:#FFF5C0}
@@ -435,9 +471,9 @@ audio{accent-color:#1A1A1A}
 .accent-misc1{background:#E8F0FF}
 .accent-misc2{background:#EEFFF5}
 
-/* ── PROJECT DETAIL EXTRAS ── */
+/* -- PROJECT DETAIL EXTRAS -- */
 .proj-img-caption{font-size:12px;color:var(--muted);margin-top:4px;margin-bottom:14px;line-height:1.5}
-.proj-detail-h3{font-family:'Fredoka',sans-serif;font-size:20px;font-weight:600;margin-bottom:12px;margin-top:32px;color:#1A1A1A}
+.proj-detail-h3{font-family:'Outfit',sans-serif;font-size:20px;font-weight:600;margin-bottom:12px;margin-top:32px;color:#1A1A1A}
 .proj-callout{background:var(--blue);border-radius:8px;padding:12px 18px;margin:6px 0;font-size:13px;color:#1A1A1A;line-height:1.7;font-weight:500}
 .proj-miro-wrap{width:100%;height:480px;border-radius:8px;overflow:hidden;border:1px solid var(--border);margin-bottom:6px}
 .proj-miro-wrap iframe{width:100%;height:100%;border:none;display:block}
@@ -492,19 +528,19 @@ audio{accent-color:#1A1A1A}
 .smt-dot{width:7px;height:7px;border-radius:50%;background:#D0D0D0;cursor:pointer;transition:background 0.2s;display:inline-block}
 .smt-dot.smt-active{background:#444}
 .smt-dot:hover{background:#888}
-.smt-arrow{position:absolute;top:50%;transform:translateY(-50%);background:#fff;border:1px solid var(--border);border-radius:50%;width:34px;height:34px;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:3;box-shadow:0 1px 5px rgba(0,0,0,0.09);transition:box-shadow 0.15s,background 0.15s;padding:0;flex-shrink:0}
-.smt-arrow:hover{background:#f5f5f5;box-shadow:0 2px 8px rgba(0,0,0,0.15)}
-.smt-arrow-l{left:-17px}
-.smt-arrow-r{right:-17px}
+.smt-arrow{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.9);border:1px solid rgba(0,0,0,0.08);border-radius:50%;width:30px;height:30px;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:3;box-shadow:none;transition:background 0.15s,border-color 0.15s;padding:0;flex-shrink:0}
+.smt-arrow:hover{background:rgba(255,255,255,1);border-color:rgba(0,0,0,0.12)}
+.smt-arrow-l{left:-15px}
+.smt-arrow-r{right:-15px}
 
-/* ── FOOTER ── */
+/* -- FOOTER -- */
 .site-footer{background:#1A1A1A;color:#888;padding:40px 48px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid #333;margin-top:80px}
-.footer-left{font-family:'Fredoka',sans-serif;font-size:16px;color:#fff;font-weight:600;letter-spacing:0.2px}
+.footer-left{font-family:'Outfit',sans-serif;font-size:16px;color:#fff;font-weight:600;letter-spacing:0.2px}
 .footer-links{display:flex;gap:24px}
 .footer-links a{font-size:13px;color:#666;text-decoration:none;transition:color 0.15s}
 .footer-links a:hover{color:var(--pink)}
 .footer-copy{font-size:12px;color:#444}
-/* ── PERSONA 5 EXTRAS ── */
+/* -- PERSONA 5 EXTRAS -- */
 .proj-callout-yellow{background:var(--yellow);border-radius:8px;padding:14px 18px;margin:6px 0;font-size:14px;color:#1A1A1A;line-height:1.7;font-style:italic}
 .proj-callout-gray{background:var(--gray);border:1px solid var(--border);border-radius:8px;padding:12px 18px;margin:6px 0;font-size:13px;color:#444;line-height:1.7}
 .proj-kp{background:var(--gray);border:1px solid var(--border);border-radius:8px;padding:14px 18px;margin:16px 0}
@@ -513,7 +549,7 @@ audio{accent-color:#1A1A1A}
 .proj-kp li{font-size:13px;color:#555;line-height:1.6}
 .proj-pdf-link{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:#1A1A1A;border:1px solid var(--border);border-radius:8px;padding:10px 16px;text-decoration:none;font-weight:500;margin-bottom:14px;transition:border-color 0.15s}
 .proj-pdf-link:hover{border-color:#bbb}
-/* ── PERSONA 5 HERO PDF ── */
+/* -- PERSONA 5 HERO PDF -- */
 .p5-hero-wrap{position:relative;display:flex;align-items:flex-start;justify-content:center}
 .p5-hero-spread{display:flex;align-items:flex-start;gap:0;width:100%;transition:opacity 0.38s ease}
 .p5-hero-canvas{flex:1;min-width:0;display:block}
@@ -526,7 +562,7 @@ audio{accent-color:#1A1A1A}
 .p5-hero-dots{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);display:flex;gap:6px;z-index:20}
 .p5-hero-dot{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,0.22);cursor:pointer;transition:background 0.25s,transform 0.25s}
 .p5-hero-dot.active{background:rgba(255,255,255,0.85);transform:scale(1.25)}
-/* ── POSTER GALLERY & DRAWER ── */
+/* -- POSTER GALLERY & DRAWER -- */
 .poster-gallery{padding:48px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .poster-card{display:flex;flex-direction:column}
 .poster-card-img{aspect-ratio:2/3;overflow:hidden;background:#fff;border:1px solid var(--border);position:relative}
@@ -547,7 +583,7 @@ audio{accent-color:#1A1A1A}
 .poster-drawer-bar{display:flex;justify-content:center;padding:12px 0 0;flex-shrink:0;cursor:pointer}
 .poster-drawer-bar span{width:36px;height:4px;background:#ddd;border-radius:2px;display:block}
 .poster-drawer-header{display:flex;justify-content:space-between;align-items:center;padding:8px 40px 14px;border-bottom:1px solid var(--border);flex-shrink:0}
-.poster-drawer-title-text{font-family:'Fredoka',sans-serif;font-size:22px;font-weight:600}
+.poster-drawer-title-text{font-family:'Outfit',sans-serif;font-size:22px;font-weight:600}
 .poster-drawer-close{background:none;border:1px solid var(--border);border-radius:100px;padding:5px 14px;font-size:12px;cursor:pointer;font-family:inherit;color:var(--muted);transition:all 0.15s}
 .poster-drawer-close:hover{color:#1A1A1A;border-color:#bbb}
 .poster-drawer-scroll{overflow-y:auto;flex:1;min-height:0}
@@ -556,21 +592,21 @@ audio{accent-color:#1A1A1A}
 .poster-process-content.active{display:block}
 .poster-process-section{margin-bottom:40px}
 .poster-process-section:last-child{margin-bottom:0}
-@media(max-width:768px){.poster-gallery{padding:28px 20px 40px;grid-template-columns:repeat(2,1fr);gap:14px}.poster-drawer-header{padding:8px 20px 12px}.poster-drawer-body{padding:24px 20px}}
+@media(max-width:1024px){.poster-gallery{padding:28px 20px 40px;grid-template-columns:1fr;gap:14px}.poster-drawer-header{padding:8px 20px 12px}.poster-drawer-body{padding:24px 20px}}
 #proj-adobe-cabin .proj-detail-content{max-width:680px;padding:48px 48px;margin:0 auto}
 #proj-adobe-cabin .proj-detail-content div[style*="overflow:hidden"]{border:none!important;border-radius:0!important}
 #proj-adobe-cabin .proj-detail-content img{width:100%;height:auto;display:block;border-radius:0!important}
 #proj-logos-branding .proj-detail-content{max-width:680px;padding:48px 48px;margin:0 auto}
 #proj-logos-branding .proj-detail-content img{width:100%;height:auto;display:block}
 #proj-logos-branding .proj-detail-sidebar::-webkit-scrollbar{display:none}
-#proj-logos-branding .proj-detail-sidebar{-ms-overflow-style:none;scrollbar-width:none}/* ── BACK TO TOP ── */
+#proj-logos-branding .proj-detail-sidebar{-ms-overflow-style:none;scrollbar-width:none}/* -- BACK TO TOP -- */
 .btt{position:fixed;bottom:28px;right:28px;width:42px;height:42px;background:#1A1A1A;border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:500;opacity:0;pointer-events:none;transform:translateY(8px);transition:opacity 0.2s,transform 0.2s;box-shadow:0 2px 12px rgba(0,0,0,0.2)}
 .btt.visible{opacity:1;pointer-events:all;transform:none}
 .btt:hover{background:#333;transform:translateY(-2px) !important;box-shadow:0 4px 16px rgba(0,0,0,0.28)}
-/* ── MORE PROJECTS ── */
+/* -- MORE PROJECTS -- */
 .more-projs{padding:48px 48px 64px;border-top:1px solid var(--border)}
 .more-projs-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:24px}
-.more-projs-label{font-family:'Fredoka',sans-serif;font-size:22px;font-weight:600;color:#1A1A1A}
+.more-projs-label{font-family:'Outfit',sans-serif;font-size:22px;font-weight:600;color:#1A1A1A}
 .more-projs-all{font-size:13px;color:var(--muted);cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:5px;padding:5px 14px;border:1px solid var(--border);border-radius:100px;transition:all 0.15s}
 .more-projs-all:hover{color:#1A1A1A;border-color:#bbb}
 .more-projs-grid{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--border)}
@@ -668,7 +704,7 @@ audio{accent-color:#1A1A1A}
     <a onclick="showPage('home')" id="nav-home" class="active">Home</a>
     <div class="works-dropdown" id="works-dropdown">
       <div class="works-trigger" id="works-trigger" onclick="toggleWorksMenu()">
-        Works <span class="works-caret">▼</span>
+        Works <span class="works-caret">▾</span>
       </div>
       <div class="works-menu" id="works-menu">
         <a onclick="showPage('ux');closeWorksMenu()" id="nav-ux">
@@ -696,7 +732,7 @@ audio{accent-color:#1A1A1A}
   </button>
 </nav>
 
-<!-- ══════════════════ HOME ══════════════════ -->
+<!-- ------------------ HOME ------------------ -->
 <div class="page active" id="page-home">
   <div class="home-hero">
     <div class="home-hero-top">
@@ -728,7 +764,7 @@ audio{accent-color:#1A1A1A}
           <div style="position:absolute;inset:0;background:#FFC8D8;mix-blend-mode:multiply;opacity:0.85;pointer-events:none"></div>
         </div>
       </div>
-      <div class="home-proj-info"><div class="home-proj-left"><div class="home-proj-title">UX/UI & Game Design</div><div class="home-proj-sub">A collection of my game design and UX/UI work, from a disco typing game to a magical personality quiz.</div></div><span class="home-proj-arrow">→</span></div>
+      <div class="home-proj-info"><div class="home-proj-left"><div class="home-proj-title">UX/UI & Game Design</div><div class="home-proj-sub">A collection of my game design and UX/UI work, from a disco typing game to a magical personality quiz.</div></div><span class="home-proj-arrow">›</span></div>
     </div>
     <div class="home-proj-block" onclick="showPage('3d')" onmouseenter="preloadPage('3d')">
       <div class="home-proj-thumb">
@@ -737,7 +773,7 @@ audio{accent-color:#1A1A1A}
           <div style="position:absolute;inset:0;background:#B8DFFF;mix-blend-mode:multiply;opacity:0.85;pointer-events:none"></div>
         </div>
       </div>
-      <div class="home-proj-info"><div class="home-proj-left"><div class="home-proj-title">3D & Product Design</div><div class="home-proj-sub">A collection of industrial design projects, from product concepts to prototypes.</div></div><span class="home-proj-arrow">→</span></div>
+      <div class="home-proj-info"><div class="home-proj-left"><div class="home-proj-title">3D & Product Design</div><div class="home-proj-sub">A collection of industrial design projects, from product concepts to prototypes.</div></div><span class="home-proj-arrow">›</span></div>
     </div>
     <div class="home-proj-block" onclick="showPage('motion')">
       <div class="home-proj-thumb">
@@ -748,7 +784,7 @@ audio{accent-color:#1A1A1A}
           <div style="position:absolute;inset:0;background:#C8EDDA;mix-blend-mode:multiply;opacity:0.85;pointer-events:none"></div>
         </div>
       </div>
-      <div class="home-proj-info"><div class="home-proj-left"><div class="home-proj-title">Motion Graphics & Videography</div><div class="home-proj-sub">A variety of videos I have produced from hype videos to fan edits.</div></div><span class="home-proj-arrow">→</span></div>
+      <div class="home-proj-info"><div class="home-proj-left"><div class="home-proj-title">Motion Graphics & Videography</div><div class="home-proj-sub">A variety of videos I have produced from hype videos to fan edits.</div></div><span class="home-proj-arrow">›</span></div>
     </div>
     <div class="home-proj-block" onclick="showPage('graphic')">
       <div class="home-proj-thumb" style="overflow:hidden">
@@ -757,7 +793,7 @@ audio{accent-color:#1A1A1A}
           <div style="position:absolute;inset:0;background:#FFF0A8;mix-blend-mode:multiply;opacity:0.85;pointer-events:none"></div>
         </div>
       </div>
-      <div class="home-proj-info"><div class="home-proj-left"><div class="home-proj-title">2D & Graphic Design</div><div class="home-proj-sub">A variety of my graphic design work, from layout design to livery design.</div></div><span class="home-proj-arrow">→</span></div>
+      <div class="home-proj-info"><div class="home-proj-left"><div class="home-proj-title">2D & Graphic Design</div><div class="home-proj-sub">A variety of my graphic design work, from layout design to livery design.</div></div><span class="home-proj-arrow">›</span></div>
     </div>
   </div>
 
@@ -814,7 +850,7 @@ audio{accent-color:#1A1A1A}
   </div>
 </div>
 
-<!-- ══════════════════ GRAPHIC DESIGN LIST ══════════════════ -->
+<!-- ------------------ GRAPHIC DESIGN LIST ------------------ -->
 <div class="page" id="page-graphic">
   <div class="disc-header">
     <div class="disc-header-left">
@@ -908,7 +944,7 @@ audio{accent-color:#1A1A1A}
   </div>
 </div>
 
-<!-- ══════════════════ UX / GAME LIST ══════════════════ -->
+<!-- ------------------ UX / GAME LIST ------------------ -->
 <div class="page" id="page-ux">
   <div class="disc-header">
     <div class="disc-header-left">
@@ -962,7 +998,7 @@ audio{accent-color:#1A1A1A}
   </div>
 </div>
 
-<!-- ══════════════════ 3D / PRODUCT LIST ══════════════════ -->
+<!-- ------------------ 3D / PRODUCT LIST ------------------ -->
 <div class="page" id="page-3d">
   <div class="disc-header">
     <div class="disc-header-left">
@@ -1011,7 +1047,7 @@ audio{accent-color:#1A1A1A}
   </div>
 </div>
 
-<!-- ══════════════════ MOTION LIST ══════════════════ -->
+<!-- ------------------ MOTION LIST ------------------ -->
 <div class="page" id="page-motion">
   <div class="disc-header">
       <div class="disc-header-left">
@@ -1162,7 +1198,7 @@ audio{accent-color:#1A1A1A}
 </div>
 
 
-<!-- ══════════════════ ABOUT ══════════════════ -->
+<!-- ------------------ ABOUT ------------------ -->
 <div class="page" id="page-about">
   <div class="about-wrap">
     <div class="about-left">
@@ -1186,7 +1222,7 @@ audio{accent-color:#1A1A1A}
 
         <p class="about-p">During my time at UT, I've had the opportunity to work across <strong>branding, UI/UX, motion graphics, product design, and game development</strong>, and so much more! I love exploring different areas of design, but what always draws me in is <strong>creating experiences that people can interact with, learn from, and connect to</strong>.</p>
 
-        <p class="about-p">I'm also currently the <strong>Public Relations Officer for Longhorn Racing</strong>, the largest engineering organization at UT and one of the most accomplished student organizations on campus. I manage branding, graphic design, and communications across all three vehicle teams while also serving as the Public Relations Lead for the Solar Vehicle Team. Getting to work alongside hundreds of incredibly talented students who spend countless hours designing, building, and racing vehicles has been one of the coolest parts of my college experience.</p>
+        <p class="about-p">I'm also currently the <strong>Public Relations Officer for Longhorn Racing</strong>, the largest engineering organization at UT and one of the most accomplished student organizations on campus. I manage branding, graphic design, and communications across all three vehicle teams while also serving as the <strong>Public Relations Lead for the Solar Vehicle Team</strong>. Getting to work alongside hundreds of incredibly talented students who spend countless hours designing, building, and racing vehicles has been one of the coolest parts of my college experience.</p>
 
         <p class="about-p">I'm especially interested in <strong>interactive design, visual identity, game development, and storytelling</strong>. I love thinking about the little details that make someone pause, explore, or see something differently, and I'm always looking for ways to <strong>weave narrative and a distinct visual voice into the experiences I create</strong>.</p>
 
@@ -1208,7 +1244,7 @@ audio{accent-color:#1A1A1A}
         <div class="about-section-label">Some fun bits and bobs</div>
         <div class="fun-list">
           <div class="fun-row"><span class="fun-key">Listening to</span><span class="fun-val fun-audio"><button class="audio-play-btn" id="audio-btn" onclick="toggleAudio()" aria-label="Play"><svg id="audio-icon-play" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg><svg id="audio-icon-pause" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="13" height="13" fill="currentColor" style="display:none"><rect x="5" y="3" width="4" height="18"/><rect x="15" y="3" width="4" height="18"/></svg></button><audio id="audio-player" src="media/06. FINAL FANTASY XVI - Find the Flame.mp3"></audio><span>Find the Flame by Masayoshi Soken</span></span></div>
-          <div class="fun-row"><span class="fun-key">Currently playing</span><span class="fun-val">Final Fantasy XV, League of Legends, Devil May Cry 3</span></div>
+          <div class="fun-row"><span class="fun-key">Currently playing</span><span class="fun-val">Final Fantasy XV, Devil May Cry 4, League of Legends</span></div>
           <div class="fun-row"><span class="fun-key">Currently reading</span><span class="fun-val">Witch Hat Atelier, Morning Star, Hench</span></div>
           <div class="fun-row"><span class="fun-key">Currently learning</span><span class="fun-val">Motion typography and 3D sculpting</span></div>
         </div>
@@ -1217,16 +1253,16 @@ audio{accent-color:#1A1A1A}
   </div>
 </div>
 
-<!-- ══════════════════════════════════════════════════
+<!-- --------------------------------------------------
      PROJECT DETAIL PAGES
-══════════════════════════════════════════════════ -->
+-------------------------------------------------- -->
 
 <!-- TYPOGRAPHY IN PERSONA 5 -->
 <div class="proj-detail-page" id="proj-persona5-type">
   <div class="proj-detail-nav">
     <div class="proj-detail-breadcrumb">
       <span onclick="showPage('graphic')">2D & Graphic Design</span>
-      <span class="sep">›</span>
+      <span class="sep">&gt;</span>
       <span style="color:#1A1A1A;font-weight:500">Typography in Persona 5</span>
     </div>
     <div class="proj-detail-nav-arrows">
@@ -1250,7 +1286,7 @@ audio{accent-color:#1A1A1A}
       <img loading="lazy" src="media/Typography in Persona 5/Hero, Title Card.png" style="width:100%;height:100%;object-fit:cover;display:block" alt="Typography in Persona 5,Cover">
       <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.72) 0%,rgba(0,0,0,0.18) 50%,transparent 100%)"></div>
       <div style="position:absolute;bottom:36px;left:48px">
-        <div style="font-family:'Fredoka',sans-serif;font-size:54px;font-weight:600;color:#fff;line-height:1.05;letter-spacing:0.3px">Typography in Persona 5</div>
+        <div style="font-family:'Outfit',sans-serif;font-size:54px;font-weight:600;color:#fff;line-height:1.05;letter-spacing:0.3px">Typography in Persona 5</div>
         <div style="font-size:13px;color:rgba(255,255,255,0.7);margin-top:6px;font-weight:400;letter-spacing:0.3px">DES 325 | Fall 2025</div>
       </div>
     </div>
@@ -1352,7 +1388,7 @@ audio{accent-color:#1A1A1A}
         <p class="proj-detail-p">One of the first things I knew about this book is that I would self-author it. To do that successfully, I had to gather a wealth of resources. So to the internet I went!</p>
         <p class="proj-detail-p">I created a Miro board to compile websites that could guide my research, as well as sources for font specimens. When gathering materials, I didn't limit myself to typography alone. It was also important to collect research from related fields, such as game psychology, UX/UI design, and more, as these insights would help supplement my work. I also explored Reddit forums, where the community is very active, to see if others had similar questions or inquiries.</p>
         <div class="proj-miro-wrap">
-          <iframe src="https://miro.com/app/live-embed/uXjVJAUyZPs=/" allow="fullscreen; clipboard-read; clipboard-write" allow="clipboard-write fullscreen" allowfullscreen></iframe>
+          <iframe src="https://miro.com/app/live-embed/uXjVJAUyZPs=/" allow="fullscreen; clipboard-read; clipboard-write" allowfullscreen></iframe>
         </div>
         <p class="proj-img-caption">Explore my Miro board above, click to interact.</p>
         <div class="proj-kp">
@@ -1418,7 +1454,7 @@ audio{accent-color:#1A1A1A}
         <p class="proj-detail-p" style="font-style:italic;color:var(--muted)">As part of the project requirements, I was asked to compile information and present my ideas to the class, explaining the topic I was covering, why I chose it, and how I planned to structure the information.</p>
         <p class="proj-detail-p">Here you can go through the presentation I curated for class. It is important to note that a lot of the information was verbally communicated by me, supported by the animations and images in the presentation.</p>
         <div class="proj-miro-wrap">
-          <iframe src="https://www.canva.com/design/DAG2Yx6JfNE/JVo_Sok14Cwxcz_cFPY7-w/view?embed" allow="fullscreen" allow="clipboard-write fullscreen" allowfullscreen></iframe>
+          <iframe src="https://www.canva.com/design/DAG2Yx6JfNE/JVo_Sok14Cwxcz_cFPY7-w/view?embed" allow="fullscreen; clipboard-write" allowfullscreen></iframe>
         </div>
         <p class="proj-img-caption">Click through the slides above to explore the full presentation.</p>
         <p class="proj-detail-p">The presentation proved to be immensely helpful for me, as it made a rough outline of what I would include and how I could talk about it. It also helped me develop ideas on how I could have visual graphics interact with the text and content within the book itself. Professor Kelcey's feedback was to talk a bit slower next time, and that she enjoyed the slide layout and animations, as well as the sources I was utilizing to help me make this book.</p>
@@ -1491,7 +1527,7 @@ audio{accent-color:#1A1A1A}
         <p class="proj-detail-p">I also made the pattern that I would use to make the book sleeve I wanted to make. I wanted the book sleeve to look like the protagonist's school bag, and make the experience feel like you found a calling card (the book) in his school bag. Below is a PDF of that pattern that I printed and used once I returned to campus.</p>
         <a class="proj-pdf-link" href="media/Typography in Persona 5/Persona Book Sleeve PRINT.pdf" target="_blank">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="1" width="10" height="13" rx="1.5" stroke="#1A1A1A" stroke-width="1.2"/><path d="M5 5h6M5 8h6M5 11h4" stroke="#1A1A1A" stroke-width="1.2" stroke-linecap="round"/><path d="M10 1v3.5H13" stroke="#1A1A1A" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Book Sleeve Print Pattern | open PDF ↗
+          Book Sleeve Print Pattern | open PDF →
         </a>
       </div>
 
@@ -1599,7 +1635,7 @@ audio{accent-color:#1A1A1A}
   <div class="proj-detail-nav">
     <div class="proj-detail-breadcrumb">
       <span onclick="showPage('ux')">UX/UI & Game Design</span>
-      <span class="sep">›</span>
+      <span class="sep">&gt;</span>
       <span style="color:#1A1A1A;font-weight:500">DiscoType!</span>
     </div>
     <div><button class="proj-nav-btn" onclick="showPage('ux')">← Back to category</button></div>
@@ -1628,7 +1664,7 @@ audio{accent-color:#1A1A1A}
       </div>
       <div style="display:flex;gap:8px;align-items:center">
         <button id="dt-audio-btn" onclick="toggleDTAudio()" style="font-size:11px;font-weight:600;letter-spacing:0.8px;text-transform:uppercase;color:#fff;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.35);padding:8px 14px;backdrop-filter:blur(4px);cursor:pointer;font-family:inherit;transition:background 0.15s;white-space:nowrap" onmouseover="this.style.background='rgba(255,255,255,0.25)'" onmouseout="this.style.background='rgba(255,255,255,0.15)'">sound off</button>
-        <a href="https://internetcarly.itch.io/discotype" target="_blank" style="font-size:13px;color:#fff;font-weight:600;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.35);padding:8px 16px;backdrop-filter:blur(4px);white-space:nowrap;text-decoration:none;transition:background 0.15s" onmouseover="this.style.background='rgba(255,255,255,0.25)'" onmouseout="this.style.background='rgba(255,255,255,0.15)'">Play on Itch.io →</a>
+        <a href="https://internetcarly.itch.io/discotype" target="_blank" style="font-size:13px;color:#fff;font-weight:600;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.35);padding:8px 16px;backdrop-filter:blur(4px);white-space:nowrap;text-decoration:none;transition:background 0.15s" onmouseover="this.style.background='rgba(255,255,255,0.25)'" onmouseout="this.style.background='rgba(255,255,255,0.15)'">Play on Itch.io ↗</a>
       </div>
     </div>
   </div>
@@ -1669,7 +1705,7 @@ audio{accent-color:#1A1A1A}
         <div class="proj-miro-wrap" style="margin-top:20px">
           <iframe src="https://miro.com/app/live-embed/uXjVG2XqzGo=/?moveToViewport=-18808,-8450,36000,20000&embedId=discotype-board" allow="clipboard-write fullscreen" allowfullscreen></iframe>
         </div>
-        <p class="proj-img-caption">Full process board on Miro — drag to explore</p>
+        <p class="proj-img-caption">Full process board on Miro (drag to explore)</p>
         <div style="margin-top:24px;border:1px solid var(--border);padding:16px 20px;background:var(--gray)">
           <div style="font-size:10px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin-bottom:12px">Team Roles</div>
           <div style="display:flex;flex-direction:column;gap:8px">
@@ -1897,7 +1933,7 @@ audio{accent-color:#1A1A1A}
               <div style="font-size:10px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin-bottom:4px">Itch.io | WebGL Prototype</div>
               <div style="font-size:14px;font-weight:600;color:#1A1A1A">DiscoType!</div>
             </div>
-            <a href="https://internetcarly.itch.io/discotype" target="_blank" style="font-size:12px;color:var(--muted);text-decoration:underline;text-underline-offset:2px;white-space:nowrap;transition:color 0.15s" onmouseover="this.style.color='#1A1A1A'" onmouseout="this.style.color='var(--muted)'">Open →</a>
+            <a href="https://internetcarly.itch.io/discotype" target="_blank" style="font-size:12px;color:var(--muted);text-decoration:underline;text-underline-offset:2px;white-space:nowrap;transition:color 0.15s" onmouseover="this.style.color='#1A1A1A'" onmouseout="this.style.color='var(--muted)'">Open ↗</a>
           </div>
           <div style="padding:18px 22px"><p style="font-size:13px;color:#555;line-height:1.7;margin:0">A colorful disco typing game. Choose your dancer, pick a song, and type along to the music. Every letter you press moves your character. See how high you can push your WPM before the song ends.</p></div>
         </div>
@@ -1933,7 +1969,7 @@ audio{accent-color:#1A1A1A}
   <div class="proj-detail-nav">
     <div class="proj-detail-breadcrumb">
       <span onclick="showPage('ux')">UX/UI & Game Design</span>
-      <span class="sep">›</span>
+      <span class="sep">&gt;</span>
       <span style="color:#1A1A1A;font-weight:500">Oracle</span>
     </div>
     <div><button class="proj-nav-btn" onclick="showPage('ux')">← Back to category</button></div>
@@ -1955,9 +1991,9 @@ audio{accent-color:#1A1A1A}
     <div style="position:absolute;bottom:0;left:0;right:0;padding:20px 32px;background:linear-gradient(transparent,rgba(0,0,0,0.75));pointer-events:none;z-index:2;display:flex;justify-content:space-between;align-items:flex-end">
       <div>
         <div style="font-size:10px;color:rgba(255,255,255,0.5);font-weight:600;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:5px">UX/UI & Game Design | Interactive Web Design</div>
-        <div style="font-size:16px;color:#fff;font-weight:600;font-family:'Fredoka',sans-serif">Oracle</div>
+        <div style="font-size:16px;color:#fff;font-weight:600;font-family:'Outfit',sans-serif">Oracle</div>
       </div>
-      <div style="font-size:13px;color:#fff;font-weight:600;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.35);padding:8px 16px;backdrop-filter:blur(4px);white-space:nowrap">Play it yourself! →</div>
+      <div style="font-size:13px;color:#fff;font-weight:600;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.35);padding:8px 16px;backdrop-filter:blur(4px);white-space:nowrap">Play it yourself! ↗</div>
     </div>
   </div>
   <div style="background:#0d0d0d;border-bottom:1px solid var(--border);padding:24px 48px;display:flex;align-items:center;justify-content:center">
@@ -2028,7 +2064,7 @@ audio{accent-color:#1A1A1A}
               <div style="font-size:10px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin-bottom:4px">Figma</div>
               <div style="font-size:14px;font-weight:600;color:#1A1A1A">Oracle Prototype V1</div>
             </div>
-            <a href="https://www.figma.com/design/1HOVl1FtBDDJxaHKjVPN0O/Oracle-Reading-Quiz-Prototype?node-id=0-1&p=f&t=yqg46gEztdq3ubmV-0" target="_blank" style="font-size:12px;color:var(--muted);text-decoration:underline;text-underline-offset:2px;white-space:nowrap;transition:color 0.15s" onmouseover="this.style.color='#1A1A1A'" onmouseout="this.style.color='var(--muted)'">Open →</a>
+            <a href="https://www.figma.com/design/1HOVl1FtBDDJxaHKjVPN0O/Oracle-Reading-Quiz-Prototype?node-id=0-1&p=f&t=yqg46gEztdq3ubmV-0" target="_blank" style="font-size:12px;color:var(--muted);text-decoration:underline;text-underline-offset:2px;white-space:nowrap;transition:color 0.15s" onmouseover="this.style.color='#1A1A1A'" onmouseout="this.style.color='var(--muted)'">Open ↗</a>
           </div>
           <iframe style="border:none;width:100%;display:block" height="480" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fdesign%2F1HOVl1FtBDDJxaHKjVPN0O%2FOracle-Reading-Quiz-Prototype%3Fnode-id%3D0-1%26p%3Df%26t%3Dyqg46gEztdq3ubmV-0" allow="clipboard-write fullscreen" allowfullscreen></iframe>
         </div>
@@ -2038,7 +2074,7 @@ audio{accent-color:#1A1A1A}
               <div style="font-size:10px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin-bottom:4px">Figma</div>
               <div style="font-size:14px;font-weight:600;color:#1A1A1A">Oracle Prototype V2</div>
             </div>
-            <a href="https://www.figma.com/design/1HOVl1FtBDDJxaHKjVPN0O/Oracle-Reading-Quiz-Prototype?node-id=20-363&t=4yJeYGS0gCcP5Cfe-1" target="_blank" style="font-size:12px;color:var(--muted);text-decoration:underline;text-underline-offset:2px;white-space:nowrap;transition:color 0.15s" onmouseover="this.style.color='#1A1A1A'" onmouseout="this.style.color='var(--muted)'">Open →</a>
+            <a href="https://www.figma.com/design/1HOVl1FtBDDJxaHKjVPN0O/Oracle-Reading-Quiz-Prototype?node-id=20-363&t=4yJeYGS0gCcP5Cfe-1" target="_blank" style="font-size:12px;color:var(--muted);text-decoration:underline;text-underline-offset:2px;white-space:nowrap;transition:color 0.15s" onmouseover="this.style.color='#1A1A1A'" onmouseout="this.style.color='var(--muted)'">Open ↗</a>
           </div>
           <iframe style="border:none;width:100%;display:block" height="480" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fdesign%2F1HOVl1FtBDDJxaHKjVPN0O%2FOracle-Reading-Quiz-Prototype%3Fnode-id%3D20-363%26t%3D4yJeYGS0gCcP5Cfe-1" allow="clipboard-write fullscreen" allowfullscreen></iframe>
         </div>
@@ -2136,7 +2172,7 @@ audio{accent-color:#1A1A1A}
               <div style="font-size:10px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin-bottom:4px">Live Site</div>
               <div style="font-size:14px;font-weight:600;color:#1A1A1A">Oracle</div>
             </div>
-            <a href="https://patelans000.github.io/Oracle/" target="_blank" style="font-size:12px;color:var(--muted);text-decoration:underline;text-underline-offset:2px;white-space:nowrap;transition:color 0.15s" onmouseover="this.style.color='#1A1A1A'" onmouseout="this.style.color='var(--muted)'">Open →</a>
+            <a href="https://patelans000.github.io/Oracle/" target="_blank" style="font-size:12px;color:var(--muted);text-decoration:underline;text-underline-offset:2px;white-space:nowrap;transition:color 0.15s" onmouseover="this.style.color='#1A1A1A'" onmouseout="this.style.color='var(--muted)'">Open ↗</a>
           </div>
           <div style="padding:18px 22px"><p style="font-size:13px;color:#555;line-height:1.7;margin:0">The live, interactive Oracle quiz. Answer the questions and see what the Oracle has in store for you.</p></div>
         </div>
@@ -2150,7 +2186,7 @@ audio{accent-color:#1A1A1A}
 
         <div class="proj-detail-section-label" style="margin-top:32px">Instructor Feedback</div>
         <div class="proj-detail-h2">Professor Parks</div>
-        <p class="proj-detail-p" style="font-style:italic">"Documentation is thorough — concept, color, Figma, interaction, and iteration all there. One of the only students to include a short video on the interaction/animation page. The oracle illustration is stunning and carries the whole visual identity. The purple/magenta with glowing outline creates real atmosphere. The answer options are poetic and personal enough that anyone can find meaning in them. Font choice is perfect — clean, readable, great contrast. The glowing outline, button jitter, and speech bubble animations all make the oracle feel alive. The animation feedback for affordance design works well."</p>
+        <p class="proj-detail-p" style="font-style:italic">"Documentation is thorough: concept, color, Figma, interaction, and iteration all there. One of the only students to include a short video on the interaction/animation page. The oracle illustration is stunning and carries the whole visual identity. The purple/magenta with glowing outline creates real atmosphere. The answer options are poetic and personal enough that anyone can find meaning in them. Font choice is perfect: clean, readable, great contrast. The glowing outline, button jitter, and speech bubble animations all make the oracle feel alive. The animation feedback for affordance design works well."</p>
 
         <div class="proj-callout" style="background:var(--pink);margin-top:20px"><strong>Update:</strong> I have implemented the scroll and question transition improvements!</div>
       </div>
@@ -2164,7 +2200,7 @@ audio{accent-color:#1A1A1A}
   <div class="proj-detail-nav">
     <div class="proj-detail-breadcrumb">
       <span onclick="showPage('ux')">UX/UI & Game Design</span>
-      <span class="sep">›</span>
+      <span class="sep">&gt;</span>
       <span style="color:#1A1A1A;font-weight:500">Featherform</span>
     </div>
     <div><button class="proj-nav-btn" onclick="showPage('ux')">← Back to category</button></div>
@@ -2188,7 +2224,7 @@ audio{accent-color:#1A1A1A}
         <div style="font-size:10px;color:rgba(255,255,255,0.5);font-weight:600;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:5px">UX/UI & Game Design | Game UI Design</div>
         <div style="font-size:16px;color:#fff;font-weight:600">Featherform</div>
       </div>
-      <div style="font-size:13px;color:#fff;font-weight:600;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.35);padding:8px 16px;backdrop-filter:blur(4px);white-space:nowrap">Play on Itch.io →</div>
+      <div style="font-size:13px;color:#fff;font-weight:600;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.35);padding:8px 16px;backdrop-filter:blur(4px);white-space:nowrap">Play on Itch.io ↗</div>
     </div>
   </div>
   <div class="proj-detail-body">
@@ -2357,7 +2393,7 @@ audio{accent-color:#1A1A1A}
               <div style="font-size:10px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin-bottom:4px">Itch.io | WebGL Prototype</div>
               <div style="font-size:14px;font-weight:600;color:#1A1A1A">Featherform</div>
             </div>
-            <a href="https://patelans006.itch.io/featherform" target="_blank" style="font-size:12px;color:var(--muted);text-decoration:underline;text-underline-offset:2px;white-space:nowrap;transition:color 0.15s" onmouseover="this.style.color='#1A1A1A'" onmouseout="this.style.color='var(--muted)'">Open →</a>
+            <a href="https://patelans006.itch.io/featherform" target="_blank" style="font-size:12px;color:var(--muted);text-decoration:underline;text-underline-offset:2px;white-space:nowrap;transition:color 0.15s" onmouseover="this.style.color='#1A1A1A'" onmouseout="this.style.color='var(--muted)'">Open ↗</a>
           </div>
           <div style="padding:18px 22px"><p style="font-size:13px;color:#555;line-height:1.7;margin:0">A fictional cozy sci-fi farming game. Play as a space pigeon farming on Mars. Click Start on the title screen, then press the keys listed on the page to interact with the gameplay UI.</p></div>
         </div>
@@ -2370,7 +2406,7 @@ audio{accent-color:#1A1A1A}
 
         <div class="proj-detail-section-label" style="margin-top:32px">Instructor Feedback</div>
         <div class="proj-detail-h2">Professors Contour and Gray</div>
-        <p class="proj-detail-p" style="font-style:italic">Both professors praised the strength of the visual development process — the variety of inspiration, thorough logo exploration, and strong iteration. The logo was felt to successfully communicate the retrofuturistic sci-fi space pigeon concept, and the research clearly informed the final design. The custom font received especially positive feedback for its consistency and how well it complemented the overall identity. One note for improvement was refining some vector curves for a more polished finish. Overall, they commended the execution, presentation, and thoughtful process behind the project.</p>
+        <p class="proj-detail-p" style="font-style:italic">Both professors praised the strength of the visual development process: the variety of inspiration, thorough logo exploration, and strong iteration. The logo was felt to successfully communicate the retrofuturistic sci-fi space pigeon concept, and the research clearly informed the final design. The custom font received especially positive feedback for its consistency and how well it complemented the overall identity. One note for improvement was refining some vector curves for a more polished finish. Overall, they commended the execution, presentation, and thoughtful process behind the project.</p>
       </div>
 
     </div>
@@ -2382,7 +2418,7 @@ audio{accent-color:#1A1A1A}
   <div class="proj-detail-nav">
     <div class="proj-detail-breadcrumb">
       <span onclick="showPage('ux')">UX/UI & Game Design</span>
-      <span class="sep">›</span>
+      <span class="sep">&gt;</span>
       <span style="color:#1A1A1A;font-weight:500">Stellar Exploration</span>
     </div>
     <div><button class="proj-nav-btn" onclick="showPage('ux')">← Back to category</button></div>
@@ -2407,7 +2443,7 @@ audio{accent-color:#1A1A1A}
         <div style="font-size:10px;color:rgba(255,255,255,0.5);font-weight:600;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:5px">UX/UI &amp; Game Design | Data Visualization</div>
         <div style="font-size:16px;color:#fff;font-weight:600">Stellar Exploration: The Scale of Our Universe</div>
       </div>
-      <div style="font-size:13px;color:#fff;font-weight:600;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.35);padding:8px 16px;backdrop-filter:blur(4px);white-space:nowrap">Explore it →</div>
+      <div style="font-size:13px;color:#fff;font-weight:600;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.35);padding:8px 16px;backdrop-filter:blur(4px);white-space:nowrap">Explore it ↗</div>
     </div>
   </div>
   <div style="background:#0D1117;border-bottom:1px solid var(--border)">
@@ -2465,7 +2501,7 @@ audio{accent-color:#1A1A1A}
               <div style="font-size:10px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin-bottom:4px">Kaggle | Dataset</div>
               <div style="font-size:14px;font-weight:600;color:#1A1A1A">Stars Dataset</div>
             </div>
-            <a href="https://www.kaggle.com/datasets/waqi786/stars-dataset" target="_blank" style="font-size:12px;color:var(--muted);text-decoration:underline;text-underline-offset:2px;white-space:nowrap;transition:color 0.15s" onmouseover="this.style.color='#1A1A1A'" onmouseout="this.style.color='var(--muted)'">Open →</a>
+            <a href="https://www.kaggle.com/datasets/waqi786/stars-dataset" target="_blank" style="font-size:12px;color:var(--muted);text-decoration:underline;text-underline-offset:2px;white-space:nowrap;transition:color 0.15s" onmouseover="this.style.color='#1A1A1A'" onmouseout="this.style.color='var(--muted)'">Open ↗</a>
           </div>
           <div style="padding:14px 20px"><p style="font-size:13px;color:#555;line-height:1.7;margin:0">Original CSV converted to JSON, duplicates cleaned, and Sun data added manually.</p></div>
         </div>
@@ -2558,7 +2594,7 @@ audio{accent-color:#1A1A1A}
               <div style="font-size:10px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin-bottom:4px">Live Site</div>
               <div style="font-size:14px;font-weight:600;color:#1A1A1A">Stellar Exploration</div>
             </div>
-            <a href="https://patelans000.github.io/StellarExploration/" target="_blank" style="font-size:12px;color:var(--muted);text-decoration:underline;text-underline-offset:2px;white-space:nowrap;transition:color 0.15s" onmouseover="this.style.color='#1A1A1A'" onmouseout="this.style.color='var(--muted)'">Open →</a>
+            <a href="https://patelans000.github.io/StellarExploration/" target="_blank" style="font-size:12px;color:var(--muted);text-decoration:underline;text-underline-offset:2px;white-space:nowrap;transition:color 0.15s" onmouseover="this.style.color='#1A1A1A'" onmouseout="this.style.color='var(--muted)'">Open ↗</a>
           </div>
           <div style="padding:18px 22px"><p style="font-size:13px;color:#555;line-height:1.7;margin:0">An interactive star map built from real data. Scroll to zoom, hover to explore each star, and feel the scale of our corner of the universe.</p></div>
         </div>
@@ -2575,7 +2611,7 @@ audio{accent-color:#1A1A1A}
         <p class="proj-detail-p">I love space so I had so much fun with this one. If we had more time, I would have drawn a distinct personality for each star and included the educational timeline idea I had initially in my sketches. This project got really nice feedback and responses and everyone really liked it, which was awesome.</p>
 
         <div class="proj-detail-h2" style="margin-top:32px">Professor Feedback</div>
-        <p class="proj-detail-p" style="font-style:italic">"This is one of the best documentations from this project — it feels like a story. Lovely writing that feels personalized but professional. The intro animation is perfect for a project about scale. Negative space and circle size communicate the concept beautifully. Overall design is clean and aesthetically stunning. The greatest strength is that cinematic feel — something to carry into all your future work. You found data that seems straightforward, but created an interface that turned it into an experience that provoked curiosity and emotion. Wonderfully done."</p>
+        <p class="proj-detail-p" style="font-style:italic">"This is one of the best documentations from this project; it feels like a story. Lovely writing that feels personalized but professional. The intro animation is perfect for a project about scale. Negative space and circle size communicate the concept beautifully. Overall design is clean and aesthetically stunning. The greatest strength is that cinematic feel, something to carry into all your future work. You found data that seems straightforward, but created an interface that turned it into an experience that provoked curiosity and emotion. Wonderfully done."</p>
       </div>
 
     </div>
@@ -2587,7 +2623,7 @@ audio{accent-color:#1A1A1A}
   <div class="proj-detail-nav">
     <div class="proj-detail-breadcrumb">
       <span onclick="showPage('ux')">UX/UI & Game Design</span>
-      <span class="sep">›</span>
+      <span class="sep">&gt;</span>
       <span style="color:#1A1A1A;font-weight:500">Silent Spellcraft</span>
     </div>
     <div><button class="proj-nav-btn" onclick="showPage('ux')">← Back to category</button></div>
@@ -2612,7 +2648,7 @@ audio{accent-color:#1A1A1A}
         <div style="font-size:10px;color:rgba(255,255,255,0.5);font-weight:600;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:5px">UX/UI & Game Design | Unconventional Interaction</div>
         <div style="font-size:16px;color:#fff;font-weight:600">Silent Spellcraft</div>
       </div>
-      <div style="font-size:13px;color:#fff;font-weight:600;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.35);padding:8px 16px;backdrop-filter:blur(4px);white-space:nowrap">Play it yourself! →</div>
+      <div style="font-size:13px;color:#fff;font-weight:600;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.35);padding:8px 16px;backdrop-filter:blur(4px);white-space:nowrap">Play it yourself! ↗</div>
     </div>
   </div>
   <div style="background:#0d0d0d;border-bottom:1px solid var(--border)">
@@ -2651,7 +2687,7 @@ audio{accent-color:#1A1A1A}
               <div style="font-size:10px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin-bottom:4px">Live Prototype</div>
               <div style="font-size:14px;font-weight:600;color:#1A1A1A">Silent Spellcraft</div>
             </div>
-            <a href="https://patelans000.github.io/Silent-Spellcraft/" target="_blank" style="font-size:12px;color:var(--muted);text-decoration:underline;text-underline-offset:2px;white-space:nowrap;transition:color 0.15s" onmouseover="this.style.color='#1A1A1A'" onmouseout="this.style.color='var(--muted)'">Play the latest build →</a>
+            <a href="https://patelans000.github.io/Silent-Spellcraft/" target="_blank" style="font-size:12px;color:var(--muted);text-decoration:underline;text-underline-offset:2px;white-space:nowrap;transition:color 0.15s" onmouseover="this.style.color='#1A1A1A'" onmouseout="this.style.color='var(--muted)'">Play the latest build ?</a>
           </div>
           <div style="padding:18px 22px"><p style="font-size:13px;color:#555;line-height:1.7;margin:0">Open in a desktop browser with camera access enabled. Show your hand and fingerspell to cast spells.</p></div>
         </div>
@@ -2739,7 +2775,7 @@ audio{accent-color:#1A1A1A}
               <div style="font-size:10px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin-bottom:4px">Live Prototype</div>
               <div style="font-size:14px;font-weight:600;color:#1A1A1A">Silent Spellcraft</div>
             </div>
-            <a href="https://patelans000.github.io/Silent-Spellcraft/" target="_blank" style="font-size:12px;color:var(--muted);text-decoration:underline;text-underline-offset:2px;white-space:nowrap;transition:color 0.15s" onmouseover="this.style.color='#1A1A1A'" onmouseout="this.style.color='var(--muted)'">Play the latest build →</a>
+            <a href="https://patelans000.github.io/Silent-Spellcraft/" target="_blank" style="font-size:12px;color:var(--muted);text-decoration:underline;text-underline-offset:2px;white-space:nowrap;transition:color 0.15s" onmouseover="this.style.color='#1A1A1A'" onmouseout="this.style.color='var(--muted)'">Play the latest build ?</a>
           </div>
           <div style="padding:18px 22px"><p style="font-size:13px;color:#555;line-height:1.7;margin:0">Open in a desktop browser with camera access enabled. Show your hand and fingerspell to cast spells.</p></div>
         </div>
@@ -2751,7 +2787,7 @@ audio{accent-color:#1A1A1A}
         <p class="proj-detail-p">This was definitely a challenge for me. I yet again attempted to do something I had never done before and it was a journey. Since this is still a prototype, once I get more time I really want to make it more developed and more designed in the way I actually envision it, refining everything from mechanics to layout with a lot more playtesting. But for a prototype I was quite satisfied. And Professor Parks told me this is the most developed project anyone has submitted for this assignment yet, which meant a lot.</p>
 
         <div class="proj-detail-h2" style="margin-top:32px">Professor Feedback</div>
-        <p class="proj-detail-p" style="font-style:italic">"Great reasoning for the interaction — it has a clear relationship with the concept. Fun and engaging way to teach sign language, and the fairy casting spells makes the player feel like they are genuinely casting with their hand. Great eye for design. The depth from blurred backgrounds and drop shadows was a nice touch, and the characters are very cute. Feels like a distinct personal style. The documentation was thorough and the amount of thought put into every decision came across clearly."</p>
+        <p class="proj-detail-p" style="font-style:italic">"Great reasoning for the interaction; it has a clear relationship with the concept. Fun and engaging way to teach sign language, and the fairy casting spells makes the player feel like they are genuinely casting with their hand. Great eye for design. The depth from blurred backgrounds and drop shadows was a nice touch, and the characters are very cute. Feels like a distinct personal style. The documentation was thorough and the amount of thought put into every decision came across clearly."</p>
       </div>
 
     </div>
@@ -2763,7 +2799,7 @@ audio{accent-color:#1A1A1A}
   <div class="proj-detail-nav">
     <div class="proj-detail-breadcrumb">
       <span onclick="showPage('ux')">UX/UI & Game Design</span>
-      <span class="sep">›</span>
+      <span class="sep">&gt;</span>
       <span style="color:#1A1A1A;font-weight:500">Choco Knight</span>
     </div>
     <div><button class="proj-nav-btn" onclick="showPage('ux')">← Back to category</button></div>
@@ -2786,7 +2822,7 @@ audio{accent-color:#1A1A1A}
         <div style="font-size:10px;color:rgba(255,255,255,0.5);font-weight:600;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:5px">UX/UI & Game Design | Game Design</div>
         <div style="font-size:16px;color:#fff;font-weight:600">Choco Knight</div>
       </div>
-      <div style="font-size:13px;color:#fff;font-weight:600;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.35);padding:8px 16px;backdrop-filter:blur(4px);white-space:nowrap">Play on Itch.io →</div>
+      <div style="font-size:13px;color:#fff;font-weight:600;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.35);padding:8px 16px;backdrop-filter:blur(4px);white-space:nowrap">Play on Itch.io ↗</div>
     </div>
   </div>
   <div class="proj-detail-body">
@@ -2854,7 +2890,7 @@ audio{accent-color:#1A1A1A}
               <div style="font-size:10px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin-bottom:4px">Itch.io | 2D Platformer</div>
               <div style="font-size:14px;font-weight:600;color:#1A1A1A">Choco Knight</div>
             </div>
-            <a href="https://patelans006.itch.io/choco-knight" target="_blank" style="font-size:12px;color:var(--muted);text-decoration:underline;text-underline-offset:2px;white-space:nowrap;transition:color 0.15s" onmouseover="this.style.color='#1A1A1A'" onmouseout="this.style.color='var(--muted)'">Open →</a>
+            <a href="https://patelans006.itch.io/choco-knight" target="_blank" style="font-size:12px;color:var(--muted);text-decoration:underline;text-underline-offset:2px;white-space:nowrap;transition:color 0.15s" onmouseover="this.style.color='#1A1A1A'" onmouseout="this.style.color='var(--muted)'">Open ↗</a>
           </div>
           <div style="padding:18px 22px"><p style="font-size:13px;color:#555;line-height:1.7;margin:0">A cake-loving knight on a quest for dessert. A 2D pixel platformer built in Games and Interactivity at UT Austin.</p></div>
         </div>
@@ -2869,7 +2905,7 @@ audio{accent-color:#1A1A1A}
   <div class="proj-detail-nav">
     <div class="proj-detail-breadcrumb">
       <span onclick="showPage('ux')">UX/UI & Game Design</span>
-      <span class="sep">›</span>
+      <span class="sep">&gt;</span>
       <span style="color:#1A1A1A;font-weight:500">Spotify: Designing a New Microinteraction</span>
     </div>
     <div><button class="proj-nav-btn" onclick="showPage('ux')">← Back to category</button></div>
@@ -2889,13 +2925,13 @@ audio{accent-color:#1A1A1A}
     <img loading="lazy" src="media/Spotify feature/Spotify Slides.png" style="width:100%;display:block" alt="Spotify Slides cover">
     <div style="position:absolute;bottom:0;left:0;right:0;padding:20px 32px;background:linear-gradient(transparent,rgba(0,0,0,0.72));pointer-events:none;z-index:2">
       <div style="font-size:10px;color:rgba(255,255,255,0.5);font-weight:600;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:5px">UX/UI & Game Design | Micro-interaction Design</div>
-      <div style="font-size:16px;color:#fff;font-weight:600;font-family:'Fredoka',sans-serif">Spotify: Designing a New Microinteraction</div>
+      <div style="font-size:16px;color:#fff;font-weight:600;font-family:'Outfit',sans-serif">Spotify: Designing a New Microinteraction</div>
     </div>
   </div>
   <a href="https://www.figma.com/proto/It7fHdbqm8dW93LvSSZzE4/Spotify-Omicron?node-id=7-35&p=f&t=Ly6GSbqYWkl0FEMM-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1" target="_blank" style="display:flex;padding:20px 32px;background:#121212;border-top:1px solid #222;border-bottom:1px solid #222;align-items:center;justify-content:center;gap:12px;text-decoration:none;transition:background 0.15s" onmouseover="this.style.background='#191919'" onmouseout="this.style.background='#121212'">
     <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><rect x="1" y="1" width="7" height="7" rx="2" fill="#F24E1E"/><rect x="1" y="10" width="7" height="7" rx="2" fill="#FF7262"/><rect x="10" y="1" width="7" height="7" rx="2" fill="#A259FF"/><circle cx="13.5" cy="13.5" r="3.5" fill="#1ABCFE"/></svg>
     <span style="font-size:14px;color:#fff;font-weight:500;font-family:'Outfit',sans-serif">Try the interactive prototype in Figma</span>
-    <span style="font-size:14px;color:rgba(255,255,255,0.4)">→</span>
+    <span style="font-size:14px;color:rgba(255,255,255,0.7)">?</span>
   </a>
   <div class="proj-detail-body">
     <div class="proj-detail-sidebar">
@@ -2999,7 +3035,7 @@ audio{accent-color:#1A1A1A}
               <div style="font-size:10px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin-bottom:4px">Figma</div>
               <div style="font-size:14px;font-weight:600;color:#1A1A1A">Wireframe V1</div>
             </div>
-            <a href="https://www.figma.com/design/It7fHdbqm8dW93LvSSZzE4/Spotify-Omicron?node-id=24-36&t=0oxKFr7PEbIWGVEm-1" target="_blank" style="font-size:12px;color:var(--muted);text-decoration:underline;text-underline-offset:2px;white-space:nowrap;transition:color 0.15s" onmouseover="this.style.color='#1A1A1A'" onmouseout="this.style.color='var(--muted)'">Open →</a>
+            <a href="https://www.figma.com/design/It7fHdbqm8dW93LvSSZzE4/Spotify-Omicron?node-id=24-36&t=0oxKFr7PEbIWGVEm-1" target="_blank" style="font-size:12px;color:var(--muted);text-decoration:underline;text-underline-offset:2px;white-space:nowrap;transition:color 0.15s" onmouseover="this.style.color='#1A1A1A'" onmouseout="this.style.color='var(--muted)'">Open ↗</a>
           </div>
           <iframe style="border:none;width:100%;display:block" height="480" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fdesign%2FIt7fHdbqm8dW93LvSSZzE4%2FSpotify-Omicron%3Fnode-id%3D24-36%26t%3D0oxKFr7PEbIWGVEm-1" allow="clipboard-write fullscreen" allowfullscreen></iframe>
         </div>
@@ -3009,7 +3045,7 @@ audio{accent-color:#1A1A1A}
               <div style="font-size:10px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin-bottom:4px">Figma</div>
               <div style="font-size:14px;font-weight:600;color:#1A1A1A">Wireframe V2</div>
             </div>
-            <a href="https://www.figma.com/design/It7fHdbqm8dW93LvSSZzE4/Spotify-Omicron?node-id=24-160&t=0oxKFr7PEbIWGVEm-1" target="_blank" style="font-size:12px;color:var(--muted);text-decoration:underline;text-underline-offset:2px;white-space:nowrap;transition:color 0.15s" onmouseover="this.style.color='#1A1A1A'" onmouseout="this.style.color='var(--muted)'">Open →</a>
+            <a href="https://www.figma.com/design/It7fHdbqm8dW93LvSSZzE4/Spotify-Omicron?node-id=24-160&t=0oxKFr7PEbIWGVEm-1" target="_blank" style="font-size:12px;color:var(--muted);text-decoration:underline;text-underline-offset:2px;white-space:nowrap;transition:color 0.15s" onmouseover="this.style.color='#1A1A1A'" onmouseout="this.style.color='var(--muted)'">Open ↗</a>
           </div>
           <iframe style="border:none;width:100%;display:block" height="480" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fdesign%2FIt7fHdbqm8dW93LvSSZzE4%2FSpotify-Omicron%3Fnode-id%3D24-160%26t%3D0oxKFr7PEbIWGVEm-1" allow="clipboard-write fullscreen" allowfullscreen></iframe>
         </div>
@@ -3019,7 +3055,7 @@ audio{accent-color:#1A1A1A}
               <div style="font-size:10px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin-bottom:4px">Figma</div>
               <div style="font-size:14px;font-weight:600;color:#1A1A1A">Working Prototype</div>
             </div>
-            <a href="https://www.figma.com/proto/It7fHdbqm8dW93LvSSZzE4/Spotify-Omicron?node-id=7-35&p=f&t=Ly6GSbqYWkl0FEMM-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1" target="_blank" style="font-size:12px;color:var(--muted);text-decoration:underline;text-underline-offset:2px;white-space:nowrap;transition:color 0.15s" onmouseover="this.style.color='#1A1A1A'" onmouseout="this.style.color='var(--muted)'">Open →</a>
+            <a href="https://www.figma.com/proto/It7fHdbqm8dW93LvSSZzE4/Spotify-Omicron?node-id=7-35&p=f&t=Ly6GSbqYWkl0FEMM-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1" target="_blank" style="font-size:12px;color:var(--muted);text-decoration:underline;text-underline-offset:2px;white-space:nowrap;transition:color 0.15s" onmouseover="this.style.color='#1A1A1A'" onmouseout="this.style.color='var(--muted)'">Open ↗</a>
           </div>
           <iframe style="border:none;width:100%;display:block" height="600" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FIt7fHdbqm8dW93LvSSZzE4%2FSpotify-Omicron%3Fnode-id%3D7-35%26p%3Df%26t%3DLy6GSbqYWkl0FEMM-1%26scaling%3Dscale-down%26content-scaling%3Dfixed%26page-id%3D0%253A1" allow="clipboard-write fullscreen" allowfullscreen></iframe>
         </div>
@@ -3029,7 +3065,7 @@ audio{accent-color:#1A1A1A}
               <div style="font-size:10px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin-bottom:4px">PDF</div>
               <div style="font-size:14px;font-weight:600;color:#1A1A1A">Pitch Deck</div>
             </div>
-            <a href="media/Spotify feature/Spotify Slides.pdf" target="_blank" style="font-size:12px;color:var(--muted);text-decoration:underline;text-underline-offset:2px;white-space:nowrap;transition:color 0.15s" onmouseover="this.style.color='#1A1A1A'" onmouseout="this.style.color='var(--muted)'">Open →</a>
+            <a href="media/Spotify feature/Spotify Slides.pdf" target="_blank" style="font-size:12px;color:var(--muted);text-decoration:underline;text-underline-offset:2px;white-space:nowrap;transition:color 0.15s" onmouseover="this.style.color='#1A1A1A'" onmouseout="this.style.color='var(--muted)'">Open ↗</a>
           </div>
           <div class="spotify-slides-wrap">
             <canvas id="spotify-slides-canvas"></canvas>
@@ -3081,7 +3117,7 @@ audio{accent-color:#1A1A1A}
   <div class="proj-detail-nav">
     <div class="proj-detail-breadcrumb">
       <span onclick="showPage('graphic')">2D & Graphic Design</span>
-      <span class="sep">›</span>
+      <span class="sep">&gt;</span>
       <span style="color:#1A1A1A;font-weight:500">High Noon Livery</span>
     </div>
     <div><button class="proj-nav-btn" onclick="showPage('graphic')">← Back to category</button></div>
@@ -3108,8 +3144,8 @@ audio{accent-color:#1A1A1A}
       <img loading="lazy" src="media/High Noon Livery/Hero Image.png" style="width:100%;height:100%;object-fit:cover;display:block" alt="High Noon final livery">
       <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.65) 0%,rgba(0,0,0,0.15) 45%,transparent 100%)"></div>
       <div style="position:absolute;bottom:36px;left:48px">
-        <div style="font-family:'Fredoka',sans-serif;font-size:54px;font-weight:600;color:#fff;line-height:1.05;letter-spacing:0.3px">High Noon Livery</div>
-        <div style="font-family:'Fredoka',sans-serif;font-size:24px;font-weight:500;color:rgba(255,255,255,0.85);margin-top:6px;letter-spacing:0.2px">Longhorn Racing Solar Vehicle</div>
+        <div style="font-family:'Outfit',sans-serif;font-size:54px;font-weight:600;color:#fff;line-height:1.05;letter-spacing:0.3px">High Noon Livery</div>
+        <div style="font-family:'Outfit',sans-serif;font-size:24px;font-weight:500;color:rgba(255,255,255,0.85);margin-top:6px;letter-spacing:0.2px">Longhorn Racing Solar Vehicle</div>
         <div style="font-size:13px;color:rgba(255,255,255,0.6);margin-top:6px;font-weight:400;letter-spacing:0.3px">Vehicle Livery Design | Spring 2026</div>
       </div>
     </div>
@@ -3298,7 +3334,7 @@ audio{accent-color:#1A1A1A}
   <div class="proj-detail-nav">
     <div class="proj-detail-breadcrumb">
       <span onclick="showPage('graphic')">2D & Graphic Design</span>
-      <span class="sep">›</span>
+      <span class="sep">&gt;</span>
       <span style="color:#1A1A1A;font-weight:500">Watermarks: Hajra Waheed's Asylum in the Sea</span>
     </div>
     <div><button class="proj-nav-btn" onclick="showPage('graphic')">← Back to category</button></div>
@@ -3323,8 +3359,8 @@ audio{accent-color:#1A1A1A}
       <img loading="lazy" src="media/Hajra Waheed Asylum in the Sea/kevin spreads POST CRITIQYE.png" style="width:100%;height:100%;object-fit:cover;display:block" alt="Final exhibition spread">
       <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.65) 0%,rgba(0,0,0,0.15) 45%,transparent 100%)"></div>
       <div style="position:absolute;bottom:36px;left:48px">
-        <div style="font-family:'Fredoka',sans-serif;font-size:54px;font-weight:600;color:#fff;line-height:1.05;letter-spacing:0.3px">Watermarks</div>
-        <div style="font-family:'Fredoka',sans-serif;font-size:24px;font-weight:500;color:rgba(255,255,255,0.85);margin-top:6px;letter-spacing:0.2px">Hajra Waheed's Asylum in the Sea</div>
+        <div style="font-family:'Outfit',sans-serif;font-size:54px;font-weight:600;color:#fff;line-height:1.05;letter-spacing:0.3px">Watermarks</div>
+        <div style="font-family:'Outfit',sans-serif;font-size:24px;font-weight:500;color:rgba(255,255,255,0.85);margin-top:6px;letter-spacing:0.2px">Hajra Waheed's Asylum in the Sea</div>
         <div style="font-size:13px;color:rgba(255,255,255,0.6);margin-top:6px;font-weight:400;letter-spacing:0.3px">Exhibition Spread Design | Fall 2025</div>
       </div>
     </div>
@@ -3452,7 +3488,7 @@ audio{accent-color:#1A1A1A}
   <div class="proj-detail-nav">
     <div class="proj-detail-breadcrumb">
       <span onclick="showPage('graphic')">2D & Graphic Design</span>
-      <span class="sep">›</span>
+      <span class="sep">&gt;</span>
       <span style="color:#1A1A1A;font-weight:500">Logos & Branding</span>
     </div>
     <div><button class="proj-nav-btn" onclick="showPage('graphic')">← Back to category</button></div>
@@ -3462,7 +3498,7 @@ audio{accent-color:#1A1A1A}
     <div class="proj-detail-title">Logos & Branding</div>
     <p class="proj-detail-tagline">Logos, brand systems, and identity work for student organizations and class projects across UT Austin.</p>
     <div class="proj-detail-meta-row">
-      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Years</div><div class="proj-detail-meta-val">2025–2026</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Years</div><div class="proj-detail-meta-val">2025-2026</div></div>
       <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">Illustrator, Canva, Notion</div></div>
       <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Type</div><div class="proj-detail-meta-val">Brand Identity</div></div>
     </div>
@@ -3484,7 +3520,7 @@ audio{accent-color:#1A1A1A}
 
       <!-- LONGHORN RACING -->
       <div class="proj-detail-section" id="lb-lhr">
-        <div class="proj-detail-section-label">Longhorn Racing | Spring 2026 – Present</div>
+        <div class="proj-detail-section-label">Longhorn Racing | Spring 2026 - Present</div>
         <div class="proj-detail-h2">Brand Book & PR Hub</div>
         <p class="proj-detail-p">I created a comprehensive Brand Book for the organization, centered on accessibility, branding consistency, and knowledge transfer. Before this initiative, we lacked a centralized resource like this, and members often struggled to understand and apply the organization's brand identity effectively.</p>
         <p class="proj-detail-p">Prior to my election as Public Relations Officer, I received frequent feedback that branding resources were scattered across numerous files, difficult to locate, outdated, or simply unusable. One of my first priorities after being elected was to make these resources more accessible and practical for everyone.</p>
@@ -3496,7 +3532,7 @@ audio{accent-color:#1A1A1A}
               <div style="font-size:10px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin-bottom:4px">Notion</div>
               <div style="font-size:14px;font-weight:600;color:#1A1A1A">Brand Book & Guidelines</div>
             </div>
-            <a href="https://stormy-asparagus-6c0.notion.site/Brand-Book-Guidelines-359dbf3c76a48048b2a4d4c890f675a3?source=copy_link" target="_blank" style="font-size:12px;color:var(--muted);text-decoration:underline;text-underline-offset:2px;white-space:nowrap;transition:color 0.15s" onmouseover="this.style.color='#1A1A1A'" onmouseout="this.style.color='var(--muted)'">Open →</a>
+            <a href="https://stormy-asparagus-6c0.notion.site/Brand-Book-Guidelines-359dbf3c76a48048b2a4d4c890f675a3?source=copy_link" target="_blank" style="font-size:12px;color:var(--muted);text-decoration:underline;text-underline-offset:2px;white-space:nowrap;transition:color 0.15s" onmouseover="this.style.color='#1A1A1A'" onmouseout="this.style.color='var(--muted)'">Open ↗</a>
           </div>
           <div style="padding:18px 22px">
             <p style="font-size:13px;color:#555;line-height:1.7;margin:0">Includes color palette, typography standards, logo usage rules, tone of voice, photography guidelines, and templates. Accessible to all LHR members through the PR Hub.</p>
@@ -3508,7 +3544,7 @@ audio{accent-color:#1A1A1A}
               <div style="font-size:10px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin-bottom:4px">Notion</div>
               <div style="font-size:14px;font-weight:600;color:#1A1A1A">Public Relations Hub</div>
             </div>
-            <a href="https://app.notion.com/p/LHR-Public-Relations-Hub-34ddbf3c76a4803f8db8f381ca338be4?source=copy_link" target="_blank" style="font-size:12px;color:var(--muted);text-decoration:underline;text-underline-offset:2px;white-space:nowrap;transition:color 0.15s" onmouseover="this.style.color='#1A1A1A'" onmouseout="this.style.color='var(--muted)'">Open →</a>
+            <a href="https://app.notion.com/p/LHR-Public-Relations-Hub-34ddbf3c76a4803f8db8f381ca338be4?source=copy_link" target="_blank" style="font-size:12px;color:var(--muted);text-decoration:underline;text-underline-offset:2px;white-space:nowrap;transition:color 0.15s" onmouseover="this.style.color='#1A1A1A'" onmouseout="this.style.color='var(--muted)'">Open ↗</a>
           </div>
           <div style="padding:18px 22px">
             <p style="font-size:13px;color:#555;line-height:1.7;margin:0">The full knowledge base for LHR members,resources and training materials on graphic design, media production, branding, and communications. Built for onboarding and long-term consistency.</p>
@@ -3558,7 +3594,7 @@ audio{accent-color:#1A1A1A}
               <div style="font-size:10px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin-bottom:4px">PDF</div>
               <div style="font-size:14px;font-weight:600;color:#1A1A1A">Dragon Wars Final Presentation</div>
             </div>
-            <a href="media/Dragon Wars/DRAGON WARS FINAL PRESENTATION.pdf" target="_blank" style="font-size:12px;color:var(--muted);text-decoration:underline;text-underline-offset:2px;white-space:nowrap;transition:color 0.15s" onmouseover="this.style.color='#1A1A1A'" onmouseout="this.style.color='var(--muted)'">Open →</a>
+            <a href="media/Dragon Wars/DRAGON WARS FINAL PRESENTATION.pdf" target="_blank" style="font-size:12px;color:var(--muted);text-decoration:underline;text-underline-offset:2px;white-space:nowrap;transition:color 0.15s" onmouseover="this.style.color='#1A1A1A'" onmouseout="this.style.color='var(--muted)'">Open ↗</a>
           </div>
           <div style="padding:18px 22px">
             <p style="font-size:13px;color:#555;line-height:1.7;margin:0">Final presentation slides for the Dragon Wars rapid prototyping project, covering the game concept, card design, rules, and team contributions.</p>
@@ -3569,7 +3605,7 @@ audio{accent-color:#1A1A1A}
       <!-- HOOK 'EM BHANGRA -->
       <div class="proj-detail-section" id="lb-hb">
         <div class="proj-detail-section-label">Hook 'em Bhangra | Fall 2025</div>
-        <div class="proj-detail-h2">2025–2026 Season Logo</div>
+        <div class="proj-detail-h2">2025-2026 Season Logo</div>
         <p class="proj-detail-p">This is the logo I designed for Hook 'em Bhangra's 2025-2026 season. Prior to developing the logo, I had drafted multiple concepts, and my fellow executive team members and I decided on a street-style, graffiti-inspired theme. This logo reflects that vision, using our team colors of orange, black, and white and transforming our emblem into a graffiti-style design to capture the energy of the season.</p>
         <div class="smt-lb-thumb" onclick="openLightbox('media/Hookem Bhangra Logo/HB logo png black present in bg and letter-01.png')" style="margin-top:16px">
           <img loading="lazy" src="media/Hookem Bhangra Logo/HB logo png black present in bg and letter-01.png" style="width:100%;display:block" alt="Hook em Bhangra logo">
@@ -3601,7 +3637,7 @@ audio{accent-color:#1A1A1A}
               <div style="font-size:10px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin-bottom:4px">Canva Website</div>
               <div style="font-size:14px;font-weight:600;color:#1A1A1A">The Pyrography Project</div>
             </div>
-            <a href="https://utstudent.my.canva.site/the-pyrography-project" target="_blank" style="font-size:12px;color:var(--muted);text-decoration:underline;text-underline-offset:2px;white-space:nowrap;transition:color 0.15s" onmouseover="this.style.color='#1A1A1A'" onmouseout="this.style.color='var(--muted)'">Open →</a>
+            <a href="https://utstudent.my.canva.site/the-pyrography-project" target="_blank" style="font-size:12px;color:var(--muted);text-decoration:underline;text-underline-offset:2px;white-space:nowrap;transition:color 0.15s" onmouseover="this.style.color='#1A1A1A'" onmouseout="this.style.color='var(--muted)'">Open ↗</a>
           </div>
           <div style="padding:18px 22px">
             <p style="font-size:13px;color:#555;line-height:1.7;margin:0">The website I built for the project in Canva, covering the project's mission, team, and community work in the Texas Hill Country.</p>
@@ -3618,7 +3654,7 @@ audio{accent-color:#1A1A1A}
   <div class="proj-detail-nav">
     <div class="proj-detail-breadcrumb">
       <span onclick="showPage('graphic')">2D & Graphic Design</span>
-      <span class="sep">›</span>
+      <span class="sep">&gt;</span>
       <span style="color:#1A1A1A;font-weight:500">Merchandise</span>
     </div>
     <div><button class="proj-nav-btn" onclick="showPage('graphic')">← Back to category</button></div>
@@ -3628,7 +3664,7 @@ audio{accent-color:#1A1A1A}
     <div class="proj-detail-title">Merchandise</div>
     <p class="proj-detail-tagline">Merchandise I have designed!</p>
     <div class="proj-detail-meta-row">
-      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Years</div><div class="proj-detail-meta-val">2025–2026</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Years</div><div class="proj-detail-meta-val">2025-2026</div></div>
       <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">Illustrator, Photoshop</div></div>
       <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Type</div><div class="proj-detail-meta-val">Apparel / Print Design</div></div>
     </div>
@@ -3646,7 +3682,7 @@ audio{accent-color:#1A1A1A}
     <div class="proj-detail-content">
 
       <div class="proj-detail-section" id="merch-lhr">
-        <div class="proj-detail-section-label">Longhorn Racing Solar | 2025–2026 Season</div>
+        <div class="proj-detail-section-label">Longhorn Racing Solar | 2025-2026 Season</div>
         <div class="proj-detail-h2">LHR Solar Merch 25-26</div>
         <p class="proj-detail-p">Two shirts and a hoodie for UT Austin's solar car racing division. I designed the graphics and oversaw production end-to-end. We wanted to draw on Solar's more illustrative aesthetics, have at least one design reference the current branding and color palette, showcase the Longhorn Racing Solar identity, and create merchandise the engineers were proud to wear and represent (and wear and rep they have!)</p>
         <div class="proj-img-grid proj-img-grid-2" style="margin-top:20px">
@@ -3687,7 +3723,7 @@ audio{accent-color:#1A1A1A}
   <div class="proj-detail-nav">
     <div class="proj-detail-breadcrumb">
       <span onclick="showPage('graphic')">2D & Graphic Design</span>
-      <span class="sep">›</span>
+      <span class="sep">&gt;</span>
       <span style="color:#1A1A1A;font-weight:500">Posters</span>
     </div>
     <div><button class="proj-nav-btn" onclick="showPage('graphic')">← Back to category</button></div>
@@ -3762,12 +3798,12 @@ audio{accent-color:#1A1A1A}
     <div class="poster-drawer-bar" onclick="closePosterProcess()"><span></span></div>
     <div class="poster-drawer-header">
       <div class="poster-drawer-title-text" id="poster-drawer-title"></div>
-      <button class="poster-drawer-close" onclick="closePosterProcess()">✕</button>
+      <button class="poster-drawer-close" onclick="closePosterProcess()">Close</button>
     </div>
     <div class="poster-drawer-scroll">
       <div class="poster-drawer-body">
 
-        <!-- ══ NERDS ══ -->
+        <!-- -- NERDS -- -->
         <div class="poster-process-content" id="process-nerds">
 
           <div class="poster-process-section">
@@ -3815,7 +3851,7 @@ audio{accent-color:#1A1A1A}
 
         </div>
 
-        <!-- ══ DOOMSDAY ══ -->
+        <!-- -- DOOMSDAY -- -->
         <div class="poster-process-content" id="process-doomsday">
 
           <div class="poster-process-section">
@@ -3927,7 +3963,7 @@ audio{accent-color:#1A1A1A}
 
         </div>
 
-        <!-- ══ ARTIST BOOK ══ -->
+        <!-- -- ARTIST BOOK -- -->
         <div class="poster-process-content" id="process-artist-book">
 
           <div class="poster-process-section">
@@ -4007,7 +4043,7 @@ audio{accent-color:#1A1A1A}
 
         </div>
 
-        <!-- ══ TYPOGRAPHIC FOLLIES ══ -->
+        <!-- -- TYPOGRAPHIC FOLLIES -- -->
         <div class="poster-process-content" id="process-typographic-follies">
 
           <div class="poster-process-section">
@@ -4043,7 +4079,7 @@ audio{accent-color:#1A1A1A}
   <div class="proj-detail-nav">
     <div class="proj-detail-breadcrumb">
       <span onclick="showPage('3d')">3D & Product Design</span>
-      <span class="sep">›</span>
+      <span class="sep">&gt;</span>
       <span style="color:#1A1A1A;font-weight:500">The Ecoleander</span>
     </div>
     <div><button class="proj-nav-btn" onclick="showPage('3d')">← Back to category</button></div>
@@ -4052,7 +4088,7 @@ audio{accent-color:#1A1A1A}
   <div class="proj-detail-hero">
     <div class="proj-detail-kicker">3D & Product Design | Object & Textile Design</div>
     <div class="proj-detail-title">The Ecoleander</div>
-    <p class="proj-detail-tagline">The Ecoleander is a collapsible, reusable grocery bag designed to highlight Galveston Island’s city flower, the Oleander, and its unique history. Created as a functional, one-of-a-kind souvenir, it aims to move beyond typical tourist clichés by offering something both authentically rooted in place and environmentally sustainable.</p>
+    <p class="proj-detail-tagline">The Ecoleander is a collapsible, reusable grocery bag designed to highlight Galveston Island's city flower, the Oleander, and its unique history. Created as a functional, one-of-a-kind souvenir, it aims to move beyond typical tourist clichés by offering something both authentically rooted in place and environmentally sustainable.</p>
     <div class="proj-detail-meta-row">
       <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Year</div><div class="proj-detail-meta-val">Fall 2025</div></div>
       <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Course</div><div class="proj-detail-meta-val">Objects and Spaces // DES 326</div></div>
@@ -4069,7 +4105,7 @@ audio{accent-color:#1A1A1A}
       <img loading="lazy" src="media/The Ecoleander/Photoshoot 7.jpg" style="width:100%;height:100%;object-fit:cover;display:block" alt="The Ecoleander in use">
       <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.15) 45%,transparent 100%)"></div>
       <div style="position:absolute;bottom:36px;left:48px">
-        <div style="font-family:'Fredoka',sans-serif;font-size:54px;font-weight:600;color:#fff;line-height:1.05;letter-spacing:0.3px">The Ecoleander</div>
+        <div style="font-family:'Outfit',sans-serif;font-size:54px;font-weight:600;color:#fff;line-height:1.05;letter-spacing:0.3px">The Ecoleander</div>
         <div style="font-size:13px;color:rgba(255,255,255,0.7);margin-top:6px;font-weight:400;letter-spacing:0.3px">DES 326 | Fall 2025</div>
       </div>
     </div>
@@ -4418,7 +4454,7 @@ audio{accent-color:#1A1A1A}
   <div class="proj-detail-nav">
     <div class="proj-detail-breadcrumb">
       <span onclick="showPage('3d')">3D & Product Design</span>
-      <span class="sep">›</span>
+      <span class="sep">&gt;</span>
       <span style="color:#1A1A1A;font-weight:500">Smrutea</span>
     </div>
     <div><button class="proj-nav-btn" onclick="showPage('3d')">← Back to category</button></div>
@@ -4443,7 +4479,7 @@ audio{accent-color:#1A1A1A}
       <img loading="lazy" src="media/Smrutea/Hero image 4.jpg" style="width:100%;height:100%;object-fit:cover;display:block" alt="Smrutea packaging">
       <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.15) 45%,transparent 100%)"></div>
       <div style="position:absolute;bottom:36px;left:48px">
-        <div style="font-family:'Fredoka',sans-serif;font-size:54px;font-weight:600;color:#fff;line-height:1.05;letter-spacing:0.3px">Smrutea</div>
+        <div style="font-family:'Outfit',sans-serif;font-size:54px;font-weight:600;color:#fff;line-height:1.05;letter-spacing:0.3px">Smrutea</div>
         <div style="font-size:13px;color:rgba(255,255,255,0.7);margin-top:6px;font-weight:400;letter-spacing:0.3px">DES 326 | Fall 2025</div>
       </div>
     </div>
@@ -4852,7 +4888,7 @@ audio{accent-color:#1A1A1A}
   <div class="proj-detail-nav">
     <div class="proj-detail-breadcrumb">
       <span onclick="showPage('3d')">3D & Product Design</span>
-      <span class="sep">›</span>
+      <span class="sep">&gt;</span>
       <span style="color:#1A1A1A;font-weight:500">The Flipula</span>
     </div>
     <div><button class="proj-nav-btn" onclick="showPage('3d')">← Back to category</button></div>
@@ -4877,7 +4913,7 @@ audio{accent-color:#1A1A1A}
       <img loading="lazy" src="media/The Flipula/The Flipula Cover Title Banner.png" style="width:100%;height:100%;object-fit:cover;display:block" alt="The Flipula">
       <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.55) 0%,rgba(0,0,0,0.1) 45%,transparent 100%)"></div>
       <div style="position:absolute;bottom:36px;left:48px">
-        <div style="font-family:'Fredoka',sans-serif;font-size:54px;font-weight:600;color:#fff;line-height:1.05;letter-spacing:0.3px">The Flipula</div>
+        <div style="font-family:'Outfit',sans-serif;font-size:54px;font-weight:600;color:#fff;line-height:1.05;letter-spacing:0.3px">The Flipula</div>
         <div style="font-size:13px;color:rgba(255,255,255,0.7);margin-top:6px;font-weight:400;letter-spacing:0.3px">DES 326 | Fall 2025</div>
       </div>
     </div>
@@ -5210,7 +5246,7 @@ audio{accent-color:#1A1A1A}
   <div class="proj-detail-nav">
     <div class="proj-detail-breadcrumb">
       <span onclick="showPage('3d')">3D & Product Design</span>
-      <span class="sep">›</span>
+      <span class="sep">&gt;</span>
       <span style="color:#1A1A1A;font-weight:500">Dream Cabin: Adobe Revival</span>
     </div>
     <div><button class="proj-nav-btn" onclick="showPage('3d')">← Back to category</button></div>
@@ -5324,14 +5360,14 @@ audio{accent-color:#1A1A1A}
   <div class="footer-left">anshu patel</div>
   <div class="footer-links">
     <a href="mailto:patelans006@gmail.com">Email</a>
-    <a href="https://www.linkedin.com/in/anshu-patel006" target="_blank">LinkedIn</a>
-    <a href="https://drive.google.com/file/d/16VUpKYkK2z4wUNV4X9m_DdyY5ktcA9ac/view?usp=sharing" target="_blank">Resume</a>
+    <a href="https://www.linkedin.com/in/anshu-patel006" target="_blank">LinkedIn ↗</a>
+    <a href="https://drive.google.com/file/d/16VUpKYkK2z4wUNV4X9m_DdyY5ktcA9ac/view?usp=sharing" target="_blank">Resume ↗</a>
   </div>
   <div class="footer-copy">© 2026 Anshu Patel</div>
 </footer>
 
 <script>
-// ── PAGE / PROJECT ROUTING ──
+// -- PAGE / PROJECT ROUTING --
 const pages = {
   home:'page-home', graphic:'page-graphic', ux:'page-ux',
   '3d':'page-3d', motion:'page-motion', about:'page-about'
@@ -5342,7 +5378,7 @@ const navIds = {
 };
 const workPages = ['graphic','ux','3d','motion'];
 
-// ── AUDIO PLAYER ──
+// -- AUDIO PLAYER --
 function toggleAudio() {
   const audio = document.getElementById('audio-player');
   const btn = document.getElementById('audio-btn');
@@ -5476,7 +5512,7 @@ var _navLock = false;
 var _navLockTimer = null;
 var _pendingVideoTimers = [];
 
-// ── TOC SCROLLSPY ──
+// -- TOC SCROLLSPY --
 var _tocScrollFn = null;
 function _teardownTocScrollspy() {
   if (_tocScrollFn) { window.removeEventListener('scroll', _tocScrollFn); _tocScrollFn = null; }
@@ -5609,7 +5645,7 @@ function showProject(slug) {
   }
 }
 
-// ── HISTORY / BACK-BUTTON ROUTING ──
+// -- HISTORY / BACK-BUTTON ROUTING --
 window.addEventListener('popstate', function(e) {
   var state = e.state;
   _histNav = true;
@@ -5623,7 +5659,7 @@ window.addEventListener('popstate', function(e) {
   _histNav = false;
 });
 
-// Seed the initial history entry — supports clean URLs, 404.html redirect, and legacy #hash links
+// Seed the initial history entry - supports clean URLs, 404.html redirect, and legacy #hash links
 (function() {
   // Decode GitHub Pages 404 redirect: /?/ux or /?/oracle
   var sp = window.location.search;
@@ -5661,7 +5697,7 @@ function toggleDTAudio() {
   btn.textContent = video.muted ? 'sound off' : 'sound on';
 }
 
-// ── WORKS DROPDOWN ──
+// -- WORKS DROPDOWN --
 function toggleWorksMenu() {
   const menu = document.getElementById('works-menu');
   const trigger = document.getElementById('works-trigger');
@@ -5691,12 +5727,12 @@ document.addEventListener('click', function(e) {
   if (nav && !nav.contains(e.target)) closeMobileNav();
 });
 
-// ── EXPERIENCE ACCORDION ──
+// -- EXPERIENCE ACCORDION --
 function toggleExp(id) {
   document.getElementById(id).classList.toggle('open');
 }
 
-// ── ROTATING DESCRIPTOR ──
+// -- ROTATING DESCRIPTOR --
 function sizeRotatingDescriptor() {
   var container = document.getElementById('rotating-descriptor');
   if (!container) return;
@@ -5720,7 +5756,7 @@ function rotateDescriptor() {
 }
 setInterval(rotateDescriptor, 2800);
 
-// ── PROJECT IMAGE PERFORMANCE ──
+// -- PROJECT IMAGE PERFORMANCE --
 document.querySelectorAll('.proj-detail-page img').forEach(function(img) {
   img.decoding = 'async';
   img.loading = 'lazy';
@@ -5729,7 +5765,7 @@ document.querySelectorAll('.proj-detail-page video').forEach(function(v) {
   if (!v.hasAttribute('preload') || v.getAttribute('preload') === 'metadata') v.preload = 'none';
 });
 
-// ── STORYBOARD CAROUSEL ──
+// -- STORYBOARD CAROUSEL --
 var smtIdx = 0;
 var smtAnimating = false;
 function smtGoto(idx) {
@@ -5763,7 +5799,7 @@ function smtNext() { smtGoto(smtIdx + 1); }
 function smtPrev() { smtGoto(smtIdx - 1); }
 setInterval(smtNext, 4000);
 
-// ── LIGHTBOX ──
+// -- LIGHTBOX --
 function openLightbox(src, bg) {
   var img = document.getElementById('smt-lightbox-img');
   img.style.visibility = '';
@@ -5777,7 +5813,7 @@ function closeLightbox() {
   document.getElementById('smt-lightbox').classList.remove('open');
 }
 
-// ── CHOCO KNIGHT SLIDE LIGHTBOX ──
+// -- CHOCO KNIGHT SLIDE LIGHTBOX --
 var ckLbIdx = 0;
 var ckSlideCount = 23;
 function openCKLightbox(el) {
@@ -5809,7 +5845,7 @@ document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') closeLightbox();
 });
 
-// ── PERSONA 5 HERO PDF VIEWER ──
+// -- PERSONA 5 HERO PDF VIEWER --
 let p5HeroPdf = null, p5HeroViews = [], p5HeroIdx = 0, p5HeroReady = false, p5Transitioning = false;
 
 function p5BuildViews(total) {
@@ -5892,7 +5928,7 @@ function p5HeroPrev() { if (!p5Transitioning && p5HeroIdx > 0) p5HeroShowView(p5
 function p5HeroNext() { if (!p5Transitioning && p5HeroIdx < p5HeroViews.length - 1) p5HeroShowView(p5HeroIdx + 1); }
 function p5HeroGoto(idx) { if (!p5Transitioning && idx !== p5HeroIdx) p5HeroShowView(idx); }
 
-// ── SPOTIFY SLIDES VIEWER ──
+// -- SPOTIFY SLIDES VIEWER --
 var spotifyPdf = null, spotifyPage = 1, spotifyTotal = 0, spotifyReady = false, spotifyBusy = false;
 
 async function initSpotifySlides() {
@@ -5962,7 +5998,7 @@ async function spotifyGoto(n) {
 function spotifyPrev() { spotifyGoto(spotifyPage - 1); }
 function spotifyNext() { spotifyGoto(spotifyPage + 1); }
 
-// ── POSTER PROCESS DRAWER ──
+// -- POSTER PROCESS DRAWER --
 var posterTitles = {nerds:'Nerds',doomsday:'Doomsday','artist-book':'Artist Book','typographic-follies':'Typographic Follies'};
 function openPosterProcess(id) {
   document.querySelectorAll('.poster-process-content').forEach(function(el){ el.classList.remove('active'); });
@@ -5981,7 +6017,7 @@ function closePosterProcess() {
   document.querySelectorAll('#poster-drawer video').forEach(function(v){ v.pause(); });
 }
 
-// ── MERCH CAROUSEL ──
+// -- MERCH CAROUSEL --
 function stepCarousel(id, dir) {
   var el = document.getElementById(id);
   var slides = el.querySelectorAll('.merch-carousel-slide');
@@ -5993,7 +6029,7 @@ function stepCarousel(id, dir) {
   if (counter) counter.textContent = (next + 1) + ' / ' + slides.length;
 }
 
-// ── BACK TO TOP ──
+// -- BACK TO TOP --
 var bttCategoryPages = ['page-graphic','page-ux','page-3d','page-motion'];
 function bttUpdate() {
   var btn = document.getElementById('btt-btn');
@@ -6010,16 +6046,16 @@ document.addEventListener('DOMContentLoaded', function() {
   if (btn) btn.addEventListener('click', function() { window.scrollTo({top:0, behavior:'smooth'}); });
 });
 
-// ── MORE PROJECTS DATA ──
+// -- MORE PROJECTS DATA --
 var projMeta = {
-  // ── Graphic (all 6 from page-graphic grid) ──
+  // -- Graphic (all 6 from page-graphic grid) --
   'persona5-type':   {title:'Typography in Persona 5',   cat:'graphic', catLabel:'2D & Graphic Design', sub:'Book Design',      accent:'accent-graphic'},
   'high-noon-livery':{title:'High Noon Livery',          cat:'graphic', catLabel:'2D & Graphic Design', sub:'Livery Design',    accent:'accent-graphic'},
   'hajra-waheed':    {title:"Watermarks: Hajra Waheed's Asylum in the Sea", cat:'graphic', catLabel:'2D & Graphic Design', sub:'Editorial Spreads', accent:'accent-graphic'},
   'logos-branding':  {title:'Logos & Branding',          cat:'graphic', catLabel:'2D & Graphic Design', sub:'Brand Identity',   accent:'accent-graphic'},
   'merchandise':     {title:'Merchandise',               cat:'graphic', catLabel:'2D & Graphic Design', sub:'Merch Design',     accent:'accent-graphic'},
   'posters':         {title:'Posters',                   cat:'graphic', catLabel:'2D & Graphic Design', sub:'Poster Design',    accent:'accent-graphic'},
-  // ── UX (all 6 from page-ux grid) ──
+  // -- UX (all 6 from page-ux grid) --
   'discotype':           {title:'DiscoType!',             cat:'ux', catLabel:'UX/UI & Game Design', sub:'Interaction Design', accent:'accent-ux'},
   'oracle':              {title:'Oracle',                  cat:'ux', catLabel:'UX/UI & Game Design', sub:'Interactive Web',    accent:'accent-ux'},
   'featherform':         {title:'Featherform',             cat:'ux', catLabel:'UX/UI & Game Design', sub:'Game UI Design',     accent:'accent-ux'},
@@ -6027,7 +6063,7 @@ var projMeta = {
   'silent-spellcraft':   {title:'Silent Spellcraft',       cat:'ux', catLabel:'UX/UI & Game Design', sub:'Game UI',            accent:'accent-ux'},
   'choco-knight':        {title:'Choco Knight',                               cat:'ux', catLabel:'UX/UI & Game Design', sub:'Game Design',       accent:'accent-ux'},
   'spotify-feature':     {title:'Spotify: Designing a New Microinteraction',  cat:'ux', catLabel:'UX/UI & Game Design', sub:'Micro-interaction', accent:'accent-ux'},
-  // ── 3D (only the 4 listed on page-3d grid) ──
+  // -- 3D (only the 4 listed on page-3d grid) --
   'ecoleander':      {title:'The Ecoleander',            cat:'3d',      catLabel:'3D & Product Design', sub:'Product Design',   accent:'accent-3d'},
   'smrutea':         {title:'Smrutea',                   cat:'3d',      catLabel:'3D & Product Design', sub:'Product Design',   accent:'accent-3d'},
   'flipula':         {title:'The Flipula',               cat:'3d',      catLabel:'3D & Product Design', sub:'Product Design',   accent:'accent-3d'},
@@ -6132,4 +6168,6 @@ function renderMoreProjects(slug) {
 <button class="btt" id="btt-btn" aria-label="Back to top"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 11V3M7 3L3 7M7 3L11 7" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
 </body>
 </html>
+
+
 
