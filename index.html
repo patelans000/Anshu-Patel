@@ -18,7 +18,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Sedgwick+Ave+Display&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--blue:#B8DFFF;--yellow:#FFF0A8;--pink:#FFC8D8;--black:#1A1A1A;--muted:#999;--border:#E8E8E8;--gray:#F7F7F7}
+:root{--blue:#B8DFFF;--yellow:#FFF0A8;--pink:#FFC8D8;--green:#C3EFC1;--black:#1A1A1A;--muted:#999;--border:#E8E8E8;--gray:#F7F7F7}
 html{overflow-x:clip}
 body{font-family:'Outfit','Segoe UI',Arial,sans-serif;background:#fff;color:#1A1A1A;overflow-x:clip;min-height:100vh;max-width:100%}
 h1,h2,h3,h4,h5,h6,.home-hi,.disc-title,.proj-detail-title,.proj-detail-h2,.exp-title,.about-intro-heading,.proj-detail-h3,.poster-drawer-title-text,.more-projs-label{font-family:'Outfit','Segoe UI',Arial,sans-serif!important}
@@ -249,6 +249,9 @@ nav{padding:22px 48px;display:flex;align-items:center;justify-content:space-betw
 .about-intro-rotate-wrap{display:inline-block;position:relative;vertical-align:baseline}
 .rotating-descriptor{display:inline-block;position:relative;height:2.3em;vertical-align:middle;min-width:160px;overflow:hidden}
 .descriptor-item{position:absolute;left:0;top:50%;white-space:nowrap;opacity:0;transform:translateY(calc(-50% + 2px));transition:opacity 0.4s ease,transform 0.4s ease;font-weight:600;color:#1A1A1A;background:var(--yellow);padding:6px 12px;border-radius:4px;font-size:22px}
+.descriptor-item:nth-child(4n+2){background:var(--blue)}
+.descriptor-item:nth-child(4n+3){background:var(--pink)}
+.descriptor-item:nth-child(4n+4){background:var(--green)}
 .descriptor-item.active{opacity:1;transform:translateY(-50%)}
 .about-p{font-size:14px;color:#444;line-height:2.05;margin-bottom:20px}
 .about-p:last-child{margin-bottom:0}
