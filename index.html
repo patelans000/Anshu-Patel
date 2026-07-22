@@ -122,7 +122,9 @@ nav{padding:22px 48px;display:flex;align-items:center;justify-content:space-betw
 .motion-col{display:flex;flex-direction:column;flex:1;min-width:0}
 .motion-panel{overflow:hidden;position:relative;padding:0;background:transparent;border:none;border-radius:0;box-shadow:none;width:100%;margin-bottom:32px}
 .motion-media{overflow:hidden;padding:0;border-radius:0;display:flex;justify-content:center;align-items:center}
-.motion-video{width:100%;display:block;height:auto;object-fit:unset;border-radius:0}
+.motion-video{width:100%;display:block;height:auto;object-fit:contain;border-radius:0}
+.motion-video:fullscreen{background:#000}
+.motion-video:-webkit-full-screen{background:#000}
 .motion-audio{width:100%;max-width:680px;margin-top:14px;display:block;border-radius:0}
 .motion-copy{padding:18px 0 0}
 .motion-text{font-size:15px;color:#333;line-height:1.9;margin-bottom:0;max-width:720px}
