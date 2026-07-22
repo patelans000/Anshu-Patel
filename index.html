@@ -176,10 +176,9 @@ nav{padding:22px 48px;display:flex;align-items:center;justify-content:space-betw
 .proj-img-grid-2{grid-template-columns:1fr 1fr}
 .proj-img-grid-3{grid-template-columns:1fr 1fr 1fr}
 
-.proj-photo-gallery{display:flex;overflow-x:auto;gap:10px;margin:16px 0;padding-bottom:8px;cursor:grab}
+.proj-photo-gallery{display:flex;overflow-x:auto;gap:10px;margin:16px 0;padding-bottom:8px;cursor:grab;scrollbar-width:none;-ms-overflow-style:none}
 .proj-photo-gallery.dragging{cursor:grabbing}
-.proj-photo-gallery::-webkit-scrollbar{height:6px}
-.proj-photo-gallery::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
+.proj-photo-gallery::-webkit-scrollbar{display:none}
 .proj-photo-gallery .smt-lb-thumb{flex:0 0 auto;height:280px;border-radius:6px;background:#f2f2f2}
 .proj-photo-gallery .smt-lb-thumb img{height:100%;width:auto;max-width:none;object-fit:contain;display:block}
 #proj-high-noon-livery .proj-detail-content .proj-photo-gallery .smt-lb-thumb img{width:auto;height:100%;max-width:none;object-fit:contain}
