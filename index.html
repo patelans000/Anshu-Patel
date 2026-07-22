@@ -175,6 +175,11 @@ nav{padding:22px 48px;display:flex;align-items:center;justify-content:space-betw
 .proj-img-grid-2{grid-template-columns:1fr 1fr}
 .proj-img-grid-3{grid-template-columns:1fr 1fr 1fr}
 
+.proj-photo-gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin:16px 0}
+.proj-photo-gallery .smt-lb-thumb{aspect-ratio:4/3;border-radius:6px}
+.proj-photo-gallery .smt-lb-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+#proj-high-noon-livery .proj-photo-gallery .smt-lb-thumb img{height:100%}
+
 .proj-detail-process-steps{display:flex;flex-direction:column;gap:0;margin-bottom:14px;border:1px solid var(--border);border-radius:8px;overflow:hidden}
 .proj-process-step{padding:18px 22px;border-bottom:1px solid var(--border);display:grid;grid-template-columns:28px 1fr;gap:16px;align-items:start}
 .proj-process-step:last-child{border-bottom:none}
@@ -329,9 +334,11 @@ audio{accent-color:#1A1A1A}
 #proj-high-noon-livery .proj-detail-sidebar::-webkit-scrollbar{display:none}
 #proj-high-noon-livery .proj-detail-sidebar{-ms-overflow-style:none;scrollbar-width:none}
 #proj-high-noon-livery .proj-callout{background:var(--yellow)}
-#smt-lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.93);z-index:10000;display:none;align-items:center;justify-content:center;cursor:zoom-out;padding:24px}
+#smt-lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.93);z-index:10000;display:none;align-items:center;justify-content:center;cursor:zoom-out;padding:24px;gap:16px}
 #smt-lightbox.open{display:flex}
-#smt-lightbox img{max-width:90vw;max-height:90vh;object-fit:contain;border-radius:4px}
+#smt-lightbox img{max-width:90vw;max-height:90vh;object-fit:contain;border-radius:4px;cursor:default}
+#smt-lightbox.gallery-mode img{max-width:calc(90vw - 120px)}
+#smt-lb-prev,#smt-lb-next{flex-shrink:0}
 .smt-lb-thumb{cursor:zoom-in;position:relative;overflow:hidden}
 .smt-lb-thumb img{transition:opacity 0.2s}
 .smt-lb-thumb:hover img{opacity:0.82}
@@ -882,7 +889,7 @@ audio{accent-color:#1A1A1A}
     <div class="proj" onclick="showProject('high-noon-livery')">
       <div class="proj-thumb" style="overflow:hidden">
         <div class="proj-thumb-inner" style="width:100%;height:100%">
-          <img loading="lazy" src="media/High Noon Livery/Hero Image.png" style="width:100%;height:100%;object-fit:cover;display:block" alt="High Noon Livery">
+          <img loading="lazy" src="media/High Noon Livery/car pics (8).jpg" style="width:100%;height:100%;object-fit:cover;display:block" alt="High Noon Livery">
         </div>
         <div class="proj-hover"><div class="proj-hover-text">Vehicle livery, solar racing, heat map gradient, collaborative design</div></div>
       </div>
@@ -1078,14 +1085,6 @@ audio{accent-color:#1A1A1A}
     <div class="motion-panel">
       <div class="motion-media">
         <video class="motion-video" controls preload="none" playsinline>
-          <source src="media/videos/Vergil Sparda.mp4" type="video/mp4">
-          Your browser does not support HTML5 video.
-        </video>
-      </div>
-    </div>
-    <div class="motion-panel">
-      <div class="motion-media">
-        <video class="motion-video" controls preload="none" playsinline>
           <source src="media/videos/Unveiling LHR Video.mp4" type="video/mp4">
           Your browser does not support HTML5 video.
         </video>
@@ -1097,7 +1096,7 @@ audio{accent-color:#1A1A1A}
     <div class="motion-panel">
       <div class="motion-media">
         <video class="motion-video" controls preload="none" playsinline>
-          <source src="media/videos/lhr%20solar%20video%20done%20final.mp4" type="video/mp4">
+          <source src="media/videos/Roy Mustang.mp4" type="video/mp4">
           Your browser does not support HTML5 video.
         </video>
       </div>
@@ -1105,7 +1104,66 @@ audio{accent-color:#1A1A1A}
     <div class="motion-panel">
       <div class="motion-media">
         <video class="motion-video" controls preload="none" playsinline>
-          <source src="media/videos/Roy Mustang.mp4" type="video/mp4">
+          <source src="media/videos/Gojo Satoru.mp4" type="video/mp4">
+          Your browser does not support HTML5 video.
+        </video>
+      </div>
+      <div class="motion-copy">
+        <p class="motion-text">My second most-viewed edit to date, reaching 135,000+ views and 30,000+ likes.</p>
+      </div>
+    </div>
+    <div class="motion-panel">
+      <div class="motion-media">
+        <video class="motion-video" controls preload="none" playsinline>
+          <source src="media/videos/Carmen Sandiego.mp4" type="video/mp4">
+          Your browser does not support HTML5 video.
+        </video>
+      </div>
+    </div>
+    <div class="motion-panel">
+      <div class="motion-media">
+        <video class="motion-video" controls preload="none" playsinline>
+          <source src="media/videos/Maki Zenin.mp4" type="video/mp4">
+          Your browser does not support HTML5 video.
+        </video>
+      </div>
+    </div>
+    <div class="motion-panel">
+      <div class="motion-media">
+        <video class="motion-video" controls preload="none" playsinline>
+          <source src="media/videos/Zelda.mp4" type="video/mp4">
+          Your browser does not support HTML5 video.
+        </video>
+      </div>
+    </div>
+    <div class="motion-panel">
+      <div class="motion-media">
+        <video class="motion-video" controls preload="none" playsinline>
+          <source src="media/videos/Ellie and Joel.mp4" type="video/mp4">
+          Your browser does not support HTML5 video.
+        </video>
+      </div>
+    </div>
+    <div class="motion-panel">
+      <div class="motion-media">
+        <video class="motion-video" controls preload="none" playsinline>
+          <source src="media/videos/Zuko.mp4" type="video/mp4">
+          Your browser does not support HTML5 video.
+        </video>
+      </div>
+    </div>
+    <div class="motion-panel">
+      <div class="motion-media">
+        <video class="motion-video" controls preload="none" playsinline>
+          <source src="media/videos/Vergil Sparda.mp4" type="video/mp4">
+          Your browser does not support HTML5 video.
+        </video>
+      </div>
+    </div>
+    <div class="motion-panel">
+      <div class="motion-media">
+        <video class="motion-video" controls preload="none" playsinline>
+          <source src="media/videos/lhr%20solar%20video%20done%20final.mp4" type="video/mp4">
           Your browser does not support HTML5 video.
         </video>
       </div>
@@ -1124,26 +1182,7 @@ audio{accent-color:#1A1A1A}
     <div class="motion-panel">
       <div class="motion-media">
         <video class="motion-video" controls preload="none" playsinline>
-          <source src="media/videos/Gojo Satoru.mp4" type="video/mp4">
-          Your browser does not support HTML5 video.
-        </video>
-      </div>
-      <div class="motion-copy">
-        <p class="motion-text">My second most-viewed edit to date, reaching 135,000+ views and 30,000+ likes.</p>
-      </div>
-    </div>
-    <div class="motion-panel">
-      <div class="motion-media">
-        <video class="motion-video" controls preload="none" playsinline>
           <source src="media/videos/Noctis Lucis Caelum.mp4" type="video/mp4">
-          Your browser does not support HTML5 video.
-        </video>
-      </div>
-    </div>
-    <div class="motion-panel">
-      <div class="motion-media">
-        <video class="motion-video" controls preload="none" playsinline>
-          <source src="media/videos/Carmen Sandiego.mp4" type="video/mp4">
           Your browser does not support HTML5 video.
         </video>
       </div>
@@ -1159,23 +1198,7 @@ audio{accent-color:#1A1A1A}
     <div class="motion-panel">
       <div class="motion-media">
         <video class="motion-video" controls preload="none" playsinline>
-          <source src="media/videos/Maki Zenin.mp4" type="video/mp4">
-          Your browser does not support HTML5 video.
-        </video>
-      </div>
-    </div>
-    <div class="motion-panel">
-      <div class="motion-media">
-        <video class="motion-video" controls preload="none" playsinline>
           <source src="media/videos/Snake.mp4" type="video/mp4">
-          Your browser does not support HTML5 video.
-        </video>
-      </div>
-    </div>
-    <div class="motion-panel">
-      <div class="motion-media">
-        <video class="motion-video" controls preload="none" playsinline>
-          <source src="media/videos/Zelda.mp4" type="video/mp4">
           Your browser does not support HTML5 video.
         </video>
       </div>
@@ -1191,23 +1214,7 @@ audio{accent-color:#1A1A1A}
     <div class="motion-panel">
       <div class="motion-media">
         <video class="motion-video" controls preload="none" playsinline>
-          <source src="media/videos/Ellie and Joel.mp4" type="video/mp4">
-          Your browser does not support HTML5 video.
-        </video>
-      </div>
-    </div>
-    <div class="motion-panel">
-      <div class="motion-media">
-        <video class="motion-video" controls preload="none" playsinline>
           <source src="media/videos/Pride and Prejudice.mp4" type="video/mp4">
-          Your browser does not support HTML5 video.
-        </video>
-      </div>
-    </div>
-    <div class="motion-panel">
-      <div class="motion-media">
-        <video class="motion-video" controls preload="none" playsinline>
-          <source src="media/videos/Zuko.mp4" type="video/mp4">
           Your browser does not support HTML5 video.
         </video>
       </div>
@@ -3155,32 +3162,24 @@ audio{accent-color:#1A1A1A}
     </div>
   </div>
 
-  <div style="padding:12px 48px;background:var(--yellow);border-bottom:1px solid #e8d800;font-size:13px;color:#1A1A1A;font-weight:500">
-    <strong>PLEASE NOTE:</strong> Proper photos of the livery (that aren't renders) are coming soon once our solar team attends competition. Stay tuned!
-  </div>
-
   <div style="border-bottom:1px solid var(--border)">
-    <div style="position:relative;overflow:hidden;aspect-ratio:16/7;border-bottom:1px solid var(--border)">
-      <img loading="lazy" src="media/High Noon Livery/Hero Image.png" style="width:100%;height:100%;object-fit:cover;display:block" alt="High Noon final livery">
-      <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.65) 0%,rgba(0,0,0,0.15) 45%,transparent 100%)"></div>
-      <div style="position:absolute;bottom:36px;left:48px">
-        <div style="font-family:'Outfit',sans-serif;font-size:54px;font-weight:600;color:#fff;line-height:1.05;letter-spacing:0.3px">High Noon Livery</div>
-        <div style="font-family:'Outfit',sans-serif;font-size:24px;font-weight:500;color:rgba(255,255,255,0.85);margin-top:6px;letter-spacing:0.2px">Longhorn Racing Solar Vehicle</div>
-        <div style="font-size:13px;color:rgba(255,255,255,0.6);margin-top:6px;font-weight:400;letter-spacing:0.3px">Vehicle Livery Design | Spring 2026</div>
-      </div>
-    </div>
-    <div style="padding:24px 48px;background:#fafafa;display:flex;justify-content:center">
-      <div class="smt-lb-thumb" onclick="openLightbox('media/High Noon Livery/final (1).png')" style="overflow:hidden;border-radius:4px;max-width:420px;width:100%">
-        <img loading="lazy" src="media/High Noon Livery/final (1).png" style="width:100%;display:block" alt="High Noon final livery full file">
-      </div>
+  <div style="position:relative;overflow:hidden;aspect-ratio:16/7;border-bottom:1px solid var(--border)">
+    <img loading="lazy" src="media/High Noon Livery/car pics (8).jpg" style="width:100%;height:100%;object-fit:cover;display:block" alt="High Noon final livery">
+    <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.65) 0%,rgba(0,0,0,0.15) 45%,transparent 100%)"></div>
+    <div style="position:absolute;bottom:36px;left:48px">
+      <div style="font-family:'Outfit',sans-serif;font-size:54px;font-weight:600;color:#fff;line-height:1.05;letter-spacing:0.3px">High Noon Livery</div>
+      <div style="font-family:'Outfit',sans-serif;font-size:24px;font-weight:500;color:rgba(255,255,255,0.85);margin-top:6px;letter-spacing:0.2px">Longhorn Racing Solar Vehicle</div>
+      <div style="font-size:13px;color:rgba(255,255,255,0.6);margin-top:6px;font-weight:400;letter-spacing:0.3px">Vehicle Livery Design | Spring 2026</div>
     </div>
   </div>
+</div>
 
   <div class="proj-detail-body">
     <div class="proj-detail-sidebar">
       <div class="proj-detail-sidebar-section">
         <div class="proj-detail-sidebar-label">Contents</div>
         <div class="proj-toc-list">
+          <a class="proj-toc-link" onclick="document.getElementById('hn-competition').scrollIntoView({behavior:'smooth'})">Competition Photos</a>
           <a class="proj-toc-link" onclick="document.getElementById('hn-overview').scrollIntoView({behavior:'smooth'})">Overview</a>
           <a class="proj-toc-link" onclick="document.getElementById('hn-miro').scrollIntoView({behavior:'smooth'})">Miro Board</a>
           <a class="proj-toc-link" onclick="document.getElementById('hn-ideation').scrollIntoView({behavior:'smooth'})">Ideation</a>
@@ -3206,6 +3205,26 @@ audio{accent-color:#1A1A1A}
     </div>
 
     <div class="proj-detail-content">
+
+      <!-- COMPETITION PHOTOS -->
+      <div class="proj-detail-section" id="hn-competition">
+        <div class="proj-detail-section-label">Competition Photos</div>
+        <div class="proj-detail-h2">High Noon at Competition</div>
+        <p class="proj-detail-p">The final livery in action, photographed at competition.</p>
+        <div class="proj-photo-gallery">
+          <div class="smt-lb-thumb" onclick="openHNGallery(0)"><img loading="lazy" src="media/High Noon Livery/car pics (8).jpg" alt="High Noon at competition"></div>
+          <div class="smt-lb-thumb" onclick="openHNGallery(1)"><img loading="lazy" src="media/High Noon Livery/car pics (1).jpg" alt="High Noon at competition"></div>
+          <div class="smt-lb-thumb" onclick="openHNGallery(2)"><img loading="lazy" src="media/High Noon Livery/car pics (2).jpg" alt="High Noon at competition"></div>
+          <div class="smt-lb-thumb" onclick="openHNGallery(3)"><img loading="lazy" src="media/High Noon Livery/car pics (3).jpg" alt="High Noon at competition"></div>
+          <div class="smt-lb-thumb" onclick="openHNGallery(4)"><img loading="lazy" src="media/High Noon Livery/car pics (4).jpg" alt="High Noon at competition"></div>
+          <div class="smt-lb-thumb" onclick="openHNGallery(5)"><img loading="lazy" src="media/High Noon Livery/car pics (5).jpg" alt="High Noon at competition"></div>
+          <div class="smt-lb-thumb" onclick="openHNGallery(6)"><img loading="lazy" src="media/High Noon Livery/car pics (6).jpg" alt="High Noon at competition"></div>
+          <div class="smt-lb-thumb" onclick="openHNGallery(7)"><img loading="lazy" src="media/High Noon Livery/car pics (7).jpg" alt="High Noon at competition"></div>
+          <div class="smt-lb-thumb" onclick="openHNGallery(8)"><img loading="lazy" src="media/High Noon Livery/car pics (9).jpg" alt="High Noon at competition"></div>
+          <div class="smt-lb-thumb" onclick="openHNGallery(9)"><img loading="lazy" src="media/High Noon Livery/car pics (10).jpg" alt="High Noon at competition"></div>
+          <div class="smt-lb-thumb" onclick="openHNGallery(10)"><img loading="lazy" src="media/High Noon Livery/car pics (11).jpg" alt="High Noon at competition"></div>
+        </div>
+      </div>
 
       <!-- OVERVIEW -->
       <div class="proj-detail-section" id="hn-overview">
@@ -5367,7 +5386,9 @@ audio{accent-color:#1A1A1A}
 
 <!-- LIGHTBOX OVERLAY -->
 <div id="smt-lightbox" onclick="closeLightbox()">
+  <button id="smt-lb-prev" class="ck-lb-btn" onclick="event.stopPropagation();smtLightboxStep(-1)" style="display:none">&#8592;</button>
   <img loading="lazy" src="" alt="Expanded design file" id="smt-lightbox-img">
+  <button id="smt-lb-next" class="ck-lb-btn" onclick="event.stopPropagation();smtLightboxStep(1)" style="display:none">&#8594;</button>
 </div>
 <div id="ck-lightbox" onclick="if(event.target===this)closeCKLightbox()">
   <button id="ck-lb-prev" class="ck-lb-btn" onclick="ckLightboxStep(-1)">&#8592;</button>
@@ -5820,6 +5841,8 @@ function smtPrev() { smtGoto(smtIdx - 1); }
 setInterval(smtNext, 4000);
 
 // -- LIGHTBOX --
+var smtLbGallery = null;
+var smtLbIdx = 0;
 function openLightbox(src, bg) {
   var img = document.getElementById('smt-lightbox-img');
   img.style.visibility = '';
@@ -5827,10 +5850,38 @@ function openLightbox(src, bg) {
   img.style.background = bg || '';
   img.style.padding = bg ? '24px' : '';
   img.style.borderRadius = bg ? '8px' : '';
+  smtLbGallery = null;
+  document.getElementById('smt-lb-prev').style.display = 'none';
+  document.getElementById('smt-lb-next').style.display = 'none';
+  document.getElementById('smt-lightbox').classList.remove('gallery-mode');
   document.getElementById('smt-lightbox').classList.add('open');
 }
 function closeLightbox() {
   document.getElementById('smt-lightbox').classList.remove('open');
+}
+
+// -- HIGH NOON COMPETITION PHOTO GALLERY (rotating lightbox) --
+var hnGalleryFiles = ['car pics (8).jpg','car pics (1).jpg','car pics (2).jpg','car pics (3).jpg','car pics (4).jpg','car pics (5).jpg','car pics (6).jpg','car pics (7).jpg','car pics (9).jpg','car pics (10).jpg','car pics (11).jpg'];
+function openHNGallery(idx) {
+  smtLbGallery = hnGalleryFiles.map(function(f) { return 'media/High Noon Livery/' + f; });
+  smtLbIdx = idx;
+  var img = document.getElementById('smt-lightbox-img');
+  img.style.visibility = '';
+  img.src = smtLbGallery[smtLbIdx];
+  img.style.background = '';
+  img.style.padding = '';
+  img.style.borderRadius = '';
+  document.getElementById('smt-lb-prev').style.display = 'flex';
+  document.getElementById('smt-lb-next').style.display = 'flex';
+  document.getElementById('smt-lightbox').classList.add('gallery-mode');
+  document.getElementById('smt-lightbox').classList.add('open');
+}
+function smtLightboxStep(dir) {
+  if (!smtLbGallery) return;
+  smtLbIdx = (smtLbIdx + dir + smtLbGallery.length) % smtLbGallery.length;
+  var img = document.getElementById('smt-lightbox-img');
+  img.style.visibility = '';
+  img.src = smtLbGallery[smtLbIdx];
 }
 
 // -- CHOCO KNIGHT SLIDE LIGHTBOX --
@@ -5860,6 +5911,12 @@ document.addEventListener('keydown', function(e) {
     if (e.key === 'ArrowLeft') ckLightboxStep(-1);
     else if (e.key === 'ArrowRight') ckLightboxStep(1);
     else if (e.key === 'Escape') closeCKLightbox();
+    return;
+  }
+  if (document.getElementById('smt-lightbox').classList.contains('open')) {
+    if (smtLbGallery && e.key === 'ArrowLeft') smtLightboxStep(-1);
+    else if (smtLbGallery && e.key === 'ArrowRight') smtLightboxStep(1);
+    else if (e.key === 'Escape') closeLightbox();
     return;
   }
   if (e.key === 'Escape') closeLightbox();
