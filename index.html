@@ -506,7 +506,7 @@ audio{accent-color:#1A1A1A}
    cascade regardless of @media wrapping, so this must stay after every unconditional/per-project rule above. */
 @media (max-width: 1024px){
   .motion-gallery{flex-direction:column}
-  .motion-col{flex:none;width:100%}
+  .motion-col{flex:none;width:100%;display:contents}
   .proj-photo-gallery .smt-lb-thumb{height:200px}
   .proj-detail-page [style*="object-position:center 85%"]{object-position:center !important}
   #proj-high-noon-livery .proj-photo-gallery{padding-left:20px !important;padding-right:20px !important}
@@ -1108,7 +1108,7 @@ audio{accent-color:#1A1A1A}
     </div>
     <div class="motion-panel">
       <div class="motion-media">
-        <video class="motion-video" controls preload="none" playsinline>
+        <video id="video-lhr-final" class="motion-video" controls preload="none" playsinline>
           <source src="media/videos/lhr%20solar%20video%20done%20final.mp4" type="video/mp4">
           Your browser does not support HTML5 video.
         </video>
@@ -5554,6 +5554,72 @@ document.querySelectorAll('.motion-gallery video').forEach(function(v) {
   motionVideos.forEach(function(v) { obs.observe(v); });
 })();
 
+// On mobile, interleave the two motion-gallery columns into one reading
+// order based on each clip's actual rendered height (a masonry merge)
+// instead of showing one whole column and then the other.
+var motionMobileMq = window.matchMedia('(max-width: 1024px)');
+var _motionOrderRun = 0;
+function applyMotionMobileOrder() {
+  var gallery = document.querySelector('.motion-gallery');
+  if (!gallery) return;
+  var cols = gallery.querySelectorAll(':scope > .motion-col');
+  if (!motionMobileMq.matches || cols.length < 2) {
+    gallery.querySelectorAll('.motion-panel').forEach(function(p) { p.style.order = ''; });
+    return;
+  }
+  var runId = ++_motionOrderRun;
+  var perCol = Array.prototype.map.call(cols, function(col) {
+    return Array.prototype.slice.call(col.querySelectorAll(':scope > .motion-panel'));
+  });
+  var videos = gallery.querySelectorAll('.motion-video');
+  var pending = [];
+  videos.forEach(function(v) {
+    if (v.readyState < 1) {
+      pending.push(new Promise(function(resolve) {
+        v.addEventListener('loadedmetadata', resolve, { once: true });
+        v.addEventListener('error', resolve, { once: true });
+      }));
+      if (v.preload === 'none') v.preload = 'metadata';
+      v.load();
+    }
+  });
+  Promise.all(pending).then(function() {
+    if (runId !== _motionOrderRun || !motionMobileMq.matches) return;
+    requestAnimationFrame(function() {
+      if (runId !== _motionOrderRun) return;
+      var tops = perCol.map(function() { return 0; });
+      var idx = perCol.map(function() { return 0; });
+      var sequence = [];
+      while (true) {
+        var pick = -1, minTop = Infinity;
+        for (var c = 0; c < perCol.length; c++) {
+          if (idx[c] >= perCol[c].length) continue;
+          if (tops[c] < minTop) { minTop = tops[c]; pick = c; }
+        }
+        if (pick === -1) break;
+        var panel = perCol[pick][idx[pick]];
+        sequence.push(panel);
+        var mb = parseFloat(getComputedStyle(panel).marginBottom) || 0;
+        tops[pick] += panel.offsetHeight + mb;
+        idx[pick]++;
+      }
+      // Keep the LHR Solar "done final" clip immediately before Nightcrawler on mobile
+      var finalVideo = gallery.querySelector('#video-lhr-final');
+      var ncVideo = gallery.querySelector('#video-nightcrawler');
+      var finalPanel = finalVideo && finalVideo.closest('.motion-panel');
+      var ncPanel = ncVideo && ncVideo.closest('.motion-panel');
+      if (finalPanel && ncPanel && finalPanel !== ncPanel) {
+        var fIdx = sequence.indexOf(finalPanel);
+        if (fIdx !== -1) sequence.splice(fIdx, 1);
+        var ncIdx = sequence.indexOf(ncPanel);
+        sequence.splice(ncIdx, 0, finalPanel);
+      }
+      sequence.forEach(function(panel, i) { panel.style.order = i + 1; });
+    });
+  });
+}
+motionMobileMq.addEventListener('change', applyMotionMobileOrder);
+
 var _histNav = false;
 var _navLock = false;
 var _navLockTimer = null;
@@ -5625,6 +5691,7 @@ function showPage(id) {
   if (id === 'motion') {
     var fv = document.querySelector('.motion-gallery .motion-panel:first-child video');
     if (fv && fv.readyState < 2) { fv.load(); }
+    applyMotionMobileOrder();
   }
   const prevNav = document.querySelector('.nav-links a.active');
   if (prevNav) prevNav.classList.remove('active');
