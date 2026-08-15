@@ -82,8 +82,7 @@ nav{padding:22px 48px;display:flex;align-items:center;justify-content:space-betw
 .home-proj-thumb-inner{width:100%;height:100%;display:flex;align-items:center;justify-content:center;transition:transform 0.45s ease}
 .home-cycle-media{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(1) contrast(1.2);opacity:0;transition:opacity 1.6s cubic-bezier(0.4,0,0.2,1);will-change:opacity}
 .home-cycle-media.active{opacity:1;z-index:1}
-.home-proj-overlay{position:absolute;inset:0;mix-blend-mode:multiply;opacity:0;pointer-events:none;transition:opacity 0.35s ease;z-index:2}
-.home-proj-block:hover .home-proj-overlay{opacity:0.85}
+.home-proj-overlay{position:absolute;inset:0;mix-blend-mode:multiply;opacity:0.85;pointer-events:none;transition:opacity 0.35s ease;z-index:2}
 .home-proj-info{padding:18px 22px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border)}
 .home-proj-left{}
 .home-proj-title{font-size:14px;font-weight:600}
@@ -97,8 +96,8 @@ nav{padding:22px 48px;display:flex;align-items:center;justify-content:space-betw
 /* Discipline page title accent backgrounds */
 #page-motion .disc-title{background:#C8EDDA;color:#1A1A1A;display:inline-block;padding:8px 14px;border-radius:8px}
 #page-ux .disc-title{background:#FFC8D8;color:#1A1A1A;display:inline-block;padding:8px 14px;border-radius:8px}
-#page-3d .disc-title{background:#B8DFFF;color:#1A1A1A;display:inline-block;padding:8px 14px;border-radius:8px}
-#page-graphic .disc-title{background:#FFF0A8;color:#1A1A1A;display:inline-block;padding:8px 14px;border-radius:8px}
+#page-3d .disc-title{background:#FFF0A8;color:#1A1A1A;display:inline-block;padding:8px 14px;border-radius:8px}
+#page-graphic .disc-title{background:#B8DFFF;color:#1A1A1A;display:inline-block;padding:8px 14px;border-radius:8px}
 #page-archive .disc-title{background:#E8E8E8;color:#1A1A1A;display:inline-block;padding:8px 14px;border-radius:8px}
 .disc-desc{font-size:15px;color:#444;line-height:1.9;max-width:520px}
 .disc-back{font-size:13px;color:var(--muted);cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border:1px solid var(--border);border-radius:100px;transition:all 0.15s}
@@ -349,6 +348,7 @@ audio{accent-color:#1A1A1A}
 #proj-high-noon-livery .proj-detail-content div[style*="overflow:hidden"]{border:none!important;border-radius:0!important}
 #proj-high-noon-livery .proj-detail-content img{width:100%;height:auto;display:block;border-radius:0!important}
 #proj-high-noon-livery .proj-detail-sidebar::-webkit-scrollbar{display:none}
+#proj-lhr-website-redesign .proj-detail-content{max-width:960px;padding:48px 48px;margin:0 auto}
 #proj-high-noon-livery .proj-detail-sidebar{-ms-overflow-style:none;scrollbar-width:none}
 #proj-high-noon-livery .proj-callout{background:var(--yellow)}
 #smt-lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.93);z-index:10000;display:none;align-items:center;justify-content:center;cursor:zoom-out;padding:24px;gap:16px}
@@ -495,7 +495,7 @@ audio{accent-color:#1A1A1A}
 #proj-discotype .proj-detail-content{max-width:960px;padding:48px 48px;margin:0 auto}
 #proj-discotype .proj-detail-content div[style*="overflow:hidden"]{border-radius:0!important}
 #proj-discotype .proj-detail-content img{width:100%;height:auto;display:block;border-radius:0!important}
-#proj-discotype .proj-callout,#proj-oracle .proj-callout,#proj-featherform .proj-callout,#proj-stellar-exploration .proj-callout,#proj-silent-spellcraft .proj-callout,#proj-choco-knight .proj-callout,#proj-spotify-feature .proj-callout{background:var(--pink)}
+#proj-discotype .proj-callout,#proj-oracle .proj-callout,#proj-featherform .proj-callout,#proj-stellar-exploration .proj-callout,#proj-silent-spellcraft .proj-callout,#proj-choco-knight .proj-callout,#proj-spotify-feature .proj-callout,#proj-lhr-website-redesign .proj-callout{background:var(--pink)}
 #proj-oracle video{filter:saturate(1.5) contrast(1.05)}
 #dt-font-input::placeholder{color:rgba(255,94,173,0.35)}
 #ff-font-input::placeholder{color:rgba(255,255,255,0.25)}
@@ -677,7 +677,8 @@ audio{accent-color:#1A1A1A}
   #proj-spotify-feature .proj-detail-content,
   #proj-oracle .proj-detail-content,
   #proj-logos-branding .proj-detail-content,
-  #proj-adobe-cabin .proj-detail-content{padding:28px 20px;max-width:none}
+  #proj-adobe-cabin .proj-detail-content,
+  #proj-lhr-website-redesign .proj-detail-content{padding:28px 20px;max-width:none}
   .proj-detail-page [style*="calc(100% + 48px)"]{width:100% !important;margin-left:0 !important;margin-right:0 !important}
 
   /* PROJECT HERO OVERLAY (inline style overrides) */
@@ -812,7 +813,7 @@ audio{accent-color:#1A1A1A}
           UX/UI & Game Design
         </a>
         <a onclick="showPage('graphic');closeWorksMenu()" onmouseenter="preloadPage('graphic')" id="nav-graphic">
-          <span class="works-menu-dot" style="background:#FFF0A8;border:1px solid #e8e0a0"></span>
+          <span class="works-menu-dot" style="background:#B8DFFF"></span>
           2D & Graphic Design
         </a>
         <a onclick="showPage('motion');closeWorksMenu()" onmouseenter="preloadPage('motion')" id="nav-motion">
@@ -820,7 +821,7 @@ audio{accent-color:#1A1A1A}
           Motion Graphics & Video
         </a>
         <a onclick="showPage('3d');closeWorksMenu()" onmouseenter="preloadPage('3d')" id="nav-3d">
-          <span class="works-menu-dot" style="background:#B8DFFF"></span>
+          <span class="works-menu-dot" style="background:#FFF0A8;border:1px solid #e8e0a0"></span>
           3D & Product Design
         </a>
       </div>
@@ -860,7 +861,8 @@ audio{accent-color:#1A1A1A}
     <div class="home-proj-block" onclick="showPage('ux')">
       <div class="home-proj-thumb" style="overflow:hidden">
         <div class="home-proj-thumb-inner" style="position:relative;width:100%;height:100%;background:#FFC8D8">
-          <img class="home-cycle-media active" src="media/DiscoType!/Title card png.png" alt="UX/UI & Game Design" decoding="async">
+          <img class="home-cycle-media active" src="media/LHR New Site/lhr site portfolio cover.png" alt="UX/UI & Game Design" decoding="async">
+          <img class="home-cycle-media" data-src="media/DiscoType!/Title card png.png" alt="" decoding="async">
           <img class="home-cycle-media" data-src="media/Oracle/Homepage Title Graphic.png" alt="" decoding="async">
           <img class="home-cycle-media" data-src="media/Featherform/Featherform Title Screen Hero.png" alt="" decoding="async">
           <img class="home-cycle-media" data-src="media/Stellar Exploration - A Scale of Our Universe/Title Screen.png" alt="" style="transform:scale(1.15)" decoding="async">
@@ -872,11 +874,11 @@ audio{accent-color:#1A1A1A}
     </div>
     <div class="home-proj-block" onclick="showPage('graphic')">
       <div class="home-proj-thumb" style="overflow:hidden">
-        <div class="home-proj-thumb-inner" style="position:relative;width:100%;height:100%;background:#FFF0A8">
-          <img class="home-cycle-media active" src="media/LHR Recruitment/Card Cover.png" alt="2D & Graphic Design" decoding="async">
+        <div class="home-proj-thumb-inner" style="position:relative;width:100%;height:100%;background:#B8DFFF">
+          <img class="home-cycle-media active" src="media/LHR Recruitment/2026 - 2027.png" alt="2D & Graphic Design" style="object-fit:contain" decoding="async">
           <img class="home-cycle-media" data-src="media/High Noon Livery/car pics (8).jpg" alt="" decoding="async">
           <img class="home-cycle-media" data-src="media/Typography in Persona 5/Hero, Title Card.png" alt="" decoding="async">
-          <div class="home-proj-overlay" style="background:#FFF0A8"></div>
+          <div class="home-proj-overlay" style="background:#B8DFFF"></div>
         </div>
       </div>
       <div class="home-proj-info"><div class="home-proj-left"><div class="home-proj-title">2D & Graphic Design</div><div class="home-proj-sub">A variety of my graphic design work, from layout design to livery design.</div></div><span class="home-proj-arrow">›</span></div>
@@ -909,11 +911,11 @@ audio{accent-color:#1A1A1A}
     </div>
     <div class="home-proj-block" onclick="showPage('3d')" onmouseenter="preloadPage('3d')">
       <div class="home-proj-thumb" style="overflow:hidden">
-        <div class="home-proj-thumb-inner" style="position:relative;width:100%;height:100%;background:#B8DFFF">
+        <div class="home-proj-thumb-inner" style="position:relative;width:100%;height:100%;background:#FFF0A8">
           <img class="home-cycle-media active" src="media/The Ecoleander/Photoshoot 7.jpg" alt="3D & Product Design" decoding="async">
           <img class="home-cycle-media" data-src="media/Smrutea/Hero image 4.jpg" alt="" decoding="async">
           <img class="home-cycle-media" data-src="media/The Flipula/Flipula Presentation Poster.png" alt="" decoding="async">
-          <div class="home-proj-overlay" style="background:#B8DFFF"></div>
+          <div class="home-proj-overlay" style="background:#FFF0A8"></div>
         </div>
       </div>
       <div class="home-proj-info"><div class="home-proj-left"><div class="home-proj-title">3D & Product Design</div><div class="home-proj-sub">A collection of industrial design projects, from product concepts to prototypes.</div></div><span class="home-proj-arrow">›</span></div>
@@ -1086,6 +1088,10 @@ audio{accent-color:#1A1A1A}
     <div><span class="disc-back" onclick="showPage('home')">← All work</span></div>
   </div>
   <div class="proj-grid proj-grid-3">
+    <div class="proj" onclick="showProject('lhr-website-redesign')">
+      <div class="proj-thumb" style="overflow:hidden"><div class="proj-thumb-inner" style="width:100%;height:100%"><img loading="lazy" src="media/LHR New Site/lhr site portfolio cover.png" style="width:100%;height:100%;object-fit:cover;display:block" alt="Longhorn Racing Website Re-Design"></div><div class="proj-hover"><div class="proj-hover-text">Web design, Wix Studio, responsive redesign</div></div></div>
+      <div class="proj-foot"><span class="proj-name">Longhorn Racing Website Re-Design</span><span class="proj-meta">Summer 2026</span></div>
+    </div>
     <div class="proj" onclick="showProject('discotype')">
       <div class="proj-thumb" style="overflow:hidden"><div class="proj-thumb-inner" style="width:100%;height:100%"><img loading="lazy" src="media/DiscoType!/Title card png.png" style="width:100%;height:100%;object-fit:cover;display:block" alt="DiscoType!"></div><div class="proj-hover"><div class="proj-hover-text">Game UI design, custom typeface, Unity prototype</div></div></div>
       <div class="proj-foot"><span class="proj-name">DiscoType!</span><span class="proj-meta">Spring 2026</span></div>
@@ -1803,6 +1809,131 @@ audio{accent-color:#1A1A1A}
   </div>
 </div>
 
+<!-- LHR WEBSITE REDESIGN -->
+<div class="proj-detail-page" id="proj-lhr-website-redesign">
+  <div class="proj-detail-nav">
+    <div class="proj-detail-breadcrumb">
+      <span onclick="showPage('ux')">UX/UI & Game Design</span>
+      <span class="sep">&gt;</span>
+      <span style="color:#1A1A1A;font-weight:500">Longhorn Racing Website Re-Design</span>
+    </div>
+    <div><button class="proj-nav-btn" onclick="showPage('ux')">← Back to category</button></div>
+  </div>
+  <div class="proj-detail-hero">
+    <div class="proj-detail-kicker">UX/UI & Game Design | Web Redesign</div>
+    <div class="proj-detail-title">Longhorn Racing Website Re-Design</div>
+    <p class="proj-detail-tagline">A ground-up redesign of Longhorn Racing's official website, rebuilt in Wix Studio to be more responsive, more modern, and more reflective of the team today, with a focus on strengthening the team's branding, which had previously been lacking, while keeping the charm of the original site.</p>
+    <div class="proj-detail-meta-row">
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Role</div><div class="proj-detail-meta-val">PR Officer, Self-Assigned</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Platform</div><div class="proj-detail-meta-val">Wix Studio</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Type</div><div class="proj-detail-meta-val">Web Redesign</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">Summer 2026</div></div>
+    </div>
+  </div>
+  <div style="position:relative;cursor:pointer;border-bottom:1px solid var(--border)" onclick="window.open('https://www.longhornracing.org/','_blank')">
+    <img loading="lazy" src="media/LHR New Site/lhr site portfolio cover.png" style="width:100%;display:block" alt="Longhorn Racing redesigned website">
+    <div style="position:absolute;bottom:0;left:0;right:0;padding:20px 32px;background:linear-gradient(transparent,rgba(0,0,0,0.75));pointer-events:none;z-index:2;display:flex;justify-content:space-between;align-items:flex-end">
+      <div>
+        <div style="font-size:10px;color:rgba(255,255,255,0.5);font-weight:600;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:5px">UX/UI & Game Design | Web Redesign</div>
+        <div style="font-size:16px;color:#fff;font-weight:600">Longhorn Racing Website Re-Design</div>
+      </div>
+      <div style="font-size:13px;color:#fff;font-weight:600;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.35);padding:8px 16px;backdrop-filter:blur(4px);white-space:nowrap">Visit the Live Site ↗︎</div>
+    </div>
+  </div>
+  <div class="proj-detail-body">
+    <div class="proj-detail-sidebar">
+      <div class="proj-detail-sidebar-section">
+        <div class="proj-detail-sidebar-label">Contents</div>
+        <div class="proj-toc-list">
+          <a class="proj-toc-link" onclick="document.getElementById('lhrsite-overview').scrollIntoView({behavior:'smooth'})">Overview</a>
+          <a class="proj-toc-link" onclick="document.getElementById('lhrsite-redesign').scrollIntoView({behavior:'smooth'})">The Redesign</a>
+          <a class="proj-toc-link" onclick="document.getElementById('lhrsite-before-after').scrollIntoView({behavior:'smooth'})">Before & After</a>
+          <a class="proj-toc-link" onclick="document.getElementById('lhrsite-live').scrollIntoView({behavior:'smooth'})">Live Site</a>
+          <a class="proj-toc-link" onclick="document.getElementById('lhrsite-impact').scrollIntoView({behavior:'smooth'})">Shipped & Impact</a>
+        </div>
+      </div>
+    </div>
+    <div class="proj-detail-content">
+
+      <!-- OVERVIEW -->
+      <div class="proj-detail-section" id="lhrsite-overview">
+        <div class="proj-detail-section-label">Overview</div>
+        <div class="proj-detail-h2">A New Look for LHR</div>
+        <p class="proj-detail-p">Longhorn Racing's old website was built on an outdated version of Wix Editor and hadn't kept up with the team, and branding had never really been a priority on the old site. As PR Officer, I self-assigned taking the entire site apart and redesigning it from the ground up in Wix Studio, with a focus on building responsive web pages that would actually strengthen the team's branding: more responsive, more modern, and closer to what the team actually looks like today.</p>
+      </div>
+
+      <!-- THE REDESIGN -->
+      <div class="proj-detail-section" id="lhrsite-redesign">
+        <div class="proj-detail-section-label">The Redesign</div>
+        <div class="proj-detail-h2">Keeping the Charm, Updating Everything Else</div>
+        <p class="proj-detail-p">The goal wasn't to throw out everything that made the old site feel like LHR. It was to keep that charm while making the site feel like the team today: cleaner navigation, a more modern layout, and a build that actually holds up on mobile.</p>
+        <div class="proj-callout"><strong>My favorite easter egg:</strong> on the mobile version, the hamburger menu icon is our shortmark logo.</div>
+        <p class="proj-detail-p">Alongside the redesign, I also worked to regain ownership of the LHR domain from a former alumnus who still held it, so future PR Officers won't run into the same confusion about who actually owns the site.</p>
+      </div>
+
+      <!-- BEFORE & AFTER -->
+      <div class="proj-detail-section" id="lhrsite-before-after">
+        <div class="proj-detail-section-label">Before & After</div>
+        <div class="proj-detail-h2">Old Site vs. New Site</div>
+        <p class="proj-detail-p">A quick look at what changed. Both are real walkthroughs of the actual sites, works well on mobile too if your device permits checking it out yourself.</p>
+        <div class="proj-detail-section-label" style="margin-top:24px">New Site</div>
+        <video controls preload="none" style="width:100%;display:block;margin-top:8px">
+          <source src="media/LHR New Site/new site lhr walkthrough.mp4" type="video/mp4">
+        </video>
+        <p class="proj-img-caption">The redesigned site, built in Wix Studio.</p>
+        <div class="proj-detail-section-label" style="margin-top:24px">Old Site (For Comparison)</div>
+        <video controls preload="none" style="width:100%;display:block;margin-top:8px">
+          <source src="media/LHR New Site/old site walk through.mp4" type="video/mp4">
+        </video>
+        <p class="proj-img-caption">The old site, for comparison, before the redesign.</p>
+      </div>
+
+      <!-- LIVE SITE -->
+      <div class="proj-detail-section" id="lhrsite-live">
+        <div class="proj-detail-section-label">Live Site</div>
+        <div class="proj-detail-h2">See It Live</div>
+        <p class="proj-detail-p">The redesigned site is live at <a href="https://www.longhornracing.org/" target="_blank" style="color:inherit;text-decoration:underline;text-underline-offset:2px">longhornracing.org</a>. If the embed below doesn't load for you, use the link to open it directly.</p>
+        <div style="border:1px solid var(--border);overflow:hidden;margin-top:20px">
+          <div style="background:var(--gray);padding:18px 22px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;gap:16px">
+            <div>
+              <div style="font-size:10px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin-bottom:4px">Live Site</div>
+              <div style="font-size:14px;font-weight:600;color:#1A1A1A">longhornracing.org</div>
+            </div>
+            <a href="https://www.longhornracing.org/" target="_blank" style="font-size:12px;color:var(--muted);text-decoration:underline;text-underline-offset:2px;white-space:nowrap;transition:color 0.15s" onmouseover="this.style.color='#1A1A1A'" onmouseout="this.style.color='var(--muted)'">Open ↗︎</a>
+            </div>
+          <iframe style="border:none;width:100%;display:block" height="600" src="https://www.longhornracing.org/" loading="lazy" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <!-- SHIPPED & IMPACT -->
+      <div class="proj-detail-section" id="lhrsite-impact">
+        <div class="proj-detail-section-label">Shipped & Impact</div>
+        <div class="proj-detail-h2">Key Takeaways & Impact</div>
+        <div class="proj-stats">
+          <div class="proj-stat a1">
+            <div class="proj-stat-num">Ground-up rebuild</div>
+            <div class="proj-stat-label">Migrated the entire site from an outdated Wix Editor build to a fully modern Wix Studio site.</div>
+          </div>
+          <div class="proj-stat a2">
+            <div class="proj-stat-num">Domain reclaimed</div>
+            <div class="proj-stat-label">Regained ownership of the LHR domain from a former alumnus, so future PR Officers have clear ownership.</div>
+          </div>
+          <div class="proj-stat a3">
+            <div class="proj-stat-num">Fully responsive</div>
+            <div class="proj-stat-label">Rebuilt to work cleanly across desktop and mobile, hamburger icon and all.</div>
+          </div>
+          <div class="proj-stat a4">
+            <div class="proj-stat-num">Solo, self-assigned</div>
+            <div class="proj-stat-label">Taken on independently as PR Officer, from planning through launch.</div>
+          </div>
+        </div>
+        <div class="proj-callout" style="margin-top:20px">Want to know more about this project? Feel free to <a href="mailto:patelans000@utexas.edu" style="color:inherit;text-decoration:underline">reach out</a>, I would love to give an even more in-depth explanation.</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
 <!-- DISCOTYPE -->
 <div class="proj-detail-page" id="proj-discotype">
   <div class="proj-detail-nav">
@@ -2115,11 +2246,11 @@ audio{accent-color:#1A1A1A}
 
       <div class="proj-detail-section" id="dt-impact">
         <div class="proj-detail-section-label">Impact</div>
-        <div class="proj-detail-h2">What Shipped</div>
+        <div class="proj-detail-h2">Key Takeaways & Impact</div>
         <div class="proj-stats">
           <div class="proj-stat a1">
-            <div class="proj-stat-num">30 logo sketches</div>
-            <div class="proj-stat-label">Down to one, refined into the final logotype and a matching custom typeface.</div>
+            <div class="proj-stat-num">Cohesive visual identity</div>
+            <div class="proj-stat-label">A custom logotype and a matching custom typeface, both designed from scratch for the game.</div>
           </div>
           <div class="proj-stat a2">
             <div class="proj-stat-num">1 live build</div>
@@ -2375,7 +2506,7 @@ audio{accent-color:#1A1A1A}
 
       <div class="proj-detail-section" id="oracle-impact">
         <div class="proj-detail-section-label">Impact</div>
-        <div class="proj-detail-h2">What Shipped</div>
+        <div class="proj-detail-h2">Key Takeaways & Impact</div>
         <div class="proj-stats">
           <div class="proj-stat a1">
             <div class="proj-stat-num">Solo build</div>
@@ -2615,11 +2746,11 @@ audio{accent-color:#1A1A1A}
 
       <div class="proj-detail-section" id="ff-impact">
         <div class="proj-detail-section-label">Impact</div>
-        <div class="proj-detail-h2">What Shipped</div>
+        <div class="proj-detail-h2">Key Takeaways & Impact</div>
         <div class="proj-stats">
           <div class="proj-stat a1">
-            <div class="proj-stat-num">30 logo sketches</div>
-            <div class="proj-stat-label">Sketch 25 became the final logotype, and Professor Kelcey's favorite too.</div>
+            <div class="proj-stat-num">Cohesive visual identity</div>
+            <div class="proj-stat-label">A custom logotype and a matching custom typeface, both designed from scratch for the game.</div>
           </div>
           <div class="proj-stat a2">
             <div class="proj-stat-num">Cohesive visual identity</div>
@@ -2841,7 +2972,7 @@ audio{accent-color:#1A1A1A}
 
       <div class="proj-detail-section" id="se-impact">
         <div class="proj-detail-section-label">Impact</div>
-        <div class="proj-detail-h2">What Shipped</div>
+        <div class="proj-detail-h2">Key Takeaways & Impact</div>
         <div class="proj-stats">
           <div class="proj-stat a1">
             <div class="proj-stat-num">Real dataset</div>
@@ -3037,7 +3168,7 @@ audio{accent-color:#1A1A1A}
 
       <div class="proj-detail-section" id="ss-impact">
         <div class="proj-detail-section-label">Impact</div>
-        <div class="proj-detail-h2">What Shipped</div>
+        <div class="proj-detail-h2">Key Takeaways & Impact</div>
         <div class="proj-stats">
           <div class="proj-stat a1">
             <div class="proj-stat-num">21 hand landmarks</div>
@@ -3594,7 +3725,7 @@ audio{accent-color:#1A1A1A}
       <!-- IMPACT -->
       <div class="proj-detail-section" id="hn-impact">
         <div class="proj-detail-section-label">Impact</div>
-        <div class="proj-detail-h2">What Shipped</div>
+        <div class="proj-detail-h2">Key Takeaways & Impact</div>
         <div class="proj-stats">
           <div class="proj-stat a1">
             <div class="proj-stat-num">4-person team</div>
@@ -3846,7 +3977,7 @@ audio{accent-color:#1A1A1A}
       <!-- THE FULL CAMPAIGN -->
       <div class="proj-detail-section" id="lhr-wall">
         <div class="proj-detail-section-label">The Full Campaign</div>
-        <div class="proj-detail-h2">40+ Graphics, One Account</div>
+        <div class="proj-detail-h2">40+ Graphics for One Account</div>
         <p class="proj-detail-p">Alongside the featured carousels, the rest of the campaign ran on the same system: deadline countdowns, info session reminders, application windows, decision releases. Every one of these ran as an animated story post on the real account, same as the motion samples above; what's shown below is the static source file for each. The full wall below (click any story to page through it).</p>
         <div class="proj-photo-gallery ig-wall">
           <div class="smt-lb-thumb" onclick="openLHRGallery('wall',0)"><img loading="lazy" src="media/LHR Recruitment/Longhorn Racing Recruitment 2026 Post and Story Compilation/Gone to Engineering.png" alt="Gone To Engineering story post"></div>
@@ -3905,7 +4036,7 @@ audio{accent-color:#1A1A1A}
       <!-- REFLECTION -->
       <div class="proj-detail-section" id="lhr-reflection">
         <div class="proj-detail-section-label">Reflection</div>
-        <div class="proj-detail-h2">Designing for Attention, Not Just Aesthetics</div>
+        <div class="proj-detail-h2">Designing for Both Attention and Aesthetics</div>
         <p class="proj-detail-p">Honestly, this is the biggest thing I've ever taken on as a designer, and I'm really proud of it. Téa isn't a client, she's an officer on the team just like me, so this whole campaign was less about following a brief and more about two people who care about the same org trying to figure out, together, how to get people excited about it.</p>
         <p class="proj-detail-p">Knowing just how much was coming, and how far ahead the campus flyers had already gotten me on the system, had me building things months in advance, which honestly ended up being one of my favorite parts of the whole process.</p>
         <p class="proj-detail-p">Keeping that same system feeling fresh across 40+ graphics, while still hitting real info sessions and real deadlines in real time, taught me more about pacing myself than any class project ever has.</p>
@@ -5030,7 +5161,7 @@ audio{accent-color:#1A1A1A}
       <!-- Impact -->
       <div class="proj-detail-section" id="eco-impact">
         <div class="proj-detail-section-label">Impact</div>
-        <div class="proj-detail-h2">What Shipped</div>
+        <div class="proj-detail-h2">Key Takeaways & Impact</div>
         <div class="proj-stats">
           <div class="proj-stat a1">
             <div class="proj-stat-num">40 concept sketches</div>
@@ -5448,21 +5579,24 @@ audio{accent-color:#1A1A1A}
         <div class="proj-detail-section-label">Title Blocks</div>
         <div class="proj-detail-h2">Creating the Title Block Posters</div>
         <p class="proj-detail-p">I created all of my title blocks for the critique presentation. For the tiffin title block, Professor Catterall and I had difficulty finding a suitable reference, so I ended up drawing it myself, using my own tiffin as the reference and measuring each part to create the final technical drawings.</p>
-        <div style="overflow:hidden;border-radius:8px;border:1px solid var(--border);margin-bottom:14px">
-          <img loading="lazy" src="media/Smrutea/Title Block 1 - Tiffin Decals.png" style="width:100%;display:block" alt="Title Block,Tiffin Decals">
+        <div class="proj-img-grid proj-img-grid-3" style="margin-top:16px">
+          <div class="smt-lb-thumb" onclick="openLightbox('media/Smrutea/Title Block 1 - Tiffin Decals.png')" style="border-radius:8px;border:1px solid var(--border);overflow:hidden">
+            <img loading="lazy" src="media/Smrutea/Title Block 1 - Tiffin Decals.png" style="width:100%;display:block" alt="Title Block, Tiffin Decals">
+          </div>
+          <div class="smt-lb-thumb" onclick="openLightbox('media/Smrutea/Title Block 2 - Tiffin Inserts.png')" style="border-radius:8px;border:1px solid var(--border);overflow:hidden">
+            <img loading="lazy" src="media/Smrutea/Title Block 2 - Tiffin Inserts.png" style="width:100%;display:block" alt="Title Block, Tiffin Inserts">
+          </div>
+          <div class="smt-lb-thumb" onclick="openLightbox('media/Smrutea/Title Block 3 - Tiffin Vinyl Wrap.png')" style="border-radius:8px;border:1px solid var(--border);overflow:hidden">
+            <img loading="lazy" src="media/Smrutea/Title Block 3 - Tiffin Vinyl Wrap.png" style="width:100%;display:block" alt="Title Block, Tiffin Vinyl Wrap">
+          </div>
+          <div class="smt-lb-thumb" onclick="openLightbox('media/Smrutea/Title Block 4- Metal Tiffin.png')" style="border-radius:8px;border:1px solid var(--border);overflow:hidden">
+            <img loading="lazy" src="media/Smrutea/Title Block 4- Metal Tiffin.png" style="width:100%;display:block" alt="Title Block, Metal Tiffin">
+          </div>
+          <div class="smt-lb-thumb" onclick="openLightbox('media/Smrutea/Title Block 5 - Tea and Spice Pouches.png')" style="border-radius:8px;border:1px solid var(--border);overflow:hidden">
+            <img loading="lazy" src="media/Smrutea/Title Block 5 - Tea and Spice Pouches.png" style="width:100%;display:block" alt="Title Block, Tea and Spice Pouches">
+          </div>
         </div>
-        <div style="overflow:hidden;border-radius:8px;border:1px solid var(--border);margin-bottom:14px">
-          <img loading="lazy" src="media/Smrutea/Title Block 2 - Tiffin Inserts.png" style="width:100%;display:block" alt="Title Block,Tiffin Inserts">
-        </div>
-        <div style="overflow:hidden;border-radius:8px;border:1px solid var(--border);margin-bottom:14px">
-          <img loading="lazy" src="media/Smrutea/Title Block 3 - Tiffin Vinyl Wrap.png" style="width:100%;display:block" alt="Title Block,Tiffin Vinyl Wrap">
-        </div>
-        <div style="overflow:hidden;border-radius:8px;border:1px solid var(--border);margin-bottom:14px">
-          <img loading="lazy" src="media/Smrutea/Title Block 4- Metal Tiffin.png" style="width:100%;display:block" alt="Title Block,Metal Tiffin">
-        </div>
-        <div style="overflow:hidden;border-radius:8px;border:1px solid var(--border);margin-bottom:14px">
-          <img loading="lazy" src="media/Smrutea/Title Block 5 - Tea and Spice Pouches.png" style="width:100%;display:block" alt="Title Block,Tea and Spice Pouches">
-        </div>
+        <p class="proj-img-caption">Click any title block to view it full size.</p>
       </div>
 
       <!-- Critique -->
@@ -5484,7 +5618,7 @@ audio{accent-color:#1A1A1A}
       <!-- Impact -->
       <div class="proj-detail-section" id="smt-impact">
         <div class="proj-detail-section-label">Impact</div>
-        <div class="proj-detail-h2">What Shipped</div>
+        <div class="proj-detail-h2">Key Takeaways & Impact</div>
         <div class="proj-stats">
           <div class="proj-stat a1">
             <div class="proj-stat-num">5 title blocks</div>
@@ -5865,7 +5999,7 @@ audio{accent-color:#1A1A1A}
       <!-- Impact -->
       <div class="proj-detail-section" id="flip-impact">
         <div class="proj-detail-section-label">Impact</div>
-        <div class="proj-detail-h2">What Shipped</div>
+        <div class="proj-detail-h2">Key Takeaways & Impact</div>
         <div class="proj-stats">
           <div class="proj-stat a1">
             <div class="proj-stat-num">4 iterations</div>
@@ -7011,7 +7145,8 @@ var projMeta = {
   'logos-branding':  {title:'Logos & Branding',          cat:'graphic', catLabel:'2D & Graphic Design', sub:'Brand Identity',   accent:'accent-graphic'},
   'merchandise':     {title:'Merchandise',               cat:'graphic', catLabel:'2D & Graphic Design', sub:'Merch Design',     accent:'accent-graphic'},
   'posters':         {title:'Posters',                   cat:'graphic', catLabel:'2D & Graphic Design', sub:'Poster Design',    accent:'accent-graphic'},
-  // -- UX (all 6 from page-ux grid) --
+  // -- UX (all 7 from page-ux grid) --
+  'lhr-website-redesign':{title:'Longhorn Racing Website Re-Design', cat:'ux', catLabel:'UX/UI & Game Design', sub:'Web Redesign', accent:'accent-ux'},
   'discotype':           {title:'DiscoType!',             cat:'ux', catLabel:'UX/UI & Game Design', sub:'Interaction Design', accent:'accent-ux'},
   'oracle':              {title:'Oracle',                  cat:'ux', catLabel:'UX/UI & Game Design', sub:'Interactive Web',    accent:'accent-ux'},
   'featherform':         {title:'Featherform',             cat:'ux', catLabel:'UX/UI & Game Design', sub:'Game UI Design',     accent:'accent-ux'},
