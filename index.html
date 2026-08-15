@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -80,6 +80,10 @@ nav{padding:22px 48px;display:flex;align-items:center;justify-content:space-betw
 .home-proj-block:hover .home-proj-thumb-inner{transform:scale(1.03)}
 .home-proj-thumb{aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
 .home-proj-thumb-inner{width:100%;height:100%;display:flex;align-items:center;justify-content:center;transition:transform 0.45s ease}
+.home-cycle-media{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(1) contrast(1.2);opacity:0;transition:opacity 1.1s ease}
+.home-cycle-media.active{opacity:1}
+.home-proj-overlay{position:absolute;inset:0;mix-blend-mode:multiply;opacity:0;pointer-events:none;transition:opacity 0.35s ease;z-index:2}
+.home-proj-block:hover .home-proj-overlay{opacity:0.85}
 .home-proj-info{padding:18px 22px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border)}
 .home-proj-left{}
 .home-proj-title{font-size:14px;font-weight:600}
@@ -506,6 +510,68 @@ audio{accent-color:#1A1A1A}
 #proj-silent-spellcraft .proj-detail-sidebar::-webkit-scrollbar{display:none}
 #proj-silent-spellcraft .proj-detail-sidebar{-ms-overflow-style:none;scrollbar-width:none}
 
+/* -- LHR RECRUITMENT: INSTAGRAM MOCKUPS -- */
+#proj-lhr-recruitment .proj-detail-content{max-width:960px;margin:0 auto}
+#proj-lhr-recruitment .proj-callout{background:var(--yellow)}
+
+.ig-avatar{border-radius:50%;background:#fff;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden}
+.ig-avatar img{width:100%;height:100%;object-fit:contain}
+
+.ig-post{max-width:300px;margin:0 auto;background:#fff;border:1px solid var(--border);border-radius:12px;overflow:hidden;box-shadow:0 24px 48px -28px rgba(0,0,0,0.35)}
+.ig-post-head{display:flex;align-items:center;gap:9px;padding:10px 12px;text-decoration:none;color:inherit}
+.ig-post-head .ig-avatar{width:30px;height:30px;padding:5px}
+.ig-post-uname{font-size:12.5px;font-weight:600;color:#1A1A1A;line-height:1.3}
+.ig-post-uname span{display:block;font-size:10px;font-weight:400;color:var(--muted)}
+.ig-post-dots{margin-left:auto;color:#bbb;font-weight:700;letter-spacing:1px;font-size:14px}
+.ig-post-media{position:relative;width:100%;aspect-ratio:4/5;overflow:hidden;background:#0B2F52}
+.ig-post-media img{width:100%;height:100%;object-fit:cover;display:block;cursor:zoom-in}
+.ig-post-counter{position:absolute;top:10px;right:10px;background:rgba(0,0,0,0.55);color:#fff;font-size:10.5px;font-weight:600;padding:3px 9px;border-radius:20px;letter-spacing:0.2px;pointer-events:none;z-index:2}
+.ig-swipe-hint{position:absolute;bottom:12px;right:12px;background:rgba(0,0,0,0.55);color:#fff;font-size:10.5px;font-weight:600;padding:4px 10px;border-radius:20px;letter-spacing:0.2px;display:flex;align-items:center;gap:2px;pointer-events:none;z-index:2;transition:opacity 0.3s ease}
+.ig-swipe-hint svg{width:12px;height:12px;stroke:#fff;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.ig-post-media.scrolled .ig-swipe-hint{opacity:0}
+.ig-post-icons{display:flex;align-items:center;gap:13px;padding:10px 12px}
+.ig-post-icons svg{width:20px;height:20px;stroke:#1A1A1A;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.ig-post-icons svg.ig-heart{stroke:#FF5A5F;fill:#FF5A5F}
+
+.ig-carousel-track{display:flex;width:100%;height:100%;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-ms-overflow-style:none;-webkit-overflow-scrolling:touch}
+.ig-carousel-track::-webkit-scrollbar{display:none}
+.ig-carousel-track img{flex:0 0 100%;scroll-snap-align:start}
+
+.ig-story{max-width:210px;margin:0 auto;aspect-ratio:9/16;border-radius:18px;overflow:hidden;position:relative;background:#0B2F52;cursor:zoom-in;box-shadow:0 24px 48px -28px rgba(0,0,0,0.4)}
+.ig-story.no-zoom{cursor:default}
+.ig-story img,.ig-story video{width:100%;height:100%;object-fit:cover;display:block}
+.ig-story-bars{position:absolute;top:8px;left:8px;right:8px;display:flex;gap:4px;z-index:2}
+.ig-story-bars span{flex:1;height:2.5px;border-radius:2px;background:rgba(255,255,255,0.85)}
+.ig-story-head{position:absolute;top:16px;left:9px;right:9px;display:flex;align-items:center;gap:6px;z-index:2;text-decoration:none}
+.ig-story-head .ig-avatar{width:19px;height:19px;padding:3px}
+.ig-story-head span{font-size:9.5px;font-weight:600;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,0.5)}
+
+.ig-grid{display:grid;gap:22px;margin:20px 0}
+.ig-grid-2{grid-template-columns:1fr 1fr}
+.ig-grid-3{grid-template-columns:repeat(3,1fr)}
+
+.ig-wall .smt-lb-thumb{height:230px;width:129px;border-radius:0;flex:0 0 129px;background:#0B2F52}
+.ig-wall .smt-lb-thumb img{width:100%;height:100%;object-fit:cover}
+
+.lhr-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:20px 0}
+.lhr-stat{border-radius:10px;padding:20px 18px}
+.lhr-stat-num{font-family:'Outfit',sans-serif;font-size:26px;font-weight:600;color:#1A1A1A;margin-bottom:6px;line-height:1.1}
+.lhr-stat-label{font-size:12.5px;color:#333;line-height:1.55}
+.lhr-stat.a1{background:var(--yellow)}
+.lhr-stat.a2{background:var(--blue)}
+.lhr-stat.a3{background:var(--pink)}
+.lhr-stat.a4{background:var(--green)}
+.lhr-stat.a5{background:var(--gray);border:1px solid var(--border)}
+.lhr-stat.a6{background:var(--yellow)}
+
+@media(max-width:1024px){
+  .ig-grid-2,.ig-grid-3{grid-template-columns:1fr}
+  .lhr-stats{grid-template-columns:1fr 1fr}
+}
+@media(max-width:480px){
+  .lhr-stats{grid-template-columns:1fr}
+}
+
 /* -- RESPONSIVE (mobile + tablet: single column, centered) -- */
 /* Placed last in the stylesheet on purpose: with equal-specificity selectors, later source order wins the
    cascade regardless of @media wrapping, so this must stay after every unconditional/per-project rule above. */
@@ -794,28 +860,50 @@ audio{accent-color:#1A1A1A}
     <div class="home-proj-block" onclick="showPage('ux')">
       <div class="home-proj-thumb" style="overflow:hidden">
         <div class="home-proj-thumb-inner" style="position:relative;width:100%;height:100%;background:#FFC8D8">
-          <img src="media/DiscoType!/Title card png.png" style="width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(1) contrast(1.2)" alt="UX/UI & Game Design">
-          <div style="position:absolute;inset:0;background:#FFC8D8;mix-blend-mode:multiply;opacity:0.85;pointer-events:none"></div>
+          <img class="home-cycle-media active" src="media/DiscoType!/Title card png.png" alt="UX/UI & Game Design">
+          <img class="home-cycle-media" src="media/Oracle/Homepage Title Graphic.png" alt="">
+          <img class="home-cycle-media" src="media/Featherform/Featherform Title Screen Hero.png" alt="">
+          <img class="home-cycle-media" src="media/Stellar Exploration - A Scale of Our Universe/Title Screen.png" alt="" style="transform:scale(1.15)">
+          <img class="home-cycle-media" src="media/Silent SpellCraft/Title Card.png" alt="">
+          <div class="home-proj-overlay" style="background:#FFC8D8"></div>
         </div>
       </div>
       <div class="home-proj-info"><div class="home-proj-left"><div class="home-proj-title">UX/UI & Game Design</div><div class="home-proj-sub">A collection of my game design and UX/UI work, from a disco typing game to a magical personality quiz.</div></div><span class="home-proj-arrow">›</span></div>
     </div>
     <div class="home-proj-block" onclick="showPage('3d')" onmouseenter="preloadPage('3d')">
-      <div class="home-proj-thumb">
+      <div class="home-proj-thumb" style="overflow:hidden">
         <div class="home-proj-thumb-inner" style="position:relative;width:100%;height:100%;background:#B8DFFF">
-          <img src="media/The Ecoleander/Photoshoot 7.jpg" style="width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(1) contrast(1.2)" alt="3D & Product Design">
-          <div style="position:absolute;inset:0;background:#B8DFFF;mix-blend-mode:multiply;opacity:0.85;pointer-events:none"></div>
+          <img class="home-cycle-media active" src="media/The Ecoleander/Photoshoot 7.jpg" alt="3D & Product Design">
+          <img class="home-cycle-media" src="media/Smrutea/Hero image 4.jpg" alt="">
+          <img class="home-cycle-media" src="media/The Flipula/Flipula Presentation Poster.png" alt="">
+          <img class="home-cycle-media" src="media/Adobe Cabin/Final Poster.jpg" alt="">
+          <div class="home-proj-overlay" style="background:#B8DFFF"></div>
         </div>
       </div>
       <div class="home-proj-info"><div class="home-proj-left"><div class="home-proj-title">3D & Product Design</div><div class="home-proj-sub">A collection of industrial design projects, from product concepts to prototypes.</div></div><span class="home-proj-arrow">›</span></div>
     </div>
     <div class="home-proj-block" onclick="showPage('motion')">
-      <div class="home-proj-thumb">
+      <div class="home-proj-thumb" style="overflow:hidden">
         <div class="home-proj-thumb-inner" style="position:relative;width:100%;height:100%;background:#C8EDDA">
-          <video id="home-motion-vid" autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(1) contrast(1.2)">
-            <source src="media/videos/LHR%20Solar%20Motion%20Graphics.mp4" type="video/mp4" onerror="this.parentElement.style.display='none'">
+          <video id="home-motion-vid" class="home-cycle-media active" autoplay muted loop playsinline preload="auto">
+            <source src="media/videos/LHR%20Solar%20Motion%20Graphics.mp4" type="video/mp4" onerror="this.parentElement.parentElement.style.display='none'">
           </video>
-          <div style="position:absolute;inset:0;background:#C8EDDA;mix-blend-mode:multiply;opacity:0.85;pointer-events:none"></div>
+          <video class="home-cycle-media" muted loop playsinline preload="none">
+            <source src="media/videos/Unveiling LHR Video.mp4" type="video/mp4">
+          </video>
+          <video class="home-cycle-media" muted loop playsinline preload="none">
+            <source src="media/videos/lhr%20solar%20video%20done%20final.mp4" type="video/mp4">
+          </video>
+          <video class="home-cycle-media" muted loop playsinline preload="none">
+            <source src="media/videos/Gojo Satoru.mp4" type="video/mp4">
+          </video>
+          <video class="home-cycle-media" muted loop playsinline preload="none">
+            <source src="media/videos/Carmen Sandiego.mp4" type="video/mp4">
+          </video>
+          <video class="home-cycle-media" muted loop playsinline preload="none">
+            <source src="media/videos/Vergil Sparda.mp4" type="video/mp4">
+          </video>
+          <div class="home-proj-overlay" style="background:#C8EDDA"></div>
         </div>
       </div>
       <div class="home-proj-info"><div class="home-proj-left"><div class="home-proj-title">Motion Graphics & Videography</div><div class="home-proj-sub">A variety of videos I have produced from hype videos to fan edits.</div></div><span class="home-proj-arrow">›</span></div>
@@ -823,8 +911,11 @@ audio{accent-color:#1A1A1A}
     <div class="home-proj-block" onclick="showPage('graphic')">
       <div class="home-proj-thumb" style="overflow:hidden">
         <div class="home-proj-thumb-inner" style="position:relative;width:100%;height:100%;background:#FFF0A8">
-          <img src="media/Typography in Persona 5/Hero, Title Card.png" style="width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(1) contrast(1.5) brightness(0.75)">
-          <div style="position:absolute;inset:0;background:#FFF0A8;mix-blend-mode:multiply;opacity:0.85;pointer-events:none"></div>
+          <img class="home-cycle-media active" src="media/LHR Recruitment/Card Cover.png" alt="2D & Graphic Design">
+          <img class="home-cycle-media" src="media/High Noon Livery/car pics (8).jpg" alt="">
+          <img class="home-cycle-media" src="media/Typography in Persona 5/Hero, Title Card.png" alt="">
+          <img class="home-cycle-media" src="media/Hajra Waheed Asylum in the Sea/kevin spreads POST CRITIQYE.png" alt="">
+          <div class="home-proj-overlay" style="background:#FFF0A8"></div>
         </div>
       </div>
       <div class="home-proj-info"><div class="home-proj-left"><div class="home-proj-title">2D & Graphic Design</div><div class="home-proj-sub">A variety of my graphic design work, from layout design to livery design.</div></div><span class="home-proj-arrow">›</span></div>
@@ -894,14 +985,14 @@ audio{accent-color:#1A1A1A}
     <div><span class="disc-back" onclick="showPage('home')">← All work</span></div>
   </div>
   <div class="proj-grid proj-grid-3">
-    <div class="proj" onclick="showProject('persona5-type')">
+    <div class="proj" onclick="showProject('lhr-recruitment')">
       <div class="proj-thumb" style="overflow:hidden">
         <div class="proj-thumb-inner" style="width:100%;height:100%">
-          <img loading="lazy" src="media/Typography in Persona 5/Hero, Title Card.png" style="width:100%;height:100%;object-fit:cover;display:block" alt="Typography in Persona 5">
+          <img loading="lazy" src="media/LHR Recruitment/Card Cover.png" style="width:100%;height:100%;object-fit:cover;display:block" alt="Longhorn Racing Recruitment">
         </div>
-        <div class="proj-hover"><div class="proj-hover-text">Typography analysis, zine design, book production, game design aesthetics</div></div>
+        <div class="proj-hover"><div class="proj-hover-text">Instagram campaign design, brand system, 40+ social graphics</div></div>
       </div>
-      <div class="proj-foot"><span class="proj-name">Typography in Persona 5</span><span class="proj-meta">Fall 2025</span></div>
+      <div class="proj-foot"><span class="proj-name">Longhorn Racing Recruitment</span><span class="proj-meta">Summer–Fall 2026</span></div>
     </div>
     <div class="proj" onclick="showProject('high-noon-livery')">
       <div class="proj-thumb" style="overflow:hidden">
@@ -911,6 +1002,15 @@ audio{accent-color:#1A1A1A}
         <div class="proj-hover"><div class="proj-hover-text">Vehicle livery, solar racing, heat map gradient, collaborative design</div></div>
       </div>
       <div class="proj-foot"><span class="proj-name">High Noon Livery</span><span class="proj-meta">Spring 2026</span></div>
+    </div>
+    <div class="proj" onclick="showProject('persona5-type')">
+      <div class="proj-thumb" style="overflow:hidden">
+        <div class="proj-thumb-inner" style="width:100%;height:100%">
+          <img loading="lazy" src="media/Typography in Persona 5/Hero, Title Card.png" style="width:100%;height:100%;object-fit:cover;display:block" alt="Typography in Persona 5">
+        </div>
+        <div class="proj-hover"><div class="proj-hover-text">Typography analysis, zine design, book production, game design aesthetics</div></div>
+      </div>
+      <div class="proj-foot"><span class="proj-name">Typography in Persona 5</span><span class="proj-meta">Fall 2025</span></div>
     </div>
     <div class="proj" onclick="showProject('hajra-waheed')">
       <div class="proj-thumb" style="overflow:hidden">
@@ -3385,6 +3485,298 @@ audio{accent-color:#1A1A1A}
   </div>
 </div>
 
+<!-- LONGHORN RACING RECRUITMENT -->
+<div class="proj-detail-page" id="proj-lhr-recruitment">
+  <div class="proj-detail-nav">
+    <div class="proj-detail-breadcrumb">
+      <span onclick="showPage('graphic')">2D & Graphic Design</span>
+      <span class="sep">&gt;</span>
+      <span style="color:#1A1A1A;font-weight:500">Longhorn Racing Recruitment</span>
+    </div>
+    <div><button class="proj-nav-btn" onclick="showPage('graphic')">← Back to category</button></div>
+  </div>
+
+  <div class="proj-detail-hero">
+    <div class="proj-detail-kicker">2D & Graphic Design | Social Media Campaign</div>
+    <div class="proj-detail-title">Longhorn Racing Recruitment</div>
+    <p class="proj-detail-tagline">40+ original graphics, every story post animated, built for Longhorn Racing's 2026–27 recruitment campaign, designed to make a competitive, highly technical student team feel worth stopping to look at.</p>
+    <div class="proj-detail-meta-row">
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">Summer – Fall 2026</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">Canva, Adobe Illustrator, Photoshop</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Output</div><div class="proj-detail-meta-val">40+ graphics (all story posts animated)</div></div>
+    </div>
+  </div>
+
+  <div style="position:relative;overflow:hidden;aspect-ratio:16/7;border-bottom:1px solid var(--border)">
+    <img loading="lazy" src="media/LHR Recruitment/Card Cover.png" style="width:100%;height:100%;object-fit:cover;display:block" alt="Longhorn Racing Recruitment campaign cover">
+    <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.65) 0%,rgba(0,0,0,0.15) 45%,transparent 100%)"></div>
+    <div style="position:absolute;bottom:36px;left:48px">
+      <div style="font-family:'Outfit',sans-serif;font-size:54px;font-weight:600;color:#fff;line-height:1.05;letter-spacing:0.3px">Longhorn Racing Recruitment</div>
+      <div style="font-family:'Outfit',sans-serif;font-size:24px;font-weight:500;color:rgba(255,255,255,0.85);margin-top:6px;letter-spacing:0.2px">2026–27 Recruitment Campaign</div>
+      <div style="font-size:13px;color:rgba(255,255,255,0.6);margin-top:6px;font-weight:400;letter-spacing:0.3px">Social Design | Summer–Fall 2026</div>
+    </div>
+  </div>
+
+  <div class="proj-detail-body">
+    <div class="proj-detail-sidebar">
+      <div class="proj-detail-sidebar-section">
+        <div class="proj-detail-sidebar-label">Contents</div>
+        <div class="proj-toc-list">
+          <a class="proj-toc-link" onclick="document.getElementById('lhr-overview').scrollIntoView({behavior:'smooth'})">Overview</a>
+          <a class="proj-toc-link" onclick="document.getElementById('lhr-brief').scrollIntoView({behavior:'smooth'})">The Brief</a>
+          <a class="proj-toc-link" onclick="document.getElementById('lhr-map').scrollIntoView({behavior:'smooth'})">Internship Map</a>
+          <a class="proj-toc-link" onclick="document.getElementById('lhr-system').scrollIntoView({behavior:'smooth'})">Visual System</a>
+          <a class="proj-toc-link" onclick="document.getElementById('lhr-leads').scrollIntoView({behavior:'smooth'})">Meet the Leads</a>
+          <a class="proj-toc-link" onclick="document.getElementById('lhr-motion').scrollIntoView({behavior:'smooth'})">Motion</a>
+          <a class="proj-toc-link" onclick="document.getElementById('lhr-wall').scrollIntoView({behavior:'smooth'})">The Full Campaign</a>
+          <a class="proj-toc-link" onclick="document.getElementById('lhr-results').scrollIntoView({behavior:'smooth'})">Results</a>
+          <a class="proj-toc-link" onclick="document.getElementById('lhr-reflection').scrollIntoView({behavior:'smooth'})">Reflection</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="proj-detail-content">
+
+      <!-- OVERVIEW -->
+      <div class="proj-detail-section" id="lhr-overview">
+        <div class="proj-detail-section-label">Overview</div>
+        <div class="proj-detail-h2">Recruitment as a Design Challenge</div>
+        <p class="proj-detail-p">Longhorn Racing is one of the most competitive student orgs on campus, pulling in thousands of applicants for a limited number of spots every cycle. The challenge was never getting people to apply. It was cutting through a recruitment season where dozens of other orgs are fighting for the same students' attention, and keeping thousands of applicants informed and engaged through a multi-week, multi-phase process without losing momentum.</p>
+        <p class="proj-detail-p">Téa Fazio, our Outreach Officer, came to me with the campaign's goals and a running list of what needed to be communicated to prospective members. For a lot of people, these graphics are their first real exposure to Longhorn Racing, often the thing that turns a scroll into actually wanting a spot on the team, so my job was to take that list and turn it into something worth stopping for.</p>
+        <div class="proj-callout">Over the course of the campaign I designed 40+ individual graphics, every story post animated in the same style, covering everything from single-day countdown story posts to full multi-slide carousels, all inside one consistent visual system.</div>
+      </div>
+
+      <!-- THE BRIEF -->
+      <div class="proj-detail-section" id="lhr-brief">
+        <div class="proj-detail-section-label">The Brief</div>
+        <div class="proj-detail-h2">Working From Communication Goals</div>
+        <p class="proj-detail-p">Téa's requests came in as goals and content, not finished layouts: announce info sessions, build hype before applications opened, introduce the new leads, show why joining pays off. Translating that into 40+ distinct, cohesive pieces meant making the actual creative calls myself: what motif carries across every post, what a "Longhorn Racing story" looks like at a glance, and how to keep 40+ posts from feeling repetitive while still being instantly recognizable as the same account.</p>
+        <div class="proj-kp">
+          <div class="proj-kp-label">What the campaign had to communicate</div>
+          <ul>
+            <li>Application windows, deadlines, and countdowns</li>
+            <li>Info sessions and open garage hours</li>
+            <li>Interview and decision releases</li>
+            <li>Lead introductions</li>
+            <li>Proof that joining actually pays off, career-wise</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- INTERNSHIP MAP -->
+      <div class="proj-detail-section" id="lhr-map">
+        <div class="proj-detail-section-label">Featured Carousel</div>
+        <div class="proj-detail-h2">The Internship Map</div>
+        <p class="proj-detail-p">This was the first carousel posted in the whole campaign, and it generated more hype than anything else we ran. It was also intentionally the edgiest thing we posted: a soft launch meant to build buzz and get people talking before the campaign's actual recruitment push began, so it could afford to push the visual style further than a straightforward info post could. Rather than just telling prospective members that joining LHR pays off, this 6-slide carousel showed it, mapping where current and former members have interned, from Austin-based companies like Tesla and AMD to Aston Martin and Mercedes-Benz overseas. It's proof instead of a pitch, and it answers the most concrete recruiting question there is: what do I actually get out of this?</p>
+        <div class="proj-callout"><strong>Fun fact:</strong> the pins on this map weren't placed by hand. I actually used JSON files to plot them, a genuinely random coding-meets-design crossover that took a lot of research and a lot of trial and error calibrating the exact coordinate points.</div>
+        <div class="ig-post" style="margin-top:20px">
+          <a class="ig-post-head" href="https://www.instagram.com/longhornracing/" target="_blank" rel="noopener">
+            <div class="ig-avatar"><img src="media/Dragon Wars/LHR_Logo.png" alt=""></div>
+            <div class="ig-post-uname">@longhornracing<span>Austin, Texas</span></div>
+            <div class="ig-post-dots">···</div>
+          </a>
+          <div class="ig-post-media">
+            <div class="ig-carousel-track" data-set="map">
+              <img loading="lazy" src="media/LHR Recruitment/Internship map/1.png" alt="Internship map, slide 1" onclick="openLHRGallery('map',0)">
+              <img loading="lazy" src="media/LHR Recruitment/Internship map/2.png" alt="Internship map, slide 2" onclick="openLHRGallery('map',1)">
+              <img loading="lazy" src="media/LHR Recruitment/Internship map/3.png" alt="Internship map, slide 3" onclick="openLHRGallery('map',2)">
+              <img loading="lazy" src="media/LHR Recruitment/Internship map/4.png" alt="Internship map, slide 4" onclick="openLHRGallery('map',3)">
+              <img loading="lazy" src="media/LHR Recruitment/Internship map/5.png" alt="Internship map, slide 5" onclick="openLHRGallery('map',4)">
+              <img loading="lazy" src="media/LHR Recruitment/Internship map/6.png" alt="Internship map, slide 6" onclick="openLHRGallery('map',5)">
+            </div>
+            <div class="ig-post-counter">1 / 6</div>
+            <div class="ig-swipe-hint">Swipe <svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></div>
+          </div>
+          <div class="ig-post-icons">
+            <svg class="ig-heart" viewBox="0 0 24 24"><path d="M12 20.3s-7.2-4.4-9.6-8.9C.8 7.9 2.3 4.3 6 4.3c2.1 0 3.6 1.2 4.3 2.5.7-1.3 2.2-2.5 4.3-2.5 3.7 0 5.2 3.6 3.6 7.1-2.4 4.5-9.6 8.9-9.6 8.9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-8.9 8.4 9 9 0 0 1-3.9-.9L3 20l1.1-4.5A8.4 8.4 0 0 1 21 11.5z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4z"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- VISUAL SYSTEM -->
+      <div class="proj-detail-section" id="lhr-system">
+        <div class="proj-detail-section-label">Visual System</div>
+        <div class="proj-detail-h2">Creating a System for 40+ Graphics</div>
+        <p class="proj-detail-p">Rather than design each post from scratch, I built a small system and let it scale: a navy blueprint background pulled from the team's own engineering drawings, diagonal orange-and-blue ribbon banners for headlines, bold condensed type, and the LHR UT Austin lockup anchoring every piece. It's the same decision repeated with intention. Once someone recognized the ribbon and the blueprint texture, they knew a post was Longhorn Racing recruitment before reading a single word.</p>
+        <p class="proj-detail-p">The system actually started on paper, before any of it touched Instagram. I designed a run of print flyers, posted all over campus, months ahead of the digital campaign, and that's really where I got to experiment and lock in the aesthetic everything else was built on.</p>
+        <div class="proj-img-grid proj-img-grid-2" style="margin-top:16px">
+          <div class="smt-lb-thumb" onclick="openLightbox('media/LHR Recruitment/LHR GENERAL FLYER.png')"><img loading="lazy" src="media/LHR Recruitment/LHR GENERAL FLYER.png" style="width:100%;display:block" alt="LHR general recruitment flyer, posted around campus"></div>
+          <div class="smt-lb-thumb" onclick="openLightbox('media/LHR Recruitment/OPERATIONS Flyer.png')"><img loading="lazy" src="media/LHR Recruitment/OPERATIONS Flyer.png" style="width:100%;display:block" alt="LHR Operations recruitment flyer, posted around campus"></div>
+        </div>
+        <p class="proj-img-caption">The two campus flyers that started it all, designed by me and posted all over UT Austin.</p>
+        <p class="proj-detail-p">This 7-slide carousel is the clearest example of the system at work: it opens on the campaign's call-to-action cover, then carries the entire recruitment timeline, from Phase 1 through official workday placement, and closes on the two recap slides, Important Dates and Important Events, all inside a single post.</p>
+        <p class="proj-detail-p">Every face across the campaign is a real member of the team, not stock photography, and I personally shot most of the headshots and group photos used throughout.</p>
+        <div class="ig-post" style="margin-top:20px">
+          <a class="ig-post-head" href="https://www.instagram.com/longhornracing/" target="_blank" rel="noopener">
+            <div class="ig-avatar"><img src="media/Dragon Wars/LHR_Logo.png" alt=""></div>
+            <div class="ig-post-uname">@longhornracing<span>Austin, Texas</span></div>
+            <div class="ig-post-dots">···</div>
+          </a>
+          <div class="ig-post-media">
+            <div class="ig-carousel-track" data-set="timeline">
+              <img loading="lazy" src="media/LHR Recruitment/Longhorn Racing Recruitment 2026 Post and Story Compilation/Recruitment Overview Cover Page.png" alt="Want to join Longhorn Racing? campaign cover slide" onclick="openLHRGallery('timeline',0)">
+              <img loading="lazy" src="media/LHR Recruitment/Timeline Post/0.jpg" alt="Recruitment timeline, Phase 1" onclick="openLHRGallery('timeline',1)">
+              <img loading="lazy" src="media/LHR Recruitment/Timeline Post/1.jpg" alt="Recruitment timeline, Phase 2" onclick="openLHRGallery('timeline',2)">
+              <img loading="lazy" src="media/LHR Recruitment/Timeline Post/2.jpg" alt="Recruitment timeline, Phase 3" onclick="openLHRGallery('timeline',3)">
+              <img loading="lazy" src="media/LHR Recruitment/Timeline Post/3.jpg" alt="Recruitment timeline, Workday" onclick="openLHRGallery('timeline',4)">
+              <img loading="lazy" src="media/LHR Recruitment/Longhorn Racing Recruitment 2026 Post and Story Compilation/Important Dates.png" alt="Important Dates recap graphic" onclick="openLHRGallery('timeline',5)">
+              <img loading="lazy" src="media/LHR Recruitment/Longhorn Racing Recruitment 2026 Post and Story Compilation/Important Events.png" alt="Important Events recap graphic" onclick="openLHRGallery('timeline',6)">
+            </div>
+            <div class="ig-post-counter">1 / 7</div>
+            <div class="ig-swipe-hint">Swipe <svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></div>
+          </div>
+          <div class="ig-post-icons">
+            <svg class="ig-heart" viewBox="0 0 24 24"><path d="M12 20.3s-7.2-4.4-9.6-8.9C.8 7.9 2.3 4.3 6 4.3c2.1 0 3.6 1.2 4.3 2.5.7-1.3 2.2-2.5 4.3-2.5 3.7 0 5.2 3.6 3.6 7.1-2.4 4.5-9.6 8.9-9.6 8.9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-8.9 8.4 9 9 0 0 1-3.9-.9L3 20l1.1-4.5A8.4 8.4 0 0 1 21 11.5z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4z"/></svg>
+          </div>
+        </div>
+        <div class="smt-lb-thumb" onclick="openLightbox('media/LHR Recruitment/Longhorn Racing Recruitment 2026 Post and Story Compilation/Timeline (Graphic).png')" style="border-radius:10px;overflow:hidden;margin-top:20px">
+          <img loading="lazy" src="media/LHR Recruitment/Longhorn Racing Recruitment 2026 Post and Story Compilation/Timeline (Graphic).png" style="width:100%;display:block" alt="Full recruitment timeline, wide format">
+        </div>
+        <p class="proj-img-caption">The same carousel's timeline, distilled into one wide graphic.</p>
+      </div>
+
+      <!-- MEET THE LEADS -->
+      <div class="proj-detail-section" id="lhr-leads">
+        <div class="proj-detail-section-label">Featured Carousel</div>
+        <div class="proj-detail-h2">Meet the Leads</div>
+        <p class="proj-detail-p">A 16-slide carousel introducing every subteam's leadership, built as name-tag ribbon graphics stacked over each person's headshot. I designed it as a repeatable template, one header slide per subteam followed by a continuation slide for additional leads, so it could scale to however many people needed introducing without redesigning the format each time.</p>
+        <div class="ig-post" style="margin-top:20px">
+          <a class="ig-post-head" href="https://www.instagram.com/longhornracing/" target="_blank" rel="noopener">
+            <div class="ig-avatar"><img src="media/Dragon Wars/LHR_Logo.png" alt=""></div>
+            <div class="ig-post-uname">@longhornracing<span>Austin, Texas</span></div>
+            <div class="ig-post-dots">···</div>
+          </a>
+          <div class="ig-post-media">
+            <div class="ig-carousel-track" data-set="leads">
+              <img loading="lazy" src="media/LHR Recruitment/MEET THE LEADS Post/1.png" alt="Meet the Leads, slide 1" onclick="openLHRGallery('leads',0)">
+              <img loading="lazy" src="media/LHR Recruitment/MEET THE LEADS Post/2.png" alt="Meet the Leads, slide 2" onclick="openLHRGallery('leads',1)">
+              <img loading="lazy" src="media/LHR Recruitment/MEET THE LEADS Post/3.png" alt="Meet the Leads, slide 3" onclick="openLHRGallery('leads',2)">
+              <img loading="lazy" src="media/LHR Recruitment/MEET THE LEADS Post/4.png" alt="Meet the Leads, slide 4" onclick="openLHRGallery('leads',3)">
+              <img loading="lazy" src="media/LHR Recruitment/MEET THE LEADS Post/5.png" alt="Meet the Leads, slide 5" onclick="openLHRGallery('leads',4)">
+              <img loading="lazy" src="media/LHR Recruitment/MEET THE LEADS Post/6.png" alt="Meet the Leads, slide 6" onclick="openLHRGallery('leads',5)">
+              <img loading="lazy" src="media/LHR Recruitment/MEET THE LEADS Post/7.png" alt="Meet the Leads, slide 7" onclick="openLHRGallery('leads',6)">
+              <img loading="lazy" src="media/LHR Recruitment/MEET THE LEADS Post/8.png" alt="Meet the Leads, slide 8" onclick="openLHRGallery('leads',7)">
+              <img loading="lazy" src="media/LHR Recruitment/MEET THE LEADS Post/9.png" alt="Meet the Leads, slide 9" onclick="openLHRGallery('leads',8)">
+              <img loading="lazy" src="media/LHR Recruitment/MEET THE LEADS Post/10.png" alt="Meet the Leads, slide 10" onclick="openLHRGallery('leads',9)">
+              <img loading="lazy" src="media/LHR Recruitment/MEET THE LEADS Post/11.png" alt="Meet the Leads, slide 11" onclick="openLHRGallery('leads',10)">
+              <img loading="lazy" src="media/LHR Recruitment/MEET THE LEADS Post/12.png" alt="Meet the Leads, slide 12" onclick="openLHRGallery('leads',11)">
+              <img loading="lazy" src="media/LHR Recruitment/MEET THE LEADS Post/13.png" alt="Meet the Leads, slide 13" onclick="openLHRGallery('leads',12)">
+              <img loading="lazy" src="media/LHR Recruitment/MEET THE LEADS Post/14.png" alt="Meet the Leads, slide 14" onclick="openLHRGallery('leads',13)">
+              <img loading="lazy" src="media/LHR Recruitment/MEET THE LEADS Post/15.png" alt="Meet the Leads, slide 15" onclick="openLHRGallery('leads',14)">
+              <img loading="lazy" src="media/LHR Recruitment/MEET THE LEADS Post/16.png" alt="Meet the Leads, slide 16" onclick="openLHRGallery('leads',15)">
+            </div>
+            <div class="ig-post-counter">1 / 16</div>
+            <div class="ig-swipe-hint">Swipe <svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></div>
+          </div>
+          <div class="ig-post-icons">
+            <svg class="ig-heart" viewBox="0 0 24 24"><path d="M12 20.3s-7.2-4.4-9.6-8.9C.8 7.9 2.3 4.3 6 4.3c2.1 0 3.6 1.2 4.3 2.5.7-1.3 2.2-2.5 4.3-2.5 3.7 0 5.2 3.6 3.6 7.1-2.4 4.5-9.6 8.9-9.6 8.9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-8.9 8.4 9 9 0 0 1-3.9-.9L3 20l1.1-4.5A8.4 8.4 0 0 1 21 11.5z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4z"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- MOTION -->
+      <div class="proj-detail-section" id="lhr-motion">
+        <div class="proj-detail-section-label">Motion</div>
+        <div class="proj-detail-h2">Animated Story Posts</div>
+        <p class="proj-detail-p">Every story post in the campaign was actually animated in the same style, motion built on top of the same navy blueprint background and ribbon banners rather than replacing it. That's a lot of exported video for a case study, so here are two representative samples rather than the full set.</p>
+        <div class="ig-grid ig-grid-2">
+          <div class="ig-story no-zoom">
+            <div class="ig-story-bars"><span></span><span></span><span></span></div>
+            <a class="ig-story-head" href="https://www.instagram.com/longhornracing/" target="_blank" rel="noopener"><div class="ig-avatar"><img src="media/Dragon Wars/LHR_Logo.png" alt=""></div><span>@longhornracing</span></a>
+            <video autoplay muted loop playsinline preload="none">
+              <source src="media/LHR Recruitment/Animation Sample 1.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="ig-story no-zoom">
+            <div class="ig-story-bars"><span></span><span></span><span></span></div>
+            <a class="ig-story-head" href="https://www.instagram.com/longhornracing/" target="_blank" rel="noopener"><div class="ig-avatar"><img src="media/Dragon Wars/LHR_Logo.png" alt=""></div><span>@longhornracing</span></a>
+            <video autoplay muted loop playsinline preload="none">
+              <source src="media/LHR Recruitment/Animations Sample 2.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+
+      <!-- THE FULL CAMPAIGN -->
+      <div class="proj-detail-section" id="lhr-wall">
+        <div class="proj-detail-section-label">The Full Campaign</div>
+        <div class="proj-detail-h2">40+ Graphics, One Account</div>
+        <p class="proj-detail-p">Alongside the featured carousels, the rest of the campaign ran on the same system: deadline countdowns, info session reminders, application windows, decision releases. Every one of these ran as an animated story post on the real account, same as the motion samples above; what's shown below is the static source file for each. The full wall below (click any story to page through it).</p>
+        <div class="proj-photo-gallery ig-wall">
+          <div class="smt-lb-thumb" onclick="openLHRGallery('wall',0)"><img loading="lazy" src="media/LHR Recruitment/Longhorn Racing Recruitment 2026 Post and Story Compilation/Gone to Engineering.png" alt="Gone To Engineering story post"></div>
+          <div class="smt-lb-thumb" onclick="openLHRGallery('wall',1)"><img loading="lazy" src="media/LHR Recruitment/Longhorn Racing Recruitment 2026 Post and Story Compilation/Info Session 1 Week.png" alt="Info Session, 1 Week Out story post"></div>
+          <div class="smt-lb-thumb" onclick="openLHRGallery('wall',2)"><img loading="lazy" src="media/LHR Recruitment/Longhorn Racing Recruitment 2026 Post and Story Compilation/Info Session 1 Week (2).png" alt="Info Session, 1 Week Out story post, variant"></div>
+          <div class="smt-lb-thumb" onclick="openLHRGallery('wall',3)"><img loading="lazy" src="media/LHR Recruitment/Longhorn Racing Recruitment 2026 Post and Story Compilation/Info Session 1 Week (3).png" alt="Info Session, 1 Week Out story post, variant"></div>
+          <div class="smt-lb-thumb" onclick="openLHRGallery('wall',4)"><img loading="lazy" src="media/LHR Recruitment/Longhorn Racing Recruitment 2026 Post and Story Compilation/Applications are now open.png" alt="Applications Are Now Open story post"></div>
+          <div class="smt-lb-thumb" onclick="openLHRGallery('wall',5)"><img loading="lazy" src="media/LHR Recruitment/Longhorn Racing Recruitment 2026 Post and Story Compilation/Applications are now open (2).png" alt="Applications Are Now Open story post, variant"></div>
+          <div class="smt-lb-thumb" onclick="openLHRGallery('wall',6)"><img loading="lazy" src="media/LHR Recruitment/Longhorn Racing Recruitment 2026 Post and Story Compilation/Applications are now open (3).png" alt="Applications Are Now Open story post, variant"></div>
+          <div class="smt-lb-thumb" onclick="openLHRGallery('wall',7)"><img loading="lazy" src="media/LHR Recruitment/Longhorn Racing Recruitment 2026 Post and Story Compilation/Applications are now open (4).png" alt="Applications Are Now Open story post, variant"></div>
+          <div class="smt-lb-thumb" onclick="openLHRGallery('wall',8)"><img loading="lazy" src="media/LHR Recruitment/Longhorn Racing Recruitment 2026 Post and Story Compilation/Info Session 5 Days.png" alt="Info Session, 5 Days Out story post"></div>
+          <div class="smt-lb-thumb" onclick="openLHRGallery('wall',9)"><img loading="lazy" src="media/LHR Recruitment/Longhorn Racing Recruitment 2026 Post and Story Compilation/Round 1.png" alt="Round 1 decisions story post"></div>
+          <div class="smt-lb-thumb" onclick="openLHRGallery('wall',10)"><img loading="lazy" src="media/LHR Recruitment/Longhorn Racing Recruitment 2026 Post and Story Compilation/Round 1 (2).png" alt="Round 1 decisions story post, variant"></div>
+          <div class="smt-lb-thumb" onclick="openLHRGallery('wall',11)"><img loading="lazy" src="media/LHR Recruitment/Longhorn Racing Recruitment 2026 Post and Story Compilation/Round 1 (3).png" alt="Round 1 decisions story post, variant"></div>
+          <div class="smt-lb-thumb" onclick="openLHRGallery('wall',12)"><img loading="lazy" src="media/LHR Recruitment/Longhorn Racing Recruitment 2026 Post and Story Compilation/2 Hours Left to Submit.png" alt="2 Hours Left To Submit countdown story post"></div>
+          <div class="smt-lb-thumb" onclick="openLHRGallery('wall',13)"><img loading="lazy" src="media/LHR Recruitment/Longhorn Racing Recruitment 2026 Post and Story Compilation/Applications Due Today!.png" alt="Applications Due Today story post"></div>
+          <div class="smt-lb-thumb" onclick="openLHRGallery('wall',14)"><img loading="lazy" src="media/LHR Recruitment/Longhorn Racing Recruitment 2026 Post and Story Compilation/23.png" alt="Applications due in 1 day countdown story post"></div>
+          <div class="smt-lb-thumb" onclick="openLHRGallery('wall',15)"><img loading="lazy" src="media/LHR Recruitment/Longhorn Racing Recruitment 2026 Post and Story Compilation/Interview Decisions Released.png" alt="Interview Decisions Released story post"></div>
+          <div class="smt-lb-thumb" onclick="openLHRGallery('wall',16)"><img loading="lazy" src="media/LHR Recruitment/Longhorn Racing Recruitment 2026 Post and Story Compilation/Trial Workday Decisions Out!.png" alt="Trial Workday Decisions Out story post"></div>
+        </div>
+      </div>
+
+      <!-- RESULTS -->
+      <div class="proj-detail-section" id="lhr-results">
+        <div class="proj-detail-section-label">Results</div>
+        <div class="proj-detail-h2">What Changed</div>
+        <p class="proj-detail-p">The numbers below come from Instagram Insights and Instagram Analytics for the account's recruitment content, covering the month the campaign was live. A few points are described qualitatively rather than with an invented figure, since I don't have exact exports for everything.</p>
+        <div class="lhr-stats">
+          <div class="lhr-stat a1">
+            <div class="lhr-stat-num">180 → 1,000</div>
+            <div class="lhr-stat-label">Average likes per post, roughly a <strong>+456%</strong> increase across the campaign.</div>
+          </div>
+          <div class="lhr-stat a2">
+            <div class="lhr-stat-num">~300K</div>
+            <div class="lhr-stat-label">Views on recruitment content in the month it was live.</div>
+          </div>
+          <div class="lhr-stat a3">
+            <div class="lhr-stat-num">+240%</div>
+            <div class="lhr-stat-label">Growth in overall content viewership, per Instagram Analytics.</div>
+          </div>
+          <div class="lhr-stat a4">
+            <div class="lhr-stat-num">~3×</div>
+            <div class="lhr-stat-label">Individual post views roughly tripled as the campaign built momentum.</div>
+          </div>
+          <div class="lhr-stat a5">
+            <div class="lhr-stat-num">Mostly non-followers</div>
+            <div class="lhr-stat-label">Reach skewed toward people outside LHR's existing audience: real recruitment discovery, not just preaching to the choir.</div>
+          </div>
+          <div class="lhr-stat a6">
+            <div class="lhr-stat-num">Comments & saves up</div>
+            <div class="lhr-stat-label">Engagement rose sharply, and commenters increasingly called out the graphic design itself.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- REFLECTION -->
+      <div class="proj-detail-section" id="lhr-reflection">
+        <div class="proj-detail-section-label">Reflection</div>
+        <div class="proj-detail-h2">Designing for Attention, Not Just Aesthetics</div>
+        <p class="proj-detail-p">Honestly, this is the biggest thing I've ever taken on as a designer, and I'm really proud of it. Téa isn't a client, she's an officer on the team just like me, so this whole campaign was less about following a brief and more about two people who care about the same org trying to figure out, together, how to get people excited about it.</p>
+        <p class="proj-detail-p">Knowing just how much was coming, and how far ahead the campus flyers had already gotten me on the system, had me building things months in advance, which honestly ended up being one of my favorite parts of the whole process.</p>
+        <p class="proj-detail-p">Keeping that same system feeling fresh across 40+ graphics, while still hitting real info sessions and real deadlines in real time, taught me more about pacing myself than any class project ever has.</p>
+        <p class="proj-detail-p">I also got to see design actually work in a way I hadn't before. Watching the likes and comments climb week over week, seeing people tag their friends, reading comments that specifically called out how good the graphics looked, that feedback loop is something I don't get from a studio critique. I learned a lot about what it takes to hold an audience's attention for weeks at a time, not just for one strong image.</p>
+        <div class="proj-callout">Mostly I just feel grateful. Getting trusted with something this important to so many people, and hearing how much everyone appreciated the work, made this one of my favorite projects I've ever gotten to work on.</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
 <!-- HAJRA WAHEED,AN ASYLUM IN THE SEA -->
 <div class="proj-detail-page" id="proj-hajra-waheed">
   <div class="proj-detail-nav">
@@ -5752,6 +6144,11 @@ function showProject(slug) {
       document.querySelectorAll('#proj-silent-spellcraft video[autoplay]').forEach(function(v) { v.preload = 'auto'; v.currentTime = 0; v.muted = true; v.play().catch(function(){}); });
     }, 100);
   }
+  if (slug === 'lhr-recruitment') {
+    _navTimeout(function() {
+      document.querySelectorAll('#proj-lhr-recruitment video[autoplay]').forEach(function(v) { v.preload = 'auto'; v.currentTime = 0; v.muted = true; v.play().catch(function(){}); });
+    }, 100);
+  }
   if (slug === 'discotype') {
     _navTimeout(function() {
       var v = document.getElementById('dt-hero-video');
@@ -5974,6 +6371,86 @@ function smtLightboxStep(dir) {
   img.style.visibility = '';
   img.src = smtLbGallery[smtLbIdx];
 }
+
+// -- LHR RECRUITMENT: INSTAGRAM CAROUSEL / STORY LIGHTBOX GALLERIES --
+var lhrSets = {
+  leads: ['MEET THE LEADS Post/1.png','MEET THE LEADS Post/2.png','MEET THE LEADS Post/3.png','MEET THE LEADS Post/4.png','MEET THE LEADS Post/5.png','MEET THE LEADS Post/6.png','MEET THE LEADS Post/7.png','MEET THE LEADS Post/8.png','MEET THE LEADS Post/9.png','MEET THE LEADS Post/10.png','MEET THE LEADS Post/11.png','MEET THE LEADS Post/12.png','MEET THE LEADS Post/13.png','MEET THE LEADS Post/14.png','MEET THE LEADS Post/15.png','MEET THE LEADS Post/16.png'],
+  map: ['Internship map/1.png','Internship map/2.png','Internship map/3.png','Internship map/4.png','Internship map/5.png','Internship map/6.png'],
+  timeline: [
+    'Longhorn Racing Recruitment 2026 Post and Story Compilation/Recruitment Overview Cover Page.png',
+    'Timeline Post/0.jpg',
+    'Timeline Post/1.jpg',
+    'Timeline Post/2.jpg',
+    'Timeline Post/3.jpg',
+    'Longhorn Racing Recruitment 2026 Post and Story Compilation/Important Dates.png',
+    'Longhorn Racing Recruitment 2026 Post and Story Compilation/Important Events.png'
+  ],
+  wall: [
+    "Longhorn Racing Recruitment 2026 Post and Story Compilation/Gone to Engineering.png",
+    "Longhorn Racing Recruitment 2026 Post and Story Compilation/Info Session 1 Week.png",
+    "Longhorn Racing Recruitment 2026 Post and Story Compilation/Info Session 1 Week (2).png",
+    "Longhorn Racing Recruitment 2026 Post and Story Compilation/Info Session 1 Week (3).png",
+    "Longhorn Racing Recruitment 2026 Post and Story Compilation/Applications are now open.png",
+    "Longhorn Racing Recruitment 2026 Post and Story Compilation/Applications are now open (2).png",
+    "Longhorn Racing Recruitment 2026 Post and Story Compilation/Applications are now open (3).png",
+    "Longhorn Racing Recruitment 2026 Post and Story Compilation/Applications are now open (4).png",
+    "Longhorn Racing Recruitment 2026 Post and Story Compilation/Info Session 5 Days.png",
+    "Longhorn Racing Recruitment 2026 Post and Story Compilation/Round 1.png",
+    "Longhorn Racing Recruitment 2026 Post and Story Compilation/Round 1 (2).png",
+    "Longhorn Racing Recruitment 2026 Post and Story Compilation/Round 1 (3).png",
+    "Longhorn Racing Recruitment 2026 Post and Story Compilation/2 Hours Left to Submit.png",
+    "Longhorn Racing Recruitment 2026 Post and Story Compilation/Applications Due Today!.png",
+    "Longhorn Racing Recruitment 2026 Post and Story Compilation/23.png",
+    "Longhorn Racing Recruitment 2026 Post and Story Compilation/Interview Decisions Released.png",
+    "Longhorn Racing Recruitment 2026 Post and Story Compilation/Trial Workday Decisions Out!.png"
+  ]
+};
+function openLHRGallery(setName, idx) {
+  smtLbGallery = lhrSets[setName].map(function(f) { return 'media/LHR Recruitment/' + f; });
+  smtLbIdx = idx;
+  var img = document.getElementById('smt-lightbox-img');
+  img.style.visibility = '';
+  img.src = smtLbGallery[smtLbIdx];
+  img.style.background = '';
+  img.style.padding = '';
+  img.style.borderRadius = '';
+  document.getElementById('smt-lb-prev').style.display = 'flex';
+  document.getElementById('smt-lb-next').style.display = 'flex';
+  document.getElementById('smt-lightbox').classList.add('gallery-mode');
+  document.getElementById('smt-lightbox').classList.add('open');
+}
+// Live "n / total" counter for the horizontal-scroll Instagram carousel mockups
+document.querySelectorAll('.ig-carousel-track').forEach(function(track) {
+  var counter = track.parentElement.querySelector('.ig-post-counter');
+  var total = track.children.length;
+  if (!counter) return;
+  track.addEventListener('scroll', function() {
+    var idx = Math.round(track.scrollLeft / track.clientWidth);
+    idx = Math.max(0, Math.min(total - 1, idx));
+    counter.textContent = (idx + 1) + ' / ' + total;
+    track.parentElement.classList.toggle('scrolled', idx > 0);
+  }, { passive: true });
+});
+
+// -- HOME CATEGORY CARD CROSSFADE CYCLER --
+document.querySelectorAll('.home-proj-thumb-inner').forEach(function(inner) {
+  var medias = inner.querySelectorAll('.home-cycle-media');
+  if (medias.length < 2) return;
+  var idx = 0;
+  setInterval(function() {
+    var homePage = document.getElementById('page-home');
+    if (!homePage || !homePage.classList.contains('active')) return;
+    var next = (idx + 1) % medias.length;
+    medias[idx].classList.remove('active');
+    medias[next].classList.add('active');
+    if (medias[idx].tagName === 'VIDEO') medias[idx].pause();
+    if (medias[next].tagName === 'VIDEO') {
+      medias[next].currentTime = 0;
+      medias[next].play().catch(function() {});
+    }
+    idx = next;
+  }, 3400);
+});
 
 // -- DRAG-TO-SCROLL + SLOW AUTOPLAY FOR HORIZONTAL PHOTO GALLERIES --
 document.querySelectorAll('.proj-photo-gallery').forEach(function(el) {
@@ -6288,7 +6765,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // -- MORE PROJECTS DATA --
 var projMeta = {
-  // -- Graphic (all 6 from page-graphic grid) --
+  // -- Graphic (all 7 from page-graphic grid) --
+  'lhr-recruitment': {title:'Longhorn Racing Recruitment', cat:'graphic', catLabel:'2D & Graphic Design', sub:'Social Campaign', accent:'accent-graphic'},
   'persona5-type':   {title:'Typography in Persona 5',   cat:'graphic', catLabel:'2D & Graphic Design', sub:'Book Design',      accent:'accent-graphic'},
   'high-noon-livery':{title:'High Noon Livery',          cat:'graphic', catLabel:'2D & Graphic Design', sub:'Livery Design',    accent:'accent-graphic'},
   'hajra-waheed':    {title:"Watermarks: Hajra Waheed's Asylum in the Sea", cat:'graphic', catLabel:'2D & Graphic Design', sub:'Editorial Spreads', accent:'accent-graphic'},
