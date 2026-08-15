@@ -661,7 +661,7 @@ audio{accent-color:#1A1A1A}
   .proj-detail-meta-row{gap:18px;display:flex;flex-direction:column;align-items:center}
   .proj-detail-body{grid-template-columns:1fr}
   .proj-detail-sidebar{display:none}
-  .proj-detail-content{padding:28px 20px;display:flex;flex-direction:column;align-items:center;text-align:left;max-width:none}
+  .proj-detail-content{padding:28px 20px;display:flex;flex-direction:column;align-items:center;text-align:left;max-width:none;width:100%;min-width:0;box-sizing:border-box}
   .proj-detail-content > *{width:100%;max-width:720px;margin:0 auto}
   #proj-ecoleander .proj-detail-content,
   #proj-persona5-type .proj-detail-content,
@@ -861,10 +861,10 @@ audio{accent-color:#1A1A1A}
       <div class="home-proj-thumb" style="overflow:hidden">
         <div class="home-proj-thumb-inner" style="position:relative;width:100%;height:100%;background:#FFC8D8">
           <img class="home-cycle-media active" src="media/DiscoType!/Title card png.png" alt="UX/UI & Game Design" decoding="async">
-          <img class="home-cycle-media" src="media/Oracle/Homepage Title Graphic.png" alt="" decoding="async">
-          <img class="home-cycle-media" src="media/Featherform/Featherform Title Screen Hero.png" alt="" decoding="async">
-          <img class="home-cycle-media" src="media/Stellar Exploration - A Scale of Our Universe/Title Screen.png" alt="" style="transform:scale(1.15)" decoding="async">
-          <img class="home-cycle-media" src="media/Silent SpellCraft/Title Card.png" alt="" decoding="async">
+          <img class="home-cycle-media" data-src="media/Oracle/Homepage Title Graphic.png" alt="" decoding="async">
+          <img class="home-cycle-media" data-src="media/Featherform/Featherform Title Screen Hero.png" alt="" decoding="async">
+          <img class="home-cycle-media" data-src="media/Stellar Exploration - A Scale of Our Universe/Title Screen.png" alt="" style="transform:scale(1.15)" decoding="async">
+          <img class="home-cycle-media" data-src="media/Silent SpellCraft/Title Card.png" alt="" decoding="async">
           <div class="home-proj-overlay" style="background:#FFC8D8"></div>
         </div>
       </div>
@@ -874,9 +874,8 @@ audio{accent-color:#1A1A1A}
       <div class="home-proj-thumb" style="overflow:hidden">
         <div class="home-proj-thumb-inner" style="position:relative;width:100%;height:100%;background:#FFF0A8">
           <img class="home-cycle-media active" src="media/LHR Recruitment/Card Cover.png" alt="2D & Graphic Design" decoding="async">
-          <img class="home-cycle-media" src="media/High Noon Livery/car pics (8).jpg" alt="" decoding="async">
-          <img class="home-cycle-media" src="media/Typography in Persona 5/Hero, Title Card.png" alt="" decoding="async">
-          <img class="home-cycle-media" src="media/Hajra Waheed Asylum in the Sea/kevin spreads POST CRITIQYE.png" alt="" decoding="async">
+          <img class="home-cycle-media" data-src="media/High Noon Livery/car pics (8).jpg" alt="" decoding="async">
+          <img class="home-cycle-media" data-src="media/Typography in Persona 5/Hero, Title Card.png" alt="" decoding="async">
           <div class="home-proj-overlay" style="background:#FFF0A8"></div>
         </div>
       </div>
@@ -901,7 +900,7 @@ audio{accent-color:#1A1A1A}
             <source src="media/videos/Gojo Satoru.mp4" type="video/mp4">
           </video>
           <video class="home-cycle-media" muted loop playsinline preload="none">
-            <source src="media/videos/Carmen Sandiego.mp4" type="video/mp4">
+            <source src="media/videos/Nightcrawler.mp4" type="video/mp4">
           </video>
           <div class="home-proj-overlay" style="background:#C8EDDA"></div>
         </div>
@@ -912,8 +911,8 @@ audio{accent-color:#1A1A1A}
       <div class="home-proj-thumb" style="overflow:hidden">
         <div class="home-proj-thumb-inner" style="position:relative;width:100%;height:100%;background:#B8DFFF">
           <img class="home-cycle-media active" src="media/The Ecoleander/Photoshoot 7.jpg" alt="3D & Product Design" decoding="async">
-          <img class="home-cycle-media" src="media/Smrutea/Hero image 4.jpg" alt="" decoding="async">
-          <img class="home-cycle-media" src="media/The Flipula/Flipula Presentation Poster.png" alt="" decoding="async">
+          <img class="home-cycle-media" data-src="media/Smrutea/Hero image 4.jpg" alt="" decoding="async">
+          <img class="home-cycle-media" data-src="media/The Flipula/Flipula Presentation Poster.png" alt="" decoding="async">
           <div class="home-proj-overlay" style="background:#B8DFFF"></div>
         </div>
       </div>
@@ -2127,8 +2126,8 @@ audio{accent-color:#1A1A1A}
             <div class="proj-stat-label">A fully wired Unity WebGL prototype published on Itch.io, not just mockups.</div>
           </div>
           <div class="proj-stat a3">
-            <div class="proj-stat-num">Instructor-praised</div>
-            <div class="proj-stat-label">Both professors singled out the font, the shared visual direction, and the team's chemistry.</div>
+            <div class="proj-stat-num">Cohesive visual identity</div>
+            <div class="proj-stat-label">One logo, one custom typeface, one visual direction, carried through every screen of the game.</div>
           </div>
         </div>
       </div>
@@ -2623,8 +2622,8 @@ audio{accent-color:#1A1A1A}
             <div class="proj-stat-label">Sketch 25 became the final logotype, and Professor Kelcey's favorite too.</div>
           </div>
           <div class="proj-stat a2">
-            <div class="proj-stat-num">Custom typeface</div>
-            <div class="proj-stat-label">Five rounds of hand-drawn letterforms, built into a working font with Calligraphr.</div>
+            <div class="proj-stat-num">Cohesive visual identity</div>
+            <div class="proj-stat-label">Five rounds of hand-drawn letterforms, built into a custom typeface that matches the logo across every screen.</div>
           </div>
           <div class="proj-stat a3">
             <div class="proj-stat-num">Live on Itch.io</div>
@@ -6650,17 +6649,26 @@ document.querySelectorAll('.ig-carousel-track').forEach(function(track) {
   });
   if (!cards.length) return;
 
-  // Only the active clip should download eagerly - bumping every clip's video to preload="auto"
-  // at once (up to ~60MB across a card) is what was causing the site-wide lag. Instead, each
-  // upcoming clip gets primed a few seconds ahead of its turn, while it's still hidden.
-  function primeVideo(media) {
-    if (media.tagName === 'VIDEO' && media.preload !== 'auto') {
-      media.preload = 'auto';
-      media.load();
+  // Only the active clip/photo should download eagerly - fetching every card's full set up front
+  // (~60MB of video plus ~16MB of full-res cover photos, all run through a live CSS filter) is what
+  // was causing the site-wide lag. Instead, each upcoming media is primed one cycle ahead of its
+  // turn, while it's still hidden, so it's ready by the time it's needed. For video, priming also
+  // play()+pause()s it once to force the browser to decode and paint its first frame in advance,
+  // so the swap at reveal time is instant instead of needing an artificial delay to avoid a black frame.
+  function primeMedia(media) {
+    if (media.tagName === 'IMG' && media.dataset.src) {
+      media.src = media.dataset.src;
+      delete media.dataset.src;
+    } else if (media.tagName === 'VIDEO') {
+      if (media.preload !== 'auto') { media.preload = 'auto'; media.load(); }
+      media.currentTime = 0;
+      var p = media.play();
+      if (p && p.then) { p.then(function() { media.pause(); }).catch(function() {}); }
+      else { media.pause(); }
     }
   }
   cards.forEach(function(card) {
-    primeVideo(card.medias[(card.idx + 1) % card.medias.length]);
+    primeMedia(card.medias[(card.idx + 1) % card.medias.length]);
   });
 
   function advanceAll() {
@@ -6671,25 +6679,15 @@ document.querySelectorAll('.ig-carousel-track').forEach(function(track) {
       var cur = medias[card.idx];
       var next = (card.idx + 1) % medias.length;
       var nextMedia = medias[next];
-      var doSwitch = function() {
-        cur.classList.remove('active');
-        nextMedia.classList.add('active');
-        if (cur.tagName === 'VIDEO') cur.pause();
-        card.idx = next;
-        primeVideo(medias[(card.idx + 1) % medias.length]);
-      };
-      if (nextMedia.tagName === 'VIDEO') {
-        nextMedia.currentTime = 0;
-        nextMedia.play().catch(function() {});
-        // give the frame a moment to decode before it's revealed, so the crossfade
-        // never shows a black/stalled frame
-        setTimeout(doSwitch, 260);
-      } else {
-        doSwitch();
-      }
+      cur.classList.remove('active');
+      nextMedia.classList.add('active');
+      if (cur.tagName === 'VIDEO') cur.pause();
+      if (nextMedia.tagName === 'VIDEO') { nextMedia.currentTime = 0; nextMedia.play().catch(function() {}); }
+      card.idx = next;
+      primeMedia(medias[(card.idx + 1) % medias.length]);
     });
   }
-  setInterval(advanceAll, 4500);
+  setInterval(advanceAll, 6800);
 })();
 
 // -- DRAG-TO-SCROLL + SLOW AUTOPLAY FOR HORIZONTAL PHOTO GALLERIES --
