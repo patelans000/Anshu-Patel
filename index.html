@@ -348,6 +348,7 @@ audio{accent-color:#1A1A1A}
 #proj-high-noon-livery .proj-detail-content div[style*="overflow:hidden"]{border:none!important;border-radius:0!important}
 #proj-high-noon-livery .proj-detail-content img{width:100%;height:auto;display:block;border-radius:0!important}
 #proj-high-noon-livery .proj-detail-sidebar::-webkit-scrollbar{display:none}
+#proj-janmar-website-redesign .proj-detail-content{max-width:960px;padding:48px 48px;margin:0 auto}
 #proj-lhr-website-redesign .proj-detail-content{max-width:960px;padding:48px 48px;margin:0 auto}
 #proj-high-noon-livery .proj-detail-sidebar{-ms-overflow-style:none;scrollbar-width:none}
 #proj-high-noon-livery .proj-callout{background:var(--yellow)}
@@ -495,7 +496,18 @@ audio{accent-color:#1A1A1A}
 #proj-discotype .proj-detail-content{max-width:960px;padding:48px 48px;margin:0 auto}
 #proj-discotype .proj-detail-content div[style*="overflow:hidden"]{border-radius:0!important}
 #proj-discotype .proj-detail-content img{width:100%;height:auto;display:block;border-radius:0!important}
-#proj-discotype .proj-callout,#proj-oracle .proj-callout,#proj-featherform .proj-callout,#proj-stellar-exploration .proj-callout,#proj-silent-spellcraft .proj-callout,#proj-choco-knight .proj-callout,#proj-spotify-feature .proj-callout,#proj-lhr-website-redesign .proj-callout{background:var(--pink)}
+#proj-discotype .proj-callout,#proj-oracle .proj-callout,#proj-featherform .proj-callout,#proj-stellar-exploration .proj-callout,#proj-silent-spellcraft .proj-callout,#proj-choco-knight .proj-callout,#proj-spotify-feature .proj-callout,#proj-lhr-website-redesign .proj-callout,#proj-janmar-website-redesign .proj-callout{background:var(--pink)}
+.jmw-map{margin-top:28px}
+.jmw-map-heads{display:flex;justify-content:space-between;gap:16px;padding-bottom:10px;margin-bottom:6px;border-bottom:1px solid var(--border)}
+.jmw-map-heads span{font-family:'Outfit',sans-serif;font-size:15px;font-weight:700;color:#1A1A1A;flex:1;text-align:center}
+.jmw-map-row{display:flex;align-items:center;gap:16px;padding:12px 0}
+.jmw-map-row .jmw-map-cell{flex:1;font-size:14px;color:#333;text-align:center}
+.jmw-map-row .jmw-map-arrow{font-size:16px;color:var(--muted);flex:0 0 auto}
+@media (max-width:640px){
+  .jmw-map-heads span{font-size:13px}
+  .jmw-map-row{flex-direction:column;gap:6px;text-align:center;padding:16px 0}
+  .jmw-map-row .jmw-map-arrow{transform:rotate(90deg)}
+}
 #proj-oracle video{filter:saturate(1.5) contrast(1.05)}
 #dt-font-input::placeholder{color:rgba(255,94,173,0.35)}
 #ff-font-input::placeholder{color:rgba(255,255,255,0.25)}
@@ -563,7 +575,8 @@ audio{accent-color:#1A1A1A}
 .proj-stat.a4{background:var(--green)}
 .proj-stat.a5{background:var(--gray);border:1px solid var(--border)}
 .proj-stat.a6{background:var(--yellow)}
-#proj-lhr-website-redesign .proj-stats{grid-template-columns:1fr 1fr}
+#proj-lhr-website-redesign .proj-stats,
+#proj-janmar-website-redesign .proj-stats{grid-template-columns:1fr 1fr}
 
 @media(max-width:1024px){
   .ig-grid-2,.ig-grid-3{grid-template-columns:1fr}
@@ -571,7 +584,8 @@ audio{accent-color:#1A1A1A}
 }
 @media(max-width:480px){
   .proj-stats{grid-template-columns:1fr}
-  #proj-lhr-website-redesign .proj-stats{grid-template-columns:1fr}
+  #proj-lhr-website-redesign .proj-stats,
+  #proj-janmar-website-redesign .proj-stats{grid-template-columns:1fr}
 }
 
 /* -- RESPONSIVE (mobile + tablet: single column, centered) -- */
@@ -680,7 +694,8 @@ audio{accent-color:#1A1A1A}
   #proj-oracle .proj-detail-content,
   #proj-logos-branding .proj-detail-content,
   #proj-adobe-cabin .proj-detail-content,
-  #proj-lhr-website-redesign .proj-detail-content{padding:28px 20px;max-width:none}
+  #proj-lhr-website-redesign .proj-detail-content,
+  #proj-janmar-website-redesign .proj-detail-content{padding:28px 20px;max-width:none}
   .proj-detail-page [style*="calc(100% + 48px)"]{width:100% !important;margin-left:0 !important;margin-right:0 !important}
 
   /* PROJECT HERO OVERLAY (inline style overrides) */
@@ -863,7 +878,7 @@ audio{accent-color:#1A1A1A}
     <div class="home-proj-block" onclick="showPage('ux')">
       <div class="home-proj-thumb" style="overflow:hidden">
         <div class="home-proj-thumb-inner" style="position:relative;width:100%;height:100%;background:#FFC8D8">
-          <img class="home-cycle-media active" src="media/LHR New Site/lhr site portfolio cover.png" alt="UX/UI & Game Design" decoding="async">
+          <img class="home-cycle-media active" src="media/JanMar Agency Site Redesign/JanMar Project Cover.png" alt="UX/UI & Game Design" decoding="async">
           <img class="home-cycle-media" data-src="media/DiscoType!/Title card png.png" alt="" decoding="async">
           <img class="home-cycle-media" data-src="media/Oracle/Homepage Title Graphic.png" alt="" decoding="async">
           <img class="home-cycle-media" data-src="media/Featherform/Featherform Title Screen Hero.png" alt="" decoding="async">
@@ -1090,6 +1105,10 @@ audio{accent-color:#1A1A1A}
     <div><span class="disc-back" onclick="showPage('home')">← All work</span></div>
   </div>
   <div class="proj-grid proj-grid-3">
+    <div class="proj" onclick="showProject('janmar-website-redesign')">
+      <div class="proj-thumb" style="overflow:hidden"><div class="proj-thumb-inner" style="width:100%;height:100%"><img loading="lazy" src="media/JanMar Agency Site Redesign/JanMar Project Cover.png" style="width:100%;height:100%;object-fit:cover;display:block" alt="JanMar Agency Website Redesign"></div><div class="proj-hover"><div class="proj-hover-text">Web design, Wix Studio, agency website redesign</div></div></div>
+      <div class="proj-foot"><span class="proj-name">JanMar Agency Website Redesign</span><span class="proj-meta">Summer 2026</span></div>
+    </div>
     <div class="proj" onclick="showProject('lhr-website-redesign')">
       <div class="proj-thumb" style="overflow:hidden"><div class="proj-thumb-inner" style="width:100%;height:100%"><img loading="lazy" src="media/LHR New Site/lhr site portfolio cover.png" style="width:100%;height:100%;object-fit:cover;display:block" alt="Longhorn Racing Website Redesign"></div><div class="proj-hover"><div class="proj-hover-text">Web design, Wix Studio, responsive redesign</div></div></div>
       <div class="proj-foot"><span class="proj-name">Longhorn Racing Website Redesign</span><span class="proj-meta">Summer 2026</span></div>
@@ -1814,6 +1833,225 @@ audio{accent-color:#1A1A1A}
   </div>
 </div>
 
+<!-- JANMAR AGENCY WEBSITE REDESIGN -->
+<div class="proj-detail-page" id="proj-janmar-website-redesign">
+  <div class="proj-detail-nav">
+    <div class="proj-detail-breadcrumb">
+      <span onclick="showPage('ux')">UX/UI & Game Design</span>
+      <span class="sep">&gt;</span>
+      <span style="color:#1A1A1A;font-weight:500">JanMar Agency Website Redesign</span>
+    </div>
+    <div><button class="proj-nav-btn" onclick="showPage('ux')">← Back to category</button></div>
+  </div>
+  <div class="proj-detail-hero">
+    <div class="proj-detail-kicker">UX/UI & Game Design | Web Redesign</div>
+    <div class="proj-detail-title">JanMar Agency Website Redesign</div>
+    <p class="proj-detail-tagline">Rebuilt JanMar Agency's website from the ground up in Wix Studio, turning an outdated, unresponsive site into a modern, mobile-friendly home that reflects the caliber of work the agency delivers for its own clients across Galveston Island.</p>
+    <div class="proj-detail-meta-row">
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Role</div><div class="proj-detail-meta-val">Design &amp; Marketing Intern</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Mentor</div><div class="proj-detail-meta-val">Sara Beshai</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Platform</div><div class="proj-detail-meta-val">Wix Studio</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Type</div><div class="proj-detail-meta-val">Web Redesign</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Timeline</div><div class="proj-detail-meta-val">Summer 2026</div></div>
+      <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">Wix Studio, Figma, Procreate, Adobe Premiere Pro, Adobe After Effects, Adobe Lightroom</div></div>
+    </div>
+  </div>
+  <div style="position:relative;border-bottom:1px solid var(--border)">
+    <img loading="lazy" src="media/JanMar Agency Site Redesign/JanMar Project Cover.png" style="width:100%;display:block" alt="JanMar Agency redesigned website">
+    <div style="position:absolute;bottom:0;left:0;right:0;padding:20px 32px;background:linear-gradient(transparent,rgba(0,0,0,0.75));pointer-events:none;z-index:2">
+      <div style="font-size:10px;color:rgba(255,255,255,0.5);font-weight:600;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:5px">UX/UI & Game Design | Web Redesign</div>
+      <div style="font-size:16px;color:#fff;font-weight:600">JanMar Agency Website Redesign</div>
+    </div>
+  </div>
+  <div class="proj-detail-body">
+    <div class="proj-detail-sidebar">
+      <div class="proj-detail-sidebar-section">
+        <div class="proj-detail-sidebar-label">Contents</div>
+        <div class="proj-toc-list">
+          <a class="proj-toc-link" onclick="document.getElementById('jmw-overview').scrollIntoView({behavior:'smooth'})">Overview</a>
+          <a class="proj-toc-link" onclick="document.getElementById('jmw-problem').scrollIntoView({behavior:'smooth'})">The Problem</a>
+          <a class="proj-toc-link" onclick="document.getElementById('jmw-current').scrollIntoView({behavior:'smooth'})">Current State</a>
+          <a class="proj-toc-link" onclick="document.getElementById('jmw-painpoints').scrollIntoView({behavior:'smooth'})">User Pain Points</a>
+          <a class="proj-toc-link" onclick="document.getElementById('jmw-sketches').scrollIntoView({behavior:'smooth'})">Low-Fi Sketches</a>
+          <a class="proj-toc-link" onclick="document.getElementById('jmw-figma').scrollIntoView({behavior:'smooth'})">Wireframes &amp; Prototype</a>
+          <a class="proj-toc-link" onclick="document.getElementById('jmw-media').scrollIntoView({behavior:'smooth'})">Photography &amp; Video</a>
+          <a class="proj-toc-link" onclick="document.getElementById('jmw-redesign').scrollIntoView({behavior:'smooth'})">The Redesign</a>
+          <a class="proj-toc-link" onclick="document.getElementById('jmw-reflection').scrollIntoView({behavior:'smooth'})">Reflection</a>
+          <a class="proj-toc-link" onclick="document.getElementById('jmw-impact').scrollIntoView({behavior:'smooth'})">Shipped &amp; Impact</a>
+        </div>
+      </div>
+    </div>
+    <div class="proj-detail-content">
+
+      <!-- OVERVIEW -->
+      <div class="proj-detail-section" id="jmw-overview">
+        <div class="proj-detail-section-label">Overview</div>
+        <div class="proj-detail-h2">A Website That Didn't Match the Work</div>
+        <p class="proj-detail-p">JanMar Agency is a marketing and web agency based on Galveston Island, working with businesses across the island on branding, web presence, and digital campaigns. Their own website, though, hadn't kept up: it wasn't responsive, so it broke down on phones and tablets, and the photography and video felt outdated next to the caliber of work the agency was actually producing for clients.</p>
+        <p class="proj-detail-p">As a Design & Marketing Intern, I was brought on to lead a full redesign of the site in Wix Studio, working closely with my mentor Sara Beshai from wireframes through final build.</p>
+      </div>
+
+      <!-- THE PROBLEM -->
+      <div class="proj-detail-section" id="jmw-problem">
+        <div class="proj-detail-section-label">The Problem</div>
+        <div class="proj-detail-h2">The Problem</div>
+        <p class="proj-detail-p" style="font-size:17px;font-weight:500;color:#1A1A1A">How might we rebuild JanMar's website into something fully responsive, so the agency's own site actually holds up on the same phones and tablets their clients' customers use every day?</p>
+        <p class="proj-detail-p">The why: JanMar works with businesses all across the island, and their site is often the first impression a potential client gets of the agency's design work. An outdated, unresponsive site undercuts that impression before a conversation even starts.</p>
+      </div>
+
+      <!-- CURRENT STATE -->
+      <div class="proj-detail-section" id="jmw-current">
+        <div class="proj-detail-section-label">Current State</div>
+        <div class="proj-detail-h2">Where the Old Site Was Falling Short</div>
+        <p class="proj-detail-p">Before touching any designs, I audited the existing site to see exactly where it was breaking down. The walkthrough below is the old site, for reference.</p>
+        <div style="border:1px solid var(--border);overflow:hidden;margin-top:12px">
+          <video controls muted preload="none" style="width:100%;display:block">
+            <source src="media/JanMar Agency Site Redesign/old janmar walkthrough.mp4" type="video/mp4">
+          </video>
+        </div>
+        <p class="proj-img-caption">The old JanMar Agency site, before the redesign.</p>
+      </div>
+
+      <!-- USER PAIN POINTS -->
+      <div class="proj-detail-section" id="jmw-painpoints">
+        <div class="proj-detail-section-label">Pain Points &amp; Opportunities</div>
+        <div class="proj-detail-h2">User Pain Points</div>
+        <p class="proj-detail-p">From the audit, I identified key challenges in the existing site, the most significant being that it wasn't responsive, causing unnecessary friction and cropping that broke the layout on smaller screens. These pain points highlighted clear opportunities to modernize the site and better represent JanMar's brand.</p>
+        <div class="jmw-map">
+          <div class="jmw-map-heads"><span>Pain Points</span><span>Opportunities</span></div>
+          <div class="jmw-map-row">
+            <span class="jmw-map-cell">Unresponsive Design</span>
+            <span class="jmw-map-arrow">→</span>
+            <span class="jmw-map-cell">Fully Responsive Layout</span>
+          </div>
+          <div class="jmw-map-row">
+            <span class="jmw-map-cell">Awkward Cropping</span>
+            <span class="jmw-map-arrow">→</span>
+            <span class="jmw-map-cell">Considered Image Placement</span>
+          </div>
+          <div class="jmw-map-row">
+            <span class="jmw-map-cell">Outdated Imagery &amp; Video</span>
+            <span class="jmw-map-arrow">→</span>
+            <span class="jmw-map-cell">Refreshed Photography &amp; Video</span>
+          </div>
+          <div class="jmw-map-row">
+            <span class="jmw-map-cell">Old Logo Flashing Against New Branding</span>
+            <span class="jmw-map-arrow">→</span>
+            <span class="jmw-map-cell">Consistent Branding Throughout</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- LOW-FI SKETCHES -->
+      <div class="proj-detail-section" id="jmw-sketches">
+        <div class="proj-detail-section-label">Low-Fi Sketches</div>
+        <div class="proj-detail-h2">Starting with Sketches</div>
+        <p class="proj-detail-p">Before building anything in Wix, I sketched out early layout ideas on my iPad to work through structure and navigation architecture without getting caught up in visual polish too early.</p>
+        <div class="smt-lb-thumb" onclick="openLightbox('media/JanMar Agency Site Redesign/lowfidel sketches janmar.jpg')" style="margin:20px auto 0;max-width:520px">
+          <img loading="lazy" src="media/JanMar Agency Site Redesign/lowfidel sketches janmar.jpg" style="width:100%;display:block" alt="Low-fidelity sketches for the JanMar Agency website redesign">
+        </div>
+        <p class="proj-img-caption" style="text-align:center">Early low-fidelity sketches, done on my iPad.</p>
+      </div>
+
+      <!-- WIREFRAMES & PROTOTYPE -->
+      <div class="proj-detail-section" id="jmw-figma">
+        <div class="proj-detail-section-label">Wireframes &amp; Prototype</div>
+        <div class="proj-detail-h2">From Sketches to Figma</div>
+        <p class="proj-detail-p">For the Figma wireframes, I brought in screenshots of the old site to help guide my decisions. Sara then went in and added comments, and I did a second iteration based on her feedback. We discussed it even more in person and made further changes from there.</p>
+        <p class="proj-detail-p">This was still just a starting point, though. Once we started working in Wix Studio, we made a lot of decisions while actually working on the site, depending on what worked and what didn't.</p>
+        <p class="proj-detail-p">Interact with and inspect the prototype below.</p>
+        <div style="border:1px solid var(--border);overflow:hidden;margin-top:20px">
+          <div style="background:var(--gray);padding:18px 22px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;gap:16px">
+            <div>
+              <div style="font-size:10px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin-bottom:4px">Figma</div>
+              <div style="font-size:14px;font-weight:600;color:#1A1A1A">Janmar Redesign Wireframe</div>
+            </div>
+            <a href="https://www.figma.com/design/brV6hiwavbgtpq7o3DdQRL/Janmar-Redesign-Wireframe?node-id=0-1&t=Q75V4g579fmRlTTn-1" target="_blank" style="font-size:12px;color:var(--muted);text-decoration:underline;text-underline-offset:2px;white-space:nowrap;transition:color 0.15s" onmouseover="this.style.color='#1A1A1A'" onmouseout="this.style.color='var(--muted)'">Open ↗︎</a>
+          </div>
+          <iframe style="border:none;width:100%;display:block" height="480" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fdesign%2FbrV6hiwavbgtpq7o3DdQRL%2FJanmar-Redesign-Wireframe%3Fnode-id%3D0-1%26t%3DQ75V4g579fmRlTTn-1" allow="clipboard-write fullscreen" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <!-- PHOTOGRAPHY & VIDEO PRODUCTION -->
+      <div class="proj-detail-section" id="jmw-media">
+        <div class="proj-detail-section-label">Photography &amp; Video Production</div>
+        <div class="proj-detail-h2">Refreshing the Visuals</div>
+        <p class="proj-detail-p">Since the existing photography and video no longer represented JanMar's current work, I scheduled and directed a full photoshoot to capture new imagery for the site.</p>
+        <p class="proj-detail-p">I also produced three original videos for the site: one for the homepage, one for the about page, and one to introduce JanMar's founder. Outside of the interview footage and select clips I filmed myself, the remaining footage was provided to me by Sara and required her approval before it could be used in the final videos.</p>
+        <p class="proj-detail-p">I also designed and animated JanMar's logo intro in After Effects, which appears at the start of each video.</p>
+        <div class="proj-detail-section-label" style="margin-top:24px">Home Page Video</div>
+        <div style="border:1px solid var(--border);overflow:hidden;margin-top:8px">
+          <video controls muted preload="none" poster="media/JanMar Agency Site Redesign/Home Video Poster.jpg" style="width:100%;display:block">
+            <source src="media/JanMar Agency Site Redesign/Home Video.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="proj-detail-section-label" style="margin-top:24px">About Page Video</div>
+        <div style="border:1px solid var(--border);overflow:hidden;margin-top:8px">
+          <video controls muted preload="none" poster="media/JanMar Agency Site Redesign/About Page Video Poster.jpg" style="width:100%;display:block">
+            <source src="media/JanMar Agency Site Redesign/About Page Video.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="proj-detail-section-label" style="margin-top:24px">Meet the Founder Video</div>
+        <div style="border:1px solid var(--border);overflow:hidden;margin-top:8px">
+          <video controls muted preload="none" poster="media/JanMar Agency Site Redesign/Janese Video Poster.jpg" style="width:100%;display:block">
+            <source src="media/JanMar Agency Site Redesign/Janese Video.mp4" type="video/mp4">
+          </video>
+        </div>
+        <p class="proj-img-caption">All three videos open with the logo animation I designed in After Effects.</p>
+      </div>
+
+      <!-- THE REDESIGN -->
+      <div class="proj-detail-section" id="jmw-redesign">
+        <div class="proj-detail-section-label">The Redesign</div>
+        <div class="proj-detail-h2">The New Site</div>
+        <p class="proj-detail-p">A look at what changed. The walkthrough below is a real walkthrough of the new site.</p>
+        <div style="border:1px solid var(--border);overflow:hidden;margin-top:12px">
+          <video controls muted preload="none" style="width:100%;display:block">
+            <source src="media/JanMar Agency Site Redesign/new janmar site walthrough.mp4" type="video/mp4">
+          </video>
+        </div>
+        <p class="proj-img-caption">The redesigned site, built in Wix Studio.</p>
+      </div>
+
+      <!-- REFLECTION -->
+      <div class="proj-detail-section" id="jmw-reflection">
+        <div class="proj-detail-section-label">Reflection</div>
+        <div class="proj-detail-h2">Looking Back</div>
+        <p class="proj-detail-p">Throughout the redesign, my mentor Sara Beshai reviewed wireframes, gave direction on brand consistency, and approved every piece of new media before it went live on the site. Her feedback shaped several rounds of the wireframe, from navigation structure down to page composition.</p>
+        <p class="proj-detail-p">This was my first time working in Wix Studio, and the redesign pushed me to learn its full toolkit quickly, from responsive breakpoints to custom interactions and page structure. It was a steep learning curve at first, but by the end I felt genuinely comfortable building full pages from scratch.</p>
+        <p class="proj-detail-p">I put that knowledge to use almost immediately. A lot of what I learned building JanMar's site carried directly into my next redesign, Longhorn Racing's website, where I was already familiar with the platform going in. <span style="cursor:pointer;text-decoration:underline;text-underline-offset:2px" onclick="showProject('lhr-website-redesign')">See that project here.</span></p>
+        <div class="proj-callout">I'm incredibly grateful to have learned from such a talented team throughout this internship, especially Sara. Her guidance shaped this project at every step.</div>
+      </div>
+
+      <!-- SHIPPED & IMPACT -->
+      <div class="proj-detail-section" id="jmw-impact">
+        <div class="proj-detail-section-label">Shipped &amp; Impact</div>
+        <div class="proj-detail-h2">Key Takeaways &amp; Impact</div>
+        <div class="proj-stats">
+          <div class="proj-stat a1">
+            <div class="proj-stat-num">50+ pages</div>
+            <div class="proj-stat-label">Modernized JanMar's digital brand presence by designing and manually developing 50+ responsive web pages.</div>
+          </div>
+          <div class="proj-stat a2">
+            <div class="proj-stat-num">3 original videos</div>
+            <div class="proj-stat-label">Produced video content for the homepage, about page, and founder introduction, each opening with a custom logo animation.</div>
+          </div>
+          <div class="proj-stat a3">
+            <div class="proj-stat-num">Photoshoot directed</div>
+            <div class="proj-stat-label">Scheduled and directed a full photoshoot to replace outdated imagery across the site.</div>
+          </div>
+          <div class="proj-stat a4">
+            <div class="proj-stat-num">Fully responsive</div>
+            <div class="proj-stat-label">Reworked navigation architecture, page composition, and image placement for a consistent, on-brand experience on any device.</div>
+          </div>
+        </div>
+        <div class="proj-callout" style="margin-top:20px">Want to know more about this project? Feel free to <a href="mailto:patelans000@utexas.edu" style="color:inherit;text-decoration:underline">reach out</a>, I would love to give an even more in-depth explanation.</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
 <!-- LHR WEBSITE REDESIGN -->
 <div class="proj-detail-page" id="proj-lhr-website-redesign">
   <div class="proj-detail-nav">
@@ -1928,8 +2166,8 @@ audio{accent-color:#1A1A1A}
             <div class="proj-stat-label">Rebuilt to work cleanly across desktop and mobile, hamburger icon and all.</div>
           </div>
           <div class="proj-stat a4">
-            <div class="proj-stat-num">Solo, self-assigned</div>
-            <div class="proj-stat-label">Taken on independently as PR Officer, from planning through launch.</div>
+            <div class="proj-stat-num">No dedicated web team</div>
+            <div class="proj-stat-label">Planned, designed, and built the site independently as PR Officer, on top of existing team responsibilities.</div>
           </div>
         </div>
         <div class="proj-callout" style="margin-top:20px">Want to know more about this project? Feel free to <a href="mailto:patelans000@utexas.edu" style="color:inherit;text-decoration:underline">reach out</a>, I would love to give an even more in-depth explanation.</div>
@@ -7151,6 +7389,7 @@ var projMeta = {
   'merchandise':     {title:'Merchandise',               cat:'graphic', catLabel:'2D & Graphic Design', sub:'Merch Design',     accent:'accent-graphic'},
   'posters':         {title:'Posters',                   cat:'graphic', catLabel:'2D & Graphic Design', sub:'Poster Design',    accent:'accent-graphic'},
   // -- UX (all 7 from page-ux grid) --
+  'janmar-website-redesign':{title:'JanMar Agency Website Redesign', cat:'ux', catLabel:'UX/UI & Game Design', sub:'Web Redesign', accent:'accent-ux'},
   'lhr-website-redesign':{title:'Longhorn Racing Website Redesign', cat:'ux', catLabel:'UX/UI & Game Design', sub:'Web Redesign', accent:'accent-ux'},
   'discotype':           {title:'DiscoType!',             cat:'ux', catLabel:'UX/UI & Game Design', sub:'Interaction Design', accent:'accent-ux'},
   'oracle':              {title:'Oracle',                  cat:'ux', catLabel:'UX/UI & Game Design', sub:'Interactive Web',    accent:'accent-ux'},
