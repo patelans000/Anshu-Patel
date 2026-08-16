@@ -221,14 +221,18 @@ nav{padding:22px 48px;display:flex;align-items:center;justify-content:space-betw
 .exp-toggle-icon{font-size:18px;font-weight:700;color:var(--muted);line-height:1;transition:transform 0.3s ease}
 .exp-item.open .exp-toggle-icon{transform:rotate(90deg);color:#1A1A1A}
 .exp-details{max-height:0;overflow:hidden;transition:max-height 0.35s ease}
-.exp-item.open .exp-details{max-height:none;overflow:visible;background:var(--blue);border-radius:0 0 8px 8px}
-.exp-details-inner{padding:20px;border-radius:8px}
+.exp-item.open .exp-details{max-height:none;overflow:visible;border-radius:0 0 8px 8px}
+#exp-1.exp-item.open .exp-details{background:var(--pink)}
+#exp-2.exp-item.open .exp-details{background:var(--blue)}
+#exp-3.exp-item.open .exp-details{background:var(--green)}
+#exp-4.exp-item.open .exp-details{background:var(--yellow)}
+.exp-details-inner{padding:20px;border-radius:8px;display:grid;grid-template-columns:1fr auto;column-gap:40px}
 .exp-item.open .exp-detail-text{color:#1A1A1A;font-weight:500}
-.exp-detail-text{font-size:14px;color:var(--muted);line-height:1.8;margin-bottom:14px;max-width:560px}
-.exp-tags{display:flex;flex-wrap:wrap;gap:6px}
+.exp-detail-text{font-size:14px;color:var(--muted);line-height:1.8;margin-bottom:14px;max-width:560px;grid-column:1}
+.exp-tags{display:flex;flex-wrap:wrap;gap:6px;grid-column:1}
 .exp-item.open .exp-tag{background:#fff;color:#1A1A1A;border-color:#fff}
 .exp-tag{font-size:11px;padding:4px 10px;border-radius:6px;background:var(--gray);color:#1A1A1A;border:1px solid var(--border)}
-.exp-work{margin-top:16px}
+.exp-work{grid-column:2;grid-row:1 / span 2;width:240px;flex-shrink:0}
 .exp-work-label{font-size:11px;font-weight:600;letter-spacing:0.6px;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
 .exp-work-links{display:flex;flex-direction:column;gap:6px}
 .exp-work-link{display:block;font-size:13px;color:var(--muted);text-decoration:underline;text-underline-offset:2px;cursor:pointer;width:fit-content;transition:opacity 0.15s}
@@ -643,11 +647,12 @@ audio{accent-color:#1A1A1A}
   .exp-row-left .exp-period{justify-self:center}
   .exp-row-left .exp-role-wrap{max-width:100%;min-width:0}
   .exp-toggle{justify-self:center}
-  .exp-details-inner{padding:18px 16px;max-width:100%}
+  .exp-details-inner{padding:18px 16px;max-width:100%;display:block}
   .exp-item.open{overflow:visible}
   .exp-item.open .exp-details{max-height:none;overflow:visible}
   .exp-detail-text{font-size:15px;line-height:1.95;max-width:100%;text-align:center;margin-left:auto;margin-right:auto}
   .exp-tags{justify-content:center;gap:8px}
+  .exp-work{width:100%;margin-top:16px}
 
   /* HOME */
   .home-hero{padding:36px 20px 32px;text-align:center}
@@ -3979,7 +3984,7 @@ audio{accent-color:#1A1A1A}
         <div class="proj-detail-h2">Key Takeaways & Impact</div>
         <div class="proj-stats">
           <div class="proj-stat a1">
-            <div class="proj-stat-num">Designers and engineers, together</div>
+            <div class="proj-stat-num">Designers &amp; engineers</div>
             <div class="proj-stat-label">An interdisciplinary team, with Maya, Saahil, and Evan, taking the livery from first sketches to final assembly.</div>
           </div>
           <div class="proj-stat a2">
