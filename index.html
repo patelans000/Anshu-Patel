@@ -228,6 +228,12 @@ nav{padding:22px 48px;display:flex;align-items:center;justify-content:space-betw
 .exp-tags{display:flex;flex-wrap:wrap;gap:6px}
 .exp-item.open .exp-tag{background:#fff;color:#1A1A1A;border-color:#fff}
 .exp-tag{font-size:11px;padding:4px 10px;border-radius:6px;background:var(--gray);color:#1A1A1A;border:1px solid var(--border)}
+.exp-work{margin-top:16px}
+.exp-work-label{font-size:11px;font-weight:600;letter-spacing:0.6px;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.exp-work-links{display:flex;flex-direction:column;gap:6px}
+.exp-work-link{display:block;font-size:13px;color:var(--muted);text-decoration:underline;text-underline-offset:2px;cursor:pointer;width:fit-content;transition:opacity 0.15s}
+.exp-item.open .exp-work-label,.exp-item.open .exp-work-link{color:#1A1A1A}
+.exp-work-link:hover{opacity:0.7}
 
 /* -- ABOUT -- */
 .about-wrap{display:grid;grid-template-columns:380px 1fr;min-height:calc(100vh - 73px)}
@@ -956,7 +962,7 @@ audio{accent-color:#1A1A1A}
           </div>
           <div class="exp-toggle"><span class="exp-toggle-icon">+</span></div>
         </div>
-        <div class="exp-details"><div class="exp-details-inner"><p class="exp-detail-text">Currently a Design & Marketing Intern at JanMar Agency and Culture Clash Magazine, where I work across web design, UX/UI design, merch design, and web listings, alongside creating social media content, digital campaigns, branded materials, and promotional graphics.</p><div class="exp-tags"><span class="exp-tag">Web Design</span><span class="exp-tag">UX/UI Design</span><span class="exp-tag">Merch Design</span><span class="exp-tag">Brand Implementation</span><span class="exp-tag">Digital Campaigns</span></div></div></div>
+        <div class="exp-details"><div class="exp-details-inner"><p class="exp-detail-text">Design & Marketing Intern at JanMar Agency and Culture Clash Magazine, where I designed and manually developed 50+ responsive web pages, worked on UX/UI design and web layouts, and created social media and marketing content. I also produced videos, photography, Instagram Reels, and directed photoshoots, while helping design JanMar's first merchandise line and building Culture Clash Magazine's online shop, including product photography, inventory, and page design.</p><div class="exp-tags"><span class="exp-tag">Web Design</span><span class="exp-tag">UX/UI Design</span><span class="exp-tag">Merch Design</span><span class="exp-tag">Photography & Videography</span><span class="exp-tag">Social Media Content</span><span class="exp-tag">Online Shop Development</span></div><div class="exp-work"><div class="exp-work-label">Relevant Work</div><div class="exp-work-links"><a class="exp-work-link" onclick="showProject('janmar-website-redesign')">JanMar Agency Website Redesign</a><a class="exp-work-link" onclick="showProject('merchandise');document.getElementById('merch-janmar').scrollIntoView({behavior:'smooth'})">JanMar Merchandise Design</a><a class="exp-work-link" href="https://www.cultureclashgalveston.com/category/all-products" target="_blank" rel="noopener">Culture Clash Magazine Shop ↗︎</a></div></div></div></div>
       </div>
       <div class="exp-item" id="exp-2">
         <div class="exp-row" onclick="toggleExp('exp-2')">
@@ -966,7 +972,7 @@ audio{accent-color:#1A1A1A}
           </div>
           <div class="exp-toggle"><span class="exp-toggle-icon">+</span></div>
         </div>
-        <div class="exp-details"><div class="exp-details-inner"><p class="exp-detail-text">Serving as Public Relations Officer for Longhorn Racing's Solar, Electric, and Combustion teams, leading overall branding, outreach, and communications across the organization. Also serve as the Public Relations Lead for the Solar vehicle team, directing visual storytelling through graphics, photography, videography, merchandise, and digital content.</p><div class="exp-tags"><span class="exp-tag">Photography & Videography</span><span class="exp-tag">PR & Communications</span><span class="exp-tag">Brand Implementation</span><span class="exp-tag">Visual Storytelling</span></div></div></div>
+        <div class="exp-details"><div class="exp-details-inner"><p class="exp-detail-text">Serving as Public Relations Officer for Longhorn Racing's Solar, Electric, and Combustion teams, leading overall branding, outreach, and communications across the organization. Also serve as the Public Relations Lead for the Solar vehicle team, directing visual storytelling through graphics, photography, videography, merchandise, and digital content.</p><div class="exp-tags"><span class="exp-tag">Photography & Videography</span><span class="exp-tag">PR & Communications</span><span class="exp-tag">Brand Implementation</span><span class="exp-tag">Visual Storytelling</span></div><div class="exp-work"><div class="exp-work-label">Relevant Work</div><div class="exp-work-links"><a class="exp-work-link" onclick="showProject('lhr-recruitment')">Longhorn Racing Recruitment</a><a class="exp-work-link" onclick="showProject('lhr-website-redesign')">Longhorn Racing Website Redesign</a><a class="exp-work-link" onclick="showProject('high-noon-livery')">High Noon Livery</a><a class="exp-work-link" onclick="showProject('logos-branding');document.getElementById('lb-lhr').scrollIntoView({behavior:'smooth'})">Longhorn Racing Branding</a><a class="exp-work-link" onclick="showProject('merchandise');document.getElementById('merch-lhr').scrollIntoView({behavior:'smooth'})">Longhorn Racing Merchandise</a><a class="exp-work-link" onclick="showPage('motion')">Motion Graphics & Videography</a></div></div></div></div>
       </div>
       <div class="exp-item" id="exp-3">
         <div class="exp-row" onclick="toggleExp('exp-3')">
@@ -976,7 +982,7 @@ audio{accent-color:#1A1A1A}
           </div>
           <div class="exp-toggle"><span class="exp-toggle-icon">+</span></div>
         </div>
-        <div class="exp-details"><div class="exp-details-inner"><p class="exp-detail-text">Head Graphic Designer & Co-founder of The Pyrography Project, where I developed the branding and logo. Awarded the Artistic Citizenship Collaborative Creative Grant from UT Austin's College of Fine Arts as part of an interdisciplinary team, contributing to a community-engaged, experience-based project exploring Artistic Citizenship.</p><div class="exp-tags"><span class="exp-tag">Logo & Brand Design</span><span class="exp-tag">Community-Engaged Design</span><span class="exp-tag">Grant Awardee</span><span class="exp-tag">Interdisciplinary Collaboration</span></div></div></div>
+        <div class="exp-details"><div class="exp-details-inner"><p class="exp-detail-text">Head Graphic Designer & Co-founder of The Pyrography Project, where I developed the branding and logo. Awarded the Artistic Citizenship Collaborative Creative Grant from UT Austin's College of Fine Arts as part of an interdisciplinary team, contributing to a community-engaged, experience-based project exploring Artistic Citizenship.</p><div class="exp-tags"><span class="exp-tag">Logo & Brand Design</span><span class="exp-tag">Community-Engaged Design</span><span class="exp-tag">Grant Awardee</span><span class="exp-tag">Interdisciplinary Collaboration</span></div><div class="exp-work"><div class="exp-work-label">Relevant Work</div><div class="exp-work-links"><a class="exp-work-link" onclick="showProject('logos-branding');document.getElementById('lb-pyro').scrollIntoView({behavior:'smooth'})">The Pyrography Project Branding</a></div></div></div></div>
       </div>
       <div class="exp-item" id="exp-4">
         <div class="exp-row" onclick="toggleExp('exp-4')">
@@ -986,7 +992,7 @@ audio{accent-color:#1A1A1A}
           </div>
           <div class="exp-toggle"><span class="exp-toggle-icon">+</span></div>
         </div>
-        <div class="exp-details"><div class="exp-details-inner"><p class="exp-detail-text">Shaped Hook 'em Bhangra's creative vision by developing concepts, producing dance mixes, and defining the team's brand and aesthetic through cohesive branding and promotional design. Led the design and production of team merchandise to maintain a consistent visual identity across all materials.</p><div class="exp-tags"><span class="exp-tag">Concept Development</span><span class="exp-tag">Brand Identity</span><span class="exp-tag">Promotional Design</span><span class="exp-tag">Dance Mix Production</span></div></div></div>
+        <div class="exp-details"><div class="exp-details-inner"><p class="exp-detail-text">Shaped Hook 'em Bhangra's creative vision by developing concepts, producing dance mixes, and defining the team's brand and aesthetic through cohesive branding and promotional design. Led the design and production of team merchandise to maintain a consistent visual identity across all materials.</p><div class="exp-tags"><span class="exp-tag">Concept Development</span><span class="exp-tag">Brand Identity</span><span class="exp-tag">Promotional Design</span><span class="exp-tag">Dance Mix Production</span></div><div class="exp-work"><div class="exp-work-label">Relevant Work</div><div class="exp-work-links"><a class="exp-work-link" onclick="showProject('logos-branding');document.getElementById('lb-hb').scrollIntoView({behavior:'smooth'})">Hook 'em Bhangra Branding</a><a class="exp-work-link" onclick="showProject('merchandise');document.getElementById('merch-hb').scrollIntoView({behavior:'smooth'})">Hook 'em Bhangra Merchandise</a></div></div></div></div>
       </div>
     </div>
   </div>
@@ -7145,7 +7151,7 @@ document.querySelectorAll('.proj-photo-gallery').forEach(function(el) {
   }, true);
 
   function tick() {
-    if (!paused && !isDown) {
+    if (!paused && !isDown && el.offsetParent !== null) {
       el.scrollLeft += autoSpeed;
     }
     requestAnimationFrame(tick);
@@ -7386,7 +7392,7 @@ function bttUpdate() {
   });
   btn.classList.toggle('visible', !onCategory && window.scrollY > 300);
 }
-window.addEventListener('scroll', bttUpdate);
+window.addEventListener('scroll', bttUpdate, { passive: true });
 document.addEventListener('DOMContentLoaded', function() {
   var btn = document.getElementById('btt-btn');
   if (btn) btn.addEventListener('click', function() { window.scrollTo({top:0, behavior:'smooth'}); });
