@@ -318,6 +318,12 @@ audio{accent-color:#1A1A1A}
 .proj-callout{background:var(--blue);border-radius:8px;padding:12px 18px;margin:6px 0;font-size:13px;color:#1A1A1A;line-height:1.7;font-weight:500}
 .proj-miro-wrap{width:100%;height:480px;border-radius:8px;overflow:hidden;border:1px solid var(--border);margin-bottom:6px}
 .proj-miro-wrap iframe{width:100%;height:100%;border:none;display:block}
+.embed-guard{position:relative}
+.proj-miro-wrap .embed-guard{width:100%;height:100%}
+.embed-guard-overlay{position:absolute;inset:0;z-index:2;cursor:pointer;background:rgba(255,255,255,0.01);display:flex;align-items:center;justify-content:center}
+.embed-guard-overlay span{opacity:0;transition:opacity 0.15s;font-size:11px;font-weight:600;letter-spacing:0.6px;text-transform:uppercase;color:#1A1A1A;background:rgba(255,255,255,0.9);padding:6px 12px;border-radius:20px;border:1px solid var(--border)}
+.embed-guard:hover .embed-guard-overlay span{opacity:1}
+.embed-guard.active .embed-guard-overlay{display:none}
 .proj-toc-list{display:flex;flex-direction:column;gap:0;margin-top:6px}
 .proj-toc-link{font-size:13px;color:#666;text-decoration:none;cursor:pointer;padding:6px 0 6px 12px;border-left:2px solid var(--border);transition:all 0.15s;line-height:1.4;display:block}
 .proj-toc-link:hover{color:#1A1A1A;border-left-color:#888}
@@ -385,7 +391,8 @@ audio{accent-color:#1A1A1A}
 .footer-links{display:flex;gap:24px}
 .footer-links a{font-size:13px;color:#666;text-decoration:none;transition:color 0.15s}
 .footer-links a:hover{color:var(--pink)}
-.footer-copy{font-size:12px;color:#444}
+.footer-copy{font-size:12px;color:#444;text-align:right;line-height:1.7}
+.footer-updated{font-size:11px;color:#3a3a3a}
 /* -- PERSONA 5 EXTRAS -- */
 .proj-callout-yellow{background:var(--yellow);border-radius:8px;padding:14px 18px;margin:6px 0;font-size:14px;color:#1A1A1A;line-height:1.7;font-style:italic}
 .proj-callout-gray{background:var(--gray);border:1px solid var(--border);border-radius:8px;padding:12px 18px;margin:6px 0;font-size:13px;color:#444;line-height:1.7}
@@ -755,6 +762,7 @@ audio{accent-color:#1A1A1A}
   /* FOOTER */
   .site-footer{flex-direction:column;gap:14px;padding:28px 20px;align-items:center}
   .footer-left{flex-direction:column;gap:6px}
+  .footer-copy{text-align:center}
 }
 
 @media (max-width: 480px){
@@ -1978,7 +1986,7 @@ audio{accent-color:#1A1A1A}
         <p class="proj-detail-p">Since the existing photography and video no longer represented JanMar's current work, I scheduled and directed a full photoshoot to capture new imagery for the site.</p>
         <p class="proj-detail-p">I also produced three original videos for the site: one for the homepage, one for the about page, and one to introduce JanMar's founder. Outside of the interview footage and select clips I filmed myself, the remaining footage was provided to me by Sara and required her approval before it could be used in the final videos.</p>
         <p class="proj-detail-p">I personally prepared and conducted the founder interview with Janese, shaping the questions around what the videos needed to communicate.</p>
-        <p class="proj-detail-p">I also designed and animated JanMar's logo intro in After Effects, which appears at the start of each video.</p>
+        <p class="proj-detail-p">I also animated JanMar's logo intro in After Effects, which appears at the start of each video.</p>
         <div class="proj-detail-section-label" style="margin-top:24px">Home Page Video</div>
         <div style="border:1px solid var(--border);overflow:hidden;margin-top:8px">
           <video controls muted preload="none" poster="media/JanMar Agency Site Redesign/Home Video Poster.jpg" style="width:100%;display:block">
@@ -2166,8 +2174,8 @@ audio{accent-color:#1A1A1A}
             <div class="proj-stat-label">Rebuilt to work cleanly across desktop and mobile, hamburger icon and all.</div>
           </div>
           <div class="proj-stat a4">
-            <div class="proj-stat-num">No dedicated web team</div>
-            <div class="proj-stat-label">Planned, designed, and built the site independently as PR Officer, on top of existing team responsibilities.</div>
+            <div class="proj-stat-num">Brand implementation &amp; refinement</div>
+            <div class="proj-stat-label">Strengthened and refined the existing brand identity, ensuring it was applied consistently across the website.</div>
           </div>
         </div>
         <div class="proj-callout" style="margin-top:20px">Want to know more about this project? Feel free to <a href="mailto:patelans000@utexas.edu" style="color:inherit;text-decoration:underline">reach out</a>, I would love to give an even more in-depth explanation.</div>
@@ -6406,7 +6414,10 @@ audio{accent-color:#1A1A1A}
     <a href="https://www.linkedin.com/in/anshu-patel006" target="_blank">LinkedIn ↗︎</a>
     <a href="https://drive.google.com/file/d/16VUpKYkK2z4wUNV4X9m_DdyY5ktcA9ac/view?usp=sharing" target="_blank">Resume ↗︎</a>
   </div>
-  <div class="footer-copy">© 2026 Anshu Patel</div>
+  <div class="footer-copy">
+    <div>© 2026 Anshu Patel</div>
+    <div class="footer-updated">Last updated August 2026</div>
+  </div>
 </footer>
 
 <script>
@@ -6505,6 +6516,29 @@ function pauseAllMedia() {
     if (f.src !== 'about:blank') f.src = 'about:blank';
   });
 }
+
+// Guard Figma/Miro/Canva embeds so scrolling the page doesn't get hijacked
+// by the embed's internal pan/zoom until the user deliberately clicks in
+(function() {
+  document.querySelectorAll('.proj-detail-page iframe').forEach(function(f) {
+    var src = f.getAttribute('src') || '';
+    if (!/figma\.com|miro\.com|canva\.com/.test(src)) return;
+    var wrap = document.createElement('div');
+    wrap.className = 'embed-guard';
+    f.parentNode.insertBefore(wrap, f);
+    wrap.appendChild(f);
+    var overlay = document.createElement('div');
+    overlay.className = 'embed-guard-overlay';
+    overlay.innerHTML = '<span>Click to interact</span>';
+    wrap.appendChild(overlay);
+    overlay.addEventListener('click', function() {
+      wrap.classList.add('active');
+    });
+    wrap.addEventListener('mouseleave', function() {
+      wrap.classList.remove('active');
+    });
+  });
+})();
 
 function hydrateProject(slug) {
   var proj = document.getElementById('proj-' + slug);
