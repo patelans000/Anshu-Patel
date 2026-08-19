@@ -111,6 +111,8 @@ nav{padding:22px 48px;display:flex;align-items:center;justify-content:space-betw
 .proj-grid-3 .proj:nth-child(3n){border-right:none}
 .proj-grid-2 .proj:nth-child(2n){border-right:none}
 .proj-thumb{aspect-ratio:4/3;overflow:hidden;display:flex;align-items:center;justify-content:center;position:relative}
+@keyframes skel-shimmer{0%{background-position:-150% 0}100%{background-position:150% 0}}
+.proj-thumb-inner,.more-proj-thumb-inner{background:linear-gradient(100deg,#ececec 25%,#f6f6f6 45%,#ececec 65%);background-size:250% 100%;animation:skel-shimmer 1.6s ease-in-out infinite}
 .proj-thumb-inner{width:100%;height:100%;display:flex;align-items:center;justify-content:center;transition:transform 0.45s ease}
 .proj:hover .proj-thumb-inner{transform:scale(1.04)}
 .proj-hover{position:absolute;inset:0;background:rgba(26,26,26,0);display:flex;align-items:flex-end;padding:20px;transition:background 0.3s}
