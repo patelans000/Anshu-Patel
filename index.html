@@ -320,6 +320,8 @@ audio{accent-color:#1A1A1A}
 
 /* -- PROJECT DETAIL EXTRAS -- */
 .proj-img-caption{font-size:12px;color:var(--muted);margin-top:4px;margin-bottom:14px;line-height:1.5}
+.proj-banner-title{font-family:'Outfit',sans-serif;font-size:16px;font-weight:600;color:#fff;line-height:1.2;letter-spacing:0}
+.proj-banner-subtitle{font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;color:rgba(255,255,255,0.75);margin-top:5px;letter-spacing:0}
 .proj-detail-h3{font-family:'Outfit',sans-serif;font-size:20px;font-weight:600;margin-bottom:12px;margin-top:32px;color:#1A1A1A}
 .proj-callout{background:var(--blue);border-radius:8px;padding:12px 18px;margin:6px 0;font-size:13px;color:#1A1A1A;line-height:1.7;font-weight:500}
 .proj-miro-wrap{width:100%;height:480px;border-radius:8px;overflow:hidden;border:1px solid var(--border);margin-bottom:6px}
@@ -702,6 +704,11 @@ audio{accent-color:#1A1A1A}
   .proj-detail-nav-arrows{justify-content:center}
   .proj-detail-hero{padding:28px 20px 24px;display:flex;flex-direction:column;align-items:center;text-align:center}
   .proj-detail-title{font-size:34px}
+  .proj-banner-title{font-size:16px}
+  .proj-banner-subtitle{font-size:13px}
+  #proj-janmar-website-redesign .proj-banner-overlay,
+  #proj-lhr-website-redesign .proj-banner-overlay{padding:16px 20px}
+  #proj-lhr-recruitment .proj-banner-overlay{left:20px;bottom:20px}
   .proj-detail-tagline{font-size:15px;max-width:100%}
   .proj-detail-meta-row{gap:18px;display:flex;flex-direction:column;align-items:center}
   .proj-detail-body{grid-template-columns:1fr}
@@ -798,6 +805,11 @@ audio{accent-color:#1A1A1A}
 
   /* PROJECT DETAIL */
   .proj-detail-title{font-size:26px}
+  .proj-banner-title{font-size:16px}
+  .proj-banner-subtitle{font-size:13px}
+  #proj-janmar-website-redesign .proj-banner-overlay,
+  #proj-lhr-website-redesign .proj-banner-overlay{padding:12px 16px}
+  #proj-lhr-recruitment .proj-banner-overlay{left:16px;right:16px;bottom:16px}
 
   /* MIRO + CAROUSEL */
   .proj-miro-wrap{height:200px}
@@ -1490,7 +1502,7 @@ audio{accent-color:#1A1A1A}
       <img loading="lazy" src="media/Typography in Persona 5/Hero, Title Card.webp" style="width:100%;height:100%;object-fit:cover;display:block" alt="Typography in Persona 5,Cover">
       <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.72) 0%,rgba(0,0,0,0.18) 50%,transparent 100%)"></div>
       <div style="position:absolute;bottom:36px;left:48px">
-        <div style="font-family:'Outfit',sans-serif;font-size:54px;font-weight:600;color:#fff;line-height:1.05;letter-spacing:0.3px">Typography in Persona 5</div>
+        <div style="font-family:'Outfit',sans-serif;font-size:16px;font-weight:600;color:#fff;line-height:1.2;letter-spacing:0">Typography in Persona 5</div>
         <div style="font-size:13px;color:rgba(255,255,255,0.7);margin-top:6px;font-weight:400;letter-spacing:0.3px">DES 325 | Fall 2025</div>
       </div>
     </div>
@@ -1882,9 +1894,9 @@ audio{accent-color:#1A1A1A}
   </div>
   <div style="position:relative;border-bottom:1px solid var(--border)">
     <img loading="lazy" src="media/JanMar Agency Site Redesign/JanMar Project Cover.webp" style="width:100%;display:block" alt="JanMar Agency redesigned website">
-    <div style="position:absolute;bottom:0;left:0;right:0;padding:20px 32px;background:linear-gradient(transparent,rgba(0,0,0,0.75));pointer-events:none;z-index:2">
-      <div style="font-size:10px;color:rgba(255,255,255,0.5);font-weight:600;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:5px">UX/UI & Game Design | Web Redesign</div>
-      <div style="font-size:16px;color:#fff;font-weight:600">JanMar Agency Website Redesign</div>
+    <div class="proj-banner-overlay" style="position:absolute;bottom:0;left:0;right:0;padding:20px 32px;background:linear-gradient(transparent,rgba(0,0,0,0.75));pointer-events:none;z-index:2">
+      <div class="proj-banner-title">JanMar Agency Website Redesign</div>
+      <div class="proj-banner-subtitle">UX/UI &amp; Web Redesign</div>
     </div>
   </div>
   <div class="proj-detail-body">
@@ -2099,10 +2111,10 @@ audio{accent-color:#1A1A1A}
   </div>
   <div style="position:relative;cursor:pointer;border-bottom:1px solid var(--border)" onclick="window.open('https://www.longhornracing.org/','_blank')">
     <img loading="lazy" src="media/LHR New Site/lhr site portfolio cover.webp" style="width:100%;display:block" alt="Longhorn Racing redesigned website">
-    <div style="position:absolute;bottom:0;left:0;right:0;padding:20px 32px;background:linear-gradient(transparent,rgba(0,0,0,0.75));pointer-events:none;z-index:2;display:flex;justify-content:space-between;align-items:flex-end">
+    <div class="proj-banner-overlay" style="position:absolute;bottom:0;left:0;right:0;padding:20px 32px;background:linear-gradient(transparent,rgba(0,0,0,0.75));pointer-events:none;z-index:2;display:flex;justify-content:space-between;align-items:flex-end">
       <div>
-        <div style="font-size:10px;color:rgba(255,255,255,0.5);font-weight:600;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:5px">UX/UI & Game Design | Web Redesign</div>
-        <div style="font-size:16px;color:#fff;font-weight:600">Longhorn Racing Website Redesign</div>
+        <div class="proj-banner-title">Longhorn Racing Website Redesign</div>
+        <div class="proj-banner-subtitle">UX/UI &amp; Web Redesign</div>
       </div>
       <div style="font-size:13px;color:#fff;font-weight:600;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.35);padding:8px 16px;backdrop-filter:blur(4px);white-space:nowrap">Visit the Live Site ↗︎</div>
     </div>
@@ -3595,8 +3607,7 @@ audio{accent-color:#1A1A1A}
   </div>
   <div class="smt-lb-thumb" onclick="window.open('media/Spotify feature/Spotify Slides.pdf','_blank')" style="border-bottom:1px solid var(--border);cursor:pointer">
     <img loading="lazy" src="media/Spotify feature/Spotify Slides.webp" style="width:100%;display:block" alt="Spotify Slides cover">
-    <div style="position:absolute;bottom:0;left:0;right:0;padding:20px 32px;background:linear-gradient(transparent,rgba(0,0,0,0.72));pointer-events:none;z-index:2">
-      <div style="font-size:10px;color:rgba(255,255,255,0.5);font-weight:600;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:5px">UX/UI & Game Design | Micro-interaction Design</div>
+    <div class="proj-banner-overlay" style="position:absolute;bottom:0;left:0;right:0;padding:20px 32px;background:linear-gradient(transparent,rgba(0,0,0,0.75));pointer-events:none;z-index:2">
       <div style="font-size:16px;color:#fff;font-weight:600;font-family:'Outfit',sans-serif">Spotify: Designing a New Microinteraction</div>
     </div>
   </div>
@@ -3812,8 +3823,8 @@ audio{accent-color:#1A1A1A}
     <img loading="lazy" src="media/High Noon Livery/car pics (8).webp" style="width:100%;height:100%;object-fit:cover;object-position:center 85%;display:block" alt="High Noon final livery">
     <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.65) 0%,rgba(0,0,0,0.15) 45%,transparent 100%)"></div>
     <div style="position:absolute;bottom:36px;left:48px">
-      <div style="font-family:'Outfit',sans-serif;font-size:54px;font-weight:600;color:#fff;line-height:1.05;letter-spacing:0.3px">High Noon Livery</div>
-      <div style="font-family:'Outfit',sans-serif;font-size:24px;font-weight:500;color:rgba(255,255,255,0.85);margin-top:6px;letter-spacing:0.2px">Longhorn Racing Solar Vehicle</div>
+      <div style="font-family:'Outfit',sans-serif;font-size:16px;font-weight:600;color:#fff;line-height:1.2;letter-spacing:0">High Noon Livery</div>
+      <div style="font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;color:rgba(255,255,255,0.75);margin-top:5px;letter-spacing:0">Longhorn Racing Solar Vehicle</div>
       <div style="font-size:13px;color:rgba(255,255,255,0.6);margin-top:6px;font-weight:400;letter-spacing:0.3px">Vehicle Livery Design | Spring 2026</div>
     </div>
   </div>
@@ -4047,11 +4058,11 @@ audio{accent-color:#1A1A1A}
   </div>
 
   <div style="position:relative;overflow:hidden;aspect-ratio:16/7;border-bottom:1px solid var(--border)">
-    <img loading="lazy" src="media/LHR Recruitment/Card Cover.webp" style="width:100%;height:100%;object-fit:cover;display:block" alt="Longhorn Racing Recruitment campaign cover">
+    <img loading="lazy" src="media/LHR Recruitment/recruitment page banner.webp" style="width:100%;height:100%;object-fit:cover;display:block" alt="Longhorn Racing Recruitment campaign cover">
     <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.65) 0%,rgba(0,0,0,0.15) 45%,transparent 100%)"></div>
-    <div style="position:absolute;bottom:36px;left:48px">
-      <div style="font-family:'Outfit',sans-serif;font-size:54px;font-weight:600;color:#fff;line-height:1.05;letter-spacing:0.3px">Longhorn Racing Recruitment</div>
-      <div style="font-family:'Outfit',sans-serif;font-size:24px;font-weight:500;color:rgba(255,255,255,0.85);margin-top:6px;letter-spacing:0.2px">2026–27 Recruitment Campaign</div>
+    <div class="proj-banner-overlay" style="position:absolute;bottom:36px;left:48px">
+      <div class="proj-banner-title">Longhorn Racing Recruitment</div>
+      <div class="proj-banner-subtitle">2026–27 Recruitment Campaign</div>
       <div style="font-size:13px;color:rgba(255,255,255,0.6);margin-top:6px;font-weight:400;letter-spacing:0.3px">Social Design | Summer–Fall 2026</div>
     </div>
   </div>
@@ -4346,8 +4357,8 @@ audio{accent-color:#1A1A1A}
       <img loading="lazy" src="media/Hajra Waheed Asylum in the Sea/kevin spreads POST CRITIQYE.webp" style="width:100%;height:100%;object-fit:cover;display:block" alt="Final exhibition spread">
       <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.65) 0%,rgba(0,0,0,0.15) 45%,transparent 100%)"></div>
       <div style="position:absolute;bottom:36px;left:48px">
-        <div style="font-family:'Outfit',sans-serif;font-size:54px;font-weight:600;color:#fff;line-height:1.05;letter-spacing:0.3px">Watermarks</div>
-        <div style="font-family:'Outfit',sans-serif;font-size:24px;font-weight:500;color:rgba(255,255,255,0.85);margin-top:6px;letter-spacing:0.2px">Hajra Waheed's Asylum in the Sea</div>
+        <div style="font-family:'Outfit',sans-serif;font-size:16px;font-weight:600;color:#fff;line-height:1.2;letter-spacing:0">Watermarks</div>
+        <div style="font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;color:rgba(255,255,255,0.75);margin-top:5px;letter-spacing:0">Hajra Waheed's Asylum in the Sea</div>
         <div style="font-size:13px;color:rgba(255,255,255,0.6);margin-top:6px;font-weight:400;letter-spacing:0.3px">Exhibition Spread Design | Fall 2025</div>
       </div>
     </div>
@@ -5105,7 +5116,7 @@ audio{accent-color:#1A1A1A}
       <img loading="lazy" src="media/The Ecoleander/Photoshoot 7.webp" style="width:100%;height:100%;object-fit:cover;display:block" alt="The Ecoleander in use">
       <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.15) 45%,transparent 100%)"></div>
       <div style="position:absolute;bottom:36px;left:48px">
-        <div style="font-family:'Outfit',sans-serif;font-size:54px;font-weight:600;color:#fff;line-height:1.05;letter-spacing:0.3px">The Ecoleander</div>
+        <div style="font-family:'Outfit',sans-serif;font-size:16px;font-weight:600;color:#fff;line-height:1.2;letter-spacing:0">The Ecoleander</div>
         <div style="font-size:13px;color:rgba(255,255,255,0.7);margin-top:6px;font-weight:400;letter-spacing:0.3px">DES 326 | Fall 2025</div>
       </div>
     </div>
@@ -5500,7 +5511,7 @@ audio{accent-color:#1A1A1A}
       <img loading="lazy" src="media/Smrutea/Hero image 4.jpg" style="width:100%;height:100%;object-fit:cover;display:block" alt="Smrutea packaging">
       <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.15) 45%,transparent 100%)"></div>
       <div style="position:absolute;bottom:36px;left:48px">
-        <div style="font-family:'Outfit',sans-serif;font-size:54px;font-weight:600;color:#fff;line-height:1.05;letter-spacing:0.3px">Smrutea</div>
+        <div style="font-family:'Outfit',sans-serif;font-size:16px;font-weight:600;color:#fff;line-height:1.2;letter-spacing:0">Smrutea</div>
         <div style="font-size:13px;color:rgba(255,255,255,0.7);margin-top:6px;font-weight:400;letter-spacing:0.3px">DES 326 | Fall 2025</div>
       </div>
     </div>
@@ -5958,7 +5969,7 @@ audio{accent-color:#1A1A1A}
       <img loading="lazy" src="media/The Flipula/The Flipula Cover Title Banner.webp" style="width:100%;height:100%;object-fit:cover;display:block" alt="The Flipula">
       <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.55) 0%,rgba(0,0,0,0.1) 45%,transparent 100%)"></div>
       <div style="position:absolute;bottom:36px;left:48px">
-        <div style="font-family:'Outfit',sans-serif;font-size:54px;font-weight:600;color:#fff;line-height:1.05;letter-spacing:0.3px">The Flipula</div>
+        <div style="font-family:'Outfit',sans-serif;font-size:16px;font-weight:600;color:#fff;line-height:1.2;letter-spacing:0">The Flipula</div>
         <div style="font-size:13px;color:rgba(255,255,255,0.7);margin-top:6px;font-weight:400;letter-spacing:0.3px">DES 326 | Fall 2025</div>
       </div>
     </div>
