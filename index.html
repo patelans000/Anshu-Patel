@@ -373,6 +373,8 @@ audio{accent-color:#1A1A1A}
 #smt-lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.93);z-index:10000;display:none;align-items:center;justify-content:center;cursor:zoom-out;padding:24px;gap:16px}
 #smt-lightbox.open{display:flex}
 #smt-lightbox img{max-width:90vw;max-height:90vh;object-fit:contain;border-radius:4px;cursor:default}
+#smt-lightbox.compact-image{inset:0;width:auto;max-width:none;height:auto;transform:none;padding:24px;background:rgba(0,0,0,0.93)}
+#smt-lightbox.compact-image img{max-width:90vw;max-height:90vh}
 #smt-lightbox.gallery-mode img{max-width:calc(90vw - 120px)}
 #smt-lb-prev,#smt-lb-next{flex-shrink:0}
 .smt-lb-thumb{cursor:zoom-in;position:relative;overflow:hidden}
@@ -6997,7 +6999,11 @@ var smtLbGallery = null;
 var smtLbIdx = 0;
 function openLightbox(src, bg) {
   var img = document.getElementById('smt-lightbox-img');
+  var lightbox = document.getElementById('smt-lightbox');
+  var isCompactImage = src.indexOf('/Usabaility Testing quotes.webp') !== -1;
   img.style.visibility = '';
+  lightbox.classList.remove('compact-image');
+  img.onload = isCompactImage ? function() { lightbox.classList.add('compact-image'); } : null;
   img.src = src;
   img.style.background = bg || '';
   img.style.padding = bg ? '24px' : '';
@@ -7005,11 +7011,12 @@ function openLightbox(src, bg) {
   smtLbGallery = null;
   document.getElementById('smt-lb-prev').style.display = 'none';
   document.getElementById('smt-lb-next').style.display = 'none';
-  document.getElementById('smt-lightbox').classList.remove('gallery-mode');
-  document.getElementById('smt-lightbox').classList.add('open');
+  lightbox.classList.remove('gallery-mode');
+  lightbox.classList.add('open');
+  if (isCompactImage && img.complete && img.naturalWidth) lightbox.classList.add('compact-image');
 }
 function closeLightbox() {
-  document.getElementById('smt-lightbox').classList.remove('open');
+  document.getElementById('smt-lightbox').classList.remove('open', 'compact-image');
 }
 
 // -- HIGH NOON COMPETITION PHOTO GALLERY (rotating lightbox) --
