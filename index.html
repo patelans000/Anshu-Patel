@@ -1892,11 +1892,14 @@ audio{accent-color:#1A1A1A}
       <div class="proj-detail-meta-item"><div class="proj-detail-meta-label">Tools</div><div class="proj-detail-meta-val">Wix Studio, Figma, Procreate, Adobe Premiere Pro, Adobe After Effects, Adobe Lightroom</div></div>
     </div>
   </div>
-  <div style="position:relative;border-bottom:1px solid var(--border)">
+  <div style="position:relative;cursor:pointer;border-bottom:1px solid var(--border)" onclick="window.open('https://www.janmaragency.com/','_blank')">
     <img loading="lazy" src="media/JanMar Agency Site Redesign/JanMar Project Cover.webp" style="width:100%;display:block" alt="JanMar Agency redesigned website">
-    <div class="proj-banner-overlay" style="position:absolute;bottom:0;left:0;right:0;padding:20px 32px;background:linear-gradient(transparent,rgba(0,0,0,0.75));pointer-events:none;z-index:2">
-      <div class="proj-banner-title">JanMar Agency Website Redesign</div>
-      <div class="proj-banner-subtitle">UX/UI &amp; Web Redesign</div>
+    <div class="proj-banner-overlay" style="position:absolute;bottom:0;left:0;right:0;padding:20px 32px;background:linear-gradient(transparent,rgba(0,0,0,0.75));pointer-events:none;z-index:2;display:flex;justify-content:space-between;align-items:flex-end">
+      <div>
+        <div class="proj-banner-title">JanMar Agency Website Redesign</div>
+        <div class="proj-banner-subtitle">UX/UI &amp; Web Redesign</div>
+      </div>
+      <div style="font-size:13px;color:#fff;font-weight:600;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.35);padding:8px 16px;backdrop-filter:blur(4px);white-space:nowrap">Visit the Live Site ↗︎</div>
     </div>
   </div>
   <div class="proj-detail-body">
@@ -1912,6 +1915,7 @@ audio{accent-color:#1A1A1A}
           <a class="proj-toc-link" onclick="tocScrollTo('jmw-figma')">Wireframes &amp; Prototype</a>
           <a class="proj-toc-link" onclick="tocScrollTo('jmw-media')">Photography &amp; Video</a>
           <a class="proj-toc-link" onclick="tocScrollTo('jmw-redesign')">The Redesign</a>
+          <a class="proj-toc-link" onclick="tocScrollTo('jmw-live')">Live Site</a>
           <a class="proj-toc-link" onclick="tocScrollTo('jmw-reflection')">Reflection</a>
           <a class="proj-toc-link" onclick="tocScrollTo('jmw-impact')">Shipped &amp; Impact</a>
         </div>
@@ -2048,6 +2052,23 @@ audio{accent-color:#1A1A1A}
           </video>
         </div>
         <p class="proj-img-caption">The redesigned site, built in Wix Studio.</p>
+      </div>
+
+      <!-- LIVE SITE -->
+      <div class="proj-detail-section" id="jmw-live">
+        <div class="proj-detail-section-label">Live Site</div>
+        <div class="proj-detail-h2">See It Live</div>
+        <p class="proj-detail-p">The redesigned site is live at <a href="https://www.janmaragency.com/" target="_blank" style="color:inherit;text-decoration:underline;text-underline-offset:2px">janmaragency.com</a>. If the embed below doesn't load for you, use the link to open it directly.</p>
+        <div style="border:1px solid var(--border);overflow:hidden;margin-top:20px">
+          <div style="background:var(--gray);padding:18px 22px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;gap:16px">
+            <div>
+              <div style="font-size:10px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin-bottom:4px">Live Site</div>
+              <div style="font-size:14px;font-weight:600;color:#1A1A1A">janmaragency.com</div>
+            </div>
+            <a href="https://www.janmaragency.com/" target="_blank" style="font-size:12px;color:var(--muted);text-decoration:underline;text-underline-offset:2px;white-space:nowrap;transition:color 0.15s" onmouseover="this.style.color='#1A1A1A'" onmouseout="this.style.color='var(--muted)'">Open ↗︎</a>
+          </div>
+          <iframe style="border:none;width:100%;display:block" height="600" src="https://www.janmaragency.com/" loading="lazy" allow="autoplay 'none'" allowfullscreen></iframe>
+        </div>
       </div>
 
       <!-- REFLECTION -->
@@ -7603,6 +7624,3 @@ function renderMoreProjects(slug) {
 <button class="btt" id="btt-btn" aria-label="Back to top"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 11V3M7 3L3 7M7 3L11 7" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
 </body>
 </html>
-
-
-
